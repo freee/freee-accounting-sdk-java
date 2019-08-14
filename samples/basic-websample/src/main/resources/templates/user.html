@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="utf-8">
+    <title>User | Basic Web Sample</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <script src="/webjars/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class=container-fluid style="padding: 20px">
+        <div class="row">
+            <h1>User Information</h1>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>id</td>
+                    <td th:text=${user.id()}></td>
+                </tr>
+                <tr>
+                    <td>email</td>
+                    <td th:text=${user.email()}></td>
+                </tr>
+                <tr>
+                    <td>displayName</td>
+                    <td th:text=${user.displayName()}></td>
+                </tr>
+                <tr>
+                    <td>lastName</td>
+                    <td th:text=${user.lastName()}></td>
+                </tr>
+                <tr>
+                    <td>firstName</td>
+                    <td th:text=${user.firstName()}></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

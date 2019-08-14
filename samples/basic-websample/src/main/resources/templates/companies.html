@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="utf-8">
+    <title>Companies | Basic Web Sample</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <script src="/webjars/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class=container-fluid style="padding: 20px">
+        <div class="row">
+            <h1>Companies Information</h1>
+        </div>
+        <ul th:each="company : ${companies}">
+            <li th:text="${company.displayName()}"></li>
+        </ul>
+    </div>
+</body>
+
+</html>

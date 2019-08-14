@@ -1,0 +1,15 @@
+server:
+  port: 8080
+security:
+  oauth2:
+    client:
+      client-id: <<set your client id>>
+      client-secret: <<set your client secret>>
+      access-token-uri: https://accounts.secure.freee.co.jp/public_api/token
+      user-authorization-uri: https://accounts.secure.freee.co.jp/public_api/authorize
+      client-authentication-scheme: form
+    resource:
+      user-info-uri: https://api.freee.co.jp/api/1/users/me
+      prefer-token-info: false
+    sso:
+      login-path: /login
