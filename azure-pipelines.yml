@@ -20,7 +20,7 @@ stages:
     steps:
     - task: Maven@3
       inputs:
-        mavenPomFile: 'pom.xml'
+        mavenPomFile: 'src/freee-accounting-sdk/pom.xml'
         options: '--no-transfer-progress -DperformRelease=true'
         publishJUnitResults: true
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
@@ -68,7 +68,7 @@ stages:
         cp -v $(azureconfig.secureFilePAth) $(Build.SourcesDirectory)/src/test/resources/
     - task: Maven@3
       inputs:
-        mavenPomFile: 'pom.xml'
+        mavenPomFile: 'src/freee-accounting-sdk/pom.xml'
         publishJUnitResults: true
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
         javaHomeOption: 'JDKVersion'
