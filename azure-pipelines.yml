@@ -43,8 +43,8 @@ stages:
       vmImage: 'ubuntu-16.04'
     steps:
     - script: |
-        VERSION_TAG=`git describe --tags` && echo "##vso[task.setvariable variable=VERSION_TAG]$VERSION_TAG"
-        echo $(VERSION_TAG)
+        VERSION_TAG=${BUILD_SOURCEBRANCHNAME:1} && echo "##vso[task.setvariable variable=VERSION_TAG]$VERSION_TAG"
+        echo $VERSION_TAG
     - task: DownloadSecureFile@1
       name: settingsSecurityXml
       displayName: 'Download maven security settings file'
