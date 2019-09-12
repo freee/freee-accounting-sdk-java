@@ -167,7 +167,7 @@ public interface AccountItems {
      * 指定した事業所の勘定科目一覧を取得する.
      *
      * @param companyId 事業所ID
-     * @param baseDate 基準日
+     * @param baseDate 基準日:指定した場合、勘定科目に紐づく税区分(default_tax_code)が、基準日の税率に基づいて返ります。
      * @throws IllegalArgumentException thrown if parameters fail the validation
      * @throws RestException thrown if the request is rejected by server
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent
@@ -180,7 +180,7 @@ public interface AccountItems {
      * 指定した事業所の勘定科目一覧を取得する.
      *
      * @param companyId 事業所ID
-     * @param baseDate 基準日
+     * @param baseDate 基準日:指定した場合、勘定科目に紐づく税区分(default_tax_code)が、基準日の税率に基づいて返ります。
      * @param serviceCallback the async ServiceCallback to handle successful and failed responses.
      * @throws IllegalArgumentException thrown if parameters fail the validation
      * @return the {@link ServiceFuture} object
@@ -192,7 +192,7 @@ public interface AccountItems {
      * 指定した事業所の勘定科目一覧を取得する.
      *
      * @param companyId 事業所ID
-     * @param baseDate 基準日
+     * @param baseDate 基準日:指定した場合、勘定科目に紐づく税区分(default_tax_code)が、基準日の税率に基づいて返ります。
      * @throws IllegalArgumentException thrown if parameters fail the validation
      * @return the observable to the AccountItemsIndexResponse object
      */
@@ -203,7 +203,7 @@ public interface AccountItems {
      * 指定した事業所の勘定科目一覧を取得する.
      *
      * @param companyId 事業所ID
-     * @param baseDate 基準日
+     * @param baseDate 基準日:指定した場合、勘定科目に紐づく税区分(default_tax_code)が、基準日の税率に基づいて返ります。
      * @throws IllegalArgumentException thrown if parameters fail the validation
      * @return the observable to the AccountItemsIndexResponse object
      */
