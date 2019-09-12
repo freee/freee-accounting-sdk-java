@@ -1,0 +1,82 @@
+trigger:
+  branches:
+    include:
+    - master
+  tags:
+    include:
+    - v*
+
+variables:
+  buildConfiguration: 'Release'
+  isGitHubTag: $[startsWith(variables['Build.SourceBranch'], 'refs/tags/v')]
+
+stages:
+- stage: Build
+  jobs:
+  - job: Bulid_Package
+    condition: ne(variables['isGitHubTag'], 'true')
+    pool:
+      vmImage: 'ubuntu-16.04'
+    steps:
+    - task: Maven@3
+      inputs:
+        mavenPomFile: 'src/freee-accounting-sdk/pom.xml'
+        options: '--no-transfer-progress -DperformRelease=true'
+        publishJUnitResults: false
+        testResultsFiles: '**/surefire-reports/TEST-*.xml'
+        javaHomeOption: 'JDKVersion'
+        jdkVersionOption: '1.8'
+        jdkArchitectureOption: 'x64'
+        mavenVersionOption: 'Default'
+        mavenAuthenticateFeed: false
+        effectivePomSkip: false
+        sonarQubeRunAnalysis: false
+        goals: 'clean package'
+
+- stage: Deploy
+  dependsOn: 
+  - Build
+  condition: and(succeeded(), eq(variables['isGitHubTag'], 'true'))
+  jobs:
+  - job: Deploy_Sonatype
+    pool: 
+      vmImage: 'ubuntu-16.04'
+    steps:
+    - script: |
+        VERSION_TAG=${BUILD_SOURCEBRANCHNAME:1} && echo "##vso[task.setvariable variable=VERSION_TAG]$VERSION_TAG"
+        echo $VERSION_TAG
+    - task: DownloadSecureFile@1
+      name: settingsSecurityXml
+      displayName: 'Download maven security settings file'
+      inputs:
+        secureFile: 'settings-security.xml'
+    - task: DownloadSecureFile@1
+      name: settingsXml
+      displayName: 'Download maven settings file'
+      inputs:
+        secureFile: 'settings.xml'
+    - task: DownloadSecureFile@1
+      name: key
+      displayName: 'Download private key file'
+      inputs:
+        secureFile: 'freee.private.asc'
+    - script: |
+        gpg --import $(key.secureFilePath)
+        mkdir -p ~/.m2
+        cp -v $(settingsSecurityXml.secureFilePath) ~/.m2/
+        cp -v $(settingsXml.secureFilePath) ~/.m2/
+        cp -v $(azureconfig.secureFilePAth) $(Build.SourcesDirectory)/src/test/resources/
+    - task: Maven@3
+      inputs:
+        mavenPomFile: 'src/freee-accounting-sdk/pom.xml'
+        publishJUnitResults: false
+        testResultsFiles: '**/surefire-reports/TEST-*.xml'
+        javaHomeOption: 'JDKVersion'
+        jdkVersionOption: '1.8'
+        jdkArchitectureOption: 'x64'
+        mavenVersionOption: 'Default'
+        mavenAuthenticateFeed: false
+        effectivePomSkip: false
+        sonarQubeRunAnalysis: false
+        goals: 'clean deploy' 
+        options: '--no-transfer-progress -DperformRelease=true -DskipTests=true -Dchangelist= -Drevision=$(VERSION_TAG)'
