@@ -31,7 +31,7 @@ public class CreateExpenseApplicationParams {
     /**
      * 申請日 (yyyy-mm-dd).
      */
-    @JsonProperty(value = "issue_date")
+    @JsonProperty(value = "issue_date", required = true)
     private String issueDate;
 
     /**
