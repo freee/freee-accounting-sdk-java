@@ -37,8 +37,8 @@ public class CreateWalletableParams {
     /**
      * サービスID.
      */
-    @JsonProperty(value = "bank_id", required = true)
-    private int bankId;
+    @JsonProperty(value = "bank_id")
+    private Integer bankId;
 
     /**
      * 決算書表示名（小カテゴリー） 例：売掛金, 受取手形, 未収入金（法人のみ）, 買掛金, 支払手形, 未払金, 預り金, 前受金.
@@ -111,7 +111,7 @@ public class CreateWalletableParams {
      *
      * @return the bankId value
      */
-    public int bankId() {
+    public Integer bankId() {
         return this.bankId;
     }
 
@@ -121,7 +121,7 @@ public class CreateWalletableParams {
      * @param bankId the bankId value to set
      * @return the CreateWalletableParams object itself.
      */
-    public CreateWalletableParams withBankId(int bankId) {
+    public CreateWalletableParams withBankId(Integer bankId) {
         this.bankId = bankId;
         return this;
     }
