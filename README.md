@@ -15,7 +15,7 @@ freee 会計APIを Java で利用するための SDK です。
   - [実行環境](#実行環境)
   - [freeeアプリストアへのアプリケーション登録](#freeeアプリストアへのアプリケーション登録)
   - [サンプルの実行方法](#サンプルの実行方法)
-  - [SDKの導入方法](#SDKの導入方法) (WIP)
+  - [SDKの導入方法](#SDKの導入方法)
 - [コントリビューションについて](#コントリビューションについて)
 - [ライセンス](#ライセンス)
 
@@ -43,7 +43,7 @@ freee API に関しては、[チュートリアルガイド](https://app.secure.
 - Java SDK 1.8 以上
 - Maven
 
-このリポジトリでは、Java SDK 1.8 以上を対象としています。Java SDK をお持ちでない方は、適宜インストールしてください。また、サンプルや導入方法では Spring boot (2.1.6) を利用します。
+このリポジトリでは、Java SDK 1.8 以上を対象としています。Java SDK をお持ちでない方は、適宜インストールしてください。また、サンプルや導入方法では Spring Boot (執筆時点の最新バージョン 2.1.7) を利用します。
 
 ### freeeアプリストアへのアプリケーション登録
 
@@ -83,10 +83,10 @@ security:
 `application.yml` を編集できたら、ターミナルで下記を実行し `http://localhost:8080` を開きます。
 
 ```powershell
-# パッケージをインストールする
+# パッケージを作成する
 mvn clean package
 
-# Spring boot を起動する
+# Spring Boot を起動する
 mvn spring-boot:run
 ```
 
@@ -98,9 +98,407 @@ _Basic Web Sample for freee_ と書かれたページが表示されれば正常
 
 ### SDKの導入方法
 
-ここでは、Spring boot プロジェクトに、本 SDK を導入する方法を説明します。
+Spring Boot プロジェクトに、本 SDK を導入する方法を説明します。
 
-WIP
+大まかな作業は以下のとおりです。
+
+- Spring Boot のプロジェクトを構成する
+- コンフィグレーションを設定する
+- アプリケーションクラスを構成する
+- 本 SDK を利用するためのサービスを作成する
+- コントローラおよびビューを作成する
+- 動作確認
+- (オプション) Principal をカスタマイズする
+
+なお、ここでは、下記の記事を参考にすすめます。
+
+- [Getting Started · Securing a Web Application](https://spring.io/guides/gs/securing-web/)
+- [Tutorial · Spring Boot and OAuth2](https://spring.io/guides/tutorials/spring-boot-oauth2/)
+- [OAuth 2 Developers Guide - Spring Security OAuth](https://projects.spring.io/spring-security-oauth/docs/oauth2.html)
+- [Thymeleaf + Spring Security integration basics - Thymeleaf](https://www.thymeleaf.org/doc/articles/springsecurity.html)
+
+#### Spring Boot のプロジェクトを構成する
+
+それではまず、プロジェクトを構成しましょう。ここでは [Spring Initializr](https://start.spring.io/) で構成した Spring Boot のプロジェクトを例に説明します。ご自身のプロジェクトに導入する場合は、適宜読み替えてください。
+
+Spring Initializr で構成する場合は、下記の Dependencies を選択してプロジェクトを作成してください。既存のプロジェクトの場合は、下記に該当するパッケージを追加してください。
+
+- Spring Web Starter (`spring-boot-starter-web`)
+- Spring Security (`spring-boot-starter-security`)
+- OAuth2 client (`spring-boot-starter-oauth2-client`)
+- Thymeleaf (`spring-boot-starter-thymeleaf`)
+
+さらに下記の Dependencies を追加してください。
+```xml
+<dependencies>
+
+    <!-- 省略 -->
+
+    <dependency>
+        <groupId>org.springframework.security.oauth.boot</groupId>
+        <artifactId>spring-security-oauth2-autoconfigure</artifactId>
+        <version>2.1.7.RELEASE</version> <!-- Spring Boot のバージョンに合わせてください -->
+    </dependency>
+    <dependency>
+        <groupId>org.thymeleaf.extras</groupId>
+        <artifactId>thymeleaf-extras-springsecurity5</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>jp.co.freee</groupId>
+        <artifactId>freee-accounting-sdk</artifactId>
+        <version>1.0.0-preview</version>
+    </dependency>
+</dependencies>
+```
+
+#### コンフィグレーションを設定する
+
+つぎに、コンフィグレーションを設定します。 `src/main/resources` 配下に `application.properties` または `application.yml` を作成し、下記に該当する設定を記述します。下記は `application.yml` における例です。
+
+`<<set your client id>>` および `<<set your client secret>>` は、それぞれ前述の freee アプリケーション登録で取得した `client-id` と `client-secret` を設定してください。 
+
+```yaml
+server:
+  port: 8080
+security:
+  oauth2:
+    client:
+      client-id: <<set your client id>>
+      client-secret: <<set your client secret>>
+      access-token-uri: https://accounts.secure.freee.co.jp/public_api/token
+      user-authorization-uri: https://accounts.secure.freee.co.jp/public_api/authorize
+      client-authentication-scheme: form
+    resource:
+      user-info-uri: https://api.freee.co.jp/api/1/users/me
+      prefer-token-info: false
+    sso:
+      login-path: /login
+```
+
+#### アプリケーションクラスを構成する
+
+つぎに、アプリケーションクラスを設定します。 `@SpringBootApplication` アノテーションを付与したアプリケーションクラスを以下を参考に編集してください。
+
+```java
+package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+// -- ★1. ここから --
+import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+// -- ★1. ここまで追加 --
+
+@SpringBootApplication
+@EnableOAuth2Sso  // -- ★2. この行を追加
+public class DemoApplication extends WebSecurityConfigurerAdapter {  // -- ★3. WebSecurityConfigurerAdapter を extends する
+
+    public static void main(String[] args) {
+        SpringApplication.run(DemoApplication.class, args);
+    }
+
+    // -- ★4. ここから --
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http
+            .antMatcher("/**")
+            .authorizeRequests()
+            .antMatchers("/", "/login**", "/webjars/**", "/error**")
+            .permitAll()
+            .anyRequest()
+            .authenticated();
+        http
+            .logout()
+            .logoutSuccessUrl("/")
+            .permitAll();
+    }
+    // -- ★4. ここまで追加 --
+}
+```
+
+#### 本 SDK を利用するためのサービスを作成する
+
+つぎに、サービスを作成します。下記を参考に `services/AccountingService.java` として、本 SDK を扱うサービスを作成します。下記では、ユーザー情報を取得する `getUserInfo()` や、企業情報を取得する `getCompanies()` を実装しています。
+
+`src/main/java/com/example/demo/services/AccountingService.java`
+```java
+package com.example.demo.services;
+
+import java.util.List;
+
+import javax.annotation.PostConstruct;
+
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.oauth2.provider.OAuth2Authentication;
+import org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationDetails;
+import org.springframework.stereotype.Service;
+import org.springframework.web.context.WebApplicationContext;
+
+import jp.co.freee.accounting.AccountingClient;
+import jp.co.freee.accounting.AccountingClientFactory;
+import jp.co.freee.accounting.models.ListOKResponseCompaniesItem;
+import jp.co.freee.accounting.models.UsersMeResponseUser;
+
+@Service
+@Scope(value = WebApplicationContext.SCOPE_SESSION, proxyMode = ScopedProxyMode.TARGET_CLASS)
+public class AccountingService {
+
+    private AccountingClient _accountingClient;
+
+    public AccountingService() {
+    }
+
+    @PostConstruct
+    public void init() {
+        OAuth2AuthenticationDetails details = (OAuth2AuthenticationDetails) ((OAuth2Authentication) SecurityContextHolder.getContext().getAuthentication()).getDetails();
+        _accountingClient = AccountingClientFactory.create(details.getTokenValue());
+    }
+
+    /**
+     * ここ以降は、必要に応じて AccountClient を扱うメソッドを実装します。
+     */
+    public UsersMeResponseUser getUserInfo() {
+        return _accountingClient.users().getMe().user();
+    }
+
+    public List<ListOKResponseCompaniesItem> getCompanies() {
+        return _accountingClient.companies().list().companies();
+    }
+}
+```
+
+#### コントローラおよびビューを作成する
+
+最後に、コントローラおよびビューを作成しましょう。
+
+まずログイン状態によって表示を変えるトップページを作成しましょう。
+
+`src/main/java/com/example/demo/controller/HomeController.java`
+```java
+package com.example.demo.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+public class HomeController {
+    @GetMapping("/")
+    public ModelAndView home() {
+        return new ModelAndView("home");
+    }
+}
+```
+
+`src/main/resources/templates/home.html`
+```html
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+  </head>
+
+  <body>
+    <h1>Home</h1>
+    <div sec:authorize="isAuthenticated()">
+      <h3 sec:authentication="name"></h3>
+      <ul>
+        <li><a href="/user">User</a></li>
+      </ul>
+      <ul>
+        <li><a href="/companies">Companies</a></li>
+      </ul>
+    </div>
+    <div>
+      <div sec:authorize="!isAuthenticated()">
+        <a href="/login">Login</a>
+      </div>
+      <div sec:authorize="isAuthenticated()">
+        <form role="form" id="logout" th:action="@{/logout}" method="post">
+          <button type="submit">Logout</button>
+        </form>
+      </div>
+    </div>
+  </body>
+
+</html>
+```
+
+次に `/user` と `/companies` ページ作成します。
+
+`src/main/java/com/example/demo/controller/FreeeController.java`
+```java
+package com.example.demo.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import freee.accounting.samples.basic.web.services.AccountingService;
+
+@Controller
+public class FreeeController {
+
+    @Autowired
+    private AccountingService _accountingService;
+
+    @GetMapping("/user")
+    public ModelAndView user() {
+        return new ModelAndView("user", "user", _accountingService.getUserInfo());
+    }
+
+    @GetMapping("/companies")
+    public ModelAndView companies() {
+        return new ModelAndView("companies", "companies", _accountingService.getCompanies());
+    }
+}
+```
+
+`src/main/resources/templates/user.html`
+```html
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+  <head>
+    <meta charset="utf-8">
+    <title>User</title>
+  </head>
+
+  <body>
+    <h1>User information</h1>
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th>Attribute</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>id</td>
+            <td th:text=${user.id()}></td>
+          </tr>
+          <tr>
+            <td>email</td>
+            <td th:text=${user.email()}></td>
+          </tr>
+          <tr>
+            <td>displayName</td>
+            <td th:text=${user.displayName()}></td>
+          </tr>
+          <tr>
+            <td>lastName</td>
+            <td th:text=${user.lastName()}></td>
+          </tr>
+          <tr>
+            <td>firstName</td>
+            <td th:text=${user.firstName()}></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+
+</html>
+```
+
+```html
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Companies</title>
+  </head>
+
+  <body>
+    <h1>Companies information</h1>
+    <div>
+      <ul th:each="company : ${companies}">
+        <li th:text="${company.displayName()}"></li>
+      </ul>        
+    </div>
+  </body>
+
+</html>
+```
+
+#### 動作確認
+
+ここまで準備ができたら、アプリケーションを起動してみましょう。ターミナルで下記を実行し、 `https://localhost:8080` を開きます。
+
+```powershell
+# パッケージをインストールする
+mvn clean package
+
+# Spring Boot を起動する
+mvn spring-boot:run
+```
+
+正常に動作していれば、 `Login` というリンクからログインができます。すると、ユーザー情報や `/user`, `/companies` へのリンクが表示されるようになり、それぞれのページでも情報が取得できていることを確認できます。
+
+停止するときは、ターミナルで `Ctrl + C` を入力してください。
+
+#### (オプション) Principal をカスタマイズする
+
+さて、前述までの作業では、トップページに表示されるユーザー情報が JSON 形式で表示され扱いにくいものになっています。そこで、 Principal を編集してみましょう。下記のように `PrincipalExtractor` を実装します。
+
+`src/main/java/com/example/demo/FreeePrincipalExtractor.java`
+```java
+package com.example.demo;
+
+import java.util.Map;
+
+import org.springframework.boot.autoconfigure.security.oauth2.resource.PrincipalExtractor;
+
+public class FreeePrincipalExtractor implements PrincipalExtractor {
+
+    @Override
+    @SuppressWarnings("unchecked")
+    public Object extractPrincipal(Map<String, Object> map) {
+        Map<String, ?> user = (Map<String, ?>) map.get("user");
+        return user.get("last_name") + " " + user.get("first_name");
+    }
+}
+```
+
+そして、アプリケーションクラスに、下記のように Bean 設定を追加します。
+
+```java
+// -- ★5. ここから --
+import org.springframework.boot.autoconfigure.security.oauth2.resource.PrincipalExtractor;
+import org.springframework.context.annotation.Bean;
+// -- ★5. ここまでの import を追加する
+
+// -- 中略 --
+
+@SpringBootApplication
+@EnableOAuth2Sso
+public class DemoApplication extends WebSecurityConfigurerAdapter {
+    // -- 中略 --
+
+    // -- ★6. ここから --
+    @Bean
+    public PrincipalExtractor freeePrincipalExtractor() {
+        return new FreeePrincipalExtractor();
+    }
+    // -- ★6. ここまで追加する --
+}
+```
+
+これで再度ターミナルで下記を実行し、アプリケーションを実行しましょう。 `https://localhost:8080` を開きログインすると、ユーザー情報が JSON ではなく、 `FreeePrincipalExtractor` で実装したように、姓と名がスペースで結合されて表示されていることを確認できます。
+
+```powershell
+# Spring Boot を起動する
+mvn spring-boot:run
+```
 
 ## コントリビューションについて
 
