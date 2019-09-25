@@ -65,7 +65,6 @@ stages:
         mkdir -p ~/.m2
         cp -v $(settingsSecurityXml.secureFilePath) ~/.m2/
         cp -v $(settingsXml.secureFilePath) ~/.m2/
-        cp -v $(azureconfig.secureFilePath) $(Build.SourcesDirectory)/src/test/resources/
     - task: Maven@3
       inputs:
         mavenPomFile: 'src/freee-accounting-sdk/pom.xml'
