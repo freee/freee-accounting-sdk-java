@@ -1,8 +1,8 @@
-# freee 会計API SDK for Java
+# 会計freee Jaav API SDK
 
-freee 会計APIを Java で利用するための SDK です。
+会計freee APIを Java で利用するための SDK です。
 
-会計APIの詳細については、[会計API 概要 | freee Developers Community](https://developer.freee.co.jp/docs/accounting) をご参照ください。
+会計freee APIの詳細については、[会計API 概要 | freee Developers Community](https://developer.freee.co.jp/docs/accounting) をご参照ください。
 
 ## 目次
 
@@ -17,7 +17,7 @@ freee 会計APIを Java で利用するための SDK です。
 
 ## チュートリアル
 
-freee 会計API SDK for Java を利用する手順について記載します。
+会計freee Java SDK を利用する手順について記載します。
 
 ### 前提条件
 
