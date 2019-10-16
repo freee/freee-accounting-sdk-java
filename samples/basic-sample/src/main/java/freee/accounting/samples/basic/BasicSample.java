@@ -6,6 +6,7 @@ import com.microsoft.rest.credentials.TokenCredentials;
 import com.microsoft.rest.serializer.JacksonAdapter;
 
 import jp.co.freee.accounting.AccountingClient;
+import jp.co.freee.accounting.AccountingClientFactory;
 import jp.co.freee.accounting.implementation.AccountingClientImpl;
 import jp.co.freee.accounting.models.CompaniesShowResponseCompany;
 import jp.co.freee.accounting.models.Invoice;
@@ -19,15 +20,7 @@ public class BasicSample {
         String token = "";
 
         // クライアントの作成
-        TokenCredentials credentials = new TokenCredentials(null, token);
-        RestClient restClient = new RestClient.Builder()
-                .withBaseUrl(AccountingClient.DEFAULT_BASE_URL)
-                .withResponseBuilderFactory(new ServiceResponseBuilder.Factory())
-                .withSerializerAdapter(new JacksonAdapter())
-                .withCredentials(credentials)
-                .build();
-
-        AccountingClient client = new AccountingClientImpl(restClient);
+        AccountingClient client = AccountingClientFactory.create(token);
 
         sample1(companyId, client);
 
@@ -42,7 +35,7 @@ public class BasicSample {
         System.out.println("事業所名 : " + company.displayName());
 
         // 登録されている口座の一覧を取得する
-        for (WalletablesIndexResponseWalletablesItem item : client.walletables().list(companyId).walletables()) {
+        for (WalletablesIndexResponseWalletablesItem item : client.walletables().list(companyId, true).walletables()) {
             System.out.println(String.format("口座名 : %s / 登録残高 %s", item.name(), item.walletableBalance()));
         }
 
@@ -50,7 +43,7 @@ public class BasicSample {
         InvoicesIndexResponse invoicesIndex = client.invoices().list(companyId);
 
         for (Invoice invoice : invoicesIndex.invoices()) {
-            System.out.println(String.format("売上計上日 : %s / 合計金額 : %s", invoice.bookingDate(), invoice.totalAmount()));
+            System.out.println(String.format("売上計上日 : %s / 合計金額 : %s", invoice.issueDate(), invoice.totalAmount()));
         }
     }
 
@@ -63,7 +56,7 @@ public class BasicSample {
 
         // 登録されている口座の一覧を取得する
         client.walletables()
-                .listAsync(companyId)
+                .listAsync(companyId, true)
                 .flatMapIterable(r -> r.walletables())
                 .subscribe(w -> System.out.println(String.format("口座名 : %s / 登録残高 %s", w.name(), w.walletableBalance())));
 
@@ -71,7 +64,7 @@ public class BasicSample {
         client.invoices()
                 .listAsync(companyId)
                 .flatMapIterable(r -> r.invoices())
-                .subscribe(i -> System.out.println(String.format("売上計上日 : %s / 合計金額 : %s", i.bookingDate(), i.totalAmount())));
+                .subscribe(i -> System.out.println(String.format("売上計上日 : %s / 合計金額 : %s", i.issueDate(), i.totalAmount())));
     }
 
 }
