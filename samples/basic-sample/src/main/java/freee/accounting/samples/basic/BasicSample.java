@@ -1,13 +1,7 @@
 package freee.accounting.samples.basic;
 
-import com.microsoft.rest.RestClient;
-import com.microsoft.rest.ServiceResponseBuilder;
-import com.microsoft.rest.credentials.TokenCredentials;
-import com.microsoft.rest.serializer.JacksonAdapter;
-
 import jp.co.freee.accounting.AccountingClient;
 import jp.co.freee.accounting.AccountingClientFactory;
-import jp.co.freee.accounting.implementation.AccountingClientImpl;
 import jp.co.freee.accounting.models.CompaniesShowResponseCompany;
 import jp.co.freee.accounting.models.Invoice;
 import jp.co.freee.accounting.models.InvoicesIndexResponse;
@@ -43,7 +37,7 @@ public class BasicSample {
         InvoicesIndexResponse invoicesIndex = client.invoices().list(companyId);
 
         for (Invoice invoice : invoicesIndex.invoices()) {
-            System.out.println(String.format("売上計上日 : %s / 合計金額 : %s", invoice.issueDate(), invoice.totalAmount()));
+            System.out.println(String.format("請求日 : %s / 合計金額 : %s", invoice.issueDate(), invoice.totalAmount()));
         }
     }
 
@@ -64,7 +58,7 @@ public class BasicSample {
         client.invoices()
                 .listAsync(companyId)
                 .flatMapIterable(r -> r.invoices())
-                .subscribe(i -> System.out.println(String.format("売上計上日 : %s / 合計金額 : %s", i.issueDate(), i.totalAmount())));
+                .subscribe(i -> System.out.println(String.format("請求日 : %s / 合計金額 : %s", i.issueDate(), i.totalAmount())));
     }
 
 }
