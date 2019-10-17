@@ -11,7 +11,7 @@
 
     <groupId>jp.co.freee</groupId>
     <artifactId>basic-websample</artifactId>
-    <version>1.0.0-preview2</version>
+    <version>1.0.0</version>
     <name>basic-websample</name>
     <description>Basic Web Application</description>
 
@@ -64,7 +64,7 @@
         <dependency>
             <groupId>jp.co.freee</groupId>
             <artifactId>freee-accounting-sdk</artifactId>
-            <version>1.0.0-preview2</version>
+            <version>1.0.0</version>
         </dependency>
 
         <dependency>
