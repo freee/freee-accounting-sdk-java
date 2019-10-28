@@ -1,4 +1,4 @@
-# 会計freee Jaav API SDK
+# 会計freee Java API SDK
 
 会計freee APIを Java で利用するための SDK です。
 
