@@ -14,9 +14,14 @@
         <div class="row">
             <h1>Companies Information</h1>
         </div>
-        <ul th:each="company : ${companies}">
-            <li th:text="${company.displayName()}"></li>
-        </ul>
+        <table class="table">
+            <tbody th:each="company : ${companies}">
+                <tr>
+                    <td th:text="${company.getId()}"></td>
+                    <td th:text="${company.getDisplayName()}"></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </body>
 
