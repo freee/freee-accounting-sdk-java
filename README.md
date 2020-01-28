@@ -39,7 +39,7 @@ freee API に関しては、[チュートリアルガイド](https://app.secure.
 - Java SDK 1.8 以上
 - Maven
 
-このリポジトリでは、Java SDK 1.8 以上を対象としています。Java SDK をお持ちでない方は、適宜インストールしてください。また、サンプルや導入方法では Spring Boot (執筆時点の最新バージョン 2.1.7) を利用します。
+このリポジトリでは、Java SDK 1.8 以上を対象としています。Java SDK をお持ちでない方は、適宜インストールしてください。また、サンプルや導入方法では Spring Boot (執筆時点のバージョン 2.1.12) を利用します。
 
 ### freeeアプリストアへのアプリケーション登録
 
@@ -53,7 +53,7 @@ freee API に関しては、[チュートリアルガイド](https://app.secure.
 
 #### WebApp のサンプル
 
-本リポジトリをクローンしたのち、PowerShell や bash などのターミナルで下記の操作を行います。
+WebApp のサンプルは Spring Boot を使用したウェブアプリです。本リポジトリをクローンしたのち、PowerShell や bash などのターミナルで下記の操作を行います。
 
 ```powershell
 # クローンしたディレクトリへ移動する
@@ -119,7 +119,7 @@ Spring Boot プロジェクトに、本 SDK を導入する方法を説明しま
 
 Spring Initializr で構成する場合は、下記の Dependencies を選択してプロジェクトを作成してください。既存のプロジェクトの場合は、下記に該当するパッケージを追加してください。
 
-- Spring Web Starter (`spring-boot-starter-web`)
+- Spring Web (`spring-boot-starter-web`)
 - Spring Security (`spring-boot-starter-security`)
 - OAuth2 client (`spring-boot-starter-oauth2-client`)
 - Thymeleaf (`spring-boot-starter-thymeleaf`)
@@ -133,7 +133,7 @@ Spring Initializr で構成する場合は、下記の Dependencies を選択し
     <dependency>
         <groupId>org.springframework.security.oauth.boot</groupId>
         <artifactId>spring-security-oauth2-autoconfigure</artifactId>
-        <version>2.1.7.RELEASE</version> <!-- Spring Boot のバージョンに合わせてください -->
+        <version>2.1.12.RELEASE</version> <!-- Spring Boot のバージョンに合わせてください -->
     </dependency>
     <dependency>
         <groupId>org.thymeleaf.extras</groupId>
@@ -142,7 +142,7 @@ Spring Initializr で構成する場合は、下記の Dependencies を選択し
     <dependency>
         <groupId>jp.co.freee</groupId>
         <artifactId>freee-accounting-sdk</artifactId>
-        <version>1.0.0-preview</version>
+        <version>2.0.0-alpha-1-SNAPSHOT</version>
     </dependency>
 </dependencies>
 ```
@@ -183,11 +183,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 // -- ★1. ここから --
 import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 // -- ★1. ここまで追加 --
 
 @SpringBootApplication
-@EnableOAuth2Sso  // -- ★2. この行を追加
+// -- ★2. ここから --
+@EnableWebSecurity
+@EnableOAuth2Sso
+// -- ★2. ここまで追加 --
 public class DemoApplication extends WebSecurityConfigurerAdapter {  // -- ★3. WebSecurityConfigurerAdapter を extends する
 
     public static void main(String[] args) {
@@ -233,16 +237,17 @@ import org.springframework.security.oauth2.provider.authentication.OAuth2Authent
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.WebApplicationContext;
 
-import jp.co.freee.accounting.AccountingClient;
-import jp.co.freee.accounting.AccountingClientFactory;
-import jp.co.freee.accounting.models.ListOKResponseCompaniesItem;
+import jp.co.freee.accounting.ApiClient;
+import jp.co.freee.accounting.api.CompaniesApi;
+import jp.co.freee.accounting.api.UsersApi;
+import jp.co.freee.accounting.models.CompaniesIndexResponseCompanies;
 import jp.co.freee.accounting.models.UsersMeResponseUser;
 
 @Service
 @Scope(value = WebApplicationContext.SCOPE_SESSION, proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class AccountingService {
 
-    private AccountingClient _accountingClient;
+    private ApiClient _apiClient;
 
     public AccountingService() {
     }
@@ -250,18 +255,19 @@ public class AccountingService {
     @PostConstruct
     public void init() {
         OAuth2AuthenticationDetails details = (OAuth2AuthenticationDetails) ((OAuth2Authentication) SecurityContextHolder.getContext().getAuthentication()).getDetails();
-        _accountingClient = AccountingClientFactory.create(details.getTokenValue());
+        _apiClient = new ApiClient("oauth2");
+        String token = details.getTokenValue();
+        _apiClient.setAccessToken(token);
     }
 
-    /**
-     * ここ以降は、必要に応じて AccountClient を扱うメソッドを実装します。
-     */
     public UsersMeResponseUser getUserInfo() {
-        return _accountingClient.users().getMe().user();
+        UsersApi api = _apiClient.createService(UsersApi.class);
+        return api.getUsersMe(null).blockingSingle().getUser();
     }
 
-    public List<ListOKResponseCompaniesItem> getCompanies() {
-        return _accountingClient.companies().list().companies();
+    public List<CompaniesIndexResponseCompanies> getCompanies() {
+        CompaniesApi api = _apiClient.createService(CompaniesApi.class);
+        return api.getCompanies().blockingSingle().getCompanies();
     }
 }
 ```
@@ -336,7 +342,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import freee.accounting.samples.basic.web.services.AccountingService;
+import com.example.demo.services.AccountingService;
 
 @Controller
 public class FreeeController {
@@ -367,7 +373,7 @@ public class FreeeController {
   </head>
 
   <body>
-    <h1>User information</h1>
+    <h1>User Information</h1>
     <div>
       <table>
         <thead>
@@ -379,23 +385,23 @@ public class FreeeController {
         <tbody>
           <tr>
             <td>id</td>
-            <td th:text=${user.id()}></td>
+            <td th:text=${user.getId()}></td>
           </tr>
           <tr>
             <td>email</td>
-            <td th:text=${user.email()}></td>
+            <td th:text=${user.getEmail()}></td>
           </tr>
           <tr>
             <td>displayName</td>
-            <td th:text=${user.displayName()}></td>
+            <td th:text=${user.getDisplayName()}></td>
           </tr>
           <tr>
             <td>lastName</td>
-            <td th:text=${user.lastName()}></td>
+            <td th:text=${user.getLastName()}></td>
           </tr>
           <tr>
             <td>firstName</td>
-            <td th:text=${user.firstName()}></td>
+            <td th:text=${user.getFirstName()}></td>
           </tr>
         </tbody>
       </table>
@@ -405,6 +411,7 @@ public class FreeeController {
 </html>
 ```
 
+`src/main/resources/templates/companies.html`
 ```html
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
@@ -415,11 +422,16 @@ public class FreeeController {
   </head>
 
   <body>
-    <h1>Companies information</h1>
+    <h1>Companies Information</h1>
     <div>
-      <ul th:each="company : ${companies}">
-        <li th:text="${company.displayName()}"></li>
-      </ul>        
+      <table>
+        <tbody th:each="company : ${companies}">
+        <tr>
+          <td th:text="${company.getId()}"></td>
+          <td th:text="${company.getDisplayName()}"></td>
+        </tr>
+        </tbody>
+      </table>
     </div>
   </body>
 
