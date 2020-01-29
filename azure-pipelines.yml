@@ -20,7 +20,7 @@ stages:
     steps:
     - task: Maven@3
       inputs:
-        mavenPomFile: 'src/freee-accounting-sdk/pom.xml'
+        mavenPomFile: 'sdk/pom.xml'
         options: '--no-transfer-progress -DperformRelease=true'
         publishJUnitResults: false
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
@@ -67,7 +67,7 @@ stages:
         cp -v $(settingsXml.secureFilePath) ~/.m2/
     - task: Maven@3
       inputs:
-        mavenPomFile: 'src/freee-accounting-sdk/pom.xml'
+        mavenPomFile: 'sdk/pom.xml'
         publishJUnitResults: false
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
         javaHomeOption: 'JDKVersion'
