@@ -507,6 +507,10 @@ public class DemoApplication extends WebSecurityConfigurerAdapter {
 # Spring Boot を起動する
 mvn spring-boot:run
 ```
+### basic-websample-rxについて
+
+チュートリアルで紹介した`basic-websample` を `Sprint WebFlux` と `Spring Security`で再実装したものです。コールバックURLを、`http://localhost:8080/login/oauth2/code/freee`に変更すれば実行できます。
+
 
 ## コントリビューションについて
 
