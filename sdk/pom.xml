@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
 
     <properties>
-        <revision>2.0.0-alpha-1</revision>
+        <revision>2.0.0-alpha</revision>
         <changelist>-SNAPSHOT</changelist>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
