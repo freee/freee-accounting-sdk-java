@@ -1,0 +1,48 @@
+
+
+# Receipt
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | **Integer** | 証憑ID | 
+**status** | [**StatusEnum**](#StatusEnum) | ステータス(unconfirmed:確認待ち、confirmed:確認済み、deleted:削除済み、ignored:無視) | 
+**description** | **String** | メモ |  [optional]
+**mimeType** | **String** | MIMEタイプ | 
+**issueDate** | **String** | 発生日 |  [optional]
+**origin** | [**OriginEnum**](#OriginEnum) | アップロード元種別 | 
+**createdAt** | **String** | 作成日時（ISO8601形式） | 
+**fileSrc** | **String** | ファイルのダウンロードURL（freeeにログインした状態でのみ閲覧可能です。） | 
+**user** | [**ReceiptUser**](ReceiptUser.md) |  | 
+
+
+
+## Enum: StatusEnum
+
+Name | Value
+---- | -----
+UNCONFIRMED | &quot;unconfirmed&quot;
+CONFIRMED | &quot;confirmed&quot;
+DELETED | &quot;deleted&quot;
+IGNORED | &quot;ignored&quot;
+
+
+
+## Enum: OriginEnum
+
+Name | Value
+---- | -----
+UNKNOWN | &quot;unknown&quot;
+WEB | &quot;web&quot;
+MOBILE_CAMERA | &quot;mobile_camera&quot;
+MOBILE_ALBUM | &quot;mobile_album&quot;
+SCANSNAP | &quot;scansnap&quot;
+SCANNABLE | &quot;scannable&quot;
+DROPBOX | &quot;dropbox&quot;
+MAIL | &quot;mail&quot;
+SAFETY_CONTACT_FILE | &quot;safety_contact_file&quot;
+PUBLIC_API | &quot;public_api&quot;
+
+
+

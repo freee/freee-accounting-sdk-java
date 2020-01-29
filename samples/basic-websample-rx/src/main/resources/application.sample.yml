@@ -1,0 +1,29 @@
+logging:
+  level:
+    org.springframework: INFO
+    org.thymeleaf: INFO
+server:
+  port: 8080
+spring:
+  thymeleaf:
+    cache: false
+  security:
+    oauth2:
+      client:
+        registration:
+          freee:
+            client-id: <<your client id>>
+            client-secret: <<your client secret>>
+            client-name: freee-accouning-sdk-sample
+            scope:
+            - read
+            client-authentication-method: post
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:8080/login/oauth2/code/freee
+        provider:
+          freee:
+            token-uri: https://accounts.secure.freee.co.jp/public_api/token
+            authorization-uri: https://accounts.secure.freee.co.jp/public_api/authorize
+            user-info-uri: https://api.freee.co.jp/api/1/users/me
+            user-name-attribute: user
+

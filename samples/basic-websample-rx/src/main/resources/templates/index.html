@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="utf-8">
+    <title>Basic Web Sample</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.4.1/css/bootstrap.min.css" />
+    <script src="/webjars/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class=container-fluid style="padding: 20px">
+        <div class="row">
+            <h1>Basic Web Sample for freee</h1>
+        </div>
+        <div class="row">
+            <div sec:authorize="isAuthenticated()">
+                <h3  th:text="${username}"></h3>
+                <ul>
+                    <li><a href="/user">User</a></li>
+                </ul>
+                <ul>
+                    <li><a href="/companies">Companies</a></li>
+                </ul>
+                <ul>
+                    <li><a href="/token">Token</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div sec:authorize="isAnonymous()">
+                <a class="btn btn-primary" href="/oauth2/authorization/freee">Login</a>
+            </div>
+            <div sec:authorize="isAuthenticated()">
+                <form role="form" id="logout" th:action="@{/logout}" method="post">
+                    <button class="btn btn-danger" type="submit">Logout</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
