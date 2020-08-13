@@ -48,7 +48,7 @@ public class ApiClient {
       Interceptor auth;
       if ("oauth2".equals(authName)) {
         
-        auth = new OAuth(OAuthFlow.accessCode, "https://accounts.secure.freee.co.jp/public_api/authorize", "https://accounts.secure.freee.co.jp/public_api/token", "write, read");
+        auth = new OAuth(OAuthFlow.accessCode, "https://accounts.secure.freee.co.jp/public_api/authorize", "https://accounts.secure.freee.co.jp/public_api/token", "read, write");
       } else {
         throw new RuntimeException("auth name \"" + authName + "\" not found in available auth names");
       }

@@ -3,10 +3,11 @@ package jp.co.freee.accounting.api;
 import jp.co.freee.accounting.ApiClient;
 import jp.co.freee.accounting.models.BadRequestError;
 import jp.co.freee.accounting.models.BadRequestNotFoundError;
+import jp.co.freee.accounting.models.ForbiddenError;
+import jp.co.freee.accounting.models.InlineResponse20014;
 import jp.co.freee.accounting.models.InternalServerError;
 import jp.co.freee.accounting.models.TransferParams;
-import jp.co.freee.accounting.models.TransfersIndexResponse;
-import jp.co.freee.accounting.models.TransfersResponse;
+import jp.co.freee.accounting.models.TransferResponse;
 import jp.co.freee.accounting.models.UnauthorizedError;
 import org.junit.Before;
 import org.junit.Test;
@@ -35,8 +36,8 @@ public class TransfersApiTest {
      */
     @Test
     public void createTransferTest() {
-        TransferParams parameter = null;
-        // TransfersResponse response = api.createTransfer(parameter);
+        TransferParams transferParams = null;
+        // TransferResponse response = api.createTransfer(transferParams);
 
         // TODO: test validations
     }
@@ -62,7 +63,7 @@ public class TransfersApiTest {
     public void getTransferTest() {
         Integer id = null;
         Integer companyId = null;
-        // TransfersResponse response = api.getTransfer(id, companyId);
+        // TransferResponse response = api.getTransfer(id, companyId);
 
         // TODO: test validations
     }
@@ -78,7 +79,7 @@ public class TransfersApiTest {
         String endDate = null;
         Integer offset = null;
         Integer limit = null;
-        // TransfersIndexResponse response = api.getTransfers(companyId, startDate, endDate, offset, limit);
+        // InlineResponse20014 response = api.getTransfers(companyId, startDate, endDate, offset, limit);
 
         // TODO: test validations
     }
@@ -90,8 +91,8 @@ public class TransfersApiTest {
     @Test
     public void updateTransferTest() {
         Integer id = null;
-        TransferParams parameter = null;
-        // TransfersResponse response = api.updateTransfer(id, parameter);
+        TransferParams transferParams = null;
+        // TransferResponse response = api.updateTransfer(id, transferParams);
 
         // TODO: test validations
     }

@@ -3,12 +3,13 @@ package jp.co.freee.accounting.api;
 import jp.co.freee.accounting.ApiClient;
 import jp.co.freee.accounting.models.BadRequestError;
 import jp.co.freee.accounting.models.BadRequestNotFoundError;
-import jp.co.freee.accounting.models.CreateExpenseApplicationParams;
+import jp.co.freee.accounting.models.ExpenseApplicationCreateParams;
+import jp.co.freee.accounting.models.ExpenseApplicationResponse;
+import jp.co.freee.accounting.models.ExpenseApplicationUpdateParams;
 import jp.co.freee.accounting.models.ExpenseApplicationsIndexResponse;
-import jp.co.freee.accounting.models.ExpenseApplicationsResponse;
+import jp.co.freee.accounting.models.ForbiddenError;
 import jp.co.freee.accounting.models.InternalServerError;
 import jp.co.freee.accounting.models.UnauthorizedError;
-import jp.co.freee.accounting.models.UpdateExpenseApplicationParams;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -36,8 +37,8 @@ public class ExpenseApplicationsApiTest {
      */
     @Test
     public void createExpenseApplicationTest() {
-        CreateExpenseApplicationParams parameters = null;
-        // ExpenseApplicationsResponse response = api.createExpenseApplication(parameters);
+        ExpenseApplicationCreateParams expenseApplicationCreateParams = null;
+        // ExpenseApplicationResponse response = api.createExpenseApplication(expenseApplicationCreateParams);
 
         // TODO: test validations
     }
@@ -63,7 +64,7 @@ public class ExpenseApplicationsApiTest {
     public void getExpenseApplicationTest() {
         Integer id = null;
         Integer companyId = null;
-        // ExpenseApplicationsResponse response = api.getExpenseApplication(id, companyId);
+        // ExpenseApplicationResponse response = api.getExpenseApplication(id, companyId);
 
         // TODO: test validations
     }
@@ -89,8 +90,8 @@ public class ExpenseApplicationsApiTest {
     @Test
     public void updateExpenseApplicationTest() {
         Integer id = null;
-        UpdateExpenseApplicationParams parameters = null;
-        // ExpenseApplicationsResponse response = api.updateExpenseApplication(id, parameters);
+        ExpenseApplicationUpdateParams expenseApplicationUpdateParams = null;
+        // ExpenseApplicationResponse response = api.updateExpenseApplication(id, expenseApplicationUpdateParams);
 
         // TODO: test validations
     }

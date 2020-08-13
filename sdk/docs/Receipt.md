@@ -6,26 +6,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** | 証憑ID | 
-**status** | [**StatusEnum**](#StatusEnum) | ステータス(unconfirmed:確認待ち、confirmed:確認済み、deleted:削除済み、ignored:無視) | 
-**description** | **String** | メモ |  [optional]
-**mimeType** | **String** | MIMEタイプ | 
-**issueDate** | **String** | 発生日 |  [optional]
-**origin** | [**OriginEnum**](#OriginEnum) | アップロード元種別 | 
 **createdAt** | **String** | 作成日時（ISO8601形式） | 
+**description** | **String** | メモ |  [optional]
 **fileSrc** | **String** | ファイルのダウンロードURL（freeeにログインした状態でのみ閲覧可能です。） | 
-**user** | [**ReceiptUser**](ReceiptUser.md) |  | 
-
-
-
-## Enum: StatusEnum
-
-Name | Value
----- | -----
-UNCONFIRMED | &quot;unconfirmed&quot;
-CONFIRMED | &quot;confirmed&quot;
-DELETED | &quot;deleted&quot;
-IGNORED | &quot;ignored&quot;
+**id** | **Integer** | 証憑ID | 
+**issueDate** | **String** | 発生日 |  [optional]
+**mimeType** | **String** | MIMEタイプ | 
+**origin** | [**OriginEnum**](#OriginEnum) | アップロード元種別 | 
+**status** | [**StatusEnum**](#StatusEnum) | ステータス(unconfirmed:確認待ち、confirmed:確認済み、deleted:削除済み、ignored:無視) | 
+**user** | [**DealUser**](DealUser.md) |  | 
 
 
 
@@ -43,6 +32,17 @@ DROPBOX | &quot;dropbox&quot;
 MAIL | &quot;mail&quot;
 SAFETY_CONTACT_FILE | &quot;safety_contact_file&quot;
 PUBLIC_API | &quot;public_api&quot;
+
+
+
+## Enum: StatusEnum
+
+Name | Value
+---- | -----
+UNCONFIRMED | &quot;unconfirmed&quot;
+CONFIRMED | &quot;confirmed&quot;
+DELETED | &quot;deleted&quot;
+IGNORED | &quot;ignored&quot;
 
 
 

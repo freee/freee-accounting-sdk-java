@@ -3,12 +3,11 @@ package jp.co.freee.accounting.api;
 import jp.co.freee.accounting.ApiClient;
 import jp.co.freee.accounting.models.BadRequestError;
 import jp.co.freee.accounting.models.BadRequestNotFoundError;
+import jp.co.freee.accounting.models.ForbiddenError;
+import jp.co.freee.accounting.models.InlineResponse2009;
 import jp.co.freee.accounting.models.InternalServerError;
 import jp.co.freee.accounting.models.SectionParams;
-import jp.co.freee.accounting.models.SectionsCreateResponse;
-import jp.co.freee.accounting.models.SectionsIndexResponse;
-import jp.co.freee.accounting.models.SectionsShowResponse;
-import jp.co.freee.accounting.models.SectionsUpdateResponse;
+import jp.co.freee.accounting.models.SectionResponse;
 import jp.co.freee.accounting.models.UnauthorizedError;
 import org.junit.Before;
 import org.junit.Test;
@@ -37,8 +36,8 @@ public class SectionsApiTest {
      */
     @Test
     public void createSectionTest() {
-        SectionParams parameters = null;
-        // SectionsCreateResponse response = api.createSection(parameters);
+        SectionParams sectionParams = null;
+        // SectionResponse response = api.createSection(sectionParams);
 
         // TODO: test validations
     }
@@ -64,7 +63,7 @@ public class SectionsApiTest {
     public void getSectionTest() {
         Integer id = null;
         Integer companyId = null;
-        // SectionsShowResponse response = api.getSection(id, companyId);
+        // SectionResponse response = api.getSection(id, companyId);
 
         // TODO: test validations
     }
@@ -76,7 +75,7 @@ public class SectionsApiTest {
     @Test
     public void getSectionsTest() {
         Integer companyId = null;
-        // SectionsIndexResponse response = api.getSections(companyId);
+        // InlineResponse2009 response = api.getSections(companyId);
 
         // TODO: test validations
     }
@@ -88,8 +87,8 @@ public class SectionsApiTest {
     @Test
     public void updateSectionTest() {
         Integer id = null;
-        SectionParams parameters = null;
-        // SectionsUpdateResponse response = api.updateSection(id, parameters);
+        SectionParams sectionParams = null;
+        // SectionResponse response = api.updateSection(id, sectionParams);
 
         // TODO: test validations
     }

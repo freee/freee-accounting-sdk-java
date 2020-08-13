@@ -3,13 +3,14 @@ package jp.co.freee.accounting.api;
 import jp.co.freee.accounting.ApiClient;
 import jp.co.freee.accounting.models.BadRequestError;
 import jp.co.freee.accounting.models.BadRequestNotFoundError;
+import jp.co.freee.accounting.models.ForbiddenError;
+import jp.co.freee.accounting.models.InlineResponse20015;
+import jp.co.freee.accounting.models.InlineResponse20016;
 import jp.co.freee.accounting.models.InternalServerError;
+import jp.co.freee.accounting.models.MeResponse;
 import jp.co.freee.accounting.models.UnauthorizedError;
-import jp.co.freee.accounting.models.UserUpdateParams;
-import jp.co.freee.accounting.models.UsersCapabilitiesResponse;
-import jp.co.freee.accounting.models.UsersIndexResponse;
-import jp.co.freee.accounting.models.UsersMeResponse;
-import jp.co.freee.accounting.models.UsersUpdateResponse;
+import jp.co.freee.accounting.models.UserParams;
+import jp.co.freee.accounting.models.UserResponse;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -39,31 +40,31 @@ public class UsersApiTest {
     public void getUsersTest() {
         Integer companyId = null;
         Integer limit = null;
-        // UsersIndexResponse response = api.getUsers(companyId, limit);
+        // InlineResponse20015 response = api.getUsers(companyId, limit);
 
         // TODO: test validations
     }
     /**
-     * ログインユーザの権限の取得
+     * ログインユーザーの権限の取得
      *
-     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ユーザの権限情報を取得する&lt;/p&gt;
+     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ユーザーの権限情報を取得する&lt;/p&gt;
      */
     @Test
     public void getUsersCapabilitiesTest() {
         Integer companyId = null;
-        // UsersCapabilitiesResponse response = api.getUsersCapabilities(companyId);
+        // InlineResponse20016 response = api.getUsersCapabilities(companyId);
 
         // TODO: test validations
     }
     /**
-     * ログインユーザ情報の取得
+     * ログインユーザー情報の取得
      *
-     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ユーザの情報を取得する&lt;/p&gt;
+     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ユーザーの情報を取得する&lt;/p&gt;
      */
     @Test
     public void getUsersMeTest() {
         Boolean companies = null;
-        // UsersMeResponse response = api.getUsersMe(companies);
+        // MeResponse response = api.getUsersMe(companies);
 
         // TODO: test validations
     }
@@ -74,8 +75,8 @@ public class UsersApiTest {
      */
     @Test
     public void updateUserTest() {
-        UserUpdateParams parameters = null;
-        // UsersUpdateResponse response = api.updateUser(parameters);
+        UserParams userParams = null;
+        // UserResponse response = api.updateUser(userParams);
 
         // TODO: test validations
     }

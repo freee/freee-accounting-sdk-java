@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**item** | [**ItemResponseItem**](ItemResponseItem.md) |  | 
+**item** | [**Item**](Item.md) |  | 
 
 
 

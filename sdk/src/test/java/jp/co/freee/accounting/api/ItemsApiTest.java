@@ -3,12 +3,12 @@ package jp.co.freee.accounting.api;
 import jp.co.freee.accounting.ApiClient;
 import jp.co.freee.accounting.models.BadRequestError;
 import jp.co.freee.accounting.models.BadRequestNotFoundError;
-import jp.co.freee.accounting.models.CreateItemParams;
+import jp.co.freee.accounting.models.ForbiddenError;
+import jp.co.freee.accounting.models.InlineResponse2005;
 import jp.co.freee.accounting.models.InternalServerError;
+import jp.co.freee.accounting.models.ItemParams;
 import jp.co.freee.accounting.models.ItemResponse;
-import jp.co.freee.accounting.models.ItemsIndexResponse;
 import jp.co.freee.accounting.models.UnauthorizedError;
-import jp.co.freee.accounting.models.UpdateItemParams;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -36,8 +36,8 @@ public class ItemsApiTest {
      */
     @Test
     public void createItemTest() {
-        CreateItemParams parameters = null;
-        // ItemResponse response = api.createItem(parameters);
+        ItemParams itemParams = null;
+        // ItemResponse response = api.createItem(itemParams);
 
         // TODO: test validations
     }
@@ -75,7 +75,9 @@ public class ItemsApiTest {
     @Test
     public void getItemsTest() {
         Integer companyId = null;
-        // ItemsIndexResponse response = api.getItems(companyId);
+        Integer offset = null;
+        Integer limit = null;
+        // InlineResponse2005 response = api.getItems(companyId, offset, limit);
 
         // TODO: test validations
     }
@@ -87,8 +89,8 @@ public class ItemsApiTest {
     @Test
     public void updateItemTest() {
         Integer id = null;
-        UpdateItemParams parameters = null;
-        // ItemResponse response = api.updateItem(id, parameters);
+        ItemParams itemParams = null;
+        // ItemResponse response = api.updateItem(id, itemParams);
 
         // TODO: test validations
     }

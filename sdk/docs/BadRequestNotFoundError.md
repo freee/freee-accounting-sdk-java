@@ -6,8 +6,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**statusCode** | **Integer** |  |  [optional]
 **errors** | [**List&lt;BadRequestNotFoundErrorErrors&gt;**](BadRequestNotFoundErrorErrors.md) |  |  [optional]
+**statusCode** | **Integer** |  |  [optional]
 
 
 

@@ -3,8 +3,9 @@ package jp.co.freee.accounting.api;
 import jp.co.freee.accounting.ApiClient;
 import jp.co.freee.accounting.models.BadRequestError;
 import jp.co.freee.accounting.models.BadRequestNotFoundError;
-import jp.co.freee.accounting.models.BanksIndexResponse;
-import jp.co.freee.accounting.models.BanksShowResponse;
+import jp.co.freee.accounting.models.BankResponse;
+import jp.co.freee.accounting.models.ForbiddenError;
+import jp.co.freee.accounting.models.InlineResponse2001;
 import jp.co.freee.accounting.models.InternalServerError;
 import jp.co.freee.accounting.models.UnauthorizedError;
 import org.junit.Before;
@@ -35,7 +36,7 @@ public class BanksApiTest {
     @Test
     public void getBankTest() {
         Integer id = null;
-        // BanksShowResponse response = api.getBank(id);
+        // BankResponse response = api.getBank(id);
 
         // TODO: test validations
     }
@@ -49,7 +50,7 @@ public class BanksApiTest {
         Integer offset = null;
         Integer limit = null;
         String type = null;
-        // BanksIndexResponse response = api.getBanks(offset, limit, type);
+        // InlineResponse2001 response = api.getBanks(offset, limit, type);
 
         // TODO: test validations
     }

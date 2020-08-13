@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## createExpenseApplicationLineTemplate
 
-> ExpenseApplicationLineTemplatesResponse createExpenseApplicationLineTemplate(parameters)
+> ExpenseApplicationLineTemplateResponse createExpenseApplicationLineTemplate(expenseApplicationLineTemplateParams)
 
 経費科目の作成
 
@@ -39,9 +39,9 @@ public class Example {
         oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
         ExpenseApplicationLineTemplatesApi apiInstance = new ExpenseApplicationLineTemplatesApi(defaultClient);
-        ExpenseApplicationLineTemplateParams parameters = new ExpenseApplicationLineTemplateParams(); // ExpenseApplicationLineTemplateParams | 経費科目の作成
+        ExpenseApplicationLineTemplateParams expenseApplicationLineTemplateParams = new ExpenseApplicationLineTemplateParams(); // ExpenseApplicationLineTemplateParams | 経費科目の作成
         try {
-            ExpenseApplicationLineTemplatesResponse result = apiInstance.createExpenseApplicationLineTemplate(parameters);
+            ExpenseApplicationLineTemplateResponse result = apiInstance.createExpenseApplicationLineTemplate(expenseApplicationLineTemplateParams);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ExpenseApplicationLineTemplatesApi#createExpenseApplicationLineTemplate");
@@ -59,11 +59,11 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **parameters** | [**ExpenseApplicationLineTemplateParams**](ExpenseApplicationLineTemplateParams.md)| 経費科目の作成 |
+ **expenseApplicationLineTemplateParams** | [**ExpenseApplicationLineTemplateParams**](ExpenseApplicationLineTemplateParams.md)| 経費科目の作成 |
 
 ### Return type
 
-[**ExpenseApplicationLineTemplatesResponse**](ExpenseApplicationLineTemplatesResponse.md)
+[**ExpenseApplicationLineTemplateResponse**](ExpenseApplicationLineTemplateResponse.md)
 
 ### Authorization
 
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 ### HTTP response details
@@ -80,6 +80,7 @@ Name | Type | Description  | Notes
 | **201** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **500** |  |  -  |
 
 
@@ -152,13 +153,14 @@ null (empty response body)
 | **204** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 | **500** |  |  -  |
 
 
 ## getExpenseApplicationLineTemplate
 
-> ExpenseApplicationLineTemplatesResponse getExpenseApplicationLineTemplate(id, companyId)
+> ExpenseApplicationLineTemplateResponse getExpenseApplicationLineTemplate(id, companyId)
 
 経費科目の取得
 
@@ -186,7 +188,7 @@ public class Example {
         Integer id = 56; // Integer | 経費科目ID
         Integer companyId = 56; // Integer | 事業所ID
         try {
-            ExpenseApplicationLineTemplatesResponse result = apiInstance.getExpenseApplicationLineTemplate(id, companyId);
+            ExpenseApplicationLineTemplateResponse result = apiInstance.getExpenseApplicationLineTemplate(id, companyId);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ExpenseApplicationLineTemplatesApi#getExpenseApplicationLineTemplate");
@@ -209,7 +211,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExpenseApplicationLineTemplatesResponse**](ExpenseApplicationLineTemplatesResponse.md)
+[**ExpenseApplicationLineTemplateResponse**](ExpenseApplicationLineTemplateResponse.md)
 
 ### Authorization
 
@@ -226,13 +228,14 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 | **500** |  |  -  |
 
 
 ## getExpenseApplicationLineTemplates
 
-> ExpenseApplicationLineTemplatesIndexResponse getExpenseApplicationLineTemplates(companyId, offset, limit)
+> InlineResponse2003 getExpenseApplicationLineTemplates(companyId, offset, limit)
 
 経費科目一覧の取得
 
@@ -261,9 +264,9 @@ public class Example {
         ExpenseApplicationLineTemplatesApi apiInstance = new ExpenseApplicationLineTemplatesApi(defaultClient);
         Integer companyId = 56; // Integer | 事業所ID
         Integer offset = 56; // Integer | 取得レコードのオフセット (デフォルト: 0)
-        Integer limit = 56; // Integer | 取得レコードの件数 (デフォルト: 20, 最大: 100)
+        Integer limit = 56; // Integer | 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)
         try {
-            ExpenseApplicationLineTemplatesIndexResponse result = apiInstance.getExpenseApplicationLineTemplates(companyId, offset, limit);
+            InlineResponse2003 result = apiInstance.getExpenseApplicationLineTemplates(companyId, offset, limit);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ExpenseApplicationLineTemplatesApi#getExpenseApplicationLineTemplates");
@@ -283,11 +286,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **companyId** | **Integer**| 事業所ID |
  **offset** | **Integer**| 取得レコードのオフセット (デフォルト: 0) | [optional]
- **limit** | **Integer**| 取得レコードの件数 (デフォルト: 20, 最大: 100) | [optional]
+ **limit** | **Integer**| 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100) | [optional]
 
 ### Return type
 
-[**ExpenseApplicationLineTemplatesIndexResponse**](ExpenseApplicationLineTemplatesIndexResponse.md)
+[**InlineResponse2003**](InlineResponse2003.md)
 
 ### Authorization
 
@@ -304,12 +307,13 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **500** |  |  -  |
 
 
 ## updateExpenseApplicationLineTemplate
 
-> ExpenseApplicationLineTemplatesResponse updateExpenseApplicationLineTemplate(id, parameters)
+> ExpenseApplicationLineTemplateResponse updateExpenseApplicationLineTemplate(id, expenseApplicationLineTemplateParams)
 
 経費科目の更新
 
@@ -335,9 +339,9 @@ public class Example {
 
         ExpenseApplicationLineTemplatesApi apiInstance = new ExpenseApplicationLineTemplatesApi(defaultClient);
         Integer id = 56; // Integer | 経費科目ID
-        ExpenseApplicationLineTemplateParams parameters = new ExpenseApplicationLineTemplateParams(); // ExpenseApplicationLineTemplateParams | 経費科目の更新
+        ExpenseApplicationLineTemplateParams expenseApplicationLineTemplateParams = new ExpenseApplicationLineTemplateParams(); // ExpenseApplicationLineTemplateParams | 経費科目の更新
         try {
-            ExpenseApplicationLineTemplatesResponse result = apiInstance.updateExpenseApplicationLineTemplate(id, parameters);
+            ExpenseApplicationLineTemplateResponse result = apiInstance.updateExpenseApplicationLineTemplate(id, expenseApplicationLineTemplateParams);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ExpenseApplicationLineTemplatesApi#updateExpenseApplicationLineTemplate");
@@ -356,11 +360,11 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| 経費科目ID |
- **parameters** | [**ExpenseApplicationLineTemplateParams**](ExpenseApplicationLineTemplateParams.md)| 経費科目の更新 |
+ **expenseApplicationLineTemplateParams** | [**ExpenseApplicationLineTemplateParams**](ExpenseApplicationLineTemplateParams.md)| 経費科目の更新 |
 
 ### Return type
 
-[**ExpenseApplicationLineTemplatesResponse**](ExpenseApplicationLineTemplatesResponse.md)
+[**ExpenseApplicationLineTemplateResponse**](ExpenseApplicationLineTemplateResponse.md)
 
 ### Authorization
 
@@ -368,7 +372,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 ### HTTP response details
@@ -377,6 +381,7 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 | **500** |  |  -  |
 

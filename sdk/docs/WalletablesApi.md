@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## createWalletable
 
-> WalletablesCreateResponse createWalletable(parameters)
+> WalletableCreateResponse createWalletable(walletableCreateParams)
 
 口座の作成
 
@@ -41,9 +41,9 @@ public class Example {
         oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
         WalletablesApi apiInstance = new WalletablesApi(defaultClient);
-        WalletableCreateParams parameters = new WalletableCreateParams(); // WalletableCreateParams | 口座の作成
+        WalletableCreateParams walletableCreateParams = new WalletableCreateParams(); // WalletableCreateParams | 口座の作成
         try {
-            WalletablesCreateResponse result = apiInstance.createWalletable(parameters);
+            WalletableCreateResponse result = apiInstance.createWalletable(walletableCreateParams);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling WalletablesApi#createWalletable");
@@ -61,11 +61,11 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **parameters** | [**WalletableCreateParams**](WalletableCreateParams.md)| 口座の作成 | [optional]
+ **walletableCreateParams** | [**WalletableCreateParams**](WalletableCreateParams.md)| 口座の作成 | [optional]
 
 ### Return type
 
-[**WalletablesCreateResponse**](WalletablesCreateResponse.md)
+[**WalletableCreateResponse**](WalletableCreateResponse.md)
 
 ### Authorization
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 ### HTTP response details
@@ -82,6 +82,7 @@ Name | Type | Description  | Notes
 | **201** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **500** |  |  -  |
 
 
@@ -158,13 +159,14 @@ null (empty response body)
 | **204** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 | **500** |  |  -  |
 
 
 ## getWalletable
 
-> WalletablesResponse getWalletable(id, type, companyId)
+> InlineResponse20019 getWalletable(id, type, companyId)
 
 口座情報の取得
 
@@ -195,7 +197,7 @@ public class Example {
         String type = "type_example"; // String | 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座）
         Integer companyId = 56; // Integer | 事業所ID
         try {
-            WalletablesResponse result = apiInstance.getWalletable(id, type, companyId);
+            InlineResponse20019 result = apiInstance.getWalletable(id, type, companyId);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling WalletablesApi#getWalletable");
@@ -219,7 +221,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WalletablesResponse**](WalletablesResponse.md)
+[**InlineResponse20019**](InlineResponse20019.md)
 
 ### Authorization
 
@@ -236,13 +238,14 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 | **500** |  |  -  |
 
 
 ## getWalletables
 
-> WalletablesIndexResponse getWalletables(companyId, withBalance)
+> InlineResponse20018 getWalletables(companyId, withBalance, type)
 
 口座一覧の取得
 
@@ -271,8 +274,9 @@ public class Example {
         WalletablesApi apiInstance = new WalletablesApi(defaultClient);
         Integer companyId = 56; // Integer | 事業所ID
         Boolean withBalance = true; // Boolean | 残高情報を含める
+        String type = "type_example"; // String | 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座）
         try {
-            WalletablesIndexResponse result = apiInstance.getWalletables(companyId, withBalance);
+            InlineResponse20018 result = apiInstance.getWalletables(companyId, withBalance, type);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling WalletablesApi#getWalletables");
@@ -292,10 +296,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **companyId** | **Integer**| 事業所ID |
  **withBalance** | **Boolean**| 残高情報を含める | [optional]
+ **type** | **String**| 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） | [optional] [enum: bank_account, credit_card, wallet]
 
 ### Return type
 
-[**WalletablesIndexResponse**](WalletablesIndexResponse.md)
+[**InlineResponse20018**](InlineResponse20018.md)
 
 ### Authorization
 
@@ -312,12 +317,13 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **500** |  |  -  |
 
 
 ## updateWalletable
 
-> WalletablesResponse updateWalletable(id, type, companyId, parameters)
+> InlineResponse20019 updateWalletable(id, type, walletableUpdateParams)
 
 口座の更新
 
@@ -346,10 +352,9 @@ public class Example {
         WalletablesApi apiInstance = new WalletablesApi(defaultClient);
         Integer id = 56; // Integer | 
         String type = "type_example"; // String | 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座）
-        Integer companyId = 56; // Integer | 事業所ID
-        WalletableUpdateParams parameters = new WalletableUpdateParams(); // WalletableUpdateParams | 口座の作成
+        WalletableUpdateParams walletableUpdateParams = new WalletableUpdateParams(); // WalletableUpdateParams | 口座の作成
         try {
-            WalletablesResponse result = apiInstance.updateWalletable(id, type, companyId, parameters);
+            InlineResponse20019 result = apiInstance.updateWalletable(id, type, walletableUpdateParams);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling WalletablesApi#updateWalletable");
@@ -369,12 +374,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**|  |
  **type** | **String**| 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） | [enum: bank_account, credit_card, wallet]
- **companyId** | **Integer**| 事業所ID |
- **parameters** | [**WalletableUpdateParams**](WalletableUpdateParams.md)| 口座の作成 | [optional]
+ **walletableUpdateParams** | [**WalletableUpdateParams**](WalletableUpdateParams.md)| 口座の作成 | [optional]
 
 ### Return type
 
-[**WalletablesResponse**](WalletablesResponse.md)
+[**InlineResponse20019**](InlineResponse20019.md)
 
 ### Authorization
 
@@ -382,7 +386,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 ### HTTP response details
@@ -391,6 +395,7 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 | **500** |  |  -  |
 

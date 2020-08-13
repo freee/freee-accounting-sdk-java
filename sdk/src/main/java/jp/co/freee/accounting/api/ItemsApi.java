@@ -12,12 +12,12 @@ import okhttp3.MultipartBody;
 
 import jp.co.freee.accounting.models.BadRequestError;
 import jp.co.freee.accounting.models.BadRequestNotFoundError;
-import jp.co.freee.accounting.models.CreateItemParams;
+import jp.co.freee.accounting.models.ForbiddenError;
+import jp.co.freee.accounting.models.InlineResponse2005;
 import jp.co.freee.accounting.models.InternalServerError;
+import jp.co.freee.accounting.models.ItemParams;
 import jp.co.freee.accounting.models.ItemResponse;
-import jp.co.freee.accounting.models.ItemsIndexResponse;
 import jp.co.freee.accounting.models.UnauthorizedError;
-import jp.co.freee.accounting.models.UpdateItemParams;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,7 +28,7 @@ public interface ItemsApi {
   /**
    * 品目の作成
    *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の品目を作成する&lt;/p&gt;
-   * @param parameters 品目の作成 (optional)
+   * @param itemParams 品目の作成 (optional)
    * @return Observable&lt;ItemResponse&gt;
    */
   @Headers({
@@ -36,7 +36,7 @@ public interface ItemsApi {
   })
   @POST("api/1/items")
   Observable<ItemResponse> createItem(
-    @retrofit2.http.Body CreateItemParams parameters
+    @retrofit2.http.Body ItemParams itemParams
   );
 
   /**
@@ -67,18 +67,20 @@ public interface ItemsApi {
    * 品目一覧の取得
    *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の品目一覧を取得する&lt;/p&gt;
    * @param companyId 事業所ID (required)
-   * @return Observable&lt;ItemsIndexResponse&gt;
+   * @param offset 取得レコードのオフセット (デフォルト: 0) (optional)
+   * @param limit 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)
+   * @return Observable&lt;InlineResponse2005&gt;
    */
   @GET("api/1/items")
-  Observable<ItemsIndexResponse> getItems(
-    @retrofit2.http.Query("company_id") Integer companyId
+  Observable<InlineResponse2005> getItems(
+    @retrofit2.http.Query("company_id") Integer companyId, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit
   );
 
   /**
    * 品目の更新
    *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の品目を更新する&lt;/p&gt;
    * @param id 品目ID (required)
-   * @param parameters 品目の更新 (optional)
+   * @param itemParams 品目の更新 (optional)
    * @return Observable&lt;ItemResponse&gt;
    */
   @Headers({
@@ -86,7 +88,7 @@ public interface ItemsApi {
   })
   @PUT("api/1/items/{id}")
   Observable<ItemResponse> updateItem(
-    @retrofit2.http.Path("id") Integer id, @retrofit2.http.Body UpdateItemParams parameters
+    @retrofit2.http.Path("id") Integer id, @retrofit2.http.Body ItemParams itemParams
   );
 
 }

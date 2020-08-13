@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## downloadJournal
 
-> downloadJournal(id, companyId)
+> File downloadJournal(id, companyId)
 
 ダウンロード実行
 
@@ -42,7 +42,8 @@ public class Example {
         Integer id = 56; // Integer | 受け付けID
         Integer companyId = 56; // Integer | 事業所ID
         try {
-            apiInstance.downloadJournal(id, companyId);
+            File result = apiInstance.downloadJournal(id, companyId);
+            System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling JournalsApi#downloadJournal");
             System.err.println("Status code: " + e.getCode());
@@ -64,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**File**](File.md)
 
 ### Authorization
 
@@ -73,7 +74,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: application/pdf, text/csv, application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -81,13 +82,14 @@ null (empty response body)
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 | **500** |  |  -  |
 
 
 ## getJournalStatus
 
-> JournalsStatusResponse getJournalStatus(id, companyId, visibleTags, startDate, endDate)
+> JournalStatusResponse getJournalStatus(id, companyId, visibleTags, startDate, endDate)
 
 ステータス確認
 
@@ -120,7 +122,7 @@ public class Example {
         String startDate = "startDate_example"; // String | 取得開始日 (yyyy-mm-dd)
         String endDate = "endDate_example"; // String | 取得終了日 (yyyy-mm-dd)
         try {
-            JournalsStatusResponse result = apiInstance.getJournalStatus(id, companyId, visibleTags, startDate, endDate);
+            JournalStatusResponse result = apiInstance.getJournalStatus(id, companyId, visibleTags, startDate, endDate);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling JournalsApi#getJournalStatus");
@@ -146,7 +148,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**JournalsStatusResponse**](JournalsStatusResponse.md)
+[**JournalStatusResponse**](JournalStatusResponse.md)
 
 ### Authorization
 
@@ -161,18 +163,20 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** |  |  -  |
+| **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 | **500** |  |  -  |
 
 
 ## getJournals
 
-> JournalsEnqueueJournalsResponse getJournals(downloadType, companyId, visibleTags, startDate, endDate)
+> JournalsResponse getJournals(downloadType, companyId, visibleTags, startDate, endDate)
 
 ダウンロード要求
 
- &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ユーザが所属する事業所の仕訳帳のダウンロードをリクエストします 生成されるファイルに関しては、&lt;a href&#x3D;\&quot;https://support.freee.co.jp/hc/ja/articles/204599604#2\&quot;&gt;ヘルプページ&lt;/a&gt;をご参照ください&lt;/p&gt;  &lt;p&gt;＊このAPIは無料プランのアカウントではご利用になれません&lt;/p&gt;  &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;定義&lt;/h2&gt;  &lt;ul&gt; &lt;li&gt;download_type &lt;ul&gt; &lt;li&gt;csv&lt;/li&gt;  &lt;li&gt;pdf&lt;/li&gt;  &lt;li&gt;yayoi (csv alias)&lt;/li&gt;  &lt;li&gt;generic&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt;  &lt;li&gt;visible_tags : 指定しない場合は従来の仕様の仕訳帳が出力されます &lt;ul&gt; &lt;li&gt;partner : 取引先タグ&lt;/li&gt;  &lt;li&gt;item : 品目タグ&lt;/li&gt;  &lt;li&gt;tag : メモタグ&lt;/li&gt;  &lt;li&gt;section : 部門タグ&lt;/li&gt;  &lt;li&gt;description : 備考欄&lt;/li&gt;  &lt;li&gt;wallet_txn_description : 明細の備考欄&lt;/li&gt;  &lt;li&gt;all : 指定された場合は上記の設定をすべて有効として扱います&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt;  &lt;li&gt;id : 受け付けID&lt;/li&gt; &lt;/ul&gt;
+ &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ユーザーが所属する事業所の仕訳帳のダウンロードをリクエストします 生成されるファイルに関しては、&lt;a href&#x3D;\&quot;https://support.freee.co.jp/hc/ja/articles/204599604#2\&quot;&gt;ヘルプページ&lt;/a&gt;をご参照ください&lt;/p&gt;  &lt;p&gt;＊このAPIは無料プランのアカウントではご利用になれません&lt;/p&gt;  &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;定義&lt;/h2&gt;  &lt;ul&gt; &lt;li&gt;download_type &lt;ul&gt; &lt;li&gt;generic(freee Webからダウンロードできるものと同じ)&lt;/li&gt;  &lt;li&gt;csv (yayoi形式)&lt;/li&gt;  &lt;li&gt;pdf&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt;  &lt;li&gt;visible_tags : 指定しない場合は従来の仕様の仕訳帳が出力されます &lt;ul&gt; &lt;li&gt;partner : 取引先タグ&lt;/li&gt;  &lt;li&gt;item : 品目タグ&lt;/li&gt;  &lt;li&gt;tag : メモタグ&lt;/li&gt;  &lt;li&gt;section : 部門タグ&lt;/li&gt;  &lt;li&gt;description : 備考欄&lt;/li&gt;  &lt;li&gt;wallet_txn_description : 明細の備考欄&lt;/li&gt;  &lt;li&gt;all : 指定された場合は上記の設定をすべて有効として扱います&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt;  &lt;li&gt;id : 受け付けID&lt;/li&gt; &lt;/ul&gt;
 
 ### Example
 
@@ -201,7 +205,7 @@ public class Example {
         String startDate = "startDate_example"; // String | 取得開始日 (yyyy-mm-dd)
         String endDate = "endDate_example"; // String | 取得終了日 (yyyy-mm-dd)
         try {
-            JournalsEnqueueJournalsResponse result = apiInstance.getJournals(downloadType, companyId, visibleTags, startDate, endDate);
+            JournalsResponse result = apiInstance.getJournals(downloadType, companyId, visibleTags, startDate, endDate);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling JournalsApi#getJournals");
@@ -227,7 +231,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**JournalsEnqueueJournalsResponse**](JournalsEnqueueJournalsResponse.md)
+[**JournalsResponse**](JournalsResponse.md)
 
 ### Authorization
 
@@ -244,5 +248,6 @@ Name | Type | Description  | Notes
 | **202** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **500** |  |  -  |
 

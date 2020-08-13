@@ -14,11 +14,11 @@ Method | HTTP request | Description
 
 ## createReceipt
 
-> ReceiptsResponse createReceipt(companyId, receipt, description, issueDate)
+> ReceiptResponse createReceipt(companyId, receipt, description, issueDate)
 
 ファイルボックス 証憑ファイルアップロード
 
- &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ファイルボックスに証憑ファイルをアップロードする&lt;/p&gt;
+ &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ファイルボックスに証憑ファイルをアップロードする&lt;/p&gt; &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;注意点&lt;/h2&gt; &lt;ul&gt;   &lt;li&gt;リクエストヘッダーの Content-Type は、multipart/form-dataにのみ対応しています。&lt;/li&gt; &lt;/ul&gt;
 
 ### Example
 
@@ -46,7 +46,7 @@ public class Example {
         String description = "description_example"; // String | メモ (255文字以内)
         String issueDate = "issueDate_example"; // String | 取引日 (yyyy-mm-dd)
         try {
-            ReceiptsResponse result = apiInstance.createReceipt(companyId, receipt, description, issueDate);
+            ReceiptResponse result = apiInstance.createReceipt(companyId, receipt, description, issueDate);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ReceiptsApi#createReceipt");
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ReceiptsResponse**](ReceiptsResponse.md)
+[**ReceiptResponse**](ReceiptResponse.md)
 
 ### Authorization
 
@@ -88,6 +88,7 @@ Name | Type | Description  | Notes
 | **201** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **500** |  |  -  |
 
 
@@ -162,13 +163,14 @@ null (empty response body)
 | **204** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 | **500** |  |  -  |
 
 
 ## getReceipt
 
-> ReceiptsResponse getReceipt(id, companyId)
+> ReceiptResponse getReceipt(id, companyId)
 
 ファイルボックス 証憑ファイルの取得
 
@@ -198,7 +200,7 @@ public class Example {
         Integer id = 56; // Integer | 証憑ID
         Integer companyId = 56; // Integer | 事業所ID
         try {
-            ReceiptsResponse result = apiInstance.getReceipt(id, companyId);
+            ReceiptResponse result = apiInstance.getReceipt(id, companyId);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ReceiptsApi#getReceipt");
@@ -221,7 +223,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ReceiptsResponse**](ReceiptsResponse.md)
+[**ReceiptResponse**](ReceiptResponse.md)
 
 ### Authorization
 
@@ -238,13 +240,14 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 | **500** |  |  -  |
 
 
 ## getReceipts
 
-> ReceiptsIndexResponse getReceipts(companyId, startDate, endDate, userName, number, commentType, commentImportant, category, offset, limit)
+> InlineResponse2008 getReceipts(companyId, startDate, endDate, userName, number, commentType, commentImportant, category, offset, limit)
 
 ファイルボックス 証憑ファイル一覧の取得
 
@@ -280,9 +283,9 @@ public class Example {
         Boolean commentImportant = true; // Boolean | trueの時、重要コメント付きが対象
         String category = "category_example"; // String | all:すべて、without_deal:未登録、with_expense_application_line:経費申請中, with_deal:登録済み、ignored:無視
         Integer offset = 56; // Integer | 取得レコードのオフセット (デフォルト: 0)
-        Integer limit = 56; // Integer | 取得レコードの件数 (デフォルト: 50, 最大: 3000)
+        Integer limit = 56; // Integer | 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000)
         try {
-            ReceiptsIndexResponse result = apiInstance.getReceipts(companyId, startDate, endDate, userName, number, commentType, commentImportant, category, offset, limit);
+            InlineResponse2008 result = apiInstance.getReceipts(companyId, startDate, endDate, userName, number, commentType, commentImportant, category, offset, limit);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ReceiptsApi#getReceipts");
@@ -309,11 +312,11 @@ Name | Type | Description  | Notes
  **commentImportant** | **Boolean**| trueの時、重要コメント付きが対象 | [optional]
  **category** | **String**| all:すべて、without_deal:未登録、with_expense_application_line:経費申請中, with_deal:登録済み、ignored:無視 | [optional] [enum: all, without_deal, with_expense_application_line, with_deal, ignored]
  **offset** | **Integer**| 取得レコードのオフセット (デフォルト: 0) | [optional]
- **limit** | **Integer**| 取得レコードの件数 (デフォルト: 50, 最大: 3000) | [optional]
+ **limit** | **Integer**| 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) | [optional]
 
 ### Return type
 
-[**ReceiptsIndexResponse**](ReceiptsIndexResponse.md)
+[**InlineResponse2008**](InlineResponse2008.md)
 
 ### Authorization
 
@@ -330,12 +333,13 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **500** |  |  -  |
 
 
 ## updateReceipt
 
-> ReceiptsResponse updateReceipt(id, parameters)
+> ReceiptResponse updateReceipt(id, receiptUpdateParams)
 
 ファイルボックス 証憑ファイル情報更新
 
@@ -363,9 +367,9 @@ public class Example {
 
         ReceiptsApi apiInstance = new ReceiptsApi(defaultClient);
         Integer id = 56; // Integer | 証憑ID
-        ReceiptUpdateParams parameters = new ReceiptUpdateParams(); // ReceiptUpdateParams | 経費申請の更新
+        ReceiptUpdateParams receiptUpdateParams = new ReceiptUpdateParams(); // ReceiptUpdateParams | 経費申請の更新
         try {
-            ReceiptsResponse result = apiInstance.updateReceipt(id, parameters);
+            ReceiptResponse result = apiInstance.updateReceipt(id, receiptUpdateParams);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ReceiptsApi#updateReceipt");
@@ -384,11 +388,11 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| 証憑ID |
- **parameters** | [**ReceiptUpdateParams**](ReceiptUpdateParams.md)| 経費申請の更新 |
+ **receiptUpdateParams** | [**ReceiptUpdateParams**](ReceiptUpdateParams.md)| 経費申請の更新 |
 
 ### Return type
 
-[**ReceiptsResponse**](ReceiptsResponse.md)
+[**ReceiptResponse**](ReceiptResponse.md)
 
 ### Authorization
 
@@ -396,7 +400,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 ### HTTP response details
@@ -405,6 +409,7 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 | **500** |  |  -  |
 

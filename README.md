@@ -142,7 +142,7 @@ Spring Initializr で構成する場合は、下記の Dependencies を選択し
     <dependency>
         <groupId>jp.co.freee</groupId>
         <artifactId>freee-accounting-sdk</artifactId>
-        <version>2.0.0-alpha</version>
+        <version>2.0.0-beta</version>
     </dependency>
 </dependencies>
 ```

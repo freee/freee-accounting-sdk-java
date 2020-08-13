@@ -3,11 +3,11 @@ package jp.co.freee.accounting.api;
 import jp.co.freee.accounting.ApiClient;
 import jp.co.freee.accounting.models.BadRequestError;
 import jp.co.freee.accounting.models.BadRequestNotFoundError;
+import jp.co.freee.accounting.models.ForbiddenError;
 import jp.co.freee.accounting.models.InternalServerError;
-import jp.co.freee.accounting.models.PartnerCodeParams;
 import jp.co.freee.accounting.models.PartnerCreateParams;
+import jp.co.freee.accounting.models.PartnerResponse;
 import jp.co.freee.accounting.models.PartnerUpdateParams;
-import jp.co.freee.accounting.models.PartnersIndexResponse;
 import jp.co.freee.accounting.models.PartnersResponse;
 import jp.co.freee.accounting.models.UnauthorizedError;
 import org.junit.Before;
@@ -33,12 +33,12 @@ public class PartnersApiTest {
     /**
      * 取引先の作成
      *
-     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の取引先を作成する&lt;/p&gt; &lt;ul&gt; &lt;li&gt;codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。&lt;/li&gt; &lt;li&gt;取引先コードの利用を有効にしている場合は、codeの指定は必須です。&lt;/li&gt;&lt;/ul&gt;
+     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の取引先を作成する&lt;/p&gt; &lt;ul&gt; &lt;li&gt;codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。&lt;/li&gt; &lt;li&gt;取引先コードの利用を有効にしている場合は、codeの指定は必須です。&lt;/li&gt; &lt;li&gt;振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）, 支払期日設定（payment_term_attributes, 請求の入金期日設定（invoice_payment_term_attributes）は法人向けのプロフェッショナルプラン以上で利用可能です。&lt;/li&gt;&lt;/ul&gt;
      */
     @Test
     public void createPartnerTest() {
-        PartnerCreateParams parameters = null;
-        // PartnersResponse response = api.createPartner(parameters);
+        PartnerCreateParams partnerCreateParams = null;
+        // PartnerResponse response = api.createPartner(partnerCreateParams);
 
         // TODO: test validations
     }
@@ -58,20 +58,20 @@ public class PartnersApiTest {
     /**
      * 取引先の取得
      *
-     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の取引先を取得する&lt;/p&gt;
+     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の取引先を取得する&lt;/p&gt; &lt;ul&gt; &lt;li&gt;振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）, 支払期日設定（payment_term_attributes, 請求の入金期日設定（invoice_payment_term_attributes）は法人向けのプロフェッショナルプラン以上で利用可能です。&lt;/li&gt;&lt;/ul&gt;
      */
     @Test
     public void getPartnerTest() {
         Integer id = null;
         Integer companyId = null;
-        // PartnersResponse response = api.getPartner(id, companyId);
+        // PartnerResponse response = api.getPartner(id, companyId);
 
         // TODO: test validations
     }
     /**
      * 取引先一覧の取得
      *
-     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の取引先一覧を取得する&lt;/p&gt;
+     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の取引先一覧を取得する&lt;/p&gt; &lt;ul&gt; &lt;li&gt;振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）は法人向けのプロフェッショナルプラン以上で利用可能です。&lt;/li&gt;&lt;/ul&gt;
      */
     @Test
     public void getPartnersTest() {
@@ -79,33 +79,33 @@ public class PartnersApiTest {
         Integer offset = null;
         Integer limit = null;
         String keyword = null;
-        // PartnersIndexResponse response = api.getPartners(companyId, offset, limit, keyword);
+        // PartnersResponse response = api.getPartners(companyId, offset, limit, keyword);
 
         // TODO: test validations
     }
     /**
      * 取引先の更新
      *
-     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した取引先の情報を更新する&lt;/p&gt; &lt;ul&gt; &lt;li&gt;codeを指定、更新することはできません。&lt;/li&gt;&lt;/ul&gt;
+     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した取引先の情報を更新する&lt;/p&gt; &lt;ul&gt; &lt;li&gt;codeを指定、更新することはできません。&lt;/li&gt; &lt;li&gt;振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）, 支払期日設定（payment_term_attributes, 請求の入金期日設定（invoice_payment_term_attributes）は法人向けのプロフェッショナルプラン以上で利用可能です。&lt;/li&gt;&lt;/ul&gt;
      */
     @Test
     public void updatePartnerTest() {
         Integer id = null;
-        PartnerUpdateParams parameters = null;
-        // PartnersResponse response = api.updatePartner(id, parameters);
+        PartnerUpdateParams partnerUpdateParams = null;
+        // PartnerResponse response = api.updatePartner(id, partnerUpdateParams);
 
         // TODO: test validations
     }
     /**
      * 取引先の更新
      *
-     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;取引先コードをキーに、指定した取引先の情報を更新する&lt;/p&gt; &lt;ul&gt; &lt;li&gt;このAPIを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。&lt;/li&gt; &lt;li&gt;コードを日本語に設定している場合は、URLエンコードしてURLに含めるようにしてください。&lt;/li&gt;&lt;/ul&gt;
+     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;取引先コードをキーに、指定した取引先の情報を更新する&lt;/p&gt; &lt;ul&gt; &lt;li&gt;このAPIを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。&lt;/li&gt; &lt;li&gt;コードを日本語に設定している場合は、URLエンコードしてURLに含めるようにしてください。&lt;/li&gt; &lt;li&gt;振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）, 支払期日設定（payment_term_attributes, 請求の入金期日設定（invoice_payment_term_attributes）は法人向けのプロフェッショナルプラン以上で利用可能です。&lt;/li&gt;&lt;/ul&gt;
      */
     @Test
     public void updatePartnerByCodeTest() {
         String code = null;
-        PartnerCodeParams parameters = null;
-        // PartnersResponse response = api.updatePartnerByCode(code, parameters);
+        PartnerUpdateParams partnerUpdateParams = null;
+        // PartnerResponse response = api.updatePartnerByCode(code, partnerUpdateParams);
 
         // TODO: test validations
     }

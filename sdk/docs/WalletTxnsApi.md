@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## createWalletTxn
 
-> WalletTxnsShowResponse createWalletTxn(parameters)
+> WalletTxnResponse createWalletTxn(walletTxnParams)
 
 明細の作成
 
@@ -40,9 +40,9 @@ public class Example {
         oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
         WalletTxnsApi apiInstance = new WalletTxnsApi(defaultClient);
-        CreateWalletTxnParams parameters = new CreateWalletTxnParams(); // CreateWalletTxnParams | 明細の作成
+        WalletTxnParams walletTxnParams = new WalletTxnParams(); // WalletTxnParams | 明細の作成
         try {
-            WalletTxnsShowResponse result = apiInstance.createWalletTxn(parameters);
+            WalletTxnResponse result = apiInstance.createWalletTxn(walletTxnParams);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling WalletTxnsApi#createWalletTxn");
@@ -60,11 +60,11 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **parameters** | [**CreateWalletTxnParams**](CreateWalletTxnParams.md)| 明細の作成 | [optional]
+ **walletTxnParams** | [**WalletTxnParams**](WalletTxnParams.md)| 明細の作成 | [optional]
 
 ### Return type
 
-[**WalletTxnsShowResponse**](WalletTxnsShowResponse.md)
+[**WalletTxnResponse**](WalletTxnResponse.md)
 
 ### Authorization
 
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 ### HTTP response details
@@ -81,6 +81,7 @@ Name | Type | Description  | Notes
 | **201** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **500** |  |  -  |
 
 
@@ -155,13 +156,14 @@ null (empty response body)
 | **204** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 | **500** |  |  -  |
 
 
 ## getWalletTxn
 
-> WalletTxnsShowResponse getWalletTxn(id, companyId)
+> WalletTxnResponse getWalletTxn(id, companyId)
 
 明細の取得
 
@@ -191,7 +193,7 @@ public class Example {
         Integer id = 56; // Integer | 明細ID
         Integer companyId = 56; // Integer | 事業所ID
         try {
-            WalletTxnsShowResponse result = apiInstance.getWalletTxn(id, companyId);
+            WalletTxnResponse result = apiInstance.getWalletTxn(id, companyId);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling WalletTxnsApi#getWalletTxn");
@@ -214,7 +216,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WalletTxnsShowResponse**](WalletTxnsShowResponse.md)
+[**WalletTxnResponse**](WalletTxnResponse.md)
 
 ### Authorization
 
@@ -231,13 +233,14 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 | **500** |  |  -  |
 
 
 ## getWalletTxns
 
-> WalletTxnsIndexResponse getWalletTxns(companyId, walletableType, walletableId, startDate, endDate, entrySide, offset, limit)
+> InlineResponse20017 getWalletTxns(companyId, walletableType, walletableId, startDate, endDate, entrySide, offset, limit)
 
 明細一覧の取得
 
@@ -265,15 +268,15 @@ public class Example {
 
         WalletTxnsApi apiInstance = new WalletTxnsApi(defaultClient);
         Integer companyId = 56; // Integer | 事業所ID
-        String walletableType = "walletableType_example"; // String | 口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet)
-        Integer walletableId = 56; // Integer | 口座ID
+        String walletableType = "walletableType_example"; // String | 口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet) walletable_type、walletable_idは同時に指定が必要です。
+        Integer walletableId = 56; // Integer | 口座ID walletable_type、walletable_idは同時に指定が必要です。
         String startDate = "startDate_example"; // String | 取引日で絞込：開始日 (yyyy-mm-dd)
         String endDate = "endDate_example"; // String | 取引日で絞込：終了日 (yyyy-mm-dd)
         String entrySide = "entrySide_example"; // String | 入金／出金 (入金: income, 出金: expense)
         Integer offset = 56; // Integer | 取得レコードのオフセット (デフォルト: 0)
-        Integer limit = 56; // Integer | 取得レコードの件数 (デフォルト: 20, 最大: 100) 
+        Integer limit = 56; // Integer | 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100) 
         try {
-            WalletTxnsIndexResponse result = apiInstance.getWalletTxns(companyId, walletableType, walletableId, startDate, endDate, entrySide, offset, limit);
+            InlineResponse20017 result = apiInstance.getWalletTxns(companyId, walletableType, walletableId, startDate, endDate, entrySide, offset, limit);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling WalletTxnsApi#getWalletTxns");
@@ -292,17 +295,17 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **companyId** | **Integer**| 事業所ID |
- **walletableType** | **String**| 口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet) | [optional] [enum: bank_account, credit_card, wallet]
- **walletableId** | **Integer**| 口座ID | [optional]
+ **walletableType** | **String**| 口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet) walletable_type、walletable_idは同時に指定が必要です。 | [optional] [enum: bank_account, credit_card, wallet]
+ **walletableId** | **Integer**| 口座ID walletable_type、walletable_idは同時に指定が必要です。 | [optional]
  **startDate** | **String**| 取引日で絞込：開始日 (yyyy-mm-dd) | [optional]
  **endDate** | **String**| 取引日で絞込：終了日 (yyyy-mm-dd) | [optional]
  **entrySide** | **String**| 入金／出金 (入金: income, 出金: expense) | [optional] [enum: income, expense]
  **offset** | **Integer**| 取得レコードのオフセット (デフォルト: 0) | [optional]
- **limit** | **Integer**| 取得レコードの件数 (デフォルト: 20, 最大: 100)  | [optional]
+ **limit** | **Integer**| 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  | [optional]
 
 ### Return type
 
-[**WalletTxnsIndexResponse**](WalletTxnsIndexResponse.md)
+[**InlineResponse20017**](InlineResponse20017.md)
 
 ### Authorization
 
@@ -319,5 +322,6 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **500** |  |  -  |
 

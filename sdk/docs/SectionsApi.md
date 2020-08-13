@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## createSection
 
-> SectionsCreateResponse createSection(parameters)
+> SectionResponse createSection(sectionParams)
 
 部門の作成
 
@@ -41,9 +41,9 @@ public class Example {
         oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
         SectionsApi apiInstance = new SectionsApi(defaultClient);
-        SectionParams parameters = new SectionParams(); // SectionParams | 部門の作成
+        SectionParams sectionParams = new SectionParams(); // SectionParams | 部門の作成
         try {
-            SectionsCreateResponse result = apiInstance.createSection(parameters);
+            SectionResponse result = apiInstance.createSection(sectionParams);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling SectionsApi#createSection");
@@ -61,11 +61,11 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **parameters** | [**SectionParams**](SectionParams.md)| 部門の作成 | [optional]
+ **sectionParams** | [**SectionParams**](SectionParams.md)| 部門の作成 | [optional]
 
 ### Return type
 
-[**SectionsCreateResponse**](SectionsCreateResponse.md)
+[**SectionResponse**](SectionResponse.md)
 
 ### Authorization
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 ### HTTP response details
@@ -82,6 +82,7 @@ Name | Type | Description  | Notes
 | **201** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **500** |  |  -  |
 
 
@@ -156,12 +157,13 @@ null (empty response body)
 | **204** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **500** |  |  -  |
 
 
 ## getSection
 
-> SectionsShowResponse getSection(id, companyId)
+> SectionResponse getSection(id, companyId)
 
 
 
@@ -191,7 +193,7 @@ public class Example {
         Integer id = 56; // Integer | 部門ID
         Integer companyId = 56; // Integer | 事業所ID
         try {
-            SectionsShowResponse result = apiInstance.getSection(id, companyId);
+            SectionResponse result = apiInstance.getSection(id, companyId);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling SectionsApi#getSection");
@@ -214,7 +216,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SectionsShowResponse**](SectionsShowResponse.md)
+[**SectionResponse**](SectionResponse.md)
 
 ### Authorization
 
@@ -231,13 +233,14 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 | **500** |  |  -  |
 
 
 ## getSections
 
-> SectionsIndexResponse getSections(companyId)
+> InlineResponse2009 getSections(companyId)
 
 部門一覧の取得
 
@@ -266,7 +269,7 @@ public class Example {
         SectionsApi apiInstance = new SectionsApi(defaultClient);
         Integer companyId = 56; // Integer | 事業所ID
         try {
-            SectionsIndexResponse result = apiInstance.getSections(companyId);
+            InlineResponse2009 result = apiInstance.getSections(companyId);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling SectionsApi#getSections");
@@ -288,7 +291,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SectionsIndexResponse**](SectionsIndexResponse.md)
+[**InlineResponse2009**](InlineResponse2009.md)
 
 ### Authorization
 
@@ -305,12 +308,13 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **500** |  |  -  |
 
 
 ## updateSection
 
-> SectionsUpdateResponse updateSection(id, parameters)
+> SectionResponse updateSection(id, sectionParams)
 
 部門の更新
 
@@ -338,9 +342,9 @@ public class Example {
 
         SectionsApi apiInstance = new SectionsApi(defaultClient);
         Integer id = 56; // Integer | 
-        SectionParams parameters = new SectionParams(); // SectionParams | 部門の更新
+        SectionParams sectionParams = new SectionParams(); // SectionParams | 部門の更新
         try {
-            SectionsUpdateResponse result = apiInstance.updateSection(id, parameters);
+            SectionResponse result = apiInstance.updateSection(id, sectionParams);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling SectionsApi#updateSection");
@@ -359,11 +363,11 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**|  |
- **parameters** | [**SectionParams**](SectionParams.md)| 部門の更新 | [optional]
+ **sectionParams** | [**SectionParams**](SectionParams.md)| 部門の更新 | [optional]
 
 ### Return type
 
-[**SectionsUpdateResponse**](SectionsUpdateResponse.md)
+[**SectionResponse**](SectionResponse.md)
 
 ### Authorization
 
@@ -371,7 +375,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 ### HTTP response details
@@ -380,5 +384,6 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **500** |  |  -  |
 

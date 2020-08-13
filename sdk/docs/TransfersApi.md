@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## createTransfer
 
-> TransfersResponse createTransfer(parameter)
+> TransferResponse createTransfer(transferParams)
 
 取引（振替）の作成
 
@@ -41,9 +41,9 @@ public class Example {
         oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
         TransfersApi apiInstance = new TransfersApi(defaultClient);
-        TransferParams parameter = new TransferParams(); // TransferParams | 取引（振替）の作成
+        TransferParams transferParams = new TransferParams(); // TransferParams | 取引（振替）の作成
         try {
-            TransfersResponse result = apiInstance.createTransfer(parameter);
+            TransferResponse result = apiInstance.createTransfer(transferParams);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling TransfersApi#createTransfer");
@@ -61,11 +61,11 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **parameter** | [**TransferParams**](TransferParams.md)| 取引（振替）の作成 | [optional]
+ **transferParams** | [**TransferParams**](TransferParams.md)| 取引（振替）の作成 | [optional]
 
 ### Return type
 
-[**TransfersResponse**](TransfersResponse.md)
+[**TransferResponse**](TransferResponse.md)
 
 ### Authorization
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 ### HTTP response details
@@ -82,6 +82,7 @@ Name | Type | Description  | Notes
 | **201** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **500** |  |  -  |
 
 
@@ -156,13 +157,14 @@ null (empty response body)
 | **204** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 | **500** |  |  -  |
 
 
 ## getTransfer
 
-> TransfersResponse getTransfer(id, companyId)
+> TransferResponse getTransfer(id, companyId)
 
 取引（振替）の取得
 
@@ -192,7 +194,7 @@ public class Example {
         Integer id = 56; // Integer | 取引(振替)ID
         Integer companyId = 56; // Integer | 事業所ID
         try {
-            TransfersResponse result = apiInstance.getTransfer(id, companyId);
+            TransferResponse result = apiInstance.getTransfer(id, companyId);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling TransfersApi#getTransfer");
@@ -215,7 +217,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TransfersResponse**](TransfersResponse.md)
+[**TransferResponse**](TransferResponse.md)
 
 ### Authorization
 
@@ -232,13 +234,14 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 | **500** |  |  -  |
 
 
 ## getTransfers
 
-> TransfersIndexResponse getTransfers(companyId, startDate, endDate, offset, limit)
+> InlineResponse20014 getTransfers(companyId, startDate, endDate, offset, limit)
 
 取引（振替）一覧の取得
 
@@ -269,9 +272,9 @@ public class Example {
         String startDate = "startDate_example"; // String | 振替日で絞込：開始日 (yyyy-mm-dd)
         String endDate = "endDate_example"; // String | 振替日で絞込：終了日 (yyyy-mm-dd)
         Integer offset = 56; // Integer | 取得レコードのオフセット (デフォルト: 0)
-        Integer limit = 56; // Integer | 取得レコードの件数 (デフォルト: 20, 最大: 100) 
+        Integer limit = 56; // Integer | 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100) 
         try {
-            TransfersIndexResponse result = apiInstance.getTransfers(companyId, startDate, endDate, offset, limit);
+            InlineResponse20014 result = apiInstance.getTransfers(companyId, startDate, endDate, offset, limit);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling TransfersApi#getTransfers");
@@ -293,11 +296,11 @@ Name | Type | Description  | Notes
  **startDate** | **String**| 振替日で絞込：開始日 (yyyy-mm-dd) | [optional]
  **endDate** | **String**| 振替日で絞込：終了日 (yyyy-mm-dd) | [optional]
  **offset** | **Integer**| 取得レコードのオフセット (デフォルト: 0) | [optional]
- **limit** | **Integer**| 取得レコードの件数 (デフォルト: 20, 最大: 100)  | [optional]
+ **limit** | **Integer**| 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  | [optional]
 
 ### Return type
 
-[**TransfersIndexResponse**](TransfersIndexResponse.md)
+[**InlineResponse20014**](InlineResponse20014.md)
 
 ### Authorization
 
@@ -314,12 +317,13 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **500** |  |  -  |
 
 
 ## updateTransfer
 
-> TransfersResponse updateTransfer(id, parameter)
+> TransferResponse updateTransfer(id, transferParams)
 
 取引（振替）の更新
 
@@ -347,9 +351,9 @@ public class Example {
 
         TransfersApi apiInstance = new TransfersApi(defaultClient);
         Integer id = 56; // Integer | 取引(振替)ID
-        TransferParams parameter = new TransferParams(); // TransferParams | 取引（振替）の更新
+        TransferParams transferParams = new TransferParams(); // TransferParams | 取引（振替）の更新
         try {
-            TransfersResponse result = apiInstance.updateTransfer(id, parameter);
+            TransferResponse result = apiInstance.updateTransfer(id, transferParams);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling TransfersApi#updateTransfer");
@@ -368,11 +372,11 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| 取引(振替)ID |
- **parameter** | [**TransferParams**](TransferParams.md)| 取引（振替）の更新 |
+ **transferParams** | [**TransferParams**](TransferParams.md)| 取引（振替）の更新 |
 
 ### Return type
 
-[**TransfersResponse**](TransfersResponse.md)
+[**TransferResponse**](TransferResponse.md)
 
 ### Authorization
 
@@ -380,7 +384,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 ### HTTP response details
@@ -389,6 +393,7 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 | **500** |  |  -  |
 

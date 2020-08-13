@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## getTaxCode
 
-> TaxesCodesShowResponse getTaxCode(code)
+> TaxResponse getTaxCode(code)
 
 税区分コードの取得
 
@@ -41,7 +41,7 @@ public class Example {
         TaxesApi apiInstance = new TaxesApi(defaultClient);
         Integer code = 56; // Integer | 税区分コード
         try {
-            TaxesCodesShowResponse result = apiInstance.getTaxCode(code);
+            TaxResponse result = apiInstance.getTaxCode(code);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling TaxesApi#getTaxCode");
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TaxesCodesShowResponse**](TaxesCodesShowResponse.md)
+[**TaxResponse**](TaxResponse.md)
 
 ### Authorization
 
@@ -80,13 +80,14 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 | **500** |  |  -  |
 
 
 ## getTaxCodes
 
-> TaxesCodesIndexResponse getTaxCodes()
+> InlineResponse20012 getTaxCodes()
 
 税区分コード一覧の取得
 
@@ -114,7 +115,7 @@ public class Example {
 
         TaxesApi apiInstance = new TaxesApi(defaultClient);
         try {
-            TaxesCodesIndexResponse result = apiInstance.getTaxCodes();
+            InlineResponse20012 result = apiInstance.getTaxCodes();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling TaxesApi#getTaxCodes");
@@ -133,7 +134,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**TaxesCodesIndexResponse**](TaxesCodesIndexResponse.md)
+[**InlineResponse20012**](InlineResponse20012.md)
 
 ### Authorization
 
@@ -150,12 +151,13 @@ This endpoint does not need any parameter.
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **500** |  |  -  |
 
 
 ## getTaxesCompanies
 
-> TaxesCompaniesResponse getTaxesCompanies(companyId)
+> InlineResponse20013 getTaxesCompanies(companyId)
 
 税区分コード詳細一覧の取得
 
@@ -182,7 +184,7 @@ public class Example {
         TaxesApi apiInstance = new TaxesApi(defaultClient);
         Integer companyId = 56; // Integer | 事業所ID
         try {
-            TaxesCompaniesResponse result = apiInstance.getTaxesCompanies(companyId);
+            InlineResponse20013 result = apiInstance.getTaxesCompanies(companyId);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling TaxesApi#getTaxesCompanies");
@@ -204,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TaxesCompaniesResponse**](TaxesCompaniesResponse.md)
+[**InlineResponse20013**](InlineResponse20013.md)
 
 ### Authorization
 
@@ -221,5 +223,6 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **500** |  |  -  |
 
