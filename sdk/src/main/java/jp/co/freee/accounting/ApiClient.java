@@ -20,6 +20,7 @@ import jp.co.freee.accounting.auth.ApiKeyAuth;
 import jp.co.freee.accounting.auth.OAuth;
 import jp.co.freee.accounting.auth.OAuth.AccessTokenListener;
 import jp.co.freee.accounting.auth.OAuthFlow;
+import jp.co.freee.accounting.DefaultHeadersInterceptor;
 
 import java.io.IOException;
 import java.lang.annotation.Annotation;
@@ -106,6 +107,9 @@ public class ApiClient {
   public void createDefaultAdapter() {
     json = new JSON();
     okBuilder = new OkHttpClient.Builder();
+
+    DefaultHeadersInterceptor defaultHeaders = new DefaultHeadersInterceptor();
+    okBuilder.addInterceptor(defaultHeaders);
 
     String baseUrl = "https://api.freee.co.jp";
     if (!baseUrl.endsWith("/"))
