@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Companies | Basic Web Sample</title>
+    <title>Invoices | Basic Web Sample</title>
     <link rel="stylesheet" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" />
     <script src="/webjars/jquery/3.4.1/jquery.min.js"></script>
     <script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -12,14 +12,13 @@
 <body>
     <div class=container-fluid style="padding: 20px">
         <div class="row">
-            <h1>Companies Information</h1>
+            <h1>Invoices Information</h1>
         </div>
         <table class="table">
-            <tbody th:each="company : ${companies}">
+            <tbody th:each="invoice : ${invoices}">
                 <tr>
-                    <td th:text="${company.getId()}"></td>
-                    <td th:text="${company.getDisplayName()}"></td>
-                    <td><a th:href="@{/invoices/{companyId}(companyId=${company.getId()})}">Invoices</a></td>
+                    <td th:text="${invoice.getId()}"></td>
+                    <td th:text="${invoice.toString()}"></td>
                 </tr>
             </tbody>
         </table>

@@ -26,6 +26,11 @@ public class FreeeController {
         return new ModelAndView("companies", "companies", _accountingService.getCompanies());
     }
 
+    @GetMapping("/invoices/{company_id}")
+    public ModelAndView invoices(@PathVariable("company_id") Integer companyId) {
+        return new ModelAndView("invoices", "invoices", _accountingService.getInvoices(companyId));
+    }
+
     @GetMapping("/token")
     public ModelAndView token() {
         Map<String, String> map = new HashMap<>();

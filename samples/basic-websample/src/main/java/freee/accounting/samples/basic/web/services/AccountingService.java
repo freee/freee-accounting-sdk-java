@@ -14,8 +14,10 @@ import org.springframework.web.context.WebApplicationContext;
 import jp.co.freee.accounting.ApiClient;
 import jp.co.freee.accounting.api.CompaniesApi;
 import jp.co.freee.accounting.api.UsersApi;
+import jp.co.freee.accounting.api.InvoicesApi;
 import jp.co.freee.accounting.models.CompanyIndexResponseCompanies;
 import jp.co.freee.accounting.models.MeResponseUser;
+import jp.co.freee.accounting.models.Invoice;
 
 @Service
 @Scope(value = WebApplicationContext.SCOPE_SESSION, proxyMode = ScopedProxyMode.TARGET_CLASS)
@@ -43,6 +45,11 @@ public class AccountingService {
     public List<CompanyIndexResponseCompanies> getCompanies() {
         CompaniesApi api = _apiClient.createService(CompaniesApi.class);
         return api.getCompanies().blockingSingle().getCompanies();
+    }
+
+    public List<Invoice> getInvoices(Integer companyId) {
+        InvoicesApi api = _apiClient.createService(InvoicesApi.class);
+        return api.getInvoices(companyId, null, null, null, null, null, null, null, null, null, null, null, null).blockingSingle().getInvoices();
     }
 
     public String getToken() {
