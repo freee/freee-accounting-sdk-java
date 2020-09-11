@@ -486,7 +486,7 @@ public class ManualJournalDetails {
    /**
    * セグメント１ID
    * minimum: 1
-   * maximum: 2147483647
+   * maximum: 9223372036854775807
    * @return segment1TagId
   **/
   @javax.annotation.Nullable
@@ -534,7 +534,7 @@ public class ManualJournalDetails {
    /**
    * セグメント２ID
    * minimum: 1
-   * maximum: 2147483647
+   * maximum: 9223372036854775807
    * @return segment2TagId
   **/
   @javax.annotation.Nullable
@@ -582,7 +582,7 @@ public class ManualJournalDetails {
    /**
    * セグメント３ID
    * minimum: 1
-   * maximum: 2147483647
+   * maximum: 9223372036854775807
    * @return segment3TagId
   **/
   @javax.annotation.Nullable
@@ -682,12 +682,12 @@ public class ManualJournalDetails {
   }
 
    /**
-   * 税区分ID
+   * 税区分コード
    * minimum: 0
    * maximum: 2147483647
    * @return taxCode
   **/
-  @ApiModelProperty(example = "1", required = true, value = "税区分ID")
+  @ApiModelProperty(example = "1", required = true, value = "税区分コード")
 
   public Integer getTaxCode() {
     return taxCode;

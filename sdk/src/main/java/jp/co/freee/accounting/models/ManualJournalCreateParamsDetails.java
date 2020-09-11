@@ -169,7 +169,7 @@ public class ManualJournalCreateParamsDetails {
    /**
    * 取引金額（税込で指定してください）
    * minimum: 1
-   * maximum: -9223372036854775616
+   * maximum: 9223372036854775807
    * @return amount
   **/
   @ApiModelProperty(example = "10800", required = true, value = "取引金額（税込で指定してください）")
@@ -336,7 +336,7 @@ public class ManualJournalCreateParamsDetails {
    /**
    * セグメント１ID
    * minimum: 1
-   * maximum: 2147483647
+   * maximum: 9223372036854775807
    * @return segment1TagId
   **/
   @javax.annotation.Nullable
@@ -361,7 +361,7 @@ public class ManualJournalCreateParamsDetails {
    /**
    * セグメント２ID
    * minimum: 1
-   * maximum: 2147483647
+   * maximum: 9223372036854775807
    * @return segment2TagId
   **/
   @javax.annotation.Nullable
@@ -386,7 +386,7 @@ public class ManualJournalCreateParamsDetails {
    /**
    * セグメント３ID
    * minimum: 1
-   * maximum: 2147483647
+   * maximum: 9223372036854775807
    * @return segment3TagId
   **/
   @javax.annotation.Nullable

@@ -31,6 +31,10 @@ import java.util.List;
  */
 
 public class ApprovalFlowRoutesIndexResponseApprovalFlowRoutes {
+  public static final String SERIALIZED_NAME_DEFAULT_ROUTE = "default_route";
+  @SerializedName(SERIALIZED_NAME_DEFAULT_ROUTE)
+  private Boolean defaultRoute;
+
   public static final String SERIALIZED_NAME_DEFINITION_SYSTEM = "definition_system";
   @SerializedName(SERIALIZED_NAME_DEFINITION_SYSTEM)
   private Boolean definitionSystem;
@@ -115,6 +119,28 @@ public class ApprovalFlowRoutesIndexResponseApprovalFlowRoutes {
   public static final String SERIALIZED_NAME_USER_ID = "user_id";
   @SerializedName(SERIALIZED_NAME_USER_ID)
   private Integer userId;
+
+
+  public ApprovalFlowRoutesIndexResponseApprovalFlowRoutes defaultRoute(Boolean defaultRoute) {
+    
+    this.defaultRoute = defaultRoute;
+    return this;
+  }
+
+   /**
+   * 基本経路として設定されているかどうか&lt;br&gt;&lt;br&gt; リクエストパラメータusageに下記のいずれかが指定され、かつ、基本経路の場合はtrueになります。 * &#x60;TxnApproval&#x60; - 仕訳承認 * &#x60;ExpenseApplication&#x60; - 経費精算 * &#x60;PaymentRequest&#x60; - 支払依頼 * &#x60;ApprovalRequest&#x60;(リクエストパラメータrequest_form_idを同時に指定) - 各種申請 * &#x60;DocApproval&#x60; - 請求書等 (見積書・納品書・請求書・発注書)  &lt;a href&#x3D;\&quot;https://support.freee.co.jp/hc/ja/articles/900000507963-%E7%94%B3%E8%AB%8B%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E3%81%AE%E5%9F%BA%E6%9C%AC%E7%B5%8C%E8%B7%AF%E8%A8%AD%E5%AE%9A\&quot; target&#x3D;\&quot;_blank\&quot;&gt;申請フォームの基本経路設定&lt;/a&gt; 
+   * @return defaultRoute
+  **/
+  @ApiModelProperty(example = "true", required = true, value = "基本経路として設定されているかどうか<br><br> リクエストパラメータusageに下記のいずれかが指定され、かつ、基本経路の場合はtrueになります。 * `TxnApproval` - 仕訳承認 * `ExpenseApplication` - 経費精算 * `PaymentRequest` - 支払依頼 * `ApprovalRequest`(リクエストパラメータrequest_form_idを同時に指定) - 各種申請 * `DocApproval` - 請求書等 (見積書・納品書・請求書・発注書)  <a href=\"https://support.freee.co.jp/hc/ja/articles/900000507963-%E7%94%B3%E8%AB%8B%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E3%81%AE%E5%9F%BA%E6%9C%AC%E7%B5%8C%E8%B7%AF%E8%A8%AD%E5%AE%9A\" target=\"_blank\">申請フォームの基本経路設定</a> ")
+
+  public Boolean getDefaultRoute() {
+    return defaultRoute;
+  }
+
+
+  public void setDefaultRoute(Boolean defaultRoute) {
+    this.defaultRoute = defaultRoute;
+  }
 
 
   public ApprovalFlowRoutesIndexResponseApprovalFlowRoutes definitionSystem(Boolean definitionSystem) {
@@ -331,7 +357,8 @@ public class ApprovalFlowRoutesIndexResponseApprovalFlowRoutes {
       return false;
     }
     ApprovalFlowRoutesIndexResponseApprovalFlowRoutes approvalFlowRoutesIndexResponseApprovalFlowRoutes = (ApprovalFlowRoutesIndexResponseApprovalFlowRoutes) o;
-    return Objects.equals(this.definitionSystem, approvalFlowRoutesIndexResponseApprovalFlowRoutes.definitionSystem) &&
+    return Objects.equals(this.defaultRoute, approvalFlowRoutesIndexResponseApprovalFlowRoutes.defaultRoute) &&
+        Objects.equals(this.definitionSystem, approvalFlowRoutesIndexResponseApprovalFlowRoutes.definitionSystem) &&
         Objects.equals(this.description, approvalFlowRoutesIndexResponseApprovalFlowRoutes.description) &&
         Objects.equals(this.firstStepId, approvalFlowRoutesIndexResponseApprovalFlowRoutes.firstStepId) &&
         Objects.equals(this.id, approvalFlowRoutesIndexResponseApprovalFlowRoutes.id) &&
@@ -343,7 +370,7 @@ public class ApprovalFlowRoutesIndexResponseApprovalFlowRoutes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(definitionSystem, description, firstStepId, id, name, requestFormIds, usages, userId);
+    return Objects.hash(defaultRoute, definitionSystem, description, firstStepId, id, name, requestFormIds, usages, userId);
   }
 
 
@@ -351,6 +378,7 @@ public class ApprovalFlowRoutesIndexResponseApprovalFlowRoutes {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ApprovalFlowRoutesIndexResponseApprovalFlowRoutes {\n");
+    sb.append("    defaultRoute: ").append(toIndentedString(defaultRoute)).append("\n");
     sb.append("    definitionSystem: ").append(toIndentedString(definitionSystem)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    firstStepId: ").append(toIndentedString(firstStepId)).append("\n");

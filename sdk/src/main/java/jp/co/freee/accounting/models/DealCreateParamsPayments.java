@@ -105,8 +105,8 @@ public class DealCreateParamsPayments {
 
    /**
    * 支払金額：payments指定時は必須
-   * minimum: 9223372036854775616
-   * maximum: -9223372036854775616
+   * minimum: -9223372036854775808
+   * maximum: 9223372036854775807
    * @return amount
   **/
   @ApiModelProperty(example = "5250", required = true, value = "支払金額：payments指定時は必須")

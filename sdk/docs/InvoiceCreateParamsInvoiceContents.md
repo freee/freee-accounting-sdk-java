@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **segment2TagId** | **Integer** | セグメント２ID |  [optional]
 **segment3TagId** | **Integer** | セグメント３ID |  [optional]
 **tagIds** | **List&lt;Integer&gt;** |  |  [optional]
-**taxCode** | **Integer** | 税区分ID |  [optional]
+**taxCode** | **Integer** | 税区分コード |  [optional]
 **type** | [**TypeEnum**](#TypeEnum) | 行の種類 &lt;ul&gt; &lt;li&gt;normal、discountを指定する場合、account_item_id,tax_codeとunit_priceが必須となります。&lt;/li&gt; &lt;li&gt;normalを指定した場合、qtyが必須となります。&lt;/li&gt; &lt;/ul&gt; | 
 **unit** | **String** | 単位 |  [optional]
 **unitPrice** | [**BigDecimal**](BigDecimal.md) | 単価 (tax_entry_method: inclusiveの場合は税込価格、tax_entry_method: exclusiveの場合は税抜価格となります) |  [optional]

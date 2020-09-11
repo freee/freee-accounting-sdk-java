@@ -125,7 +125,13 @@ public class JournalsResponseJournals {
     
     WALLET_TXN_DESCRIPTION("wallet_txn_description"),
     
-    ALL("all");
+    ALL("all"),
+    
+    SEGMENT_1_TAG("segment_1_tag"),
+    
+    SEGMENT_2_TAG("segment_2_tag"),
+    
+    SEGMENT_3_TAG("segment_3_tag");
 
     private String value;
 

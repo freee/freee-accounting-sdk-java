@@ -43,6 +43,14 @@ public class ApprovalFlowRoutesIndexResponseApprovalFlowRoutesTest {
     }
 
     /**
+     * Test the property 'defaultRoute'
+     */
+    @Test
+    public void defaultRouteTest() {
+        // TODO: test defaultRoute
+    }
+
+    /**
      * Test the property 'definitionSystem'
      */
     @Test

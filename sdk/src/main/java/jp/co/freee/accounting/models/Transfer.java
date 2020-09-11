@@ -172,8 +172,8 @@ public class Transfer {
 
    /**
    * 金額
-   * minimum: 9223372036854775616
-   * maximum: -9223372036854775616
+   * minimum: -9223372036854775808
+   * maximum: 9223372036854775807
    * @return amount
   **/
   @ApiModelProperty(example = "5000", required = true, value = "金額")

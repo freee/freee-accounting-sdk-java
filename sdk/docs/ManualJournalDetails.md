@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 **segment3TagName** | **Integer** | セグメント３ |  [optional]
 **tagIds** | **List&lt;Integer&gt;** |  | 
 **tagNames** | **List&lt;String&gt;** |  | 
-**taxCode** | **Integer** | 税区分ID | 
+**taxCode** | **Integer** | 税区分コード | 
 **vat** | **Integer** | 消費税額（指定しない場合は自動で計算されます） | 
 
 

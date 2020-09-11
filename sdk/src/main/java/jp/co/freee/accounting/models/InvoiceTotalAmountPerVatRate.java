@@ -54,7 +54,7 @@ public class InvoiceTotalAmountPerVatRate {
 
    /**
    * 軽減税率8%の税込み金額合計
-   * maximum: -9223372036854775616
+   * maximum: 9223372036854775807
    * @return reducedVat8
   **/
   @ApiModelProperty(example = "0", required = true, value = "軽減税率8%の税込み金額合計")
@@ -77,7 +77,7 @@ public class InvoiceTotalAmountPerVatRate {
 
    /**
    * 税率10%の税込み金額合計
-   * maximum: -9223372036854775616
+   * maximum: 9223372036854775807
    * @return vat10
   **/
   @ApiModelProperty(example = "0", required = true, value = "税率10%の税込み金額合計")
@@ -100,7 +100,7 @@ public class InvoiceTotalAmountPerVatRate {
 
    /**
    * 税率5%の税込み金額合計
-   * maximum: -9223372036854775616
+   * maximum: 9223372036854775807
    * @return vat5
   **/
   @ApiModelProperty(example = "0", required = true, value = "税率5%の税込み金額合計")
@@ -123,7 +123,7 @@ public class InvoiceTotalAmountPerVatRate {
 
    /**
    * 税率8%の税込み金額合計
-   * maximum: -9223372036854775616
+   * maximum: 9223372036854775807
    * @return vat8
   **/
   @ApiModelProperty(example = "108000", required = true, value = "税率8%の税込み金額合計")

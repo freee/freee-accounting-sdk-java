@@ -108,8 +108,8 @@ public class RenewUpdateParamsDetails {
 
    /**
    * 取引金額（税込で指定してください）
-   * minimum: 9223372036854775616
-   * maximum: -9223372036854775616
+   * minimum: -9223372036854775808
+   * maximum: 9223372036854775807
    * @return amount
   **/
   @ApiModelProperty(example = "1080", required = true, value = "取引金額（税込で指定してください）")
@@ -206,7 +206,7 @@ public class RenewUpdateParamsDetails {
    /**
    * セグメント１ID
    * minimum: 0
-   * maximum: 2147483647
+   * maximum: 9223372036854775807
    * @return segment1TagId
   **/
   @javax.annotation.Nullable
@@ -231,7 +231,7 @@ public class RenewUpdateParamsDetails {
    /**
    * セグメント２ID
    * minimum: 0
-   * maximum: 2147483647
+   * maximum: 9223372036854775807
    * @return segment2TagId
   **/
   @javax.annotation.Nullable
@@ -256,7 +256,7 @@ public class RenewUpdateParamsDetails {
    /**
    * セグメント３ID
    * minimum: 0
-   * maximum: 2147483647
+   * maximum: 9223372036854775807
    * @return segment3TagId
   **/
   @javax.annotation.Nullable
@@ -335,8 +335,8 @@ public class RenewUpdateParamsDetails {
 
    /**
    * 消費税額（指定しない場合は自動で計算されます）
-   * minimum: 9223372036854775616
-   * maximum: -9223372036854775616
+   * minimum: -9223372036854775808
+   * maximum: 9223372036854775807
    * @return vat
   **/
   @javax.annotation.Nullable

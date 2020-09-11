@@ -23,7 +23,7 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import jp.co.freee.accounting.models.PartnersResponseAddressAttributes;
+import jp.co.freee.accounting.models.PartnerResponsePartnerAddressAttributes;
 
 /**
  * PartnersResponsePartners
@@ -32,7 +32,7 @@ import jp.co.freee.accounting.models.PartnersResponseAddressAttributes;
 public class PartnersResponsePartners {
   public static final String SERIALIZED_NAME_ADDRESS_ATTRIBUTES = "address_attributes";
   @SerializedName(SERIALIZED_NAME_ADDRESS_ATTRIBUTES)
-  private PartnersResponseAddressAttributes addressAttributes;
+  private PartnerResponsePartnerAddressAttributes addressAttributes;
 
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
@@ -292,7 +292,7 @@ public class PartnersResponsePartners {
   private TransferFeeHandlingSideEnum transferFeeHandlingSide;
 
 
-  public PartnersResponsePartners addressAttributes(PartnersResponseAddressAttributes addressAttributes) {
+  public PartnersResponsePartners addressAttributes(PartnerResponsePartnerAddressAttributes addressAttributes) {
     
     this.addressAttributes = addressAttributes;
     return this;
@@ -305,12 +305,12 @@ public class PartnersResponsePartners {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public PartnersResponseAddressAttributes getAddressAttributes() {
+  public PartnerResponsePartnerAddressAttributes getAddressAttributes() {
     return addressAttributes;
   }
 
 
-  public void setAddressAttributes(PartnersResponseAddressAttributes addressAttributes) {
+  public void setAddressAttributes(PartnerResponsePartnerAddressAttributes addressAttributes) {
     this.addressAttributes = addressAttributes;
   }
 
@@ -716,11 +716,11 @@ public class PartnersResponsePartners {
   }
 
    /**
-   * 受取人名（カナ）
+   * 支店番号
    * @return partnerBankAccountAttributesBranchCode
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "フリータロウ", value = "受取人名（カナ）")
+  @ApiModelProperty(example = "999", value = "支店番号")
 
   public String getPartnerBankAccountAttributesBranchCode() {
     return partnerBankAccountAttributesBranchCode;

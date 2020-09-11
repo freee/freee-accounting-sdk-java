@@ -98,7 +98,7 @@ public class TrialBsThreeYearsResponseTrialBsThreeYearsBalances {
    * @return accountCategoryName
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "流動資産", value = "勘定科目カテゴリー名")
+  @ApiModelProperty(example = "販売管理費", value = "勘定科目カテゴリー名")
 
   public String getAccountCategoryName() {
     return accountCategoryName;

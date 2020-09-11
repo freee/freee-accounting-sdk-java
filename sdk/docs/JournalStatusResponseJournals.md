@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **id** | **Integer** | 受け付けID | 
 **startDate** | **String** | 取得開始日 (yyyy-mm-dd) | 
 **status** | [**StatusEnum**](#StatusEnum) | 事業所ID | 
-**visibleTags** | [**List&lt;VisibleTagsEnum&gt;**](#List&lt;VisibleTagsEnum&gt;) |  | 
+**visibleTags** | [**List&lt;VisibleTagsEnum&gt;**](#List&lt;VisibleTagsEnum&gt;) |  |  [optional]
 
 
 
@@ -49,6 +49,9 @@ SECTION | &quot;section&quot;
 DESCRIPTION | &quot;description&quot;
 WALLET_TXN_DESCRIPTION | &quot;wallet_txn_description&quot;
 ALL | &quot;all&quot;
+SEGMENT_1_TAG | &quot;segment_1_tag&quot;
+SEGMENT_2_TAG | &quot;segment_2_tag&quot;
+SEGMENT_3_TAG | &quot;segment_3_tag&quot;
 
 
 

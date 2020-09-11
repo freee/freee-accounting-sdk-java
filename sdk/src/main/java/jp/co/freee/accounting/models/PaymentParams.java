@@ -110,7 +110,7 @@ public class PaymentParams {
    /**
    * 金額
    * minimum: 1
-   * maximum: -9223372036854775616
+   * maximum: 9223372036854775807
    * @return amount
   **/
   @ApiModelProperty(example = "10000", required = true, value = "金額")

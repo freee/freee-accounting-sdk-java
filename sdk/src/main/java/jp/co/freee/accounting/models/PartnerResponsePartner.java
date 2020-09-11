@@ -815,11 +815,11 @@ public class PartnerResponsePartner {
   }
 
    /**
-   * 受取人名（カナ）
+   * 支店番号
    * @return partnerBankAccountAttributesBranchCode
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "フリータロウ", value = "受取人名（カナ）")
+  @ApiModelProperty(example = "999", value = "支店番号")
 
   public String getPartnerBankAccountAttributesBranchCode() {
     return partnerBankAccountAttributesBranchCode;

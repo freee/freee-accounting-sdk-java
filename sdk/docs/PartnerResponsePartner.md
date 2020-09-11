@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 **partnerBankAccountAttributesBankCode** | **String** | 銀行番号 |  [optional]
 **partnerBankAccountAttributesBankName** | **String** | 銀行名 |  [optional]
 **partnerBankAccountAttributesBankNameKana** | **String** | 銀行名（カナ） |  [optional]
-**partnerBankAccountAttributesBranchCode** | **String** | 受取人名（カナ） |  [optional]
+**partnerBankAccountAttributesBranchCode** | **String** | 支店番号 |  [optional]
 **partnerBankAccountAttributesBranchKana** | **String** | 支店名（カナ） |  [optional]
 **partnerBankAccountAttributesBranchName** | **String** | 支店名 |  [optional]
 **partnerBankAccountAttributesLongAccountName** | **String** | 受取人名 |  [optional]

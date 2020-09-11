@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**addressAttributes** | [**PartnersResponseAddressAttributes**](PartnersResponseAddressAttributes.md) |  |  [optional]
+**addressAttributes** | [**PartnerResponsePartnerAddressAttributes**](PartnerResponsePartnerAddressAttributes.md) |  |  [optional]
 **code** | **String** | 取引先コード | 
 **companyId** | **Integer** | 事業所ID | 
 **contactName** | **String** | 担当者 氏名 |  [optional]
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **partnerBankAccountAttributesBankCode** | **String** | 銀行番号 |  [optional]
 **partnerBankAccountAttributesBankName** | **String** | 銀行名 |  [optional]
 **partnerBankAccountAttributesBankNameKana** | **String** | 銀行名（カナ） |  [optional]
-**partnerBankAccountAttributesBranchCode** | **String** | 受取人名（カナ） |  [optional]
+**partnerBankAccountAttributesBranchCode** | **String** | 支店番号 |  [optional]
 **partnerBankAccountAttributesBranchKana** | **String** | 支店名（カナ） |  [optional]
 **partnerBankAccountAttributesBranchName** | **String** | 支店名 |  [optional]
 **partnerBankAccountAttributesLongAccountName** | **String** | 受取人名 |  [optional]

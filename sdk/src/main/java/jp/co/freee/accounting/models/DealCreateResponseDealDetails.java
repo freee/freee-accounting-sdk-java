@@ -163,8 +163,8 @@ public class DealCreateResponseDealDetails {
 
    /**
    * 取引金額
-   * minimum: 9223372036854775616
-   * maximum: -9223372036854775616
+   * minimum: -9223372036854775808
+   * maximum: 9223372036854775807
    * @return amount
   **/
   @ApiModelProperty(example = "5250", required = true, value = "取引金額")
@@ -307,7 +307,7 @@ public class DealCreateResponseDealDetails {
    /**
    * セグメント１ID
    * minimum: 1
-   * maximum: 2147483647
+   * maximum: 9223372036854775807
    * @return segment1TagId
   **/
   @javax.annotation.Nullable
@@ -332,7 +332,7 @@ public class DealCreateResponseDealDetails {
    /**
    * セグメント２ID
    * minimum: 1
-   * maximum: 2147483647
+   * maximum: 9223372036854775807
    * @return segment2TagId
   **/
   @javax.annotation.Nullable
@@ -357,7 +357,7 @@ public class DealCreateResponseDealDetails {
    /**
    * セグメント３ID
    * minimum: 1
-   * maximum: 2147483647
+   * maximum: 9223372036854775807
    * @return segment3TagId
   **/
   @javax.annotation.Nullable

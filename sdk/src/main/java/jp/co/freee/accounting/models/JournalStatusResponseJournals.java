@@ -176,7 +176,13 @@ public class JournalStatusResponseJournals {
     
     WALLET_TXN_DESCRIPTION("wallet_txn_description"),
     
-    ALL("all");
+    ALL("all"),
+    
+    SEGMENT_1_TAG("segment_1_tag"),
+    
+    SEGMENT_2_TAG("segment_2_tag"),
+    
+    SEGMENT_3_TAG("segment_3_tag");
 
     private String value;
 
@@ -218,7 +224,7 @@ public class JournalStatusResponseJournals {
 
   public static final String SERIALIZED_NAME_VISIBLE_TAGS = "visible_tags";
   @SerializedName(SERIALIZED_NAME_VISIBLE_TAGS)
-  private List<VisibleTagsEnum> visibleTags = new ArrayList<>();
+  private List<VisibleTagsEnum> visibleTags = null;
 
 
   public JournalStatusResponseJournals companyId(Integer companyId) {
@@ -387,6 +393,9 @@ public class JournalStatusResponseJournals {
   }
 
   public JournalStatusResponseJournals addVisibleTagsItem(VisibleTagsEnum visibleTagsItem) {
+    if (this.visibleTags == null) {
+      this.visibleTags = new ArrayList<>();
+    }
     this.visibleTags.add(visibleTagsItem);
     return this;
   }
@@ -395,7 +404,8 @@ public class JournalStatusResponseJournals {
    * Get visibleTags
    * @return visibleTags
   **/
-  @ApiModelProperty(required = true, value = "")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
 
   public List<VisibleTagsEnum> getVisibleTags() {
     return visibleTags;

@@ -298,7 +298,7 @@ public class InvoiceCreateParamsInvoiceContents {
    /**
    * セグメント１ID
    * minimum: 1
-   * maximum: 2147483647
+   * maximum: 9223372036854775807
    * @return segment1TagId
   **/
   @javax.annotation.Nullable
@@ -323,7 +323,7 @@ public class InvoiceCreateParamsInvoiceContents {
    /**
    * セグメント２ID
    * minimum: 1
-   * maximum: 2147483647
+   * maximum: 9223372036854775807
    * @return segment2TagId
   **/
   @javax.annotation.Nullable
@@ -348,7 +348,7 @@ public class InvoiceCreateParamsInvoiceContents {
    /**
    * セグメント３ID
    * minimum: 1
-   * maximum: 2147483647
+   * maximum: 9223372036854775807
    * @return segment3TagId
   **/
   @javax.annotation.Nullable
@@ -402,13 +402,13 @@ public class InvoiceCreateParamsInvoiceContents {
   }
 
    /**
-   * 税区分ID
+   * 税区分コード
    * minimum: 0
    * maximum: 2147483647
    * @return taxCode
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "1", value = "税区分ID")
+  @ApiModelProperty(example = "1", value = "税区分コード")
 
   public Integer getTaxCode() {
     return taxCode;
@@ -473,8 +473,8 @@ public class InvoiceCreateParamsInvoiceContents {
 
    /**
    * 単価 (tax_entry_method: inclusiveの場合は税込価格、tax_entry_method: exclusiveの場合は税抜価格となります)
-   * minimum: -9999999999999
-   * maximum: 9999999999999
+   * minimum: -999999999999
+   * maximum: 999999999999
    * @return unitPrice
   **/
   @javax.annotation.Nullable

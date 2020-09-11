@@ -33,9 +33,9 @@ public class PartnerResponsePartnerAddressAttributes {
   @SerializedName(SERIALIZED_NAME_PREFECTURE_CODE)
   private Integer prefectureCode;
 
-  public static final String SERIALIZED_NAME_STREET_NAME1_QUOTE = "street_name1&#39;";
-  @SerializedName(SERIALIZED_NAME_STREET_NAME1_QUOTE)
-  private String streetName1Quote;
+  public static final String SERIALIZED_NAME_STREET_NAME1 = "street_name1";
+  @SerializedName(SERIALIZED_NAME_STREET_NAME1)
+  private String streetName1;
 
   public static final String SERIALIZED_NAME_STREET_NAME2 = "street_name2";
   @SerializedName(SERIALIZED_NAME_STREET_NAME2)
@@ -71,26 +71,26 @@ public class PartnerResponsePartnerAddressAttributes {
   }
 
 
-  public PartnerResponsePartnerAddressAttributes streetName1Quote(String streetName1Quote) {
+  public PartnerResponsePartnerAddressAttributes streetName1(String streetName1) {
     
-    this.streetName1Quote = streetName1Quote;
+    this.streetName1 = streetName1;
     return this;
   }
 
    /**
    * 市区町村・番地
-   * @return streetName1Quote
+   * @return streetName1
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(example = "ＸＸ区ＹＹ１−１−１", value = "市区町村・番地")
 
-  public String getStreetName1Quote() {
-    return streetName1Quote;
+  public String getStreetName1() {
+    return streetName1;
   }
 
 
-  public void setStreetName1Quote(String streetName1Quote) {
-    this.streetName1Quote = streetName1Quote;
+  public void setStreetName1(String streetName1) {
+    this.streetName1 = streetName1;
   }
 
 
@@ -150,14 +150,14 @@ public class PartnerResponsePartnerAddressAttributes {
     }
     PartnerResponsePartnerAddressAttributes partnerResponsePartnerAddressAttributes = (PartnerResponsePartnerAddressAttributes) o;
     return Objects.equals(this.prefectureCode, partnerResponsePartnerAddressAttributes.prefectureCode) &&
-        Objects.equals(this.streetName1Quote, partnerResponsePartnerAddressAttributes.streetName1Quote) &&
+        Objects.equals(this.streetName1, partnerResponsePartnerAddressAttributes.streetName1) &&
         Objects.equals(this.streetName2, partnerResponsePartnerAddressAttributes.streetName2) &&
         Objects.equals(this.zipcode, partnerResponsePartnerAddressAttributes.zipcode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(prefectureCode, streetName1Quote, streetName2, zipcode);
+    return Objects.hash(prefectureCode, streetName1, streetName2, zipcode);
   }
 
 
@@ -166,7 +166,7 @@ public class PartnerResponsePartnerAddressAttributes {
     StringBuilder sb = new StringBuilder();
     sb.append("class PartnerResponsePartnerAddressAttributes {\n");
     sb.append("    prefectureCode: ").append(toIndentedString(prefectureCode)).append("\n");
-    sb.append("    streetName1Quote: ").append(toIndentedString(streetName1Quote)).append("\n");
+    sb.append("    streetName1: ").append(toIndentedString(streetName1)).append("\n");
     sb.append("    streetName2: ").append(toIndentedString(streetName2)).append("\n");
     sb.append("    zipcode: ").append(toIndentedString(zipcode)).append("\n");
     sb.append("}");

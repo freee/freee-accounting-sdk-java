@@ -49,11 +49,11 @@ public class PartnerResponsePartnerAddressAttributesTest {
     }
 
     /**
-     * Test the property 'streetName1Quote'
+     * Test the property 'streetName1'
      */
     @Test
-    public void streetName1QuoteTest() {
-        // TODO: test streetName1Quote
+    public void streetName1Test() {
+        // TODO: test streetName1
     }
 
     /**

@@ -163,8 +163,8 @@ public class DealDetails {
 
    /**
    * 金額（税込で指定してください）
-   * minimum: 9223372036854775616
-   * maximum: -9223372036854775616
+   * minimum: -9223372036854775808
+   * maximum: 9223372036854775807
    * @return amount
   **/
   @ApiModelProperty(example = "108000", required = true, value = "金額（税込で指定してください）")
@@ -307,7 +307,7 @@ public class DealDetails {
    /**
    * セグメント１ID
    * minimum: 1
-   * maximum: 2147483647
+   * maximum: 9223372036854775807
    * @return segment1TagId
   **/
   @javax.annotation.Nullable
@@ -332,7 +332,7 @@ public class DealDetails {
    /**
    * セグメント２ID
    * minimum: 1
-   * maximum: 2147483647
+   * maximum: 9223372036854775807
    * @return segment2TagId
   **/
   @javax.annotation.Nullable
@@ -357,7 +357,7 @@ public class DealDetails {
    /**
    * セグメント３ID
    * minimum: 1
-   * maximum: 2147483647
+   * maximum: 9223372036854775807
    * @return segment3TagId
   **/
   @javax.annotation.Nullable
