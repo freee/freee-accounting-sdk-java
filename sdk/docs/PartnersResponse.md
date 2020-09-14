@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**partner** | [**Partner**](Partner.md) |  | 
+**partners** | [**List&lt;PartnersResponsePartners&gt;**](PartnersResponsePartners.md) |  | 
 
 
 

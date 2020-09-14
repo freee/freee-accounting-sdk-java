@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## createItem
 
-> ItemResponse createItem(parameters)
+> ItemResponse createItem(itemParams)
 
 品目の作成
 
@@ -41,9 +41,9 @@ public class Example {
         oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
         ItemsApi apiInstance = new ItemsApi(defaultClient);
-        CreateItemParams parameters = new CreateItemParams(); // CreateItemParams | 品目の作成
+        ItemParams itemParams = new ItemParams(); // ItemParams | 品目の作成
         try {
-            ItemResponse result = apiInstance.createItem(parameters);
+            ItemResponse result = apiInstance.createItem(itemParams);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ItemsApi#createItem");
@@ -61,7 +61,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **parameters** | [**CreateItemParams**](CreateItemParams.md)| 品目の作成 | [optional]
+ **itemParams** | [**ItemParams**](ItemParams.md)| 品目の作成 | [optional]
 
 ### Return type
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 ### HTTP response details
@@ -82,6 +82,7 @@ Name | Type | Description  | Notes
 | **201** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **500** |  |  -  |
 
 
@@ -156,6 +157,7 @@ null (empty response body)
 | **204** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 | **500** |  |  -  |
 
@@ -232,13 +234,14 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 | **500** |  |  -  |
 
 
 ## getItems
 
-> ItemsIndexResponse getItems(companyId)
+> InlineResponse2005 getItems(companyId, offset, limit)
 
 品目一覧の取得
 
@@ -266,8 +269,10 @@ public class Example {
 
         ItemsApi apiInstance = new ItemsApi(defaultClient);
         Integer companyId = 56; // Integer | 事業所ID
+        Integer offset = 56; // Integer | 取得レコードのオフセット (デフォルト: 0)
+        Integer limit = 56; // Integer | 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000)
         try {
-            ItemsIndexResponse result = apiInstance.getItems(companyId);
+            InlineResponse2005 result = apiInstance.getItems(companyId, offset, limit);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ItemsApi#getItems");
@@ -286,10 +291,12 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **companyId** | **Integer**| 事業所ID |
+ **offset** | **Integer**| 取得レコードのオフセット (デフォルト: 0) | [optional]
+ **limit** | **Integer**| 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) | [optional]
 
 ### Return type
 
-[**ItemsIndexResponse**](ItemsIndexResponse.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -306,12 +313,13 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **500** |  |  -  |
 
 
 ## updateItem
 
-> ItemResponse updateItem(id, parameters)
+> ItemResponse updateItem(id, itemParams)
 
 品目の更新
 
@@ -339,9 +347,9 @@ public class Example {
 
         ItemsApi apiInstance = new ItemsApi(defaultClient);
         Integer id = 56; // Integer | 品目ID
-        UpdateItemParams parameters = new UpdateItemParams(); // UpdateItemParams | 品目の更新
+        ItemParams itemParams = new ItemParams(); // ItemParams | 品目の更新
         try {
-            ItemResponse result = apiInstance.updateItem(id, parameters);
+            ItemResponse result = apiInstance.updateItem(id, itemParams);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ItemsApi#updateItem");
@@ -360,7 +368,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| 品目ID |
- **parameters** | [**UpdateItemParams**](UpdateItemParams.md)| 品目の更新 | [optional]
+ **itemParams** | [**ItemParams**](ItemParams.md)| 品目の更新 | [optional]
 
 ### Return type
 
@@ -372,7 +380,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 ### HTTP response details
@@ -381,5 +389,6 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **500** |  |  -  |
 

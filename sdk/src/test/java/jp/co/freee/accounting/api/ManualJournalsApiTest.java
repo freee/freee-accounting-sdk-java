@@ -3,13 +3,12 @@ package jp.co.freee.accounting.api;
 import jp.co.freee.accounting.ApiClient;
 import jp.co.freee.accounting.models.BadRequestError;
 import jp.co.freee.accounting.models.BadRequestNotFoundError;
+import jp.co.freee.accounting.models.ForbiddenError;
+import jp.co.freee.accounting.models.InlineResponse2006;
 import jp.co.freee.accounting.models.InternalServerError;
-import jp.co.freee.accounting.models.ManualJournalsCreateParams;
-import jp.co.freee.accounting.models.ManualJournalsCreateResponse;
-import jp.co.freee.accounting.models.ManualJournalsIndexResponse;
-import jp.co.freee.accounting.models.ManualJournalsShowResponse;
-import jp.co.freee.accounting.models.ManualJournalsUpdateParams;
-import jp.co.freee.accounting.models.ManualJournalsUpdateResponse;
+import jp.co.freee.accounting.models.ManualJournalCreateParams;
+import jp.co.freee.accounting.models.ManualJournalResponse;
+import jp.co.freee.accounting.models.ManualJournalUpdateParams;
 import jp.co.freee.accounting.models.ServiceUnavailableError;
 import jp.co.freee.accounting.models.UnauthorizedError;
 import org.junit.Before;
@@ -39,8 +38,8 @@ public class ManualJournalsApiTest {
      */
     @Test
     public void createManualJournalTest() {
-        ManualJournalsCreateParams parameters = null;
-        // ManualJournalsCreateResponse response = api.createManualJournal(parameters);
+        ManualJournalCreateParams manualJournalCreateParams = null;
+        // ManualJournalResponse response = api.createManualJournal(manualJournalCreateParams);
 
         // TODO: test validations
     }
@@ -66,7 +65,7 @@ public class ManualJournalsApiTest {
     public void getManualJournalTest() {
         Integer id = null;
         Integer companyId = null;
-        // ManualJournalsShowResponse response = api.getManualJournal(id, companyId);
+        // ManualJournalResponse response = api.getManualJournal(id, companyId);
 
         // TODO: test validations
     }
@@ -97,7 +96,7 @@ public class ManualJournalsApiTest {
         String txnNumber = null;
         Integer offset = null;
         Integer limit = null;
-        // ManualJournalsIndexResponse response = api.getManualJournals(companyId, startIssueDate, endIssueDate, entrySide, accountItemId, minAmount, maxAmount, partnerId, partnerCode, itemId, sectionId, segment1TagId, segment2TagId, segment3TagId, commentStatus, commentImportant, adjustment, txnNumber, offset, limit);
+        // InlineResponse2006 response = api.getManualJournals(companyId, startIssueDate, endIssueDate, entrySide, accountItemId, minAmount, maxAmount, partnerId, partnerCode, itemId, sectionId, segment1TagId, segment2TagId, segment3TagId, commentStatus, commentImportant, adjustment, txnNumber, offset, limit);
 
         // TODO: test validations
     }
@@ -109,8 +108,8 @@ public class ManualJournalsApiTest {
     @Test
     public void updateManualJournalTest() {
         Integer id = null;
-        ManualJournalsUpdateParams parameters = null;
-        // ManualJournalsUpdateResponse response = api.updateManualJournal(id, parameters);
+        ManualJournalUpdateParams manualJournalUpdateParams = null;
+        // ManualJournalResponse response = api.updateManualJournal(id, manualJournalUpdateParams);
 
         // TODO: test validations
     }

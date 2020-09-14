@@ -14,11 +14,11 @@ Method | HTTP request | Description
 
 ## createAccountItem
 
-> AccountItemsCreateResponse createAccountItem(parameters)
+> AccountItemResponse createAccountItem(accountItemParams)
 
 勘定科目の作成
 
- &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の勘定科目を作成する&lt;/p&gt;
+ &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の勘定科目を作成する&lt;/p&gt;  &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;注意点&lt;/h2&gt; &lt;p&gt;tax_nameは、api/1/taxes/companies/{company_id} で該当事業所の税区分の一覧を取得して、availableの値がtrue、かつ”name_ja”に”税率%”を含んでいない税区分を確認して、そのnameを指定して勘定科目の作成をしてください&lt;/p&gt;
 
 ### Example
 
@@ -41,9 +41,9 @@ public class Example {
         oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
         AccountItemsApi apiInstance = new AccountItemsApi(defaultClient);
-        AccountItemParams parameters = new AccountItemParams(); // AccountItemParams | 勘定科目の作成
+        AccountItemParams accountItemParams = new AccountItemParams(); // AccountItemParams | 勘定科目の作成
         try {
-            AccountItemsCreateResponse result = apiInstance.createAccountItem(parameters);
+            AccountItemResponse result = apiInstance.createAccountItem(accountItemParams);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AccountItemsApi#createAccountItem");
@@ -61,11 +61,11 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **parameters** | [**AccountItemParams**](AccountItemParams.md)| 勘定科目の作成 |
+ **accountItemParams** | [**AccountItemParams**](AccountItemParams.md)| 勘定科目の作成 |
 
 ### Return type
 
-[**AccountItemsCreateResponse**](AccountItemsCreateResponse.md)
+[**AccountItemResponse**](AccountItemResponse.md)
 
 ### Authorization
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 ### HTTP response details
@@ -82,6 +82,7 @@ Name | Type | Description  | Notes
 | **201** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **500** |  |  -  |
 
 
@@ -156,12 +157,13 @@ null (empty response body)
 | **204** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **500** |  |  -  |
 
 
 ## getAccountItem
 
-> AccountItemsShowResponse getAccountItem(id, companyId)
+> AccountItemResponse getAccountItem(id, companyId)
 
 勘定科目の詳細情報の取得
 
@@ -191,7 +193,7 @@ public class Example {
         Integer id = 56; // Integer | 勘定科目ID
         Integer companyId = 56; // Integer | 事業所ID
         try {
-            AccountItemsShowResponse result = apiInstance.getAccountItem(id, companyId);
+            AccountItemResponse result = apiInstance.getAccountItem(id, companyId);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AccountItemsApi#getAccountItem");
@@ -214,7 +216,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountItemsShowResponse**](AccountItemsShowResponse.md)
+[**AccountItemResponse**](AccountItemResponse.md)
 
 ### Authorization
 
@@ -231,17 +233,18 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 | **500** |  |  -  |
 
 
 ## getAccountItems
 
-> AccountItemsIndexResponse getAccountItems(companyId, baseDate)
+> AccountItemsResponse getAccountItems(companyId, baseDate)
 
 勘定科目一覧の取得
 
- &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の勘定科目一覧を取得する&lt;/p&gt;  &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;定義&lt;/h2&gt;  &lt;ul&gt; &lt;li&gt;default_tax_id : デフォルト設定がされている税区分ID&lt;/li&gt;  &lt;li&gt;default_tax_code : リクエストした日時を基準とした税区分コード&lt;/li&gt; &lt;/ul&gt;
+ &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の勘定科目一覧を取得する&lt;/p&gt;  &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;定義&lt;/h2&gt;  &lt;ul&gt; &lt;li&gt;default_tax_id : デフォルト設定がされている税区分ID&lt;/li&gt;  &lt;li&gt;default_tax_code : リクエストした日時を基準とした税区分コード&lt;/li&gt; &lt;/ul&gt;  &lt;h2 id&#x3D;\&quot;_3\&quot;&gt;注意点&lt;/h2&gt; &lt;p&gt;default_tax_code は勘定科目作成・更新時に利用するものではありません&lt;/p&gt;
 
 ### Example
 
@@ -267,7 +270,7 @@ public class Example {
         Integer companyId = 56; // Integer | 事業所ID
         String baseDate = "baseDate_example"; // String | 基準日:指定した場合、勘定科目に紐づく税区分(default_tax_code)が、基準日の税率に基づいて返ります。
         try {
-            AccountItemsIndexResponse result = apiInstance.getAccountItems(companyId, baseDate);
+            AccountItemsResponse result = apiInstance.getAccountItems(companyId, baseDate);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AccountItemsApi#getAccountItems");
@@ -290,7 +293,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountItemsIndexResponse**](AccountItemsIndexResponse.md)
+[**AccountItemsResponse**](AccountItemsResponse.md)
 
 ### Authorization
 
@@ -307,16 +310,17 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **500** |  |  -  |
 
 
 ## updateAccountItem
 
-> AccountItemsUpdateResponse updateAccountItem(id, parameters)
+> AccountItemResponse updateAccountItem(id, accountItemParams)
 
 勘定科目の更新
 
- &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;勘定科目を更新する&lt;/p&gt;
+ &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;勘定科目を更新する&lt;/p&gt;  &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;注意点&lt;/h2&gt; &lt;p&gt;tax_codeは、api/1/taxes/companies/{company_id} で該当事業所の税区分の一覧を取得して、availableの値がtrue、かつ”name_ja”に”税率%”を含んでいない税区分を確認して、そのcodeを指定して勘定科目の更新をしてください&lt;/p&gt;
 
 ### Example
 
@@ -340,9 +344,9 @@ public class Example {
 
         AccountItemsApi apiInstance = new AccountItemsApi(defaultClient);
         Integer id = 56; // Integer | 
-        AccountItemParams parameters = new AccountItemParams(); // AccountItemParams | 勘定科目の更新
+        AccountItemParams accountItemParams = new AccountItemParams(); // AccountItemParams | 勘定科目の更新
         try {
-            AccountItemsUpdateResponse result = apiInstance.updateAccountItem(id, parameters);
+            AccountItemResponse result = apiInstance.updateAccountItem(id, accountItemParams);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AccountItemsApi#updateAccountItem");
@@ -361,11 +365,11 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**|  |
- **parameters** | [**AccountItemParams**](AccountItemParams.md)| 勘定科目の更新 |
+ **accountItemParams** | [**AccountItemParams**](AccountItemParams.md)| 勘定科目の更新 |
 
 ### Return type
 
-[**AccountItemsUpdateResponse**](AccountItemsUpdateResponse.md)
+[**AccountItemResponse**](AccountItemResponse.md)
 
 ### Authorization
 
@@ -373,7 +377,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 ### HTTP response details
@@ -382,5 +386,6 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **500** |  |  -  |
 

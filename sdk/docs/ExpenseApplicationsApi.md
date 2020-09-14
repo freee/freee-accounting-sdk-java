@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## createExpenseApplication
 
-> ExpenseApplicationsResponse createExpenseApplication(parameters)
+> ExpenseApplicationResponse createExpenseApplication(expenseApplicationCreateParams)
 
 経費申請の作成
 
@@ -41,9 +41,9 @@ public class Example {
         oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
         ExpenseApplicationsApi apiInstance = new ExpenseApplicationsApi(defaultClient);
-        CreateExpenseApplicationParams parameters = new CreateExpenseApplicationParams(); // CreateExpenseApplicationParams | 経費申請の作成
+        ExpenseApplicationCreateParams expenseApplicationCreateParams = new ExpenseApplicationCreateParams(); // ExpenseApplicationCreateParams | 経費申請の作成
         try {
-            ExpenseApplicationsResponse result = apiInstance.createExpenseApplication(parameters);
+            ExpenseApplicationResponse result = apiInstance.createExpenseApplication(expenseApplicationCreateParams);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ExpenseApplicationsApi#createExpenseApplication");
@@ -61,11 +61,11 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **parameters** | [**CreateExpenseApplicationParams**](CreateExpenseApplicationParams.md)| 経費申請の作成 | [optional]
+ **expenseApplicationCreateParams** | [**ExpenseApplicationCreateParams**](ExpenseApplicationCreateParams.md)| 経費申請の作成 | [optional]
 
 ### Return type
 
-[**ExpenseApplicationsResponse**](ExpenseApplicationsResponse.md)
+[**ExpenseApplicationResponse**](ExpenseApplicationResponse.md)
 
 ### Authorization
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 ### HTTP response details
@@ -82,6 +82,7 @@ Name | Type | Description  | Notes
 | **201** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **500** |  |  -  |
 
 
@@ -156,13 +157,14 @@ null (empty response body)
 | **204** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 | **500** |  |  -  |
 
 
 ## getExpenseApplication
 
-> ExpenseApplicationsResponse getExpenseApplication(id, companyId)
+> ExpenseApplicationResponse getExpenseApplication(id, companyId)
 
 経費申請詳細の取得
 
@@ -190,7 +192,7 @@ public class Example {
         Integer id = 56; // Integer | 経費申請ID
         Integer companyId = 56; // Integer | 事業所ID
         try {
-            ExpenseApplicationsResponse result = apiInstance.getExpenseApplication(id, companyId);
+            ExpenseApplicationResponse result = apiInstance.getExpenseApplication(id, companyId);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ExpenseApplicationsApi#getExpenseApplication");
@@ -213,7 +215,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExpenseApplicationsResponse**](ExpenseApplicationsResponse.md)
+[**ExpenseApplicationResponse**](ExpenseApplicationResponse.md)
 
 ### Authorization
 
@@ -230,6 +232,7 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 | **500** |  |  -  |
 
@@ -263,7 +266,7 @@ public class Example {
         ExpenseApplicationsApi apiInstance = new ExpenseApplicationsApi(defaultClient);
         Integer companyId = 56; // Integer | 事業所ID
         Integer offset = 56; // Integer | 取得レコードのオフセット (デフォルト: 0)
-        Integer limit = 56; // Integer | 取得レコードの件数 (デフォルト: 50, 最大: 500)
+        Integer limit = 56; // Integer | 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500)
         try {
             ExpenseApplicationsIndexResponse result = apiInstance.getExpenseApplications(companyId, offset, limit);
             System.out.println(result);
@@ -285,7 +288,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **companyId** | **Integer**| 事業所ID |
  **offset** | **Integer**| 取得レコードのオフセット (デフォルト: 0) | [optional]
- **limit** | **Integer**| 取得レコードの件数 (デフォルト: 50, 最大: 500) | [optional]
+ **limit** | **Integer**| 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) | [optional]
 
 ### Return type
 
@@ -306,12 +309,13 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **500** |  |  -  |
 
 
 ## updateExpenseApplication
 
-> ExpenseApplicationsResponse updateExpenseApplication(id, parameters)
+> ExpenseApplicationResponse updateExpenseApplication(id, expenseApplicationUpdateParams)
 
 経費申請の更新
 
@@ -339,9 +343,9 @@ public class Example {
 
         ExpenseApplicationsApi apiInstance = new ExpenseApplicationsApi(defaultClient);
         Integer id = 56; // Integer | 
-        UpdateExpenseApplicationParams parameters = new UpdateExpenseApplicationParams(); // UpdateExpenseApplicationParams | 経費申請の更新
+        ExpenseApplicationUpdateParams expenseApplicationUpdateParams = new ExpenseApplicationUpdateParams(); // ExpenseApplicationUpdateParams | 経費申請の更新
         try {
-            ExpenseApplicationsResponse result = apiInstance.updateExpenseApplication(id, parameters);
+            ExpenseApplicationResponse result = apiInstance.updateExpenseApplication(id, expenseApplicationUpdateParams);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ExpenseApplicationsApi#updateExpenseApplication");
@@ -360,11 +364,11 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**|  |
- **parameters** | [**UpdateExpenseApplicationParams**](UpdateExpenseApplicationParams.md)| 経費申請の更新 | [optional]
+ **expenseApplicationUpdateParams** | [**ExpenseApplicationUpdateParams**](ExpenseApplicationUpdateParams.md)| 経費申請の更新 | [optional]
 
 ### Return type
 
-[**ExpenseApplicationsResponse**](ExpenseApplicationsResponse.md)
+[**ExpenseApplicationResponse**](ExpenseApplicationResponse.md)
 
 ### Authorization
 
@@ -372,7 +376,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 ### HTTP response details
@@ -381,6 +385,7 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 | **500** |  |  -  |
 

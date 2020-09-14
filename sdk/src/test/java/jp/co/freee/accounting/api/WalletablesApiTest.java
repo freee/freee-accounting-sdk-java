@@ -3,13 +3,14 @@ package jp.co.freee.accounting.api;
 import jp.co.freee.accounting.ApiClient;
 import jp.co.freee.accounting.models.BadRequestError;
 import jp.co.freee.accounting.models.BadRequestNotFoundError;
+import jp.co.freee.accounting.models.ForbiddenError;
+import jp.co.freee.accounting.models.InlineResponse20018;
+import jp.co.freee.accounting.models.InlineResponse20019;
 import jp.co.freee.accounting.models.InternalServerError;
 import jp.co.freee.accounting.models.UnauthorizedError;
 import jp.co.freee.accounting.models.WalletableCreateParams;
+import jp.co.freee.accounting.models.WalletableCreateResponse;
 import jp.co.freee.accounting.models.WalletableUpdateParams;
-import jp.co.freee.accounting.models.WalletablesCreateResponse;
-import jp.co.freee.accounting.models.WalletablesIndexResponse;
-import jp.co.freee.accounting.models.WalletablesResponse;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -37,8 +38,8 @@ public class WalletablesApiTest {
      */
     @Test
     public void createWalletableTest() {
-        WalletableCreateParams parameters = null;
-        // WalletablesCreateResponse response = api.createWalletable(parameters);
+        WalletableCreateParams walletableCreateParams = null;
+        // WalletableCreateResponse response = api.createWalletable(walletableCreateParams);
 
         // TODO: test validations
     }
@@ -66,7 +67,7 @@ public class WalletablesApiTest {
         Integer id = null;
         String type = null;
         Integer companyId = null;
-        // WalletablesResponse response = api.getWalletable(id, type, companyId);
+        // InlineResponse20019 response = api.getWalletable(id, type, companyId);
 
         // TODO: test validations
     }
@@ -79,7 +80,8 @@ public class WalletablesApiTest {
     public void getWalletablesTest() {
         Integer companyId = null;
         Boolean withBalance = null;
-        // WalletablesIndexResponse response = api.getWalletables(companyId, withBalance);
+        String type = null;
+        // InlineResponse20018 response = api.getWalletables(companyId, withBalance, type);
 
         // TODO: test validations
     }
@@ -92,9 +94,8 @@ public class WalletablesApiTest {
     public void updateWalletableTest() {
         Integer id = null;
         String type = null;
-        Integer companyId = null;
-        WalletableUpdateParams parameters = null;
-        // WalletablesResponse response = api.updateWalletable(id, type, companyId, parameters);
+        WalletableUpdateParams walletableUpdateParams = null;
+        // InlineResponse20019 response = api.updateWalletable(id, type, walletableUpdateParams);
 
         // TODO: test validations
     }

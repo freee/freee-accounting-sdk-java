@@ -3,11 +3,12 @@ package jp.co.freee.accounting.api;
 import jp.co.freee.accounting.ApiClient;
 import jp.co.freee.accounting.models.BadRequestError;
 import jp.co.freee.accounting.models.BadRequestNotFoundError;
-import jp.co.freee.accounting.models.CreateWalletTxnParams;
+import jp.co.freee.accounting.models.ForbiddenError;
+import jp.co.freee.accounting.models.InlineResponse20017;
 import jp.co.freee.accounting.models.InternalServerError;
 import jp.co.freee.accounting.models.UnauthorizedError;
-import jp.co.freee.accounting.models.WalletTxnsIndexResponse;
-import jp.co.freee.accounting.models.WalletTxnsShowResponse;
+import jp.co.freee.accounting.models.WalletTxnParams;
+import jp.co.freee.accounting.models.WalletTxnResponse;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -35,8 +36,8 @@ public class WalletTxnsApiTest {
      */
     @Test
     public void createWalletTxnTest() {
-        CreateWalletTxnParams parameters = null;
-        // WalletTxnsShowResponse response = api.createWalletTxn(parameters);
+        WalletTxnParams walletTxnParams = null;
+        // WalletTxnResponse response = api.createWalletTxn(walletTxnParams);
 
         // TODO: test validations
     }
@@ -62,7 +63,7 @@ public class WalletTxnsApiTest {
     public void getWalletTxnTest() {
         Integer id = null;
         Integer companyId = null;
-        // WalletTxnsShowResponse response = api.getWalletTxn(id, companyId);
+        // WalletTxnResponse response = api.getWalletTxn(id, companyId);
 
         // TODO: test validations
     }
@@ -81,7 +82,7 @@ public class WalletTxnsApiTest {
         String entrySide = null;
         Integer offset = null;
         Integer limit = null;
-        // WalletTxnsIndexResponse response = api.getWalletTxns(companyId, walletableType, walletableId, startDate, endDate, entrySide, offset, limit);
+        // InlineResponse20017 response = api.getWalletTxns(companyId, walletableType, walletableId, startDate, endDate, entrySide, offset, limit);
 
         // TODO: test validations
     }

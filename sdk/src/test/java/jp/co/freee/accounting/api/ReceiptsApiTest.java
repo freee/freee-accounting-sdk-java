@@ -4,10 +4,11 @@ import jp.co.freee.accounting.ApiClient;
 import jp.co.freee.accounting.models.BadRequestError;
 import jp.co.freee.accounting.models.BadRequestNotFoundError;
 import java.io.File;
+import jp.co.freee.accounting.models.ForbiddenError;
+import jp.co.freee.accounting.models.InlineResponse2008;
 import jp.co.freee.accounting.models.InternalServerError;
+import jp.co.freee.accounting.models.ReceiptResponse;
 import jp.co.freee.accounting.models.ReceiptUpdateParams;
-import jp.co.freee.accounting.models.ReceiptsIndexResponse;
-import jp.co.freee.accounting.models.ReceiptsResponse;
 import jp.co.freee.accounting.models.UnauthorizedError;
 import org.junit.Before;
 import org.junit.Test;
@@ -32,7 +33,7 @@ public class ReceiptsApiTest {
     /**
      * ファイルボックス 証憑ファイルアップロード
      *
-     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ファイルボックスに証憑ファイルをアップロードする&lt;/p&gt;
+     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ファイルボックスに証憑ファイルをアップロードする&lt;/p&gt; &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;注意点&lt;/h2&gt; &lt;ul&gt;   &lt;li&gt;リクエストヘッダーの Content-Type は、multipart/form-dataにのみ対応しています。&lt;/li&gt; &lt;/ul&gt;
      */
     @Test
     public void createReceiptTest() {
@@ -40,7 +41,7 @@ public class ReceiptsApiTest {
         File receipt = null;
         String description = null;
         String issueDate = null;
-        // ReceiptsResponse response = api.createReceipt(companyId, receipt, description, issueDate);
+        // ReceiptResponse response = api.createReceipt(companyId, receipt, description, issueDate);
 
         // TODO: test validations
     }
@@ -66,7 +67,7 @@ public class ReceiptsApiTest {
     public void getReceiptTest() {
         Integer id = null;
         Integer companyId = null;
-        // ReceiptsResponse response = api.getReceipt(id, companyId);
+        // ReceiptResponse response = api.getReceipt(id, companyId);
 
         // TODO: test validations
     }
@@ -87,7 +88,7 @@ public class ReceiptsApiTest {
         String category = null;
         Integer offset = null;
         Integer limit = null;
-        // ReceiptsIndexResponse response = api.getReceipts(companyId, startDate, endDate, userName, number, commentType, commentImportant, category, offset, limit);
+        // InlineResponse2008 response = api.getReceipts(companyId, startDate, endDate, userName, number, commentType, commentImportant, category, offset, limit);
 
         // TODO: test validations
     }
@@ -99,8 +100,8 @@ public class ReceiptsApiTest {
     @Test
     public void updateReceiptTest() {
         Integer id = null;
-        ReceiptUpdateParams parameters = null;
-        // ReceiptsResponse response = api.updateReceipt(id, parameters);
+        ReceiptUpdateParams receiptUpdateParams = null;
+        // ReceiptResponse response = api.updateReceipt(id, receiptUpdateParams);
 
         // TODO: test validations
     }

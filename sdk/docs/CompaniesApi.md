@@ -12,11 +12,11 @@ Method | HTTP request | Description
 
 ## getCompanies
 
-> CompaniesIndexResponse getCompanies()
+> CompanyIndexResponse getCompanies()
 
 事業所一覧の取得
 
- &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ユーザが所属する事業所の一覧を取得する&lt;/p&gt;  &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;定義&lt;/h2&gt;  &lt;ul&gt; &lt;li&gt;role &lt;ul&gt; &lt;li&gt;admin : 管理者&lt;/li&gt;  &lt;li&gt;simple_accounting : 一般&lt;/li&gt;  &lt;li&gt;self_only : 取引登録のみ&lt;/li&gt;  &lt;li&gt;read_only : 閲覧のみ&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;/ul&gt;
+ &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ユーザーが所属する事業所の一覧を取得する&lt;/p&gt;  &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;定義&lt;/h2&gt;  &lt;ul&gt; &lt;li&gt;role &lt;ul&gt; &lt;li&gt;admin : 管理者&lt;/li&gt;  &lt;li&gt;simple_accounting : 一般&lt;/li&gt;  &lt;li&gt;self_only : 取引登録のみ&lt;/li&gt;  &lt;li&gt;read_only : 閲覧のみ&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;/ul&gt;
 
 ### Example
 
@@ -40,7 +40,7 @@ public class Example {
 
         CompaniesApi apiInstance = new CompaniesApi(defaultClient);
         try {
-            CompaniesIndexResponse result = apiInstance.getCompanies();
+            CompanyIndexResponse result = apiInstance.getCompanies();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling CompaniesApi#getCompanies");
@@ -59,7 +59,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**CompaniesIndexResponse**](CompaniesIndexResponse.md)
+[**CompanyIndexResponse**](CompanyIndexResponse.md)
 
 ### Authorization
 
@@ -76,16 +76,17 @@ This endpoint does not need any parameter.
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **500** |  |  -  |
 
 
 ## getCompany
 
-> CompaniesShowResponse getCompany(id, details, accountItems, taxes, items, partners, sections, tags, walletables)
+> CompanyResponse getCompany(id, details, accountItems, taxes, items, partners, sections, tags, walletables)
 
 事業所の詳細情報の取得
 
- &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ユーザが所属する事業所の詳細を取得する&lt;/p&gt;  &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;定義&lt;/h2&gt;  &lt;ul&gt; &lt;li&gt;role &lt;ul&gt; &lt;li&gt;admin : 管理者&lt;/li&gt;  &lt;li&gt;simple_accounting : 一般&lt;/li&gt;  &lt;li&gt;self_only : 取引登録のみ&lt;/li&gt;  &lt;li&gt;read_only : 閲覧のみ&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;/ul&gt;  &lt;h2 id&#x3D;\&quot;_3\&quot;&gt;
+ &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ユーザーが所属する事業所の詳細を取得する&lt;/p&gt;  &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;定義&lt;/h2&gt;  &lt;ul&gt; &lt;li&gt;role &lt;ul&gt; &lt;li&gt;admin : 管理者&lt;/li&gt;  &lt;li&gt;simple_accounting : 一般&lt;/li&gt;  &lt;li&gt;self_only : 取引登録のみ&lt;/li&gt;  &lt;li&gt;read_only : 閲覧のみ&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;/ul&gt;  &lt;h2 id&#x3D;\&quot;_3\&quot;&gt;
 
 ### Example
 
@@ -118,7 +119,7 @@ public class Example {
         Boolean tags = true; // Boolean | 取得情報にメモタグ一覧を含める
         Boolean walletables = true; // Boolean | 取得情報に口座一覧を含める
         try {
-            CompaniesShowResponse result = apiInstance.getCompany(id, details, accountItems, taxes, items, partners, sections, tags, walletables);
+            CompanyResponse result = apiInstance.getCompany(id, details, accountItems, taxes, items, partners, sections, tags, walletables);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling CompaniesApi#getCompany");
@@ -148,7 +149,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CompaniesShowResponse**](CompaniesShowResponse.md)
+[**CompanyResponse**](CompanyResponse.md)
 
 ### Authorization
 
@@ -165,16 +166,17 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **500** |  |  -  |
 
 
 ## updateCompany
 
-> CompaniesUpdateResponse updateCompany(id, parameters)
+> CompanyUpdateResponse updateCompany(id, companyParams)
 
 事業所情報の更新
 
- &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ユーザが所属する事業所の情報を更新する&lt;/p&gt;  &lt;p&gt;※同時に複数のリクエストを受け付けない&lt;/p&gt;
+ &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ユーザーが所属する事業所の情報を更新する&lt;/p&gt;  &lt;p&gt;※同時に複数のリクエストを受け付けない&lt;/p&gt;
 
 ### Example
 
@@ -198,9 +200,9 @@ public class Example {
 
         CompaniesApi apiInstance = new CompaniesApi(defaultClient);
         Integer id = 56; // Integer | 事業所ID
-        UpdateCompanyParams parameters = new UpdateCompanyParams(); // UpdateCompanyParams | 
+        CompanyParams companyParams = new CompanyParams(); // CompanyParams | 
         try {
-            CompaniesUpdateResponse result = apiInstance.updateCompany(id, parameters);
+            CompanyUpdateResponse result = apiInstance.updateCompany(id, companyParams);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling CompaniesApi#updateCompany");
@@ -219,11 +221,11 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| 事業所ID |
- **parameters** | [**UpdateCompanyParams**](UpdateCompanyParams.md)|  | [optional]
+ **companyParams** | [**CompanyParams**](CompanyParams.md)|  | [optional]
 
 ### Return type
 
-[**CompaniesUpdateResponse**](CompaniesUpdateResponse.md)
+[**CompanyUpdateResponse**](CompanyUpdateResponse.md)
 
 ### Authorization
 
@@ -231,7 +233,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 ### HTTP response details
@@ -240,5 +242,6 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **500** |  |  -  |
 

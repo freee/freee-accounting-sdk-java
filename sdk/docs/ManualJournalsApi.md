@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## createManualJournal
 
-> ManualJournalsCreateResponse createManualJournal(parameters)
+> ManualJournalResponse createManualJournal(manualJournalCreateParams)
 
 振替伝票の作成
 
@@ -41,9 +41,9 @@ public class Example {
         oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
         ManualJournalsApi apiInstance = new ManualJournalsApi(defaultClient);
-        ManualJournalsCreateParams parameters = new ManualJournalsCreateParams(); // ManualJournalsCreateParams | 振替伝票の作成
+        ManualJournalCreateParams manualJournalCreateParams = new ManualJournalCreateParams(); // ManualJournalCreateParams | 振替伝票の作成
         try {
-            ManualJournalsCreateResponse result = apiInstance.createManualJournal(parameters);
+            ManualJournalResponse result = apiInstance.createManualJournal(manualJournalCreateParams);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ManualJournalsApi#createManualJournal");
@@ -61,11 +61,11 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **parameters** | [**ManualJournalsCreateParams**](ManualJournalsCreateParams.md)| 振替伝票の作成 | [optional]
+ **manualJournalCreateParams** | [**ManualJournalCreateParams**](ManualJournalCreateParams.md)| 振替伝票の作成 | [optional]
 
 ### Return type
 
-[**ManualJournalsCreateResponse**](ManualJournalsCreateResponse.md)
+[**ManualJournalResponse**](ManualJournalResponse.md)
 
 ### Authorization
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 ### HTTP response details
@@ -82,6 +82,7 @@ Name | Type | Description  | Notes
 | **201** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **500** |  |  -  |
 | **503** |  |  -  |
 
@@ -157,13 +158,14 @@ null (empty response body)
 | **204** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 | **500** |  |  -  |
 
 
 ## getManualJournal
 
-> ManualJournalsShowResponse getManualJournal(id, companyId)
+> ManualJournalResponse getManualJournal(id, companyId)
 
 振替伝票の取得
 
@@ -193,7 +195,7 @@ public class Example {
         Integer id = 56; // Integer | 
         Integer companyId = 56; // Integer | 事業所ID
         try {
-            ManualJournalsShowResponse result = apiInstance.getManualJournal(id, companyId);
+            ManualJournalResponse result = apiInstance.getManualJournal(id, companyId);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ManualJournalsApi#getManualJournal");
@@ -216,7 +218,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ManualJournalsShowResponse**](ManualJournalsShowResponse.md)
+[**ManualJournalResponse**](ManualJournalResponse.md)
 
 ### Authorization
 
@@ -233,13 +235,14 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 | **500** |  |  -  |
 
 
 ## getManualJournals
 
-> ManualJournalsIndexResponse getManualJournals(companyId, startIssueDate, endIssueDate, entrySide, accountItemId, minAmount, maxAmount, partnerId, partnerCode, itemId, sectionId, segment1TagId, segment2TagId, segment3TagId, commentStatus, commentImportant, adjustment, txnNumber, offset, limit)
+> InlineResponse2006 getManualJournals(companyId, startIssueDate, endIssueDate, entrySide, accountItemId, minAmount, maxAmount, partnerId, partnerCode, itemId, sectionId, segment1TagId, segment2TagId, segment3TagId, commentStatus, commentImportant, adjustment, txnNumber, offset, limit)
 
 振替伝票一覧の取得
 
@@ -285,9 +288,9 @@ public class Example {
         String adjustment = "adjustment_example"; // String | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）
         String txnNumber = "txnNumber_example"; // String | 仕訳番号で絞込（事業所の仕訳番号形式が有効な場合のみ）
         Integer offset = 56; // Integer | 取得レコードのオフセット (デフォルト: 0)
-        Integer limit = 56; // Integer | 取得レコードの件数 (デフォルト: 20, 最大: 500) 
+        Integer limit = 56; // Integer | 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500) 
         try {
-            ManualJournalsIndexResponse result = apiInstance.getManualJournals(companyId, startIssueDate, endIssueDate, entrySide, accountItemId, minAmount, maxAmount, partnerId, partnerCode, itemId, sectionId, segment1TagId, segment2TagId, segment3TagId, commentStatus, commentImportant, adjustment, txnNumber, offset, limit);
+            InlineResponse2006 result = apiInstance.getManualJournals(companyId, startIssueDate, endIssueDate, entrySide, accountItemId, minAmount, maxAmount, partnerId, partnerCode, itemId, sectionId, segment1TagId, segment2TagId, segment3TagId, commentStatus, commentImportant, adjustment, txnNumber, offset, limit);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ManualJournalsApi#getManualJournals");
@@ -324,11 +327,11 @@ Name | Type | Description  | Notes
  **adjustment** | **String**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） | [optional] [enum: only, without]
  **txnNumber** | **String**| 仕訳番号で絞込（事業所の仕訳番号形式が有効な場合のみ） | [optional]
  **offset** | **Integer**| 取得レコードのオフセット (デフォルト: 0) | [optional]
- **limit** | **Integer**| 取得レコードの件数 (デフォルト: 20, 最大: 500)  | [optional]
+ **limit** | **Integer**| 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500)  | [optional]
 
 ### Return type
 
-[**ManualJournalsIndexResponse**](ManualJournalsIndexResponse.md)
+[**InlineResponse2006**](InlineResponse2006.md)
 
 ### Authorization
 
@@ -345,12 +348,13 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **500** |  |  -  |
 
 
 ## updateManualJournal
 
-> ManualJournalsUpdateResponse updateManualJournal(id, parameters)
+> ManualJournalResponse updateManualJournal(id, manualJournalUpdateParams)
 
 振替伝票の更新
 
@@ -378,9 +382,9 @@ public class Example {
 
         ManualJournalsApi apiInstance = new ManualJournalsApi(defaultClient);
         Integer id = 56; // Integer | 
-        ManualJournalsUpdateParams parameters = new ManualJournalsUpdateParams(); // ManualJournalsUpdateParams | 振替伝票の更新
+        ManualJournalUpdateParams manualJournalUpdateParams = new ManualJournalUpdateParams(); // ManualJournalUpdateParams | 振替伝票の更新
         try {
-            ManualJournalsUpdateResponse result = apiInstance.updateManualJournal(id, parameters);
+            ManualJournalResponse result = apiInstance.updateManualJournal(id, manualJournalUpdateParams);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ManualJournalsApi#updateManualJournal");
@@ -399,11 +403,11 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**|  |
- **parameters** | [**ManualJournalsUpdateParams**](ManualJournalsUpdateParams.md)| 振替伝票の更新 | [optional]
+ **manualJournalUpdateParams** | [**ManualJournalUpdateParams**](ManualJournalUpdateParams.md)| 振替伝票の更新 | [optional]
 
 ### Return type
 
-[**ManualJournalsUpdateResponse**](ManualJournalsUpdateResponse.md)
+[**ManualJournalResponse**](ManualJournalResponse.md)
 
 ### Authorization
 
@@ -411,7 +415,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 ### HTTP response details
@@ -420,5 +424,6 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **500** |  |  -  |
 

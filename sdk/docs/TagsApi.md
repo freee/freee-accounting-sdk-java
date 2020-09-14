@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## createTag
 
-> TagsResponse createTag(parameters)
+> TagResponse createTag(tagParams)
 
 メモタグの作成
 
@@ -41,9 +41,9 @@ public class Example {
         oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
         TagsApi apiInstance = new TagsApi(defaultClient);
-        TagsParams parameters = new TagsParams(); // TagsParams | メモタグの作成
+        TagParams tagParams = new TagParams(); // TagParams | メモタグの作成
         try {
-            TagsResponse result = apiInstance.createTag(parameters);
+            TagResponse result = apiInstance.createTag(tagParams);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling TagsApi#createTag");
@@ -61,11 +61,11 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **parameters** | [**TagsParams**](TagsParams.md)| メモタグの作成 |
+ **tagParams** | [**TagParams**](TagParams.md)| メモタグの作成 |
 
 ### Return type
 
-[**TagsResponse**](TagsResponse.md)
+[**TagResponse**](TagResponse.md)
 
 ### Authorization
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 ### HTTP response details
@@ -82,6 +82,7 @@ Name | Type | Description  | Notes
 | **201** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **500** |  |  -  |
 
 
@@ -156,13 +157,14 @@ null (empty response body)
 | **204** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 | **500** |  |  -  |
 
 
 ## getTag
 
-> TagsResponse getTag(id, companyId)
+> TagResponse getTag(id, companyId)
 
 メモタグの詳細情報の取得
 
@@ -192,7 +194,7 @@ public class Example {
         Integer id = 56; // Integer | タグID
         Integer companyId = 56; // Integer | 事業所ID
         try {
-            TagsResponse result = apiInstance.getTag(id, companyId);
+            TagResponse result = apiInstance.getTag(id, companyId);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling TagsApi#getTag");
@@ -215,7 +217,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TagsResponse**](TagsResponse.md)
+[**TagResponse**](TagResponse.md)
 
 ### Authorization
 
@@ -232,13 +234,14 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 | **500** |  |  -  |
 
 
 ## getTags
 
-> TagsIndexResponse getTags(companyId)
+> InlineResponse20011 getTags(companyId, offset, limit)
 
 メモタグ一覧の取得
 
@@ -266,8 +269,10 @@ public class Example {
 
         TagsApi apiInstance = new TagsApi(defaultClient);
         Integer companyId = 56; // Integer | 事業所ID
+        Integer offset = 56; // Integer | 取得レコードのオフセット (デフォルト: 0)
+        Integer limit = 56; // Integer | 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000)
         try {
-            TagsIndexResponse result = apiInstance.getTags(companyId);
+            InlineResponse20011 result = apiInstance.getTags(companyId, offset, limit);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling TagsApi#getTags");
@@ -286,10 +291,12 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **companyId** | **Integer**| 事業所ID |
+ **offset** | **Integer**| 取得レコードのオフセット (デフォルト: 0) | [optional]
+ **limit** | **Integer**| 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) | [optional]
 
 ### Return type
 
-[**TagsIndexResponse**](TagsIndexResponse.md)
+[**InlineResponse20011**](InlineResponse20011.md)
 
 ### Authorization
 
@@ -306,12 +313,13 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **500** |  |  -  |
 
 
 ## updateTag
 
-> TagsResponse updateTag(id, parameters)
+> TagResponse updateTag(id, tagParams)
 
 メモタグの更新
 
@@ -339,9 +347,9 @@ public class Example {
 
         TagsApi apiInstance = new TagsApi(defaultClient);
         Integer id = 56; // Integer | メモタグID
-        TagsParams parameters = new TagsParams(); // TagsParams | メモタグの更新
+        TagParams tagParams = new TagParams(); // TagParams | メモタグの更新
         try {
-            TagsResponse result = apiInstance.updateTag(id, parameters);
+            TagResponse result = apiInstance.updateTag(id, tagParams);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling TagsApi#updateTag");
@@ -360,11 +368,11 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| メモタグID |
- **parameters** | [**TagsParams**](TagsParams.md)| メモタグの更新 | [optional]
+ **tagParams** | [**TagParams**](TagParams.md)| メモタグの更新 | [optional]
 
 ### Return type
 
-[**TagsResponse**](TagsResponse.md)
+[**TagResponse**](TagResponse.md)
 
 ### Authorization
 
@@ -372,7 +380,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 ### HTTP response details
@@ -381,6 +389,7 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 | **500** |  |  -  |
 

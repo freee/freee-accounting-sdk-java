@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
 
 import freee.accounting.samples.basic.web.services.AccountingService;
@@ -24,6 +25,11 @@ public class FreeeController {
     @GetMapping("/companies")
     public ModelAndView companies() {
         return new ModelAndView("companies", "companies", _accountingService.getCompanies());
+    }
+
+    @GetMapping("/invoices/{company_id}")
+    public ModelAndView invoices(@PathVariable("company_id") Integer companyId) {
+        return new ModelAndView("invoices", "invoices", _accountingService.getInvoices(companyId));
     }
 
     @GetMapping("/token")

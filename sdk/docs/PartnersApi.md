@@ -15,11 +15,11 @@ Method | HTTP request | Description
 
 ## createPartner
 
-> PartnersResponse createPartner(parameters)
+> PartnerResponse createPartner(partnerCreateParams)
 
 取引先の作成
 
- &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の取引先を作成する&lt;/p&gt; &lt;ul&gt; &lt;li&gt;codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。&lt;/li&gt; &lt;li&gt;取引先コードの利用を有効にしている場合は、codeの指定は必須です。&lt;/li&gt;&lt;/ul&gt;
+ &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の取引先を作成する&lt;/p&gt; &lt;ul&gt; &lt;li&gt;codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。&lt;/li&gt; &lt;li&gt;取引先コードの利用を有効にしている場合は、codeの指定は必須です。&lt;/li&gt; &lt;li&gt;振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）, 支払期日設定（payment_term_attributes, 請求の入金期日設定（invoice_payment_term_attributes）は法人向けのプロフェッショナルプラン以上で利用可能です。&lt;/li&gt;&lt;/ul&gt;
 
 ### Example
 
@@ -42,9 +42,9 @@ public class Example {
         oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
         PartnersApi apiInstance = new PartnersApi(defaultClient);
-        PartnerCreateParams parameters = new PartnerCreateParams(); // PartnerCreateParams | 取引先の作成
+        PartnerCreateParams partnerCreateParams = new PartnerCreateParams(); // PartnerCreateParams | 取引先の作成
         try {
-            PartnersResponse result = apiInstance.createPartner(parameters);
+            PartnerResponse result = apiInstance.createPartner(partnerCreateParams);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling PartnersApi#createPartner");
@@ -62,11 +62,11 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **parameters** | [**PartnerCreateParams**](PartnerCreateParams.md)| 取引先の作成 |
+ **partnerCreateParams** | [**PartnerCreateParams**](PartnerCreateParams.md)| 取引先の作成 |
 
 ### Return type
 
-[**PartnersResponse**](PartnersResponse.md)
+[**PartnerResponse**](PartnerResponse.md)
 
 ### Authorization
 
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 ### HTTP response details
@@ -83,6 +83,7 @@ Name | Type | Description  | Notes
 | **201** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **500** |  |  -  |
 
 
@@ -157,17 +158,18 @@ null (empty response body)
 | **204** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 | **500** |  |  -  |
 
 
 ## getPartner
 
-> PartnersResponse getPartner(id, companyId)
+> PartnerResponse getPartner(id, companyId)
 
 取引先の取得
 
- &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の取引先を取得する&lt;/p&gt;
+ &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の取引先を取得する&lt;/p&gt; &lt;ul&gt; &lt;li&gt;振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）, 支払期日設定（payment_term_attributes, 請求の入金期日設定（invoice_payment_term_attributes）は法人向けのプロフェッショナルプラン以上で利用可能です。&lt;/li&gt;&lt;/ul&gt;
 
 ### Example
 
@@ -193,7 +195,7 @@ public class Example {
         Integer id = 56; // Integer | 取引先ID
         Integer companyId = 56; // Integer | 事業所ID
         try {
-            PartnersResponse result = apiInstance.getPartner(id, companyId);
+            PartnerResponse result = apiInstance.getPartner(id, companyId);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling PartnersApi#getPartner");
@@ -216,7 +218,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PartnersResponse**](PartnersResponse.md)
+[**PartnerResponse**](PartnerResponse.md)
 
 ### Authorization
 
@@ -233,17 +235,18 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 | **500** |  |  -  |
 
 
 ## getPartners
 
-> PartnersIndexResponse getPartners(companyId, offset, limit, keyword)
+> PartnersResponse getPartners(companyId, offset, limit, keyword)
 
 取引先一覧の取得
 
- &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の取引先一覧を取得する&lt;/p&gt;
+ &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の取引先一覧を取得する&lt;/p&gt; &lt;ul&gt; &lt;li&gt;振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）は法人向けのプロフェッショナルプラン以上で利用可能です。&lt;/li&gt;&lt;/ul&gt;
 
 ### Example
 
@@ -268,10 +271,10 @@ public class Example {
         PartnersApi apiInstance = new PartnersApi(defaultClient);
         Integer companyId = 56; // Integer | 事業所ID
         Integer offset = 56; // Integer | 取得レコードのオフセット (デフォルト: 0)
-        Integer limit = 56; // Integer | 取得レコードの件数 (デフォルト: 50, 最大: 3000)
+        Integer limit = 56; // Integer | 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000)
         String keyword = "keyword_example"; // String | 検索キーワード：取引先名・正式名称・カナ名称に対するあいまい検索で一致、またはショートカットキー1・2のいずれかに完全一致
         try {
-            PartnersIndexResponse result = apiInstance.getPartners(companyId, offset, limit, keyword);
+            PartnersResponse result = apiInstance.getPartners(companyId, offset, limit, keyword);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling PartnersApi#getPartners");
@@ -291,12 +294,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **companyId** | **Integer**| 事業所ID |
  **offset** | **Integer**| 取得レコードのオフセット (デフォルト: 0) | [optional]
- **limit** | **Integer**| 取得レコードの件数 (デフォルト: 50, 最大: 3000) | [optional]
+ **limit** | **Integer**| 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) | [optional]
  **keyword** | **String**| 検索キーワード：取引先名・正式名称・カナ名称に対するあいまい検索で一致、またはショートカットキー1・2のいずれかに完全一致 | [optional]
 
 ### Return type
 
-[**PartnersIndexResponse**](PartnersIndexResponse.md)
+[**PartnersResponse**](PartnersResponse.md)
 
 ### Authorization
 
@@ -313,16 +316,17 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **500** |  |  -  |
 
 
 ## updatePartner
 
-> PartnersResponse updatePartner(id, parameters)
+> PartnerResponse updatePartner(id, partnerUpdateParams)
 
 取引先の更新
 
- &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した取引先の情報を更新する&lt;/p&gt; &lt;ul&gt; &lt;li&gt;codeを指定、更新することはできません。&lt;/li&gt;&lt;/ul&gt;
+ &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した取引先の情報を更新する&lt;/p&gt; &lt;ul&gt; &lt;li&gt;codeを指定、更新することはできません。&lt;/li&gt; &lt;li&gt;振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）, 支払期日設定（payment_term_attributes, 請求の入金期日設定（invoice_payment_term_attributes）は法人向けのプロフェッショナルプラン以上で利用可能です。&lt;/li&gt;&lt;/ul&gt;
 
 ### Example
 
@@ -346,9 +350,9 @@ public class Example {
 
         PartnersApi apiInstance = new PartnersApi(defaultClient);
         Integer id = 56; // Integer | 取引先ID
-        PartnerUpdateParams parameters = new PartnerUpdateParams(); // PartnerUpdateParams | 取引先の更新
+        PartnerUpdateParams partnerUpdateParams = new PartnerUpdateParams(); // PartnerUpdateParams | 取引先の更新
         try {
-            PartnersResponse result = apiInstance.updatePartner(id, parameters);
+            PartnerResponse result = apiInstance.updatePartner(id, partnerUpdateParams);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling PartnersApi#updatePartner");
@@ -367,11 +371,11 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| 取引先ID |
- **parameters** | [**PartnerUpdateParams**](PartnerUpdateParams.md)| 取引先の更新 |
+ **partnerUpdateParams** | [**PartnerUpdateParams**](PartnerUpdateParams.md)| 取引先の更新 |
 
 ### Return type
 
-[**PartnersResponse**](PartnersResponse.md)
+[**PartnerResponse**](PartnerResponse.md)
 
 ### Authorization
 
@@ -379,7 +383,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 ### HTTP response details
@@ -388,16 +392,17 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **500** |  |  -  |
 
 
 ## updatePartnerByCode
 
-> PartnersResponse updatePartnerByCode(code, parameters)
+> PartnerResponse updatePartnerByCode(code, partnerUpdateParams)
 
 取引先の更新
 
- &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;取引先コードをキーに、指定した取引先の情報を更新する&lt;/p&gt; &lt;ul&gt; &lt;li&gt;このAPIを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。&lt;/li&gt; &lt;li&gt;コードを日本語に設定している場合は、URLエンコードしてURLに含めるようにしてください。&lt;/li&gt;&lt;/ul&gt;
+ &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;取引先コードをキーに、指定した取引先の情報を更新する&lt;/p&gt; &lt;ul&gt; &lt;li&gt;このAPIを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。&lt;/li&gt; &lt;li&gt;コードを日本語に設定している場合は、URLエンコードしてURLに含めるようにしてください。&lt;/li&gt; &lt;li&gt;振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）, 支払期日設定（payment_term_attributes, 請求の入金期日設定（invoice_payment_term_attributes）は法人向けのプロフェッショナルプラン以上で利用可能です。&lt;/li&gt;&lt;/ul&gt;
 
 ### Example
 
@@ -421,9 +426,9 @@ public class Example {
 
         PartnersApi apiInstance = new PartnersApi(defaultClient);
         String code = "code_example"; // String | 取引先コード
-        PartnerCodeParams parameters = new PartnerCodeParams(); // PartnerCodeParams | 取引先の更新
+        PartnerUpdateParams partnerUpdateParams = new PartnerUpdateParams(); // PartnerUpdateParams | 取引先の更新
         try {
-            PartnersResponse result = apiInstance.updatePartnerByCode(code, parameters);
+            PartnerResponse result = apiInstance.updatePartnerByCode(code, partnerUpdateParams);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling PartnersApi#updatePartnerByCode");
@@ -442,11 +447,11 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **code** | **String**| 取引先コード |
- **parameters** | [**PartnerCodeParams**](PartnerCodeParams.md)| 取引先の更新 |
+ **partnerUpdateParams** | [**PartnerUpdateParams**](PartnerUpdateParams.md)| 取引先の更新 |
 
 ### Return type
 
-[**PartnersResponse**](PartnersResponse.md)
+[**PartnerResponse**](PartnerResponse.md)
 
 ### Authorization
 
@@ -454,7 +459,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 ### HTTP response details
@@ -463,5 +468,6 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **500** |  |  -  |
 

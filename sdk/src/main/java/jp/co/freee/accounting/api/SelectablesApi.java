@@ -11,6 +11,7 @@ import okhttp3.ResponseBody;
 import okhttp3.MultipartBody;
 
 import jp.co.freee.accounting.models.BadRequestError;
+import jp.co.freee.accounting.models.ForbiddenError;
 import jp.co.freee.accounting.models.InternalServerError;
 import jp.co.freee.accounting.models.SelectablesIndexResponse;
 import jp.co.freee.accounting.models.UnauthorizedError;

@@ -2,6 +2,7 @@ package jp.co.freee.accounting.api;
 
 import jp.co.freee.accounting.ApiClient;
 import jp.co.freee.accounting.models.BadRequestError;
+import jp.co.freee.accounting.models.ForbiddenError;
 import jp.co.freee.accounting.models.InternalServerError;
 import jp.co.freee.accounting.models.SelectablesIndexResponse;
 import jp.co.freee.accounting.models.UnauthorizedError;

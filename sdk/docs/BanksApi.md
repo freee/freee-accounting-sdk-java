@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## getBank
 
-> BanksShowResponse getBank(id)
+> BankResponse getBank(id)
 
 連携サービスの取得
 
@@ -40,7 +40,7 @@ public class Example {
         BanksApi apiInstance = new BanksApi(defaultClient);
         Integer id = 56; // Integer | 連携サービスID
         try {
-            BanksShowResponse result = apiInstance.getBank(id);
+            BankResponse result = apiInstance.getBank(id);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling BanksApi#getBank");
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BanksShowResponse**](BanksShowResponse.md)
+[**BankResponse**](BankResponse.md)
 
 ### Authorization
 
@@ -79,13 +79,14 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 | **500** |  |  -  |
 
 
 ## getBanks
 
-> BanksIndexResponse getBanks(offset, limit, type)
+> InlineResponse2001 getBanks(offset, limit, type)
 
 連携サービス一覧の取得
 
@@ -112,11 +113,11 @@ public class Example {
         oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
         BanksApi apiInstance = new BanksApi(defaultClient);
-        Integer offset = 56; // Integer | 開始位置
-        Integer limit = 56; // Integer | 取得上限数,最大500件
+        Integer offset = 56; // Integer | 取得レコードのオフセット (デフォルト: 0)
+        Integer limit = 56; // Integer | 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500)
         String type = "type_example"; // String | サービス種別
         try {
-            BanksIndexResponse result = apiInstance.getBanks(offset, limit, type);
+            InlineResponse2001 result = apiInstance.getBanks(offset, limit, type);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling BanksApi#getBanks");
@@ -134,13 +135,13 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **offset** | **Integer**| 開始位置 | [optional]
- **limit** | **Integer**| 取得上限数,最大500件 | [optional]
+ **offset** | **Integer**| 取得レコードのオフセット (デフォルト: 0) | [optional]
+ **limit** | **Integer**| 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500) | [optional]
  **type** | **String**| サービス種別 | [optional] [enum: bank_account, credit_card, wallet]
 
 ### Return type
 
-[**BanksIndexResponse**](BanksIndexResponse.md)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -157,5 +158,6 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **500** |  |  -  |
 

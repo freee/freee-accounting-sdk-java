@@ -3,10 +3,11 @@ package jp.co.freee.accounting.api;
 import jp.co.freee.accounting.ApiClient;
 import jp.co.freee.accounting.models.BadRequestError;
 import jp.co.freee.accounting.models.BadRequestNotFoundError;
+import jp.co.freee.accounting.models.ForbiddenError;
+import jp.co.freee.accounting.models.InlineResponse20012;
+import jp.co.freee.accounting.models.InlineResponse20013;
 import jp.co.freee.accounting.models.InternalServerError;
-import jp.co.freee.accounting.models.TaxesCodesIndexResponse;
-import jp.co.freee.accounting.models.TaxesCodesShowResponse;
-import jp.co.freee.accounting.models.TaxesCompaniesResponse;
+import jp.co.freee.accounting.models.TaxResponse;
 import jp.co.freee.accounting.models.UnauthorizedError;
 import org.junit.Before;
 import org.junit.Test;
@@ -36,7 +37,7 @@ public class TaxesApiTest {
     @Test
     public void getTaxCodeTest() {
         Integer code = null;
-        // TaxesCodesShowResponse response = api.getTaxCode(code);
+        // TaxResponse response = api.getTaxCode(code);
 
         // TODO: test validations
     }
@@ -47,7 +48,7 @@ public class TaxesApiTest {
      */
     @Test
     public void getTaxCodesTest() {
-        // TaxesCodesIndexResponse response = api.getTaxCodes();
+        // InlineResponse20012 response = api.getTaxCodes();
 
         // TODO: test validations
     }
@@ -59,7 +60,7 @@ public class TaxesApiTest {
     @Test
     public void getTaxesCompaniesTest() {
         Integer companyId = null;
-        // TaxesCompaniesResponse response = api.getTaxesCompanies(companyId);
+        // InlineResponse20013 response = api.getTaxesCompanies(companyId);
 
         // TODO: test validations
     }

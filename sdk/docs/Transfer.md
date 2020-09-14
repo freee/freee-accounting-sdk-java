@@ -6,15 +6,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** | 取引(振替)ID | 
-**companyId** | **Integer** | 事業所ID | 
 **amount** | **Integer** | 金額 | 
+**companyId** | **Integer** | 事業所ID | 
 **date** | **String** | 振替日 (yyyy-mm-dd) | 
-**fromWalletableType** | [**FromWalletableTypeEnum**](#FromWalletableTypeEnum) | 振替元口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet) | 
-**fromWalletableId** | **Integer** | 振替元口座ID | 
-**toWalletableType** | [**ToWalletableTypeEnum**](#ToWalletableTypeEnum) | 振替先口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet) | 
-**toWalletableId** | **Integer** | 振替先口座ID | 
 **description** | **String** | 備考 | 
+**fromWalletableId** | **Integer** | 振替元口座ID | 
+**fromWalletableType** | [**FromWalletableTypeEnum**](#FromWalletableTypeEnum) | 振替元口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet) | 
+**id** | **Integer** | 取引(振替)ID | 
+**toWalletableId** | **Integer** | 振替先口座ID | 
+**toWalletableType** | [**ToWalletableTypeEnum**](#ToWalletableTypeEnum) | 振替先口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet) | 
 
 
 

@@ -12,12 +12,13 @@ import okhttp3.MultipartBody;
 
 import jp.co.freee.accounting.models.BadRequestError;
 import jp.co.freee.accounting.models.BadRequestNotFoundError;
-import jp.co.freee.accounting.models.CreateExpenseApplicationParams;
+import jp.co.freee.accounting.models.ExpenseApplicationCreateParams;
+import jp.co.freee.accounting.models.ExpenseApplicationResponse;
+import jp.co.freee.accounting.models.ExpenseApplicationUpdateParams;
 import jp.co.freee.accounting.models.ExpenseApplicationsIndexResponse;
-import jp.co.freee.accounting.models.ExpenseApplicationsResponse;
+import jp.co.freee.accounting.models.ForbiddenError;
 import jp.co.freee.accounting.models.InternalServerError;
 import jp.co.freee.accounting.models.UnauthorizedError;
-import jp.co.freee.accounting.models.UpdateExpenseApplicationParams;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,15 +29,15 @@ public interface ExpenseApplicationsApi {
   /**
    * 経費申請の作成
    *  &lt;h2 id&#x3D;\&quot;_1\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の経費申請を作成する&lt;/p&gt;  &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;注意点&lt;/h2&gt; &lt;ul&gt;   &lt;li&gt;本APIでは、経費申請の下書きを作成することができます。申請作業はWebから行ってください。&lt;/li&gt;   &lt;li&gt;現在、申請経路はWeb上からのみ入力できます。Web上での申請時に指定してください。&lt;/li&gt;   &lt;li&gt;申請時には、申請タイトル(title)に加え、申請日(issue_date)、項目行については金額(amount)、日付(transaction_date)、内容(description)が必須項目となります。申請時の業務効率化のため、API入力をお勧めします。&lt;/li&gt;   &lt;li&gt;個人アカウントの場合は、プレミアムプランでご利用できます。&lt;/li&gt;   &lt;li&gt;法人アカウントの場合は、ベーシックプラン、プロフェッショナルプラン、エンタープライズプランでご利用できます。&lt;/li&gt; &lt;/ul&gt;
-   * @param parameters 経費申請の作成 (optional)
-   * @return Observable&lt;ExpenseApplicationsResponse&gt;
+   * @param expenseApplicationCreateParams 経費申請の作成 (optional)
+   * @return Observable&lt;ExpenseApplicationResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("api/1/expense_applications")
-  Observable<ExpenseApplicationsResponse> createExpenseApplication(
-    @retrofit2.http.Body CreateExpenseApplicationParams parameters
+  Observable<ExpenseApplicationResponse> createExpenseApplication(
+    @retrofit2.http.Body ExpenseApplicationCreateParams expenseApplicationCreateParams
   );
 
   /**
@@ -56,10 +57,10 @@ public interface ExpenseApplicationsApi {
    * 
    * @param id 経費申請ID (required)
    * @param companyId 事業所ID (required)
-   * @return Observable&lt;ExpenseApplicationsResponse&gt;
+   * @return Observable&lt;ExpenseApplicationResponse&gt;
    */
   @GET("api/1/expense_applications/{id}")
-  Observable<ExpenseApplicationsResponse> getExpenseApplication(
+  Observable<ExpenseApplicationResponse> getExpenseApplication(
     @retrofit2.http.Path("id") Integer id, @retrofit2.http.Query("company_id") Integer companyId
   );
 
@@ -68,7 +69,7 @@ public interface ExpenseApplicationsApi {
    * 
    * @param companyId 事業所ID (required)
    * @param offset 取得レコードのオフセット (デフォルト: 0) (optional)
-   * @param limit 取得レコードの件数 (デフォルト: 50, 最大: 500) (optional)
+   * @param limit 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) (optional)
    * @return Observable&lt;ExpenseApplicationsIndexResponse&gt;
    */
   @GET("api/1/expense_applications")
@@ -80,15 +81,15 @@ public interface ExpenseApplicationsApi {
    * 経費申請の更新
    *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の経費申請を更新する&lt;/p&gt;  &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;注意点&lt;/h2&gt; &lt;ul&gt;   &lt;li&gt;本APIでは、経費申請の下書きを更新することができます。申請作業はWebから行ってください。&lt;/li&gt;   &lt;li&gt;現在、申請経路はWeb上からのみ入力できます。Web上での申請時に指定してください。&lt;/li&gt;   &lt;li&gt;申請時には、申請タイトル(title)に加え、申請日(issue_date)、項目行については金額(amount)、日付(transaction_date)、内容(description)が必須項目となります。申請時の業務効率化のため、API入力をお勧めします。&lt;/li&gt;   &lt;li&gt;個人アカウントの場合は、プレミアムプランでご利用できます。&lt;/li&gt;   &lt;li&gt;法人アカウントの場合は、ベーシックプラン、プロフェッショナルプラン、エンタープライズプランでご利用できます。&lt;/li&gt; &lt;/ul&gt;
    * @param id  (required)
-   * @param parameters 経費申請の更新 (optional)
-   * @return Observable&lt;ExpenseApplicationsResponse&gt;
+   * @param expenseApplicationUpdateParams 経費申請の更新 (optional)
+   * @return Observable&lt;ExpenseApplicationResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("api/1/expense_applications/{id}")
-  Observable<ExpenseApplicationsResponse> updateExpenseApplication(
-    @retrofit2.http.Path("id") Integer id, @retrofit2.http.Body UpdateExpenseApplicationParams parameters
+  Observable<ExpenseApplicationResponse> updateExpenseApplication(
+    @retrofit2.http.Path("id") Integer id, @retrofit2.http.Body ExpenseApplicationUpdateParams expenseApplicationUpdateParams
   );
 
 }

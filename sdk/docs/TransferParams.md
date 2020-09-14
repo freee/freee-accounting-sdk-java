@@ -6,18 +6,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**toWalletableId** | **Integer** | 振替先口座ID | 
-**toWalletableType** | [**ToWalletableTypeEnum**](#ToWalletableTypeEnum) | 振替先口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet) | 
+**amount** | **Integer** | 金額 | 
+**companyId** | **Integer** | 事業所ID | 
+**date** | **String** | 振替日 (yyyy-mm-dd) | 
+**description** | **String** | 備考 |  [optional]
 **fromWalletableId** | **Integer** | 振替元口座ID | 
 **fromWalletableType** | [**FromWalletableTypeEnum**](#FromWalletableTypeEnum) | 振替元口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet) | 
-**amount** | **Integer** | 金額 | 
-**date** | **String** | 振替日 (yyyy-mm-dd) | 
-**companyId** | **Integer** | 事業所ID | 
-**description** | **String** | 備考 |  [optional]
+**toWalletableId** | **Integer** | 振替先口座ID | 
+**toWalletableType** | [**ToWalletableTypeEnum**](#ToWalletableTypeEnum) | 振替先口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet) | 
 
 
 
-## Enum: ToWalletableTypeEnum
+## Enum: FromWalletableTypeEnum
 
 Name | Value
 ---- | -----
@@ -27,7 +27,7 @@ WALLET | &quot;wallet&quot;
 
 
 
-## Enum: FromWalletableTypeEnum
+## Enum: ToWalletableTypeEnum
 
 Name | Value
 ---- | -----

@@ -3,10 +3,11 @@ package jp.co.freee.accounting.api;
 import jp.co.freee.accounting.ApiClient;
 import jp.co.freee.accounting.models.BadRequestError;
 import jp.co.freee.accounting.models.BadRequestNotFoundError;
+import jp.co.freee.accounting.models.ForbiddenError;
+import jp.co.freee.accounting.models.InlineResponse20011;
 import jp.co.freee.accounting.models.InternalServerError;
-import jp.co.freee.accounting.models.TagsIndexResponse;
-import jp.co.freee.accounting.models.TagsParams;
-import jp.co.freee.accounting.models.TagsResponse;
+import jp.co.freee.accounting.models.TagParams;
+import jp.co.freee.accounting.models.TagResponse;
 import jp.co.freee.accounting.models.UnauthorizedError;
 import org.junit.Before;
 import org.junit.Test;
@@ -35,8 +36,8 @@ public class TagsApiTest {
      */
     @Test
     public void createTagTest() {
-        TagsParams parameters = null;
-        // TagsResponse response = api.createTag(parameters);
+        TagParams tagParams = null;
+        // TagResponse response = api.createTag(tagParams);
 
         // TODO: test validations
     }
@@ -62,7 +63,7 @@ public class TagsApiTest {
     public void getTagTest() {
         Integer id = null;
         Integer companyId = null;
-        // TagsResponse response = api.getTag(id, companyId);
+        // TagResponse response = api.getTag(id, companyId);
 
         // TODO: test validations
     }
@@ -74,7 +75,9 @@ public class TagsApiTest {
     @Test
     public void getTagsTest() {
         Integer companyId = null;
-        // TagsIndexResponse response = api.getTags(companyId);
+        Integer offset = null;
+        Integer limit = null;
+        // InlineResponse20011 response = api.getTags(companyId, offset, limit);
 
         // TODO: test validations
     }
@@ -86,8 +89,8 @@ public class TagsApiTest {
     @Test
     public void updateTagTest() {
         Integer id = null;
-        TagsParams parameters = null;
-        // TagsResponse response = api.updateTag(id, parameters);
+        TagParams tagParams = null;
+        // TagResponse response = api.updateTag(id, tagParams);
 
         // TODO: test validations
     }

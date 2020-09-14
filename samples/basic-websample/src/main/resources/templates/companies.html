@@ -19,6 +19,7 @@
                 <tr>
                     <td th:text="${company.getId()}"></td>
                     <td th:text="${company.getDisplayName()}"></td>
+                    <td><a th:href="@{/invoices/{companyId}(companyId=${company.getId()})}">Invoices</a></td>
                 </tr>
             </tbody>
         </table>

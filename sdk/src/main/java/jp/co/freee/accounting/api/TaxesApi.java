@@ -12,10 +12,11 @@ import okhttp3.MultipartBody;
 
 import jp.co.freee.accounting.models.BadRequestError;
 import jp.co.freee.accounting.models.BadRequestNotFoundError;
+import jp.co.freee.accounting.models.ForbiddenError;
+import jp.co.freee.accounting.models.InlineResponse20012;
+import jp.co.freee.accounting.models.InlineResponse20013;
 import jp.co.freee.accounting.models.InternalServerError;
-import jp.co.freee.accounting.models.TaxesCodesIndexResponse;
-import jp.co.freee.accounting.models.TaxesCodesShowResponse;
-import jp.co.freee.accounting.models.TaxesCompaniesResponse;
+import jp.co.freee.accounting.models.TaxResponse;
 import jp.co.freee.accounting.models.UnauthorizedError;
 
 import java.util.ArrayList;
@@ -28,30 +29,30 @@ public interface TaxesApi {
    * 税区分コードの取得
    *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;税区分コードを取得する&lt;/p&gt;
    * @param code 税区分コード (required)
-   * @return Observable&lt;TaxesCodesShowResponse&gt;
+   * @return Observable&lt;TaxResponse&gt;
    */
   @GET("api/1/taxes/codes/{code}")
-  Observable<TaxesCodesShowResponse> getTaxCode(
+  Observable<TaxResponse> getTaxCode(
     @retrofit2.http.Path("code") Integer code
   );
 
   /**
    * 税区分コード一覧の取得
    *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;税区分コード一覧を取得する&lt;/p&gt;
-   * @return Observable&lt;TaxesCodesIndexResponse&gt;
+   * @return Observable&lt;InlineResponse20012&gt;
    */
   @GET("api/1/taxes/codes")
-  Observable<TaxesCodesIndexResponse> getTaxCodes();
+  Observable<InlineResponse20012> getTaxCodes();
     
 
   /**
    * 税区分コード詳細一覧の取得
    * 
    * @param companyId 事業所ID (required)
-   * @return Observable&lt;TaxesCompaniesResponse&gt;
+   * @return Observable&lt;InlineResponse20013&gt;
    */
   @GET("api/1/taxes/companies/{company_id}")
-  Observable<TaxesCompaniesResponse> getTaxesCompanies(
+  Observable<InlineResponse20013> getTaxesCompanies(
     @retrofit2.http.Path("company_id") Integer companyId
   );
 

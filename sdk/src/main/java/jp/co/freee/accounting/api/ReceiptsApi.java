@@ -13,10 +13,11 @@ import okhttp3.MultipartBody;
 import jp.co.freee.accounting.models.BadRequestError;
 import jp.co.freee.accounting.models.BadRequestNotFoundError;
 import java.io.File;
+import jp.co.freee.accounting.models.ForbiddenError;
+import jp.co.freee.accounting.models.InlineResponse2008;
 import jp.co.freee.accounting.models.InternalServerError;
+import jp.co.freee.accounting.models.ReceiptResponse;
 import jp.co.freee.accounting.models.ReceiptUpdateParams;
-import jp.co.freee.accounting.models.ReceiptsIndexResponse;
-import jp.co.freee.accounting.models.ReceiptsResponse;
 import jp.co.freee.accounting.models.UnauthorizedError;
 
 import java.util.ArrayList;
@@ -27,16 +28,16 @@ import java.util.Map;
 public interface ReceiptsApi {
   /**
    * ファイルボックス 証憑ファイルアップロード
-   *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ファイルボックスに証憑ファイルをアップロードする&lt;/p&gt;
+   *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ファイルボックスに証憑ファイルをアップロードする&lt;/p&gt; &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;注意点&lt;/h2&gt; &lt;ul&gt;   &lt;li&gt;リクエストヘッダーの Content-Type は、multipart/form-dataにのみ対応しています。&lt;/li&gt; &lt;/ul&gt;
    * @param companyId 事業所ID (required)
    * @param receipt 証憑ファイル (required)
    * @param description メモ (255文字以内) (optional)
    * @param issueDate 取引日 (yyyy-mm-dd) (optional)
-   * @return Observable&lt;ReceiptsResponse&gt;
+   * @return Observable&lt;ReceiptResponse&gt;
    */
   @retrofit2.http.Multipart
   @POST("api/1/receipts")
-  Observable<ReceiptsResponse> createReceipt(
+  Observable<ReceiptResponse> createReceipt(
     @retrofit2.http.Part("company_id") Integer companyId, @retrofit2.http.Part MultipartBody.Part receipt, @retrofit2.http.Part("description") String description, @retrofit2.http.Part("issue_date") String issueDate
   );
 
@@ -57,10 +58,10 @@ public interface ReceiptsApi {
    *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所のファイルボックス 証憑ファイルを取得する&lt;/p&gt;
    * @param id 証憑ID (required)
    * @param companyId 事業所ID (required)
-   * @return Observable&lt;ReceiptsResponse&gt;
+   * @return Observable&lt;ReceiptResponse&gt;
    */
   @GET("api/1/receipts/{id}")
-  Observable<ReceiptsResponse> getReceipt(
+  Observable<ReceiptResponse> getReceipt(
     @retrofit2.http.Path("id") Integer id, @retrofit2.http.Query("company_id") Integer companyId
   );
 
@@ -76,11 +77,11 @@ public interface ReceiptsApi {
    * @param commentImportant trueの時、重要コメント付きが対象 (optional)
    * @param category all:すべて、without_deal:未登録、with_expense_application_line:経費申請中, with_deal:登録済み、ignored:無視 (optional)
    * @param offset 取得レコードのオフセット (デフォルト: 0) (optional)
-   * @param limit 取得レコードの件数 (デフォルト: 50, 最大: 3000) (optional)
-   * @return Observable&lt;ReceiptsIndexResponse&gt;
+   * @param limit 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)
+   * @return Observable&lt;InlineResponse2008&gt;
    */
   @GET("api/1/receipts")
-  Observable<ReceiptsIndexResponse> getReceipts(
+  Observable<InlineResponse2008> getReceipts(
     @retrofit2.http.Query("company_id") Integer companyId, @retrofit2.http.Query("start_date") String startDate, @retrofit2.http.Query("end_date") String endDate, @retrofit2.http.Query("user_name") String userName, @retrofit2.http.Query("number") Integer number, @retrofit2.http.Query("comment_type") String commentType, @retrofit2.http.Query("comment_important") Boolean commentImportant, @retrofit2.http.Query("category") String category, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit
   );
 
@@ -88,15 +89,15 @@ public interface ReceiptsApi {
    * ファイルボックス 証憑ファイル情報更新
    *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ファイルボックスの証憑ファイル情報を更新する&lt;/p&gt; &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;注意点&lt;/h2&gt; &lt;ul&gt;   &lt;li&gt;本APIでは、証憑ファイルの再アップロードはできません。&lt;/li&gt; &lt;/ul&gt;
    * @param id 証憑ID (required)
-   * @param parameters 経費申請の更新 (required)
-   * @return Observable&lt;ReceiptsResponse&gt;
+   * @param receiptUpdateParams 経費申請の更新 (required)
+   * @return Observable&lt;ReceiptResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @PUT("api/1/receipts/{id}")
-  Observable<ReceiptsResponse> updateReceipt(
-    @retrofit2.http.Path("id") Integer id, @retrofit2.http.Body ReceiptUpdateParams parameters
+  Observable<ReceiptResponse> updateReceipt(
+    @retrofit2.http.Path("id") Integer id, @retrofit2.http.Body ReceiptUpdateParams receiptUpdateParams
   );
 
 }

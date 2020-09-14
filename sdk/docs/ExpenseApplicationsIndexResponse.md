@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**expenseApplications** | [**List&lt;ExpenseApplication&gt;**](ExpenseApplication.md) |  | 
+**expenseApplications** | [**List&lt;ExpenseApplicationResponseExpenseApplication&gt;**](ExpenseApplicationResponseExpenseApplication.md) |  | 
 
 
 

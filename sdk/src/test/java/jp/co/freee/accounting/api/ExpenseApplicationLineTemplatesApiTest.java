@@ -4,8 +4,9 @@ import jp.co.freee.accounting.ApiClient;
 import jp.co.freee.accounting.models.BadRequestError;
 import jp.co.freee.accounting.models.BadRequestNotFoundError;
 import jp.co.freee.accounting.models.ExpenseApplicationLineTemplateParams;
-import jp.co.freee.accounting.models.ExpenseApplicationLineTemplatesIndexResponse;
-import jp.co.freee.accounting.models.ExpenseApplicationLineTemplatesResponse;
+import jp.co.freee.accounting.models.ExpenseApplicationLineTemplateResponse;
+import jp.co.freee.accounting.models.ForbiddenError;
+import jp.co.freee.accounting.models.InlineResponse2003;
 import jp.co.freee.accounting.models.InternalServerError;
 import jp.co.freee.accounting.models.UnauthorizedError;
 import org.junit.Before;
@@ -35,8 +36,8 @@ public class ExpenseApplicationLineTemplatesApiTest {
      */
     @Test
     public void createExpenseApplicationLineTemplateTest() {
-        ExpenseApplicationLineTemplateParams parameters = null;
-        // ExpenseApplicationLineTemplatesResponse response = api.createExpenseApplicationLineTemplate(parameters);
+        ExpenseApplicationLineTemplateParams expenseApplicationLineTemplateParams = null;
+        // ExpenseApplicationLineTemplateResponse response = api.createExpenseApplicationLineTemplate(expenseApplicationLineTemplateParams);
 
         // TODO: test validations
     }
@@ -62,7 +63,7 @@ public class ExpenseApplicationLineTemplatesApiTest {
     public void getExpenseApplicationLineTemplateTest() {
         Integer id = null;
         Integer companyId = null;
-        // ExpenseApplicationLineTemplatesResponse response = api.getExpenseApplicationLineTemplate(id, companyId);
+        // ExpenseApplicationLineTemplateResponse response = api.getExpenseApplicationLineTemplate(id, companyId);
 
         // TODO: test validations
     }
@@ -76,7 +77,7 @@ public class ExpenseApplicationLineTemplatesApiTest {
         Integer companyId = null;
         Integer offset = null;
         Integer limit = null;
-        // ExpenseApplicationLineTemplatesIndexResponse response = api.getExpenseApplicationLineTemplates(companyId, offset, limit);
+        // InlineResponse2003 response = api.getExpenseApplicationLineTemplates(companyId, offset, limit);
 
         // TODO: test validations
     }
@@ -88,8 +89,8 @@ public class ExpenseApplicationLineTemplatesApiTest {
     @Test
     public void updateExpenseApplicationLineTemplateTest() {
         Integer id = null;
-        ExpenseApplicationLineTemplateParams parameters = null;
-        // ExpenseApplicationLineTemplatesResponse response = api.updateExpenseApplicationLineTemplate(id, parameters);
+        ExpenseApplicationLineTemplateParams expenseApplicationLineTemplateParams = null;
+        // ExpenseApplicationLineTemplateResponse response = api.updateExpenseApplicationLineTemplate(id, expenseApplicationLineTemplateParams);
 
         // TODO: test validations
     }

@@ -2,10 +2,11 @@ package jp.co.freee.accounting.api;
 
 import jp.co.freee.accounting.ApiClient;
 import jp.co.freee.accounting.models.BadRequestError;
+import jp.co.freee.accounting.models.ForbiddenError;
+import jp.co.freee.accounting.models.InlineResponse20010;
 import jp.co.freee.accounting.models.InternalServerError;
 import jp.co.freee.accounting.models.SegmentTagParams;
-import jp.co.freee.accounting.models.SegmentTagsIndexResponse;
-import jp.co.freee.accounting.models.SegmentTagsResponse;
+import jp.co.freee.accounting.models.SegmentTagResponse;
 import jp.co.freee.accounting.models.UnauthorizedError;
 import org.junit.Before;
 import org.junit.Test;
@@ -35,8 +36,8 @@ public class SegmentTagsApiTest {
     @Test
     public void createSegmentTagTest() {
         Integer segmentId = null;
-        SegmentTagParams parameters = null;
-        // SegmentTagsResponse response = api.createSegmentTag(segmentId, parameters);
+        SegmentTagParams segmentTagParams = null;
+        // SegmentTagResponse response = api.createSegmentTag(segmentId, segmentTagParams);
 
         // TODO: test validations
     }
@@ -65,7 +66,7 @@ public class SegmentTagsApiTest {
         Integer companyId = null;
         Integer offset = null;
         Integer limit = null;
-        // SegmentTagsIndexResponse response = api.getSegmentTags(segmentId, companyId, offset, limit);
+        // InlineResponse20010 response = api.getSegmentTags(segmentId, companyId, offset, limit);
 
         // TODO: test validations
     }
@@ -78,8 +79,8 @@ public class SegmentTagsApiTest {
     public void updateSegmentTagTest() {
         Integer segmentId = null;
         Integer id = null;
-        SegmentTagParams parameters = null;
-        // SegmentTagsResponse response = api.updateSegmentTag(segmentId, id, parameters);
+        SegmentTagParams segmentTagParams = null;
+        // SegmentTagResponse response = api.updateSegmentTag(segmentId, id, segmentTagParams);
 
         // TODO: test validations
     }

@@ -5,15 +5,15 @@ All URIs are relative to *https://api.freee.co.jp*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getUsers**](UsersApi.md#getUsers) | **GET** api/1/users | 事業所に所属するユーザー一覧の取得
-[**getUsersCapabilities**](UsersApi.md#getUsersCapabilities) | **GET** api/1/users/capabilities | ログインユーザの権限の取得
-[**getUsersMe**](UsersApi.md#getUsersMe) | **GET** api/1/users/me | ログインユーザ情報の取得
+[**getUsersCapabilities**](UsersApi.md#getUsersCapabilities) | **GET** api/1/users/capabilities | ログインユーザーの権限の取得
+[**getUsersMe**](UsersApi.md#getUsersMe) | **GET** api/1/users/me | ログインユーザー情報の取得
 [**updateUser**](UsersApi.md#updateUser) | **PUT** api/1/users/me | ユーザー情報の更新
 
 
 
 ## getUsers
 
-> UsersIndexResponse getUsers(companyId, limit)
+> InlineResponse20015 getUsers(companyId, limit)
 
 事業所に所属するユーザー一覧の取得
 
@@ -41,9 +41,9 @@ public class Example {
 
         UsersApi apiInstance = new UsersApi(defaultClient);
         Integer companyId = 56; // Integer | 事業所ID
-        Integer limit = 56; // Integer | 取得上限数,最大3000件
+        Integer limit = 56; // Integer | 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000)
         try {
-            UsersIndexResponse result = apiInstance.getUsers(companyId, limit);
+            InlineResponse20015 result = apiInstance.getUsers(companyId, limit);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UsersApi#getUsers");
@@ -62,11 +62,11 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **companyId** | **Integer**| 事業所ID |
- **limit** | **Integer**| 取得上限数,最大3000件 | [optional]
+ **limit** | **Integer**| 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) | [optional]
 
 ### Return type
 
-[**UsersIndexResponse**](UsersIndexResponse.md)
+[**InlineResponse20015**](InlineResponse20015.md)
 
 ### Authorization
 
@@ -83,17 +83,18 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 | **500** |  |  -  |
 
 
 ## getUsersCapabilities
 
-> UsersCapabilitiesResponse getUsersCapabilities(companyId)
+> InlineResponse20016 getUsersCapabilities(companyId)
 
-ログインユーザの権限の取得
+ログインユーザーの権限の取得
 
- &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ユーザの権限情報を取得する&lt;/p&gt;
+ &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ユーザーの権限情報を取得する&lt;/p&gt;
 
 ### Example
 
@@ -118,7 +119,7 @@ public class Example {
         UsersApi apiInstance = new UsersApi(defaultClient);
         Integer companyId = 56; // Integer | 事業所ID
         try {
-            UsersCapabilitiesResponse result = apiInstance.getUsersCapabilities(companyId);
+            InlineResponse20016 result = apiInstance.getUsersCapabilities(companyId);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UsersApi#getUsersCapabilities");
@@ -140,7 +141,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UsersCapabilitiesResponse**](UsersCapabilitiesResponse.md)
+[**InlineResponse20016**](InlineResponse20016.md)
 
 ### Authorization
 
@@ -157,17 +158,18 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 | **500** |  |  -  |
 
 
 ## getUsersMe
 
-> UsersMeResponse getUsersMe(companies)
+> MeResponse getUsersMe(companies)
 
-ログインユーザ情報の取得
+ログインユーザー情報の取得
 
- &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ユーザの情報を取得する&lt;/p&gt;
+ &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ユーザーの情報を取得する&lt;/p&gt;
 
 ### Example
 
@@ -190,9 +192,9 @@ public class Example {
         oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
         UsersApi apiInstance = new UsersApi(defaultClient);
-        Boolean companies = true; // Boolean | 取得情報にユーザが所属する事業所一覧を含める
+        Boolean companies = true; // Boolean | 取得情報にユーザーが所属する事業所一覧を含める
         try {
-            UsersMeResponse result = apiInstance.getUsersMe(companies);
+            MeResponse result = apiInstance.getUsersMe(companies);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UsersApi#getUsersMe");
@@ -210,11 +212,11 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **companies** | **Boolean**| 取得情報にユーザが所属する事業所一覧を含める | [optional] [enum: true]
+ **companies** | **Boolean**| 取得情報にユーザーが所属する事業所一覧を含める | [optional] [enum: true]
 
 ### Return type
 
-[**UsersMeResponse**](UsersMeResponse.md)
+[**MeResponse**](MeResponse.md)
 
 ### Authorization
 
@@ -231,13 +233,14 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 | **500** |  |  -  |
 
 
 ## updateUser
 
-> UsersUpdateResponse updateUser(parameters)
+> UserResponse updateUser(userParams)
 
 ユーザー情報の更新
 
@@ -264,9 +267,9 @@ public class Example {
         oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
         UsersApi apiInstance = new UsersApi(defaultClient);
-        UserUpdateParams parameters = new UserUpdateParams(); // UserUpdateParams | ユーザー情報の更新
+        UserParams userParams = new UserParams(); // UserParams | ユーザー情報の更新
         try {
-            UsersUpdateResponse result = apiInstance.updateUser(parameters);
+            UserResponse result = apiInstance.updateUser(userParams);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UsersApi#updateUser");
@@ -284,11 +287,11 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **parameters** | [**UserUpdateParams**](UserUpdateParams.md)| ユーザー情報の更新 | [optional]
+ **userParams** | [**UserParams**](UserParams.md)| ユーザー情報の更新 | [optional]
 
 ### Return type
 
-[**UsersUpdateResponse**](UsersUpdateResponse.md)
+[**UserResponse**](UserResponse.md)
 
 ### Authorization
 
@@ -296,7 +299,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 ### HTTP response details
@@ -305,6 +308,7 @@ Name | Type | Description  | Notes
 | **200** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
+| **403** |  |  -  |
 | **404** |  |  -  |
 | **500** |  |  -  |
 
