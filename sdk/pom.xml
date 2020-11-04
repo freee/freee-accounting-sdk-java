@@ -277,7 +277,7 @@
         </dependency>
     </dependencies>
     <properties>
-        <revision>2.0.0-beta</revision>
+        <revision>2.0.0</revision>
         <changelist>-SNAPSHOT</changelist>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
