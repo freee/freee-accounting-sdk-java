@@ -12,7 +12,7 @@ env:
 jobs:
   preprocess:
     name: Pre process
-    if: ${{ ! (github.event.client_payload.origin_ref && contains(github.event.client_payload.origin_ref, 'refs/tags/')) }}
+    if: ${{ github.event.client_payload.origin_ref && contains(github.event.client_payload.origin_ref, 'refs/tags/') }}
 
     runs-on: ubuntu-latest
     outputs:
