@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * TooManyRequestsErrorMeta
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class TooManyRequestsErrorMeta {
   public static final String SERIALIZED_NAME_LIMIT = "limit";
   @SerializedName(SERIALIZED_NAME_LIMIT)
@@ -136,7 +136,7 @@ public class TooManyRequestsErrorMeta {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -172,7 +172,7 @@ public class TooManyRequestsErrorMeta {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

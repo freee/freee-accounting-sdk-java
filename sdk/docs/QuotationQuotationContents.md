@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **itemId** | **Integer** | 品目ID | 
 **itemName** | **String** | 品目 | 
 **order** | **Integer** | 順序 | 
-**qty** | [**BigDecimal**](BigDecimal.md) | 数量 | 
+**qty** | **BigDecimal** | 数量 | 
 **reducedVat** | **Boolean** | 軽減税率税区分（true: 対象、false: 対象外） | 
 **sectionId** | **Integer** | 部門ID | 
 **sectionName** | **String** | 部門 | 
@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **taxCode** | **Integer** | 税区分コード | 
 **type** | [**TypeEnum**](#TypeEnum) | 行の種類 | 
 **unit** | **String** | 単位 | 
-**unitPrice** | [**BigDecimal**](BigDecimal.md) | 単価 | 
+**unitPrice** | **BigDecimal** | 単価 | 
 **vat** | **Integer** | 消費税額 | 
 
 

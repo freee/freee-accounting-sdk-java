@@ -28,7 +28,7 @@ import jp.co.freee.accounting.models.SelectablesIndexResponseDefaultTax;
 /**
  * SelectablesIndexResponseAccountItems
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class SelectablesIndexResponseAccountItems {
   public static final String SERIALIZED_NAME_DEFAULT_TAX = "default_tax";
   @SerializedName(SERIALIZED_NAME_DEFAULT_TAX)
@@ -112,7 +112,7 @@ public class SelectablesIndexResponseAccountItems {
    * @return help
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "勘定科目の説明（詳細）")
+  @ApiModelProperty(example = "", value = "勘定科目の説明（詳細）")
 
   public String getHelp() {
     return help;
@@ -195,7 +195,7 @@ public class SelectablesIndexResponseAccountItems {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -235,7 +235,7 @@ public class SelectablesIndexResponseAccountItems {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

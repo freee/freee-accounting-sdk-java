@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **parentAccountCategoryName** | **String** | 上位勘定科目カテゴリー名(勘定科目カテゴリーの時のみ、上層が存在する場合含まれる) |  [optional]
 **partners** | [**List&lt;TrialBsTwoYearsResponseTrialBsTwoYearsPartners&gt;**](TrialBsTwoYearsResponseTrialBsTwoYearsPartners.md) | breakdown_display_type:partner, account_item_display_type:account_item指定時のみ含まれる |  [optional]
 **totalLine** | **Boolean** | 合計行(勘定科目カテゴリーの時のみ含まれる) |  [optional]
-**yearOnYear** | [**BigDecimal**](BigDecimal.md) | 前年比 |  [optional]
+**yearOnYear** | **BigDecimal** | 前年比 |  [optional]
 
 
 

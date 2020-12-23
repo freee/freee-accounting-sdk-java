@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **sections** | [**List&lt;TrialPlThreeYearsResponseTrialPlThreeYearsSections&gt;**](TrialPlThreeYearsResponseTrialPlThreeYearsSections.md) | breakdown_display_type:section, account_item_display_type:account_item指定時のみ含まれる |  [optional]
 **totalLine** | **Boolean** | 合計行(勘定科目カテゴリーの時のみ含まれる) |  [optional]
 **twoYearsBeforeClosingBalance** | **Integer** | 前々年度期末残高 |  [optional]
-**yearOnYear** | [**BigDecimal**](BigDecimal.md) | 前年比 |  [optional]
+**yearOnYear** | **BigDecimal** | 前年比 |  [optional]
 
 
 

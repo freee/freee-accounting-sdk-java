@@ -37,10 +37,21 @@ public class ApiClient {
   private OkHttpClient.Builder okBuilder;
   private Retrofit.Builder adapterBuilder;
   private JSON json;
+  private OkHttpClient okHttpClient;
 
   public ApiClient() {
     apiAuthorizations = new LinkedHashMap<String, Interceptor>();
     createDefaultAdapter();
+    okBuilder = new OkHttpClient.Builder();
+
+    DefaultHeadersInterceptor defaultHeaders = new DefaultHeadersInterceptor();
+    okBuilder.addInterceptor(defaultHeaders);
+  }
+
+  public ApiClient(OkHttpClient client){
+    apiAuthorizations = new LinkedHashMap<String, Interceptor>();
+    createDefaultAdapter();
+    okHttpClient = client;
   }
 
   public ApiClient(String[] authNames) {
@@ -106,10 +117,6 @@ public class ApiClient {
 
   public void createDefaultAdapter() {
     json = new JSON();
-    okBuilder = new OkHttpClient.Builder();
-
-    DefaultHeadersInterceptor defaultHeaders = new DefaultHeadersInterceptor();
-    okBuilder.addInterceptor(defaultHeaders);
 
     String baseUrl = "https://api.freee.co.jp";
     if (!baseUrl.endsWith("/"))
@@ -118,17 +125,17 @@ public class ApiClient {
     adapterBuilder = new Retrofit
       .Builder()
       .baseUrl(baseUrl)
-
       .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
       .addConverterFactory(ScalarsConverterFactory.create())
       .addConverterFactory(GsonCustomConverterFactory.create(json.getGson()));
   }
 
   public <S> S createService(Class<S> serviceClass) {
-    return adapterBuilder
-      .client(okBuilder.build())
-      .build()
-      .create(serviceClass);
+    if (okHttpClient != null) {
+        return adapterBuilder.client(okHttpClient).build().create(serviceClass);
+    } else {
+        return adapterBuilder.client(okBuilder.build()).build().create(serviceClass);
+    }
   }
 
   public ApiClient setDateFormat(DateFormat dateFormat) {
@@ -300,7 +307,11 @@ public class ApiClient {
       throw new RuntimeException("auth name \"" + authName + "\" already in api authorizations");
     }
     apiAuthorizations.put(authName, authorization);
+    if(okBuilder == null){
+        throw new RuntimeException("The ApiClient was created with a built OkHttpClient so it's not possible to add an authorization interceptor to it");
+    }
     okBuilder.addInterceptor(authorization);
+    
     return this;
   }
 
