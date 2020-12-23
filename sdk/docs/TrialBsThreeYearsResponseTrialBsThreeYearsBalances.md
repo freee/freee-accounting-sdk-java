@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **partners** | [**List&lt;TrialBsThreeYearsResponseTrialBsThreeYearsPartners&gt;**](TrialBsThreeYearsResponseTrialBsThreeYearsPartners.md) | breakdown_display_type:partner, account_item_display_type:account_item指定時のみ含まれる |  [optional]
 **totalLine** | **Boolean** | 合計行(勘定科目カテゴリーの時のみ含まれる) |  [optional]
 **twoYearsBeforeClosingBalance** | **Integer** | 前々年度期末残高 |  [optional]
-**yearOnYear** | [**BigDecimal**](BigDecimal.md) | 前年比 |  [optional]
+**yearOnYear** | **BigDecimal** | 前年比 |  [optional]
 
 
 

@@ -28,7 +28,7 @@ import jp.co.freee.accounting.models.ManualJournal;
 /**
  * ManualJournalResponse
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ManualJournalResponse {
   public static final String SERIALIZED_NAME_MANUAL_JOURNAL = "manual_journal";
   @SerializedName(SERIALIZED_NAME_MANUAL_JOURNAL)
@@ -58,7 +58,7 @@ public class ManualJournalResponse {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -88,7 +88,7 @@ public class ManualJournalResponse {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

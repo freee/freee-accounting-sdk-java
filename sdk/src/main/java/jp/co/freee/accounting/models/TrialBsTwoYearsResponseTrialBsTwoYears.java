@@ -30,7 +30,7 @@ import jp.co.freee.accounting.models.TrialBsTwoYearsResponseTrialBsTwoYearsBalan
 /**
  * TrialBsTwoYearsResponseTrialBsTwoYears
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class TrialBsTwoYearsResponseTrialBsTwoYears {
   /**
    * 勘定科目の表示（勘定科目: account_item, 決算書表示:group）(条件に指定した時のみ含まれる）
@@ -568,7 +568,7 @@ public class TrialBsTwoYearsResponseTrialBsTwoYears {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -624,7 +624,7 @@ public class TrialBsTwoYearsResponseTrialBsTwoYears {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

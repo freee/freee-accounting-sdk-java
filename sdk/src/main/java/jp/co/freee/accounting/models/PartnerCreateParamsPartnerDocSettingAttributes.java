@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * PartnerCreateParamsPartnerDocSettingAttributes
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class PartnerCreateParamsPartnerDocSettingAttributes {
   /**
    * 請求書送付方法(email:メール、posting:郵送、email_and_posting:メールと郵送)
@@ -107,7 +107,7 @@ public class PartnerCreateParamsPartnerDocSettingAttributes {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -137,7 +137,7 @@ public class PartnerCreateParamsPartnerDocSettingAttributes {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

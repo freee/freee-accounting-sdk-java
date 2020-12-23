@@ -30,7 +30,7 @@ import jp.co.freee.accounting.models.Bank;
 /**
  * InlineResponse2001
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class InlineResponse2001 {
   public static final String SERIALIZED_NAME_BANKS = "banks";
   @SerializedName(SERIALIZED_NAME_BANKS)
@@ -65,7 +65,7 @@ public class InlineResponse2001 {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -95,7 +95,7 @@ public class InlineResponse2001 {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }
