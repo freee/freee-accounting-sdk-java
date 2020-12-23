@@ -30,7 +30,7 @@ import jp.co.freee.accounting.models.PartnersResponsePartners;
 /**
  * PartnersResponse
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class PartnersResponse {
   public static final String SERIALIZED_NAME_PARTNERS = "partners";
   @SerializedName(SERIALIZED_NAME_PARTNERS)
@@ -65,7 +65,7 @@ public class PartnersResponse {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -95,7 +95,7 @@ public class PartnersResponse {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

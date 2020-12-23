@@ -425,9 +425,9 @@ public class Example {
 
         ApprovalRequestsApi apiInstance = new ApprovalRequestsApi(defaultClient);
         Integer companyId = 56; // Integer | 事業所ID
-        String status = draft; // String | 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し)
+        String status = "draft"; // String | 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し)
         Integer applicationNumber = 2; // Integer | 申請No.
-        String title = 大阪出張; // String | 申請タイトル
+        String title = "大阪出張"; // String | 申請タイトル
         Integer formId = 56; // Integer | 申請フォームID
         String startApplicationDate = "startApplicationDate_example"; // String | 申請日で絞込：開始日(yyyy-mm-dd)
         String endApplicationDate = "endApplicationDate_example"; // String | 申請日で絞込：終了日(yyyy-mm-dd)

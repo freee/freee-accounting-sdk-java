@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * DeprecatedApprovalRequestParamsRequestItems
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class DeprecatedApprovalRequestParamsRequestItems {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -169,7 +169,7 @@ public class DeprecatedApprovalRequestParamsRequestItems {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -203,7 +203,7 @@ public class DeprecatedApprovalRequestParamsRequestItems {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

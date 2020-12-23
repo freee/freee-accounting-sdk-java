@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ApprovalRequestResponseApprovalRequestApprovalFlowLogs
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ApprovalRequestResponseApprovalRequestApprovalFlowLogs {
   /**
    * 操作(apply: 申請, approve: 承認, force_approve: 代理承認, cancel: 取消, reject: 却下, feedback: 差戻し)
@@ -166,7 +166,7 @@ public class ApprovalRequestResponseApprovalRequestApprovalFlowLogs {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -200,7 +200,7 @@ public class ApprovalRequestResponseApprovalRequestApprovalFlowLogs {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

@@ -33,7 +33,7 @@ import jp.co.freee.accounting.models.TrialPlResponseTrialPlSections;
 /**
  * TrialPlResponseTrialPlBalances
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class TrialPlResponseTrialPlBalances {
   public static final String SERIALIZED_NAME_ACCOUNT_CATEGORY_NAME = "account_category_name";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_CATEGORY_NAME)
@@ -468,7 +468,7 @@ public class TrialPlResponseTrialPlBalances {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -526,7 +526,7 @@ public class TrialPlResponseTrialPlBalances {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

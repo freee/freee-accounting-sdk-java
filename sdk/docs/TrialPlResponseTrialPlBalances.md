@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **accountItemId** | **Integer** | 勘定科目ID(勘定科目の時のみ含まれる) |  [optional]
 **accountItemName** | **String** | 勘定科目名(勘定科目の時のみ含まれる) |  [optional]
 **closingBalance** | **Integer** | 期末残高 |  [optional]
-**compositionRatio** | [**BigDecimal**](BigDecimal.md) | 構成比 |  [optional]
+**compositionRatio** | **BigDecimal** | 構成比 |  [optional]
 **creditAmount** | **Integer** | 貸方金額 |  [optional]
 **debitAmount** | **Integer** | 借方金額 |  [optional]
 **hierarchyLevel** | **Integer** | 階層レベル |  [optional]

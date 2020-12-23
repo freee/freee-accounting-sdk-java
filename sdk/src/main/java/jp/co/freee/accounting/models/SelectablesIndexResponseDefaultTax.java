@@ -29,7 +29,7 @@ import jp.co.freee.accounting.models.SelectablesIndexResponseDefaultTaxTaxRate8;
 /**
  * SelectablesIndexResponseDefaultTax
  */
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class SelectablesIndexResponseDefaultTax {
   public static final String SERIALIZED_NAME_TAX_RATE5 = "tax_rate_5";
   @SerializedName(SERIALIZED_NAME_TAX_RATE5)
@@ -87,7 +87,7 @@ public class SelectablesIndexResponseDefaultTax {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -119,7 +119,7 @@ public class SelectablesIndexResponseDefaultTax {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }
