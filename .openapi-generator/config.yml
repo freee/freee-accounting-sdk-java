@@ -1,0 +1,26 @@
+ensureUniqueParams: false
+allowUnicodeIdentifiers: true
+snapshotVersion: true
+artifactVersion: 2.0.0
+groupId: "jp.co.freee"
+artifactId: "freee-accounting-sdk"
+apiPackage: "jp.co.freee.accounting.api"
+invokerPackage: "jp.co.freee.accounting"
+modelPackage: "jp.co.freee.accounting.models"
+allowUnicodeIdentifiers: true
+hideGenerationTimestamp: true
+java8: true
+dateLibrary: "java8"
+library: "retrofit2"
+useRxJava2: true
+licenseName: MIT
+licenseUrl: http://www.opensource.org/licenses/mit-license.php
+developerName: "freee K.K."
+developerOrganization: "freee K.K."
+developerOrganizationUrl: https://developer.freee.co.jp/
+developerEmail: ""
+scmUrl: https://github.com/freee/freee-accounting-sdk-java
+scmConnection: scm:git:https://github.com/freee/freee-accounting-sdk-java.git
+scmDeveloperConnection: scm:git:https://github.com/freee/freee-accounting-sdk-java.git
+artifactDescription: freee accounting client SDK for Java
+artifactUrl: https://github.com/freee/freee-accounting-sdk-java

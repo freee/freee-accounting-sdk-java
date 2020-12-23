@@ -1,0 +1,83 @@
+name: Generate SDK
+
+on:
+  pull_request:
+    types:
+      - labeled
+      - edited
+
+env:
+  PULL_REQUEST_LABEL: auto-generate
+  SCHEMA_URL_TEMP: https://raw.githubusercontent.com/dzeyelid/freee-api-schema/add-sdk-compatible-schema/_sdk_compatible/open-api-3/api-schema.yml
+  # KEEP_CURRENT_HEADER_SELECTOR: true
+  MAVEN_GPG_PLUGIN_VERSION: 1.6
+  
+jobs:
+  generate:
+    name: Generate code and push them
+    runs-on: ubuntu-latest
+
+    if: ${{ github.event.name == 'pull_request' && !contains(github.event.pull_request.labels.*.name, env.PULL_REQUEST_LABEL) }}
+
+    steps:
+      - name: Get original repo tag
+        id: get_original_repo_tag
+        run: |
+          TAG=`echo $PULL_REQUEST_BODY | sed -E -n 's/(.*)tag:\s*(.+)\s*$/\2/p'`
+          echo "::set-output name=tag::$TAG"
+        env:
+          PULL_REQUEST_BODY: ${{ github.event.pull_request.body }}
+
+      - name: Install packages
+        run: |
+          sudo snap install yq
+
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          ref: ${{ github.head_ref }}
+
+      - name: Remove old codes
+        run: |
+          rm -rf sdk/src sdk/docs sdk/target sdk/pom.xml
+
+      - name: Update lib version
+        run: |
+          yq write -i .openapi-generator/config.yml artifactVersion ${{ github.event.pull_request.title }}
+
+      - name: Generate APIs
+        env:
+          SCHEMA_URL: https://raw.githubusercontent.com/freee/freee-api-schema/${{ steps.get_original_repo_tag.outputs.tag }}/_sdk_compatible/open-api-3/api-schema.yml
+        run: |
+          docker run --rm -u "$(id -u $USER):$(id -g $USER)" -v "${PWD}:/local" openapitools/openapi-generator-cli:latest-release generate \
+            -i ${{ env.SCHEMA_URL_TEMP }} \
+            -c /local/.openapi-generator/config.yml \
+            -g java \
+            -o /local/sdk
+          cd sdk && rm -rf .gradle/ .openapi-generator .openapi-generator-ignore .travis.yml build.gradle build.sbt git_push.sh gradle.properties gradle gradlew gradlew.bat settings.gradle README.md api/openapi.yaml
+
+      - name: Update sdk/pom.xml
+        shell: pwsh
+        run: |
+          ./.github/workflows/scripts/update-pom-xml.ps1
+        env:
+          MAVEN_GPG_PLUGIN_VERSION: ${{ env.MAVEN_GPG_PLUGIN_VERSION }}
+
+      # - name: Revert ApiClient
+      #   if: ${{ env.KEEP_CURRENT_HEADER_SELECTOR }}
+      #   run: |
+      #     git checkout \
+      #       sdk/src/main/java/jp/co/freee/accounting/ApiClient.java \
+      #       sdk/src/main/java/jp/co/freee/accounting/DefaultHeaders.java
+
+      - name: Git
+        run: |
+          git config --local user.name "API Generator"
+          git add .
+          git commit -m "Generate SDK code for ${{ github.event.pull_request.title }}"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.head_ref }}
