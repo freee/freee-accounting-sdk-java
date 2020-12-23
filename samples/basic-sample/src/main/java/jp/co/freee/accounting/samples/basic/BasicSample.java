@@ -6,7 +6,7 @@ import jp.co.freee.accounting.ApiClient;
 import jp.co.freee.accounting.api.CompaniesApi;
 import jp.co.freee.accounting.api.InvoicesApi;
 import jp.co.freee.accounting.api.WalletablesApi;
-import jp.co.freee.accounting.models.CompaniesShowResponseCompany;
+import jp.co.freee.accounting.models.CompanyResponseCompany;
 import jp.co.freee.accounting.models.Invoice;
 import jp.co.freee.accounting.models.Walletable;
 
@@ -28,12 +28,12 @@ public class BasicSample {
 
         // 事業所の詳細情報を取得する
         CompaniesApi companiesApi = client.createService(CompaniesApi.class);
-        CompaniesShowResponseCompany company = companiesApi.getCompany(companyId, null, null, null, null, null, null, null, null).blockingSingle().getCompany();
+        CompanyResponseCompany company = companiesApi.getCompany(companyId, null, null, null, null, null, null, null, null).blockingSingle().getCompany();
         System.out.println("事業所名 : " + company.getDisplayName());
 
         // 登録されている口座の一覧を取得する
         WalletablesApi walletablesApi = client.createService(WalletablesApi.class);
-        for (Walletable item : walletablesApi.getWalletables(companyId, true).blockingSingle().getWalletables()) {
+        for (Walletable item : walletablesApi.getWalletables(companyId, true, null).blockingSingle().getWalletables()) {
             System.out.println(String.format("口座名 : %s / 登録残高 %s", item.getName(), item.getWalletableBalance()));
         }
 
@@ -56,7 +56,7 @@ public class BasicSample {
         // 登録されている口座の一覧を取得する
         WalletablesApi walletablesApi = client.createService(WalletablesApi.class);
         walletablesApi
-                .getWalletables(companyId, true)
+                .getWalletables(companyId, true, null)
                 .flatMapIterable(c -> c.getWalletables())
                 .subscribe(w -> System.out.println(String.format("口座名 : %s / 登録残高 %s", w.getName(), w.getWalletableBalance())));
 
