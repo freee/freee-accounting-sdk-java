@@ -47,7 +47,7 @@ jobs:
         java-version: ${{ env.JAVA_VERSION }}
         java-package: ${{ env.JAVA_PACKAGE }}
         architecture: ${{ env.JAVA_ARCHITECTURE }}
-        server-id: dev
+        server-id: ossrh
         server-username: MAVEN_USERNAME
         server-password: MAVEN_USER_PASSWORD
         gpg-private-key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
