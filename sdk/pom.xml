@@ -285,8 +285,8 @@
     </dependency>
   </dependencies>
   <properties>
-    <revision>2.0.1</revision>
-    <changelist>-SNAPSHOT</changelist>
+    <revision>2.0.0</revision>
+    <changelist>-beta3</changelist>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <java.version>1.8</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
