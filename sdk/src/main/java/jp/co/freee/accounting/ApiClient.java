@@ -20,6 +20,7 @@ import jp.co.freee.accounting.auth.ApiKeyAuth;
 import jp.co.freee.accounting.auth.OAuth;
 import jp.co.freee.accounting.auth.OAuth.AccessTokenListener;
 import jp.co.freee.accounting.auth.OAuthFlow;
+import jp.co.freee.accounting.DefaultHeadersInterceptor;
 
 import java.io.IOException;
 import java.lang.annotation.Annotation;
@@ -42,6 +43,9 @@ public class ApiClient {
     apiAuthorizations = new LinkedHashMap<String, Interceptor>();
     createDefaultAdapter();
     okBuilder = new OkHttpClient.Builder();
+
+    DefaultHeadersInterceptor defaultHeaders = new DefaultHeadersInterceptor();
+    okBuilder.addInterceptor(defaultHeaders);
   }
 
   public ApiClient(OkHttpClient client){
