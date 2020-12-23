@@ -7,7 +7,6 @@ on:
       - edited
 
 env:
-  PULL_REQUEST_LABEL: auto-generate
   SCHEMA_URL_TEMP: https://raw.githubusercontent.com/dzeyelid/freee-api-schema/add-sdk-compatible-schema/_sdk_compatible/open-api-3/api-schema.yml
   # KEEP_CURRENT_HEADER_SELECTOR: true
   MAVEN_GPG_PLUGIN_VERSION: 1.6
@@ -15,9 +14,8 @@ env:
 jobs:
   generate:
     name: Generate code and push them
+    if: ${{ contains(github.event.pull_request.labels.*.name, 'auto-generate') }}
     runs-on: ubuntu-latest
-
-    if: ${{ github.event.name == 'pull_request' && !contains(github.event.pull_request.labels.*.name, env.PULL_REQUEST_LABEL) }}
 
     steps:
       - name: Get original repo tag

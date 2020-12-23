@@ -10,7 +10,7 @@ on:
 jobs:
   postprocess:
     name: Post-process after pull request was closed
-    if: ${{ !contains(github.event.pull_request.labels.*.name, 'auto-generate') }}
+    if: ${{ contains(github.event.pull_request.labels.*.name, 'auto-generate') }}
     runs-on: ubuntu-latest
     steps:
       - name: Create draft release
