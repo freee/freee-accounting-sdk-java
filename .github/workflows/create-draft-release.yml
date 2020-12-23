@@ -8,20 +8,13 @@ on:
       - closed
 
 jobs:
-  create_draft_release:
-    name: Create draft release
-    if: ${{ github.event.name == 'pull_request' && !contains(github.event.pull_request.labels.*.name, 'auto-generate') }}
-    needs:
-      - preprocess
+  postprocess:
+    name: Post-process after pull request was closed
+    if: ${{ !contains(github.event.pull_request.labels.*.name, 'auto-generate') }}
     runs-on: ubuntu-latest
     steps:
-      - name: Check merged status
-        if: ${{ ! github.event.pull_request.merged }}
-        run: |
-          echo '::warning::This pull request has been just closed without merge'
-          exit 1
-
       - name: Create draft release
+        if: ${{ github.event.pull_request.merged }}
         uses: actions/create-release@v1
         with:
           tag_name: ${{ github.event.pull_request.title }}
@@ -32,12 +25,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  delete_working_branch:
-    name: Delete working branch
-    needs:
-      - preprocess
-    runs-on: ubuntu-latest
-    steps:
       - name: Delete working branch
         uses: actions/github-script@v3
         with:
