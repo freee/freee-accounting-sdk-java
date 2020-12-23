@@ -36,7 +36,7 @@ jobs:
 
   deploy:
     needs: build
-    if: ${{ github.release }}
+    if: ${{ github.event_name == 'release' }}
     runs-on: ubuntu-latest
 
     steps:
