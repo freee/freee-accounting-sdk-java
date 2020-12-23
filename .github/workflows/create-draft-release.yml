@@ -7,6 +7,9 @@ on:
     types:
       - closed
 
+env:
+  PULL_REQUEST_LABEL: auto-generate
+
 jobs:
   create_draft_release:
     name: Create draft release
