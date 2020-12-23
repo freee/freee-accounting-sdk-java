@@ -7,13 +7,10 @@ on:
     types:
       - closed
 
-env:
-  PULL_REQUEST_LABEL: auto-generate
-
 jobs:
   create_draft_release:
     name: Create draft release
-    if: ${{ github.event.name == 'pull_request' && !contains(github.event.pull_request.labels.*.name, env.PULL_REQUEST_LABEL) }}
+    if: ${{ github.event.name == 'pull_request' && !contains(github.event.pull_request.labels.*.name, 'auto-generate') }}
     needs:
       - preprocess
     runs-on: ubuntu-latest
