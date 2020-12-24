@@ -8,7 +8,7 @@ on:
 
 env:
   SCHEMA_URL_TEMP: https://raw.githubusercontent.com/dzeyelid/freee-api-schema/add-sdk-compatible-schema/_sdk_compatible/open-api-3/api-schema.yml
-  # KEEP_CURRENT_HEADER_SELECTOR: true
+  KEEP_CURRENT_HEADER_SELECTOR: true
   MAVEN_GPG_PLUGIN_VERSION: 1.6
   
 jobs:
@@ -61,12 +61,12 @@ jobs:
         env:
           MAVEN_GPG_PLUGIN_VERSION: ${{ env.MAVEN_GPG_PLUGIN_VERSION }}
 
-      # - name: Revert ApiClient
-      #   if: ${{ env.KEEP_CURRENT_HEADER_SELECTOR }}
-      #   run: |
-      #     git checkout \
-      #       sdk/src/main/java/jp/co/freee/accounting/ApiClient.java \
-      #       sdk/src/main/java/jp/co/freee/accounting/DefaultHeaders.java
+      - name: Revert ApiClient
+        if: ${{ env.KEEP_CURRENT_HEADER_SELECTOR }}
+        run: |
+          git checkout \
+            sdk/src/main/java/jp/co/freee/accounting/ApiClient.java \
+            sdk/src/main/java/jp/co/freee/accounting/DefaultHeaders.java
 
       - name: Git
         run: |
