@@ -81,7 +81,6 @@ public class ApprovalRequestsIndexResponse {
     return Objects.hash(approvalRequests);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

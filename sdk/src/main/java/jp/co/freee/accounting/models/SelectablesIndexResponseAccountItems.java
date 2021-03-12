@@ -216,7 +216,6 @@ public class SelectablesIndexResponseAccountItems {
     return Objects.hash(defaultTax, desc, help, id, name, shortcut);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

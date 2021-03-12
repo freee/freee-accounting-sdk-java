@@ -74,7 +74,6 @@ public class ApprovalFlowRouteResponse {
     return Objects.hash(approvalFlowRoute);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

@@ -188,7 +188,6 @@ public class TrialBsTwoYearsResponseTrialBsTwoYearsPartners {
     return Objects.hash(closingBalance, id, lastYearClosingBalance, name, yearOnYear);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

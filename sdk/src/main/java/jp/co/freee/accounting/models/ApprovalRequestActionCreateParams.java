@@ -245,7 +245,6 @@ public class ApprovalRequestActionCreateParams {
     return Objects.hash(approvalAction, companyId, nextApproverId, targetRound, targetStepId);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

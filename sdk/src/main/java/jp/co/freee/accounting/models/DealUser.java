@@ -130,7 +130,6 @@ public class DealUser {
     return Objects.hash(displayName, email, id);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

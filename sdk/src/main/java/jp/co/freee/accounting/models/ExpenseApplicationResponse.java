@@ -74,7 +74,6 @@ public class ExpenseApplicationResponse {
     return Objects.hash(expenseApplication);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

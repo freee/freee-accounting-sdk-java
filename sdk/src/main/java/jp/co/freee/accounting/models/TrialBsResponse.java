@@ -101,7 +101,6 @@ public class TrialBsResponse {
     return Objects.hash(trialBs, upToDate);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

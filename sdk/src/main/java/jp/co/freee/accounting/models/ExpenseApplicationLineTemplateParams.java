@@ -246,7 +246,6 @@ public class ExpenseApplicationLineTemplateParams {
     return Objects.hash(accountItemId, companyId, description, itemId, lineDescription, name, taxCode);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

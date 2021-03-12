@@ -597,7 +597,6 @@ public class TrialBsResponseTrialBs {
     return Objects.hash(accountItemDisplayType, adjustment, balances, breakdownDisplayType, companyId, createdAt, endDate, endMonth, fiscalYear, itemId, partnerCode, partnerId, startDate, startMonth);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

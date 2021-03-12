@@ -229,7 +229,6 @@ public class DeprecatedApprovalRequestParams {
     return Objects.hash(approvalFlowRouteId, approverId, companyId, requestFormId, requestItems, title);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

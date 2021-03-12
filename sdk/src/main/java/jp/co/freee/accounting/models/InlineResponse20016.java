@@ -1667,7 +1667,6 @@ public class InlineResponse20016 {
     return Objects.hash(tags, accountItemStatements, accountItems, annualReports, approvalFlowRoutes, approvalRequests, backups, bankAccountantStaffUsers, bizAllocations, companies, consumptionEntries, costAllocations, dealTemplates, deals, docPostings, docs, expenseApplicationTemplates, expenseApplications, fixedAssets, inventoryRefreshes, invitations, items, manualJournalTemplates, manualJournals, monthEnd, oauthApplications, oauthAuthorizations, openingBalances, partners, paymentRecords, paymentRequests, receiptStreamEditor, receipts, reports, reportsBs, reportsCashBalance, reportsCrosstabs, reportsGeneralLedgers, reportsIncomeExpense, reportsJournals, reportsManagementsNavigation, reportsManagementsPlanning, reportsPayables, reportsPl, reportsReceivables, requestForms, resets, sections, signInLogs, spreadsheets, systemConversion, taxReports, taxReturn, taxes, transfers, userMatchers, walletTxns, walletables, workflows, yearEnd);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

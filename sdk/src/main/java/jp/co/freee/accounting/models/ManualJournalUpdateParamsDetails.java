@@ -242,7 +242,7 @@ public class ManualJournalUpdateParamsDetails {
    /**
    * 貸借行ID: 既存貸借行を更新または削除する場合に指定します。IDを指定しない貸借行は、新規行として扱われ追加されます。
    * minimum: 1
-   * maximum: 2147483647
+   * maximum: 9223372036854775807
    * @return id
   **/
   @javax.annotation.Nullable
@@ -539,7 +539,6 @@ public class ManualJournalUpdateParamsDetails {
   public int hashCode() {
     return Objects.hash(accountItemId, amount, description, entrySide, id, itemId, partnerCode, partnerId, sectionId, segment1TagId, segment2TagId, segment3TagId, tagIds, taxCode, vat);
   }
-
 
   @Override
   public String toString() {

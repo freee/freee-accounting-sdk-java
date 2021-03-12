@@ -368,7 +368,6 @@ public class WalletTxnParams {
     return Objects.hash(amount, balance, companyId, date, description, entrySide, walletableId, walletableType);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

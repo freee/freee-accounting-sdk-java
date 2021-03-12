@@ -160,7 +160,7 @@ public class DealUpdateParamsDetails {
    /**
    * 取引行ID: 既存取引行を更新する場合に指定します。IDを指定しない取引行は、新規行として扱われ追加されます。また、detailsに含まれない既存の取引行は削除されます。更新後も残したい行は、必ず取引行IDを指定してdetailsに含めてください。
    * minimum: 1
-   * maximum: 2147483647
+   * maximum: 9223372036854775807
    * @return id
   **/
   @javax.annotation.Nullable
@@ -406,7 +406,6 @@ public class DealUpdateParamsDetails {
   public int hashCode() {
     return Objects.hash(accountItemId, amount, description, id, itemId, sectionId, segment1TagId, segment2TagId, segment3TagId, tagIds, taxCode, vat);
   }
-
 
   @Override
   public String toString() {

@@ -187,7 +187,6 @@ public class DeprecatedApprovalRequestParamsRequestItems {
     return Objects.hash(id, type, value);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

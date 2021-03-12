@@ -74,7 +74,6 @@ public class SectionResponse {
     return Objects.hash(section);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

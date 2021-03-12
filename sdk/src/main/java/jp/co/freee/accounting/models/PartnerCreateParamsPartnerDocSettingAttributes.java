@@ -123,7 +123,6 @@ public class PartnerCreateParamsPartnerDocSettingAttributes {
     return Objects.hash(sendingMethod);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

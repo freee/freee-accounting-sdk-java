@@ -187,7 +187,6 @@ public class Item {
     return Objects.hash(companyId, id, name, shortcut1, shortcut2);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

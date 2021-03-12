@@ -81,7 +81,6 @@ public class InlineResponse20017 {
     return Objects.hash(walletTxns);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

@@ -281,7 +281,6 @@ public class MeResponseUser {
     return Objects.hash(companies, displayName, email, firstName, firstNameKana, id, lastName, lastNameKana);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

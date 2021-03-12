@@ -102,7 +102,6 @@ public class ForbiddenError {
     return Objects.hash(message, messages);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

@@ -154,7 +154,6 @@ public class ServiceUnavailableErrorErrors {
     return Objects.hash(messages, type);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

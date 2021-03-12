@@ -101,7 +101,6 @@ public class TooManyRequestsError {
     return Objects.hash(meta, statusCode);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

@@ -405,7 +405,6 @@ public class TrialBsTwoYearsResponseTrialBsTwoYearsBalances {
     return Objects.hash(accountCategoryName, accountGroupName, accountItemId, accountItemName, closingBalance, hierarchyLevel, items, lastYearClosingBalance, parentAccountCategoryName, partners, totalLine, yearOnYear);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

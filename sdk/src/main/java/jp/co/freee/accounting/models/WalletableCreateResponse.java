@@ -74,7 +74,6 @@ public class WalletableCreateResponse {
     return Objects.hash(walletable);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

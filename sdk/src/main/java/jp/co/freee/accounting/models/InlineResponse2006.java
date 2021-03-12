@@ -81,7 +81,6 @@ public class InlineResponse2006 {
     return Objects.hash(manualJournals);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

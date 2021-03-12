@@ -138,7 +138,7 @@ public class DealRenews {
    /**
    * +更新行ID
    * minimum: 1
-   * maximum: 2147483647
+   * maximum: 9223372036854775807
    * @return id
   **/
   @ApiModelProperty(example = "11", required = true, value = "+更新行ID")
@@ -162,7 +162,7 @@ public class DealRenews {
    /**
    * +更新の対象行ID
    * minimum: 1
-   * maximum: 2147483647
+   * maximum: 9223372036854775807
    * @return renewTargetId
   **/
   @ApiModelProperty(example = "12", required = true, value = "+更新の対象行ID")
@@ -241,7 +241,6 @@ public class DealRenews {
   public int hashCode() {
     return Objects.hash(details, id, renewTargetId, renewTargetType, updateDate);
   }
-
 
   @Override
   public String toString() {

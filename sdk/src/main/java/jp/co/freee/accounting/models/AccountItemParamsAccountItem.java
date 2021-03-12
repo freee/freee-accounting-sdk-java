@@ -401,7 +401,6 @@ public class AccountItemParamsAccountItem {
     return Objects.hash(accountCategoryId, accumulatedDepAccountItemId, correspondingExpenseId, correspondingIncomeId, groupName, items, name, partners, searchable, shortcut, shortcutNum, taxCode);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

@@ -235,7 +235,6 @@ public class InlineResponse20013Taxes {
     return Objects.hash(available, code, displayCategory, name, nameJa);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

@@ -286,7 +286,6 @@ public class ExpenseApplicationUpdateParams {
     return Objects.hash(companyId, description, editableOnWeb, expenseApplicationLines, issueDate, sectionId, tagIds, title);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

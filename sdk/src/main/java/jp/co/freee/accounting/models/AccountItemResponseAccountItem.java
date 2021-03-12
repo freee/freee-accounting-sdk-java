@@ -630,7 +630,6 @@ public class AccountItemResponseAccountItem {
     return Objects.hash(accountCategory, accountCategoryId, accumulatedDepAccountItemId, accumulatedDepAccountItemName, available, companyId, correspondingExpenseId, correspondingExpenseName, correspondingIncomeId, correspondingIncomeName, groupName, id, items, name, partners, searchable, shortcut, shortcutNum, taxCode, walletableId);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

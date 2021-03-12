@@ -74,7 +74,6 @@ public class JournalsResponse {
     return Objects.hash(journals);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

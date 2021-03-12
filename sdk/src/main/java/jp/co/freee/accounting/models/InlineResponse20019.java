@@ -103,7 +103,6 @@ public class InlineResponse20019 {
     return Objects.hash(meta, walletable);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

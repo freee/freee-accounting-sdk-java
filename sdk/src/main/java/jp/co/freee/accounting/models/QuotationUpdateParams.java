@@ -939,7 +939,6 @@ public class QuotationUpdateParams {
     return Objects.hash(companyAddress1, companyAddress2, companyContactInfo, companyId, companyName, companyPrefectureCode, companyZipcode, description, issueDate, message, notes, partnerAddress1, partnerAddress2, partnerCode, partnerContactInfo, partnerDisplayName, partnerId, partnerPrefectureCode, partnerTitle, partnerZipcode, quotationContents, quotationLayout, quotationNumber, quotationStatus, taxEntryMethod, title);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

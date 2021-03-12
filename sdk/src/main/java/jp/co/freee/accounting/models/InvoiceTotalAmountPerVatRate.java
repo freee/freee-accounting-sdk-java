@@ -158,7 +158,6 @@ public class InvoiceTotalAmountPerVatRate {
     return Objects.hash(reducedVat8, vat10, vat5, vat8);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

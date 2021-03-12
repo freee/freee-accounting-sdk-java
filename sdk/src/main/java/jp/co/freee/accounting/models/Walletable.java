@@ -264,7 +264,6 @@ public class Walletable {
     return Objects.hash(bankId, id, lastBalance, name, type, walletableBalance);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

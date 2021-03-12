@@ -74,7 +74,6 @@ public class TagResponse {
     return Objects.hash(tag);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

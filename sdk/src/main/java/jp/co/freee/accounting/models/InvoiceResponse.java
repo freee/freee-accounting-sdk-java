@@ -74,7 +74,6 @@ public class InvoiceResponse {
     return Objects.hash(invoice);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

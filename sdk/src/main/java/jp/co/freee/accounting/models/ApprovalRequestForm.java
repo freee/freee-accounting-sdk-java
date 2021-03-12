@@ -359,7 +359,6 @@ public class ApprovalRequestForm {
     return Objects.hash(companyId, createdDate, description, formOrder, id, name, parts, routeSettingCount, status);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

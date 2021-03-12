@@ -351,7 +351,6 @@ public class DeprecatedApprovalRequestResponseApprovalRequest {
     return Objects.hash(applicantId, applicationDate, applicationNumber, approverId, companyId, id, requestItems, status, title);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

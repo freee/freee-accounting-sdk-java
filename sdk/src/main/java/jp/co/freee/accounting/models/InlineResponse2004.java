@@ -81,7 +81,6 @@ public class InlineResponse2004 {
     return Objects.hash(invoices);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

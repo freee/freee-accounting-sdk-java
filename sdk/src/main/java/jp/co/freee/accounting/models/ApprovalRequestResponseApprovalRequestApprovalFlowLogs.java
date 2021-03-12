@@ -184,7 +184,6 @@ public class ApprovalRequestResponseApprovalRequestApprovalFlowLogs {
     return Objects.hash(action, updatedAt, userId);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

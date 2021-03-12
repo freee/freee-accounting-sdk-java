@@ -699,7 +699,6 @@ public class TrialPlSectionsResponseTrialPlSections {
     return Objects.hash(accountItemDisplayType, adjustment, balances, breakdownDisplayType, companyId, costAllocation, createdAt, endDate, endMonth, fiscalYear, itemId, partnerCode, partnerId, sectionIds, startDate, startMonth);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

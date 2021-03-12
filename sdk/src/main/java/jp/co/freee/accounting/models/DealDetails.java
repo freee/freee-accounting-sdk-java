@@ -233,7 +233,7 @@ public class DealDetails {
    /**
    * +更新の明細行ID
    * minimum: 1
-   * maximum: 2147483647
+   * maximum: 9223372036854775807
    * @return id
   **/
   @ApiModelProperty(example = "1", required = true, value = "+更新の明細行ID")
@@ -474,7 +474,6 @@ public class DealDetails {
   public int hashCode() {
     return Objects.hash(accountItemId, amount, description, entrySide, id, itemId, sectionId, segment1TagId, segment2TagId, segment3TagId, tagIds, taxCode, vat);
   }
-
 
   @Override
   public String toString() {

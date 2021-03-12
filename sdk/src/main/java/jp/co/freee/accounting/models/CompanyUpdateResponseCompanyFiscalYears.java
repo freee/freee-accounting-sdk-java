@@ -385,7 +385,6 @@ public class CompanyUpdateResponseCompanyFiscalYears {
     return Objects.hash(accountingPeriod, depreciationRecordMethod, endDate, indirectWriteOffMethod, indirectWriteOffMethodType, returnCode, salesTaxBusinessCode, startDate, taxAccountMethod, taxFraction, taxMethod, useIndustryTemplate);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

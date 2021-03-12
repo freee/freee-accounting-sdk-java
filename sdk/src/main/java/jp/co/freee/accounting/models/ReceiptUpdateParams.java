@@ -130,7 +130,6 @@ public class ReceiptUpdateParams {
     return Objects.hash(companyId, description, issueDate);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

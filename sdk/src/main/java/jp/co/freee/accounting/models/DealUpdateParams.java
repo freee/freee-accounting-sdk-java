@@ -361,7 +361,6 @@ public class DealUpdateParams {
     return Objects.hash(companyId, details, dueDate, issueDate, partnerCode, partnerId, receiptIds, refNumber, type);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

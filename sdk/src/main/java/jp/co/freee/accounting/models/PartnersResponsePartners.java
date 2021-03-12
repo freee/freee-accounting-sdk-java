@@ -985,7 +985,6 @@ public class PartnersResponsePartners {
     return Objects.hash(addressAttributes, code, companyId, contactName, countryCode, defaultTitle, email, id, longName, name, nameKana, orgCode, partnerBankAccountAttributesAccountName, partnerBankAccountAttributesAccountNumber, partnerBankAccountAttributesAccountType, partnerBankAccountAttributesBankCode, partnerBankAccountAttributesBankName, partnerBankAccountAttributesBankNameKana, partnerBankAccountAttributesBranchCode, partnerBankAccountAttributesBranchKana, partnerBankAccountAttributesBranchName, partnerBankAccountAttributesLongAccountName, partnerDocSettingAttributesSendingMethod, payerWalletableId, phone, shortcut1, shortcut2, transferFeeHandlingSide);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

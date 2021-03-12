@@ -753,7 +753,6 @@ public class PartnerCreateParams {
     return Objects.hash(addressAttributes, code, companyId, contactName, countryCode, defaultTitle, email, invoicePaymentTermAttributes, longName, name, nameKana, orgCode, partnerBankAccountAttributes, partnerDocSettingAttributes, payerWalletableId, paymentTermAttributes, phone, shortcut1, shortcut2, transferFeeHandlingSide);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

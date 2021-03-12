@@ -498,7 +498,6 @@ public class TrialPlResponseTrialPlBalances {
     return Objects.hash(accountCategoryName, accountGroupName, accountItemId, accountItemName, closingBalance, compositionRatio, creditAmount, debitAmount, hierarchyLevel, items, openingBalance, parentAccountCategoryName, partners, sections, totalLine);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

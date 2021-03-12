@@ -294,7 +294,6 @@ public class ApprovalRequestResponseApprovalRequestApprovers {
     return Objects.hash(isForceAction, resourceType, status, stepId, userId);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

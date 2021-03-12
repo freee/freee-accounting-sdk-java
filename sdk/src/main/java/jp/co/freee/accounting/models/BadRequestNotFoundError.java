@@ -113,7 +113,6 @@ public class BadRequestNotFoundError {
     return Objects.hash(errors, statusCode);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

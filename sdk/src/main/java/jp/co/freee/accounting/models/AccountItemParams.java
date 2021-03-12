@@ -103,7 +103,6 @@ public class AccountItemParams {
     return Objects.hash(accountItem, companyId);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

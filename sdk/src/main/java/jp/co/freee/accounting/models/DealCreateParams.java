@@ -398,7 +398,6 @@ public class DealCreateParams {
     return Objects.hash(companyId, details, dueDate, issueDate, partnerCode, partnerId, payments, receiptIds, refNumber, type);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

@@ -104,7 +104,6 @@ public class SelectablesIndexResponseDefaultTaxTaxRate8 {
     return Objects.hash(id, name);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

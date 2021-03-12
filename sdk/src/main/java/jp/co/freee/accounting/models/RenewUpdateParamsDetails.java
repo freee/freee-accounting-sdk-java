@@ -379,7 +379,6 @@ public class RenewUpdateParamsDetails {
     return Objects.hash(accountItemId, amount, description, itemId, sectionId, segment1TagId, segment2TagId, segment3TagId, tagIds, taxCode, vat);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

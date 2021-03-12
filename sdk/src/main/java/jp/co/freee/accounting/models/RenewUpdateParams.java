@@ -137,7 +137,6 @@ public class RenewUpdateParams {
     return Objects.hash(companyId, details, updateDate);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

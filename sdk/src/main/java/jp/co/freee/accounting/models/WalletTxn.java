@@ -449,7 +449,6 @@ public class WalletTxn {
     return Objects.hash(amount, balance, companyId, date, description, dueAmount, entrySide, id, status, walletableId, walletableType);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

@@ -131,7 +131,6 @@ public class TrialPlSectionsResponseTrialPlSectionsItems {
     return Objects.hash(closingBalance, id, name);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

@@ -273,7 +273,6 @@ public class SelectablesIndexResponseAccountGroups {
     return Objects.hash(accountCategoryId, accountStructureId, createdAt, detailType, id, index, name, updatedAt);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

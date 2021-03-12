@@ -74,7 +74,6 @@ public class ApprovalRequestFormResponse {
     return Objects.hash(approvalRequestForm);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

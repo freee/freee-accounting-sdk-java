@@ -81,7 +81,6 @@ public class InlineResponse20010 {
     return Objects.hash(segmentTags);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

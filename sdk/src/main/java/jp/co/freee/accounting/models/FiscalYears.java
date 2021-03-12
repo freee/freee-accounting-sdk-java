@@ -330,7 +330,6 @@ public class FiscalYears {
     return Objects.hash(depreciationRecordMethod, endDate, indirectWriteOffMethod, returnCode, salesTaxBusinessCode, startDate, taxAccountMethod, taxFraction, taxMethod, useIndustryTemplate);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

@@ -74,7 +74,6 @@ public class InlineResponse2002Meta {
     return Objects.hash(totalCount);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

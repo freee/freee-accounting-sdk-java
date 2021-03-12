@@ -237,7 +237,6 @@ public class CompanyIndexResponseCompanies {
     return Objects.hash(displayName, id, name, nameKana, role);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

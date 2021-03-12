@@ -158,7 +158,6 @@ public class UserCapability {
     return Objects.hash(create, destroy, read, update);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

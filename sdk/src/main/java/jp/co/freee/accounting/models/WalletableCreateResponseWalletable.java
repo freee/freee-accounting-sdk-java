@@ -207,7 +207,6 @@ public class WalletableCreateResponseWalletable {
     return Objects.hash(bankId, id, name, type);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

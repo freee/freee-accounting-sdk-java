@@ -74,7 +74,6 @@ public class SegmentTagResponse {
     return Objects.hash(segmentTag);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
