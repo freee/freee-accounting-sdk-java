@@ -528,7 +528,6 @@ public class ExpenseApplicationResponseExpenseApplication {
     return Objects.hash(companyId, dealId, dealStatus, description, editableOnWeb, expenseApplicationLines, id, issueDate, sectionId, status, tagIds, title, totalAmount);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

@@ -504,7 +504,6 @@ public class AccountItemsResponseAccountItems {
     return Objects.hash(accountCategory, accountCategoryId, available, categories, correspondingExpenseId, correspondingExpenseName, correspondingIncomeId, correspondingIncomeName, defaultTaxCode, defaultTaxId, groupName, id, name, shortcut, shortcutNum, walletableId);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

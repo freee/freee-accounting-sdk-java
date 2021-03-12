@@ -209,7 +209,6 @@ public class DealCreateParamsPayments {
     return Objects.hash(amount, date, fromWalletableId, fromWalletableType);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

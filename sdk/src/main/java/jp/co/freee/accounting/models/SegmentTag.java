@@ -186,7 +186,6 @@ public class SegmentTag {
     return Objects.hash(description, id, name, shortcut1, shortcut2);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

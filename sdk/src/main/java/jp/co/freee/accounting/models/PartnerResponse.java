@@ -74,7 +74,6 @@ public class PartnerResponse {
     return Objects.hash(partner);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

@@ -238,7 +238,6 @@ public class PaymentParams {
     return Objects.hash(amount, companyId, date, fromWalletableId, fromWalletableType);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

@@ -160,7 +160,6 @@ public class PartnerCreateParamsAddressAttributes {
     return Objects.hash(prefectureCode, streetName1, streetName2, zipcode);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

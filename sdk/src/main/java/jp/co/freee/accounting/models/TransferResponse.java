@@ -74,7 +74,6 @@ public class TransferResponse {
     return Objects.hash(transfer);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

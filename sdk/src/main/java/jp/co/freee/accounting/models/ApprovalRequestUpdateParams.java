@@ -223,7 +223,6 @@ public class ApprovalRequestUpdateParams {
     return Objects.hash(applicationDate, approvalFlowRouteId, approverId, companyId, draft, requestItems);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

@@ -208,7 +208,6 @@ public class Bank {
     return Objects.hash(id, name, nameKana, type);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

@@ -129,7 +129,6 @@ public class ApprovalRequestResponseApprovalRequestComments {
     return Objects.hash(comment, postedAt, userId);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

@@ -574,7 +574,6 @@ public class InvoiceUpdateParamsInvoiceContents {
     return Objects.hash(accountItemId, description, id, itemId, order, qty, sectionId, segment1TagId, segment2TagId, segment3TagId, tagIds, taxCode, type, unit, unitPrice, vat);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

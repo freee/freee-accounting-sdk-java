@@ -74,7 +74,6 @@ public class CompanyUpdateResponse {
     return Objects.hash(company);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

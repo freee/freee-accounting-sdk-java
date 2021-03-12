@@ -399,7 +399,6 @@ public class Transfer {
     return Objects.hash(amount, companyId, date, description, fromWalletableId, fromWalletableType, id, toWalletableId, toWalletableType);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

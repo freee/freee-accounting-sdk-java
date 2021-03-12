@@ -136,7 +136,7 @@ public class ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines
    /**
    * 経費申請の項目行ID
    * minimum: 1
-   * maximum: 2147483647
+   * maximum: 9223372036854775807
    * @return id
   **/
   @ApiModelProperty(example = "1", required = true, value = "経費申請の項目行ID")
@@ -220,7 +220,6 @@ public class ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines
   public int hashCode() {
     return Objects.hash(amount, description, expenseApplicationLineTemplateId, id, receiptId, transactionDate);
   }
-
 
   @Override
   public String toString() {

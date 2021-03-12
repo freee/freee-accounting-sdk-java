@@ -417,7 +417,6 @@ public class ApprovalRequestsIndexResponseApprovalRequests {
     return Objects.hash(applicantId, applicationDate, applicationNumber, companyId, currentRound, currentStepId, formId, id, requestItems, status, title);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

@@ -74,7 +74,6 @@ public class QuotationResponse {
     return Objects.hash(quotation);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

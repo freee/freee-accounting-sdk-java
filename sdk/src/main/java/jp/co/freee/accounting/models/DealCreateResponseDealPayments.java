@@ -204,7 +204,7 @@ public class DealCreateResponseDealPayments {
    /**
    * 取引行ID
    * minimum: 1
-   * maximum: 2147483647
+   * maximum: 9223372036854775807
    * @return id
   **/
   @ApiModelProperty(example = "202", required = true, value = "取引行ID")
@@ -239,7 +239,6 @@ public class DealCreateResponseDealPayments {
   public int hashCode() {
     return Objects.hash(amount, date, fromWalletableId, fromWalletableType, id);
   }
-
 
   @Override
   public String toString() {

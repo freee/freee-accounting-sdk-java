@@ -186,7 +186,6 @@ public class UserParams {
     return Objects.hash(displayName, firstName, firstNameKana, lastName, lastNameKana);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

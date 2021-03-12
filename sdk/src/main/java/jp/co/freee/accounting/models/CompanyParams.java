@@ -1115,7 +1115,6 @@ public class CompanyParams {
     return Objects.hash(amountFraction, contactName, corporateNumber, defaultWalletAccountId, fax, fiscalYears, headCount, industryClass, industryCode, invoiceLayout, name, nameKana, phone1, phone2, prefectureCode, privateSettlement, streetName1, streetName2, txnNumberFormat, zipcode);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

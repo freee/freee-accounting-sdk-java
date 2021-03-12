@@ -165,7 +165,6 @@ public class ManualJournalCreateParams {
     return Objects.hash(adjustment, companyId, details, issueDate);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

@@ -76,7 +76,6 @@ public class AccountItemParamsAccountItemItems {
     return Objects.hash(id);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

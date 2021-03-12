@@ -373,7 +373,6 @@ public class ApprovalRequestFormParts {
     return Objects.hash(annotation, id, label, maxAmount, minAmount, order, required, type, values);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

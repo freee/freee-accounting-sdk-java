@@ -81,7 +81,6 @@ public class InlineResponse20012 {
     return Objects.hash(taxes);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

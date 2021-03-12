@@ -158,7 +158,6 @@ public class TagParams {
     return Objects.hash(companyId, name, shortcut1, shortcut2);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

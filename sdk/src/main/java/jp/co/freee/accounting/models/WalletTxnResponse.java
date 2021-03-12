@@ -74,7 +74,6 @@ public class WalletTxnResponse {
     return Objects.hash(walletTxn);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

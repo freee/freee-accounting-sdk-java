@@ -600,7 +600,6 @@ public class Deal {
     return Objects.hash(amount, companyId, details, dueAmount, dueDate, id, issueDate, partnerCode, partnerId, payments, receipts, refNumber, renews, status, type);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

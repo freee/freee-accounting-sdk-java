@@ -408,7 +408,6 @@ public class Receipt {
     return Objects.hash(createdAt, description, fileSrc, id, issueDate, mimeType, origin, status, user);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

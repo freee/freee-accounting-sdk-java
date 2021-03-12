@@ -74,7 +74,6 @@ public class TaxResponse {
     return Objects.hash(tax);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

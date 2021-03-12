@@ -74,7 +74,6 @@ public class DeprecatedApprovalRequestResponse {
     return Objects.hash(approvalRequest);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

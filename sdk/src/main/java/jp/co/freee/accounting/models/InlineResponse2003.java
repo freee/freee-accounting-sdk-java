@@ -81,7 +81,6 @@ public class InlineResponse2003 {
     return Objects.hash(expenseApplicationLineTemplates);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

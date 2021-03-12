@@ -81,7 +81,6 @@ public class AccountItemsResponse {
     return Objects.hash(accountItems);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

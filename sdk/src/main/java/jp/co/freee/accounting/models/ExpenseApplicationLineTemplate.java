@@ -271,7 +271,6 @@ public class ExpenseApplicationLineTemplate {
     return Objects.hash(accountItemId, accountItemName, description, id, lineDescription, name, taxCode, taxName);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

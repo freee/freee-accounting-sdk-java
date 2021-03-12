@@ -441,7 +441,6 @@ public class JournalStatusResponseJournals {
     return Objects.hash(companyId, downloadType, downloadUrl, endDate, id, startDate, status, visibleTags);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

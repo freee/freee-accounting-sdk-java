@@ -379,7 +379,6 @@ public class ApprovalFlowRouteResponseApprovalFlowRoute {
     return Objects.hash(definitionSystem, description, firstStepId, id, name, requestFormIds, steps, usages, userId);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

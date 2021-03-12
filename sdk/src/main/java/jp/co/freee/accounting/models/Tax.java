@@ -129,7 +129,6 @@ public class Tax {
     return Objects.hash(code, name, nameJa);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

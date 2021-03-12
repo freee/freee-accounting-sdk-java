@@ -235,7 +235,6 @@ public class CompaniesPlanResponse {
     return Objects.hash(id, orgCode, plan);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

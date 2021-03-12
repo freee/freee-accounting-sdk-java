@@ -207,7 +207,6 @@ public class TrialPlSectionsResponseTrialPlSectionsSections {
     return Objects.hash(closingBalance, id, items, name, partners);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

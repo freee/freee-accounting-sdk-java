@@ -216,7 +216,6 @@ public class SectionParams {
     return Objects.hash(companyId, longName, name, parentId, shortcut1, shortcut2);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

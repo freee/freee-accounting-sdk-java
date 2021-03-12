@@ -311,7 +311,6 @@ public class SelectablesIndexResponseAccountCategories {
     return Objects.hash(accountItems, balance, desc, orgCode, role, title);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

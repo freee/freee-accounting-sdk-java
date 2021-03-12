@@ -81,7 +81,6 @@ public class ExpenseApplicationsIndexResponse {
     return Objects.hash(expenseApplications);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

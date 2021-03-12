@@ -215,7 +215,6 @@ public class Section {
     return Objects.hash(companyId, id, longName, name, shortcut1, shortcut2);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

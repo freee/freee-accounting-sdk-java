@@ -272,7 +272,7 @@ public class ManualJournalDetails {
    /**
    * 貸借行ID
    * minimum: 1
-   * maximum: 2147483647
+   * maximum: 9223372036854775807
    * @return id
   **/
   @ApiModelProperty(example = "1", required = true, value = "貸借行ID")
@@ -759,7 +759,6 @@ public class ManualJournalDetails {
   public int hashCode() {
     return Objects.hash(accountItemId, amount, description, entrySide, id, itemId, itemName, partnerCode, partnerId, partnerLongName, partnerName, sectionId, sectionName, segment1TagId, segment1TagName, segment2TagId, segment2TagName, segment3TagId, segment3TagName, tagIds, tagNames, taxCode, vat);
   }
-
 
   @Override
   public String toString() {

@@ -221,7 +221,6 @@ public class ManualJournal {
     return Objects.hash(adjustment, companyId, details, id, issueDate, txnNumber);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

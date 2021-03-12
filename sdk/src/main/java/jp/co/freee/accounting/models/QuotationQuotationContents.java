@@ -798,7 +798,6 @@ public class QuotationQuotationContents {
     return Objects.hash(accountItemId, accountItemName, amount, description, id, itemId, itemName, order, qty, reducedVat, sectionId, sectionName, segment1TagId, segment1TagName, segment2TagId, segment2TagName, segment3TagId, segment3TagName, tagIds, tagNames, taxCode, type, unit, unitPrice, vat);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

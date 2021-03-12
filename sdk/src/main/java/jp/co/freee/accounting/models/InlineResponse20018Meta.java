@@ -74,7 +74,6 @@ public class InlineResponse20018Meta {
     return Objects.hash(upToDate);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

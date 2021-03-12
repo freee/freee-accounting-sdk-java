@@ -233,7 +233,7 @@ public class DealCreateResponseDealDetails {
    /**
    * 取引行ID
    * minimum: 1
-   * maximum: 2147483647
+   * maximum: 9223372036854775807
    * @return id
   **/
   @ApiModelProperty(example = "11", required = true, value = "取引行ID")
@@ -478,7 +478,6 @@ public class DealCreateResponseDealDetails {
   public int hashCode() {
     return Objects.hash(accountItemId, amount, description, entrySide, id, itemId, sectionId, segment1TagId, segment2TagId, segment3TagId, tagIds, taxCode, vat);
   }
-
 
   @Override
   public String toString() {

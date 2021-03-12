@@ -242,7 +242,6 @@ public class User {
     return Objects.hash(displayName, email, firstName, firstNameKana, id, lastName, lastNameKana);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

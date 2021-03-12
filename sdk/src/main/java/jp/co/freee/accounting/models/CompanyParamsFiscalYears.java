@@ -304,7 +304,6 @@ public class CompanyParamsFiscalYears {
     return Objects.hash(accountingPeriod, depreciationFraction, endDate, indirectWriteOffMethod, indirectWriteOffMethodType, returnCode, startDate, taxFraction, useIndustryTemplate);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

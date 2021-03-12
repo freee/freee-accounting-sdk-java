@@ -155,7 +155,6 @@ public class TooManyRequestsErrorMeta {
     return Objects.hash(limit, period, remaining, reset);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

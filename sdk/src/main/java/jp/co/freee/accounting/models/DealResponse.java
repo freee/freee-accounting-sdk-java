@@ -74,7 +74,6 @@ public class DealResponse {
     return Objects.hash(deal);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

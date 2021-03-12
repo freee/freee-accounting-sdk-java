@@ -216,7 +216,6 @@ public class TrialPlThreeYearsResponseTrialPlThreeYearsSections {
     return Objects.hash(closingBalance, id, lastYearClosingBalance, name, twoYearsBeforeClosingBalance, yearOnYear);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

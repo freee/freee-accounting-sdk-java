@@ -102,7 +102,6 @@ public class ApprovalRequestFormValues {
     return Objects.hash(name, order);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

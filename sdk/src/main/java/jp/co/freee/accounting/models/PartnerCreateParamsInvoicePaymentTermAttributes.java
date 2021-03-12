@@ -136,7 +136,6 @@ public class PartnerCreateParamsInvoicePaymentTermAttributes {
     return Objects.hash(additionalMonths, cutoffDay, fixedDay);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

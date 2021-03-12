@@ -236,7 +236,6 @@ public class WalletableCreateParams {
     return Objects.hash(bankId, companyId, groupName, name, type);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

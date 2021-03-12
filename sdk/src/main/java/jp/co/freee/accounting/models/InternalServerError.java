@@ -113,7 +113,6 @@ public class InternalServerError {
     return Objects.hash(errors, statusCode);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

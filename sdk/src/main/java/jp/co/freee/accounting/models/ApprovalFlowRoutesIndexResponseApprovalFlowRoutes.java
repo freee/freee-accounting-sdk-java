@@ -373,7 +373,6 @@ public class ApprovalFlowRoutesIndexResponseApprovalFlowRoutes {
     return Objects.hash(defaultRoute, definitionSystem, description, firstStepId, id, name, requestFormIds, usages, userId);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

@@ -122,7 +122,6 @@ public class SelectablesIndexResponse {
     return Objects.hash(accountCategories, accountGroups);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

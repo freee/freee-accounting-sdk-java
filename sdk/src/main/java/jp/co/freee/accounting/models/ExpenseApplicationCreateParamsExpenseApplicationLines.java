@@ -192,7 +192,6 @@ public class ExpenseApplicationCreateParamsExpenseApplicationLines {
     return Objects.hash(amount, description, expenseApplicationLineTemplateId, receiptId, transactionDate);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

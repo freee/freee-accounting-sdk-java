@@ -326,7 +326,6 @@ public class PartnerCreateParamsPartnerBankAccountAttributes {
     return Objects.hash(accountName, accountNumber, accountType, bankCode, bankName, bankNameKana, branchCode, branchKana, branchName, longAccountName);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

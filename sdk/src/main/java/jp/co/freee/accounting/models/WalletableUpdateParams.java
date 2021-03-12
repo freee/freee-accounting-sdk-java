@@ -102,7 +102,6 @@ public class WalletableUpdateParams {
     return Objects.hash(companyId, name);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

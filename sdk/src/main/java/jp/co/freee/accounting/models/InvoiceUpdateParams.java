@@ -1178,7 +1178,6 @@ public class InvoiceUpdateParams {
     return Objects.hash(bookingDate, companyAddress1, companyAddress2, companyContactInfo, companyId, companyName, companyPrefectureCode, companyZipcode, description, dueDate, invoiceContents, invoiceLayout, invoiceNumber, invoiceStatus, issueDate, message, notes, partnerAddress1, partnerAddress2, partnerCode, partnerContactInfo, partnerDisplayName, partnerId, partnerPrefectureCode, partnerTitle, partnerZipcode, paymentBankInfo, paymentType, taxEntryMethod, title, useVirtualTransferAccount);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

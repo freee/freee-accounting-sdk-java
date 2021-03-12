@@ -81,7 +81,6 @@ public class InlineResponse2007 {
     return Objects.hash(quotations);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

@@ -207,7 +207,6 @@ public class MeResponseUserCompanies {
     return Objects.hash(displayName, id, role, useCustomRole);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

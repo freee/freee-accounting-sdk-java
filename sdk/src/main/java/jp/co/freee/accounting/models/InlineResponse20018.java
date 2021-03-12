@@ -110,7 +110,6 @@ public class InlineResponse20018 {
     return Objects.hash(meta, walletables);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

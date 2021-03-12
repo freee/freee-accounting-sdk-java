@@ -109,7 +109,7 @@ public class RenewCreateParams {
    /**
    * +更新対象行ID (details(取引の明細行), accruals(債権債務行), renewsのdetails(+更新の明細行)のIDを指定) 
    * minimum: 1
-   * maximum: 2147483647
+   * maximum: 9223372036854775807
    * @return renewTargetId
   **/
   @ApiModelProperty(example = "1", required = true, value = "+更新対象行ID (details(取引の明細行), accruals(債権債務行), renewsのdetails(+更新の明細行)のIDを指定) ")
@@ -165,7 +165,6 @@ public class RenewCreateParams {
   public int hashCode() {
     return Objects.hash(companyId, details, renewTargetId, updateDate);
   }
-
 
   @Override
   public String toString() {
