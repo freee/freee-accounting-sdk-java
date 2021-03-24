@@ -2,6 +2,7 @@
 
 # CompanyResponseCompany
 
+
 ## Properties
 
 Name | Type | Description | Notes

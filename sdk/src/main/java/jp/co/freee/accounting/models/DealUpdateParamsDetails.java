@@ -37,7 +37,7 @@ public class DealUpdateParamsDetails {
 
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
-  private Integer amount;
+  private Long amount;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -45,7 +45,7 @@ public class DealUpdateParamsDetails {
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  private Integer id;
+  private Long id;
 
   public static final String SERIALIZED_NAME_ITEM_ID = "item_id";
   @SerializedName(SERIALIZED_NAME_ITEM_ID)
@@ -57,15 +57,15 @@ public class DealUpdateParamsDetails {
 
   public static final String SERIALIZED_NAME_SEGMENT1_TAG_ID = "segment_1_tag_id";
   @SerializedName(SERIALIZED_NAME_SEGMENT1_TAG_ID)
-  private Integer segment1TagId;
+  private Long segment1TagId;
 
   public static final String SERIALIZED_NAME_SEGMENT2_TAG_ID = "segment_2_tag_id";
   @SerializedName(SERIALIZED_NAME_SEGMENT2_TAG_ID)
-  private Integer segment2TagId;
+  private Long segment2TagId;
 
   public static final String SERIALIZED_NAME_SEGMENT3_TAG_ID = "segment_3_tag_id";
   @SerializedName(SERIALIZED_NAME_SEGMENT3_TAG_ID)
-  private Integer segment3TagId;
+  private Long segment3TagId;
 
   public static final String SERIALIZED_NAME_TAG_IDS = "tag_ids";
   @SerializedName(SERIALIZED_NAME_TAG_IDS)
@@ -104,7 +104,7 @@ public class DealUpdateParamsDetails {
   }
 
 
-  public DealUpdateParamsDetails amount(Integer amount) {
+  public DealUpdateParamsDetails amount(Long amount) {
     
     this.amount = amount;
     return this;
@@ -118,12 +118,12 @@ public class DealUpdateParamsDetails {
   **/
   @ApiModelProperty(example = "1", required = true, value = "取引金額（税込で指定してください）")
 
-  public Integer getAmount() {
+  public Long getAmount() {
     return amount;
   }
 
 
-  public void setAmount(Integer amount) {
+  public void setAmount(Long amount) {
     this.amount = amount;
   }
 
@@ -151,7 +151,7 @@ public class DealUpdateParamsDetails {
   }
 
 
-  public DealUpdateParamsDetails id(Integer id) {
+  public DealUpdateParamsDetails id(Long id) {
     
     this.id = id;
     return this;
@@ -166,12 +166,12 @@ public class DealUpdateParamsDetails {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "1", value = "取引行ID: 既存取引行を更新する場合に指定します。IDを指定しない取引行は、新規行として扱われ追加されます。また、detailsに含まれない既存の取引行は削除されます。更新後も残したい行は、必ず取引行IDを指定してdetailsに含めてください。")
 
-  public Integer getId() {
+  public Long getId() {
     return id;
   }
 
 
-  public void setId(Integer id) {
+  public void setId(Long id) {
     this.id = id;
   }
 
@@ -226,7 +226,7 @@ public class DealUpdateParamsDetails {
   }
 
 
-  public DealUpdateParamsDetails segment1TagId(Integer segment1TagId) {
+  public DealUpdateParamsDetails segment1TagId(Long segment1TagId) {
     
     this.segment1TagId = segment1TagId;
     return this;
@@ -241,17 +241,17 @@ public class DealUpdateParamsDetails {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "1", value = "セグメント１ID")
 
-  public Integer getSegment1TagId() {
+  public Long getSegment1TagId() {
     return segment1TagId;
   }
 
 
-  public void setSegment1TagId(Integer segment1TagId) {
+  public void setSegment1TagId(Long segment1TagId) {
     this.segment1TagId = segment1TagId;
   }
 
 
-  public DealUpdateParamsDetails segment2TagId(Integer segment2TagId) {
+  public DealUpdateParamsDetails segment2TagId(Long segment2TagId) {
     
     this.segment2TagId = segment2TagId;
     return this;
@@ -266,17 +266,17 @@ public class DealUpdateParamsDetails {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "1", value = "セグメント２ID")
 
-  public Integer getSegment2TagId() {
+  public Long getSegment2TagId() {
     return segment2TagId;
   }
 
 
-  public void setSegment2TagId(Integer segment2TagId) {
+  public void setSegment2TagId(Long segment2TagId) {
     this.segment2TagId = segment2TagId;
   }
 
 
-  public DealUpdateParamsDetails segment3TagId(Integer segment3TagId) {
+  public DealUpdateParamsDetails segment3TagId(Long segment3TagId) {
     
     this.segment3TagId = segment3TagId;
     return this;
@@ -291,12 +291,12 @@ public class DealUpdateParamsDetails {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "1", value = "セグメント３ID")
 
-  public Integer getSegment3TagId() {
+  public Long getSegment3TagId() {
     return segment3TagId;
   }
 
 
-  public void setSegment3TagId(Integer segment3TagId) {
+  public void setSegment3TagId(Long segment3TagId) {
     this.segment3TagId = segment3TagId;
   }
 

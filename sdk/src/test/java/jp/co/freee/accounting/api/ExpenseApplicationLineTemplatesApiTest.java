@@ -75,7 +75,7 @@ public class ExpenseApplicationLineTemplatesApiTest {
     @Test
     public void getExpenseApplicationLineTemplatesTest() {
         Integer companyId = null;
-        Integer offset = null;
+        Long offset = null;
         Integer limit = null;
         // InlineResponse2003 response = api.getExpenseApplicationLineTemplates(companyId, offset, limit);
 

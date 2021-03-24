@@ -2,6 +2,7 @@
 
 # WalletTxnResponse
 
+
 ## Properties
 
 Name | Type | Description | Notes

@@ -2,6 +2,7 @@
 
 # DealResponse
 
+
 ## Properties
 
 Name | Type | Description | Notes

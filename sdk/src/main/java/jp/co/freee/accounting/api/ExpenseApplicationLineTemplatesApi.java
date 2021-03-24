@@ -73,7 +73,7 @@ public interface ExpenseApplicationLineTemplatesApi {
    */
   @GET("api/1/expense_application_line_templates")
   Observable<InlineResponse2003> getExpenseApplicationLineTemplates(
-    @retrofit2.http.Query("company_id") Integer companyId, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit
+    @retrofit2.http.Query("company_id") Integer companyId, @retrofit2.http.Query("offset") Long offset, @retrofit2.http.Query("limit") Integer limit
   );
 
   /**

@@ -2,6 +2,7 @@
 
 # InvoiceCreateParams
 
+
 ## Properties
 
 Name | Type | Description | Notes

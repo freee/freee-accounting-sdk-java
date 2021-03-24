@@ -45,7 +45,7 @@ public interface BanksApi {
    */
   @GET("api/1/banks")
   Observable<InlineResponse2001> getBanks(
-    @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("type") String type
+    @retrofit2.http.Query("offset") Long offset, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("type") String type
   );
 
 }

@@ -76,6 +76,7 @@ Name | Type | Description  | Notes
 - **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -151,6 +152,7 @@ null (empty response body)
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -229,6 +231,7 @@ Name | Type | Description  | Notes
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -277,7 +280,7 @@ public class Example {
         String quotationNumber = "quotationNumber_example"; // String | 見積書番号
         String description = "description_example"; // String | 概要
         String quotationStatus = "quotationStatus_example"; // String | 見積書ステータス  (unsubmitted: 送付待ち, submitted: 送付済み, all: 全て)
-        Integer offset = 56; // Integer | 取得レコードのオフセット (デフォルト: 0)
+        Long offset = 56L; // Long | 取得レコードのオフセット (デフォルト: 0)
         Integer limit = 56; // Integer | 取得レコードの件数 (デフォルト: 20, 最大: 100) 
         try {
             InlineResponse2007 result = apiInstance.getQuotations(companyId, partnerId, partnerCode, startIssueDate, endIssueDate, quotationNumber, description, quotationStatus, offset, limit);
@@ -306,7 +309,7 @@ Name | Type | Description  | Notes
  **quotationNumber** | **String**| 見積書番号 | [optional]
  **description** | **String**| 概要 | [optional]
  **quotationStatus** | **String**| 見積書ステータス  (unsubmitted: 送付待ち, submitted: 送付済み, all: 全て) | [optional] [enum: all, unsubmitted, submitted]
- **offset** | **Integer**| 取得レコードのオフセット (デフォルト: 0) | [optional]
+ **offset** | **Long**| 取得レコードのオフセット (デフォルト: 0) | [optional]
  **limit** | **Integer**| 取得レコードの件数 (デフォルト: 20, 最大: 100)  | [optional]
 
 ### Return type
@@ -321,6 +324,7 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -398,6 +402,7 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |

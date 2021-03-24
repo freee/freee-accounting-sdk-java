@@ -89,7 +89,7 @@ public class DealsApiTest {
         String endDueDate = null;
         String startRenewDate = null;
         String endRenewDate = null;
-        Integer offset = null;
+        Long offset = null;
         Integer limit = null;
         String registeredFrom = null;
         String accruals = null;

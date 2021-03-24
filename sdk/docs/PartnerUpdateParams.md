@@ -2,6 +2,7 @@
 
 # PartnerUpdateParams
 
+
 ## Properties
 
 Name | Type | Description | Notes

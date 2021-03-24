@@ -82,6 +82,7 @@ Name | Type | Description  | Notes
 - **Content-Type**: multipart/form-data
 - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -156,6 +157,7 @@ null (empty response body)
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -234,6 +236,7 @@ Name | Type | Description  | Notes
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -282,7 +285,7 @@ public class Example {
         String commentType = "commentType_example"; // String | posted:コメントあり, raised:未解決, resolved:解決済
         Boolean commentImportant = true; // Boolean | trueの時、重要コメント付きが対象
         String category = "category_example"; // String | all:すべて、without_deal:未登録、with_expense_application_line:経費申請中, with_deal:登録済み、ignored:無視
-        Integer offset = 56; // Integer | 取得レコードのオフセット (デフォルト: 0)
+        Long offset = 56L; // Long | 取得レコードのオフセット (デフォルト: 0)
         Integer limit = 56; // Integer | 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000)
         try {
             InlineResponse2008 result = apiInstance.getReceipts(companyId, startDate, endDate, userName, number, commentType, commentImportant, category, offset, limit);
@@ -311,7 +314,7 @@ Name | Type | Description  | Notes
  **commentType** | **String**| posted:コメントあり, raised:未解決, resolved:解決済 | [optional] [enum: posted, raised, resolved]
  **commentImportant** | **Boolean**| trueの時、重要コメント付きが対象 | [optional]
  **category** | **String**| all:すべて、without_deal:未登録、with_expense_application_line:経費申請中, with_deal:登録済み、ignored:無視 | [optional] [enum: all, without_deal, with_expense_application_line, with_deal, ignored]
- **offset** | **Integer**| 取得レコードのオフセット (デフォルト: 0) | [optional]
+ **offset** | **Long**| 取得レコードのオフセット (デフォルト: 0) | [optional]
  **limit** | **Integer**| 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) | [optional]
 
 ### Return type
@@ -326,6 +329,7 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -402,6 +406,7 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |

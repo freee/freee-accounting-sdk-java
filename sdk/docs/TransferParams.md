@@ -2,11 +2,12 @@
 
 # TransferParams
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amount** | **Integer** | 金額 | 
+**amount** | **Long** | 金額 | 
 **companyId** | **Integer** | 事業所ID | 
 **date** | **String** | 振替日 (yyyy-mm-dd) | 
 **description** | **String** | 備考 |  [optional]

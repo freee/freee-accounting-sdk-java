@@ -31,22 +31,22 @@ import java.io.IOException;
 public class InvoiceTotalAmountPerVatRate {
   public static final String SERIALIZED_NAME_REDUCED_VAT8 = "reduced_vat_8";
   @SerializedName(SERIALIZED_NAME_REDUCED_VAT8)
-  private Integer reducedVat8;
+  private Long reducedVat8;
 
   public static final String SERIALIZED_NAME_VAT10 = "vat_10";
   @SerializedName(SERIALIZED_NAME_VAT10)
-  private Integer vat10;
+  private Long vat10;
 
   public static final String SERIALIZED_NAME_VAT5 = "vat_5";
   @SerializedName(SERIALIZED_NAME_VAT5)
-  private Integer vat5;
+  private Long vat5;
 
   public static final String SERIALIZED_NAME_VAT8 = "vat_8";
   @SerializedName(SERIALIZED_NAME_VAT8)
-  private Integer vat8;
+  private Long vat8;
 
 
-  public InvoiceTotalAmountPerVatRate reducedVat8(Integer reducedVat8) {
+  public InvoiceTotalAmountPerVatRate reducedVat8(Long reducedVat8) {
     
     this.reducedVat8 = reducedVat8;
     return this;
@@ -59,17 +59,17 @@ public class InvoiceTotalAmountPerVatRate {
   **/
   @ApiModelProperty(example = "0", required = true, value = "軽減税率8%の税込み金額合計")
 
-  public Integer getReducedVat8() {
+  public Long getReducedVat8() {
     return reducedVat8;
   }
 
 
-  public void setReducedVat8(Integer reducedVat8) {
+  public void setReducedVat8(Long reducedVat8) {
     this.reducedVat8 = reducedVat8;
   }
 
 
-  public InvoiceTotalAmountPerVatRate vat10(Integer vat10) {
+  public InvoiceTotalAmountPerVatRate vat10(Long vat10) {
     
     this.vat10 = vat10;
     return this;
@@ -82,17 +82,17 @@ public class InvoiceTotalAmountPerVatRate {
   **/
   @ApiModelProperty(example = "0", required = true, value = "税率10%の税込み金額合計")
 
-  public Integer getVat10() {
+  public Long getVat10() {
     return vat10;
   }
 
 
-  public void setVat10(Integer vat10) {
+  public void setVat10(Long vat10) {
     this.vat10 = vat10;
   }
 
 
-  public InvoiceTotalAmountPerVatRate vat5(Integer vat5) {
+  public InvoiceTotalAmountPerVatRate vat5(Long vat5) {
     
     this.vat5 = vat5;
     return this;
@@ -105,17 +105,17 @@ public class InvoiceTotalAmountPerVatRate {
   **/
   @ApiModelProperty(example = "0", required = true, value = "税率5%の税込み金額合計")
 
-  public Integer getVat5() {
+  public Long getVat5() {
     return vat5;
   }
 
 
-  public void setVat5(Integer vat5) {
+  public void setVat5(Long vat5) {
     this.vat5 = vat5;
   }
 
 
-  public InvoiceTotalAmountPerVatRate vat8(Integer vat8) {
+  public InvoiceTotalAmountPerVatRate vat8(Long vat8) {
     
     this.vat8 = vat8;
     return this;
@@ -128,12 +128,12 @@ public class InvoiceTotalAmountPerVatRate {
   **/
   @ApiModelProperty(example = "108000", required = true, value = "税率8%の税込み金額合計")
 
-  public Integer getVat8() {
+  public Long getVat8() {
     return vat8;
   }
 
 
-  public void setVat8(Integer vat8) {
+  public void setVat8(Long vat8) {
     this.vat8 = vat8;
   }
 

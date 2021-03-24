@@ -80,7 +80,7 @@ public class WalletTxnsApiTest {
         String startDate = null;
         String endDate = null;
         String entrySide = null;
-        Integer offset = null;
+        Long offset = null;
         Integer limit = null;
         // InlineResponse20017 response = api.getWalletTxns(companyId, walletableType, walletableId, startDate, endDate, entrySide, offset, limit);
 

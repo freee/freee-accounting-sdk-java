@@ -75,7 +75,7 @@ public interface TransfersApi {
    */
   @GET("api/1/transfers")
   Observable<InlineResponse20014> getTransfers(
-    @retrofit2.http.Query("company_id") Integer companyId, @retrofit2.http.Query("start_date") String startDate, @retrofit2.http.Query("end_date") String endDate, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit
+    @retrofit2.http.Query("company_id") Integer companyId, @retrofit2.http.Query("start_date") String startDate, @retrofit2.http.Query("end_date") String endDate, @retrofit2.http.Query("offset") Long offset, @retrofit2.http.Query("limit") Integer limit
   );
 
   /**

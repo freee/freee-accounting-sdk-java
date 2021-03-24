@@ -43,7 +43,7 @@ public class ExpenseApplicationUpdateParamsExpenseApplicationLines {
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  private Integer id;
+  private Long id;
 
   public static final String SERIALIZED_NAME_RECEIPT_ID = "receipt_id";
   @SerializedName(SERIALIZED_NAME_RECEIPT_ID)
@@ -127,7 +127,7 @@ public class ExpenseApplicationUpdateParamsExpenseApplicationLines {
   }
 
 
-  public ExpenseApplicationUpdateParamsExpenseApplicationLines id(Integer id) {
+  public ExpenseApplicationUpdateParamsExpenseApplicationLines id(Long id) {
     
     this.id = id;
     return this;
@@ -142,12 +142,12 @@ public class ExpenseApplicationUpdateParamsExpenseApplicationLines {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "1", value = "経費申請の項目行ID: 既存項目行を更新する場合に指定します。IDを指定しない項目行は、新規行として扱われ追加されます。また、expense_application_linesに含まれない既存の項目行は削除されます。更新後も残したい行は、必ず経費申請の項目行IDを指定してexpense_application_linesに含めてください。")
 
-  public Integer getId() {
+  public Long getId() {
     return id;
   }
 
 
-  public void setId(Integer id) {
+  public void setId(Long id) {
     this.id = id;
   }
 

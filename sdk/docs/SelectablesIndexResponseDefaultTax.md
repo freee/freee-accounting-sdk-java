@@ -2,6 +2,7 @@
 
 # SelectablesIndexResponseDefaultTax
 
+
 ## Properties
 
 Name | Type | Description | Notes

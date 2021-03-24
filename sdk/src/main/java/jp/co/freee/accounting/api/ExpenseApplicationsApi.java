@@ -74,7 +74,7 @@ public interface ExpenseApplicationsApi {
    */
   @GET("api/1/expense_applications")
   Observable<ExpenseApplicationsIndexResponse> getExpenseApplications(
-    @retrofit2.http.Query("company_id") Integer companyId, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit
+    @retrofit2.http.Query("company_id") Integer companyId, @retrofit2.http.Query("offset") Long offset, @retrofit2.http.Query("limit") Integer limit
   );
 
   /**

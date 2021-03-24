@@ -76,7 +76,7 @@ public class ExpenseApplicationsApiTest {
     @Test
     public void getExpenseApplicationsTest() {
         Integer companyId = null;
-        Integer offset = null;
+        Long offset = null;
         Integer limit = null;
         // ExpenseApplicationsIndexResponse response = api.getExpenseApplications(companyId, offset, limit);
 

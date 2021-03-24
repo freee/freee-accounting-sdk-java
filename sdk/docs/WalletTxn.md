@@ -2,11 +2,12 @@
 
 # WalletTxn
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amount** | **Integer** | 取引金額 | 
+**amount** | **Long** | 取引金額 | 
 **balance** | **Integer** | 残高(銀行口座等) | 
 **companyId** | **Integer** | 事業所ID | 
 **date** | **String** | 取引日(yyyy-mm-dd) | 

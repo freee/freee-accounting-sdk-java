@@ -31,7 +31,7 @@ import java.io.IOException;
 public class TransferParams {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
-  private Integer amount;
+  private Long amount;
 
   public static final String SERIALIZED_NAME_COMPANY_ID = "company_id";
   @SerializedName(SERIALIZED_NAME_COMPANY_ID)
@@ -160,7 +160,7 @@ public class TransferParams {
   private ToWalletableTypeEnum toWalletableType;
 
 
-  public TransferParams amount(Integer amount) {
+  public TransferParams amount(Long amount) {
     
     this.amount = amount;
     return this;
@@ -174,12 +174,12 @@ public class TransferParams {
   **/
   @ApiModelProperty(example = "5000", required = true, value = "金額")
 
-  public Integer getAmount() {
+  public Long getAmount() {
     return amount;
   }
 
 
-  public void setAmount(Integer amount) {
+  public void setAmount(Long amount) {
     this.amount = amount;
   }
 

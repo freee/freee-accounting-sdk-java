@@ -2,6 +2,7 @@
 
 # PartnerResponsePartnerAddressAttributes
 
+
 ## Properties
 
 Name | Type | Description | Notes

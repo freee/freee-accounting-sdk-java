@@ -2,6 +2,7 @@
 
 # ReceiptResponse
 
+
 ## Properties
 
 Name | Type | Description | Notes

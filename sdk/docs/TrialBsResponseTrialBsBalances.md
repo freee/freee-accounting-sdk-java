@@ -2,6 +2,7 @@
 
 # TrialBsResponseTrialBsBalances
 
+
 ## Properties
 
 Name | Type | Description | Notes

@@ -2,6 +2,7 @@
 
 # ManualJournalDetails
 
+
 ## Properties
 
 Name | Type | Description | Notes
@@ -10,7 +11,7 @@ Name | Type | Description | Notes
 **amount** | **Integer** | 金額（税込で指定してください） | 
 **description** | **String** | 備考 | 
 **entrySide** | [**EntrySideEnum**](#EntrySideEnum) | 貸借(貸方: credit, 借方: debit) | 
-**id** | **Integer** | 貸借行ID | 
+**id** | **Long** | 貸借行ID | 
 **itemId** | **Integer** | 品目ID | 
 **itemName** | **String** | 品目 | 
 **partnerCode** | **String** | 取引先コード |  [optional]
@@ -19,11 +20,11 @@ Name | Type | Description | Notes
 **partnerName** | **String** | 取引先名 | 
 **sectionId** | **Integer** | 部門ID | 
 **sectionName** | **String** | 部門 | 
-**segment1TagId** | **Integer** | セグメント１ID |  [optional]
+**segment1TagId** | **Long** | セグメント１ID |  [optional]
 **segment1TagName** | **Integer** | セグメント１ID |  [optional]
-**segment2TagId** | **Integer** | セグメント２ID |  [optional]
+**segment2TagId** | **Long** | セグメント２ID |  [optional]
 **segment2TagName** | **Integer** | セグメント２ |  [optional]
-**segment3TagId** | **Integer** | セグメント３ID |  [optional]
+**segment3TagId** | **Long** | セグメント３ID |  [optional]
 **segment3TagName** | **Integer** | セグメント３ |  [optional]
 **tagIds** | **List&lt;Integer&gt;** |  | 
 **tagNames** | **List&lt;String&gt;** |  | 

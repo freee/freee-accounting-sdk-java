@@ -2,6 +2,7 @@
 
 # PartnerCreateParamsPartnerBankAccountAttributes
 
+
 ## Properties
 
 Name | Type | Description | Notes

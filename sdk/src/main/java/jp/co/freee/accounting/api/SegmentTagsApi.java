@@ -63,7 +63,7 @@ public interface SegmentTagsApi {
    */
   @GET("api/1/segments/{segment_id}/tags")
   Observable<InlineResponse20010> getSegmentTags(
-    @retrofit2.http.Path("segment_id") Integer segmentId, @retrofit2.http.Query("company_id") Integer companyId, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit
+    @retrofit2.http.Path("segment_id") Integer segmentId, @retrofit2.http.Query("company_id") Integer companyId, @retrofit2.http.Query("offset") Long offset, @retrofit2.http.Query("limit") Integer limit
   );
 
   /**

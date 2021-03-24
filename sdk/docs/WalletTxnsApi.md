@@ -75,6 +75,7 @@ Name | Type | Description  | Notes
 - **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -149,6 +150,7 @@ null (empty response body)
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -227,6 +229,7 @@ Name | Type | Description  | Notes
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -273,7 +276,7 @@ public class Example {
         String startDate = "startDate_example"; // String | 取引日で絞込：開始日 (yyyy-mm-dd)
         String endDate = "endDate_example"; // String | 取引日で絞込：終了日 (yyyy-mm-dd)
         String entrySide = "entrySide_example"; // String | 入金／出金 (入金: income, 出金: expense)
-        Integer offset = 56; // Integer | 取得レコードのオフセット (デフォルト: 0)
+        Long offset = 56L; // Long | 取得レコードのオフセット (デフォルト: 0)
         Integer limit = 56; // Integer | 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100) 
         try {
             InlineResponse20017 result = apiInstance.getWalletTxns(companyId, walletableType, walletableId, startDate, endDate, entrySide, offset, limit);
@@ -300,7 +303,7 @@ Name | Type | Description  | Notes
  **startDate** | **String**| 取引日で絞込：開始日 (yyyy-mm-dd) | [optional]
  **endDate** | **String**| 取引日で絞込：終了日 (yyyy-mm-dd) | [optional]
  **entrySide** | **String**| 入金／出金 (入金: income, 出金: expense) | [optional] [enum: income, expense]
- **offset** | **Integer**| 取得レコードのオフセット (デフォルト: 0) | [optional]
+ **offset** | **Long**| 取得レコードのオフセット (デフォルト: 0) | [optional]
  **limit** | **Integer**| 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  | [optional]
 
 ### Return type
@@ -315,6 +318,7 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |

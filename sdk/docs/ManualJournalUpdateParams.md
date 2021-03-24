@@ -2,6 +2,7 @@
 
 # ManualJournalUpdateParams
 
+
 ## Properties
 
 Name | Type | Description | Notes

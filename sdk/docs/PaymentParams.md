@@ -2,11 +2,12 @@
 
 # PaymentParams
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amount** | **Integer** | 金額 | 
+**amount** | **Long** | 金額 | 
 **companyId** | **Integer** | 事業所ID | 
 **date** | **String** | 支払日 | 
 **fromWalletableId** | **Integer** | 口座ID（from_walletable_typeがprivate_account_itemの場合は勘定科目ID）：payments指定時は必須 | 

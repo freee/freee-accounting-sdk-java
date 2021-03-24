@@ -2,6 +2,7 @@
 
 # SectionParams
 
+
 ## Properties
 
 Name | Type | Description | Notes

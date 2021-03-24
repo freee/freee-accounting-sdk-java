@@ -2,6 +2,7 @@
 
 # InlineResponse20013Taxes
 
+
 ## Properties
 
 Name | Type | Description | Notes

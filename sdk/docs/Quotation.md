@@ -2,6 +2,7 @@
 
 # Quotation
 
+
 ## Properties
 
 Name | Type | Description | Notes

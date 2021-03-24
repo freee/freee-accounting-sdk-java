@@ -2,6 +2,7 @@
 
 # Receipt
 
+
 ## Properties
 
 Name | Type | Description | Notes

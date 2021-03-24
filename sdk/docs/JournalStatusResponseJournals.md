@@ -2,6 +2,7 @@
 
 # JournalStatusResponseJournals
 
+
 ## Properties
 
 Name | Type | Description | Notes

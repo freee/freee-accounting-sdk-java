@@ -2,6 +2,7 @@
 
 # BadRequestNotFoundError
 
+
 ## Properties
 
 Name | Type | Description | Notes

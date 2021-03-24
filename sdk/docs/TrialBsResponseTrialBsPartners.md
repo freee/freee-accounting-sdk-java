@@ -2,6 +2,7 @@
 
 # TrialBsResponseTrialBsPartners
 
+
 ## Properties
 
 Name | Type | Description | Notes

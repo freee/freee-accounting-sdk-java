@@ -31,7 +31,7 @@ import java.io.IOException;
 public class DealCreateParamsPayments {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
-  private Integer amount;
+  private Long amount;
 
   public static final String SERIALIZED_NAME_DATE = "date";
   @SerializedName(SERIALIZED_NAME_DATE)
@@ -97,7 +97,7 @@ public class DealCreateParamsPayments {
   private FromWalletableTypeEnum fromWalletableType;
 
 
-  public DealCreateParamsPayments amount(Integer amount) {
+  public DealCreateParamsPayments amount(Long amount) {
     
     this.amount = amount;
     return this;
@@ -111,12 +111,12 @@ public class DealCreateParamsPayments {
   **/
   @ApiModelProperty(example = "5250", required = true, value = "支払金額：payments指定時は必須")
 
-  public Integer getAmount() {
+  public Long getAmount() {
     return amount;
   }
 
 
-  public void setAmount(Integer amount) {
+  public void setAmount(Long amount) {
     this.amount = amount;
   }
 

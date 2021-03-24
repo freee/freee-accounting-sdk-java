@@ -49,7 +49,7 @@ public class PaymentsApiTest {
     @Test
     public void destroyDealPaymentTest() {
         Integer id = null;
-        Integer paymentId = null;
+        Long paymentId = null;
         Integer companyId = null;
         // api.destroyDealPayment(id, paymentId, companyId);
 
@@ -63,7 +63,7 @@ public class PaymentsApiTest {
     @Test
     public void updateDealPaymentTest() {
         Integer id = null;
-        Integer paymentId = null;
+        Long paymentId = null;
         PaymentParams paymentParams = null;
         // DealResponse response = api.updateDealPayment(id, paymentId, paymentParams);
 

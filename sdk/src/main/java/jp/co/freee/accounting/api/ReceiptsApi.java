@@ -82,7 +82,7 @@ public interface ReceiptsApi {
    */
   @GET("api/1/receipts")
   Observable<InlineResponse2008> getReceipts(
-    @retrofit2.http.Query("company_id") Integer companyId, @retrofit2.http.Query("start_date") String startDate, @retrofit2.http.Query("end_date") String endDate, @retrofit2.http.Query("user_name") String userName, @retrofit2.http.Query("number") Integer number, @retrofit2.http.Query("comment_type") String commentType, @retrofit2.http.Query("comment_important") Boolean commentImportant, @retrofit2.http.Query("category") String category, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit
+    @retrofit2.http.Query("company_id") Integer companyId, @retrofit2.http.Query("start_date") String startDate, @retrofit2.http.Query("end_date") String endDate, @retrofit2.http.Query("user_name") String userName, @retrofit2.http.Query("number") Integer number, @retrofit2.http.Query("comment_type") String commentType, @retrofit2.http.Query("comment_important") Boolean commentImportant, @retrofit2.http.Query("category") String category, @retrofit2.http.Query("offset") Long offset, @retrofit2.http.Query("limit") Integer limit
   );
 
   /**

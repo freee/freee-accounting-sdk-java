@@ -37,7 +37,7 @@ public class RenewUpdateParamsDetails {
 
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
-  private Integer amount;
+  private Long amount;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -53,15 +53,15 @@ public class RenewUpdateParamsDetails {
 
   public static final String SERIALIZED_NAME_SEGMENT1_TAG_ID = "segment_1_tag_id";
   @SerializedName(SERIALIZED_NAME_SEGMENT1_TAG_ID)
-  private Integer segment1TagId;
+  private Long segment1TagId;
 
   public static final String SERIALIZED_NAME_SEGMENT2_TAG_ID = "segment_2_tag_id";
   @SerializedName(SERIALIZED_NAME_SEGMENT2_TAG_ID)
-  private Integer segment2TagId;
+  private Long segment2TagId;
 
   public static final String SERIALIZED_NAME_SEGMENT3_TAG_ID = "segment_3_tag_id";
   @SerializedName(SERIALIZED_NAME_SEGMENT3_TAG_ID)
-  private Integer segment3TagId;
+  private Long segment3TagId;
 
   public static final String SERIALIZED_NAME_TAG_IDS = "tag_ids";
   @SerializedName(SERIALIZED_NAME_TAG_IDS)
@@ -73,7 +73,7 @@ public class RenewUpdateParamsDetails {
 
   public static final String SERIALIZED_NAME_VAT = "vat";
   @SerializedName(SERIALIZED_NAME_VAT)
-  private Integer vat;
+  private Long vat;
 
 
   public RenewUpdateParamsDetails accountItemId(Integer accountItemId) {
@@ -100,7 +100,7 @@ public class RenewUpdateParamsDetails {
   }
 
 
-  public RenewUpdateParamsDetails amount(Integer amount) {
+  public RenewUpdateParamsDetails amount(Long amount) {
     
     this.amount = amount;
     return this;
@@ -114,12 +114,12 @@ public class RenewUpdateParamsDetails {
   **/
   @ApiModelProperty(example = "1080", required = true, value = "取引金額（税込で指定してください）")
 
-  public Integer getAmount() {
+  public Long getAmount() {
     return amount;
   }
 
 
-  public void setAmount(Integer amount) {
+  public void setAmount(Long amount) {
     this.amount = amount;
   }
 
@@ -197,7 +197,7 @@ public class RenewUpdateParamsDetails {
   }
 
 
-  public RenewUpdateParamsDetails segment1TagId(Integer segment1TagId) {
+  public RenewUpdateParamsDetails segment1TagId(Long segment1TagId) {
     
     this.segment1TagId = segment1TagId;
     return this;
@@ -212,17 +212,17 @@ public class RenewUpdateParamsDetails {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "1", value = "セグメント１ID")
 
-  public Integer getSegment1TagId() {
+  public Long getSegment1TagId() {
     return segment1TagId;
   }
 
 
-  public void setSegment1TagId(Integer segment1TagId) {
+  public void setSegment1TagId(Long segment1TagId) {
     this.segment1TagId = segment1TagId;
   }
 
 
-  public RenewUpdateParamsDetails segment2TagId(Integer segment2TagId) {
+  public RenewUpdateParamsDetails segment2TagId(Long segment2TagId) {
     
     this.segment2TagId = segment2TagId;
     return this;
@@ -237,17 +237,17 @@ public class RenewUpdateParamsDetails {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "1", value = "セグメント２ID")
 
-  public Integer getSegment2TagId() {
+  public Long getSegment2TagId() {
     return segment2TagId;
   }
 
 
-  public void setSegment2TagId(Integer segment2TagId) {
+  public void setSegment2TagId(Long segment2TagId) {
     this.segment2TagId = segment2TagId;
   }
 
 
-  public RenewUpdateParamsDetails segment3TagId(Integer segment3TagId) {
+  public RenewUpdateParamsDetails segment3TagId(Long segment3TagId) {
     
     this.segment3TagId = segment3TagId;
     return this;
@@ -262,12 +262,12 @@ public class RenewUpdateParamsDetails {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "1", value = "セグメント３ID")
 
-  public Integer getSegment3TagId() {
+  public Long getSegment3TagId() {
     return segment3TagId;
   }
 
 
-  public void setSegment3TagId(Integer segment3TagId) {
+  public void setSegment3TagId(Long segment3TagId) {
     this.segment3TagId = segment3TagId;
   }
 
@@ -327,7 +327,7 @@ public class RenewUpdateParamsDetails {
   }
 
 
-  public RenewUpdateParamsDetails vat(Integer vat) {
+  public RenewUpdateParamsDetails vat(Long vat) {
     
     this.vat = vat;
     return this;
@@ -342,12 +342,12 @@ public class RenewUpdateParamsDetails {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "80", value = "消費税額（指定しない場合は自動で計算されます）")
 
-  public Integer getVat() {
+  public Long getVat() {
     return vat;
   }
 
 
-  public void setVat(Integer vat) {
+  public void setVat(Long vat) {
     this.vat = vat;
   }
 

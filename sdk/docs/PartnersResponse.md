@@ -2,6 +2,7 @@
 
 # PartnersResponse
 
+
 ## Properties
 
 Name | Type | Description | Notes

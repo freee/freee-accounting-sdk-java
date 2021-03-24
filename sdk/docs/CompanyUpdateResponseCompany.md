@@ -2,6 +2,7 @@
 
 # CompanyUpdateResponseCompany
 
+
 ## Properties
 
 Name | Type | Description | Notes

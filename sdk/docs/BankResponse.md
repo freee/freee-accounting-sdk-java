@@ -2,6 +2,7 @@
 
 # BankResponse
 
+
 ## Properties
 
 Name | Type | Description | Notes

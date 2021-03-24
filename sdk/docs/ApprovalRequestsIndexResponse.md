@@ -2,6 +2,7 @@
 
 # ApprovalRequestsIndexResponse
 
+
 ## Properties
 
 Name | Type | Description | Notes

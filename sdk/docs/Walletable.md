@@ -2,6 +2,7 @@
 
 # Walletable
 
+
 ## Properties
 
 Name | Type | Description | Notes
