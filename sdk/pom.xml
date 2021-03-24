@@ -285,7 +285,7 @@
     </dependency>
   </dependencies>
   <properties>
-    <revision>2.2.0</revision>
+    <revision>2.3.0</revision>
     <changelist>-SNAPSHOT</changelist>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <java.version>1.8</java.version>

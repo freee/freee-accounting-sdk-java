@@ -2,6 +2,7 @@
 
 # CompanyParamsFiscalYears
 
+
 ## Properties
 
 Name | Type | Description | Notes

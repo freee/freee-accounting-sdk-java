@@ -2,6 +2,7 @@
 
 # InvoiceUpdateParams
 
+
 ## Properties
 
 Name | Type | Description | Notes

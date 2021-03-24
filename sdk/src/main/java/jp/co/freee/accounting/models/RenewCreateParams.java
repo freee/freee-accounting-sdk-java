@@ -42,7 +42,7 @@ public class RenewCreateParams {
 
   public static final String SERIALIZED_NAME_RENEW_TARGET_ID = "renew_target_id";
   @SerializedName(SERIALIZED_NAME_RENEW_TARGET_ID)
-  private Integer renewTargetId;
+  private Long renewTargetId;
 
   public static final String SERIALIZED_NAME_UPDATE_DATE = "update_date";
   @SerializedName(SERIALIZED_NAME_UPDATE_DATE)
@@ -100,7 +100,7 @@ public class RenewCreateParams {
   }
 
 
-  public RenewCreateParams renewTargetId(Integer renewTargetId) {
+  public RenewCreateParams renewTargetId(Long renewTargetId) {
     
     this.renewTargetId = renewTargetId;
     return this;
@@ -114,12 +114,12 @@ public class RenewCreateParams {
   **/
   @ApiModelProperty(example = "1", required = true, value = "+更新対象行ID (details(取引の明細行), accruals(債権債務行), renewsのdetails(+更新の明細行)のIDを指定) ")
 
-  public Integer getRenewTargetId() {
+  public Long getRenewTargetId() {
     return renewTargetId;
   }
 
 
-  public void setRenewTargetId(Integer renewTargetId) {
+  public void setRenewTargetId(Long renewTargetId) {
     this.renewTargetId = renewTargetId;
   }
 

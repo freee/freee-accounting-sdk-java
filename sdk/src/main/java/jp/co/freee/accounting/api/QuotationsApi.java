@@ -81,7 +81,7 @@ public interface QuotationsApi {
    */
   @GET("api/1/quotations")
   Observable<InlineResponse2007> getQuotations(
-    @retrofit2.http.Query("company_id") Integer companyId, @retrofit2.http.Query("partner_id") Integer partnerId, @retrofit2.http.Query("partner_code") String partnerCode, @retrofit2.http.Query("start_issue_date") String startIssueDate, @retrofit2.http.Query("end_issue_date") String endIssueDate, @retrofit2.http.Query("quotation_number") String quotationNumber, @retrofit2.http.Query("description") String description, @retrofit2.http.Query("quotation_status") String quotationStatus, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit
+    @retrofit2.http.Query("company_id") Integer companyId, @retrofit2.http.Query("partner_id") Integer partnerId, @retrofit2.http.Query("partner_code") String partnerCode, @retrofit2.http.Query("start_issue_date") String startIssueDate, @retrofit2.http.Query("end_issue_date") String endIssueDate, @retrofit2.http.Query("quotation_number") String quotationNumber, @retrofit2.http.Query("description") String description, @retrofit2.http.Query("quotation_status") String quotationStatus, @retrofit2.http.Query("offset") Long offset, @retrofit2.http.Query("limit") Integer limit
   );
 
   /**

@@ -37,7 +37,7 @@ import jp.co.freee.accounting.models.DealRenews;
 public class Deal {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
-  private Integer amount;
+  private Long amount;
 
   public static final String SERIALIZED_NAME_COMPANY_ID = "company_id";
   @SerializedName(SERIALIZED_NAME_COMPANY_ID)
@@ -190,7 +190,7 @@ public class Deal {
   private TypeEnum type;
 
 
-  public Deal amount(Integer amount) {
+  public Deal amount(Long amount) {
     
     this.amount = amount;
     return this;
@@ -204,12 +204,12 @@ public class Deal {
   **/
   @ApiModelProperty(example = "5250", required = true, value = "金額")
 
-  public Integer getAmount() {
+  public Long getAmount() {
     return amount;
   }
 
 
-  public void setAmount(Integer amount) {
+  public void setAmount(Long amount) {
     this.amount = amount;
   }
 

@@ -2,6 +2,7 @@
 
 # TrialBsResponseTrialBsItems
 
+
 ## Properties
 
 Name | Type | Description | Notes

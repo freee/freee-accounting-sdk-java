@@ -2,6 +2,7 @@
 
 # CompaniesPlanResponse
 
+
 ## Properties
 
 Name | Type | Description | Notes

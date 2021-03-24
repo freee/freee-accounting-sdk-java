@@ -84,7 +84,7 @@ public interface InvoicesApi {
    */
   @GET("api/1/invoices")
   Observable<InlineResponse2004> getInvoices(
-    @retrofit2.http.Query("company_id") Integer companyId, @retrofit2.http.Query("partner_id") Integer partnerId, @retrofit2.http.Query("partner_code") String partnerCode, @retrofit2.http.Query("start_issue_date") String startIssueDate, @retrofit2.http.Query("end_issue_date") String endIssueDate, @retrofit2.http.Query("start_due_date") String startDueDate, @retrofit2.http.Query("end_due_date") String endDueDate, @retrofit2.http.Query("invoice_number") String invoiceNumber, @retrofit2.http.Query("description") String description, @retrofit2.http.Query("invoice_status") String invoiceStatus, @retrofit2.http.Query("payment_status") String paymentStatus, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit
+    @retrofit2.http.Query("company_id") Integer companyId, @retrofit2.http.Query("partner_id") Integer partnerId, @retrofit2.http.Query("partner_code") String partnerCode, @retrofit2.http.Query("start_issue_date") String startIssueDate, @retrofit2.http.Query("end_issue_date") String endIssueDate, @retrofit2.http.Query("start_due_date") String startDueDate, @retrofit2.http.Query("end_due_date") String endDueDate, @retrofit2.http.Query("invoice_number") String invoiceNumber, @retrofit2.http.Query("description") String description, @retrofit2.http.Query("invoice_status") String invoiceStatus, @retrofit2.http.Query("payment_status") String paymentStatus, @retrofit2.http.Query("offset") Long offset, @retrofit2.http.Query("limit") Integer limit
   );
 
   /**

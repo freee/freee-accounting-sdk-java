@@ -2,6 +2,7 @@
 
 # CompanyIndexResponse
 
+
 ## Properties
 
 Name | Type | Description | Notes

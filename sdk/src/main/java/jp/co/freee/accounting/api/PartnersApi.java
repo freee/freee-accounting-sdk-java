@@ -75,7 +75,7 @@ public interface PartnersApi {
    */
   @GET("api/1/partners")
   Observable<PartnersResponse> getPartners(
-    @retrofit2.http.Query("company_id") Integer companyId, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("keyword") String keyword
+    @retrofit2.http.Query("company_id") Integer companyId, @retrofit2.http.Query("offset") Long offset, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("keyword") String keyword
   );
 
   /**

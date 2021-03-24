@@ -2,6 +2,7 @@
 
 # ExpenseApplicationResponseExpenseApplication
 
+
 ## Properties
 
 Name | Type | Description | Notes

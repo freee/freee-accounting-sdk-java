@@ -2,11 +2,12 @@
 
 # DealCreateResponseDeal
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amount** | **Integer** | 金額 | 
+**amount** | **Long** | 金額 | 
 **companyId** | **Integer** | 事業所ID | 
 **details** | [**List&lt;DealCreateResponseDealDetails&gt;**](DealCreateResponseDealDetails.md) | 取引の明細行 |  [optional]
 **dueAmount** | **Integer** | 支払金額 |  [optional]

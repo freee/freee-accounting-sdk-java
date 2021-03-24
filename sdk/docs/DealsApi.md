@@ -76,6 +76,7 @@ Name | Type | Description  | Notes
 - **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -149,6 +150,7 @@ null (empty response body)
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -229,6 +231,7 @@ Name | Type | Description  | Notes
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -281,7 +284,7 @@ public class Example {
         String endDueDate = "endDueDate_example"; // String | 支払期日で絞込：終了日(yyyy-mm-dd)
         String startRenewDate = "startRenewDate_example"; // String | +更新日で絞込：開始日(yyyy-mm-dd)
         String endRenewDate = "endRenewDate_example"; // String | +更新日で絞込：終了日(yyyy-mm-dd)
-        Integer offset = 56; // Integer | 取得レコードのオフセット (デフォルト: 0)
+        Long offset = 56L; // Long | 取得レコードのオフセット (デフォルト: 0)
         Integer limit = 56; // Integer | 取得レコードの件数 (デフォルト: 20, 最大: 100) 
         String registeredFrom = "registeredFrom_example"; // String | 取引登録元アプリで絞込（me: 本APIを叩くアプリ自身から登録した取引のみ）
         String accruals = "accruals_example"; // String | 取引の債権債務行の表示（without: 表示しない(デフォルト), with: 表示する）
@@ -316,7 +319,7 @@ Name | Type | Description  | Notes
  **endDueDate** | **String**| 支払期日で絞込：終了日(yyyy-mm-dd) | [optional]
  **startRenewDate** | **String**| +更新日で絞込：開始日(yyyy-mm-dd) | [optional]
  **endRenewDate** | **String**| +更新日で絞込：終了日(yyyy-mm-dd) | [optional]
- **offset** | **Integer**| 取得レコードのオフセット (デフォルト: 0) | [optional]
+ **offset** | **Long**| 取得レコードのオフセット (デフォルト: 0) | [optional]
  **limit** | **Integer**| 取得レコードの件数 (デフォルト: 20, 最大: 100)  | [optional]
  **registeredFrom** | **String**| 取引登録元アプリで絞込（me: 本APIを叩くアプリ自身から登録した取引のみ） | [optional] [enum: me]
  **accruals** | **String**| 取引の債権債務行の表示（without: 表示しない(デフォルト), with: 表示する） | [optional] [enum: without, with]
@@ -333,6 +336,7 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -410,6 +414,7 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |

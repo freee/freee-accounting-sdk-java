@@ -2,6 +2,7 @@
 
 # InvoiceUpdateParamsInvoiceContents
 
+
 ## Properties
 
 Name | Type | Description | Notes
@@ -13,9 +14,9 @@ Name | Type | Description | Notes
 **order** | **Integer** | 順序 | 
 **qty** | **BigDecimal** | 数量 |  [optional]
 **sectionId** | **Integer** | 部門ID |  [optional]
-**segment1TagId** | **Integer** | セグメント１ID |  [optional]
-**segment2TagId** | **Integer** | セグメント２ID |  [optional]
-**segment3TagId** | **Integer** | セグメント３ID |  [optional]
+**segment1TagId** | **Long** | セグメント１ID |  [optional]
+**segment2TagId** | **Long** | セグメント２ID |  [optional]
+**segment3TagId** | **Long** | セグメント３ID |  [optional]
 **tagIds** | **List&lt;Integer&gt;** |  |  [optional]
 **taxCode** | **Integer** | 税区分コード |  [optional]
 **type** | [**TypeEnum**](#TypeEnum) | 行の種類 &lt;ul&gt; &lt;li&gt;normal、discountを指定する場合、account_item_id,tax_codeとunit_priceが必須となります。&lt;/li&gt; &lt;li&gt;normalを指定した場合、qtyが必須となります。&lt;/li&gt; &lt;/ul&gt; | 

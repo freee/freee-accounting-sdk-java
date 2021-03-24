@@ -78,7 +78,7 @@ public interface WalletTxnsApi {
    */
   @GET("api/1/wallet_txns")
   Observable<InlineResponse20017> getWalletTxns(
-    @retrofit2.http.Query("company_id") Integer companyId, @retrofit2.http.Query("walletable_type") String walletableType, @retrofit2.http.Query("walletable_id") Integer walletableId, @retrofit2.http.Query("start_date") String startDate, @retrofit2.http.Query("end_date") String endDate, @retrofit2.http.Query("entry_side") String entrySide, @retrofit2.http.Query("offset") Integer offset, @retrofit2.http.Query("limit") Integer limit
+    @retrofit2.http.Query("company_id") Integer companyId, @retrofit2.http.Query("walletable_type") String walletableType, @retrofit2.http.Query("walletable_id") Integer walletableId, @retrofit2.http.Query("start_date") String startDate, @retrofit2.http.Query("end_date") String endDate, @retrofit2.http.Query("entry_side") String entrySide, @retrofit2.http.Query("offset") Long offset, @retrofit2.http.Query("limit") Integer limit
   );
 
 }

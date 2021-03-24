@@ -2,6 +2,7 @@
 
 # DealUser
 
+
 ## Properties
 
 Name | Type | Description | Notes

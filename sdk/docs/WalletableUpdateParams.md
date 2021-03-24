@@ -2,6 +2,7 @@
 
 # WalletableUpdateParams
 
+
 ## Properties
 
 Name | Type | Description | Notes

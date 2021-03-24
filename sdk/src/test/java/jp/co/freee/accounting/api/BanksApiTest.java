@@ -47,7 +47,7 @@ public class BanksApiTest {
      */
     @Test
     public void getBanksTest() {
-        Integer offset = null;
+        Long offset = null;
         Integer limit = null;
         String type = null;
         // InlineResponse2001 response = api.getBanks(offset, limit, type);

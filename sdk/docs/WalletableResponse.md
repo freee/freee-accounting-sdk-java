@@ -2,6 +2,7 @@
 
 # WalletableResponse
 
+
 ## Properties
 
 Name | Type | Description | Notes

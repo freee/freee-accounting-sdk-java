@@ -76,6 +76,7 @@ Name | Type | Description  | Notes
 - **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -150,6 +151,7 @@ null (empty response body)
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -228,6 +230,7 @@ Name | Type | Description  | Notes
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -271,7 +274,7 @@ public class Example {
         Integer companyId = 56; // Integer | 事業所ID
         String startDate = "startDate_example"; // String | 振替日で絞込：開始日 (yyyy-mm-dd)
         String endDate = "endDate_example"; // String | 振替日で絞込：終了日 (yyyy-mm-dd)
-        Integer offset = 56; // Integer | 取得レコードのオフセット (デフォルト: 0)
+        Long offset = 56L; // Long | 取得レコードのオフセット (デフォルト: 0)
         Integer limit = 56; // Integer | 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100) 
         try {
             InlineResponse20014 result = apiInstance.getTransfers(companyId, startDate, endDate, offset, limit);
@@ -295,7 +298,7 @@ Name | Type | Description  | Notes
  **companyId** | **Integer**| 事業所ID |
  **startDate** | **String**| 振替日で絞込：開始日 (yyyy-mm-dd) | [optional]
  **endDate** | **String**| 振替日で絞込：終了日 (yyyy-mm-dd) | [optional]
- **offset** | **Integer**| 取得レコードのオフセット (デフォルト: 0) | [optional]
+ **offset** | **Long**| 取得レコードのオフセット (デフォルト: 0) | [optional]
  **limit** | **Integer**| 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  | [optional]
 
 ### Return type
@@ -310,6 +313,7 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -386,6 +390,7 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |

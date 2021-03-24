@@ -2,6 +2,7 @@
 
 # ExpenseApplicationLineTemplate
 
+
 ## Properties
 
 Name | Type | Description | Notes

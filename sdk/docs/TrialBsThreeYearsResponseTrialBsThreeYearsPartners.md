@@ -2,6 +2,7 @@
 
 # TrialBsThreeYearsResponseTrialBsThreeYearsPartners
 
+
 ## Properties
 
 Name | Type | Description | Notes

@@ -2,6 +2,7 @@
 
 # ExpenseApplicationUpdateParams
 
+
 ## Properties
 
 Name | Type | Description | Notes

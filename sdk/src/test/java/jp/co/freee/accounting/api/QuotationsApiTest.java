@@ -83,7 +83,7 @@ public class QuotationsApiTest {
         String quotationNumber = null;
         String description = null;
         String quotationStatus = null;
-        Integer offset = null;
+        Long offset = null;
         Integer limit = null;
         // InlineResponse2007 response = api.getQuotations(companyId, partnerId, partnerCode, startIssueDate, endIssueDate, quotationNumber, description, quotationStatus, offset, limit);
 

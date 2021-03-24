@@ -76,7 +76,7 @@ public class PartnersApiTest {
     @Test
     public void getPartnersTest() {
         Integer companyId = null;
-        Integer offset = null;
+        Long offset = null;
         Integer limit = null;
         String keyword = null;
         // PartnersResponse response = api.getPartners(companyId, offset, limit, keyword);

@@ -2,6 +2,7 @@
 
 # DeprecatedApprovalRequestResponseApprovalRequestRequestItems
 
+
 ## Properties
 
 Name | Type | Description | Notes

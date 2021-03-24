@@ -49,7 +49,7 @@ public interface PaymentsApi {
    */
   @DELETE("api/1/deals/{id}/payments/{payment_id}")
   Completable destroyDealPayment(
-    @retrofit2.http.Path("id") Integer id, @retrofit2.http.Path("payment_id") Integer paymentId, @retrofit2.http.Query("company_id") Integer companyId
+    @retrofit2.http.Path("id") Integer id, @retrofit2.http.Path("payment_id") Long paymentId, @retrofit2.http.Query("company_id") Integer companyId
   );
 
   /**
@@ -65,7 +65,7 @@ public interface PaymentsApi {
   })
   @PUT("api/1/deals/{id}/payments/{payment_id}")
   Observable<DealResponse> updateDealPayment(
-    @retrofit2.http.Path("id") Integer id, @retrofit2.http.Path("payment_id") Integer paymentId, @retrofit2.http.Body PaymentParams paymentParams
+    @retrofit2.http.Path("id") Integer id, @retrofit2.http.Path("payment_id") Long paymentId, @retrofit2.http.Body PaymentParams paymentParams
   );
 
 }

@@ -64,7 +64,7 @@ public class SegmentTagsApiTest {
     public void getSegmentTagsTest() {
         Integer segmentId = null;
         Integer companyId = null;
-        Integer offset = null;
+        Long offset = null;
         Integer limit = null;
         // InlineResponse20010 response = api.getSegmentTags(segmentId, companyId, offset, limit);
 

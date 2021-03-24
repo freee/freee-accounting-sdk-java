@@ -43,7 +43,7 @@ public class ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  private Integer id;
+  private Long id;
 
   public static final String SERIALIZED_NAME_RECEIPT_ID = "receipt_id";
   @SerializedName(SERIALIZED_NAME_RECEIPT_ID)
@@ -127,7 +127,7 @@ public class ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines
   }
 
 
-  public ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines id(Integer id) {
+  public ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines id(Long id) {
     
     this.id = id;
     return this;
@@ -141,12 +141,12 @@ public class ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines
   **/
   @ApiModelProperty(example = "1", required = true, value = "経費申請の項目行ID")
 
-  public Integer getId() {
+  public Long getId() {
     return id;
   }
 
 
-  public void setId(Integer id) {
+  public void setId(Long id) {
     this.id = id;
   }
 

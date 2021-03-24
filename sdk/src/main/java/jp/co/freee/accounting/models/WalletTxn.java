@@ -31,7 +31,7 @@ import java.io.IOException;
 public class WalletTxn {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
-  private Integer amount;
+  private Long amount;
 
   public static final String SERIALIZED_NAME_BALANCE = "balance";
   @SerializedName(SERIALIZED_NAME_BALANCE)
@@ -170,7 +170,7 @@ public class WalletTxn {
   private WalletableTypeEnum walletableType;
 
 
-  public WalletTxn amount(Integer amount) {
+  public WalletTxn amount(Long amount) {
     
     this.amount = amount;
     return this;
@@ -184,12 +184,12 @@ public class WalletTxn {
   **/
   @ApiModelProperty(example = "5000", required = true, value = "取引金額")
 
-  public Integer getAmount() {
+  public Long getAmount() {
     return amount;
   }
 
 
-  public void setAmount(Integer amount) {
+  public void setAmount(Long amount) {
     this.amount = amount;
   }
 

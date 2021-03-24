@@ -81,20 +81,20 @@ public class ManualJournalsApiTest {
         String endIssueDate = null;
         String entrySide = null;
         Integer accountItemId = null;
-        Integer minAmount = null;
-        Integer maxAmount = null;
+        Long minAmount = null;
+        Long maxAmount = null;
         Integer partnerId = null;
         String partnerCode = null;
         Integer itemId = null;
         Integer sectionId = null;
-        Integer segment1TagId = null;
-        Integer segment2TagId = null;
-        Integer segment3TagId = null;
+        Long segment1TagId = null;
+        Long segment2TagId = null;
+        Long segment3TagId = null;
         String commentStatus = null;
         Boolean commentImportant = null;
         String adjustment = null;
         String txnNumber = null;
-        Integer offset = null;
+        Long offset = null;
         Integer limit = null;
         // InlineResponse2006 response = api.getManualJournals(companyId, startIssueDate, endIssueDate, entrySide, accountItemId, minAmount, maxAmount, partnerId, partnerCode, itemId, sectionId, segment1TagId, segment2TagId, segment3TagId, commentStatus, commentImportant, adjustment, txnNumber, offset, limit);
 

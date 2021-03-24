@@ -2,6 +2,7 @@
 
 # ManualJournalCreateParams
 
+
 ## Properties
 
 Name | Type | Description | Notes

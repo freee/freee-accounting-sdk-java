@@ -35,7 +35,7 @@ import jp.co.freee.accounting.models.DealCreateResponseDealPayments;
 public class DealCreateResponseDeal {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
-  private Integer amount;
+  private Long amount;
 
   public static final String SERIALIZED_NAME_COMPANY_ID = "company_id";
   @SerializedName(SERIALIZED_NAME_COMPANY_ID)
@@ -180,7 +180,7 @@ public class DealCreateResponseDeal {
   private TypeEnum type;
 
 
-  public DealCreateResponseDeal amount(Integer amount) {
+  public DealCreateResponseDeal amount(Long amount) {
     
     this.amount = amount;
     return this;
@@ -194,12 +194,12 @@ public class DealCreateResponseDeal {
   **/
   @ApiModelProperty(example = "5250", required = true, value = "金額")
 
-  public Integer getAmount() {
+  public Long getAmount() {
     return amount;
   }
 
 
-  public void setAmount(Integer amount) {
+  public void setAmount(Long amount) {
     this.amount = amount;
   }
 

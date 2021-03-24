@@ -2,6 +2,7 @@
 
 # ExpenseApplicationsIndexResponse
 
+
 ## Properties
 
 Name | Type | Description | Notes

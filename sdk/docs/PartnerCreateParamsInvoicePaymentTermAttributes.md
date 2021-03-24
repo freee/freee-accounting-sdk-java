@@ -2,6 +2,7 @@
 
 # PartnerCreateParamsInvoicePaymentTermAttributes
 
+
 ## Properties
 
 Name | Type | Description | Notes

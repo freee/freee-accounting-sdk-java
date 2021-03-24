@@ -86,7 +86,7 @@ public class InvoicesApiTest {
         String description = null;
         String invoiceStatus = null;
         String paymentStatus = null;
-        Integer offset = null;
+        Long offset = null;
         Integer limit = null;
         // InlineResponse2004 response = api.getInvoices(companyId, partnerId, partnerCode, startIssueDate, endIssueDate, startDueDate, endDueDate, invoiceNumber, description, invoiceStatus, paymentStatus, offset, limit);
 

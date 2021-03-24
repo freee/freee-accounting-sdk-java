@@ -86,7 +86,7 @@ public class ReceiptsApiTest {
         String commentType = null;
         Boolean commentImportant = null;
         String category = null;
-        Integer offset = null;
+        Long offset = null;
         Integer limit = null;
         // InlineResponse2008 response = api.getReceipts(companyId, startDate, endDate, userName, number, commentType, commentImportant, category, offset, limit);
 

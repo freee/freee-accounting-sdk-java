@@ -2,12 +2,13 @@
 
 # WalletTxnParams
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amount** | **Integer** | 取引金額 | 
-**balance** | **Integer** | 残高 (銀行口座等) |  [optional]
+**amount** | **Long** | 取引金額 | 
+**balance** | **Long** | 残高 (銀行口座等) |  [optional]
 **companyId** | **Integer** | 事業所ID | 
 **date** | **String** | 取引日 (yyyy-mm-dd) | 
 **description** | **String** | 取引内容 |  [optional]

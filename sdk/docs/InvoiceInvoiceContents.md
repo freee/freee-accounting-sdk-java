@@ -2,13 +2,14 @@
 
 # InvoiceInvoiceContents
 
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accountItemId** | **Integer** | 勘定科目ID | 
 **accountItemName** | **String** | 勘定科目名 | 
-**amount** | **Integer** | 金額 | 
+**amount** | **Long** | 金額 | 
 **description** | **String** | 備考 | 
 **id** | **Integer** | 請求内容ID | 
 **itemId** | **Integer** | 品目ID | 
@@ -18,11 +19,11 @@ Name | Type | Description | Notes
 **reducedVat** | **Boolean** | 軽減税率税区分（true: 対象、false: 対象外） | 
 **sectionId** | **Integer** | 部門ID | 
 **sectionName** | **String** | 部門 | 
-**segment1TagId** | **Integer** | セグメント１ID |  [optional]
+**segment1TagId** | **Long** | セグメント１ID |  [optional]
 **segment1TagName** | **String** | セグメント１ID |  [optional]
-**segment2TagId** | **Integer** | セグメント２ID |  [optional]
+**segment2TagId** | **Long** | セグメント２ID |  [optional]
 **segment2TagName** | **String** | セグメント２ |  [optional]
-**segment3TagId** | **Integer** | セグメント３ID |  [optional]
+**segment3TagId** | **Long** | セグメント３ID |  [optional]
 **segment3TagName** | **String** | セグメント３ |  [optional]
 **tagIds** | **List&lt;Integer&gt;** |  | 
 **tagNames** | **List&lt;String&gt;** |  | 

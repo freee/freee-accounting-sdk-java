@@ -76,6 +76,7 @@ Name | Type | Description  | Notes
 - **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -151,6 +152,7 @@ null (empty response body)
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -229,6 +231,7 @@ Name | Type | Description  | Notes
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -274,20 +277,20 @@ public class Example {
         String endIssueDate = "endIssueDate_example"; // String | 発生日で絞込：終了日(yyyy-mm-dd)
         String entrySide = "entrySide_example"; // String | 貸借で絞込 (貸方: credit, 借方: debit)
         Integer accountItemId = 56; // Integer | 勘定科目IDで絞込
-        Integer minAmount = 56; // Integer | 金額で絞込：下限
-        Integer maxAmount = 56; // Integer | 金額で絞込：上限
+        Long minAmount = 56L; // Long | 金額で絞込：下限
+        Long maxAmount = 56L; // Long | 金額で絞込：上限
         Integer partnerId = 56; // Integer | 取引先IDで絞込（0を指定すると、取引先が未選択の貸借行を絞り込めます）
         String partnerCode = "partnerCode_example"; // String | 取引先コードで絞込
         Integer itemId = 56; // Integer | 品目IDで絞込（0を指定すると、品目が未選択の貸借行を絞り込めます）
         Integer sectionId = 56; // Integer | 部門IDで絞込（0を指定すると、部門が未選択の貸借行を絞り込めます）
-        Integer segment1TagId = 56; // Integer | セグメント１IDで絞り込み（0を指定すると、セグメント１が未選択の貸借行を絞り込めます）
-        Integer segment2TagId = 56; // Integer | セグメント２IDで絞り込み（0を指定すると、セグメント２が未選択の貸借行を絞り込めます）
-        Integer segment3TagId = 56; // Integer | セグメント３IDで絞り込み（0を指定すると、セグメント３が未選択の貸借行を絞り込めます）
+        Long segment1TagId = 56L; // Long | セグメント１IDで絞り込み（0を指定すると、セグメント１が未選択の貸借行を絞り込めます）
+        Long segment2TagId = 56L; // Long | セグメント２IDで絞り込み（0を指定すると、セグメント２が未選択の貸借行を絞り込めます）
+        Long segment3TagId = 56L; // Long | セグメント３IDで絞り込み（0を指定すると、セグメント３が未選択の貸借行を絞り込めます）
         String commentStatus = "commentStatus_example"; // String | コメント状態で絞込（自分宛のコメント: posted_with_mention, 自分宛のコメント-未解決: raised_with_mention, 自分宛のコメント-解決済: resolved_with_mention, コメントあり: posted, 未解決: raised, 解決済: resolved, コメントなし: none）
         Boolean commentImportant = true; // Boolean | 重要コメント付きの振替伝票を絞込
         String adjustment = "adjustment_example"; // String | 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without）
         String txnNumber = "txnNumber_example"; // String | 仕訳番号で絞込（事業所の仕訳番号形式が有効な場合のみ）
-        Integer offset = 56; // Integer | 取得レコードのオフセット (デフォルト: 0)
+        Long offset = 56L; // Long | 取得レコードのオフセット (デフォルト: 0)
         Integer limit = 56; // Integer | 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500) 
         try {
             InlineResponse2006 result = apiInstance.getManualJournals(companyId, startIssueDate, endIssueDate, entrySide, accountItemId, minAmount, maxAmount, partnerId, partnerCode, itemId, sectionId, segment1TagId, segment2TagId, segment3TagId, commentStatus, commentImportant, adjustment, txnNumber, offset, limit);
@@ -313,20 +316,20 @@ Name | Type | Description  | Notes
  **endIssueDate** | **String**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
  **entrySide** | **String**| 貸借で絞込 (貸方: credit, 借方: debit) | [optional] [enum: credit, debit]
  **accountItemId** | **Integer**| 勘定科目IDで絞込 | [optional]
- **minAmount** | **Integer**| 金額で絞込：下限 | [optional]
- **maxAmount** | **Integer**| 金額で絞込：上限 | [optional]
+ **minAmount** | **Long**| 金額で絞込：下限 | [optional]
+ **maxAmount** | **Long**| 金額で絞込：上限 | [optional]
  **partnerId** | **Integer**| 取引先IDで絞込（0を指定すると、取引先が未選択の貸借行を絞り込めます） | [optional]
  **partnerCode** | **String**| 取引先コードで絞込 | [optional]
  **itemId** | **Integer**| 品目IDで絞込（0を指定すると、品目が未選択の貸借行を絞り込めます） | [optional]
  **sectionId** | **Integer**| 部門IDで絞込（0を指定すると、部門が未選択の貸借行を絞り込めます） | [optional]
- **segment1TagId** | **Integer**| セグメント１IDで絞り込み（0を指定すると、セグメント１が未選択の貸借行を絞り込めます） | [optional]
- **segment2TagId** | **Integer**| セグメント２IDで絞り込み（0を指定すると、セグメント２が未選択の貸借行を絞り込めます） | [optional]
- **segment3TagId** | **Integer**| セグメント３IDで絞り込み（0を指定すると、セグメント３が未選択の貸借行を絞り込めます） | [optional]
+ **segment1TagId** | **Long**| セグメント１IDで絞り込み（0を指定すると、セグメント１が未選択の貸借行を絞り込めます） | [optional]
+ **segment2TagId** | **Long**| セグメント２IDで絞り込み（0を指定すると、セグメント２が未選択の貸借行を絞り込めます） | [optional]
+ **segment3TagId** | **Long**| セグメント３IDで絞り込み（0を指定すると、セグメント３が未選択の貸借行を絞り込めます） | [optional]
  **commentStatus** | **String**| コメント状態で絞込（自分宛のコメント: posted_with_mention, 自分宛のコメント-未解決: raised_with_mention, 自分宛のコメント-解決済: resolved_with_mention, コメントあり: posted, 未解決: raised, 解決済: resolved, コメントなし: none） | [optional] [enum: posted_with_mention, raised_with_mention, resolved_with_mention, posted, raised, resolved, none]
  **commentImportant** | **Boolean**| 重要コメント付きの振替伝票を絞込 | [optional]
  **adjustment** | **String**| 決算整理仕訳で絞込（決算整理仕訳のみ: only, 決算整理仕訳以外: without） | [optional] [enum: only, without]
  **txnNumber** | **String**| 仕訳番号で絞込（事業所の仕訳番号形式が有効な場合のみ） | [optional]
- **offset** | **Integer**| 取得レコードのオフセット (デフォルト: 0) | [optional]
+ **offset** | **Long**| 取得レコードのオフセット (デフォルト: 0) | [optional]
  **limit** | **Integer**| 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500)  | [optional]
 
 ### Return type
@@ -341,6 +344,7 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -417,6 +421,7 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |

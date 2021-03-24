@@ -31,7 +31,7 @@ import java.io.IOException;
 public class DealCreateResponseDealPayments {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
-  private Integer amount;
+  private Long amount;
 
   public static final String SERIALIZED_NAME_DATE = "date";
   @SerializedName(SERIALIZED_NAME_DATE)
@@ -98,10 +98,10 @@ public class DealCreateResponseDealPayments {
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  private Integer id;
+  private Long id;
 
 
-  public DealCreateResponseDealPayments amount(Integer amount) {
+  public DealCreateResponseDealPayments amount(Long amount) {
     
     this.amount = amount;
     return this;
@@ -115,12 +115,12 @@ public class DealCreateResponseDealPayments {
   **/
   @ApiModelProperty(example = "5250", required = true, value = "支払金額")
 
-  public Integer getAmount() {
+  public Long getAmount() {
     return amount;
   }
 
 
-  public void setAmount(Integer amount) {
+  public void setAmount(Long amount) {
     this.amount = amount;
   }
 
@@ -195,7 +195,7 @@ public class DealCreateResponseDealPayments {
   }
 
 
-  public DealCreateResponseDealPayments id(Integer id) {
+  public DealCreateResponseDealPayments id(Long id) {
     
     this.id = id;
     return this;
@@ -209,12 +209,12 @@ public class DealCreateResponseDealPayments {
   **/
   @ApiModelProperty(example = "202", required = true, value = "取引行ID")
 
-  public Integer getId() {
+  public Long getId() {
     return id;
   }
 
 
-  public void setId(Integer id) {
+  public void setId(Long id) {
     this.id = id;
   }
 

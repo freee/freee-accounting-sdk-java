@@ -2,6 +2,7 @@
 
 # CompanyParams
 
+
 ## Properties
 
 Name | Type | Description | Notes

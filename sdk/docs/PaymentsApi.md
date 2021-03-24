@@ -76,6 +76,7 @@ Name | Type | Description  | Notes
 - **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -117,7 +118,7 @@ public class Example {
 
         PaymentsApi apiInstance = new PaymentsApi(defaultClient);
         Integer id = 56; // Integer | 取引ID
-        Integer paymentId = 56; // Integer | 決済ID
+        Long paymentId = 56L; // Long | 決済ID
         Integer companyId = 56; // Integer | 事業所ID
         try {
             apiInstance.destroyDealPayment(id, paymentId, companyId);
@@ -138,7 +139,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| 取引ID |
- **paymentId** | **Integer**| 決済ID |
+ **paymentId** | **Long**| 決済ID |
  **companyId** | **Integer**| 事業所ID |
 
 ### Return type
@@ -153,6 +154,7 @@ null (empty response body)
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -195,7 +197,7 @@ public class Example {
 
         PaymentsApi apiInstance = new PaymentsApi(defaultClient);
         Integer id = 56; // Integer | 取引ID
-        Integer paymentId = 56; // Integer | 決済ID
+        Long paymentId = 56L; // Long | 決済ID
         PaymentParams paymentParams = new PaymentParams(); // PaymentParams | 取引（収入／支出）の支払行更新
         try {
             DealResponse result = apiInstance.updateDealPayment(id, paymentId, paymentParams);
@@ -217,7 +219,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| 取引ID |
- **paymentId** | **Integer**| 決済ID |
+ **paymentId** | **Long**| 決済ID |
  **paymentParams** | [**PaymentParams**](PaymentParams.md)| 取引（収入／支出）の支払行更新 |
 
 ### Return type
@@ -232,6 +234,7 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |

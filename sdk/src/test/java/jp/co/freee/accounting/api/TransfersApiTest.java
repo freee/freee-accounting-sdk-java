@@ -77,7 +77,7 @@ public class TransfersApiTest {
         Integer companyId = null;
         String startDate = null;
         String endDate = null;
-        Integer offset = null;
+        Long offset = null;
         Integer limit = null;
         // InlineResponse20014 response = api.getTransfers(companyId, startDate, endDate, offset, limit);
 

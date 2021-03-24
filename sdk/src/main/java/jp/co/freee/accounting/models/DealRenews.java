@@ -38,11 +38,11 @@ public class DealRenews {
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  private Integer id;
+  private Long id;
 
   public static final String SERIALIZED_NAME_RENEW_TARGET_ID = "renew_target_id";
   @SerializedName(SERIALIZED_NAME_RENEW_TARGET_ID)
-  private Integer renewTargetId;
+  private Long renewTargetId;
 
   /**
    * +更新の対象行タイプ
@@ -129,7 +129,7 @@ public class DealRenews {
   }
 
 
-  public DealRenews id(Integer id) {
+  public DealRenews id(Long id) {
     
     this.id = id;
     return this;
@@ -143,17 +143,17 @@ public class DealRenews {
   **/
   @ApiModelProperty(example = "11", required = true, value = "+更新行ID")
 
-  public Integer getId() {
+  public Long getId() {
     return id;
   }
 
 
-  public void setId(Integer id) {
+  public void setId(Long id) {
     this.id = id;
   }
 
 
-  public DealRenews renewTargetId(Integer renewTargetId) {
+  public DealRenews renewTargetId(Long renewTargetId) {
     
     this.renewTargetId = renewTargetId;
     return this;
@@ -167,12 +167,12 @@ public class DealRenews {
   **/
   @ApiModelProperty(example = "12", required = true, value = "+更新の対象行ID")
 
-  public Integer getRenewTargetId() {
+  public Long getRenewTargetId() {
     return renewTargetId;
   }
 
 
-  public void setRenewTargetId(Integer renewTargetId) {
+  public void setRenewTargetId(Long renewTargetId) {
     this.renewTargetId = renewTargetId;
   }
 
