@@ -24,7 +24,7 @@ import java.util.Map;
 public interface SelectablesApi {
   /**
    * フォーム用選択項目情報の取得
-   *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所のフォーム用選択項目情報を取得する&lt;/p&gt;
+   * 
    * @param companyId 事業所ID (required)
    * @param includes 取得する項目(項目: account_item) (optional)
    * @return Observable&lt;SelectablesIndexResponse&gt;

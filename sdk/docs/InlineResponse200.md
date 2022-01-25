@@ -7,7 +7,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**approvalRequestForms** | [**List&lt;ApprovalRequestForm&gt;**](ApprovalRequestForm.md) |  | 
+**banks** | [**List&lt;Bank&gt;**](Bank.md) |  | 
 
 
 

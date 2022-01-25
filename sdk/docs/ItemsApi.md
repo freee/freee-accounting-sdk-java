@@ -18,8 +18,6 @@ Method | HTTP request | Description
 
 品目の作成
 
- &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の品目を作成する&lt;/p&gt;
-
 ### Example
 
 ```java
@@ -92,8 +90,6 @@ Name | Type | Description  | Notes
 > destroyItem(id, companyId)
 
 品目の削除
-
- &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の品目を削除する&lt;/p&gt;
 
 ### Example
 
@@ -170,8 +166,6 @@ null (empty response body)
 
 品目の取得
 
- &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の品目を取得する&lt;/p&gt;
-
 ### Example
 
 ```java
@@ -244,11 +238,9 @@ Name | Type | Description  | Notes
 
 ## getItems
 
-> InlineResponse2005 getItems(companyId, offset, limit)
+> InlineResponse2003 getItems(companyId, startUpdateDate, endUpdateDate, offset, limit)
 
 品目一覧の取得
-
- &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の品目一覧を取得する&lt;/p&gt;
 
 ### Example
 
@@ -272,10 +264,12 @@ public class Example {
 
         ItemsApi apiInstance = new ItemsApi(defaultClient);
         Integer companyId = 56; // Integer | 事業所ID
+        String startUpdateDate = "startUpdateDate_example"; // String | 更新日で絞り込み：開始日(yyyy-mm-dd)
+        String endUpdateDate = "endUpdateDate_example"; // String | 更新日で絞り込み：終了日(yyyy-mm-dd)
         Integer offset = 56; // Integer | 取得レコードのオフセット (デフォルト: 0)
         Integer limit = 56; // Integer | 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000)
         try {
-            InlineResponse2005 result = apiInstance.getItems(companyId, offset, limit);
+            InlineResponse2003 result = apiInstance.getItems(companyId, startUpdateDate, endUpdateDate, offset, limit);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ItemsApi#getItems");
@@ -294,12 +288,14 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **companyId** | **Integer**| 事業所ID |
+ **startUpdateDate** | **String**| 更新日で絞り込み：開始日(yyyy-mm-dd) | [optional]
+ **endUpdateDate** | **String**| 更新日で絞り込み：終了日(yyyy-mm-dd) | [optional]
  **offset** | **Integer**| 取得レコードのオフセット (デフォルト: 0) | [optional]
  **limit** | **Integer**| 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) | [optional]
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**InlineResponse2003**](InlineResponse2003.md)
 
 ### Authorization
 
@@ -326,8 +322,6 @@ Name | Type | Description  | Notes
 > ItemResponse updateItem(id, itemParams)
 
 品目の更新
-
- &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の品目を更新する&lt;/p&gt;
 
 ### Example
 

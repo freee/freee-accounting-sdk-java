@@ -14,8 +14,6 @@ Method | HTTP request | Description
 
 フォーム用選択項目情報の取得
 
- &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所のフォーム用選択項目情報を取得する&lt;/p&gt;
-
 ### Example
 
 ```java
@@ -38,7 +36,7 @@ public class Example {
 
         SelectablesApi apiInstance = new SelectablesApi(defaultClient);
         Integer companyId = 56; // Integer | 事業所ID
-        String includes = "includes_example"; // String | 取得する項目(項目: account_item)
+        String includes = "account_item"; // String | 取得する項目(項目: account_item)
         try {
             SelectablesIndexResponse result = apiInstance.getFormsSelectables(companyId, includes);
             System.out.println(result);

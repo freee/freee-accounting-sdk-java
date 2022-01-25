@@ -9,8 +9,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accountItemDisplayType** | [**AccountItemDisplayTypeEnum**](#AccountItemDisplayTypeEnum) | 勘定科目の表示（勘定科目: account_item, 決算書表示:group）(条件に指定した時のみ含まれる） |  [optional]
 **adjustment** | [**AdjustmentEnum**](#AdjustmentEnum) | 決算整理仕訳のみ: only, 決算整理仕訳以外: without(条件に指定した時のみ含まれる） |  [optional]
+**approvalFlowStatus** | [**ApprovalFlowStatusEnum**](#ApprovalFlowStatusEnum) | 未承認を除く: without_in_progress (デフォルト), 全てのステータス: all(条件に指定した時のみ含まれる） |  [optional]
 **balances** | [**List&lt;TrialPlSectionsResponseTrialPlSectionsBalances&gt;**](TrialPlSectionsResponseTrialPlSectionsBalances.md) |  | 
-**breakdownDisplayType** | [**BreakdownDisplayTypeEnum**](#BreakdownDisplayTypeEnum) | 内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item）(条件に指定した時のみ含まれる） |  [optional]
+**breakdownDisplayType** | [**BreakdownDisplayTypeEnum**](#BreakdownDisplayTypeEnum) | 内訳の表示（取引先: partner, 品目: item, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag）(条件に指定した時のみ含まれる） |  [optional]
 **companyId** | **Integer** | 事業所ID | 
 **costAllocation** | [**CostAllocationEnum**](#CostAllocationEnum) | 配賦仕訳のみ：only,配賦仕訳以外：without(条件に指定した時のみ含まれる） |  [optional]
 **createdAt** | **String** | 作成日時 |  [optional]
@@ -44,6 +45,15 @@ WITHOUT | &quot;without&quot;
 
 
 
+## Enum: ApprovalFlowStatusEnum
+
+Name | Value
+---- | -----
+WITHOUT_IN_PROGRESS | &quot;without_in_progress&quot;
+ALL | &quot;all&quot;
+
+
+
 ## Enum: BreakdownDisplayTypeEnum
 
 Name | Value
@@ -51,6 +61,9 @@ Name | Value
 PARTNER | &quot;partner&quot;
 ITEM | &quot;item&quot;
 ACCOUNT_ITEM | &quot;account_item&quot;
+SEGMENT_1_TAG | &quot;segment_1_tag&quot;
+SEGMENT_2_TAG | &quot;segment_2_tag&quot;
+SEGMENT_3_TAG | &quot;segment_3_tag&quot;
 
 
 

@@ -7,7 +7,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**expenseApplications** | [**List&lt;ExpenseApplicationResponseExpenseApplication&gt;**](ExpenseApplicationResponseExpenseApplication.md) |  | 
+**expenseApplications** | [**List&lt;ExpenseApplicationsIndexResponseExpenseApplications&gt;**](ExpenseApplicationsIndexResponseExpenseApplications.md) |  | 
 
 
 

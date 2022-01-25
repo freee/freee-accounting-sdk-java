@@ -7,7 +7,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**receipts** | [**List&lt;Receipt&gt;**](Receipt.md) |  | 
+**tags** | [**List&lt;Tag&gt;**](Tag.md) |  | 
 
 
 

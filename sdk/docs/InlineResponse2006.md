@@ -7,7 +7,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**manualJournals** | [**List&lt;ManualJournal&gt;**](ManualJournal.md) |  | 
+**sections** | [**List&lt;Section&gt;**](Section.md) |  | 
 
 
 

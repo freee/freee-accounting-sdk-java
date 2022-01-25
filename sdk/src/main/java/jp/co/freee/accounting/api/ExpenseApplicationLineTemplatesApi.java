@@ -15,7 +15,7 @@ import jp.co.freee.accounting.models.BadRequestNotFoundError;
 import jp.co.freee.accounting.models.ExpenseApplicationLineTemplateParams;
 import jp.co.freee.accounting.models.ExpenseApplicationLineTemplateResponse;
 import jp.co.freee.accounting.models.ForbiddenError;
-import jp.co.freee.accounting.models.InlineResponse2003;
+import jp.co.freee.accounting.models.InlineResponse2002;
 import jp.co.freee.accounting.models.InternalServerError;
 import jp.co.freee.accounting.models.UnauthorizedError;
 
@@ -65,14 +65,14 @@ public interface ExpenseApplicationLineTemplatesApi {
 
   /**
    * 経費科目一覧の取得
-   *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の経費科目一覧を取得する&lt;/p&gt;
+   * 
    * @param companyId 事業所ID (required)
    * @param offset 取得レコードのオフセット (デフォルト: 0) (optional)
    * @param limit 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100) (optional)
-   * @return Observable&lt;InlineResponse2003&gt;
+   * @return Observable&lt;InlineResponse2002&gt;
    */
   @GET("api/1/expense_application_line_templates")
-  Observable<InlineResponse2003> getExpenseApplicationLineTemplates(
+  Observable<InlineResponse2002> getExpenseApplicationLineTemplates(
     @retrofit2.http.Query("company_id") Integer companyId, @retrofit2.http.Query("offset") Long offset, @retrofit2.http.Query("limit") Integer limit
   );
 

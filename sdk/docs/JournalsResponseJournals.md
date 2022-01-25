@@ -14,6 +14,9 @@ Name | Type | Description | Notes
 **messages** | **List&lt;String&gt;** |  |  [optional]
 **startDate** | **String** | 取得開始日 (yyyy-mm-dd) |  [optional]
 **statusUrl** | **String** | ステータス確認用URL |  [optional]
+**upToDate** | **Boolean** | 集計結果が最新かどうか |  [optional]
+**upToDateReasons** | [**List&lt;JournalsResponseJournalsUpToDateReasons&gt;**](JournalsResponseJournalsUpToDateReasons.md) | 集計が最新でない場合の要因情報 |  [optional]
+**visibleIds** | [**List&lt;VisibleIdsEnum&gt;**](#List&lt;VisibleIdsEnum&gt;) |  |  [optional]
 **visibleTags** | [**List&lt;VisibleTagsEnum&gt;**](#List&lt;VisibleTagsEnum&gt;) |  |  [optional]
 
 
@@ -25,6 +28,16 @@ Name | Value
 CSV | &quot;csv&quot;
 GENERIC | &quot;generic&quot;
 PDF | &quot;pdf&quot;
+
+
+
+## Enum: List&lt;VisibleIdsEnum&gt;
+
+Name | Value
+---- | -----
+DEAL_ID | &quot;deal_id&quot;
+TRANSFER_ID | &quot;transfer_id&quot;
+MANUAL_JOURNAL_ID | &quot;manual_journal_id&quot;
 
 
 

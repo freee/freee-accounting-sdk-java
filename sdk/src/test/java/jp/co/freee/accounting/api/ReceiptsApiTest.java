@@ -5,7 +5,7 @@ import jp.co.freee.accounting.models.BadRequestError;
 import jp.co.freee.accounting.models.BadRequestNotFoundError;
 import java.io.File;
 import jp.co.freee.accounting.models.ForbiddenError;
-import jp.co.freee.accounting.models.InlineResponse2008;
+import jp.co.freee.accounting.models.InlineResponse2005;
 import jp.co.freee.accounting.models.InternalServerError;
 import jp.co.freee.accounting.models.ReceiptResponse;
 import jp.co.freee.accounting.models.ReceiptUpdateParams;
@@ -33,7 +33,7 @@ public class ReceiptsApiTest {
     /**
      * ファイルボックス 証憑ファイルアップロード
      *
-     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ファイルボックスに証憑ファイルをアップロードする&lt;/p&gt; &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;注意点&lt;/h2&gt; &lt;ul&gt;   &lt;li&gt;リクエストヘッダーの Content-Type は、multipart/form-dataにのみ対応しています。&lt;/li&gt; &lt;/ul&gt;
+     * 
      */
     @Test
     public void createReceiptTest() {
@@ -48,7 +48,7 @@ public class ReceiptsApiTest {
     /**
      * ファイルボックス 証憑ファイルを削除する
      *
-     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ファイルボックスの証憑ファイルを削除する&lt;/p&gt;
+     * 
      */
     @Test
     public void destroyReceiptTest() {
@@ -59,9 +59,22 @@ public class ReceiptsApiTest {
         // TODO: test validations
     }
     /**
+     * ファイルボックス 証憑ファイルのダウンロード
+     *
+     * 
+     */
+    @Test
+    public void downloadReceiptTest() {
+        Integer id = null;
+        Integer companyId = null;
+        // File response = api.downloadReceipt(id, companyId);
+
+        // TODO: test validations
+    }
+    /**
      * ファイルボックス 証憑ファイルの取得
      *
-     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所のファイルボックス 証憑ファイルを取得する&lt;/p&gt;
+     * 
      */
     @Test
     public void getReceiptTest() {
@@ -74,7 +87,7 @@ public class ReceiptsApiTest {
     /**
      * ファイルボックス 証憑ファイル一覧の取得
      *
-     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所のファイルボックス 証憑ファイル一覧を取得する&lt;/p&gt;
+     * 
      */
     @Test
     public void getReceiptsTest() {
@@ -88,14 +101,14 @@ public class ReceiptsApiTest {
         String category = null;
         Long offset = null;
         Integer limit = null;
-        // InlineResponse2008 response = api.getReceipts(companyId, startDate, endDate, userName, number, commentType, commentImportant, category, offset, limit);
+        // InlineResponse2005 response = api.getReceipts(companyId, startDate, endDate, userName, number, commentType, commentImportant, category, offset, limit);
 
         // TODO: test validations
     }
     /**
      * ファイルボックス 証憑ファイル情報更新
      *
-     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ファイルボックスの証憑ファイル情報を更新する&lt;/p&gt; &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;注意点&lt;/h2&gt; &lt;ul&gt;   &lt;li&gt;本APIでは、証憑ファイルの再アップロードはできません。&lt;/li&gt; &lt;/ul&gt;
+     * 
      */
     @Test
     public void updateReceiptTest() {

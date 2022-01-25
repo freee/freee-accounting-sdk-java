@@ -7,7 +7,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**approvalRequestForm** | [**ApprovalRequestForm**](ApprovalRequestForm.md) |  | 
+**approvalRequestForm** | [**ApprovalRequestFormResponseApprovalRequestForm**](ApprovalRequestFormResponseApprovalRequestForm.md) |  | 
 
 
 

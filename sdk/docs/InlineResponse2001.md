@@ -7,7 +7,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**banks** | [**List&lt;Bank&gt;**](Bank.md) |  | 
+**deals** | [**List&lt;Deal&gt;**](Deal.md) |  | 
+**meta** | [**InlineResponse2001Meta**](InlineResponse2001Meta.md) |  | 
 
 
 

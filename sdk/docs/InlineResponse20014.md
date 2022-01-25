@@ -7,7 +7,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**transfers** | [**List&lt;Transfer&gt;**](Transfer.md) |  | 
+**walletTxns** | [**List&lt;WalletTxn&gt;**](WalletTxn.md) |  | 
 
 
 

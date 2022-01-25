@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createReceipt**](ReceiptsApi.md#createReceipt) | **POST** api/1/receipts | ファイルボックス 証憑ファイルアップロード
 [**destroyReceipt**](ReceiptsApi.md#destroyReceipt) | **DELETE** api/1/receipts/{id} | ファイルボックス 証憑ファイルを削除する
+[**downloadReceipt**](ReceiptsApi.md#downloadReceipt) | **GET** api/1/receipts/{id}/download | ファイルボックス 証憑ファイルのダウンロード
 [**getReceipt**](ReceiptsApi.md#getReceipt) | **GET** api/1/receipts/{id} | ファイルボックス 証憑ファイルの取得
 [**getReceipts**](ReceiptsApi.md#getReceipts) | **GET** api/1/receipts | ファイルボックス 証憑ファイル一覧の取得
 [**updateReceipt**](ReceiptsApi.md#updateReceipt) | **PUT** api/1/receipts/{id} | ファイルボックス 証憑ファイル情報更新
@@ -17,8 +18,6 @@ Method | HTTP request | Description
 > ReceiptResponse createReceipt(companyId, receipt, description, issueDate)
 
 ファイルボックス 証憑ファイルアップロード
-
- &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ファイルボックスに証憑ファイルをアップロードする&lt;/p&gt; &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;注意点&lt;/h2&gt; &lt;ul&gt;   &lt;li&gt;リクエストヘッダーの Content-Type は、multipart/form-dataにのみ対応しています。&lt;/li&gt; &lt;/ul&gt;
 
 ### Example
 
@@ -99,8 +98,6 @@ Name | Type | Description  | Notes
 
 ファイルボックス 証憑ファイルを削除する
 
- &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ファイルボックスの証憑ファイルを削除する&lt;/p&gt;
-
 ### Example
 
 ```java
@@ -122,7 +119,7 @@ public class Example {
         oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
         ReceiptsApi apiInstance = new ReceiptsApi(defaultClient);
-        Integer id = 56; // Integer | 証憑ID
+        Integer id = 56; // Integer | 証憑ファイルID
         Integer companyId = 56; // Integer | 事業所ID
         try {
             apiInstance.destroyReceipt(id, companyId);
@@ -142,7 +139,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 証憑ID |
+ **id** | **Integer**| 証憑ファイルID |
  **companyId** | **Integer**| 事業所ID |
 
 ### Return type
@@ -170,13 +167,11 @@ null (empty response body)
 | **500** |  |  -  |
 
 
-## getReceipt
+## downloadReceipt
 
-> ReceiptResponse getReceipt(id, companyId)
+> File downloadReceipt(id, companyId)
 
-ファイルボックス 証憑ファイルの取得
-
- &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所のファイルボックス 証憑ファイルを取得する&lt;/p&gt;
+ファイルボックス 証憑ファイルのダウンロード
 
 ### Example
 
@@ -199,7 +194,83 @@ public class Example {
         oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
         ReceiptsApi apiInstance = new ReceiptsApi(defaultClient);
-        Integer id = 56; // Integer | 証憑ID
+        Integer id = 56; // Integer | 証憑ファイルID
+        Integer companyId = 56; // Integer | 事業所ID
+        try {
+            File result = apiInstance.downloadReceipt(id, companyId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ReceiptsApi#downloadReceipt");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| 証憑ファイルID |
+ **companyId** | **Integer**| 事業所ID |
+
+### Return type
+
+[**File**](File.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/pdf, image/_*, text/csv, application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+| **400** |  |  -  |
+| **401** |  |  -  |
+| **403** |  |  -  |
+| **404** |  |  -  |
+| **500** |  |  -  |
+
+
+## getReceipt
+
+> ReceiptResponse getReceipt(id, companyId)
+
+ファイルボックス 証憑ファイルの取得
+
+### Example
+
+```java
+// Import classes:
+import jp.co.freee.accounting.ApiClient;
+import jp.co.freee.accounting.ApiException;
+import jp.co.freee.accounting.Configuration;
+import jp.co.freee.accounting.auth.*;
+import jp.co.freee.accounting.models.*;
+import jp.co.freee.accounting.api.ReceiptsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.freee.co.jp");
+        
+        // Configure OAuth2 access token for authorization: oauth2
+        OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+        oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+        ReceiptsApi apiInstance = new ReceiptsApi(defaultClient);
+        Integer id = 56; // Integer | 証憑ファイルID
         Integer companyId = 56; // Integer | 事業所ID
         try {
             ReceiptResponse result = apiInstance.getReceipt(id, companyId);
@@ -220,7 +291,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 証憑ID |
+ **id** | **Integer**| 証憑ファイルID |
  **companyId** | **Integer**| 事業所ID |
 
 ### Return type
@@ -250,11 +321,9 @@ Name | Type | Description  | Notes
 
 ## getReceipts
 
-> InlineResponse2008 getReceipts(companyId, startDate, endDate, userName, number, commentType, commentImportant, category, offset, limit)
+> InlineResponse2005 getReceipts(companyId, startDate, endDate, userName, number, commentType, commentImportant, category, offset, limit)
 
 ファイルボックス 証憑ファイル一覧の取得
-
- &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所のファイルボックス 証憑ファイル一覧を取得する&lt;/p&gt;
 
 ### Example
 
@@ -282,13 +351,13 @@ public class Example {
         String endDate = "endDate_example"; // String | アップロード日 (yyyy-mm-dd)
         String userName = "userName_example"; // String | アップロードしたユーザー名、メールアドレス
         Integer number = 56; // Integer | アップロードファイルNo
-        String commentType = "commentType_example"; // String | posted:コメントあり, raised:未解決, resolved:解決済
+        String commentType = "posted"; // String | posted:コメントあり, raised:未解決, resolved:解決済
         Boolean commentImportant = true; // Boolean | trueの時、重要コメント付きが対象
-        String category = "category_example"; // String | all:すべて、without_deal:未登録、with_expense_application_line:経費申請中, with_deal:登録済み、ignored:無視
+        String category = "all"; // String | all:すべて、without_deal:未登録、with_expense_application_line:経費申請中, with_deal:登録済み、ignored:無視
         Long offset = 56L; // Long | 取得レコードのオフセット (デフォルト: 0)
         Integer limit = 56; // Integer | 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000)
         try {
-            InlineResponse2008 result = apiInstance.getReceipts(companyId, startDate, endDate, userName, number, commentType, commentImportant, category, offset, limit);
+            InlineResponse2005 result = apiInstance.getReceipts(companyId, startDate, endDate, userName, number, commentType, commentImportant, category, offset, limit);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ReceiptsApi#getReceipts");
@@ -319,7 +388,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2008**](InlineResponse2008.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -347,8 +416,6 @@ Name | Type | Description  | Notes
 
 ファイルボックス 証憑ファイル情報更新
 
- &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ファイルボックスの証憑ファイル情報を更新する&lt;/p&gt; &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;注意点&lt;/h2&gt; &lt;ul&gt;   &lt;li&gt;本APIでは、証憑ファイルの再アップロードはできません。&lt;/li&gt; &lt;/ul&gt;
-
 ### Example
 
 ```java
@@ -370,7 +437,7 @@ public class Example {
         oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
         ReceiptsApi apiInstance = new ReceiptsApi(defaultClient);
-        Integer id = 56; // Integer | 証憑ID
+        Integer id = 56; // Integer | 証憑ファイルID
         ReceiptUpdateParams receiptUpdateParams = new ReceiptUpdateParams(); // ReceiptUpdateParams | 経費申請の更新
         try {
             ReceiptResponse result = apiInstance.updateReceipt(id, receiptUpdateParams);
@@ -391,7 +458,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 証憑ID |
+ **id** | **Integer**| 証憑ファイルID |
  **receiptUpdateParams** | [**ReceiptUpdateParams**](ReceiptUpdateParams.md)| 経費申請の更新 |
 
 ### Return type

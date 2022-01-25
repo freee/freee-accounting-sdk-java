@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getCompanies**](CompaniesApi.md#getCompanies) | **GET** api/1/companies | 事業所一覧の取得
 [**getCompany**](CompaniesApi.md#getCompany) | **GET** api/1/companies/{id} | 事業所の詳細情報の取得
-[**updateCompany**](CompaniesApi.md#updateCompany) | **PUT** api/1/companies/{id} | 事業所情報の更新
 
 
 
@@ -15,8 +14,6 @@ Method | HTTP request | Description
 > CompanyIndexResponse getCompanies()
 
 事業所一覧の取得
-
- &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ユーザーが所属する事業所の一覧を取得する&lt;/p&gt;  &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;定義&lt;/h2&gt;  &lt;ul&gt; &lt;li&gt;role &lt;ul&gt; &lt;li&gt;admin : 管理者&lt;/li&gt;  &lt;li&gt;simple_accounting : 一般&lt;/li&gt;  &lt;li&gt;self_only : 取引登録のみ&lt;/li&gt;  &lt;li&gt;read_only : 閲覧のみ&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;/ul&gt;
 
 ### Example
 
@@ -86,8 +83,6 @@ This endpoint does not need any parameter.
 > CompanyResponse getCompany(id, details, accountItems, taxes, items, partners, sections, tags, walletables)
 
 事業所の詳細情報の取得
-
- &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ユーザーが所属する事業所の詳細を取得する&lt;/p&gt;  &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;定義&lt;/h2&gt;  &lt;ul&gt; &lt;li&gt;role &lt;ul&gt; &lt;li&gt;admin : 管理者&lt;/li&gt;  &lt;li&gt;simple_accounting : 一般&lt;/li&gt;  &lt;li&gt;self_only : 取引登録のみ&lt;/li&gt;  &lt;li&gt;read_only : 閲覧のみ&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;/ul&gt;  &lt;h2 id&#x3D;\&quot;_3\&quot;&gt;
 
 ### Example
 
@@ -159,83 +154,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** |  |  -  |
-| **400** |  |  -  |
-| **401** |  |  -  |
-| **403** |  |  -  |
-| **500** |  |  -  |
-
-
-## updateCompany
-
-> CompanyUpdateResponse updateCompany(id, companyParams)
-
-事業所情報の更新
-
- &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ユーザーが所属する事業所の情報を更新する&lt;/p&gt;  &lt;p&gt;※同時に複数のリクエストを受け付けない&lt;/p&gt;
-
-### Example
-
-```java
-// Import classes:
-import jp.co.freee.accounting.ApiClient;
-import jp.co.freee.accounting.ApiException;
-import jp.co.freee.accounting.Configuration;
-import jp.co.freee.accounting.auth.*;
-import jp.co.freee.accounting.models.*;
-import jp.co.freee.accounting.api.CompaniesApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("https://api.freee.co.jp");
-        
-        // Configure OAuth2 access token for authorization: oauth2
-        OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
-        oauth2.setAccessToken("YOUR ACCESS TOKEN");
-
-        CompaniesApi apiInstance = new CompaniesApi(defaultClient);
-        Integer id = 56; // Integer | 事業所ID
-        CompanyParams companyParams = new CompanyParams(); // CompanyParams | 
-        try {
-            CompanyUpdateResponse result = apiInstance.updateCompany(id, companyParams);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling CompaniesApi#updateCompany");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 事業所ID |
- **companyParams** | [**CompanyParams**](CompanyParams.md)|  | [optional]
-
-### Return type
-
-[**CompanyUpdateResponse**](CompanyUpdateResponse.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
-- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: application/json
 
 

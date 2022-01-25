@@ -4,7 +4,7 @@ import jp.co.freee.accounting.ApiClient;
 import jp.co.freee.accounting.models.BadRequestError;
 import jp.co.freee.accounting.models.BadRequestNotFoundError;
 import jp.co.freee.accounting.models.ForbiddenError;
-import jp.co.freee.accounting.models.InlineResponse20011;
+import jp.co.freee.accounting.models.InlineResponse2008;
 import jp.co.freee.accounting.models.InternalServerError;
 import jp.co.freee.accounting.models.TagParams;
 import jp.co.freee.accounting.models.TagResponse;
@@ -32,7 +32,7 @@ public class TagsApiTest {
     /**
      * メモタグの作成
      *
-     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所のメモタグを作成する&lt;/p&gt;
+     * 
      */
     @Test
     public void createTagTest() {
@@ -44,7 +44,7 @@ public class TagsApiTest {
     /**
      * メモタグの削除
      *
-     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所のメモタグを削除する&lt;/p&gt;
+     * 
      */
     @Test
     public void destroyTagTest() {
@@ -57,7 +57,7 @@ public class TagsApiTest {
     /**
      * メモタグの詳細情報の取得
      *
-     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所のメモタグを取得する&lt;/p&gt;
+     * 
      */
     @Test
     public void getTagTest() {
@@ -70,21 +70,23 @@ public class TagsApiTest {
     /**
      * メモタグ一覧の取得
      *
-     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所のメモタグ一覧を取得する&lt;/p&gt;
+     * 
      */
     @Test
     public void getTagsTest() {
         Integer companyId = null;
+        String startUpdateDate = null;
+        String endUpdateDate = null;
         Integer offset = null;
         Integer limit = null;
-        // InlineResponse20011 response = api.getTags(companyId, offset, limit);
+        // InlineResponse2008 response = api.getTags(companyId, startUpdateDate, endUpdateDate, offset, limit);
 
         // TODO: test validations
     }
     /**
      * メモタグの更新
      *
-     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所のメモタグを更新する&lt;/p&gt;
+     * 
      */
     @Test
     public void updateTagTest() {

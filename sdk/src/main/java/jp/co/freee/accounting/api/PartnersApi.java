@@ -28,7 +28,7 @@ import java.util.Map;
 public interface PartnersApi {
   /**
    * 取引先の作成
-   *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の取引先を作成する&lt;/p&gt; &lt;ul&gt; &lt;li&gt;codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。&lt;/li&gt; &lt;li&gt;取引先コードの利用を有効にしている場合は、codeの指定は必須です。&lt;/li&gt; &lt;li&gt;振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）, 支払期日設定（payment_term_attributes, 請求の入金期日設定（invoice_payment_term_attributes）は法人向けのプロフェッショナルプラン以上で利用可能です。&lt;/li&gt;&lt;/ul&gt;
+   * 
    * @param partnerCreateParams 取引先の作成 (required)
    * @return Observable&lt;PartnerResponse&gt;
    */
@@ -42,7 +42,7 @@ public interface PartnersApi {
 
   /**
    * 取引先の削除
-   *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の取引先を削除する&lt;/p&gt;
+   * 
    * @param id 取引先ID (required)
    * @param companyId 事業所ID (required)
    * @return Completable
@@ -54,7 +54,7 @@ public interface PartnersApi {
 
   /**
    * 取引先の取得
-   *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の取引先を取得する&lt;/p&gt; &lt;ul&gt; &lt;li&gt;振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）, 支払期日設定（payment_term_attributes, 請求の入金期日設定（invoice_payment_term_attributes）は法人向けのプロフェッショナルプラン以上で利用可能です。&lt;/li&gt;&lt;/ul&gt;
+   * 
    * @param id 取引先ID (required)
    * @param companyId 事業所ID (required)
    * @return Observable&lt;PartnerResponse&gt;
@@ -66,8 +66,10 @@ public interface PartnersApi {
 
   /**
    * 取引先一覧の取得
-   *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の取引先一覧を取得する&lt;/p&gt; &lt;ul&gt; &lt;li&gt;振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）は法人向けのプロフェッショナルプラン以上で利用可能です。&lt;/li&gt;&lt;/ul&gt;
+   * 
    * @param companyId 事業所ID (required)
+   * @param startUpdateDate 更新日で絞り込み：開始日(yyyy-mm-dd) (optional)
+   * @param endUpdateDate 更新日で絞り込み：終了日(yyyy-mm-dd) (optional)
    * @param offset 取得レコードのオフセット (デフォルト: 0) (optional)
    * @param limit 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)
    * @param keyword 検索キーワード：取引先名・正式名称・カナ名称に対するあいまい検索で一致、またはショートカットキー1・2のいずれかに完全一致 (optional)
@@ -75,12 +77,12 @@ public interface PartnersApi {
    */
   @GET("api/1/partners")
   Observable<PartnersResponse> getPartners(
-    @retrofit2.http.Query("company_id") Integer companyId, @retrofit2.http.Query("offset") Long offset, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("keyword") String keyword
+    @retrofit2.http.Query("company_id") Integer companyId, @retrofit2.http.Query("start_update_date") String startUpdateDate, @retrofit2.http.Query("end_update_date") String endUpdateDate, @retrofit2.http.Query("offset") Long offset, @retrofit2.http.Query("limit") Integer limit, @retrofit2.http.Query("keyword") String keyword
   );
 
   /**
    * 取引先の更新
-   *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した取引先の情報を更新する&lt;/p&gt; &lt;ul&gt; &lt;li&gt;codeを指定、更新することはできません。&lt;/li&gt; &lt;li&gt;振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）, 支払期日設定（payment_term_attributes, 請求の入金期日設定（invoice_payment_term_attributes）は法人向けのプロフェッショナルプラン以上で利用可能です。&lt;/li&gt;&lt;/ul&gt;
+   * 
    * @param id 取引先ID (required)
    * @param partnerUpdateParams 取引先の更新 (required)
    * @return Observable&lt;PartnerResponse&gt;
@@ -95,7 +97,7 @@ public interface PartnersApi {
 
   /**
    * 取引先の更新
-   *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;取引先コードをキーに、指定した取引先の情報を更新する&lt;/p&gt; &lt;ul&gt; &lt;li&gt;このAPIを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。&lt;/li&gt; &lt;li&gt;コードを日本語に設定している場合は、URLエンコードしてURLに含めるようにしてください。&lt;/li&gt; &lt;li&gt;振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）, 支払期日設定（payment_term_attributes, 請求の入金期日設定（invoice_payment_term_attributes）は法人向けのプロフェッショナルプラン以上で利用可能です。&lt;/li&gt;&lt;/ul&gt;
+   * 
    * @param code 取引先コード (required)
    * @param partnerUpdateParams 取引先の更新 (required)
    * @return Observable&lt;PartnerResponse&gt;

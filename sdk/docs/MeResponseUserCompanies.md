@@ -7,6 +7,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**advisorId** | **Integer** | アドバイザープロファイルID（アドバイザー事業所で無い場合にnullになります） |  [optional]
 **displayName** | **String** | 表示名 | 
 **id** | **Integer** | 事業所ID | 
 **role** | [**RoleEnum**](#RoleEnum) | ユーザーの権限 | 
