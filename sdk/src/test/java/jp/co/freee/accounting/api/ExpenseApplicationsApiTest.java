@@ -3,6 +3,7 @@ package jp.co.freee.accounting.api;
 import jp.co.freee.accounting.ApiClient;
 import jp.co.freee.accounting.models.BadRequestError;
 import jp.co.freee.accounting.models.BadRequestNotFoundError;
+import jp.co.freee.accounting.models.ExpenseApplicationActionCreateParams;
 import jp.co.freee.accounting.models.ExpenseApplicationCreateParams;
 import jp.co.freee.accounting.models.ExpenseApplicationResponse;
 import jp.co.freee.accounting.models.ExpenseApplicationUpdateParams;
@@ -33,7 +34,7 @@ public class ExpenseApplicationsApiTest {
     /**
      * 経費申請の作成
      *
-     *  &lt;h2 id&#x3D;\&quot;_1\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の経費申請を作成する&lt;/p&gt;  &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;注意点&lt;/h2&gt; &lt;ul&gt;   &lt;li&gt;本APIでは、経費申請の下書きを作成することができます。申請作業はWebから行ってください。&lt;/li&gt;   &lt;li&gt;現在、申請経路はWeb上からのみ入力できます。Web上での申請時に指定してください。&lt;/li&gt;   &lt;li&gt;申請時には、申請タイトル(title)に加え、申請日(issue_date)、項目行については金額(amount)、日付(transaction_date)、内容(description)が必須項目となります。申請時の業務効率化のため、API入力をお勧めします。&lt;/li&gt;   &lt;li&gt;個人アカウントの場合は、プレミアムプランでご利用できます。&lt;/li&gt;   &lt;li&gt;法人アカウントの場合は、ベーシックプラン、プロフェッショナルプラン、エンタープライズプランでご利用できます。&lt;/li&gt; &lt;/ul&gt;
+     * 
      */
     @Test
     public void createExpenseApplicationTest() {
@@ -45,7 +46,7 @@ public class ExpenseApplicationsApiTest {
     /**
      * 経費申請の削除
      *
-     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の経費申請を削除する&lt;/p&gt;  &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;注意点&lt;/h2&gt; &lt;ul&gt;   &lt;li&gt;個人アカウントの場合は、プレミアムプランでご利用できます。&lt;/li&gt;   &lt;li&gt;法人アカウントの場合は、ベーシックプラン、プロフェッショナルプラン、エンタープライズプランでご利用できます。&lt;/li&gt; &lt;/ul&gt;
+     * 
      */
     @Test
     public void destroyExpenseApplicationTest() {
@@ -76,22 +77,47 @@ public class ExpenseApplicationsApiTest {
     @Test
     public void getExpenseApplicationsTest() {
         Integer companyId = null;
+        String status = null;
+        Boolean payrollAttached = null;
+        String startTransactionDate = null;
+        String endTransactionDate = null;
+        Integer applicationNumber = null;
+        String title = null;
+        String startIssueDate = null;
+        String endIssueDate = null;
+        Integer applicantId = null;
+        Integer approverId = null;
+        Integer minAmount = null;
+        Integer maxAmount = null;
         Long offset = null;
         Integer limit = null;
-        // ExpenseApplicationsIndexResponse response = api.getExpenseApplications(companyId, offset, limit);
+        // ExpenseApplicationsIndexResponse response = api.getExpenseApplications(companyId, status, payrollAttached, startTransactionDate, endTransactionDate, applicationNumber, title, startIssueDate, endIssueDate, applicantId, approverId, minAmount, maxAmount, offset, limit);
 
         // TODO: test validations
     }
     /**
      * 経費申請の更新
      *
-     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の経費申請を更新する&lt;/p&gt;  &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;注意点&lt;/h2&gt; &lt;ul&gt;   &lt;li&gt;本APIでは、経費申請の下書きを更新することができます。申請作業はWebから行ってください。&lt;/li&gt;   &lt;li&gt;現在、申請経路はWeb上からのみ入力できます。Web上での申請時に指定してください。&lt;/li&gt;   &lt;li&gt;申請時には、申請タイトル(title)に加え、申請日(issue_date)、項目行については金額(amount)、日付(transaction_date)、内容(description)が必須項目となります。申請時の業務効率化のため、API入力をお勧めします。&lt;/li&gt;   &lt;li&gt;個人アカウントの場合は、プレミアムプランでご利用できます。&lt;/li&gt;   &lt;li&gt;法人アカウントの場合は、ベーシックプラン、プロフェッショナルプラン、エンタープライズプランでご利用できます。&lt;/li&gt; &lt;/ul&gt;
+     * 
      */
     @Test
     public void updateExpenseApplicationTest() {
         Integer id = null;
         ExpenseApplicationUpdateParams expenseApplicationUpdateParams = null;
         // ExpenseApplicationResponse response = api.updateExpenseApplication(id, expenseApplicationUpdateParams);
+
+        // TODO: test validations
+    }
+    /**
+     * 経費申請の承認操作
+     *
+     * 
+     */
+    @Test
+    public void updateExpenseApplicationActionTest() {
+        Integer id = null;
+        ExpenseApplicationActionCreateParams expenseApplicationActionCreateParams = null;
+        // ExpenseApplicationResponse response = api.updateExpenseApplicationAction(id, expenseApplicationActionCreateParams);
 
         // TODO: test validations
     }

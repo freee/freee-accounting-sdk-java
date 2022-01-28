@@ -238,11 +238,9 @@ Name | Type | Description  | Notes
 
 ## getExpenseApplicationLineTemplates
 
-> InlineResponse2003 getExpenseApplicationLineTemplates(companyId, offset, limit)
+> InlineResponse2002 getExpenseApplicationLineTemplates(companyId, offset, limit)
 
 経費科目一覧の取得
-
- &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の経費科目一覧を取得する&lt;/p&gt;
 
 ### Example
 
@@ -269,7 +267,7 @@ public class Example {
         Long offset = 56L; // Long | 取得レコードのオフセット (デフォルト: 0)
         Integer limit = 56; // Integer | 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)
         try {
-            InlineResponse2003 result = apiInstance.getExpenseApplicationLineTemplates(companyId, offset, limit);
+            InlineResponse2002 result = apiInstance.getExpenseApplicationLineTemplates(companyId, offset, limit);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ExpenseApplicationLineTemplatesApi#getExpenseApplicationLineTemplates");
@@ -293,7 +291,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**InlineResponse2002**](InlineResponse2002.md)
 
 ### Authorization
 

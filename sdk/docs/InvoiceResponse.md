@@ -7,7 +7,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**invoice** | [**Invoice**](Invoice.md) |  | 
+**invoice** | [**InvoiceResponseInvoice**](InvoiceResponseInvoice.md) |  | 
 
 
 

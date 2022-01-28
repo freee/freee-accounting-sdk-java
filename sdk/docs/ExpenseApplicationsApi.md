@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**getExpenseApplication**](ExpenseApplicationsApi.md#getExpenseApplication) | **GET** api/1/expense_applications/{id} | 経費申請詳細の取得
 [**getExpenseApplications**](ExpenseApplicationsApi.md#getExpenseApplications) | **GET** api/1/expense_applications | 経費申請一覧の取得
 [**updateExpenseApplication**](ExpenseApplicationsApi.md#updateExpenseApplication) | **PUT** api/1/expense_applications/{id} | 経費申請の更新
+[**updateExpenseApplicationAction**](ExpenseApplicationsApi.md#updateExpenseApplicationAction) | **POST** api/1/expense_applications/{id}/actions | 経費申請の承認操作
 
 
 
@@ -17,8 +18,6 @@ Method | HTTP request | Description
 > ExpenseApplicationResponse createExpenseApplication(expenseApplicationCreateParams)
 
 経費申請の作成
-
- &lt;h2 id&#x3D;\&quot;_1\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の経費申請を作成する&lt;/p&gt;  &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;注意点&lt;/h2&gt; &lt;ul&gt;   &lt;li&gt;本APIでは、経費申請の下書きを作成することができます。申請作業はWebから行ってください。&lt;/li&gt;   &lt;li&gt;現在、申請経路はWeb上からのみ入力できます。Web上での申請時に指定してください。&lt;/li&gt;   &lt;li&gt;申請時には、申請タイトル(title)に加え、申請日(issue_date)、項目行については金額(amount)、日付(transaction_date)、内容(description)が必須項目となります。申請時の業務効率化のため、API入力をお勧めします。&lt;/li&gt;   &lt;li&gt;個人アカウントの場合は、プレミアムプランでご利用できます。&lt;/li&gt;   &lt;li&gt;法人アカウントの場合は、ベーシックプラン、プロフェッショナルプラン、エンタープライズプランでご利用できます。&lt;/li&gt; &lt;/ul&gt;
 
 ### Example
 
@@ -93,8 +92,6 @@ Name | Type | Description  | Notes
 
 経費申請の削除
 
- &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の経費申請を削除する&lt;/p&gt;  &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;注意点&lt;/h2&gt; &lt;ul&gt;   &lt;li&gt;個人アカウントの場合は、プレミアムプランでご利用できます。&lt;/li&gt;   &lt;li&gt;法人アカウントの場合は、ベーシックプラン、プロフェッショナルプラン、エンタープライズプランでご利用できます。&lt;/li&gt; &lt;/ul&gt;
-
 ### Example
 
 ```java
@@ -116,7 +113,7 @@ public class Example {
         oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
         ExpenseApplicationsApi apiInstance = new ExpenseApplicationsApi(defaultClient);
-        Integer id = 56; // Integer | 
+        Integer id = 56; // Integer | 経費申請ID
         Integer companyId = 56; // Integer | 事業所ID
         try {
             apiInstance.destroyExpenseApplication(id, companyId);
@@ -136,7 +133,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  |
+ **id** | **Integer**| 経費申請ID |
  **companyId** | **Integer**| 事業所ID |
 
 ### Return type
@@ -242,7 +239,7 @@ Name | Type | Description  | Notes
 
 ## getExpenseApplications
 
-> ExpenseApplicationsIndexResponse getExpenseApplications(companyId, offset, limit)
+> ExpenseApplicationsIndexResponse getExpenseApplications(companyId, status, payrollAttached, startTransactionDate, endTransactionDate, applicationNumber, title, startIssueDate, endIssueDate, applicantId, approverId, minAmount, maxAmount, offset, limit)
 
 経費申請一覧の取得
 
@@ -268,10 +265,22 @@ public class Example {
 
         ExpenseApplicationsApi apiInstance = new ExpenseApplicationsApi(defaultClient);
         Integer companyId = 56; // Integer | 事業所ID
+        String status = "draft"; // String | 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し)、 取引ステータス(unsettled:清算待ち, settled:精算済み)
+        Boolean payrollAttached = true; // Boolean | true:給与連携あり、false:給与連携なし、未指定時:絞り込みなし
+        String startTransactionDate = "2019-12-17"; // String | 発生日(経費申請項目の日付)で絞込：開始日(yyyy-mm-dd)
+        String endTransactionDate = "2019-12-17"; // String | 発生日(経費申請項目の日付)で絞込：終了日(yyyy-mm-dd)
+        Integer applicationNumber = 2; // Integer | 申請No.
+        String title = "大阪出張"; // String | 申請タイトル
+        String startIssueDate = "2019-12-17"; // String | 申請日で絞込：開始日(yyyy-mm-dd)
+        String endIssueDate = "2019-12-17"; // String | 申請日で絞込：終了日(yyyy-mm-dd)
+        Integer applicantId = 1; // Integer | 申請者のユーザーID
+        Integer approverId = 1; // Integer | 承認者のユーザーID
+        Integer minAmount = 5000; // Integer | 金額で絞込 (下限金額)
+        Integer maxAmount = 10000; // Integer | 金額で絞込 (上限金額)
         Long offset = 56L; // Long | 取得レコードのオフセット (デフォルト: 0)
         Integer limit = 56; // Integer | 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500)
         try {
-            ExpenseApplicationsIndexResponse result = apiInstance.getExpenseApplications(companyId, offset, limit);
+            ExpenseApplicationsIndexResponse result = apiInstance.getExpenseApplications(companyId, status, payrollAttached, startTransactionDate, endTransactionDate, applicationNumber, title, startIssueDate, endIssueDate, applicantId, approverId, minAmount, maxAmount, offset, limit);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ExpenseApplicationsApi#getExpenseApplications");
@@ -290,6 +299,18 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **companyId** | **Integer**| 事業所ID |
+ **status** | **String**| 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し)、 取引ステータス(unsettled:清算待ち, settled:精算済み) | [optional] [enum: draft, in_progress, approved, rejected, feedback, unsettled, settled]
+ **payrollAttached** | **Boolean**| true:給与連携あり、false:給与連携なし、未指定時:絞り込みなし | [optional]
+ **startTransactionDate** | **String**| 発生日(経費申請項目の日付)で絞込：開始日(yyyy-mm-dd) | [optional]
+ **endTransactionDate** | **String**| 発生日(経費申請項目の日付)で絞込：終了日(yyyy-mm-dd) | [optional]
+ **applicationNumber** | **Integer**| 申請No. | [optional]
+ **title** | **String**| 申請タイトル | [optional]
+ **startIssueDate** | **String**| 申請日で絞込：開始日(yyyy-mm-dd) | [optional]
+ **endIssueDate** | **String**| 申請日で絞込：終了日(yyyy-mm-dd) | [optional]
+ **applicantId** | **Integer**| 申請者のユーザーID | [optional]
+ **approverId** | **Integer**| 承認者のユーザーID | [optional]
+ **minAmount** | **Integer**| 金額で絞込 (下限金額) | [optional]
+ **maxAmount** | **Integer**| 金額で絞込 (上限金額) | [optional]
  **offset** | **Long**| 取得レコードのオフセット (デフォルト: 0) | [optional]
  **limit** | **Integer**| 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) | [optional]
 
@@ -323,7 +344,81 @@ Name | Type | Description  | Notes
 
 経費申請の更新
 
- &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の経費申請を更新する&lt;/p&gt;  &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;注意点&lt;/h2&gt; &lt;ul&gt;   &lt;li&gt;本APIでは、経費申請の下書きを更新することができます。申請作業はWebから行ってください。&lt;/li&gt;   &lt;li&gt;現在、申請経路はWeb上からのみ入力できます。Web上での申請時に指定してください。&lt;/li&gt;   &lt;li&gt;申請時には、申請タイトル(title)に加え、申請日(issue_date)、項目行については金額(amount)、日付(transaction_date)、内容(description)が必須項目となります。申請時の業務効率化のため、API入力をお勧めします。&lt;/li&gt;   &lt;li&gt;個人アカウントの場合は、プレミアムプランでご利用できます。&lt;/li&gt;   &lt;li&gt;法人アカウントの場合は、ベーシックプラン、プロフェッショナルプラン、エンタープライズプランでご利用できます。&lt;/li&gt; &lt;/ul&gt;
+### Example
+
+```java
+// Import classes:
+import jp.co.freee.accounting.ApiClient;
+import jp.co.freee.accounting.ApiException;
+import jp.co.freee.accounting.Configuration;
+import jp.co.freee.accounting.auth.*;
+import jp.co.freee.accounting.models.*;
+import jp.co.freee.accounting.api.ExpenseApplicationsApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("https://api.freee.co.jp");
+        
+        // Configure OAuth2 access token for authorization: oauth2
+        OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
+        oauth2.setAccessToken("YOUR ACCESS TOKEN");
+
+        ExpenseApplicationsApi apiInstance = new ExpenseApplicationsApi(defaultClient);
+        Integer id = 56; // Integer | 経費申請ID
+        ExpenseApplicationUpdateParams expenseApplicationUpdateParams = new ExpenseApplicationUpdateParams(); // ExpenseApplicationUpdateParams | 経費申請の更新
+        try {
+            ExpenseApplicationResponse result = apiInstance.updateExpenseApplication(id, expenseApplicationUpdateParams);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ExpenseApplicationsApi#updateExpenseApplication");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| 経費申請ID |
+ **expenseApplicationUpdateParams** | [**ExpenseApplicationUpdateParams**](ExpenseApplicationUpdateParams.md)| 経費申請の更新 | [optional]
+
+### Return type
+
+[**ExpenseApplicationResponse**](ExpenseApplicationResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, application/x-www-form-urlencoded
+- **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+| **400** |  |  -  |
+| **401** |  |  -  |
+| **403** |  |  -  |
+| **404** |  |  -  |
+| **500** |  |  -  |
+
+
+## updateExpenseApplicationAction
+
+> ExpenseApplicationResponse updateExpenseApplicationAction(id, expenseApplicationActionCreateParams)
+
+経費申請の承認操作
 
 ### Example
 
@@ -346,13 +441,13 @@ public class Example {
         oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
         ExpenseApplicationsApi apiInstance = new ExpenseApplicationsApi(defaultClient);
-        Integer id = 56; // Integer | 
-        ExpenseApplicationUpdateParams expenseApplicationUpdateParams = new ExpenseApplicationUpdateParams(); // ExpenseApplicationUpdateParams | 経費申請の更新
+        Integer id = 56; // Integer | 経費申請ID
+        ExpenseApplicationActionCreateParams expenseApplicationActionCreateParams = new ExpenseApplicationActionCreateParams(); // ExpenseApplicationActionCreateParams | 経費申請の承認操作
         try {
-            ExpenseApplicationResponse result = apiInstance.updateExpenseApplication(id, expenseApplicationUpdateParams);
+            ExpenseApplicationResponse result = apiInstance.updateExpenseApplicationAction(id, expenseApplicationActionCreateParams);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ExpenseApplicationsApi#updateExpenseApplication");
+            System.err.println("Exception when calling ExpenseApplicationsApi#updateExpenseApplicationAction");
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -367,8 +462,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  |
- **expenseApplicationUpdateParams** | [**ExpenseApplicationUpdateParams**](ExpenseApplicationUpdateParams.md)| 経費申請の更新 | [optional]
+ **id** | **Integer**| 経費申請ID |
+ **expenseApplicationActionCreateParams** | [**ExpenseApplicationActionCreateParams**](ExpenseApplicationActionCreateParams.md)| 経費申請の承認操作 |
 
 ### Return type
 
@@ -387,7 +482,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** |  |  -  |
+| **201** |  |  -  |
 | **400** |  |  -  |
 | **401** |  |  -  |
 | **403** |  |  -  |

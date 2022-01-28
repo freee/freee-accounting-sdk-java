@@ -33,7 +33,7 @@ public class PartnersApiTest {
     /**
      * 取引先の作成
      *
-     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の取引先を作成する&lt;/p&gt; &lt;ul&gt; &lt;li&gt;codeを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。&lt;/li&gt; &lt;li&gt;取引先コードの利用を有効にしている場合は、codeの指定は必須です。&lt;/li&gt; &lt;li&gt;振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）, 支払期日設定（payment_term_attributes, 請求の入金期日設定（invoice_payment_term_attributes）は法人向けのプロフェッショナルプラン以上で利用可能です。&lt;/li&gt;&lt;/ul&gt;
+     * 
      */
     @Test
     public void createPartnerTest() {
@@ -45,7 +45,7 @@ public class PartnersApiTest {
     /**
      * 取引先の削除
      *
-     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の取引先を削除する&lt;/p&gt;
+     * 
      */
     @Test
     public void destroyPartnerTest() {
@@ -58,7 +58,7 @@ public class PartnersApiTest {
     /**
      * 取引先の取得
      *
-     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の取引先を取得する&lt;/p&gt; &lt;ul&gt; &lt;li&gt;振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）, 支払期日設定（payment_term_attributes, 請求の入金期日設定（invoice_payment_term_attributes）は法人向けのプロフェッショナルプラン以上で利用可能です。&lt;/li&gt;&lt;/ul&gt;
+     * 
      */
     @Test
     public void getPartnerTest() {
@@ -71,22 +71,24 @@ public class PartnersApiTest {
     /**
      * 取引先一覧の取得
      *
-     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の取引先一覧を取得する&lt;/p&gt; &lt;ul&gt; &lt;li&gt;振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）は法人向けのプロフェッショナルプラン以上で利用可能です。&lt;/li&gt;&lt;/ul&gt;
+     * 
      */
     @Test
     public void getPartnersTest() {
         Integer companyId = null;
+        String startUpdateDate = null;
+        String endUpdateDate = null;
         Long offset = null;
         Integer limit = null;
         String keyword = null;
-        // PartnersResponse response = api.getPartners(companyId, offset, limit, keyword);
+        // PartnersResponse response = api.getPartners(companyId, startUpdateDate, endUpdateDate, offset, limit, keyword);
 
         // TODO: test validations
     }
     /**
      * 取引先の更新
      *
-     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した取引先の情報を更新する&lt;/p&gt; &lt;ul&gt; &lt;li&gt;codeを指定、更新することはできません。&lt;/li&gt; &lt;li&gt;振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）, 支払期日設定（payment_term_attributes, 請求の入金期日設定（invoice_payment_term_attributes）は法人向けのプロフェッショナルプラン以上で利用可能です。&lt;/li&gt;&lt;/ul&gt;
+     * 
      */
     @Test
     public void updatePartnerTest() {
@@ -99,7 +101,7 @@ public class PartnersApiTest {
     /**
      * 取引先の更新
      *
-     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;取引先コードをキーに、指定した取引先の情報を更新する&lt;/p&gt; &lt;ul&gt; &lt;li&gt;このAPIを利用するには、事業所の設定から取引先コードの利用を有効にする必要があります。&lt;/li&gt; &lt;li&gt;コードを日本語に設定している場合は、URLエンコードしてURLに含めるようにしてください。&lt;/li&gt; &lt;li&gt;振込元口座ID（payer_walletable_id）, 振込手数料負担（transfer_fee_handling_side）, 支払期日設定（payment_term_attributes, 請求の入金期日設定（invoice_payment_term_attributes）は法人向けのプロフェッショナルプラン以上で利用可能です。&lt;/li&gt;&lt;/ul&gt;
+     * 
      */
     @Test
     public void updatePartnerByCodeTest() {

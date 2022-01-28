@@ -4,7 +4,7 @@ import jp.co.freee.accounting.ApiClient;
 import jp.co.freee.accounting.models.BadRequestError;
 import jp.co.freee.accounting.models.BadRequestNotFoundError;
 import jp.co.freee.accounting.models.ForbiddenError;
-import jp.co.freee.accounting.models.InlineResponse2005;
+import jp.co.freee.accounting.models.InlineResponse2003;
 import jp.co.freee.accounting.models.InternalServerError;
 import jp.co.freee.accounting.models.ItemParams;
 import jp.co.freee.accounting.models.ItemResponse;
@@ -32,7 +32,7 @@ public class ItemsApiTest {
     /**
      * 品目の作成
      *
-     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の品目を作成する&lt;/p&gt;
+     * 
      */
     @Test
     public void createItemTest() {
@@ -44,7 +44,7 @@ public class ItemsApiTest {
     /**
      * 品目の削除
      *
-     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の品目を削除する&lt;/p&gt;
+     * 
      */
     @Test
     public void destroyItemTest() {
@@ -57,7 +57,7 @@ public class ItemsApiTest {
     /**
      * 品目の取得
      *
-     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の品目を取得する&lt;/p&gt;
+     * 
      */
     @Test
     public void getItemTest() {
@@ -70,21 +70,23 @@ public class ItemsApiTest {
     /**
      * 品目一覧の取得
      *
-     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の品目一覧を取得する&lt;/p&gt;
+     * 
      */
     @Test
     public void getItemsTest() {
         Integer companyId = null;
+        String startUpdateDate = null;
+        String endUpdateDate = null;
         Integer offset = null;
         Integer limit = null;
-        // InlineResponse2005 response = api.getItems(companyId, offset, limit);
+        // InlineResponse2003 response = api.getItems(companyId, startUpdateDate, endUpdateDate, offset, limit);
 
         // TODO: test validations
     }
     /**
      * 品目の更新
      *
-     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の品目を更新する&lt;/p&gt;
+     * 
      */
     @Test
     public void updateItemTest() {

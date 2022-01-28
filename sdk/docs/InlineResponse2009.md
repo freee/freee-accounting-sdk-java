@@ -7,7 +7,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**sections** | [**List&lt;Section&gt;**](Section.md) |  | 
+**taxes** | [**List&lt;Tax&gt;**](Tax.md) |  | 
 
 
 

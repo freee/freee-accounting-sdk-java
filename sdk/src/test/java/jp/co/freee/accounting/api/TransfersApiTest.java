@@ -4,7 +4,7 @@ import jp.co.freee.accounting.ApiClient;
 import jp.co.freee.accounting.models.BadRequestError;
 import jp.co.freee.accounting.models.BadRequestNotFoundError;
 import jp.co.freee.accounting.models.ForbiddenError;
-import jp.co.freee.accounting.models.InlineResponse20014;
+import jp.co.freee.accounting.models.InlineResponse20011;
 import jp.co.freee.accounting.models.InternalServerError;
 import jp.co.freee.accounting.models.TransferParams;
 import jp.co.freee.accounting.models.TransferResponse;
@@ -32,7 +32,7 @@ public class TransfersApiTest {
     /**
      * 取引（振替）の作成
      *
-     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の取引（振替）を作成する&lt;/p&gt;  &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;定義&lt;/h2&gt;  &lt;ul&gt; &lt;li&gt; &lt;p&gt;amount : 振替金額&lt;/p&gt; &lt;/li&gt;  &lt;li&gt; &lt;p&gt;from_walletable_type, to_walletable_type&lt;/p&gt;  &lt;ul&gt; &lt;li&gt;bank_account : 銀行口座&lt;/li&gt;  &lt;li&gt;credit_card : クレジットカード&lt;/li&gt;  &lt;li&gt;wallet : その他の決済口座&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;/ul&gt;
+     * 
      */
     @Test
     public void createTransferTest() {
@@ -44,7 +44,7 @@ public class TransfersApiTest {
     /**
      * 取引（振替）の削除する
      *
-     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の取引（振替）を削除する&lt;/p&gt;
+     * 
      */
     @Test
     public void destroyTransferTest() {
@@ -57,7 +57,7 @@ public class TransfersApiTest {
     /**
      * 取引（振替）の取得
      *
-     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の取引（振替）を取得する&lt;/p&gt;  &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;定義&lt;/h2&gt;  &lt;ul&gt; &lt;li&gt; &lt;p&gt;amount : 振替金額&lt;/p&gt; &lt;/li&gt;  &lt;li&gt; &lt;p&gt;from_walletable_type, to_walletable_type&lt;/p&gt;  &lt;ul&gt; &lt;li&gt;bank_account : 銀行口座&lt;/li&gt;  &lt;li&gt;credit_card : クレジットカード&lt;/li&gt;  &lt;li&gt;wallet : その他の決済口座&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;/ul&gt;
+     * 
      */
     @Test
     public void getTransferTest() {
@@ -70,7 +70,7 @@ public class TransfersApiTest {
     /**
      * 取引（振替）一覧の取得
      *
-     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の取引（振替）一覧を取得する&lt;/p&gt;  &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;定義&lt;/h2&gt;  &lt;ul&gt; &lt;li&gt; &lt;p&gt;amount : 振替金額&lt;/p&gt; &lt;/li&gt;  &lt;li&gt; &lt;p&gt;from_walletable_type, to_walletable_type&lt;/p&gt;  &lt;ul&gt; &lt;li&gt;bank_account : 銀行口座&lt;/li&gt;  &lt;li&gt;credit_card : クレジットカード&lt;/li&gt;  &lt;li&gt;wallet : その他の決済口座&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;/ul&gt;
+     * 
      */
     @Test
     public void getTransfersTest() {
@@ -79,14 +79,14 @@ public class TransfersApiTest {
         String endDate = null;
         Long offset = null;
         Integer limit = null;
-        // InlineResponse20014 response = api.getTransfers(companyId, startDate, endDate, offset, limit);
+        // InlineResponse20011 response = api.getTransfers(companyId, startDate, endDate, offset, limit);
 
         // TODO: test validations
     }
     /**
      * 取引（振替）の更新
      *
-     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の取引（振替）を更新する&lt;/p&gt;  &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;定義&lt;/h2&gt;  &lt;ul&gt; &lt;li&gt; &lt;p&gt;amount : 振替金額&lt;/p&gt; &lt;/li&gt;  &lt;li&gt; &lt;p&gt;from_walletable_type, to_walletable_type&lt;/p&gt;  &lt;ul&gt; &lt;li&gt;bank_account : 銀行口座&lt;/li&gt;  &lt;li&gt;credit_card : クレジットカード&lt;/li&gt;  &lt;li&gt;wallet : その他の決済口座&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;/ul&gt;
+     * 
      */
     @Test
     public void updateTransferTest() {

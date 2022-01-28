@@ -13,8 +13,8 @@ import okhttp3.MultipartBody;
 import jp.co.freee.accounting.models.BadRequestError;
 import jp.co.freee.accounting.models.BadRequestNotFoundError;
 import jp.co.freee.accounting.models.ForbiddenError;
-import jp.co.freee.accounting.models.InlineResponse20015;
-import jp.co.freee.accounting.models.InlineResponse20016;
+import jp.co.freee.accounting.models.InlineResponse20012;
+import jp.co.freee.accounting.models.InlineResponse20013;
 import jp.co.freee.accounting.models.InternalServerError;
 import jp.co.freee.accounting.models.MeResponse;
 import jp.co.freee.accounting.models.UnauthorizedError;
@@ -29,41 +29,42 @@ import java.util.Map;
 public interface UsersApi {
   /**
    * 事業所に所属するユーザー一覧の取得
-   *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;事業所に所属するユーザーの一覧を取得する&lt;/p&gt;
+   * 
    * @param companyId 事業所ID (required)
    * @param limit 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)
-   * @return Observable&lt;InlineResponse20015&gt;
+   * @return Observable&lt;InlineResponse20012&gt;
    */
   @GET("api/1/users")
-  Observable<InlineResponse20015> getUsers(
+  Observable<InlineResponse20012> getUsers(
     @retrofit2.http.Query("company_id") Integer companyId, @retrofit2.http.Query("limit") Integer limit
   );
 
   /**
    * ログインユーザーの権限の取得
-   *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ユーザーの権限情報を取得する&lt;/p&gt;
+   * 
    * @param companyId 事業所ID (required)
-   * @return Observable&lt;InlineResponse20016&gt;
+   * @return Observable&lt;InlineResponse20013&gt;
    */
   @GET("api/1/users/capabilities")
-  Observable<InlineResponse20016> getUsersCapabilities(
+  Observable<InlineResponse20013> getUsersCapabilities(
     @retrofit2.http.Query("company_id") Integer companyId
   );
 
   /**
    * ログインユーザー情報の取得
-   *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ユーザーの情報を取得する&lt;/p&gt;
+   * 
    * @param companies 取得情報にユーザーが所属する事業所一覧を含める (optional)
+   * @param advisor 取得情報に事業がアドバイザー事象所の場合は事業所毎の一意なプロフィールIDを含める (optional)
    * @return Observable&lt;MeResponse&gt;
    */
   @GET("api/1/users/me")
   Observable<MeResponse> getUsersMe(
-    @retrofit2.http.Query("companies") Boolean companies
+    @retrofit2.http.Query("companies") Boolean companies, @retrofit2.http.Query("advisor") Boolean advisor
   );
 
   /**
    * ユーザー情報の更新
-   *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;ユーザー情報を更新する&lt;/p&gt;
+   * 
    * @param userParams ユーザー情報の更新 (optional)
    * @return Observable&lt;UserResponse&gt;
    */

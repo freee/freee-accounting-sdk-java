@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **id** | **Integer** | 経費科目ID | 
 **lineDescription** | **String** | 内容の補足 |  [optional]
 **name** | **String** | 経費科目名 | 
+**requiredReceipt** | **Boolean** | 添付ファイルの必須/任意 |  [optional]
 **taxCode** | **Integer** | 税区分コード |  [optional]
 **taxName** | **String** | 税区分名 | 
 

@@ -13,7 +13,8 @@ Name | Type | Description | Notes
 **endDate** | **String** | 取得終了日 (yyyy-mm-dd) | 
 **id** | **Integer** | 受け付けID | 
 **startDate** | **String** | 取得開始日 (yyyy-mm-dd) | 
-**status** | [**StatusEnum**](#StatusEnum) | 事業所ID | 
+**status** | [**StatusEnum**](#StatusEnum) | ダウンロードリクエストのステータス | 
+**visibleIds** | [**List&lt;VisibleIdsEnum&gt;**](#List&lt;VisibleIdsEnum&gt;) |  |  [optional]
 **visibleTags** | [**List&lt;VisibleTagsEnum&gt;**](#List&lt;VisibleTagsEnum&gt;) |  |  [optional]
 
 
@@ -36,6 +37,16 @@ ENQUEUED | &quot;enqueued&quot;
 WORKING | &quot;working&quot;
 UPLOADED | &quot;uploaded&quot;
 FAILED | &quot;failed&quot;
+
+
+
+## Enum: List&lt;VisibleIdsEnum&gt;
+
+Name | Value
+---- | -----
+DEAL_ID | &quot;deal_id&quot;
+TRANSFER_ID | &quot;transfer_id&quot;
+MANUAL_JOURNAL_ID | &quot;manual_journal_id&quot;
 
 
 

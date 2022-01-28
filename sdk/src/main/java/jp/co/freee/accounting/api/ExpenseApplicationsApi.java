@@ -12,6 +12,7 @@ import okhttp3.MultipartBody;
 
 import jp.co.freee.accounting.models.BadRequestError;
 import jp.co.freee.accounting.models.BadRequestNotFoundError;
+import jp.co.freee.accounting.models.ExpenseApplicationActionCreateParams;
 import jp.co.freee.accounting.models.ExpenseApplicationCreateParams;
 import jp.co.freee.accounting.models.ExpenseApplicationResponse;
 import jp.co.freee.accounting.models.ExpenseApplicationUpdateParams;
@@ -28,7 +29,7 @@ import java.util.Map;
 public interface ExpenseApplicationsApi {
   /**
    * 経費申請の作成
-   *  &lt;h2 id&#x3D;\&quot;_1\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の経費申請を作成する&lt;/p&gt;  &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;注意点&lt;/h2&gt; &lt;ul&gt;   &lt;li&gt;本APIでは、経費申請の下書きを作成することができます。申請作業はWebから行ってください。&lt;/li&gt;   &lt;li&gt;現在、申請経路はWeb上からのみ入力できます。Web上での申請時に指定してください。&lt;/li&gt;   &lt;li&gt;申請時には、申請タイトル(title)に加え、申請日(issue_date)、項目行については金額(amount)、日付(transaction_date)、内容(description)が必須項目となります。申請時の業務効率化のため、API入力をお勧めします。&lt;/li&gt;   &lt;li&gt;個人アカウントの場合は、プレミアムプランでご利用できます。&lt;/li&gt;   &lt;li&gt;法人アカウントの場合は、ベーシックプラン、プロフェッショナルプラン、エンタープライズプランでご利用できます。&lt;/li&gt; &lt;/ul&gt;
+   * 
    * @param expenseApplicationCreateParams 経費申請の作成 (optional)
    * @return Observable&lt;ExpenseApplicationResponse&gt;
    */
@@ -42,8 +43,8 @@ public interface ExpenseApplicationsApi {
 
   /**
    * 経費申請の削除
-   *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の経費申請を削除する&lt;/p&gt;  &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;注意点&lt;/h2&gt; &lt;ul&gt;   &lt;li&gt;個人アカウントの場合は、プレミアムプランでご利用できます。&lt;/li&gt;   &lt;li&gt;法人アカウントの場合は、ベーシックプラン、プロフェッショナルプラン、エンタープライズプランでご利用できます。&lt;/li&gt; &lt;/ul&gt;
-   * @param id  (required)
+   * 
+   * @param id 経費申請ID (required)
    * @param companyId 事業所ID (required)
    * @return Completable
    */
@@ -68,19 +69,31 @@ public interface ExpenseApplicationsApi {
    * 経費申請一覧の取得
    * 
    * @param companyId 事業所ID (required)
+   * @param status 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し)、 取引ステータス(unsettled:清算待ち, settled:精算済み) (optional)
+   * @param payrollAttached true:給与連携あり、false:給与連携なし、未指定時:絞り込みなし (optional)
+   * @param startTransactionDate 発生日(経費申請項目の日付)で絞込：開始日(yyyy-mm-dd) (optional)
+   * @param endTransactionDate 発生日(経費申請項目の日付)で絞込：終了日(yyyy-mm-dd) (optional)
+   * @param applicationNumber 申請No. (optional)
+   * @param title 申請タイトル (optional)
+   * @param startIssueDate 申請日で絞込：開始日(yyyy-mm-dd) (optional)
+   * @param endIssueDate 申請日で絞込：終了日(yyyy-mm-dd) (optional)
+   * @param applicantId 申請者のユーザーID (optional)
+   * @param approverId 承認者のユーザーID (optional)
+   * @param minAmount 金額で絞込 (下限金額) (optional)
+   * @param maxAmount 金額で絞込 (上限金額) (optional)
    * @param offset 取得レコードのオフセット (デフォルト: 0) (optional)
    * @param limit 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) (optional)
    * @return Observable&lt;ExpenseApplicationsIndexResponse&gt;
    */
   @GET("api/1/expense_applications")
   Observable<ExpenseApplicationsIndexResponse> getExpenseApplications(
-    @retrofit2.http.Query("company_id") Integer companyId, @retrofit2.http.Query("offset") Long offset, @retrofit2.http.Query("limit") Integer limit
+    @retrofit2.http.Query("company_id") Integer companyId, @retrofit2.http.Query("status") String status, @retrofit2.http.Query("payroll_attached") Boolean payrollAttached, @retrofit2.http.Query("start_transaction_date") String startTransactionDate, @retrofit2.http.Query("end_transaction_date") String endTransactionDate, @retrofit2.http.Query("application_number") Integer applicationNumber, @retrofit2.http.Query("title") String title, @retrofit2.http.Query("start_issue_date") String startIssueDate, @retrofit2.http.Query("end_issue_date") String endIssueDate, @retrofit2.http.Query("applicant_id") Integer applicantId, @retrofit2.http.Query("approver_id") Integer approverId, @retrofit2.http.Query("min_amount") Integer minAmount, @retrofit2.http.Query("max_amount") Integer maxAmount, @retrofit2.http.Query("offset") Long offset, @retrofit2.http.Query("limit") Integer limit
   );
 
   /**
    * 経費申請の更新
-   *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の経費申請を更新する&lt;/p&gt;  &lt;h2 id&#x3D;\&quot;_2\&quot;&gt;注意点&lt;/h2&gt; &lt;ul&gt;   &lt;li&gt;本APIでは、経費申請の下書きを更新することができます。申請作業はWebから行ってください。&lt;/li&gt;   &lt;li&gt;現在、申請経路はWeb上からのみ入力できます。Web上での申請時に指定してください。&lt;/li&gt;   &lt;li&gt;申請時には、申請タイトル(title)に加え、申請日(issue_date)、項目行については金額(amount)、日付(transaction_date)、内容(description)が必須項目となります。申請時の業務効率化のため、API入力をお勧めします。&lt;/li&gt;   &lt;li&gt;個人アカウントの場合は、プレミアムプランでご利用できます。&lt;/li&gt;   &lt;li&gt;法人アカウントの場合は、ベーシックプラン、プロフェッショナルプラン、エンタープライズプランでご利用できます。&lt;/li&gt; &lt;/ul&gt;
-   * @param id  (required)
+   * 
+   * @param id 経費申請ID (required)
    * @param expenseApplicationUpdateParams 経費申請の更新 (optional)
    * @return Observable&lt;ExpenseApplicationResponse&gt;
    */
@@ -90,6 +103,21 @@ public interface ExpenseApplicationsApi {
   @PUT("api/1/expense_applications/{id}")
   Observable<ExpenseApplicationResponse> updateExpenseApplication(
     @retrofit2.http.Path("id") Integer id, @retrofit2.http.Body ExpenseApplicationUpdateParams expenseApplicationUpdateParams
+  );
+
+  /**
+   * 経費申請の承認操作
+   * 
+   * @param id 経費申請ID (required)
+   * @param expenseApplicationActionCreateParams 経費申請の承認操作 (required)
+   * @return Observable&lt;ExpenseApplicationResponse&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("api/1/expense_applications/{id}/actions")
+  Observable<ExpenseApplicationResponse> updateExpenseApplicationAction(
+    @retrofit2.http.Path("id") Integer id, @retrofit2.http.Body ExpenseApplicationActionCreateParams expenseApplicationActionCreateParams
   );
 
 }

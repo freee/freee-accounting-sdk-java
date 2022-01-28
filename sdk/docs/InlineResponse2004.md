@@ -7,7 +7,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**invoices** | [**List&lt;Invoice&gt;**](Invoice.md) |  | 
+**manualJournals** | [**List&lt;ManualJournal&gt;**](ManualJournal.md) |  | 
 
 
 

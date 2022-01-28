@@ -6,7 +6,7 @@ import jp.co.freee.accounting.models.BadRequestNotFoundError;
 import jp.co.freee.accounting.models.ExpenseApplicationLineTemplateParams;
 import jp.co.freee.accounting.models.ExpenseApplicationLineTemplateResponse;
 import jp.co.freee.accounting.models.ForbiddenError;
-import jp.co.freee.accounting.models.InlineResponse2003;
+import jp.co.freee.accounting.models.InlineResponse2002;
 import jp.co.freee.accounting.models.InternalServerError;
 import jp.co.freee.accounting.models.UnauthorizedError;
 import org.junit.Before;
@@ -70,14 +70,14 @@ public class ExpenseApplicationLineTemplatesApiTest {
     /**
      * 経費科目一覧の取得
      *
-     *  &lt;h2 id&#x3D;\&quot;\&quot;&gt;概要&lt;/h2&gt;  &lt;p&gt;指定した事業所の経費科目一覧を取得する&lt;/p&gt;
+     * 
      */
     @Test
     public void getExpenseApplicationLineTemplatesTest() {
         Integer companyId = null;
         Long offset = null;
         Integer limit = null;
-        // InlineResponse2003 response = api.getExpenseApplicationLineTemplates(companyId, offset, limit);
+        // InlineResponse2002 response = api.getExpenseApplicationLineTemplates(companyId, offset, limit);
 
         // TODO: test validations
     }

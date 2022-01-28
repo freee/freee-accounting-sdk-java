@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **createdAt** | **String** | 作成日時（ISO8601形式） | 
 **description** | **String** | メモ |  [optional]
-**fileSrc** | **String** | ファイルのダウンロードURL（freeeにログインした状態でのみ閲覧可能です。） | 
-**id** | **Integer** | 証憑ID | 
+**fileSrc** | **String** | ファイルのダウンロードURL（freeeにログインした状態でのみ閲覧可能です。） &lt;br&gt; &lt;br&gt; file_srcは廃止予定の属性になります。&lt;br&gt; file_srcに替わり、証憑ファイルのダウンロード APIをご利用ください。&lt;br&gt; 証憑ファイルのダウンロードAPIを利用することで、以下のようになります。 &lt;ul&gt;   &lt;li&gt;アプリケーション利用者はfreee APIアプリケーションにログインしていれば、証憑ダウンロード毎にfreeeに改めてログインすることなくファイルが参照できるようになります。&lt;/li&gt; &lt;/ul&gt; | 
+**id** | **Integer** | 証憑ファイルID | 
 **issueDate** | **String** | 発生日 |  [optional]
 **mimeType** | **String** | MIMEタイプ | 
 **origin** | [**OriginEnum**](#OriginEnum) | アップロード元種別 | 

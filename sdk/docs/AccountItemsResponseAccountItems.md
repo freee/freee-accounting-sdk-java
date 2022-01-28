@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **name** | **String** | 勘定科目名 (30文字以内) | 
 **shortcut** | **String** | ショートカット1 (20文字以内) |  [optional]
 **shortcutNum** | **String** | ショートカット2(勘定科目コード) (20文字以内) |  [optional]
+**taxCode** | **Integer** | 税区分コード | 
 **walletableId** | **Integer** | 口座ID | 
 
 
