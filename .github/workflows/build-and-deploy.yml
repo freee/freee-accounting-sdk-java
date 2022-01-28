@@ -2,13 +2,7 @@ name: Build and deploy
 
 on:
   pull_request:
-    branches:
-      - master
-    paths-ignore:
-      - '.github/**'
-  release:
-    types:
-      - released
+    types: [opened]
 
 env:
   JAVA_VERSION: '1.8'
@@ -34,30 +28,30 @@ jobs:
         mvn clean package --batch-mode --no-transfer-progress
       working-directory: ${{ env.WORKING_DIR }}
 
-  deploy:
-    needs: build
-    if: ${{ github.event_name == 'release' }}
-    runs-on: ubuntu-latest
+  # deploy:
+  #   needs: build
+  #   if: ${{ github.event_name == 'release' }}
+  #   runs-on: ubuntu-latest
 
-    steps:
-    - uses: actions/checkout@v2
-    - name: Setup JDK
-      uses: actions/setup-java@v1
-      with:
-        java-version: ${{ env.JAVA_VERSION }}
-        java-package: ${{ env.JAVA_PACKAGE }}
-        architecture: ${{ env.JAVA_ARCHITECTURE }}
-        server-id: ossrh
-        server-username: MAVEN_USERNAME
-        server-password: MAVEN_USER_PASSWORD
-        gpg-private-key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
-        gpg-passphrase: MAVEN_GPG_PASSPHRASE
+  #   steps:
+  #   - uses: actions/checkout@v2
+  #   - name: Setup JDK
+  #     uses: actions/setup-java@v1
+  #     with:
+  #       java-version: ${{ env.JAVA_VERSION }}
+  #       java-package: ${{ env.JAVA_PACKAGE }}
+  #       architecture: ${{ env.JAVA_ARCHITECTURE }}
+  #       server-id: ossrh
+  #       server-username: MAVEN_USERNAME
+  #       server-password: MAVEN_USER_PASSWORD
+  #       gpg-private-key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
+  #       gpg-passphrase: MAVEN_GPG_PASSPHRASE
 
-    - name: Deploy
-      run: |
-        mvn clean deploy --batch-mode --no-transfer-progress -DperformRelease=true -DskipTests=true -Dchangelist= -Drevision=${{ github.event.release.tag_name }}
-      working-directory: ${{ env.WORKING_DIR }}
-      env:
-        MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}
-        MAVEN_USER_PASSWORD: ${{ secrets.MAVEN_USER_PASSWORD }}
-        MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
+  #   - name: Deploy
+  #     run: |
+  #       mvn clean deploy --batch-mode --no-transfer-progress -DperformRelease=true -DskipTests=true -Dchangelist= -Drevision=${{ github.event.release.tag_name }}
+  #     working-directory: ${{ env.WORKING_DIR }}
+  #     env:
+  #       MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}
+  #       MAVEN_USER_PASSWORD: ${{ secrets.MAVEN_USER_PASSWORD }}
+  #       MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
