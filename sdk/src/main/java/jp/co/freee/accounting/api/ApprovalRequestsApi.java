@@ -94,7 +94,7 @@ public interface ApprovalRequestsApi {
    * 各種申請の一覧
    * 
    * @param companyId 事業所ID (required)
-   * @param status 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し) (optional)
+   * @param status 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し) 承認者指定時には無効です。 (optional)
    * @param applicationNumber 申請No. (optional)
    * @param title 申請タイトル (optional)
    * @param formId 申請フォームID (optional)
@@ -103,7 +103,7 @@ public interface ApprovalRequestsApi {
    * @param applicantId 申請者のユーザーID (optional)
    * @param minAmount 金額で絞込：以上 (optional)
    * @param maxAmount 金額で絞込：以下 (optional)
-   * @param approverId 承認者のユーザーID (optional)
+   * @param approverId 承認者のユーザーID 承認者指定時には申請ステータスが申請中のものだけが取得可能です。 (optional)
    * @param offset 取得レコードのオフセット (デフォルト: 0) (optional)
    * @param limit 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) (optional)
    * @return Observable&lt;ApprovalRequestsIndexResponse&gt;
