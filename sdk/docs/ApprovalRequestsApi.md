@@ -418,7 +418,7 @@ public class Example {
 
         ApprovalRequestsApi apiInstance = new ApprovalRequestsApi(defaultClient);
         Integer companyId = 56; // Integer | 事業所ID
-        String status = "draft"; // String | 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し)
+        String status = "draft"; // String | 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し) 承認者指定時には無効です。
         Integer applicationNumber = 2; // Integer | 申請No.
         String title = "大阪出張"; // String | 申請タイトル
         Integer formId = 56; // Integer | 申請フォームID
@@ -427,7 +427,7 @@ public class Example {
         Integer applicantId = 56; // Integer | 申請者のユーザーID
         Long minAmount = 56L; // Long | 金額で絞込：以上
         Long maxAmount = 56L; // Long | 金額で絞込：以下
-        Integer approverId = 1; // Integer | 承認者のユーザーID
+        Integer approverId = 1; // Integer | 承認者のユーザーID 承認者指定時には申請ステータスが申請中のものだけが取得可能です。
         Integer offset = 56; // Integer | 取得レコードのオフセット (デフォルト: 0)
         Integer limit = 56; // Integer | 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500)
         try {
@@ -450,7 +450,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **companyId** | **Integer**| 事業所ID |
- **status** | **String**| 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し) | [optional] [enum: draft, in_progress, approved, rejected, feedback]
+ **status** | **String**| 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し) 承認者指定時には無効です。 | [optional] [enum: draft, in_progress, approved, rejected, feedback]
  **applicationNumber** | **Integer**| 申請No. | [optional]
  **title** | **String**| 申請タイトル | [optional]
  **formId** | **Integer**| 申請フォームID | [optional]
@@ -459,7 +459,7 @@ Name | Type | Description  | Notes
  **applicantId** | **Integer**| 申請者のユーザーID | [optional]
  **minAmount** | **Long**| 金額で絞込：以上 | [optional]
  **maxAmount** | **Long**| 金額で絞込：以下 | [optional]
- **approverId** | **Integer**| 承認者のユーザーID | [optional]
+ **approverId** | **Integer**| 承認者のユーザーID 承認者指定時には申請ステータスが申請中のものだけが取得可能です。 | [optional]
  **offset** | **Integer**| 取得レコードのオフセット (デフォルト: 0) | [optional]
  **limit** | **Integer**| 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) | [optional]
 

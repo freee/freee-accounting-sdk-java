@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **minAmount** | **Integer** | 下限金額 |  [optional]
 **order** | **Integer** | 順序 |  [optional]
 **required** | **Boolean** | 必須かどうか |  [optional]
-**type** | [**TypeEnum**](#TypeEnum) | 項目種別 (title: 申請タイトル, single_line: 自由記述形式 1行, multi_line: 自由記述形式 複数行, select: プルダウン, date: 日付, amount: 金額, receipt: 添付ファイル, section: 部門ID, partner: 取引先ID, ninja_sign_document: 契約書（NINJA SIGN連携）) |  [optional]
+**type** | [**TypeEnum**](#TypeEnum) | 項目種別 (title: 申請タイトル, single_line: 自由記述形式 1行, multi_line: 自由記述形式 複数行, select: プルダウン, date: 日付, amount: 金額, receipt: 添付ファイル, section: 部門ID, partner: 取引先ID, ninja_sign_document: 契約書（freeeサイン連携）) |  [optional]
 **values** | [**List&lt;ApprovalRequestFormResponseApprovalRequestFormValues&gt;**](ApprovalRequestFormResponseApprovalRequestFormValues.md) | 選択項目 |  [optional]
 
 
