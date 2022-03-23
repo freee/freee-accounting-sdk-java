@@ -105,6 +105,14 @@ public class WalletTxnTest {
     }
 
     /**
+     * Test the property 'ruleMatched'
+     */
+    @Test
+    public void ruleMatchedTest() {
+        // TODO: test ruleMatched
+    }
+
+    /**
      * Test the property 'status'
      */
     @Test

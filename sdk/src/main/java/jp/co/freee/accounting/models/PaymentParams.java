@@ -212,7 +212,7 @@ public class PaymentParams {
    * @return fromWalletableType
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "2019-12-17", required = true, value = "口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet, プライベート資金（法人の場合は役員借入金もしくは役員借入金、個人の場合は事業主貸もしくは事業主借）: private_account_item)：payments指定時は必須")
+  @ApiModelProperty(example = "bank_account", required = true, value = "口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet, プライベート資金（法人の場合は役員借入金もしくは役員借入金、個人の場合は事業主貸もしくは事業主借）: private_account_item)：payments指定時は必須")
 
   public FromWalletableTypeEnum getFromWalletableType() {
     return fromWalletableType;

@@ -108,6 +108,10 @@ public class WalletTxn {
   @SerializedName(SERIALIZED_NAME_ID)
   private Integer id;
 
+  public static final String SERIALIZED_NAME_RULE_MATCHED = "rule_matched";
+  @SerializedName(SERIALIZED_NAME_RULE_MATCHED)
+  private Boolean ruleMatched;
+
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
   private Integer status;
@@ -362,6 +366,29 @@ public class WalletTxn {
   }
 
 
+  public WalletTxn ruleMatched(Boolean ruleMatched) {
+    
+    this.ruleMatched = ruleMatched;
+    return this;
+  }
+
+   /**
+   * 登録時に&lt;a href&#x3D;\&quot;https://support.freee.co.jp/hc/ja/articles/202848350-明細の自動登録ルールを設定する\&quot; target&#x3D;\&quot;_blank\&quot;&gt;自動登録ルールの設定&lt;/a&gt;が適用され、登録処理が実行された場合、 trueになります。〜を推測する、〜の消込をするの条件の場合は一致してもfalseになります。 
+   * @return ruleMatched
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "true", required = true, value = "登録時に<a href=\"https://support.freee.co.jp/hc/ja/articles/202848350-明細の自動登録ルールを設定する\" target=\"_blank\">自動登録ルールの設定</a>が適用され、登録処理が実行された場合、 trueになります。〜を推測する、〜の消込をするの条件の場合は一致してもfalseになります。 ")
+
+  public Boolean getRuleMatched() {
+    return ruleMatched;
+  }
+
+
+  public void setRuleMatched(Boolean ruleMatched) {
+    this.ruleMatched = ruleMatched;
+  }
+
+
   public WalletTxn status(Integer status) {
     
     this.status = status;
@@ -369,13 +396,13 @@ public class WalletTxn {
   }
 
    /**
-   * 明細のステータス（消込待ち: 1, 消込済み: 2, 無視: 3, 消込中: 4）
+   * 明細のステータス（消込待ち: 1, 消込済み: 2, 無視: 3, 消込中: 4, 対象外: 6）
    * minimum: 1
-   * maximum: 4
+   * maximum: 6
    * @return status
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "明細のステータス（消込待ち: 1, 消込済み: 2, 無視: 3, 消込中: 4）")
+  @ApiModelProperty(required = true, value = "明細のステータス（消込待ち: 1, 消込済み: 2, 無視: 3, 消込中: 4, 対象外: 6）")
 
   public Integer getStatus() {
     return status;
@@ -452,6 +479,7 @@ public class WalletTxn {
         Objects.equals(this.dueAmount, walletTxn.dueAmount) &&
         Objects.equals(this.entrySide, walletTxn.entrySide) &&
         Objects.equals(this.id, walletTxn.id) &&
+        Objects.equals(this.ruleMatched, walletTxn.ruleMatched) &&
         Objects.equals(this.status, walletTxn.status) &&
         Objects.equals(this.walletableId, walletTxn.walletableId) &&
         Objects.equals(this.walletableType, walletTxn.walletableType);
@@ -459,7 +487,7 @@ public class WalletTxn {
 
   @Override
   public int hashCode() {
-    return Objects.hash(amount, balance, companyId, date, description, dueAmount, entrySide, id, status, walletableId, walletableType);
+    return Objects.hash(amount, balance, companyId, date, description, dueAmount, entrySide, id, ruleMatched, status, walletableId, walletableType);
   }
 
   @Override
@@ -474,6 +502,7 @@ public class WalletTxn {
     sb.append("    dueAmount: ").append(toIndentedString(dueAmount)).append("\n");
     sb.append("    entrySide: ").append(toIndentedString(entrySide)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    ruleMatched: ").append(toIndentedString(ruleMatched)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    walletableId: ").append(toIndentedString(walletableId)).append("\n");
     sb.append("    walletableType: ").append(toIndentedString(walletableType)).append("\n");
