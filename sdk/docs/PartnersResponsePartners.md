@@ -24,8 +24,8 @@ Name | Type | Description | Notes
 **partnerDocSettingAttributes** | [**PartnerResponsePartnerPartnerDocSettingAttributes**](PartnerResponsePartnerPartnerDocSettingAttributes.md) |  |  [optional]
 **payerWalletableId** | **Integer** | 振込元口座ID（一括振込ファイル用）:（未設定の場合は、nullです。） |  [optional]
 **phone** | **String** | 電話番号 |  [optional]
-**shortcut1** | **String** | ショートカット1 (20文字以内) |  [optional]
-**shortcut2** | **String** | ショートカット2 (20文字以内) |  [optional]
+**shortcut1** | **String** | ショートカット1 (255文字以内) |  [optional]
+**shortcut2** | **String** | ショートカット2 (255文字以内) |  [optional]
 **transferFeeHandlingSide** | [**TransferFeeHandlingSideEnum**](#TransferFeeHandlingSideEnum) | 振込手数料負担（一括振込ファイル用）: (振込元(当方): payer, 振込先(先方): payee) |  [optional]
 **updateDate** | **String** | 更新日 (yyyy-mm-dd) | 
 

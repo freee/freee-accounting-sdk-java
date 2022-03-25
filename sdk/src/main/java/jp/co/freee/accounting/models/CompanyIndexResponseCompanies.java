@@ -56,7 +56,9 @@ public class CompanyIndexResponseCompanies {
     
     SELF_ONLY("self_only"),
     
-    READ_ONLY("read_only");
+    READ_ONLY("read_only"),
+    
+    WORKFLOW("workflow");
 
     private String value;
 

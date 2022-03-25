@@ -314,11 +314,11 @@ public class PaymentRequestUpdateParams {
   }
 
    /**
-   * 申請日 (yyyy-mm-dd)&lt;br&gt; 申請者が、下書き状態もしくは差戻し状態の支払依頼に対して指定する場合のみ有効 
+   * 申請日 (yyyy-mm-dd)&lt;br&gt; 指定しない場合は当日の日付が登録されます。&lt;br&gt; 申請者が、下書き状態もしくは差戻し状態の支払依頼に対して指定する場合のみ有効 
    * @return applicationDate
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "2019-12-17", required = true, value = "申請日 (yyyy-mm-dd)<br> 申請者が、下書き状態もしくは差戻し状態の支払依頼に対して指定する場合のみ有効 ")
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "2019-12-17", value = "申請日 (yyyy-mm-dd)<br> 指定しない場合は当日の日付が登録されます。<br> 申請者が、下書き状態もしくは差戻し状態の支払依頼に対して指定する場合のみ有効 ")
 
   public String getApplicationDate() {
     return applicationDate;

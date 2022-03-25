@@ -769,7 +769,7 @@ public class InvoiceIndexResponseInvoices {
    * @return dealId
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "取引ID (invoice_statusがsubmitted, unsubmittedの時IDが表示されます)")
+  @ApiModelProperty(example = "1", value = "取引ID (invoice_statusがsubmitted, unsubmittedの時IDが表示されます)")
 
   public Integer getDealId() {
     return dealId;

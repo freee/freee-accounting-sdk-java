@@ -43,7 +43,7 @@ public class MeResponseUserCompanies {
   private Integer id;
 
   /**
-   * ユーザーの権限
+   * ユーザーの権限 &lt;ul&gt; &lt;li&gt;admin: 管理者&lt;/li&gt; &lt;li&gt;simple_accounting: 一般&lt;/li&gt; &lt;li&gt;self_only: 取引登録のみ&lt;/li&gt; &lt;li&gt;read_only: 閲覧のみ&lt;/li&gt; &lt;li&gt;workflow: 申請・承認&lt;/li&gt; &lt;/ul&gt;
    */
   @JsonAdapter(RoleEnum.Adapter.class)
   public enum RoleEnum {
@@ -53,7 +53,9 @@ public class MeResponseUserCompanies {
     
     SELF_ONLY("self_only"),
     
-    READ_ONLY("read_only");
+    READ_ONLY("read_only"),
+    
+    WORKFLOW("workflow");
 
     private String value;
 
@@ -184,11 +186,11 @@ public class MeResponseUserCompanies {
   }
 
    /**
-   * ユーザーの権限
+   * ユーザーの権限 &lt;ul&gt; &lt;li&gt;admin: 管理者&lt;/li&gt; &lt;li&gt;simple_accounting: 一般&lt;/li&gt; &lt;li&gt;self_only: 取引登録のみ&lt;/li&gt; &lt;li&gt;read_only: 閲覧のみ&lt;/li&gt; &lt;li&gt;workflow: 申請・承認&lt;/li&gt; &lt;/ul&gt;
    * @return role
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "admin", required = true, value = "ユーザーの権限")
+  @ApiModelProperty(example = "admin", required = true, value = "ユーザーの権限 <ul> <li>admin: 管理者</li> <li>simple_accounting: 一般</li> <li>self_only: 取引登録のみ</li> <li>read_only: 閲覧のみ</li> <li>workflow: 申請・承認</li> </ul>")
 
   public RoleEnum getRole() {
     return role;
