@@ -773,7 +773,7 @@ public class InvoiceResponseInvoice {
    * @return dealId
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "取引ID (invoice_statusがsubmitted, unsubmittedの時IDが表示されます)")
+  @ApiModelProperty(example = "1", value = "取引ID (invoice_statusがsubmitted, unsubmittedの時IDが表示されます)")
 
   public Integer getDealId() {
     return dealId;
@@ -1439,7 +1439,7 @@ public class InvoiceResponseInvoice {
    * @return relatedQuotationIds
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "1", value = "関連する見積書ID(配列)<br> 下記で作成したものが該当します。  <a href=\"https://support.freee.co.jp/hc/ja/articles/203318410#1-2\" target=\"_blank\">見積書・納品書を納品書・請求書に変換する</a><br> <a href=\"https://support.freee.co.jp/hc/ja/articles/209076226\" target=\"_blank\">複数の見積書・納品書から合算請求書を作成する</a><br> ")
+  @ApiModelProperty(value = "関連する見積書ID(配列)<br> 下記で作成したものが該当します。  <a href=\"https://support.freee.co.jp/hc/ja/articles/203318410#1-2\" target=\"_blank\">見積書・納品書を納品書・請求書に変換する</a><br> <a href=\"https://support.freee.co.jp/hc/ja/articles/209076226\" target=\"_blank\">複数の見積書・納品書から合算請求書を作成する</a><br> ")
 
   public List<Integer> getRelatedQuotationIds() {
     return relatedQuotationIds;

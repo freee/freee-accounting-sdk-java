@@ -628,11 +628,11 @@ public class PartnerResponsePartner {
   }
 
    /**
-   * ショートカット1 (20文字以内)
+   * ショートカット1 (255文字以内)
    * @return shortcut1
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "ABC", value = "ショートカット1 (20文字以内)")
+  @ApiModelProperty(example = "ABC", value = "ショートカット1 (255文字以内)")
 
   public String getShortcut1() {
     return shortcut1;
@@ -651,11 +651,11 @@ public class PartnerResponsePartner {
   }
 
    /**
-   * ショートカット2 (20文字以内)
+   * ショートカット2 (255文字以内)
    * @return shortcut2
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "501", value = "ショートカット2 (20文字以内)")
+  @ApiModelProperty(example = "501", value = "ショートカット2 (255文字以内)")
 
   public String getShortcut2() {
     return shortcut2;

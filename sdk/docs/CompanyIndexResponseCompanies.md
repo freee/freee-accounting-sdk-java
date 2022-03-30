@@ -23,6 +23,7 @@ ADMIN | &quot;admin&quot;
 SIMPLE_ACCOUNTING | &quot;simple_accounting&quot;
 SELF_ONLY | &quot;self_only&quot;
 READ_ONLY | &quot;read_only&quot;
+WORKFLOW | &quot;workflow&quot;
 
 
 

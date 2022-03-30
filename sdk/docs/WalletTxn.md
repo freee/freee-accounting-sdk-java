@@ -15,7 +15,8 @@ Name | Type | Description | Notes
 **dueAmount** | **Integer** | 未決済金額 | 
 **entrySide** | [**EntrySideEnum**](#EntrySideEnum) | 入金／出金 (入金: income, 出金: expense) | 
 **id** | **Integer** | 明細ID | 
-**status** | **Integer** | 明細のステータス（消込待ち: 1, 消込済み: 2, 無視: 3, 消込中: 4） | 
+**ruleMatched** | **Boolean** | 登録時に&lt;a href&#x3D;\&quot;https://support.freee.co.jp/hc/ja/articles/202848350-明細の自動登録ルールを設定する\&quot; target&#x3D;\&quot;_blank\&quot;&gt;自動登録ルールの設定&lt;/a&gt;が適用され、登録処理が実行された場合、 trueになります。〜を推測する、〜の消込をするの条件の場合は一致してもfalseになります。  | 
+**status** | **Integer** | 明細のステータス（消込待ち: 1, 消込済み: 2, 無視: 3, 消込中: 4, 対象外: 6） | 
 **walletableId** | **Integer** | 口座ID | 
 **walletableType** | [**WalletableTypeEnum**](#WalletableTypeEnum) | 口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet) | 
 

@@ -243,11 +243,11 @@ public class ExpenseApplicationUpdateParams {
   }
 
    /**
-   * 申請日 (yyyy-mm-dd)
+   * 申請日 (yyyy-mm-dd)&lt;br&gt; 指定しない場合は当日の日付が登録されます。 
    * @return issueDate
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "2019-12-17", required = true, value = "申請日 (yyyy-mm-dd)")
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "2019-12-17", value = "申請日 (yyyy-mm-dd)<br> 指定しない場合は当日の日付が登録されます。 ")
 
   public String getIssueDate() {
     return issueDate;
