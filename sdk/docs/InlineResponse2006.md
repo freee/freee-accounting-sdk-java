@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**sections** | [**List&lt;Section&gt;**](Section.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**sections** | [**List&lt;Section&gt;**](Section.md) |  |  |
 
 
 

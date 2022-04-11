@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**expenseApplicationLineTemplates** | [**List&lt;ExpenseApplicationLineTemplate&gt;**](ExpenseApplicationLineTemplate.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**expenseApplicationLineTemplates** | [**List&lt;ExpenseApplicationLineTemplate&gt;**](ExpenseApplicationLineTemplate.md) |  |  |
 
 
 

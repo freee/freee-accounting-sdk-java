@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**banks** | [**List&lt;Bank&gt;**](Bank.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**banks** | [**List&lt;Bank&gt;**](Bank.md) |  |  |
 
 
 

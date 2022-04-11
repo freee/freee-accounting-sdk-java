@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**quotation** | [**QuotationResponseQuotation**](QuotationResponseQuotation.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**quotation** | [**QuotationResponseQuotation**](QuotationResponseQuotation.md) |  |  |
 
 
 

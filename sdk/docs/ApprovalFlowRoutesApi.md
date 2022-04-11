@@ -2,10 +2,10 @@
 
 All URIs are relative to *https://api.freee.co.jp*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getApprovalFlowRoute**](ApprovalFlowRoutesApi.md#getApprovalFlowRoute) | **GET** api/1/approval_flow_routes/{id} | 申請経路の取得
-[**getApprovalFlowRoutes**](ApprovalFlowRoutesApi.md#getApprovalFlowRoutes) | **GET** api/1/approval_flow_routes | 申請経路一覧の取得
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**getApprovalFlowRoute**](ApprovalFlowRoutesApi.md#getApprovalFlowRoute) | **GET** api/1/approval_flow_routes/{id} | 申請経路の取得 |
+| [**getApprovalFlowRoutes**](ApprovalFlowRoutesApi.md#getApprovalFlowRoutes) | **GET** api/1/approval_flow_routes | 申請経路一覧の取得 |
 
 
 
@@ -14,6 +14,8 @@ Method | HTTP request | Description
 > ApprovalFlowRouteResponse getApprovalFlowRoute(id, companyId)
 
 申請経路の取得
+
+
 
 ### Example
 
@@ -55,10 +57,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 経路申請ID |
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 経路申請ID | |
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -90,6 +92,8 @@ Name | Type | Description  | Notes
 > ApprovalFlowRoutesIndexResponse getApprovalFlowRoutes(companyId, includedUserId, usage, requestFormId)
 
 申請経路一覧の取得
+
+
 
 ### Example
 
@@ -133,12 +137,12 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **companyId** | **Integer**| 事業所ID |
- **includedUserId** | **Integer**| 経路に含まれるユーザーのユーザーID | [optional]
- **usage** | **String**| 申請種別（各申請種別が使用できる申請経路に絞り込めます。例えば、ApprovalRequest を指定すると、各種申請が使用できる申請経路に絞り込めます。） * &#x60;TxnApproval&#x60; - 仕訳承認 * &#x60;ExpenseApplication&#x60; - 経費精算 * &#x60;PaymentRequest&#x60; - 支払依頼 * &#x60;ApprovalRequest&#x60; - 各種申請 * &#x60;DocApproval&#x60; - 請求書等 (見積書・納品書・請求書・発注書) | [optional] [enum: TxnApproval, ExpenseApplication, PaymentRequest, ApprovalRequest, DocApproval]
- **requestFormId** | **Integer**| 申請フォームID request_form_id指定時はusage条件をApprovalRequestに指定してください。指定しない場合無効になります。 | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **companyId** | **Integer**| 事業所ID | |
+| **includedUserId** | **Integer**| 経路に含まれるユーザーのユーザーID | [optional] |
+| **usage** | **String**| 申請種別（各申請種別が使用できる申請経路に絞り込めます。例えば、ApprovalRequest を指定すると、各種申請が使用できる申請経路に絞り込めます。） * &#x60;TxnApproval&#x60; - 仕訳承認 * &#x60;ExpenseApplication&#x60; - 経費精算 * &#x60;PaymentRequest&#x60; - 支払依頼 * &#x60;ApprovalRequest&#x60; - 各種申請 * &#x60;DocApproval&#x60; - 請求書等 (見積書・納品書・請求書・発注書) | [optional] [enum: TxnApproval, ExpenseApplication, PaymentRequest, ApprovalRequest, DocApproval] |
+| **requestFormId** | **Integer**| 申請フォームID request_form_id指定時はusage条件をApprovalRequestに指定してください。指定しない場合無効になります。 | [optional] |
 
 ### Return type
 

@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**partner** | [**PartnerResponsePartner**](PartnerResponsePartner.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**partner** | [**PartnerResponsePartner**](PartnerResponsePartner.md) |  |  |
 
 
 

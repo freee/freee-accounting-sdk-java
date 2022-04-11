@@ -2,13 +2,13 @@
 
 All URIs are relative to *https://api.freee.co.jp*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createSection**](SectionsApi.md#createSection) | **POST** api/1/sections | 部門の作成
-[**destroySection**](SectionsApi.md#destroySection) | **DELETE** api/1/sections/{id} | 部門の削除
-[**getSection**](SectionsApi.md#getSection) | **GET** api/1/sections/{id} | 
-[**getSections**](SectionsApi.md#getSections) | **GET** api/1/sections | 部門一覧の取得
-[**updateSection**](SectionsApi.md#updateSection) | **PUT** api/1/sections/{id} | 部門の更新
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**createSection**](SectionsApi.md#createSection) | **POST** api/1/sections | 部門の作成 |
+| [**destroySection**](SectionsApi.md#destroySection) | **DELETE** api/1/sections/{id} | 部門の削除 |
+| [**getSection**](SectionsApi.md#getSection) | **GET** api/1/sections/{id} |  |
+| [**getSections**](SectionsApi.md#getSections) | **GET** api/1/sections | 部門一覧の取得 |
+| [**updateSection**](SectionsApi.md#updateSection) | **PUT** api/1/sections/{id} | 部門の更新 |
 
 
 
@@ -17,6 +17,8 @@ Method | HTTP request | Description
 > SectionResponse createSection(sectionParams)
 
 部門の作成
+
+
 
 ### Example
 
@@ -57,9 +59,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **sectionParams** | [**SectionParams**](SectionParams.md)| 部門の作成 | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **sectionParams** | [**SectionParams**](SectionParams.md)| 部門の作成 | [optional] |
 
 ### Return type
 
@@ -90,6 +92,8 @@ Name | Type | Description  | Notes
 > destroySection(id, companyId)
 
 部門の削除
+
+
 
 ### Example
 
@@ -130,10 +134,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  |
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**|  | |
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -162,6 +166,8 @@ null (empty response body)
 ## getSection
 
 > SectionResponse getSection(id, companyId)
+
+
 
 
 
@@ -205,10 +211,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 部門ID |
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 部門ID | |
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -240,6 +246,8 @@ Name | Type | Description  | Notes
 > InlineResponse2006 getSections(companyId)
 
 部門一覧の取得
+
+
 
 ### Example
 
@@ -280,9 +288,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -313,6 +321,8 @@ Name | Type | Description  | Notes
 > SectionResponse updateSection(id, sectionParams)
 
 部門の更新
+
+
 
 ### Example
 
@@ -354,10 +364,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  |
- **sectionParams** | [**SectionParams**](SectionParams.md)| 部門の更新 | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**|  | |
+| **sectionParams** | [**SectionParams**](SectionParams.md)| 部門の更新 | [optional] |
 
 ### Return type
 

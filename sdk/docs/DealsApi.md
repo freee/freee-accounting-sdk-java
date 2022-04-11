@@ -2,13 +2,13 @@
 
 All URIs are relative to *https://api.freee.co.jp*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createDeal**](DealsApi.md#createDeal) | **POST** api/1/deals | 取引（収入／支出）の作成
-[**destroyDeal**](DealsApi.md#destroyDeal) | **DELETE** api/1/deals/{id} | 取引（収入／支出）の削除
-[**getDeal**](DealsApi.md#getDeal) | **GET** api/1/deals/{id} | 取引（収入／支出）の取得
-[**getDeals**](DealsApi.md#getDeals) | **GET** api/1/deals | 取引（収入／支出）一覧の取得
-[**updateDeal**](DealsApi.md#updateDeal) | **PUT** api/1/deals/{id} | 取引（収入／支出）の更新
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**createDeal**](DealsApi.md#createDeal) | **POST** api/1/deals | 取引（収入／支出）の作成 |
+| [**destroyDeal**](DealsApi.md#destroyDeal) | **DELETE** api/1/deals/{id} | 取引（収入／支出）の削除 |
+| [**getDeal**](DealsApi.md#getDeal) | **GET** api/1/deals/{id} | 取引（収入／支出）の取得 |
+| [**getDeals**](DealsApi.md#getDeals) | **GET** api/1/deals | 取引（収入／支出）一覧の取得 |
+| [**updateDeal**](DealsApi.md#updateDeal) | **PUT** api/1/deals/{id} | 取引（収入／支出）の更新 |
 
 
 
@@ -17,6 +17,8 @@ Method | HTTP request | Description
 > DealCreateResponse createDeal(dealCreateParams)
 
 取引（収入／支出）の作成
+
+
 
 ### Example
 
@@ -57,9 +59,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **dealCreateParams** | [**DealCreateParams**](DealCreateParams.md)| 取引（収入／支出）の作成 | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **dealCreateParams** | [**DealCreateParams**](DealCreateParams.md)| 取引（収入／支出）の作成 | [optional] |
 
 ### Return type
 
@@ -91,6 +93,8 @@ Name | Type | Description  | Notes
 > destroyDeal(id, companyId)
 
 取引（収入／支出）の削除
+
+
 
 ### Example
 
@@ -131,10 +135,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 取引ID |
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 取引ID | |
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -166,6 +170,8 @@ null (empty response body)
 > DealResponse getDeal(id, companyId, accruals)
 
 取引（収入／支出）の取得
+
+
 
 ### Example
 
@@ -208,11 +214,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  |
- **companyId** | **Integer**| 事業所ID |
- **accruals** | **String**| 取引の債権債務行の表示（without: 表示しない(デフォルト), with: 表示する） | [optional] [enum: without, with]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**|  | |
+| **companyId** | **Integer**| 事業所ID | |
+| **accruals** | **String**| 取引の債権債務行の表示（without: 表示しない(デフォルト), with: 表示する） | [optional] [enum: without, with] |
 
 ### Return type
 
@@ -244,6 +250,8 @@ Name | Type | Description  | Notes
 > InlineResponse2001 getDeals(companyId, partnerId, accountItemId, partnerCode, status, type, startIssueDate, endIssueDate, startDueDate, endDueDate, startRenewDate, endRenewDate, offset, limit, registeredFrom, accruals)
 
 取引（収入／支出）一覧の取得
+
+
 
 ### Example
 
@@ -299,24 +307,24 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **companyId** | **Integer**| 事業所ID |
- **partnerId** | **Integer**| 取引先IDで絞込 | [optional]
- **accountItemId** | **Integer**| 勘定科目IDで絞込 | [optional]
- **partnerCode** | **String**| 取引先コードで絞込 | [optional]
- **status** | **String**| 決済状況で絞込 (未決済: unsettled, 完了: settled) | [optional] [enum: unsettled, settled]
- **type** | **String**| 収支区分 (収入: income, 支出: expense) | [optional] [enum: income, expense]
- **startIssueDate** | **String**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
- **endIssueDate** | **String**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
- **startDueDate** | **String**| 支払期日で絞込：開始日(yyyy-mm-dd) | [optional]
- **endDueDate** | **String**| 支払期日で絞込：終了日(yyyy-mm-dd) | [optional]
- **startRenewDate** | **String**| +更新日で絞込：開始日(yyyy-mm-dd) | [optional]
- **endRenewDate** | **String**| +更新日で絞込：終了日(yyyy-mm-dd) | [optional]
- **offset** | **Long**| 取得レコードのオフセット (デフォルト: 0) | [optional]
- **limit** | **Integer**| 取得レコードの件数 (デフォルト: 20, 最大: 100)  | [optional]
- **registeredFrom** | **String**| 取引登録元アプリで絞込（me: 本APIを叩くアプリ自身から登録した取引のみ） | [optional] [enum: me]
- **accruals** | **String**| 取引の債権債務行の表示（without: 表示しない(デフォルト), with: 表示する） | [optional] [enum: without, with]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **companyId** | **Integer**| 事業所ID | |
+| **partnerId** | **Integer**| 取引先IDで絞込 | [optional] |
+| **accountItemId** | **Integer**| 勘定科目IDで絞込 | [optional] |
+| **partnerCode** | **String**| 取引先コードで絞込 | [optional] |
+| **status** | **String**| 決済状況で絞込 (未決済: unsettled, 完了: settled) | [optional] [enum: unsettled, settled] |
+| **type** | **String**| 収支区分 (収入: income, 支出: expense) | [optional] [enum: income, expense] |
+| **startIssueDate** | **String**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional] |
+| **endIssueDate** | **String**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional] |
+| **startDueDate** | **String**| 支払期日で絞込：開始日(yyyy-mm-dd) | [optional] |
+| **endDueDate** | **String**| 支払期日で絞込：終了日(yyyy-mm-dd) | [optional] |
+| **startRenewDate** | **String**| +更新日で絞込：開始日(yyyy-mm-dd) | [optional] |
+| **endRenewDate** | **String**| +更新日で絞込：終了日(yyyy-mm-dd) | [optional] |
+| **offset** | **Long**| 取得レコードのオフセット (デフォルト: 0) | [optional] |
+| **limit** | **Integer**| 取得レコードの件数 (デフォルト: 20, 最大: 100)  | [optional] |
+| **registeredFrom** | **String**| 取引登録元アプリで絞込（me: 本APIを叩くアプリ自身から登録した取引のみ） | [optional] [enum: me] |
+| **accruals** | **String**| 取引の債権債務行の表示（without: 表示しない(デフォルト), with: 表示する） | [optional] [enum: without, with] |
 
 ### Return type
 
@@ -348,6 +356,8 @@ Name | Type | Description  | Notes
 > DealResponse updateDeal(id, dealUpdateParams)
 
 取引（収入／支出）の更新
+
+
 
 ### Example
 
@@ -389,10 +399,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 取引ID |
- **dealUpdateParams** | [**DealUpdateParams**](DealUpdateParams.md)| 取引（収入／支出）の更新 | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 取引ID | |
+| **dealUpdateParams** | [**DealUpdateParams**](DealUpdateParams.md)| 取引（収入／支出）の更新 | [optional] |
 
 ### Return type
 

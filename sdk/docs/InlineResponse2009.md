@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**taxes** | [**List&lt;Tax&gt;**](Tax.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**taxes** | [**List&lt;Tax&gt;**](Tax.md) |  |  |
 
 
 

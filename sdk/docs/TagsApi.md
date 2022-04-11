@@ -2,13 +2,13 @@
 
 All URIs are relative to *https://api.freee.co.jp*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createTag**](TagsApi.md#createTag) | **POST** api/1/tags | メモタグの作成
-[**destroyTag**](TagsApi.md#destroyTag) | **DELETE** api/1/tags/{id} | メモタグの削除
-[**getTag**](TagsApi.md#getTag) | **GET** api/1/tags/{id} | メモタグの詳細情報の取得
-[**getTags**](TagsApi.md#getTags) | **GET** api/1/tags | メモタグ一覧の取得
-[**updateTag**](TagsApi.md#updateTag) | **PUT** api/1/tags/{id} | メモタグの更新
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**createTag**](TagsApi.md#createTag) | **POST** api/1/tags | メモタグの作成 |
+| [**destroyTag**](TagsApi.md#destroyTag) | **DELETE** api/1/tags/{id} | メモタグの削除 |
+| [**getTag**](TagsApi.md#getTag) | **GET** api/1/tags/{id} | メモタグの詳細情報の取得 |
+| [**getTags**](TagsApi.md#getTags) | **GET** api/1/tags | メモタグ一覧の取得 |
+| [**updateTag**](TagsApi.md#updateTag) | **PUT** api/1/tags/{id} | メモタグの更新 |
 
 
 
@@ -17,6 +17,8 @@ Method | HTTP request | Description
 > TagResponse createTag(tagParams)
 
 メモタグの作成
+
+
 
 ### Example
 
@@ -57,9 +59,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **tagParams** | [**TagParams**](TagParams.md)| メモタグの作成 |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **tagParams** | [**TagParams**](TagParams.md)| メモタグの作成 | |
 
 ### Return type
 
@@ -90,6 +92,8 @@ Name | Type | Description  | Notes
 > destroyTag(id, companyId)
 
 メモタグの削除
+
+
 
 ### Example
 
@@ -130,10 +134,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| タグID |
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| タグID | |
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -165,6 +169,8 @@ null (empty response body)
 > TagResponse getTag(id, companyId)
 
 メモタグの詳細情報の取得
+
+
 
 ### Example
 
@@ -206,10 +212,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| タグID |
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| タグID | |
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -241,6 +247,8 @@ Name | Type | Description  | Notes
 > InlineResponse2008 getTags(companyId, startUpdateDate, endUpdateDate, offset, limit)
 
 メモタグ一覧の取得
+
+
 
 ### Example
 
@@ -285,13 +293,13 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **companyId** | **Integer**| 事業所ID |
- **startUpdateDate** | **String**| 更新日で絞り込み：開始日(yyyy-mm-dd) | [optional]
- **endUpdateDate** | **String**| 更新日で絞り込み：終了日(yyyy-mm-dd) | [optional]
- **offset** | **Integer**| 取得レコードのオフセット (デフォルト: 0) | [optional]
- **limit** | **Integer**| 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **companyId** | **Integer**| 事業所ID | |
+| **startUpdateDate** | **String**| 更新日で絞り込み：開始日(yyyy-mm-dd) | [optional] |
+| **endUpdateDate** | **String**| 更新日で絞り込み：終了日(yyyy-mm-dd) | [optional] |
+| **offset** | **Integer**| 取得レコードのオフセット (デフォルト: 0) | [optional] |
+| **limit** | **Integer**| 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) | [optional] |
 
 ### Return type
 
@@ -322,6 +330,8 @@ Name | Type | Description  | Notes
 > TagResponse updateTag(id, tagParams)
 
 メモタグの更新
+
+
 
 ### Example
 
@@ -363,10 +373,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| メモタグID |
- **tagParams** | [**TagParams**](TagParams.md)| メモタグの更新 | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| メモタグID | |
+| **tagParams** | [**TagParams**](TagParams.md)| メモタグの更新 | [optional] |
 
 ### Return type
 

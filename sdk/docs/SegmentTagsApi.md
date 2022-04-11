@@ -2,12 +2,12 @@
 
 All URIs are relative to *https://api.freee.co.jp*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createSegmentTag**](SegmentTagsApi.md#createSegmentTag) | **POST** api/1/segments/{segment_id}/tags | セグメントの作成
-[**destroySegmentsTag**](SegmentTagsApi.md#destroySegmentsTag) | **DELETE** api/1/segments/{segment_id}/tags/{id} | セグメントタグの削除
-[**getSegmentTags**](SegmentTagsApi.md#getSegmentTags) | **GET** api/1/segments/{segment_id}/tags | セグメントタグ一覧の取得
-[**updateSegmentTag**](SegmentTagsApi.md#updateSegmentTag) | **PUT** api/1/segments/{segment_id}/tags/{id} | セグメントタグの更新
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**createSegmentTag**](SegmentTagsApi.md#createSegmentTag) | **POST** api/1/segments/{segment_id}/tags | セグメントの作成 |
+| [**destroySegmentsTag**](SegmentTagsApi.md#destroySegmentsTag) | **DELETE** api/1/segments/{segment_id}/tags/{id} | セグメントタグの削除 |
+| [**getSegmentTags**](SegmentTagsApi.md#getSegmentTags) | **GET** api/1/segments/{segment_id}/tags | セグメントタグ一覧の取得 |
+| [**updateSegmentTag**](SegmentTagsApi.md#updateSegmentTag) | **PUT** api/1/segments/{segment_id}/tags/{id} | セグメントタグの更新 |
 
 
 
@@ -16,6 +16,8 @@ Method | HTTP request | Description
 > SegmentTagResponse createSegmentTag(segmentId, segmentTagParams)
 
 セグメントの作成
+
+
 
 ### Example
 
@@ -57,10 +59,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **segmentId** | **Integer**| セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン  |
- **segmentTagParams** | [**SegmentTagParams**](SegmentTagParams.md)| セグメントタグの作成 |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **segmentId** | **Integer**| セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン  | |
+| **segmentTagParams** | [**SegmentTagParams**](SegmentTagParams.md)| セグメントタグの作成 | |
 
 ### Return type
 
@@ -91,6 +93,8 @@ Name | Type | Description  | Notes
 > destroySegmentsTag(segmentId, id, companyId)
 
 セグメントタグの削除
+
+
 
 ### Example
 
@@ -132,11 +136,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **segmentId** | **Integer**| セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン  |
- **id** | **Integer**| セグメントタグID |
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **segmentId** | **Integer**| セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン  | |
+| **id** | **Integer**| セグメントタグID | |
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -167,6 +171,8 @@ null (empty response body)
 > InlineResponse2007 getSegmentTags(segmentId, companyId, offset, limit)
 
 セグメントタグ一覧の取得
+
+
 
 ### Example
 
@@ -210,12 +216,12 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **segmentId** | **Integer**| セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン  |
- **companyId** | **Integer**| 事業所ID |
- **offset** | **Long**| 取得レコードのオフセット (デフォルト: 0) | [optional]
- **limit** | **Integer**| 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500)  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **segmentId** | **Integer**| セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン  | |
+| **companyId** | **Integer**| 事業所ID | |
+| **offset** | **Long**| 取得レコードのオフセット (デフォルト: 0) | [optional] |
+| **limit** | **Integer**| 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500)  | [optional] |
 
 ### Return type
 
@@ -246,6 +252,8 @@ Name | Type | Description  | Notes
 > SegmentTagResponse updateSegmentTag(segmentId, id, segmentTagParams)
 
 セグメントタグの更新
+
+
 
 ### Example
 
@@ -288,11 +296,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **segmentId** | **Integer**| セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン  |
- **id** | **Integer**| セグメントタグID |
- **segmentTagParams** | [**SegmentTagParams**](SegmentTagParams.md)| セグメントタグの作成 |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **segmentId** | **Integer**| セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン  | |
+| **id** | **Integer**| セグメントタグID | |
+| **segmentTagParams** | [**SegmentTagParams**](SegmentTagParams.md)| セグメントタグの作成 | |
 
 ### Return type
 

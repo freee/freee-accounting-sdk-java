@@ -2,14 +2,14 @@
 
 All URIs are relative to *https://api.freee.co.jp*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createReceipt**](ReceiptsApi.md#createReceipt) | **POST** api/1/receipts | ファイルボックス 証憑ファイルアップロード
-[**destroyReceipt**](ReceiptsApi.md#destroyReceipt) | **DELETE** api/1/receipts/{id} | ファイルボックス 証憑ファイルを削除する
-[**downloadReceipt**](ReceiptsApi.md#downloadReceipt) | **GET** api/1/receipts/{id}/download | ファイルボックス 証憑ファイルのダウンロード
-[**getReceipt**](ReceiptsApi.md#getReceipt) | **GET** api/1/receipts/{id} | ファイルボックス 証憑ファイルの取得
-[**getReceipts**](ReceiptsApi.md#getReceipts) | **GET** api/1/receipts | ファイルボックス 証憑ファイル一覧の取得
-[**updateReceipt**](ReceiptsApi.md#updateReceipt) | **PUT** api/1/receipts/{id} | ファイルボックス 証憑ファイル情報更新
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**createReceipt**](ReceiptsApi.md#createReceipt) | **POST** api/1/receipts | ファイルボックス 証憑ファイルアップロード |
+| [**destroyReceipt**](ReceiptsApi.md#destroyReceipt) | **DELETE** api/1/receipts/{id} | ファイルボックス 証憑ファイルを削除する |
+| [**downloadReceipt**](ReceiptsApi.md#downloadReceipt) | **GET** api/1/receipts/{id}/download | ファイルボックス 証憑ファイルのダウンロード |
+| [**getReceipt**](ReceiptsApi.md#getReceipt) | **GET** api/1/receipts/{id} | ファイルボックス 証憑ファイルの取得 |
+| [**getReceipts**](ReceiptsApi.md#getReceipts) | **GET** api/1/receipts | ファイルボックス 証憑ファイル一覧の取得 |
+| [**updateReceipt**](ReceiptsApi.md#updateReceipt) | **PUT** api/1/receipts/{id} | ファイルボックス 証憑ファイル情報更新 |
 
 
 
@@ -18,6 +18,8 @@ Method | HTTP request | Description
 > ReceiptResponse createReceipt(companyId, receipt, description, issueDate)
 
 ファイルボックス 証憑ファイルアップロード
+
+
 
 ### Example
 
@@ -61,12 +63,12 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **companyId** | **Integer**| 事業所ID |
- **receipt** | **File**| 証憑ファイル |
- **description** | **String**| メモ (255文字以内) | [optional]
- **issueDate** | **String**| 取引日 (yyyy-mm-dd) | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **companyId** | **Integer**| 事業所ID | |
+| **receipt** | **File**| 証憑ファイル | |
+| **description** | **String**| メモ (255文字以内) | [optional] |
+| **issueDate** | **String**| 取引日 (yyyy-mm-dd) | [optional] |
 
 ### Return type
 
@@ -97,6 +99,8 @@ Name | Type | Description  | Notes
 > destroyReceipt(id, companyId)
 
 ファイルボックス 証憑ファイルを削除する
+
+
 
 ### Example
 
@@ -137,10 +141,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 証憑ファイルID |
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 証憑ファイルID | |
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -172,6 +176,8 @@ null (empty response body)
 > File downloadReceipt(id, companyId)
 
 ファイルボックス 証憑ファイルのダウンロード
+
+
 
 ### Example
 
@@ -213,10 +219,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 証憑ファイルID |
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 証憑ファイルID | |
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -248,6 +254,8 @@ Name | Type | Description  | Notes
 > ReceiptResponse getReceipt(id, companyId)
 
 ファイルボックス 証憑ファイルの取得
+
+
 
 ### Example
 
@@ -289,10 +297,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 証憑ファイルID |
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 証憑ファイルID | |
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -324,6 +332,8 @@ Name | Type | Description  | Notes
 > InlineResponse2005 getReceipts(companyId, startDate, endDate, userName, number, commentType, commentImportant, category, offset, limit)
 
 ファイルボックス 証憑ファイル一覧の取得
+
+
 
 ### Example
 
@@ -373,18 +383,18 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **companyId** | **Integer**| 事業所ID |
- **startDate** | **String**| アップロード日 (yyyy-mm-dd) |
- **endDate** | **String**| アップロード日 (yyyy-mm-dd) |
- **userName** | **String**| アップロードしたユーザー名、メールアドレス | [optional]
- **number** | **Integer**| アップロードファイルNo | [optional]
- **commentType** | **String**| posted:コメントあり, raised:未解決, resolved:解決済 | [optional] [enum: posted, raised, resolved]
- **commentImportant** | **Boolean**| trueの時、重要コメント付きが対象 | [optional]
- **category** | **String**| all:すべて、without_deal:未登録、with_expense_application_line:経費申請中, with_deal:登録済み、ignored:無視 | [optional] [enum: all, without_deal, with_expense_application_line, with_deal, ignored]
- **offset** | **Long**| 取得レコードのオフセット (デフォルト: 0) | [optional]
- **limit** | **Integer**| 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **companyId** | **Integer**| 事業所ID | |
+| **startDate** | **String**| アップロード日 (yyyy-mm-dd) | |
+| **endDate** | **String**| アップロード日 (yyyy-mm-dd) | |
+| **userName** | **String**| アップロードしたユーザー名、メールアドレス | [optional] |
+| **number** | **Integer**| アップロードファイルNo | [optional] |
+| **commentType** | **String**| posted:コメントあり, raised:未解決, resolved:解決済 | [optional] [enum: posted, raised, resolved] |
+| **commentImportant** | **Boolean**| trueの時、重要コメント付きが対象 | [optional] |
+| **category** | **String**| all:すべて、without_deal:未登録、with_expense_application_line:経費申請中, with_deal:登録済み、ignored:無視 | [optional] [enum: all, without_deal, with_expense_application_line, with_deal, ignored] |
+| **offset** | **Long**| 取得レコードのオフセット (デフォルト: 0) | [optional] |
+| **limit** | **Integer**| 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) | [optional] |
 
 ### Return type
 
@@ -415,6 +425,8 @@ Name | Type | Description  | Notes
 > ReceiptResponse updateReceipt(id, receiptUpdateParams)
 
 ファイルボックス 証憑ファイル情報更新
+
+
 
 ### Example
 
@@ -456,10 +468,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 証憑ファイルID |
- **receiptUpdateParams** | [**ReceiptUpdateParams**](ReceiptUpdateParams.md)| 経費申請の更新 |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 証憑ファイルID | |
+| **receiptUpdateParams** | [**ReceiptUpdateParams**](ReceiptUpdateParams.md)| 経費申請の更新 | |
 
 ### Return type
 

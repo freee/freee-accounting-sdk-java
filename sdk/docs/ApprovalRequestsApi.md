@@ -2,16 +2,16 @@
 
 All URIs are relative to *https://api.freee.co.jp*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createApprovalRequest**](ApprovalRequestsApi.md#createApprovalRequest) | **POST** api/1/approval_requests | 各種申請の作成
-[**destroyApprovalRequest**](ApprovalRequestsApi.md#destroyApprovalRequest) | **DELETE** api/1/approval_requests/{id} | 各種申請の削除
-[**getApprovalRequest**](ApprovalRequestsApi.md#getApprovalRequest) | **GET** api/1/approval_requests/{id} | 各種申請の取得
-[**getApprovalRequestForm**](ApprovalRequestsApi.md#getApprovalRequestForm) | **GET** api/1/approval_requests/forms/{id} | 各種申請の申請フォームの取得
-[**getApprovalRequestForms**](ApprovalRequestsApi.md#getApprovalRequestForms) | **GET** api/1/approval_requests/forms | 各種申請の申請フォーム一覧の取得
-[**getApprovalRequests**](ApprovalRequestsApi.md#getApprovalRequests) | **GET** api/1/approval_requests | 各種申請の一覧
-[**updateApprovalRequest**](ApprovalRequestsApi.md#updateApprovalRequest) | **PUT** api/1/approval_requests/{id} | 各種申請の更新
-[**updateApprovalRequestAction**](ApprovalRequestsApi.md#updateApprovalRequestAction) | **POST** api/1/approval_requests/{id}/actions | 各種申請の承認操作
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**createApprovalRequest**](ApprovalRequestsApi.md#createApprovalRequest) | **POST** api/1/approval_requests | 各種申請の作成 |
+| [**destroyApprovalRequest**](ApprovalRequestsApi.md#destroyApprovalRequest) | **DELETE** api/1/approval_requests/{id} | 各種申請の削除 |
+| [**getApprovalRequest**](ApprovalRequestsApi.md#getApprovalRequest) | **GET** api/1/approval_requests/{id} | 各種申請の取得 |
+| [**getApprovalRequestForm**](ApprovalRequestsApi.md#getApprovalRequestForm) | **GET** api/1/approval_requests/forms/{id} | 各種申請の申請フォームの取得 |
+| [**getApprovalRequestForms**](ApprovalRequestsApi.md#getApprovalRequestForms) | **GET** api/1/approval_requests/forms | 各種申請の申請フォーム一覧の取得 |
+| [**getApprovalRequests**](ApprovalRequestsApi.md#getApprovalRequests) | **GET** api/1/approval_requests | 各種申請の一覧 |
+| [**updateApprovalRequest**](ApprovalRequestsApi.md#updateApprovalRequest) | **PUT** api/1/approval_requests/{id} | 各種申請の更新 |
+| [**updateApprovalRequestAction**](ApprovalRequestsApi.md#updateApprovalRequestAction) | **POST** api/1/approval_requests/{id}/actions | 各種申請の承認操作 |
 
 
 
@@ -20,6 +20,8 @@ Method | HTTP request | Description
 > ApprovalRequestResponse createApprovalRequest(approvalRequestCreateParams)
 
 各種申請の作成
+
+
 
 ### Example
 
@@ -60,9 +62,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **approvalRequestCreateParams** | [**ApprovalRequestCreateParams**](ApprovalRequestCreateParams.md)| 各種申請の作成 | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **approvalRequestCreateParams** | [**ApprovalRequestCreateParams**](ApprovalRequestCreateParams.md)| 各種申請の作成 | [optional] |
 
 ### Return type
 
@@ -94,6 +96,8 @@ Name | Type | Description  | Notes
 > destroyApprovalRequest(id, companyId)
 
 各種申請の削除
+
+
 
 ### Example
 
@@ -134,10 +138,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 各種申請ID |
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 各種申請ID | |
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -169,6 +173,8 @@ null (empty response body)
 > ApprovalRequestResponse getApprovalRequest(id, companyId)
 
 各種申請の取得
+
+
 
 ### Example
 
@@ -210,10 +216,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 各種申請ID |
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 各種申請ID | |
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -245,6 +251,8 @@ Name | Type | Description  | Notes
 > ApprovalRequestFormResponse getApprovalRequestForm(id, companyId)
 
 各種申請の申請フォームの取得
+
+
 
 ### Example
 
@@ -286,10 +294,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 申請フォームID |
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 申請フォームID | |
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -321,6 +329,8 @@ Name | Type | Description  | Notes
 > ApprovalRequestFormIndexResponse getApprovalRequestForms(companyId)
 
 各種申請の申請フォーム一覧の取得
+
+
 
 ### Example
 
@@ -361,9 +371,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -395,6 +405,8 @@ Name | Type | Description  | Notes
 > ApprovalRequestsIndexResponse getApprovalRequests(companyId, status, applicationNumber, title, formId, startApplicationDate, endApplicationDate, applicantId, minAmount, maxAmount, approverId, offset, limit)
 
 各種申請の一覧
+
+
 
 ### Example
 
@@ -447,21 +459,21 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **companyId** | **Integer**| 事業所ID |
- **status** | **String**| 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し) 承認者指定時には無効です。 | [optional] [enum: draft, in_progress, approved, rejected, feedback]
- **applicationNumber** | **Integer**| 申請No. | [optional]
- **title** | **String**| 申請タイトル | [optional]
- **formId** | **Integer**| 申請フォームID | [optional]
- **startApplicationDate** | **String**| 申請日で絞込：開始日(yyyy-mm-dd) | [optional]
- **endApplicationDate** | **String**| 申請日で絞込：終了日(yyyy-mm-dd) | [optional]
- **applicantId** | **Integer**| 申請者のユーザーID | [optional]
- **minAmount** | **Long**| 金額で絞込：以上 | [optional]
- **maxAmount** | **Long**| 金額で絞込：以下 | [optional]
- **approverId** | **Integer**| 承認者のユーザーID 承認者指定時には申請ステータスが申請中のものだけが取得可能です。 | [optional]
- **offset** | **Integer**| 取得レコードのオフセット (デフォルト: 0) | [optional]
- **limit** | **Integer**| 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **companyId** | **Integer**| 事業所ID | |
+| **status** | **String**| 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し) 承認者指定時には無効です。 | [optional] [enum: draft, in_progress, approved, rejected, feedback] |
+| **applicationNumber** | **Integer**| 申請No. | [optional] |
+| **title** | **String**| 申請タイトル | [optional] |
+| **formId** | **Integer**| 申請フォームID | [optional] |
+| **startApplicationDate** | **String**| 申請日で絞込：開始日(yyyy-mm-dd) | [optional] |
+| **endApplicationDate** | **String**| 申請日で絞込：終了日(yyyy-mm-dd) | [optional] |
+| **applicantId** | **Integer**| 申請者のユーザーID | [optional] |
+| **minAmount** | **Long**| 金額で絞込：以上 | [optional] |
+| **maxAmount** | **Long**| 金額で絞込：以下 | [optional] |
+| **approverId** | **Integer**| 承認者のユーザーID 承認者指定時には申請ステータスが申請中のものだけが取得可能です。 | [optional] |
+| **offset** | **Integer**| 取得レコードのオフセット (デフォルト: 0) | [optional] |
+| **limit** | **Integer**| 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) | [optional] |
 
 ### Return type
 
@@ -493,6 +505,8 @@ Name | Type | Description  | Notes
 > ApprovalRequestResponse updateApprovalRequest(id, approvalRequestUpdateParams)
 
 各種申請の更新
+
+
 
 ### Example
 
@@ -534,10 +548,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 各種申請ID |
- **approvalRequestUpdateParams** | [**ApprovalRequestUpdateParams**](ApprovalRequestUpdateParams.md)| 各種申請の更新 |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 各種申請ID | |
+| **approvalRequestUpdateParams** | [**ApprovalRequestUpdateParams**](ApprovalRequestUpdateParams.md)| 各種申請の更新 | |
 
 ### Return type
 
@@ -569,6 +583,8 @@ Name | Type | Description  | Notes
 > ApprovalRequestResponse updateApprovalRequestAction(id, approvalRequestActionCreateParams)
 
 各種申請の承認操作
+
+
 
 ### Example
 
@@ -610,10 +626,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 各種申請ID |
- **approvalRequestActionCreateParams** | [**ApprovalRequestActionCreateParams**](ApprovalRequestActionCreateParams.md)| 各種申請の承認操作 |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 各種申請ID | |
+| **approvalRequestActionCreateParams** | [**ApprovalRequestActionCreateParams**](ApprovalRequestActionCreateParams.md)| 各種申請の承認操作 | |
 
 ### Return type
 

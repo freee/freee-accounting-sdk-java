@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**receipt** | [**Receipt**](Receipt.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**receipt** | [**Receipt**](Receipt.md) |  |  |
 
 
 

@@ -2,13 +2,13 @@
 
 All URIs are relative to *https://api.freee.co.jp*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createWalletable**](WalletablesApi.md#createWalletable) | **POST** api/1/walletables | 口座の作成
-[**destroyWalletable**](WalletablesApi.md#destroyWalletable) | **DELETE** api/1/walletables/{type}/{id} | 口座の削除
-[**getWalletable**](WalletablesApi.md#getWalletable) | **GET** api/1/walletables/{type}/{id} | 口座情報の取得
-[**getWalletables**](WalletablesApi.md#getWalletables) | **GET** api/1/walletables | 口座一覧の取得
-[**updateWalletable**](WalletablesApi.md#updateWalletable) | **PUT** api/1/walletables/{type}/{id} | 口座の更新
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**createWalletable**](WalletablesApi.md#createWalletable) | **POST** api/1/walletables | 口座の作成 |
+| [**destroyWalletable**](WalletablesApi.md#destroyWalletable) | **DELETE** api/1/walletables/{type}/{id} | 口座の削除 |
+| [**getWalletable**](WalletablesApi.md#getWalletable) | **GET** api/1/walletables/{type}/{id} | 口座情報の取得 |
+| [**getWalletables**](WalletablesApi.md#getWalletables) | **GET** api/1/walletables | 口座一覧の取得 |
+| [**updateWalletable**](WalletablesApi.md#updateWalletable) | **PUT** api/1/walletables/{type}/{id} | 口座の更新 |
 
 
 
@@ -17,6 +17,8 @@ Method | HTTP request | Description
 > WalletableCreateResponse createWalletable(walletableCreateParams)
 
 口座の作成
+
+
 
 ### Example
 
@@ -57,9 +59,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **walletableCreateParams** | [**WalletableCreateParams**](WalletableCreateParams.md)| 口座の作成 | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **walletableCreateParams** | [**WalletableCreateParams**](WalletableCreateParams.md)| 口座の作成 | [optional] |
 
 ### Return type
 
@@ -90,6 +92,8 @@ Name | Type | Description  | Notes
 > destroyWalletable(id, type, companyId)
 
 口座の削除
+
+
 
 ### Example
 
@@ -131,11 +135,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 口座ID |
- **type** | **String**| 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） | [enum: bank_account, credit_card, wallet]
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 口座ID | |
+| **type** | **String**| 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） | [enum: bank_account, credit_card, wallet] |
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -167,6 +171,8 @@ null (empty response body)
 > InlineResponse20016 getWalletable(id, type, companyId)
 
 口座情報の取得
+
+
 
 ### Example
 
@@ -209,11 +215,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 口座ID |
- **type** | **String**| 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） | [enum: bank_account, credit_card, wallet]
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 口座ID | |
+| **type** | **String**| 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） | [enum: bank_account, credit_card, wallet] |
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -245,6 +251,8 @@ Name | Type | Description  | Notes
 > InlineResponse20015 getWalletables(companyId, withBalance, type)
 
 口座一覧の取得
+
+
 
 ### Example
 
@@ -287,11 +295,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **companyId** | **Integer**| 事業所ID |
- **withBalance** | **Boolean**| 残高情報を含める | [optional]
- **type** | **String**| 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） | [optional] [enum: bank_account, credit_card, wallet]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **companyId** | **Integer**| 事業所ID | |
+| **withBalance** | **Boolean**| 残高情報を含める | [optional] |
+| **type** | **String**| 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） | [optional] [enum: bank_account, credit_card, wallet] |
 
 ### Return type
 
@@ -322,6 +330,8 @@ Name | Type | Description  | Notes
 > InlineResponse20016 updateWalletable(id, type, walletableUpdateParams)
 
 口座の更新
+
+
 
 ### Example
 
@@ -364,11 +374,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  |
- **type** | **String**| 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） | [enum: bank_account, credit_card, wallet]
- **walletableUpdateParams** | [**WalletableUpdateParams**](WalletableUpdateParams.md)| 口座の作成 | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**|  | |
+| **type** | **String**| 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） | [enum: bank_account, credit_card, wallet] |
+| **walletableUpdateParams** | [**WalletableUpdateParams**](WalletableUpdateParams.md)| 口座の作成 | [optional] |
 
 ### Return type
 

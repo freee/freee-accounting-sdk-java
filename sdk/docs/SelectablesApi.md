@@ -2,9 +2,9 @@
 
 All URIs are relative to *https://api.freee.co.jp*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getFormsSelectables**](SelectablesApi.md#getFormsSelectables) | **GET** api/1/forms/selectables | フォーム用選択項目情報の取得
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**getFormsSelectables**](SelectablesApi.md#getFormsSelectables) | **GET** api/1/forms/selectables | フォーム用選択項目情報の取得 |
 
 
 
@@ -13,6 +13,8 @@ Method | HTTP request | Description
 > SelectablesIndexResponse getFormsSelectables(companyId, includes)
 
 フォーム用選択項目情報の取得
+
+
 
 ### Example
 
@@ -54,10 +56,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **companyId** | **Integer**| 事業所ID |
- **includes** | **String**| 取得する項目(項目: account_item) | [optional] [enum: account_item]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **companyId** | **Integer**| 事業所ID | |
+| **includes** | **String**| 取得する項目(項目: account_item) | [optional] [enum: account_item] |
 
 ### Return type
 

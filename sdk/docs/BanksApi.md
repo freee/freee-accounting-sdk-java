@@ -2,10 +2,10 @@
 
 All URIs are relative to *https://api.freee.co.jp*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getBank**](BanksApi.md#getBank) | **GET** api/1/banks/{id} | 連携サービスの取得
-[**getBanks**](BanksApi.md#getBanks) | **GET** api/1/banks | 連携サービス一覧の取得
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**getBank**](BanksApi.md#getBank) | **GET** api/1/banks/{id} | 連携サービスの取得 |
+| [**getBanks**](BanksApi.md#getBanks) | **GET** api/1/banks | 連携サービス一覧の取得 |
 
 
 
@@ -14,6 +14,8 @@ Method | HTTP request | Description
 > BankResponse getBank(id)
 
 連携サービスの取得
+
+
 
 ### Example
 
@@ -54,9 +56,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 連携サービスID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 連携サービスID | |
 
 ### Return type
 
@@ -88,6 +90,8 @@ Name | Type | Description  | Notes
 > InlineResponse200 getBanks(offset, limit, type)
 
 連携サービス一覧の取得
+
+
 
 ### Example
 
@@ -130,11 +134,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offset** | **Long**| 取得レコードのオフセット (デフォルト: 0) | [optional]
- **limit** | **Integer**| 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500) | [optional]
- **type** | **String**| サービス種別 | [optional] [enum: bank_account, credit_card, wallet]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **offset** | **Long**| 取得レコードのオフセット (デフォルト: 0) | [optional] |
+| **limit** | **Integer**| 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 500) | [optional] |
+| **type** | **String**| サービス種別 | [optional] [enum: bank_account, credit_card, wallet] |
 
 ### Return type
 

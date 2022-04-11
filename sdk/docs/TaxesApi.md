@@ -2,11 +2,11 @@
 
 All URIs are relative to *https://api.freee.co.jp*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getTaxCode**](TaxesApi.md#getTaxCode) | **GET** api/1/taxes/codes/{code} | 税区分コードの取得
-[**getTaxCodes**](TaxesApi.md#getTaxCodes) | **GET** api/1/taxes/codes | 税区分コード一覧の取得
-[**getTaxesCompanies**](TaxesApi.md#getTaxesCompanies) | **GET** api/1/taxes/companies/{company_id} | 税区分コード詳細一覧の取得
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**getTaxCode**](TaxesApi.md#getTaxCode) | **GET** api/1/taxes/codes/{code} | 税区分コードの取得 |
+| [**getTaxCodes**](TaxesApi.md#getTaxCodes) | **GET** api/1/taxes/codes | 税区分コード一覧の取得 |
+| [**getTaxesCompanies**](TaxesApi.md#getTaxesCompanies) | **GET** api/1/taxes/companies/{company_id} | 税区分コード詳細一覧の取得 |
 
 
 
@@ -15,6 +15,8 @@ Method | HTTP request | Description
 > TaxResponse getTaxCode(code)
 
 税区分コードの取得
+
+
 
 ### Example
 
@@ -55,9 +57,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **code** | **Integer**| 税区分コード |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **code** | **Integer**| 税区分コード | |
 
 ### Return type
 
@@ -89,6 +91,8 @@ Name | Type | Description  | Notes
 > InlineResponse2009 getTaxCodes()
 
 税区分コード一覧の取得
+
+
 
 ### Example
 
@@ -159,6 +163,8 @@ This endpoint does not need any parameter.
 
 税区分コード詳細一覧の取得
 
+
+
 ### Example
 
 ```java
@@ -198,9 +204,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 

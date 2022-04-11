@@ -2,14 +2,14 @@
 
 All URIs are relative to *https://api.freee.co.jp*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createPaymentRequest**](PaymentRequestsApi.md#createPaymentRequest) | **POST** api/1/payment_requests | 支払依頼の作成
-[**destroyPaymentRequest**](PaymentRequestsApi.md#destroyPaymentRequest) | **DELETE** api/1/payment_requests/{id} | 支払依頼の削除
-[**getPaymentRequest**](PaymentRequestsApi.md#getPaymentRequest) | **GET** api/1/payment_requests/{id} | 支払依頼詳細の取得
-[**getPaymentRequests**](PaymentRequestsApi.md#getPaymentRequests) | **GET** api/1/payment_requests | 支払依頼一覧の取得
-[**updatePaymentRequest**](PaymentRequestsApi.md#updatePaymentRequest) | **PUT** api/1/payment_requests/{id} | 支払依頼の更新
-[**updatePaymentRequestAction**](PaymentRequestsApi.md#updatePaymentRequestAction) | **POST** api/1/payment_requests/{id}/actions | 支払依頼の承認操作
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**createPaymentRequest**](PaymentRequestsApi.md#createPaymentRequest) | **POST** api/1/payment_requests | 支払依頼の作成 |
+| [**destroyPaymentRequest**](PaymentRequestsApi.md#destroyPaymentRequest) | **DELETE** api/1/payment_requests/{id} | 支払依頼の削除 |
+| [**getPaymentRequest**](PaymentRequestsApi.md#getPaymentRequest) | **GET** api/1/payment_requests/{id} | 支払依頼詳細の取得 |
+| [**getPaymentRequests**](PaymentRequestsApi.md#getPaymentRequests) | **GET** api/1/payment_requests | 支払依頼一覧の取得 |
+| [**updatePaymentRequest**](PaymentRequestsApi.md#updatePaymentRequest) | **PUT** api/1/payment_requests/{id} | 支払依頼の更新 |
+| [**updatePaymentRequestAction**](PaymentRequestsApi.md#updatePaymentRequestAction) | **POST** api/1/payment_requests/{id}/actions | 支払依頼の承認操作 |
 
 
 
@@ -18,6 +18,8 @@ Method | HTTP request | Description
 > PaymentRequestResponse createPaymentRequest(paymentRequestCreateParams)
 
 支払依頼の作成
+
+
 
 ### Example
 
@@ -58,9 +60,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **paymentRequestCreateParams** | [**PaymentRequestCreateParams**](PaymentRequestCreateParams.md)| 支払依頼の作成 | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **paymentRequestCreateParams** | [**PaymentRequestCreateParams**](PaymentRequestCreateParams.md)| 支払依頼の作成 | [optional] |
 
 ### Return type
 
@@ -92,6 +94,8 @@ Name | Type | Description  | Notes
 > destroyPaymentRequest(id, companyId)
 
 支払依頼の削除
+
+
 
 ### Example
 
@@ -132,10 +136,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 支払依頼ID |
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 支払依頼ID | |
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -167,6 +171,8 @@ null (empty response body)
 > PaymentRequestResponse getPaymentRequest(id, companyId)
 
 支払依頼詳細の取得
+
+
 
 ### Example
 
@@ -208,10 +214,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 支払依頼ID |
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 支払依頼ID | |
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -243,6 +249,8 @@ Name | Type | Description  | Notes
 > PaymentRequestsIndexResponse getPaymentRequests(companyId, status, startApplicationDate, endApplicationDate, startIssueDate, endIssueDate, applicationNumber, title, applicantId, approverId, minAmount, maxAmount, partnerId, partnerCode, paymentMethod, startPaymentDate, endPaymentDate, documentCode, offset, limit)
 
 支払依頼一覧の取得
+
+
 
 ### Example
 
@@ -302,28 +310,28 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **companyId** | **Integer**| 事業所ID |
- **status** | **String**| &#39;申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し)、 取引ステータス(unsettled:支払待ち, settled:支払済み)&#39;&lt;br&gt; approver_id を指定した場合は無効です。  | [optional] [enum: draft, in_progress, approved, rejected, feedback, unsettled, settled]
- **startApplicationDate** | **String**| 申請日で絞込：開始日(yyyy-mm-dd) | [optional]
- **endApplicationDate** | **String**| 申請日で絞込：終了日(yyyy-mm-dd) | [optional]
- **startIssueDate** | **String**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional]
- **endIssueDate** | **String**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional]
- **applicationNumber** | **Integer**| 申請No. | [optional]
- **title** | **String**| 申請タイトル | [optional]
- **applicantId** | **Integer**| 申請者のユーザーID | [optional]
- **approverId** | **Integer**| 承認者のユーザーID&lt;br&gt; &#39;approver_id を指定した場合は、 in_progress: 申請中 の支払依頼のみを返します。&#39;  | [optional]
- **minAmount** | **Integer**| 金額で絞込 (下限金額) | [optional]
- **maxAmount** | **Integer**| 金額で絞込 (上限金額) | [optional]
- **partnerId** | **Integer**| 取引先IDで絞込 | [optional]
- **partnerCode** | **String**| 取引先コードで絞込 | [optional]
- **paymentMethod** | **String**| 支払方法で絞込 (none: 指定なし, domestic_bank_transfer: 国内振込, abroad_bank_transfer: 国外振込, account_transfer: 口座振替, credit_card: クレジットカード) | [optional] [enum: none, domestic_bank_transfer, abroad_bank_transfer, account_transfer, credit_card]
- **startPaymentDate** | **String**| 支払期限で絞込：開始日(yyyy-mm-dd) | [optional]
- **endPaymentDate** | **String**| 支払期限で絞込：終了日(yyyy-mm-dd) | [optional]
- **documentCode** | **String**| 請求書番号で絞込 | [optional]
- **offset** | **Long**| 取得レコードのオフセット (デフォルト: 0) | [optional]
- **limit** | **Integer**| 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **companyId** | **Integer**| 事業所ID | |
+| **status** | **String**| &#39;申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し)、 取引ステータス(unsettled:支払待ち, settled:支払済み)&#39;&lt;br&gt; approver_id を指定した場合は無効です。  | [optional] [enum: draft, in_progress, approved, rejected, feedback, unsettled, settled] |
+| **startApplicationDate** | **String**| 申請日で絞込：開始日(yyyy-mm-dd) | [optional] |
+| **endApplicationDate** | **String**| 申請日で絞込：終了日(yyyy-mm-dd) | [optional] |
+| **startIssueDate** | **String**| 発生日で絞込：開始日(yyyy-mm-dd) | [optional] |
+| **endIssueDate** | **String**| 発生日で絞込：終了日(yyyy-mm-dd) | [optional] |
+| **applicationNumber** | **Integer**| 申請No. | [optional] |
+| **title** | **String**| 申請タイトル | [optional] |
+| **applicantId** | **Integer**| 申請者のユーザーID | [optional] |
+| **approverId** | **Integer**| 承認者のユーザーID&lt;br&gt; &#39;approver_id を指定した場合は、 in_progress: 申請中 の支払依頼のみを返します。&#39;  | [optional] |
+| **minAmount** | **Integer**| 金額で絞込 (下限金額) | [optional] |
+| **maxAmount** | **Integer**| 金額で絞込 (上限金額) | [optional] |
+| **partnerId** | **Integer**| 取引先IDで絞込 | [optional] |
+| **partnerCode** | **String**| 取引先コードで絞込 | [optional] |
+| **paymentMethod** | **String**| 支払方法で絞込 (none: 指定なし, domestic_bank_transfer: 国内振込, abroad_bank_transfer: 国外振込, account_transfer: 口座振替, credit_card: クレジットカード) | [optional] [enum: none, domestic_bank_transfer, abroad_bank_transfer, account_transfer, credit_card] |
+| **startPaymentDate** | **String**| 支払期限で絞込：開始日(yyyy-mm-dd) | [optional] |
+| **endPaymentDate** | **String**| 支払期限で絞込：終了日(yyyy-mm-dd) | [optional] |
+| **documentCode** | **String**| 請求書番号で絞込 | [optional] |
+| **offset** | **Long**| 取得レコードのオフセット (デフォルト: 0) | [optional] |
+| **limit** | **Integer**| 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) | [optional] |
 
 ### Return type
 
@@ -355,6 +363,8 @@ Name | Type | Description  | Notes
 > PaymentRequestResponse updatePaymentRequest(id, paymentRequestUpdateParams)
 
 支払依頼の更新
+
+
 
 ### Example
 
@@ -396,10 +406,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 支払依頼ID |
- **paymentRequestUpdateParams** | [**PaymentRequestUpdateParams**](PaymentRequestUpdateParams.md)| 支払依頼の更新 | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 支払依頼ID | |
+| **paymentRequestUpdateParams** | [**PaymentRequestUpdateParams**](PaymentRequestUpdateParams.md)| 支払依頼の更新 | [optional] |
 
 ### Return type
 
@@ -431,6 +441,8 @@ Name | Type | Description  | Notes
 > PaymentRequestResponse updatePaymentRequestAction(id, paymentRequestActionCreateParams)
 
 支払依頼の承認操作
+
+
 
 ### Example
 
@@ -472,10 +484,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 支払依頼ID |
- **paymentRequestActionCreateParams** | [**PaymentRequestActionCreateParams**](PaymentRequestActionCreateParams.md)| 支払依頼の承認操作 |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 支払依頼ID | |
+| **paymentRequestActionCreateParams** | [**PaymentRequestActionCreateParams**](PaymentRequestActionCreateParams.md)| 支払依頼の承認操作 | |
 
 ### Return type
 

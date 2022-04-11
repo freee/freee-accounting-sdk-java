@@ -2,13 +2,13 @@
 
 All URIs are relative to *https://api.freee.co.jp*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createQuotation**](QuotationsApi.md#createQuotation) | **POST** api/1/quotations | 見積書の作成
-[**destroyQuotation**](QuotationsApi.md#destroyQuotation) | **DELETE** api/1/quotations/{id} | 見積書の削除
-[**getQuotation**](QuotationsApi.md#getQuotation) | **GET** api/1/quotations/{id} | 見積書の取得
-[**getQuotations**](QuotationsApi.md#getQuotations) | **GET** api/1/quotations | 見積書一覧の取得
-[**updateQuotation**](QuotationsApi.md#updateQuotation) | **PUT** api/1/quotations/{id} | 見積書の更新
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**createQuotation**](QuotationsApi.md#createQuotation) | **POST** api/1/quotations | 見積書の作成 |
+| [**destroyQuotation**](QuotationsApi.md#destroyQuotation) | **DELETE** api/1/quotations/{id} | 見積書の削除 |
+| [**getQuotation**](QuotationsApi.md#getQuotation) | **GET** api/1/quotations/{id} | 見積書の取得 |
+| [**getQuotations**](QuotationsApi.md#getQuotations) | **GET** api/1/quotations | 見積書一覧の取得 |
+| [**updateQuotation**](QuotationsApi.md#updateQuotation) | **PUT** api/1/quotations/{id} | 見積書の更新 |
 
 
 
@@ -17,6 +17,8 @@ Method | HTTP request | Description
 > QuotationResponse createQuotation(quotationCreateParams)
 
 見積書の作成
+
+
 
 ### Example
 
@@ -57,9 +59,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **quotationCreateParams** | [**QuotationCreateParams**](QuotationCreateParams.md)| 見積書の作成 | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **quotationCreateParams** | [**QuotationCreateParams**](QuotationCreateParams.md)| 見積書の作成 | [optional] |
 
 ### Return type
 
@@ -91,6 +93,8 @@ Name | Type | Description  | Notes
 > destroyQuotation(id, companyId)
 
 見積書の削除
+
+
 
 ### Example
 
@@ -131,10 +135,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  |
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**|  | |
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -166,6 +170,8 @@ null (empty response body)
 > QuotationResponse getQuotation(id, companyId)
 
 見積書の取得
+
+
 
 ### Example
 
@@ -207,10 +213,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 見積書ID |
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 見積書ID | |
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -242,6 +248,8 @@ Name | Type | Description  | Notes
 > QuotationIndexResponse getQuotations(companyId, partnerId, partnerCode, startIssueDate, endIssueDate, quotationNumber, description, quotationStatus, offset, limit)
 
 見積書一覧の取得
+
+
 
 ### Example
 
@@ -291,18 +299,18 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **companyId** | **Integer**| 事業所ID |
- **partnerId** | **Integer**| 取引先IDで絞込 | [optional]
- **partnerCode** | **String**| 取引先コードで絞込 | [optional]
- **startIssueDate** | **String**| 見積日の開始日(yyyy-mm-dd) | [optional]
- **endIssueDate** | **String**| 見積日の終了日(yyyy-mm-dd) | [optional]
- **quotationNumber** | **String**| 見積書番号 | [optional]
- **description** | **String**| 概要 | [optional]
- **quotationStatus** | **String**| 見積書ステータス  (unsubmitted: 送付待ち, submitted: 送付済み, all: 全て) | [optional] [enum: all, unsubmitted, submitted]
- **offset** | **Long**| 取得レコードのオフセット (デフォルト: 0) | [optional]
- **limit** | **Integer**| 取得レコードの件数 (デフォルト: 20, 最大: 100)  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **companyId** | **Integer**| 事業所ID | |
+| **partnerId** | **Integer**| 取引先IDで絞込 | [optional] |
+| **partnerCode** | **String**| 取引先コードで絞込 | [optional] |
+| **startIssueDate** | **String**| 見積日の開始日(yyyy-mm-dd) | [optional] |
+| **endIssueDate** | **String**| 見積日の終了日(yyyy-mm-dd) | [optional] |
+| **quotationNumber** | **String**| 見積書番号 | [optional] |
+| **description** | **String**| 概要 | [optional] |
+| **quotationStatus** | **String**| 見積書ステータス  (unsubmitted: 送付待ち, submitted: 送付済み, all: 全て) | [optional] [enum: all, unsubmitted, submitted] |
+| **offset** | **Long**| 取得レコードのオフセット (デフォルト: 0) | [optional] |
+| **limit** | **Integer**| 取得レコードの件数 (デフォルト: 20, 最大: 100)  | [optional] |
 
 ### Return type
 
@@ -334,6 +342,8 @@ Name | Type | Description  | Notes
 > QuotationResponse updateQuotation(id, quotationUpdateParams)
 
 見積書の更新
+
+
 
 ### Example
 
@@ -375,10 +385,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 見積書ID |
- **quotationUpdateParams** | [**QuotationUpdateParams**](QuotationUpdateParams.md)| 見積書の更新 | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 見積書ID | |
+| **quotationUpdateParams** | [**QuotationUpdateParams**](QuotationUpdateParams.md)| 見積書の更新 | [optional] |
 
 ### Return type
 

@@ -2,12 +2,12 @@
 
 All URIs are relative to *https://api.freee.co.jp*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getUsers**](UsersApi.md#getUsers) | **GET** api/1/users | 事業所に所属するユーザー一覧の取得
-[**getUsersCapabilities**](UsersApi.md#getUsersCapabilities) | **GET** api/1/users/capabilities | ログインユーザーの権限の取得
-[**getUsersMe**](UsersApi.md#getUsersMe) | **GET** api/1/users/me | ログインユーザー情報の取得
-[**updateUser**](UsersApi.md#updateUser) | **PUT** api/1/users/me | ユーザー情報の更新
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**getUsers**](UsersApi.md#getUsers) | **GET** api/1/users | 事業所に所属するユーザー一覧の取得 |
+| [**getUsersCapabilities**](UsersApi.md#getUsersCapabilities) | **GET** api/1/users/capabilities | ログインユーザーの権限の取得 |
+| [**getUsersMe**](UsersApi.md#getUsersMe) | **GET** api/1/users/me | ログインユーザー情報の取得 |
+| [**updateUser**](UsersApi.md#updateUser) | **PUT** api/1/users/me | ユーザー情報の更新 |
 
 
 
@@ -16,6 +16,8 @@ Method | HTTP request | Description
 > InlineResponse20012 getUsers(companyId, limit)
 
 事業所に所属するユーザー一覧の取得
+
+
 
 ### Example
 
@@ -57,10 +59,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **companyId** | **Integer**| 事業所ID |
- **limit** | **Integer**| 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **companyId** | **Integer**| 事業所ID | |
+| **limit** | **Integer**| 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) | [optional] |
 
 ### Return type
 
@@ -92,6 +94,8 @@ Name | Type | Description  | Notes
 > InlineResponse20013 getUsersCapabilities(companyId)
 
 ログインユーザーの権限の取得
+
+
 
 ### Example
 
@@ -132,9 +136,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -166,6 +170,8 @@ Name | Type | Description  | Notes
 > MeResponse getUsersMe(companies, advisor)
 
 ログインユーザー情報の取得
+
+
 
 ### Example
 
@@ -207,10 +213,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **companies** | **Boolean**| 取得情報にユーザーが所属する事業所一覧を含める | [optional] [enum: true, false]
- **advisor** | **Boolean**| 取得情報に事業がアドバイザー事象所の場合は事業所毎の一意なプロフィールIDを含める | [optional] [enum: true, false]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **companies** | **Boolean**| 取得情報にユーザーが所属する事業所一覧を含める | [optional] [enum: true, false] |
+| **advisor** | **Boolean**| 取得情報に事業がアドバイザー事象所の場合は事業所毎の一意なプロフィールIDを含める | [optional] [enum: true, false] |
 
 ### Return type
 
@@ -242,6 +248,8 @@ Name | Type | Description  | Notes
 > UserResponse updateUser(userParams)
 
 ユーザー情報の更新
+
+
 
 ### Example
 
@@ -282,9 +290,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **userParams** | [**UserParams**](UserParams.md)| ユーザー情報の更新 | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userParams** | [**UserParams**](UserParams.md)| ユーザー情報の更新 | [optional] |
 
 ### Return type
 

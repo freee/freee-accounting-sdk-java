@@ -5,10 +5,10 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**meta** | [**TooManyRequestsErrorMeta**](TooManyRequestsErrorMeta.md) |  | 
-**statusCode** | **Integer** |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**meta** | [**TooManyRequestsErrorMeta**](TooManyRequestsErrorMeta.md) |  |  |
+|**statusCode** | **Integer** |  |  |
 
 
 

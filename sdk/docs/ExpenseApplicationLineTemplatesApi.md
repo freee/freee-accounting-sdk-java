@@ -2,13 +2,13 @@
 
 All URIs are relative to *https://api.freee.co.jp*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createExpenseApplicationLineTemplate**](ExpenseApplicationLineTemplatesApi.md#createExpenseApplicationLineTemplate) | **POST** api/1/expense_application_line_templates | 経費科目の作成
-[**destroyExpenseApplicationLineTemplate**](ExpenseApplicationLineTemplatesApi.md#destroyExpenseApplicationLineTemplate) | **DELETE** api/1/expense_application_line_templates/{id} | 経費科目の削除
-[**getExpenseApplicationLineTemplate**](ExpenseApplicationLineTemplatesApi.md#getExpenseApplicationLineTemplate) | **GET** api/1/expense_application_line_templates/{id} | 経費科目の取得
-[**getExpenseApplicationLineTemplates**](ExpenseApplicationLineTemplatesApi.md#getExpenseApplicationLineTemplates) | **GET** api/1/expense_application_line_templates | 経費科目一覧の取得
-[**updateExpenseApplicationLineTemplate**](ExpenseApplicationLineTemplatesApi.md#updateExpenseApplicationLineTemplate) | **PUT** api/1/expense_application_line_templates/{id} | 経費科目の更新
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**createExpenseApplicationLineTemplate**](ExpenseApplicationLineTemplatesApi.md#createExpenseApplicationLineTemplate) | **POST** api/1/expense_application_line_templates | 経費科目の作成 |
+| [**destroyExpenseApplicationLineTemplate**](ExpenseApplicationLineTemplatesApi.md#destroyExpenseApplicationLineTemplate) | **DELETE** api/1/expense_application_line_templates/{id} | 経費科目の削除 |
+| [**getExpenseApplicationLineTemplate**](ExpenseApplicationLineTemplatesApi.md#getExpenseApplicationLineTemplate) | **GET** api/1/expense_application_line_templates/{id} | 経費科目の取得 |
+| [**getExpenseApplicationLineTemplates**](ExpenseApplicationLineTemplatesApi.md#getExpenseApplicationLineTemplates) | **GET** api/1/expense_application_line_templates | 経費科目一覧の取得 |
+| [**updateExpenseApplicationLineTemplate**](ExpenseApplicationLineTemplatesApi.md#updateExpenseApplicationLineTemplate) | **PUT** api/1/expense_application_line_templates/{id} | 経費科目の更新 |
 
 
 
@@ -17,6 +17,8 @@ Method | HTTP request | Description
 > ExpenseApplicationLineTemplateResponse createExpenseApplicationLineTemplate(expenseApplicationLineTemplateParams)
 
 経費科目の作成
+
+
 
 ### Example
 
@@ -57,9 +59,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **expenseApplicationLineTemplateParams** | [**ExpenseApplicationLineTemplateParams**](ExpenseApplicationLineTemplateParams.md)| 経費科目の作成 |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **expenseApplicationLineTemplateParams** | [**ExpenseApplicationLineTemplateParams**](ExpenseApplicationLineTemplateParams.md)| 経費科目の作成 | |
 
 ### Return type
 
@@ -90,6 +92,8 @@ Name | Type | Description  | Notes
 > destroyExpenseApplicationLineTemplate(id, companyId)
 
 経費科目の削除
+
+
 
 ### Example
 
@@ -130,10 +134,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 経費科目ID |
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 経費科目ID | |
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -165,6 +169,8 @@ null (empty response body)
 > ExpenseApplicationLineTemplateResponse getExpenseApplicationLineTemplate(id, companyId)
 
 経費科目の取得
+
+
 
 ### Example
 
@@ -206,10 +212,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 経費科目ID |
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 経費科目ID | |
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -241,6 +247,8 @@ Name | Type | Description  | Notes
 > InlineResponse2002 getExpenseApplicationLineTemplates(companyId, offset, limit)
 
 経費科目一覧の取得
+
+
 
 ### Example
 
@@ -283,11 +291,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **companyId** | **Integer**| 事業所ID |
- **offset** | **Long**| 取得レコードのオフセット (デフォルト: 0) | [optional]
- **limit** | **Integer**| 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100) | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **companyId** | **Integer**| 事業所ID | |
+| **offset** | **Long**| 取得レコードのオフセット (デフォルト: 0) | [optional] |
+| **limit** | **Integer**| 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100) | [optional] |
 
 ### Return type
 
@@ -318,6 +326,8 @@ Name | Type | Description  | Notes
 > ExpenseApplicationLineTemplateResponse updateExpenseApplicationLineTemplate(id, expenseApplicationLineTemplateParams)
 
 経費科目の更新
+
+
 
 ### Example
 
@@ -359,10 +369,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 経費科目ID |
- **expenseApplicationLineTemplateParams** | [**ExpenseApplicationLineTemplateParams**](ExpenseApplicationLineTemplateParams.md)| 経費科目の更新 |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 経費科目ID | |
+| **expenseApplicationLineTemplateParams** | [**ExpenseApplicationLineTemplateParams**](ExpenseApplicationLineTemplateParams.md)| 経費科目の更新 | |
 
 ### Return type
 
