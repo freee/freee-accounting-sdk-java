@@ -2,11 +2,11 @@
 
 All URIs are relative to *https://api.freee.co.jp*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**downloadJournal**](JournalsApi.md#downloadJournal) | **GET** api/1/journals/reports/{id}/download | ダウンロード実行
-[**getJournalStatus**](JournalsApi.md#getJournalStatus) | **GET** api/1/journals/reports/{id}/status | ステータス確認
-[**getJournals**](JournalsApi.md#getJournals) | **GET** api/1/journals | ダウンロード要求
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**downloadJournal**](JournalsApi.md#downloadJournal) | **GET** api/1/journals/reports/{id}/download | ダウンロード実行 |
+| [**getJournalStatus**](JournalsApi.md#getJournalStatus) | **GET** api/1/journals/reports/{id}/status | ステータス確認 |
+| [**getJournals**](JournalsApi.md#getJournals) | **GET** api/1/journals | ダウンロード要求 |
 
 
 
@@ -15,6 +15,8 @@ Method | HTTP request | Description
 > File downloadJournal(id, companyId)
 
 ダウンロード実行
+
+
 
 ### Example
 
@@ -56,10 +58,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 受け付けID |
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 受け付けID | |
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -91,6 +93,8 @@ Name | Type | Description  | Notes
 > JournalStatusResponse getJournalStatus(id, companyId)
 
 ステータス確認
+
+
 
 ### Example
 
@@ -132,10 +136,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 受け付けID |
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 受け付けID | |
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -167,6 +171,8 @@ Name | Type | Description  | Notes
 > JournalsResponse getJournals(downloadType, companyId, visibleTags, visibleIds, startDate, endDate)
 
 ダウンロード要求
+
+
 
 ### Example
 
@@ -212,14 +218,14 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **downloadType** | **String**| ダウンロード形式 | [enum: csv, pdf, yayoi, generic]
- **companyId** | **Integer**| 事業所ID |
- **visibleTags** | [**List&lt;String&gt;**](String.md)| 補助科目やコメントとして出力する項目 | [optional] [enum: partner, item, tag, section, description, wallet_txn_description, segment_1_tag, segment_2_tag, segment_3_tag, all]
- **visibleIds** | [**List&lt;String&gt;**](String.md)| 追加出力するID項目 | [optional] [enum: deal_id, transfer_id, manual_journal_id]
- **startDate** | **String**| 取得開始日 (yyyy-mm-dd) | [optional]
- **endDate** | **String**| 取得終了日 (yyyy-mm-dd) | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **downloadType** | **String**| ダウンロード形式 | [enum: csv, pdf, yayoi, generic] |
+| **companyId** | **Integer**| 事業所ID | |
+| **visibleTags** | [**List&lt;String&gt;**](String.md)| 補助科目やコメントとして出力する項目 | [optional] [enum: partner, item, tag, section, description, wallet_txn_description, segment_1_tag, segment_2_tag, segment_3_tag, all] |
+| **visibleIds** | [**List&lt;String&gt;**](String.md)| 追加出力するID項目 | [optional] [enum: deal_id, transfer_id, manual_journal_id] |
+| **startDate** | **String**| 取得開始日 (yyyy-mm-dd) | [optional] |
+| **endDate** | **String**| 取得終了日 (yyyy-mm-dd) | [optional] |
 
 ### Return type
 

@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**approvalFlowRoute** | [**ApprovalFlowRouteResponseApprovalFlowRoute**](ApprovalFlowRouteResponseApprovalFlowRoute.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**approvalFlowRoute** | [**ApprovalFlowRouteResponseApprovalFlowRoute**](ApprovalFlowRouteResponseApprovalFlowRoute.md) |  |  |
 
 
 

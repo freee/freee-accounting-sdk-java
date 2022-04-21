@@ -2,14 +2,14 @@
 
 All URIs are relative to *https://api.freee.co.jp*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createPartner**](PartnersApi.md#createPartner) | **POST** api/1/partners | 取引先の作成
-[**destroyPartner**](PartnersApi.md#destroyPartner) | **DELETE** api/1/partners/{id} | 取引先の削除
-[**getPartner**](PartnersApi.md#getPartner) | **GET** api/1/partners/{id} | 取引先の取得
-[**getPartners**](PartnersApi.md#getPartners) | **GET** api/1/partners | 取引先一覧の取得
-[**updatePartner**](PartnersApi.md#updatePartner) | **PUT** api/1/partners/{id} | 取引先の更新
-[**updatePartnerByCode**](PartnersApi.md#updatePartnerByCode) | **PUT** api/1/partners/code/{code} | 取引先の更新
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**createPartner**](PartnersApi.md#createPartner) | **POST** api/1/partners | 取引先の作成 |
+| [**destroyPartner**](PartnersApi.md#destroyPartner) | **DELETE** api/1/partners/{id} | 取引先の削除 |
+| [**getPartner**](PartnersApi.md#getPartner) | **GET** api/1/partners/{id} | 取引先の取得 |
+| [**getPartners**](PartnersApi.md#getPartners) | **GET** api/1/partners | 取引先一覧の取得 |
+| [**updatePartner**](PartnersApi.md#updatePartner) | **PUT** api/1/partners/{id} | 取引先の更新 |
+| [**updatePartnerByCode**](PartnersApi.md#updatePartnerByCode) | **PUT** api/1/partners/code/{code} | 取引先の更新 |
 
 
 
@@ -18,6 +18,8 @@ Method | HTTP request | Description
 > PartnerResponse createPartner(partnerCreateParams)
 
 取引先の作成
+
+
 
 ### Example
 
@@ -58,9 +60,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **partnerCreateParams** | [**PartnerCreateParams**](PartnerCreateParams.md)| 取引先の作成 |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **partnerCreateParams** | [**PartnerCreateParams**](PartnerCreateParams.md)| 取引先の作成 | |
 
 ### Return type
 
@@ -91,6 +93,8 @@ Name | Type | Description  | Notes
 > destroyPartner(id, companyId)
 
 取引先の削除
+
+
 
 ### Example
 
@@ -131,10 +135,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 取引先ID |
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 取引先ID | |
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -166,6 +170,8 @@ null (empty response body)
 > PartnerResponse getPartner(id, companyId)
 
 取引先の取得
+
+
 
 ### Example
 
@@ -207,10 +213,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 取引先ID |
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 取引先ID | |
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -242,6 +248,8 @@ Name | Type | Description  | Notes
 > PartnersResponse getPartners(companyId, startUpdateDate, endUpdateDate, offset, limit, keyword)
 
 取引先一覧の取得
+
+
 
 ### Example
 
@@ -287,14 +295,14 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **companyId** | **Integer**| 事業所ID |
- **startUpdateDate** | **String**| 更新日で絞り込み：開始日(yyyy-mm-dd) | [optional]
- **endUpdateDate** | **String**| 更新日で絞り込み：終了日(yyyy-mm-dd) | [optional]
- **offset** | **Long**| 取得レコードのオフセット (デフォルト: 0) | [optional]
- **limit** | **Integer**| 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) | [optional]
- **keyword** | **String**| 検索キーワード：取引先名・正式名称・カナ名称に対するあいまい検索で一致、またはショートカットキー1・2のいずれかに完全一致 | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **companyId** | **Integer**| 事業所ID | |
+| **startUpdateDate** | **String**| 更新日で絞り込み：開始日(yyyy-mm-dd) | [optional] |
+| **endUpdateDate** | **String**| 更新日で絞り込み：終了日(yyyy-mm-dd) | [optional] |
+| **offset** | **Long**| 取得レコードのオフセット (デフォルト: 0) | [optional] |
+| **limit** | **Integer**| 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) | [optional] |
+| **keyword** | **String**| 検索キーワード：取引先名・正式名称・カナ名称に対するあいまい検索で一致、またはショートカットキー1・2のいずれかに完全一致 | [optional] |
 
 ### Return type
 
@@ -325,6 +333,8 @@ Name | Type | Description  | Notes
 > PartnerResponse updatePartner(id, partnerUpdateParams)
 
 取引先の更新
+
+
 
 ### Example
 
@@ -366,10 +376,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 取引先ID |
- **partnerUpdateParams** | [**PartnerUpdateParams**](PartnerUpdateParams.md)| 取引先の更新 |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 取引先ID | |
+| **partnerUpdateParams** | [**PartnerUpdateParams**](PartnerUpdateParams.md)| 取引先の更新 | |
 
 ### Return type
 
@@ -400,6 +410,8 @@ Name | Type | Description  | Notes
 > PartnerResponse updatePartnerByCode(code, partnerUpdateParams)
 
 取引先の更新
+
+
 
 ### Example
 
@@ -441,10 +453,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **code** | **String**| 取引先コード |
- **partnerUpdateParams** | [**PartnerUpdateParams**](PartnerUpdateParams.md)| 取引先の更新 |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **code** | **String**| 取引先コード | |
+| **partnerUpdateParams** | [**PartnerUpdateParams**](PartnerUpdateParams.md)| 取引先の更新 | |
 
 ### Return type
 

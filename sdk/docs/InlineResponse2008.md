@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**tags** | [**List&lt;Tag&gt;**](Tag.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**tags** | [**List&lt;Tag&gt;**](Tag.md) |  |  |
 
 
 

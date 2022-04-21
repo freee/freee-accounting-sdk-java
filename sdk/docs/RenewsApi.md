@@ -2,11 +2,11 @@
 
 All URIs are relative to *https://api.freee.co.jp*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createDealRenew**](RenewsApi.md#createDealRenew) | **POST** api/1/deals/{id}/renews | 取引（収入／支出）に対する+更新の作成
-[**deleteDealRenew**](RenewsApi.md#deleteDealRenew) | **DELETE** api/1/deals/{id}/renews/{renew_id} | 取引（収入／支出）の+更新の削除
-[**updateDealRenew**](RenewsApi.md#updateDealRenew) | **PUT** api/1/deals/{id}/renews/{renew_id} | 取引（収入／支出）の+更新の更新
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**createDealRenew**](RenewsApi.md#createDealRenew) | **POST** api/1/deals/{id}/renews | 取引（収入／支出）に対する+更新の作成 |
+| [**deleteDealRenew**](RenewsApi.md#deleteDealRenew) | **DELETE** api/1/deals/{id}/renews/{renew_id} | 取引（収入／支出）の+更新の削除 |
+| [**updateDealRenew**](RenewsApi.md#updateDealRenew) | **PUT** api/1/deals/{id}/renews/{renew_id} | 取引（収入／支出）の+更新の更新 |
 
 
 
@@ -15,6 +15,8 @@ Method | HTTP request | Description
 > DealResponse createDealRenew(id, renewCreateParams)
 
 取引（収入／支出）に対する+更新の作成
+
+
 
 ### Example
 
@@ -56,10 +58,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 取引ID |
- **renewCreateParams** | [**RenewCreateParams**](RenewCreateParams.md)| 取引（収入／支出）に対する+更新の情報 |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 取引ID | |
+| **renewCreateParams** | [**RenewCreateParams**](RenewCreateParams.md)| 取引（収入／支出）に対する+更新の情報 | |
 
 ### Return type
 
@@ -90,6 +92,8 @@ Name | Type | Description  | Notes
 > DealResponse deleteDealRenew(id, renewId, companyId)
 
 取引（収入／支出）の+更新の削除
+
+
 
 ### Example
 
@@ -132,11 +136,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 取引ID |
- **renewId** | **Integer**| +更新ID |
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 取引ID | |
+| **renewId** | **Integer**| +更新ID | |
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -167,6 +171,8 @@ Name | Type | Description  | Notes
 > DealResponse updateDealRenew(id, renewId, renewUpdateParams)
 
 取引（収入／支出）の+更新の更新
+
+
 
 ### Example
 
@@ -209,11 +215,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 取引ID |
- **renewId** | **Integer**| +更新ID |
- **renewUpdateParams** | [**RenewUpdateParams**](RenewUpdateParams.md)| +更新の更新情報 |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 取引ID | |
+| **renewId** | **Integer**| +更新ID | |
+| **renewUpdateParams** | [**RenewUpdateParams**](RenewUpdateParams.md)| +更新の更新情報 | |
 
 ### Return type
 

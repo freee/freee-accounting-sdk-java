@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**company** | [**CompanyResponseCompany**](CompanyResponseCompany.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**company** | [**CompanyResponseCompany**](CompanyResponseCompany.md) |  |  |
 
 
 

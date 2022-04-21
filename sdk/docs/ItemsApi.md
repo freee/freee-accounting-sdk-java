@@ -2,13 +2,13 @@
 
 All URIs are relative to *https://api.freee.co.jp*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createItem**](ItemsApi.md#createItem) | **POST** api/1/items | 品目の作成
-[**destroyItem**](ItemsApi.md#destroyItem) | **DELETE** api/1/items/{id} | 品目の削除
-[**getItem**](ItemsApi.md#getItem) | **GET** api/1/items/{id} | 品目の取得
-[**getItems**](ItemsApi.md#getItems) | **GET** api/1/items | 品目一覧の取得
-[**updateItem**](ItemsApi.md#updateItem) | **PUT** api/1/items/{id} | 品目の更新
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**createItem**](ItemsApi.md#createItem) | **POST** api/1/items | 品目の作成 |
+| [**destroyItem**](ItemsApi.md#destroyItem) | **DELETE** api/1/items/{id} | 品目の削除 |
+| [**getItem**](ItemsApi.md#getItem) | **GET** api/1/items/{id} | 品目の取得 |
+| [**getItems**](ItemsApi.md#getItems) | **GET** api/1/items | 品目一覧の取得 |
+| [**updateItem**](ItemsApi.md#updateItem) | **PUT** api/1/items/{id} | 品目の更新 |
 
 
 
@@ -17,6 +17,8 @@ Method | HTTP request | Description
 > ItemResponse createItem(itemParams)
 
 品目の作成
+
+
 
 ### Example
 
@@ -57,9 +59,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **itemParams** | [**ItemParams**](ItemParams.md)| 品目の作成 | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **itemParams** | [**ItemParams**](ItemParams.md)| 品目の作成 | [optional] |
 
 ### Return type
 
@@ -90,6 +92,8 @@ Name | Type | Description  | Notes
 > destroyItem(id, companyId)
 
 品目の削除
+
+
 
 ### Example
 
@@ -130,10 +134,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 品目ID |
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 品目ID | |
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -165,6 +169,8 @@ null (empty response body)
 > ItemResponse getItem(id, companyId)
 
 品目の取得
+
+
 
 ### Example
 
@@ -206,10 +212,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 品目ID |
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 品目ID | |
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -241,6 +247,8 @@ Name | Type | Description  | Notes
 > InlineResponse2003 getItems(companyId, startUpdateDate, endUpdateDate, offset, limit)
 
 品目一覧の取得
+
+
 
 ### Example
 
@@ -285,13 +293,13 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **companyId** | **Integer**| 事業所ID |
- **startUpdateDate** | **String**| 更新日で絞り込み：開始日(yyyy-mm-dd) | [optional]
- **endUpdateDate** | **String**| 更新日で絞り込み：終了日(yyyy-mm-dd) | [optional]
- **offset** | **Integer**| 取得レコードのオフセット (デフォルト: 0) | [optional]
- **limit** | **Integer**| 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **companyId** | **Integer**| 事業所ID | |
+| **startUpdateDate** | **String**| 更新日で絞り込み：開始日(yyyy-mm-dd) | [optional] |
+| **endUpdateDate** | **String**| 更新日で絞り込み：終了日(yyyy-mm-dd) | [optional] |
+| **offset** | **Integer**| 取得レコードのオフセット (デフォルト: 0) | [optional] |
+| **limit** | **Integer**| 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) | [optional] |
 
 ### Return type
 
@@ -322,6 +330,8 @@ Name | Type | Description  | Notes
 > ItemResponse updateItem(id, itemParams)
 
 品目の更新
+
+
 
 ### Example
 
@@ -363,10 +373,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 品目ID |
- **itemParams** | [**ItemParams**](ItemParams.md)| 品目の更新 | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 品目ID | |
+| **itemParams** | [**ItemParams**](ItemParams.md)| 品目の更新 | [optional] |
 
 ### Return type
 

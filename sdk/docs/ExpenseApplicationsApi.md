@@ -2,14 +2,14 @@
 
 All URIs are relative to *https://api.freee.co.jp*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createExpenseApplication**](ExpenseApplicationsApi.md#createExpenseApplication) | **POST** api/1/expense_applications | 経費申請の作成
-[**destroyExpenseApplication**](ExpenseApplicationsApi.md#destroyExpenseApplication) | **DELETE** api/1/expense_applications/{id} | 経費申請の削除
-[**getExpenseApplication**](ExpenseApplicationsApi.md#getExpenseApplication) | **GET** api/1/expense_applications/{id} | 経費申請詳細の取得
-[**getExpenseApplications**](ExpenseApplicationsApi.md#getExpenseApplications) | **GET** api/1/expense_applications | 経費申請一覧の取得
-[**updateExpenseApplication**](ExpenseApplicationsApi.md#updateExpenseApplication) | **PUT** api/1/expense_applications/{id} | 経費申請の更新
-[**updateExpenseApplicationAction**](ExpenseApplicationsApi.md#updateExpenseApplicationAction) | **POST** api/1/expense_applications/{id}/actions | 経費申請の承認操作
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**createExpenseApplication**](ExpenseApplicationsApi.md#createExpenseApplication) | **POST** api/1/expense_applications | 経費申請の作成 |
+| [**destroyExpenseApplication**](ExpenseApplicationsApi.md#destroyExpenseApplication) | **DELETE** api/1/expense_applications/{id} | 経費申請の削除 |
+| [**getExpenseApplication**](ExpenseApplicationsApi.md#getExpenseApplication) | **GET** api/1/expense_applications/{id} | 経費申請詳細の取得 |
+| [**getExpenseApplications**](ExpenseApplicationsApi.md#getExpenseApplications) | **GET** api/1/expense_applications | 経費申請一覧の取得 |
+| [**updateExpenseApplication**](ExpenseApplicationsApi.md#updateExpenseApplication) | **PUT** api/1/expense_applications/{id} | 経費申請の更新 |
+| [**updateExpenseApplicationAction**](ExpenseApplicationsApi.md#updateExpenseApplicationAction) | **POST** api/1/expense_applications/{id}/actions | 経費申請の承認操作 |
 
 
 
@@ -18,6 +18,8 @@ Method | HTTP request | Description
 > ExpenseApplicationResponse createExpenseApplication(expenseApplicationCreateParams)
 
 経費申請の作成
+
+
 
 ### Example
 
@@ -58,9 +60,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **expenseApplicationCreateParams** | [**ExpenseApplicationCreateParams**](ExpenseApplicationCreateParams.md)| 経費申請の作成 | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **expenseApplicationCreateParams** | [**ExpenseApplicationCreateParams**](ExpenseApplicationCreateParams.md)| 経費申請の作成 | [optional] |
 
 ### Return type
 
@@ -91,6 +93,8 @@ Name | Type | Description  | Notes
 > destroyExpenseApplication(id, companyId)
 
 経費申請の削除
+
+
 
 ### Example
 
@@ -131,10 +135,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 経費申請ID |
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 経費申請ID | |
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -166,6 +170,8 @@ null (empty response body)
 > ExpenseApplicationResponse getExpenseApplication(id, companyId)
 
 経費申請詳細の取得
+
+
 
 ### Example
 
@@ -207,10 +213,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 経費申請ID |
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 経費申請ID | |
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -242,6 +248,8 @@ Name | Type | Description  | Notes
 > ExpenseApplicationsIndexResponse getExpenseApplications(companyId, status, payrollAttached, startTransactionDate, endTransactionDate, applicationNumber, title, startIssueDate, endIssueDate, applicantId, approverId, minAmount, maxAmount, offset, limit)
 
 経費申請一覧の取得
+
+
 
 ### Example
 
@@ -296,23 +304,23 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **companyId** | **Integer**| 事業所ID |
- **status** | **String**| 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し)、 取引ステータス(unsettled:清算待ち, settled:精算済み) | [optional] [enum: draft, in_progress, approved, rejected, feedback, unsettled, settled]
- **payrollAttached** | **Boolean**| true:給与連携あり、false:給与連携なし、未指定時:絞り込みなし | [optional]
- **startTransactionDate** | **String**| 発生日(経費申請項目の日付)で絞込：開始日(yyyy-mm-dd) | [optional]
- **endTransactionDate** | **String**| 発生日(経費申請項目の日付)で絞込：終了日(yyyy-mm-dd) | [optional]
- **applicationNumber** | **Integer**| 申請No. | [optional]
- **title** | **String**| 申請タイトル | [optional]
- **startIssueDate** | **String**| 申請日で絞込：開始日(yyyy-mm-dd) | [optional]
- **endIssueDate** | **String**| 申請日で絞込：終了日(yyyy-mm-dd) | [optional]
- **applicantId** | **Integer**| 申請者のユーザーID | [optional]
- **approverId** | **Integer**| 承認者のユーザーID | [optional]
- **minAmount** | **Integer**| 金額で絞込 (下限金額) | [optional]
- **maxAmount** | **Integer**| 金額で絞込 (上限金額) | [optional]
- **offset** | **Long**| 取得レコードのオフセット (デフォルト: 0) | [optional]
- **limit** | **Integer**| 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **companyId** | **Integer**| 事業所ID | |
+| **status** | **String**| 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し)、 取引ステータス(unsettled:清算待ち, settled:精算済み) | [optional] [enum: draft, in_progress, approved, rejected, feedback, unsettled, settled] |
+| **payrollAttached** | **Boolean**| true:給与連携あり、false:給与連携なし、未指定時:絞り込みなし | [optional] |
+| **startTransactionDate** | **String**| 発生日(経費申請項目の日付)で絞込：開始日(yyyy-mm-dd) | [optional] |
+| **endTransactionDate** | **String**| 発生日(経費申請項目の日付)で絞込：終了日(yyyy-mm-dd) | [optional] |
+| **applicationNumber** | **Integer**| 申請No. | [optional] |
+| **title** | **String**| 申請タイトル | [optional] |
+| **startIssueDate** | **String**| 申請日で絞込：開始日(yyyy-mm-dd) | [optional] |
+| **endIssueDate** | **String**| 申請日で絞込：終了日(yyyy-mm-dd) | [optional] |
+| **applicantId** | **Integer**| 申請者のユーザーID | [optional] |
+| **approverId** | **Integer**| 承認者のユーザーID | [optional] |
+| **minAmount** | **Integer**| 金額で絞込 (下限金額) | [optional] |
+| **maxAmount** | **Integer**| 金額で絞込 (上限金額) | [optional] |
+| **offset** | **Long**| 取得レコードのオフセット (デフォルト: 0) | [optional] |
+| **limit** | **Integer**| 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 500) | [optional] |
 
 ### Return type
 
@@ -343,6 +351,8 @@ Name | Type | Description  | Notes
 > ExpenseApplicationResponse updateExpenseApplication(id, expenseApplicationUpdateParams)
 
 経費申請の更新
+
+
 
 ### Example
 
@@ -384,10 +394,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 経費申請ID |
- **expenseApplicationUpdateParams** | [**ExpenseApplicationUpdateParams**](ExpenseApplicationUpdateParams.md)| 経費申請の更新 | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 経費申請ID | |
+| **expenseApplicationUpdateParams** | [**ExpenseApplicationUpdateParams**](ExpenseApplicationUpdateParams.md)| 経費申請の更新 | [optional] |
 
 ### Return type
 
@@ -419,6 +429,8 @@ Name | Type | Description  | Notes
 > ExpenseApplicationResponse updateExpenseApplicationAction(id, expenseApplicationActionCreateParams)
 
 経費申請の承認操作
+
+
 
 ### Example
 
@@ -460,10 +472,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 経費申請ID |
- **expenseApplicationActionCreateParams** | [**ExpenseApplicationActionCreateParams**](ExpenseApplicationActionCreateParams.md)| 経費申請の承認操作 |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 経費申請ID | |
+| **expenseApplicationActionCreateParams** | [**ExpenseApplicationActionCreateParams**](ExpenseApplicationActionCreateParams.md)| 経費申請の承認操作 | |
 
 ### Return type
 

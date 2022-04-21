@@ -48,6 +48,10 @@ public class ManualJournalCreateParams {
   @SerializedName(SERIALIZED_NAME_ISSUE_DATE)
   private String issueDate;
 
+  public static final String SERIALIZED_NAME_RECEIPT_IDS = "receipt_ids";
+  @SerializedName(SERIALIZED_NAME_RECEIPT_IDS)
+  private List<Integer> receiptIds = null;
+
   public ManualJournalCreateParams() { 
   }
 
@@ -150,6 +154,37 @@ public class ManualJournalCreateParams {
   }
 
 
+  public ManualJournalCreateParams receiptIds(List<Integer> receiptIds) {
+    
+    this.receiptIds = receiptIds;
+    return this;
+  }
+
+  public ManualJournalCreateParams addReceiptIdsItem(Integer receiptIdsItem) {
+    if (this.receiptIds == null) {
+      this.receiptIds = new ArrayList<>();
+    }
+    this.receiptIds.add(receiptIdsItem);
+    return this;
+  }
+
+   /**
+   * 証憑ファイルID（ファイルボックスのファイルID）（配列）
+   * @return receiptIds
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "証憑ファイルID（ファイルボックスのファイルID）（配列）")
+
+  public List<Integer> getReceiptIds() {
+    return receiptIds;
+  }
+
+
+  public void setReceiptIds(List<Integer> receiptIds) {
+    this.receiptIds = receiptIds;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -162,12 +197,13 @@ public class ManualJournalCreateParams {
     return Objects.equals(this.adjustment, manualJournalCreateParams.adjustment) &&
         Objects.equals(this.companyId, manualJournalCreateParams.companyId) &&
         Objects.equals(this.details, manualJournalCreateParams.details) &&
-        Objects.equals(this.issueDate, manualJournalCreateParams.issueDate);
+        Objects.equals(this.issueDate, manualJournalCreateParams.issueDate) &&
+        Objects.equals(this.receiptIds, manualJournalCreateParams.receiptIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(adjustment, companyId, details, issueDate);
+    return Objects.hash(adjustment, companyId, details, issueDate, receiptIds);
   }
 
   @Override
@@ -178,6 +214,7 @@ public class ManualJournalCreateParams {
     sb.append("    companyId: ").append(toIndentedString(companyId)).append("\n");
     sb.append("    details: ").append(toIndentedString(details)).append("\n");
     sb.append("    issueDate: ").append(toIndentedString(issueDate)).append("\n");
+    sb.append("    receiptIds: ").append(toIndentedString(receiptIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

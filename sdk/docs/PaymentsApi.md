@@ -2,11 +2,11 @@
 
 All URIs are relative to *https://api.freee.co.jp*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createDealPayment**](PaymentsApi.md#createDealPayment) | **POST** api/1/deals/{id}/payments | 取引（収入／支出）の支払行作成
-[**destroyDealPayment**](PaymentsApi.md#destroyDealPayment) | **DELETE** api/1/deals/{id}/payments/{payment_id} | 取引（収入／支出）の支払行削除
-[**updateDealPayment**](PaymentsApi.md#updateDealPayment) | **PUT** api/1/deals/{id}/payments/{payment_id} | 取引（収入／支出）の支払行更新
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**createDealPayment**](PaymentsApi.md#createDealPayment) | **POST** api/1/deals/{id}/payments | 取引（収入／支出）の支払行作成 |
+| [**destroyDealPayment**](PaymentsApi.md#destroyDealPayment) | **DELETE** api/1/deals/{id}/payments/{payment_id} | 取引（収入／支出）の支払行削除 |
+| [**updateDealPayment**](PaymentsApi.md#updateDealPayment) | **PUT** api/1/deals/{id}/payments/{payment_id} | 取引（収入／支出）の支払行更新 |
 
 
 
@@ -15,6 +15,8 @@ Method | HTTP request | Description
 > DealResponse createDealPayment(id, paymentParams)
 
 取引（収入／支出）の支払行作成
+
+
 
 ### Example
 
@@ -56,10 +58,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 取引ID |
- **paymentParams** | [**PaymentParams**](PaymentParams.md)| 取引（収入／支出）の支払行作成 |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 取引ID | |
+| **paymentParams** | [**PaymentParams**](PaymentParams.md)| 取引（収入／支出）の支払行作成 | |
 
 ### Return type
 
@@ -91,6 +93,8 @@ Name | Type | Description  | Notes
 > destroyDealPayment(id, paymentId, companyId)
 
 取引（収入／支出）の支払行削除
+
+
 
 ### Example
 
@@ -132,11 +136,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 取引ID |
- **paymentId** | **Long**| 決済ID |
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 取引ID | |
+| **paymentId** | **Long**| 決済ID | |
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -168,6 +172,8 @@ null (empty response body)
 > DealResponse updateDealPayment(id, paymentId, paymentParams)
 
 取引（収入／支出）の支払行更新
+
+
 
 ### Example
 
@@ -210,11 +216,11 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 取引ID |
- **paymentId** | **Long**| 決済ID |
- **paymentParams** | [**PaymentParams**](PaymentParams.md)| 取引（収入／支出）の支払行更新 |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 取引ID | |
+| **paymentId** | **Long**| 決済ID | |
+| **paymentParams** | [**PaymentParams**](PaymentParams.md)| 取引（収入／支出）の支払行更新 | |
 
 ### Return type
 

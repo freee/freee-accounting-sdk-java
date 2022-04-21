@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**invoice** | [**InvoiceResponseInvoice**](InvoiceResponseInvoice.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**invoice** | [**InvoiceResponseInvoice**](InvoiceResponseInvoice.md) |  |  |
 
 
 

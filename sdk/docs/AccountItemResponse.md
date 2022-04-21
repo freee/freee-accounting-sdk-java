@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**accountItem** | [**AccountItemResponseAccountItem**](AccountItemResponseAccountItem.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**accountItem** | [**AccountItemResponseAccountItem**](AccountItemResponseAccountItem.md) |  |  |
 
 
 

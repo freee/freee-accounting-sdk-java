@@ -2,13 +2,13 @@
 
 All URIs are relative to *https://api.freee.co.jp*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createInvoice**](InvoicesApi.md#createInvoice) | **POST** api/1/invoices | 請求書の作成
-[**destroyInvoice**](InvoicesApi.md#destroyInvoice) | **DELETE** api/1/invoices/{id} | 請求書の削除
-[**getInvoice**](InvoicesApi.md#getInvoice) | **GET** api/1/invoices/{id} | 請求書の取得
-[**getInvoices**](InvoicesApi.md#getInvoices) | **GET** api/1/invoices | 請求書一覧の取得
-[**updateInvoice**](InvoicesApi.md#updateInvoice) | **PUT** api/1/invoices/{id} | 請求書の更新
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**createInvoice**](InvoicesApi.md#createInvoice) | **POST** api/1/invoices | 請求書の作成 |
+| [**destroyInvoice**](InvoicesApi.md#destroyInvoice) | **DELETE** api/1/invoices/{id} | 請求書の削除 |
+| [**getInvoice**](InvoicesApi.md#getInvoice) | **GET** api/1/invoices/{id} | 請求書の取得 |
+| [**getInvoices**](InvoicesApi.md#getInvoices) | **GET** api/1/invoices | 請求書一覧の取得 |
+| [**updateInvoice**](InvoicesApi.md#updateInvoice) | **PUT** api/1/invoices/{id} | 請求書の更新 |
 
 
 
@@ -17,6 +17,8 @@ Method | HTTP request | Description
 > InvoiceResponse createInvoice(invoiceCreateParams)
 
 請求書の作成
+
+
 
 ### Example
 
@@ -57,9 +59,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **invoiceCreateParams** | [**InvoiceCreateParams**](InvoiceCreateParams.md)| 請求書の作成 | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **invoiceCreateParams** | [**InvoiceCreateParams**](InvoiceCreateParams.md)| 請求書の作成 | [optional] |
 
 ### Return type
 
@@ -91,6 +93,8 @@ Name | Type | Description  | Notes
 > destroyInvoice(id, companyId)
 
 請求書の削除
+
+
 
 ### Example
 
@@ -131,10 +135,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  |
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**|  | |
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -166,6 +170,8 @@ null (empty response body)
 > InvoiceResponse getInvoice(id, companyId)
 
 請求書の取得
+
+
 
 ### Example
 
@@ -207,10 +213,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 請求書ID |
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 請求書ID | |
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -242,6 +248,8 @@ Name | Type | Description  | Notes
 > InvoiceIndexResponse getInvoices(companyId, partnerId, partnerCode, startIssueDate, endIssueDate, startDueDate, endDueDate, invoiceNumber, description, invoiceStatus, paymentStatus, offset, limit)
 
 請求書一覧の取得
+
+
 
 ### Example
 
@@ -294,21 +302,21 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **companyId** | **Integer**| 事業所ID |
- **partnerId** | **Integer**| 取引先IDで絞込 | [optional]
- **partnerCode** | **String**| 取引先コードで絞込 | [optional]
- **startIssueDate** | **String**| 請求日の開始日(yyyy-mm-dd) | [optional]
- **endIssueDate** | **String**| 請求日の終了日(yyyy-mm-dd) | [optional]
- **startDueDate** | **String**| 期日の開始日(yyyy-mm-dd) | [optional]
- **endDueDate** | **String**| 期日の終了日(yyyy-mm-dd) | [optional]
- **invoiceNumber** | **String**| 請求書番号 | [optional]
- **description** | **String**| 概要 | [optional]
- **invoiceStatus** | **String**| 請求書ステータス  (draft: 下書き, applying: 申請中, remanded: 差し戻し, rejected: 却下, approved: 承認済み, unsubmitted: 送付待ち, submitted: 送付済み) | [optional] [enum: draft, applying, remanded, rejected, approved, unsubmitted, submitted]
- **paymentStatus** | **String**| 入金ステータス  (unsettled: 入金待ち, settled: 入金済み) | [optional] [enum: unsettled, settled]
- **offset** | **Long**| 取得レコードのオフセット (デフォルト: 0) | [optional]
- **limit** | **Integer**| 取得レコードの件数 (デフォルト: 20, 最大: 100)  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **companyId** | **Integer**| 事業所ID | |
+| **partnerId** | **Integer**| 取引先IDで絞込 | [optional] |
+| **partnerCode** | **String**| 取引先コードで絞込 | [optional] |
+| **startIssueDate** | **String**| 請求日の開始日(yyyy-mm-dd) | [optional] |
+| **endIssueDate** | **String**| 請求日の終了日(yyyy-mm-dd) | [optional] |
+| **startDueDate** | **String**| 期日の開始日(yyyy-mm-dd) | [optional] |
+| **endDueDate** | **String**| 期日の終了日(yyyy-mm-dd) | [optional] |
+| **invoiceNumber** | **String**| 請求書番号 | [optional] |
+| **description** | **String**| 概要 | [optional] |
+| **invoiceStatus** | **String**| 請求書ステータス  (draft: 下書き, applying: 申請中, remanded: 差し戻し, rejected: 却下, approved: 承認済み, unsubmitted: 送付待ち, submitted: 送付済み) | [optional] [enum: draft, applying, remanded, rejected, approved, unsubmitted, submitted] |
+| **paymentStatus** | **String**| 入金ステータス  (unsettled: 入金待ち, settled: 入金済み) | [optional] [enum: unsettled, settled] |
+| **offset** | **Long**| 取得レコードのオフセット (デフォルト: 0) | [optional] |
+| **limit** | **Integer**| 取得レコードの件数 (デフォルト: 20, 最大: 100)  | [optional] |
 
 ### Return type
 
@@ -340,6 +348,8 @@ Name | Type | Description  | Notes
 > InvoiceResponse updateInvoice(id, invoiceUpdateParams)
 
 請求書の更新
+
+
 
 ### Example
 
@@ -381,10 +391,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 請求書ID |
- **invoiceUpdateParams** | [**InvoiceUpdateParams**](InvoiceUpdateParams.md)| 請求書の更新 | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 請求書ID | |
+| **invoiceUpdateParams** | [**InvoiceUpdateParams**](InvoiceUpdateParams.md)| 請求書の更新 | [optional] |
 
 ### Return type
 

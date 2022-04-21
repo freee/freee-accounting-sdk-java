@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**journals** | [**JournalStatusResponseJournals**](JournalStatusResponseJournals.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**journals** | [**JournalStatusResponseJournals**](JournalStatusResponseJournals.md) |  |  |
 
 
 

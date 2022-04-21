@@ -52,6 +52,10 @@ public class ManualJournal {
   @SerializedName(SERIALIZED_NAME_ISSUE_DATE)
   private String issueDate;
 
+  public static final String SERIALIZED_NAME_RECEIPT_IDS = "receipt_ids";
+  @SerializedName(SERIALIZED_NAME_RECEIPT_IDS)
+  private List<Integer> receiptIds = null;
+
   public static final String SERIALIZED_NAME_TXN_NUMBER = "txn_number";
   @SerializedName(SERIALIZED_NAME_TXN_NUMBER)
   private String txnNumber;
@@ -183,6 +187,37 @@ public class ManualJournal {
   }
 
 
+  public ManualJournal receiptIds(List<Integer> receiptIds) {
+    
+    this.receiptIds = receiptIds;
+    return this;
+  }
+
+  public ManualJournal addReceiptIdsItem(Integer receiptIdsItem) {
+    if (this.receiptIds == null) {
+      this.receiptIds = new ArrayList<>();
+    }
+    this.receiptIds.add(receiptIdsItem);
+    return this;
+  }
+
+   /**
+   * 証憑ファイルID（ファイルボックスのファイルID）
+   * @return receiptIds
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "[1,2,3]", value = "証憑ファイルID（ファイルボックスのファイルID）")
+
+  public List<Integer> getReceiptIds() {
+    return receiptIds;
+  }
+
+
+  public void setReceiptIds(List<Integer> receiptIds) {
+    this.receiptIds = receiptIds;
+  }
+
+
   public ManualJournal txnNumber(String txnNumber) {
     
     this.txnNumber = txnNumber;
@@ -220,12 +255,13 @@ public class ManualJournal {
         Objects.equals(this.details, manualJournal.details) &&
         Objects.equals(this.id, manualJournal.id) &&
         Objects.equals(this.issueDate, manualJournal.issueDate) &&
+        Objects.equals(this.receiptIds, manualJournal.receiptIds) &&
         Objects.equals(this.txnNumber, manualJournal.txnNumber);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(adjustment, companyId, details, id, issueDate, txnNumber);
+    return Objects.hash(adjustment, companyId, details, id, issueDate, receiptIds, txnNumber);
   }
 
   @Override
@@ -237,6 +273,7 @@ public class ManualJournal {
     sb.append("    details: ").append(toIndentedString(details)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    issueDate: ").append(toIndentedString(issueDate)).append("\n");
+    sb.append("    receiptIds: ").append(toIndentedString(receiptIds)).append("\n");
     sb.append("    txnNumber: ").append(toIndentedString(txnNumber)).append("\n");
     sb.append("}");
     return sb.toString();

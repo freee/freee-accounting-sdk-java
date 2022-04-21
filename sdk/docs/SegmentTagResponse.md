@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**segmentTag** | [**SegmentTag**](SegmentTag.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**segmentTag** | [**SegmentTag**](SegmentTag.md) |  |  |
 
 
 

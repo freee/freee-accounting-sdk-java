@@ -2,13 +2,13 @@
 
 All URIs are relative to *https://api.freee.co.jp*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createTransfer**](TransfersApi.md#createTransfer) | **POST** api/1/transfers | 取引（振替）の作成
-[**destroyTransfer**](TransfersApi.md#destroyTransfer) | **DELETE** api/1/transfers/{id} | 取引（振替）の削除する
-[**getTransfer**](TransfersApi.md#getTransfer) | **GET** api/1/transfers/{id} | 取引（振替）の取得
-[**getTransfers**](TransfersApi.md#getTransfers) | **GET** api/1/transfers | 取引（振替）一覧の取得
-[**updateTransfer**](TransfersApi.md#updateTransfer) | **PUT** api/1/transfers/{id} | 取引（振替）の更新
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**createTransfer**](TransfersApi.md#createTransfer) | **POST** api/1/transfers | 取引（振替）の作成 |
+| [**destroyTransfer**](TransfersApi.md#destroyTransfer) | **DELETE** api/1/transfers/{id} | 取引（振替）の削除する |
+| [**getTransfer**](TransfersApi.md#getTransfer) | **GET** api/1/transfers/{id} | 取引（振替）の取得 |
+| [**getTransfers**](TransfersApi.md#getTransfers) | **GET** api/1/transfers | 取引（振替）一覧の取得 |
+| [**updateTransfer**](TransfersApi.md#updateTransfer) | **PUT** api/1/transfers/{id} | 取引（振替）の更新 |
 
 
 
@@ -17,6 +17,8 @@ Method | HTTP request | Description
 > TransferResponse createTransfer(transferParams)
 
 取引（振替）の作成
+
+
 
 ### Example
 
@@ -57,9 +59,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **transferParams** | [**TransferParams**](TransferParams.md)| 取引（振替）の作成 | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **transferParams** | [**TransferParams**](TransferParams.md)| 取引（振替）の作成 | [optional] |
 
 ### Return type
 
@@ -90,6 +92,8 @@ Name | Type | Description  | Notes
 > destroyTransfer(id, companyId)
 
 取引（振替）の削除する
+
+
 
 ### Example
 
@@ -130,10 +134,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 取引(振替)ID |
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 取引(振替)ID | |
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -165,6 +169,8 @@ null (empty response body)
 > TransferResponse getTransfer(id, companyId)
 
 取引（振替）の取得
+
+
 
 ### Example
 
@@ -206,10 +212,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 取引(振替)ID |
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 取引(振替)ID | |
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -241,6 +247,8 @@ Name | Type | Description  | Notes
 > InlineResponse20011 getTransfers(companyId, startDate, endDate, offset, limit)
 
 取引（振替）一覧の取得
+
+
 
 ### Example
 
@@ -285,13 +293,13 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **companyId** | **Integer**| 事業所ID |
- **startDate** | **String**| 振替日で絞込：開始日 (yyyy-mm-dd) | [optional]
- **endDate** | **String**| 振替日で絞込：終了日 (yyyy-mm-dd) | [optional]
- **offset** | **Long**| 取得レコードのオフセット (デフォルト: 0) | [optional]
- **limit** | **Integer**| 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **companyId** | **Integer**| 事業所ID | |
+| **startDate** | **String**| 振替日で絞込：開始日 (yyyy-mm-dd) | [optional] |
+| **endDate** | **String**| 振替日で絞込：終了日 (yyyy-mm-dd) | [optional] |
+| **offset** | **Long**| 取得レコードのオフセット (デフォルト: 0) | [optional] |
+| **limit** | **Integer**| 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  | [optional] |
 
 ### Return type
 
@@ -322,6 +330,8 @@ Name | Type | Description  | Notes
 > TransferResponse updateTransfer(id, transferParams)
 
 取引（振替）の更新
+
+
 
 ### Example
 
@@ -363,10 +373,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 取引(振替)ID |
- **transferParams** | [**TransferParams**](TransferParams.md)| 取引（振替）の更新 |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 取引(振替)ID | |
+| **transferParams** | [**TransferParams**](TransferParams.md)| 取引（振替）の更新 | |
 
 ### Return type
 

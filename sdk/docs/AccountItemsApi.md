@@ -2,13 +2,13 @@
 
 All URIs are relative to *https://api.freee.co.jp*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createAccountItem**](AccountItemsApi.md#createAccountItem) | **POST** api/1/account_items | 勘定科目の作成
-[**destroyAccountItem**](AccountItemsApi.md#destroyAccountItem) | **DELETE** api/1/account_items/{id} | 勘定科目の削除
-[**getAccountItem**](AccountItemsApi.md#getAccountItem) | **GET** api/1/account_items/{id} | 勘定科目の詳細情報の取得
-[**getAccountItems**](AccountItemsApi.md#getAccountItems) | **GET** api/1/account_items | 勘定科目一覧の取得
-[**updateAccountItem**](AccountItemsApi.md#updateAccountItem) | **PUT** api/1/account_items/{id} | 勘定科目の更新
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**createAccountItem**](AccountItemsApi.md#createAccountItem) | **POST** api/1/account_items | 勘定科目の作成 |
+| [**destroyAccountItem**](AccountItemsApi.md#destroyAccountItem) | **DELETE** api/1/account_items/{id} | 勘定科目の削除 |
+| [**getAccountItem**](AccountItemsApi.md#getAccountItem) | **GET** api/1/account_items/{id} | 勘定科目の詳細情報の取得 |
+| [**getAccountItems**](AccountItemsApi.md#getAccountItems) | **GET** api/1/account_items | 勘定科目一覧の取得 |
+| [**updateAccountItem**](AccountItemsApi.md#updateAccountItem) | **PUT** api/1/account_items/{id} | 勘定科目の更新 |
 
 
 
@@ -17,6 +17,8 @@ Method | HTTP request | Description
 > AccountItemResponse createAccountItem(accountItemParams)
 
 勘定科目の作成
+
+
 
 ### Example
 
@@ -57,9 +59,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accountItemParams** | [**AccountItemParams**](AccountItemParams.md)| 勘定科目の作成 |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **accountItemParams** | [**AccountItemParams**](AccountItemParams.md)| 勘定科目の作成 | |
 
 ### Return type
 
@@ -90,6 +92,8 @@ Name | Type | Description  | Notes
 > destroyAccountItem(id, companyId)
 
 勘定科目の削除
+
+
 
 ### Example
 
@@ -130,10 +134,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  |
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**|  | |
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -164,6 +168,8 @@ null (empty response body)
 > AccountItemResponse getAccountItem(id, companyId)
 
 勘定科目の詳細情報の取得
+
+
 
 ### Example
 
@@ -205,10 +211,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 勘定科目ID |
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 勘定科目ID | |
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -240,6 +246,8 @@ Name | Type | Description  | Notes
 > AccountItemsResponse getAccountItems(companyId, baseDate)
 
 勘定科目一覧の取得
+
+
 
 ### Example
 
@@ -281,10 +289,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **companyId** | **Integer**| 事業所ID |
- **baseDate** | **String**| 基準日:指定した場合、勘定科目に紐づく税区分(default_tax_code)が、基準日の税率に基づいて返ります。 | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **companyId** | **Integer**| 事業所ID | |
+| **baseDate** | **String**| 基準日:指定した場合、勘定科目に紐づく税区分(default_tax_code)が、基準日の税率に基づいて返ります。 | [optional] |
 
 ### Return type
 
@@ -315,6 +323,8 @@ Name | Type | Description  | Notes
 > AccountItemResponse updateAccountItem(id, accountItemParams)
 
 勘定科目の更新
+
+
 
 ### Example
 
@@ -356,10 +366,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  |
- **accountItemParams** | [**AccountItemParams**](AccountItemParams.md)| 勘定科目の更新 |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**|  | |
+| **accountItemParams** | [**AccountItemParams**](AccountItemParams.md)| 勘定科目の更新 | |
 
 ### Return type
 

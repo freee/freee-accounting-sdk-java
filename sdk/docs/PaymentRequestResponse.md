@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**paymentRequest** | [**PaymentRequestResponsePaymentRequest**](PaymentRequestResponsePaymentRequest.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**paymentRequest** | [**PaymentRequestResponsePaymentRequest**](PaymentRequestResponsePaymentRequest.md) |  |  |
 
 
 

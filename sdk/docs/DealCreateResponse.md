@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**deal** | [**DealCreateResponseDeal**](DealCreateResponseDeal.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**deal** | [**DealCreateResponseDeal**](DealCreateResponseDeal.md) |  |  |
 
 
 

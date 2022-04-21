@@ -75,4 +75,12 @@ public class ManualJournalUpdateParamsTest {
         // TODO: test issueDate
     }
 
+    /**
+     * Test the property 'receiptIds'
+     */
+    @Test
+    public void receiptIdsTest() {
+        // TODO: test receiptIds
+    }
+
 }

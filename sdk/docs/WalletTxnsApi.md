@@ -2,12 +2,12 @@
 
 All URIs are relative to *https://api.freee.co.jp*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createWalletTxn**](WalletTxnsApi.md#createWalletTxn) | **POST** api/1/wallet_txns | 明細の作成
-[**destroyWalletTxn**](WalletTxnsApi.md#destroyWalletTxn) | **DELETE** api/1/wallet_txns/{id} | 明細の削除
-[**getWalletTxn**](WalletTxnsApi.md#getWalletTxn) | **GET** api/1/wallet_txns/{id} | 明細の取得
-[**getWalletTxns**](WalletTxnsApi.md#getWalletTxns) | **GET** api/1/wallet_txns | 明細一覧の取得
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**createWalletTxn**](WalletTxnsApi.md#createWalletTxn) | **POST** api/1/wallet_txns | 明細の作成 |
+| [**destroyWalletTxn**](WalletTxnsApi.md#destroyWalletTxn) | **DELETE** api/1/wallet_txns/{id} | 明細の削除 |
+| [**getWalletTxn**](WalletTxnsApi.md#getWalletTxn) | **GET** api/1/wallet_txns/{id} | 明細の取得 |
+| [**getWalletTxns**](WalletTxnsApi.md#getWalletTxns) | **GET** api/1/wallet_txns | 明細一覧の取得 |
 
 
 
@@ -16,6 +16,8 @@ Method | HTTP request | Description
 > WalletTxnResponse createWalletTxn(walletTxnParams)
 
 明細の作成
+
+
 
 ### Example
 
@@ -56,9 +58,9 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **walletTxnParams** | [**WalletTxnParams**](WalletTxnParams.md)| 明細の作成 | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **walletTxnParams** | [**WalletTxnParams**](WalletTxnParams.md)| 明細の作成 | [optional] |
 
 ### Return type
 
@@ -89,6 +91,8 @@ Name | Type | Description  | Notes
 > destroyWalletTxn(id, companyId)
 
 明細の削除
+
+
 
 ### Example
 
@@ -129,10 +133,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 明細ID |
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 明細ID | |
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -164,6 +168,8 @@ null (empty response body)
 > WalletTxnResponse getWalletTxn(id, companyId)
 
 明細の取得
+
+
 
 ### Example
 
@@ -205,10 +211,10 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 明細ID |
- **companyId** | **Integer**| 事業所ID |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 明細ID | |
+| **companyId** | **Integer**| 事業所ID | |
 
 ### Return type
 
@@ -240,6 +246,8 @@ Name | Type | Description  | Notes
 > InlineResponse20014 getWalletTxns(companyId, walletableType, walletableId, startDate, endDate, entrySide, offset, limit)
 
 明細一覧の取得
+
+
 
 ### Example
 
@@ -287,16 +295,16 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **companyId** | **Integer**| 事業所ID |
- **walletableType** | **String**| 口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet) walletable_type、walletable_idは同時に指定が必要です。 | [optional] [enum: bank_account, credit_card, wallet]
- **walletableId** | **Integer**| 口座ID walletable_type、walletable_idは同時に指定が必要です。 | [optional]
- **startDate** | **String**| 取引日で絞込：開始日 (yyyy-mm-dd) | [optional]
- **endDate** | **String**| 取引日で絞込：終了日 (yyyy-mm-dd) | [optional]
- **entrySide** | **String**| 入金／出金 (入金: income, 出金: expense) | [optional] [enum: income, expense]
- **offset** | **Long**| 取得レコードのオフセット (デフォルト: 0) | [optional]
- **limit** | **Integer**| 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **companyId** | **Integer**| 事業所ID | |
+| **walletableType** | **String**| 口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet) walletable_type、walletable_idは同時に指定が必要です。 | [optional] [enum: bank_account, credit_card, wallet] |
+| **walletableId** | **Integer**| 口座ID walletable_type、walletable_idは同時に指定が必要です。 | [optional] |
+| **startDate** | **String**| 取引日で絞込：開始日 (yyyy-mm-dd) | [optional] |
+| **endDate** | **String**| 取引日で絞込：終了日 (yyyy-mm-dd) | [optional] |
+| **entrySide** | **String**| 入金／出金 (入金: income, 出金: expense) | [optional] [enum: income, expense] |
+| **offset** | **Long**| 取得レコードのオフセット (デフォルト: 0) | [optional] |
+| **limit** | **Integer**| 取得レコードの件数 (デフォルト: 20, 最小: 1, 最大: 100)  | [optional] |
 
 ### Return type
 

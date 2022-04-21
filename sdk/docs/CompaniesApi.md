@@ -2,10 +2,10 @@
 
 All URIs are relative to *https://api.freee.co.jp*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**getCompanies**](CompaniesApi.md#getCompanies) | **GET** api/1/companies | 事業所一覧の取得
-[**getCompany**](CompaniesApi.md#getCompany) | **GET** api/1/companies/{id} | 事業所の詳細情報の取得
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**getCompanies**](CompaniesApi.md#getCompanies) | **GET** api/1/companies | 事業所一覧の取得 |
+| [**getCompany**](CompaniesApi.md#getCompany) | **GET** api/1/companies/{id} | 事業所の詳細情報の取得 |
 
 
 
@@ -14,6 +14,8 @@ Method | HTTP request | Description
 > CompanyIndexResponse getCompanies()
 
 事業所一覧の取得
+
+
 
 ### Example
 
@@ -84,6 +86,8 @@ This endpoint does not need any parameter.
 
 事業所の詳細情報の取得
 
+
+
 ### Example
 
 ```java
@@ -131,17 +135,17 @@ public class Example {
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 事業所ID |
- **details** | **Boolean**| 取得情報に勘定科目・税区分コード・税区分・品目・取引先・部門・メモタグ・口座の一覧を含める | [optional] [enum: true]
- **accountItems** | **Boolean**| 取得情報に勘定科目一覧を含める | [optional] [enum: true]
- **taxes** | **Boolean**| 取得情報に税区分コード・税区分一覧を含める | [optional] [enum: true]
- **items** | **Boolean**| 取得情報に品目一覧を含める | [optional] [enum: true]
- **partners** | **Boolean**| 取得情報に取引先一覧を含める | [optional] [enum: true]
- **sections** | **Boolean**| 取得情報に部門一覧を含める | [optional] [enum: true]
- **tags** | **Boolean**| 取得情報にメモタグ一覧を含める | [optional] [enum: true]
- **walletables** | **Boolean**| 取得情報に口座一覧を含める | [optional] [enum: true]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **Integer**| 事業所ID | |
+| **details** | **Boolean**| 取得情報に勘定科目・税区分コード・税区分・品目・取引先・部門・メモタグ・口座の一覧を含める | [optional] [enum: true] |
+| **accountItems** | **Boolean**| 取得情報に勘定科目一覧を含める | [optional] [enum: true] |
+| **taxes** | **Boolean**| 取得情報に税区分コード・税区分一覧を含める | [optional] [enum: true] |
+| **items** | **Boolean**| 取得情報に品目一覧を含める | [optional] [enum: true] |
+| **partners** | **Boolean**| 取得情報に取引先一覧を含める | [optional] [enum: true] |
+| **sections** | **Boolean**| 取得情報に部門一覧を含める | [optional] [enum: true] |
+| **tags** | **Boolean**| 取得情報にメモタグ一覧を含める | [optional] [enum: true] |
+| **walletables** | **Boolean**| 取得情報に口座一覧を含める | [optional] [enum: true] |
 
 ### Return type
 
