@@ -25,6 +25,14 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import jp.co.freee.accounting.models.CompanyResponseCompanyAccountItems;
+import jp.co.freee.accounting.models.CompanyResponseCompanyItems;
+import jp.co.freee.accounting.models.CompanyResponseCompanyPartners;
+import jp.co.freee.accounting.models.CompanyResponseCompanySections;
+import jp.co.freee.accounting.models.CompanyResponseCompanyTags;
+import jp.co.freee.accounting.models.CompanyResponseCompanyTaxCodes;
+import jp.co.freee.accounting.models.CompanyResponseCompanyTaxes;
+import jp.co.freee.accounting.models.CompanyResponseCompanyWalletables;
 import jp.co.freee.accounting.models.FiscalYears;
 
 /**
@@ -32,6 +40,14 @@ import jp.co.freee.accounting.models.FiscalYears;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CompanyResponseCompany {
+  public static final String SERIALIZED_NAME_TAGS = "tags";
+  @SerializedName(SERIALIZED_NAME_TAGS)
+  private List<CompanyResponseCompanyTags> tags = null;
+
+  public static final String SERIALIZED_NAME_ACCOUNT_ITEMS = "account_items";
+  @SerializedName(SERIALIZED_NAME_ACCOUNT_ITEMS)
+  private List<CompanyResponseCompanyAccountItems> accountItems = null;
+
   public static final String SERIALIZED_NAME_AMOUNT_FRACTION = "amount_fraction";
   @SerializedName(SERIALIZED_NAME_AMOUNT_FRACTION)
   private Integer amountFraction;
@@ -469,6 +485,10 @@ public class CompanyResponseCompany {
   @SerializedName(SERIALIZED_NAME_INVOICE_LAYOUT)
   private InvoiceLayoutEnum invoiceLayout;
 
+  public static final String SERIALIZED_NAME_ITEMS = "items";
+  @SerializedName(SERIALIZED_NAME_ITEMS)
+  private List<CompanyResponseCompanyItems> items = null;
+
   public static final String SERIALIZED_NAME_MINUS_FORMAT = "minus_format";
   @SerializedName(SERIALIZED_NAME_MINUS_FORMAT)
   private Integer minusFormat;
@@ -480,6 +500,10 @@ public class CompanyResponseCompany {
   public static final String SERIALIZED_NAME_NAME_KANA = "name_kana";
   @SerializedName(SERIALIZED_NAME_NAME_KANA)
   private String nameKana;
+
+  public static final String SERIALIZED_NAME_PARTNERS = "partners";
+  @SerializedName(SERIALIZED_NAME_PARTNERS)
+  private List<CompanyResponseCompanyPartners> partners = null;
 
   public static final String SERIALIZED_NAME_PHONE1 = "phone1";
   @SerializedName(SERIALIZED_NAME_PHONE1)
@@ -554,6 +578,10 @@ public class CompanyResponseCompany {
   @SerializedName(SERIALIZED_NAME_ROLE)
   private RoleEnum role;
 
+  public static final String SERIALIZED_NAME_SECTIONS = "sections";
+  @SerializedName(SERIALIZED_NAME_SECTIONS)
+  private List<CompanyResponseCompanySections> sections = null;
+
   public static final String SERIALIZED_NAME_STREET_NAME1 = "street_name1";
   @SerializedName(SERIALIZED_NAME_STREET_NAME1)
   private String streetName1;
@@ -565,6 +593,14 @@ public class CompanyResponseCompany {
   public static final String SERIALIZED_NAME_TAX_AT_SOURCE_CALC_TYPE = "tax_at_source_calc_type";
   @SerializedName(SERIALIZED_NAME_TAX_AT_SOURCE_CALC_TYPE)
   private Integer taxAtSourceCalcType;
+
+  public static final String SERIALIZED_NAME_TAX_CODES = "tax_codes";
+  @SerializedName(SERIALIZED_NAME_TAX_CODES)
+  private List<CompanyResponseCompanyTaxCodes> taxCodes = null;
+
+  public static final String SERIALIZED_NAME_TAXES = "taxes";
+  @SerializedName(SERIALIZED_NAME_TAXES)
+  private List<CompanyResponseCompanyTaxes> taxes = null;
 
   /**
    * 仕訳番号形式（not_used: 使用しない、digits: 数字（例：5091824）、alnum: 英数字（例：59J0P））
@@ -623,6 +659,10 @@ public class CompanyResponseCompany {
   @SerializedName(SERIALIZED_NAME_USE_PARTNER_CODE)
   private Boolean usePartnerCode;
 
+  public static final String SERIALIZED_NAME_WALLETABLES = "walletables";
+  @SerializedName(SERIALIZED_NAME_WALLETABLES)
+  private List<CompanyResponseCompanyWalletables> walletables = null;
+
   /**
    * 仕訳承認フロー（enable: 有効、 disable: 無効）
    */
@@ -680,6 +720,68 @@ public class CompanyResponseCompany {
 
   public CompanyResponseCompany() { 
   }
+
+  public CompanyResponseCompany tags(List<CompanyResponseCompanyTags> tags) {
+    
+    this.tags = tags;
+    return this;
+  }
+
+  public CompanyResponseCompany addTagsItem(CompanyResponseCompanyTags tagsItem) {
+    if (this.tags == null) {
+      this.tags = new ArrayList<>();
+    }
+    this.tags.add(tagsItem);
+    return this;
+  }
+
+   /**
+   * Get tags
+   * @return tags
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<CompanyResponseCompanyTags> getTags() {
+    return tags;
+  }
+
+
+  public void setTags(List<CompanyResponseCompanyTags> tags) {
+    this.tags = tags;
+  }
+
+
+  public CompanyResponseCompany accountItems(List<CompanyResponseCompanyAccountItems> accountItems) {
+    
+    this.accountItems = accountItems;
+    return this;
+  }
+
+  public CompanyResponseCompany addAccountItemsItem(CompanyResponseCompanyAccountItems accountItemsItem) {
+    if (this.accountItems == null) {
+      this.accountItems = new ArrayList<>();
+    }
+    this.accountItems.add(accountItemsItem);
+    return this;
+  }
+
+   /**
+   * Get accountItems
+   * @return accountItems
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<CompanyResponseCompanyAccountItems> getAccountItems() {
+    return accountItems;
+  }
+
+
+  public void setAccountItems(List<CompanyResponseCompanyAccountItems> accountItems) {
+    this.accountItems = accountItems;
+  }
+
 
   public CompanyResponseCompany amountFraction(Integer amountFraction) {
     
@@ -970,6 +1072,37 @@ public class CompanyResponseCompany {
   }
 
 
+  public CompanyResponseCompany items(List<CompanyResponseCompanyItems> items) {
+    
+    this.items = items;
+    return this;
+  }
+
+  public CompanyResponseCompany addItemsItem(CompanyResponseCompanyItems itemsItem) {
+    if (this.items == null) {
+      this.items = new ArrayList<>();
+    }
+    this.items.add(itemsItem);
+    return this;
+  }
+
+   /**
+   * Get items
+   * @return items
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<CompanyResponseCompanyItems> getItems() {
+    return items;
+  }
+
+
+  public void setItems(List<CompanyResponseCompanyItems> items) {
+    this.items = items;
+  }
+
+
   public CompanyResponseCompany minusFormat(Integer minusFormat) {
     
     this.minusFormat = minusFormat;
@@ -1041,6 +1174,37 @@ public class CompanyResponseCompany {
   }
 
 
+  public CompanyResponseCompany partners(List<CompanyResponseCompanyPartners> partners) {
+    
+    this.partners = partners;
+    return this;
+  }
+
+  public CompanyResponseCompany addPartnersItem(CompanyResponseCompanyPartners partnersItem) {
+    if (this.partners == null) {
+      this.partners = new ArrayList<>();
+    }
+    this.partners.add(partnersItem);
+    return this;
+  }
+
+   /**
+   * Get partners
+   * @return partners
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<CompanyResponseCompanyPartners> getPartners() {
+    return partners;
+  }
+
+
+  public void setPartners(List<CompanyResponseCompanyPartners> partners) {
+    this.partners = partners;
+  }
+
+
   public CompanyResponseCompany phone1(String phone1) {
     
     this.phone1 = phone1;
@@ -1051,7 +1215,7 @@ public class CompanyResponseCompany {
    * 電話番号１
    * @return phone1
   **/
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   @ApiModelProperty(example = "03-1234-xxxx", required = true, value = "電話番号１")
 
   public String getPhone1() {
@@ -1158,6 +1322,37 @@ public class CompanyResponseCompany {
   }
 
 
+  public CompanyResponseCompany sections(List<CompanyResponseCompanySections> sections) {
+    
+    this.sections = sections;
+    return this;
+  }
+
+  public CompanyResponseCompany addSectionsItem(CompanyResponseCompanySections sectionsItem) {
+    if (this.sections == null) {
+      this.sections = new ArrayList<>();
+    }
+    this.sections.add(sectionsItem);
+    return this;
+  }
+
+   /**
+   * Get sections
+   * @return sections
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<CompanyResponseCompanySections> getSections() {
+    return sections;
+  }
+
+
+  public void setSections(List<CompanyResponseCompanySections> sections) {
+    this.sections = sections;
+  }
+
+
   public CompanyResponseCompany streetName1(String streetName1) {
     
     this.streetName1 = streetName1;
@@ -1229,6 +1424,68 @@ public class CompanyResponseCompany {
   }
 
 
+  public CompanyResponseCompany taxCodes(List<CompanyResponseCompanyTaxCodes> taxCodes) {
+    
+    this.taxCodes = taxCodes;
+    return this;
+  }
+
+  public CompanyResponseCompany addTaxCodesItem(CompanyResponseCompanyTaxCodes taxCodesItem) {
+    if (this.taxCodes == null) {
+      this.taxCodes = new ArrayList<>();
+    }
+    this.taxCodes.add(taxCodesItem);
+    return this;
+  }
+
+   /**
+   * Get taxCodes
+   * @return taxCodes
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<CompanyResponseCompanyTaxCodes> getTaxCodes() {
+    return taxCodes;
+  }
+
+
+  public void setTaxCodes(List<CompanyResponseCompanyTaxCodes> taxCodes) {
+    this.taxCodes = taxCodes;
+  }
+
+
+  public CompanyResponseCompany taxes(List<CompanyResponseCompanyTaxes> taxes) {
+    
+    this.taxes = taxes;
+    return this;
+  }
+
+  public CompanyResponseCompany addTaxesItem(CompanyResponseCompanyTaxes taxesItem) {
+    if (this.taxes == null) {
+      this.taxes = new ArrayList<>();
+    }
+    this.taxes.add(taxesItem);
+    return this;
+  }
+
+   /**
+   * Get taxes
+   * @return taxes
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<CompanyResponseCompanyTaxes> getTaxes() {
+    return taxes;
+  }
+
+
+  public void setTaxes(List<CompanyResponseCompanyTaxes> taxes) {
+    this.taxes = taxes;
+  }
+
+
   public CompanyResponseCompany txnNumberFormat(TxnNumberFormatEnum txnNumberFormat) {
     
     this.txnNumberFormat = txnNumberFormat;
@@ -1272,6 +1529,37 @@ public class CompanyResponseCompany {
 
   public void setUsePartnerCode(Boolean usePartnerCode) {
     this.usePartnerCode = usePartnerCode;
+  }
+
+
+  public CompanyResponseCompany walletables(List<CompanyResponseCompanyWalletables> walletables) {
+    
+    this.walletables = walletables;
+    return this;
+  }
+
+  public CompanyResponseCompany addWalletablesItem(CompanyResponseCompanyWalletables walletablesItem) {
+    if (this.walletables == null) {
+      this.walletables = new ArrayList<>();
+    }
+    this.walletables.add(walletablesItem);
+    return this;
+  }
+
+   /**
+   * Get walletables
+   * @return walletables
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<CompanyResponseCompanyWalletables> getWalletables() {
+    return walletables;
+  }
+
+
+  public void setWalletables(List<CompanyResponseCompanyWalletables> walletables) {
+    this.walletables = walletables;
   }
 
 
@@ -1330,7 +1618,9 @@ public class CompanyResponseCompany {
       return false;
     }
     CompanyResponseCompany companyResponseCompany = (CompanyResponseCompany) o;
-    return Objects.equals(this.amountFraction, companyResponseCompany.amountFraction) &&
+    return Objects.equals(this.tags, companyResponseCompany.tags) &&
+        Objects.equals(this.accountItems, companyResponseCompany.accountItems) &&
+        Objects.equals(this.amountFraction, companyResponseCompany.amountFraction) &&
         Objects.equals(this.contactName, companyResponseCompany.contactName) &&
         Objects.equals(this.corporateNumber, companyResponseCompany.corporateNumber) &&
         Objects.equals(this.defaultWalletAccountId, companyResponseCompany.defaultWalletAccountId) &&
@@ -1342,32 +1632,40 @@ public class CompanyResponseCompany {
         Objects.equals(this.industryClass, companyResponseCompany.industryClass) &&
         Objects.equals(this.industryCode, companyResponseCompany.industryCode) &&
         Objects.equals(this.invoiceLayout, companyResponseCompany.invoiceLayout) &&
+        Objects.equals(this.items, companyResponseCompany.items) &&
         Objects.equals(this.minusFormat, companyResponseCompany.minusFormat) &&
         Objects.equals(this.name, companyResponseCompany.name) &&
         Objects.equals(this.nameKana, companyResponseCompany.nameKana) &&
+        Objects.equals(this.partners, companyResponseCompany.partners) &&
         Objects.equals(this.phone1, companyResponseCompany.phone1) &&
         Objects.equals(this.phone2, companyResponseCompany.phone2) &&
         Objects.equals(this.prefectureCode, companyResponseCompany.prefectureCode) &&
         Objects.equals(this.privateSettlement, companyResponseCompany.privateSettlement) &&
         Objects.equals(this.role, companyResponseCompany.role) &&
+        Objects.equals(this.sections, companyResponseCompany.sections) &&
         Objects.equals(this.streetName1, companyResponseCompany.streetName1) &&
         Objects.equals(this.streetName2, companyResponseCompany.streetName2) &&
         Objects.equals(this.taxAtSourceCalcType, companyResponseCompany.taxAtSourceCalcType) &&
+        Objects.equals(this.taxCodes, companyResponseCompany.taxCodes) &&
+        Objects.equals(this.taxes, companyResponseCompany.taxes) &&
         Objects.equals(this.txnNumberFormat, companyResponseCompany.txnNumberFormat) &&
         Objects.equals(this.usePartnerCode, companyResponseCompany.usePartnerCode) &&
+        Objects.equals(this.walletables, companyResponseCompany.walletables) &&
         Objects.equals(this.workflowSetting, companyResponseCompany.workflowSetting) &&
         Objects.equals(this.zipcode, companyResponseCompany.zipcode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(amountFraction, contactName, corporateNumber, defaultWalletAccountId, displayName, fax, fiscalYears, headCount, id, industryClass, industryCode, invoiceLayout, minusFormat, name, nameKana, phone1, phone2, prefectureCode, privateSettlement, role, streetName1, streetName2, taxAtSourceCalcType, txnNumberFormat, usePartnerCode, workflowSetting, zipcode);
+    return Objects.hash(tags, accountItems, amountFraction, contactName, corporateNumber, defaultWalletAccountId, displayName, fax, fiscalYears, headCount, id, industryClass, industryCode, invoiceLayout, items, minusFormat, name, nameKana, partners, phone1, phone2, prefectureCode, privateSettlement, role, sections, streetName1, streetName2, taxAtSourceCalcType, taxCodes, taxes, txnNumberFormat, usePartnerCode, walletables, workflowSetting, zipcode);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CompanyResponseCompany {\n");
+    sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+    sb.append("    accountItems: ").append(toIndentedString(accountItems)).append("\n");
     sb.append("    amountFraction: ").append(toIndentedString(amountFraction)).append("\n");
     sb.append("    contactName: ").append(toIndentedString(contactName)).append("\n");
     sb.append("    corporateNumber: ").append(toIndentedString(corporateNumber)).append("\n");
@@ -1380,19 +1678,25 @@ public class CompanyResponseCompany {
     sb.append("    industryClass: ").append(toIndentedString(industryClass)).append("\n");
     sb.append("    industryCode: ").append(toIndentedString(industryCode)).append("\n");
     sb.append("    invoiceLayout: ").append(toIndentedString(invoiceLayout)).append("\n");
+    sb.append("    items: ").append(toIndentedString(items)).append("\n");
     sb.append("    minusFormat: ").append(toIndentedString(minusFormat)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    nameKana: ").append(toIndentedString(nameKana)).append("\n");
+    sb.append("    partners: ").append(toIndentedString(partners)).append("\n");
     sb.append("    phone1: ").append(toIndentedString(phone1)).append("\n");
     sb.append("    phone2: ").append(toIndentedString(phone2)).append("\n");
     sb.append("    prefectureCode: ").append(toIndentedString(prefectureCode)).append("\n");
     sb.append("    privateSettlement: ").append(toIndentedString(privateSettlement)).append("\n");
     sb.append("    role: ").append(toIndentedString(role)).append("\n");
+    sb.append("    sections: ").append(toIndentedString(sections)).append("\n");
     sb.append("    streetName1: ").append(toIndentedString(streetName1)).append("\n");
     sb.append("    streetName2: ").append(toIndentedString(streetName2)).append("\n");
     sb.append("    taxAtSourceCalcType: ").append(toIndentedString(taxAtSourceCalcType)).append("\n");
+    sb.append("    taxCodes: ").append(toIndentedString(taxCodes)).append("\n");
+    sb.append("    taxes: ").append(toIndentedString(taxes)).append("\n");
     sb.append("    txnNumberFormat: ").append(toIndentedString(txnNumberFormat)).append("\n");
     sb.append("    usePartnerCode: ").append(toIndentedString(usePartnerCode)).append("\n");
+    sb.append("    walletables: ").append(toIndentedString(walletables)).append("\n");
     sb.append("    workflowSetting: ").append(toIndentedString(workflowSetting)).append("\n");
     sb.append("    zipcode: ").append(toIndentedString(zipcode)).append("\n");
     sb.append("}");

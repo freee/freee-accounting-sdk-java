@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **companyId** | **Integer** | 事業所ID | 
 **details** | [**List&lt;ManualJournalCreateParamsDetails&gt;**](ManualJournalCreateParamsDetails.md) |  | 
 **issueDate** | **String** | 発生日 (yyyy-mm-dd) | 
+**receiptIds** | **List&lt;Integer&gt;** | 証憑ファイルID（ファイルボックスのファイルID）（配列） |  [optional]
 
 
 

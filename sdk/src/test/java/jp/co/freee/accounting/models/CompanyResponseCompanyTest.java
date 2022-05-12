@@ -23,6 +23,14 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import jp.co.freee.accounting.models.CompanyResponseCompanyAccountItems;
+import jp.co.freee.accounting.models.CompanyResponseCompanyItems;
+import jp.co.freee.accounting.models.CompanyResponseCompanyPartners;
+import jp.co.freee.accounting.models.CompanyResponseCompanySections;
+import jp.co.freee.accounting.models.CompanyResponseCompanyTags;
+import jp.co.freee.accounting.models.CompanyResponseCompanyTaxCodes;
+import jp.co.freee.accounting.models.CompanyResponseCompanyTaxes;
+import jp.co.freee.accounting.models.CompanyResponseCompanyWalletables;
 import jp.co.freee.accounting.models.FiscalYears;
 import org.junit.Assert;
 import org.junit.Ignore;
@@ -41,6 +49,22 @@ public class CompanyResponseCompanyTest {
     @Test
     public void testCompanyResponseCompany() {
         // TODO: test CompanyResponseCompany
+    }
+
+    /**
+     * Test the property 'tags'
+     */
+    @Test
+    public void tagsTest() {
+        // TODO: test tags
+    }
+
+    /**
+     * Test the property 'accountItems'
+     */
+    @Test
+    public void accountItemsTest() {
+        // TODO: test accountItems
     }
 
     /**
@@ -140,6 +164,14 @@ public class CompanyResponseCompanyTest {
     }
 
     /**
+     * Test the property 'items'
+     */
+    @Test
+    public void itemsTest() {
+        // TODO: test items
+    }
+
+    /**
      * Test the property 'minusFormat'
      */
     @Test
@@ -161,6 +193,14 @@ public class CompanyResponseCompanyTest {
     @Test
     public void nameKanaTest() {
         // TODO: test nameKana
+    }
+
+    /**
+     * Test the property 'partners'
+     */
+    @Test
+    public void partnersTest() {
+        // TODO: test partners
     }
 
     /**
@@ -204,6 +244,14 @@ public class CompanyResponseCompanyTest {
     }
 
     /**
+     * Test the property 'sections'
+     */
+    @Test
+    public void sectionsTest() {
+        // TODO: test sections
+    }
+
+    /**
      * Test the property 'streetName1'
      */
     @Test
@@ -228,6 +276,22 @@ public class CompanyResponseCompanyTest {
     }
 
     /**
+     * Test the property 'taxCodes'
+     */
+    @Test
+    public void taxCodesTest() {
+        // TODO: test taxCodes
+    }
+
+    /**
+     * Test the property 'taxes'
+     */
+    @Test
+    public void taxesTest() {
+        // TODO: test taxes
+    }
+
+    /**
      * Test the property 'txnNumberFormat'
      */
     @Test
@@ -241,6 +305,14 @@ public class CompanyResponseCompanyTest {
     @Test
     public void usePartnerCodeTest() {
         // TODO: test usePartnerCode
+    }
+
+    /**
+     * Test the property 'walletables'
+     */
+    @Test
+    public void walletablesTest() {
+        // TODO: test walletables
     }
 
     /**

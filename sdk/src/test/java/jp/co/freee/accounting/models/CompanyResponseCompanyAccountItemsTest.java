@@ -23,64 +23,64 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import jp.co.freee.accounting.models.ManualJournalUpdateParamsDetails;
+import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
 
 /**
- * Model tests for ManualJournalUpdateParams
+ * Model tests for CompanyResponseCompanyAccountItems
  */
-public class ManualJournalUpdateParamsTest {
-    private final ManualJournalUpdateParams model = new ManualJournalUpdateParams();
+public class CompanyResponseCompanyAccountItemsTest {
+    private final CompanyResponseCompanyAccountItems model = new CompanyResponseCompanyAccountItems();
 
     /**
-     * Model tests for ManualJournalUpdateParams
+     * Model tests for CompanyResponseCompanyAccountItems
      */
     @Test
-    public void testManualJournalUpdateParams() {
-        // TODO: test ManualJournalUpdateParams
+    public void testCompanyResponseCompanyAccountItems() {
+        // TODO: test CompanyResponseCompanyAccountItems
     }
 
     /**
-     * Test the property 'adjustment'
+     * Test the property 'categories'
      */
     @Test
-    public void adjustmentTest() {
-        // TODO: test adjustment
+    public void categoriesTest() {
+        // TODO: test categories
     }
 
     /**
-     * Test the property 'companyId'
+     * Test the property 'defaultTaxId'
      */
     @Test
-    public void companyIdTest() {
-        // TODO: test companyId
+    public void defaultTaxIdTest() {
+        // TODO: test defaultTaxId
     }
 
     /**
-     * Test the property 'details'
+     * Test the property 'id'
      */
     @Test
-    public void detailsTest() {
-        // TODO: test details
+    public void idTest() {
+        // TODO: test id
     }
 
     /**
-     * Test the property 'issueDate'
+     * Test the property 'name'
      */
     @Test
-    public void issueDateTest() {
-        // TODO: test issueDate
+    public void nameTest() {
+        // TODO: test name
     }
 
     /**
-     * Test the property 'receiptIds'
+     * Test the property 'shortcut'
      */
     @Test
-    public void receiptIdsTest() {
-        // TODO: test receiptIds
+    public void shortcutTest() {
+        // TODO: test shortcut
     }
 
 }

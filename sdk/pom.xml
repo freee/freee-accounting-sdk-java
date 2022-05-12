@@ -276,12 +276,6 @@
       <version>${jakarta-annotation-version}</version>
       <scope>provided</scope>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/org.openapitools/jackson-databind-nullable -->
-    <dependency>
-      <groupId>org.openapitools</groupId>
-      <artifactId>jackson-databind-nullable</artifactId>
-      <version>0.2.1</version>
-    </dependency>
     <!-- test dependencies -->
     <dependency>
       <groupId>junit</groupId>
@@ -291,7 +285,7 @@
     </dependency>
   </dependencies>
   <properties>
-    <revision>2.5.0</revision>
+    <revision>2.6.0</revision>
     <changelist>-SNAPSHOT</changelist>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <java.version>1.8</java.version>
