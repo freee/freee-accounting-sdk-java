@@ -84,6 +84,14 @@ public class ManualJournalTest {
     }
 
     /**
+     * Test the property 'receiptIds'
+     */
+    @Test
+    public void receiptIdsTest() {
+        // TODO: test receiptIds
+    }
+
+    /**
      * Test the property 'txnNumber'
      */
     @Test

@@ -271,11 +271,11 @@ public class DealCreateResponseDeal {
   }
 
    /**
-   * 支払金額
+   * 支払残額
    * @return dueAmount
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "0", value = "支払金額")
+  @ApiModelProperty(example = "0", value = "支払残額")
 
   public Integer getDueAmount() {
     return dueAmount;

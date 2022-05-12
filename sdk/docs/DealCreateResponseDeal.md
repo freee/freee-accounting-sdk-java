@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **amount** | **Long** | 金額 | 
 **companyId** | **Integer** | 事業所ID | 
 **details** | [**List&lt;DealDetails&gt;**](DealDetails.md) | 取引の明細行 |  [optional]
-**dueAmount** | **Integer** | 支払金額 |  [optional]
+**dueAmount** | **Integer** | 支払残額 |  [optional]
 **dueDate** | **String** | 支払期日 (yyyy-mm-dd) |  [optional]
 **id** | **Integer** | 取引ID | 
 **issueDate** | **String** | 発生日 (yyyy-mm-dd) | 

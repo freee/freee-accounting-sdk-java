@@ -21,66 +21,64 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import jp.co.freee.accounting.models.ManualJournalUpdateParamsDetails;
+import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
 
 /**
- * Model tests for ManualJournalUpdateParams
+ * Model tests for CompanyResponseCompanyPartners
  */
-public class ManualJournalUpdateParamsTest {
-    private final ManualJournalUpdateParams model = new ManualJournalUpdateParams();
+public class CompanyResponseCompanyPartnersTest {
+    private final CompanyResponseCompanyPartners model = new CompanyResponseCompanyPartners();
 
     /**
-     * Model tests for ManualJournalUpdateParams
+     * Model tests for CompanyResponseCompanyPartners
      */
     @Test
-    public void testManualJournalUpdateParams() {
-        // TODO: test ManualJournalUpdateParams
+    public void testCompanyResponseCompanyPartners() {
+        // TODO: test CompanyResponseCompanyPartners
     }
 
     /**
-     * Test the property 'adjustment'
+     * Test the property 'code'
      */
     @Test
-    public void adjustmentTest() {
-        // TODO: test adjustment
+    public void codeTest() {
+        // TODO: test code
     }
 
     /**
-     * Test the property 'companyId'
+     * Test the property 'id'
      */
     @Test
-    public void companyIdTest() {
-        // TODO: test companyId
+    public void idTest() {
+        // TODO: test id
     }
 
     /**
-     * Test the property 'details'
+     * Test the property 'name'
      */
     @Test
-    public void detailsTest() {
-        // TODO: test details
+    public void nameTest() {
+        // TODO: test name
     }
 
     /**
-     * Test the property 'issueDate'
+     * Test the property 'shortcut1'
      */
     @Test
-    public void issueDateTest() {
-        // TODO: test issueDate
+    public void shortcut1Test() {
+        // TODO: test shortcut1
     }
 
     /**
-     * Test the property 'receiptIds'
+     * Test the property 'shortcut2'
      */
     @Test
-    public void receiptIdsTest() {
-        // TODO: test receiptIds
+    public void shortcut2Test() {
+        // TODO: test shortcut2
     }
 
 }
