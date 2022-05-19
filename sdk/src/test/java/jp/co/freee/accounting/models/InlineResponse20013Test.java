@@ -22,6 +22,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import jp.co.freee.accounting.models.UserCapability;
+import jp.co.freee.accounting.models.UserCapabilityWithSelfOnly;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;

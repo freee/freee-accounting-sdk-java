@@ -24,6 +24,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import jp.co.freee.accounting.models.UserCapability;
+import jp.co.freee.accounting.models.UserCapabilityWithSelfOnly;
 
 /**
  * InlineResponse20013
@@ -52,7 +53,7 @@ public class InlineResponse20013 {
 
   public static final String SERIALIZED_NAME_APPROVAL_REQUESTS = "approval_requests";
   @SerializedName(SERIALIZED_NAME_APPROVAL_REQUESTS)
-  private UserCapability approvalRequests;
+  private UserCapabilityWithSelfOnly approvalRequests;
 
   public static final String SERIALIZED_NAME_BACKUPS = "backups";
   @SerializedName(SERIALIZED_NAME_BACKUPS)
@@ -84,7 +85,7 @@ public class InlineResponse20013 {
 
   public static final String SERIALIZED_NAME_DEALS = "deals";
   @SerializedName(SERIALIZED_NAME_DEALS)
-  private UserCapability deals;
+  private UserCapabilityWithSelfOnly deals;
 
   public static final String SERIALIZED_NAME_DOC_POSTINGS = "doc_postings";
   @SerializedName(SERIALIZED_NAME_DOC_POSTINGS)
@@ -92,7 +93,7 @@ public class InlineResponse20013 {
 
   public static final String SERIALIZED_NAME_DOCS = "docs";
   @SerializedName(SERIALIZED_NAME_DOCS)
-  private UserCapability docs;
+  private UserCapabilityWithSelfOnly docs;
 
   public static final String SERIALIZED_NAME_EXPENSE_APPLICATION_TEMPLATES = "expense_application_templates";
   @SerializedName(SERIALIZED_NAME_EXPENSE_APPLICATION_TEMPLATES)
@@ -100,7 +101,7 @@ public class InlineResponse20013 {
 
   public static final String SERIALIZED_NAME_EXPENSE_APPLICATIONS = "expense_applications";
   @SerializedName(SERIALIZED_NAME_EXPENSE_APPLICATIONS)
-  private UserCapability expenseApplications;
+  private UserCapabilityWithSelfOnly expenseApplications;
 
   public static final String SERIALIZED_NAME_FIXED_ASSETS = "fixed_assets";
   @SerializedName(SERIALIZED_NAME_FIXED_ASSETS)
@@ -124,7 +125,7 @@ public class InlineResponse20013 {
 
   public static final String SERIALIZED_NAME_MANUAL_JOURNALS = "manual_journals";
   @SerializedName(SERIALIZED_NAME_MANUAL_JOURNALS)
-  private UserCapability manualJournals;
+  private UserCapabilityWithSelfOnly manualJournals;
 
   public static final String SERIALIZED_NAME_MONTH_END = "month_end";
   @SerializedName(SERIALIZED_NAME_MONTH_END)
@@ -152,7 +153,7 @@ public class InlineResponse20013 {
 
   public static final String SERIALIZED_NAME_PAYMENT_REQUESTS = "payment_requests";
   @SerializedName(SERIALIZED_NAME_PAYMENT_REQUESTS)
-  private UserCapability paymentRequests;
+  private UserCapabilityWithSelfOnly paymentRequests;
 
   public static final String SERIALIZED_NAME_RECEIPT_STREAM_EDITOR = "receipt_stream_editor";
   @SerializedName(SERIALIZED_NAME_RECEIPT_STREAM_EDITOR)
@@ -160,7 +161,7 @@ public class InlineResponse20013 {
 
   public static final String SERIALIZED_NAME_RECEIPTS = "receipts";
   @SerializedName(SERIALIZED_NAME_RECEIPTS)
-  private UserCapability receipts;
+  private UserCapabilityWithSelfOnly receipts;
 
   public static final String SERIALIZED_NAME_REPORTS = "reports";
   @SerializedName(SERIALIZED_NAME_REPORTS)
@@ -248,7 +249,7 @@ public class InlineResponse20013 {
 
   public static final String SERIALIZED_NAME_TRANSFERS = "transfers";
   @SerializedName(SERIALIZED_NAME_TRANSFERS)
-  private UserCapability transfers;
+  private UserCapabilityWithSelfOnly transfers;
 
   public static final String SERIALIZED_NAME_USER_MATCHERS = "user_matchers";
   @SerializedName(SERIALIZED_NAME_USER_MATCHERS)
@@ -388,7 +389,7 @@ public class InlineResponse20013 {
   }
 
 
-  public InlineResponse20013 approvalRequests(UserCapability approvalRequests) {
+  public InlineResponse20013 approvalRequests(UserCapabilityWithSelfOnly approvalRequests) {
     
     this.approvalRequests = approvalRequests;
     return this;
@@ -401,12 +402,12 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getApprovalRequests() {
+  public UserCapabilityWithSelfOnly getApprovalRequests() {
     return approvalRequests;
   }
 
 
-  public void setApprovalRequests(UserCapability approvalRequests) {
+  public void setApprovalRequests(UserCapabilityWithSelfOnly approvalRequests) {
     this.approvalRequests = approvalRequests;
   }
 
@@ -572,7 +573,7 @@ public class InlineResponse20013 {
   }
 
 
-  public InlineResponse20013 deals(UserCapability deals) {
+  public InlineResponse20013 deals(UserCapabilityWithSelfOnly deals) {
     
     this.deals = deals;
     return this;
@@ -585,12 +586,12 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getDeals() {
+  public UserCapabilityWithSelfOnly getDeals() {
     return deals;
   }
 
 
-  public void setDeals(UserCapability deals) {
+  public void setDeals(UserCapabilityWithSelfOnly deals) {
     this.deals = deals;
   }
 
@@ -618,7 +619,7 @@ public class InlineResponse20013 {
   }
 
 
-  public InlineResponse20013 docs(UserCapability docs) {
+  public InlineResponse20013 docs(UserCapabilityWithSelfOnly docs) {
     
     this.docs = docs;
     return this;
@@ -631,12 +632,12 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getDocs() {
+  public UserCapabilityWithSelfOnly getDocs() {
     return docs;
   }
 
 
-  public void setDocs(UserCapability docs) {
+  public void setDocs(UserCapabilityWithSelfOnly docs) {
     this.docs = docs;
   }
 
@@ -664,7 +665,7 @@ public class InlineResponse20013 {
   }
 
 
-  public InlineResponse20013 expenseApplications(UserCapability expenseApplications) {
+  public InlineResponse20013 expenseApplications(UserCapabilityWithSelfOnly expenseApplications) {
     
     this.expenseApplications = expenseApplications;
     return this;
@@ -677,12 +678,12 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getExpenseApplications() {
+  public UserCapabilityWithSelfOnly getExpenseApplications() {
     return expenseApplications;
   }
 
 
-  public void setExpenseApplications(UserCapability expenseApplications) {
+  public void setExpenseApplications(UserCapabilityWithSelfOnly expenseApplications) {
     this.expenseApplications = expenseApplications;
   }
 
@@ -802,7 +803,7 @@ public class InlineResponse20013 {
   }
 
 
-  public InlineResponse20013 manualJournals(UserCapability manualJournals) {
+  public InlineResponse20013 manualJournals(UserCapabilityWithSelfOnly manualJournals) {
     
     this.manualJournals = manualJournals;
     return this;
@@ -815,12 +816,12 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getManualJournals() {
+  public UserCapabilityWithSelfOnly getManualJournals() {
     return manualJournals;
   }
 
 
-  public void setManualJournals(UserCapability manualJournals) {
+  public void setManualJournals(UserCapabilityWithSelfOnly manualJournals) {
     this.manualJournals = manualJournals;
   }
 
@@ -963,7 +964,7 @@ public class InlineResponse20013 {
   }
 
 
-  public InlineResponse20013 paymentRequests(UserCapability paymentRequests) {
+  public InlineResponse20013 paymentRequests(UserCapabilityWithSelfOnly paymentRequests) {
     
     this.paymentRequests = paymentRequests;
     return this;
@@ -976,12 +977,12 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getPaymentRequests() {
+  public UserCapabilityWithSelfOnly getPaymentRequests() {
     return paymentRequests;
   }
 
 
-  public void setPaymentRequests(UserCapability paymentRequests) {
+  public void setPaymentRequests(UserCapabilityWithSelfOnly paymentRequests) {
     this.paymentRequests = paymentRequests;
   }
 
@@ -1009,7 +1010,7 @@ public class InlineResponse20013 {
   }
 
 
-  public InlineResponse20013 receipts(UserCapability receipts) {
+  public InlineResponse20013 receipts(UserCapabilityWithSelfOnly receipts) {
     
     this.receipts = receipts;
     return this;
@@ -1022,12 +1023,12 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getReceipts() {
+  public UserCapabilityWithSelfOnly getReceipts() {
     return receipts;
   }
 
 
-  public void setReceipts(UserCapability receipts) {
+  public void setReceipts(UserCapabilityWithSelfOnly receipts) {
     this.receipts = receipts;
   }
 
@@ -1515,7 +1516,7 @@ public class InlineResponse20013 {
   }
 
 
-  public InlineResponse20013 transfers(UserCapability transfers) {
+  public InlineResponse20013 transfers(UserCapabilityWithSelfOnly transfers) {
     
     this.transfers = transfers;
     return this;
@@ -1528,12 +1529,12 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getTransfers() {
+  public UserCapabilityWithSelfOnly getTransfers() {
     return transfers;
   }
 
 
-  public void setTransfers(UserCapability transfers) {
+  public void setTransfers(UserCapabilityWithSelfOnly transfers) {
     this.transfers = transfers;
   }
 
