@@ -52,13 +52,13 @@ public class PartnerResponsePartnerInvoicePaymentTermAttributes {
   }
 
    /**
-   * 支払月
+   * 入金月
    * minimum: 1
    * maximum: 6
    * @return additionalMonths
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "1", value = "支払月")
+  @ApiModelProperty(example = "1", value = "入金月")
 
   public Integer getAdditionalMonths() {
     return additionalMonths;
@@ -102,13 +102,13 @@ public class PartnerResponsePartnerInvoicePaymentTermAttributes {
   }
 
    /**
-   * 支払日（29, 30, 31日の末日を指定する場合は、32。）
+   * 入金日（29, 30, 31日の末日を指定する場合は、32。）
    * minimum: 1
    * maximum: 32
    * @return fixedDay
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "32", value = "支払日（29, 30, 31日の末日を指定する場合は、32。）")
+  @ApiModelProperty(example = "32", value = "入金日（29, 30, 31日の末日を指定する場合は、32。）")
 
   public Integer getFixedDay() {
     return fixedDay;

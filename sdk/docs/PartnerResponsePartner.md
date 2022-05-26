@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **partnerBankAccountAttributes** | [**PartnerResponsePartnerPartnerBankAccountAttributes**](PartnerResponsePartnerPartnerBankAccountAttributes.md) |  |  [optional]
 **partnerDocSettingAttributes** | [**PartnerResponsePartnerPartnerDocSettingAttributes**](PartnerResponsePartnerPartnerDocSettingAttributes.md) |  |  [optional]
 **payerWalletableId** | **Integer** | 振込元口座ID（一括振込ファイル用）:（未設定の場合は、nullです。） |  [optional]
-**paymentTermAttributes** | [**PartnerResponsePartnerInvoicePaymentTermAttributes**](PartnerResponsePartnerInvoicePaymentTermAttributes.md) |  |  [optional]
+**paymentTermAttributes** | [**PartnerResponsePartnerPaymentTermAttributes**](PartnerResponsePartnerPaymentTermAttributes.md) |  |  [optional]
 **phone** | **String** | 電話番号 |  [optional]
 **shortcut1** | **String** | ショートカット1 (255文字以内) |  [optional]
 **shortcut2** | **String** | ショートカット2 (255文字以内) |  [optional]

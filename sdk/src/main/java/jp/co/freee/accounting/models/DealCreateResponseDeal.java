@@ -25,6 +25,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import jp.co.freee.accounting.models.DealCreateResponseDealReceipts;
 import jp.co.freee.accounting.models.DealDetails;
 import jp.co.freee.accounting.models.DealPayments;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -73,6 +74,10 @@ public class DealCreateResponseDeal {
   public static final String SERIALIZED_NAME_PAYMENTS = "payments";
   @SerializedName(SERIALIZED_NAME_PAYMENTS)
   private List<DealPayments> payments = null;
+
+  public static final String SERIALIZED_NAME_RECEIPTS = "receipts";
+  @SerializedName(SERIALIZED_NAME_RECEIPTS)
+  private List<DealCreateResponseDealReceipts> receipts = null;
 
   public static final String SERIALIZED_NAME_REF_NUMBER = "ref_number";
   @SerializedName(SERIALIZED_NAME_REF_NUMBER)
@@ -437,6 +442,37 @@ public class DealCreateResponseDeal {
   }
 
 
+  public DealCreateResponseDeal receipts(List<DealCreateResponseDealReceipts> receipts) {
+    
+    this.receipts = receipts;
+    return this;
+  }
+
+  public DealCreateResponseDeal addReceiptsItem(DealCreateResponseDealReceipts receiptsItem) {
+    if (this.receipts == null) {
+      this.receipts = new ArrayList<>();
+    }
+    this.receipts.add(receiptsItem);
+    return this;
+  }
+
+   /**
+   * 証憑ファイル（ファイルボックスのファイル）
+   * @return receipts
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "証憑ファイル（ファイルボックスのファイル）")
+
+  public List<DealCreateResponseDealReceipts> getReceipts() {
+    return receipts;
+  }
+
+
+  public void setReceipts(List<DealCreateResponseDealReceipts> receipts) {
+    this.receipts = receipts;
+  }
+
+
   public DealCreateResponseDeal refNumber(String refNumber) {
     
     this.refNumber = refNumber;
@@ -525,6 +561,7 @@ public class DealCreateResponseDeal {
         Objects.equals(this.partnerCode, dealCreateResponseDeal.partnerCode) &&
         Objects.equals(this.partnerId, dealCreateResponseDeal.partnerId) &&
         Objects.equals(this.payments, dealCreateResponseDeal.payments) &&
+        Objects.equals(this.receipts, dealCreateResponseDeal.receipts) &&
         Objects.equals(this.refNumber, dealCreateResponseDeal.refNumber) &&
         Objects.equals(this.status, dealCreateResponseDeal.status) &&
         Objects.equals(this.type, dealCreateResponseDeal.type);
@@ -536,7 +573,7 @@ public class DealCreateResponseDeal {
 
   @Override
   public int hashCode() {
-    return Objects.hash(amount, companyId, details, dueAmount, dueDate, id, issueDate, partnerCode, partnerId, payments, refNumber, status, type);
+    return Objects.hash(amount, companyId, details, dueAmount, dueDate, id, issueDate, partnerCode, partnerId, payments, receipts, refNumber, status, type);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -560,6 +597,7 @@ public class DealCreateResponseDeal {
     sb.append("    partnerCode: ").append(toIndentedString(partnerCode)).append("\n");
     sb.append("    partnerId: ").append(toIndentedString(partnerId)).append("\n");
     sb.append("    payments: ").append(toIndentedString(payments)).append("\n");
+    sb.append("    receipts: ").append(toIndentedString(receipts)).append("\n");
     sb.append("    refNumber: ").append(toIndentedString(refNumber)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");

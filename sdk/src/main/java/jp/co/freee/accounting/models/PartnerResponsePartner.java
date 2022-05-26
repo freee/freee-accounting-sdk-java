@@ -27,6 +27,7 @@ import jp.co.freee.accounting.models.PartnerResponsePartnerAddressAttributes;
 import jp.co.freee.accounting.models.PartnerResponsePartnerInvoicePaymentTermAttributes;
 import jp.co.freee.accounting.models.PartnerResponsePartnerPartnerBankAccountAttributes;
 import jp.co.freee.accounting.models.PartnerResponsePartnerPartnerDocSettingAttributes;
+import jp.co.freee.accounting.models.PartnerResponsePartnerPaymentTermAttributes;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 /**
@@ -104,7 +105,7 @@ public class PartnerResponsePartner {
 
   public static final String SERIALIZED_NAME_PAYMENT_TERM_ATTRIBUTES = "payment_term_attributes";
   @SerializedName(SERIALIZED_NAME_PAYMENT_TERM_ATTRIBUTES)
-  private PartnerResponsePartnerInvoicePaymentTermAttributes paymentTermAttributes;
+  private PartnerResponsePartnerPaymentTermAttributes paymentTermAttributes;
 
   public static final String SERIALIZED_NAME_PHONE = "phone";
   @SerializedName(SERIALIZED_NAME_PHONE)
@@ -575,7 +576,7 @@ public class PartnerResponsePartner {
   }
 
 
-  public PartnerResponsePartner paymentTermAttributes(PartnerResponsePartnerInvoicePaymentTermAttributes paymentTermAttributes) {
+  public PartnerResponsePartner paymentTermAttributes(PartnerResponsePartnerPaymentTermAttributes paymentTermAttributes) {
     
     this.paymentTermAttributes = paymentTermAttributes;
     return this;
@@ -588,12 +589,12 @@ public class PartnerResponsePartner {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public PartnerResponsePartnerInvoicePaymentTermAttributes getPaymentTermAttributes() {
+  public PartnerResponsePartnerPaymentTermAttributes getPaymentTermAttributes() {
     return paymentTermAttributes;
   }
 
 
-  public void setPaymentTermAttributes(PartnerResponsePartnerInvoicePaymentTermAttributes paymentTermAttributes) {
+  public void setPaymentTermAttributes(PartnerResponsePartnerPaymentTermAttributes paymentTermAttributes) {
     this.paymentTermAttributes = paymentTermAttributes;
   }
 

@@ -25,6 +25,7 @@ import jp.co.freee.accounting.models.PartnerResponsePartnerAddressAttributes;
 import jp.co.freee.accounting.models.PartnerResponsePartnerInvoicePaymentTermAttributes;
 import jp.co.freee.accounting.models.PartnerResponsePartnerPartnerBankAccountAttributes;
 import jp.co.freee.accounting.models.PartnerResponsePartnerPartnerDocSettingAttributes;
+import jp.co.freee.accounting.models.PartnerResponsePartnerPaymentTermAttributes;
 import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.Assert;
 import org.junit.Ignore;
