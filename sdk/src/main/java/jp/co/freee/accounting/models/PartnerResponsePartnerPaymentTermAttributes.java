@@ -23,12 +23,13 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 /**
- * PartnerCreateParamsInvoicePaymentTermAttributes
+ * PartnerResponsePartnerPaymentTermAttributes
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class PartnerCreateParamsInvoicePaymentTermAttributes {
+public class PartnerResponsePartnerPaymentTermAttributes {
   public static final String SERIALIZED_NAME_ADDITIONAL_MONTHS = "additional_months";
   @SerializedName(SERIALIZED_NAME_ADDITIONAL_MONTHS)
   private Integer additionalMonths;
@@ -41,23 +42,23 @@ public class PartnerCreateParamsInvoicePaymentTermAttributes {
   @SerializedName(SERIALIZED_NAME_FIXED_DAY)
   private Integer fixedDay;
 
-  public PartnerCreateParamsInvoicePaymentTermAttributes() { 
+  public PartnerResponsePartnerPaymentTermAttributes() { 
   }
 
-  public PartnerCreateParamsInvoicePaymentTermAttributes additionalMonths(Integer additionalMonths) {
+  public PartnerResponsePartnerPaymentTermAttributes additionalMonths(Integer additionalMonths) {
     
     this.additionalMonths = additionalMonths;
     return this;
   }
 
    /**
-   * 入金月
+   * 支払月
    * minimum: 1
    * maximum: 6
    * @return additionalMonths
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "1", value = "入金月")
+  @ApiModelProperty(example = "1", value = "支払月")
 
   public Integer getAdditionalMonths() {
     return additionalMonths;
@@ -69,20 +70,20 @@ public class PartnerCreateParamsInvoicePaymentTermAttributes {
   }
 
 
-  public PartnerCreateParamsInvoicePaymentTermAttributes cutoffDay(Integer cutoffDay) {
+  public PartnerResponsePartnerPaymentTermAttributes cutoffDay(Integer cutoffDay) {
     
     this.cutoffDay = cutoffDay;
     return this;
   }
 
    /**
-   * 締め日（29, 30, 31日の末日を指定する場合は、32を指定してください。）
+   * 締め日（29, 30, 31日の末日を指定する場合は、32。）
    * minimum: 1
    * maximum: 32
    * @return cutoffDay
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "15", value = "締め日（29, 30, 31日の末日を指定する場合は、32を指定してください。）")
+  @ApiModelProperty(example = "15", value = "締め日（29, 30, 31日の末日を指定する場合は、32。）")
 
   public Integer getCutoffDay() {
     return cutoffDay;
@@ -94,20 +95,20 @@ public class PartnerCreateParamsInvoicePaymentTermAttributes {
   }
 
 
-  public PartnerCreateParamsInvoicePaymentTermAttributes fixedDay(Integer fixedDay) {
+  public PartnerResponsePartnerPaymentTermAttributes fixedDay(Integer fixedDay) {
     
     this.fixedDay = fixedDay;
     return this;
   }
 
    /**
-   * 入金日（29, 30, 31日の末日を指定する場合は、32を指定してください。）
+   * 支払日（29, 30, 31日の末日を指定する場合は、32。）
    * minimum: 1
    * maximum: 32
    * @return fixedDay
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "32", value = "入金日（29, 30, 31日の末日を指定する場合は、32を指定してください。）")
+  @ApiModelProperty(example = "32", value = "支払日（29, 30, 31日の末日を指定する場合は、32。）")
 
   public Integer getFixedDay() {
     return fixedDay;
@@ -127,10 +128,14 @@ public class PartnerCreateParamsInvoicePaymentTermAttributes {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PartnerCreateParamsInvoicePaymentTermAttributes partnerCreateParamsInvoicePaymentTermAttributes = (PartnerCreateParamsInvoicePaymentTermAttributes) o;
-    return Objects.equals(this.additionalMonths, partnerCreateParamsInvoicePaymentTermAttributes.additionalMonths) &&
-        Objects.equals(this.cutoffDay, partnerCreateParamsInvoicePaymentTermAttributes.cutoffDay) &&
-        Objects.equals(this.fixedDay, partnerCreateParamsInvoicePaymentTermAttributes.fixedDay);
+    PartnerResponsePartnerPaymentTermAttributes partnerResponsePartnerPaymentTermAttributes = (PartnerResponsePartnerPaymentTermAttributes) o;
+    return Objects.equals(this.additionalMonths, partnerResponsePartnerPaymentTermAttributes.additionalMonths) &&
+        Objects.equals(this.cutoffDay, partnerResponsePartnerPaymentTermAttributes.cutoffDay) &&
+        Objects.equals(this.fixedDay, partnerResponsePartnerPaymentTermAttributes.fixedDay);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
@@ -138,10 +143,17 @@ public class PartnerCreateParamsInvoicePaymentTermAttributes {
     return Objects.hash(additionalMonths, cutoffDay, fixedDay);
   }
 
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+  }
+
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PartnerCreateParamsInvoicePaymentTermAttributes {\n");
+    sb.append("class PartnerResponsePartnerPaymentTermAttributes {\n");
     sb.append("    additionalMonths: ").append(toIndentedString(additionalMonths)).append("\n");
     sb.append("    cutoffDay: ").append(toIndentedString(cutoffDay)).append("\n");
     sb.append("    fixedDay: ").append(toIndentedString(fixedDay)).append("\n");

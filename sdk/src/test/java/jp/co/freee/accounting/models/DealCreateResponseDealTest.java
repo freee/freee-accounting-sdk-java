@@ -23,6 +23,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import jp.co.freee.accounting.models.DealCreateResponseDealReceipts;
 import jp.co.freee.accounting.models.DealDetails;
 import jp.co.freee.accounting.models.DealPayments;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -123,6 +124,14 @@ public class DealCreateResponseDealTest {
     @Test
     public void paymentsTest() {
         // TODO: test payments
+    }
+
+    /**
+     * Test the property 'receipts'
+     */
+    @Test
+    public void receiptsTest() {
+        // TODO: test receipts
     }
 
     /**

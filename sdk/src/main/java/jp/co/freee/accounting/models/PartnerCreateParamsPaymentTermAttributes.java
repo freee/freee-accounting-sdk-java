@@ -25,10 +25,10 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * PartnerCreateParamsInvoicePaymentTermAttributes
+ * PartnerCreateParamsPaymentTermAttributes
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class PartnerCreateParamsInvoicePaymentTermAttributes {
+public class PartnerCreateParamsPaymentTermAttributes {
   public static final String SERIALIZED_NAME_ADDITIONAL_MONTHS = "additional_months";
   @SerializedName(SERIALIZED_NAME_ADDITIONAL_MONTHS)
   private Integer additionalMonths;
@@ -41,23 +41,23 @@ public class PartnerCreateParamsInvoicePaymentTermAttributes {
   @SerializedName(SERIALIZED_NAME_FIXED_DAY)
   private Integer fixedDay;
 
-  public PartnerCreateParamsInvoicePaymentTermAttributes() { 
+  public PartnerCreateParamsPaymentTermAttributes() { 
   }
 
-  public PartnerCreateParamsInvoicePaymentTermAttributes additionalMonths(Integer additionalMonths) {
+  public PartnerCreateParamsPaymentTermAttributes additionalMonths(Integer additionalMonths) {
     
     this.additionalMonths = additionalMonths;
     return this;
   }
 
    /**
-   * 入金月
+   * 支払月
    * minimum: 1
    * maximum: 6
    * @return additionalMonths
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "1", value = "入金月")
+  @ApiModelProperty(example = "1", value = "支払月")
 
   public Integer getAdditionalMonths() {
     return additionalMonths;
@@ -69,7 +69,7 @@ public class PartnerCreateParamsInvoicePaymentTermAttributes {
   }
 
 
-  public PartnerCreateParamsInvoicePaymentTermAttributes cutoffDay(Integer cutoffDay) {
+  public PartnerCreateParamsPaymentTermAttributes cutoffDay(Integer cutoffDay) {
     
     this.cutoffDay = cutoffDay;
     return this;
@@ -94,20 +94,20 @@ public class PartnerCreateParamsInvoicePaymentTermAttributes {
   }
 
 
-  public PartnerCreateParamsInvoicePaymentTermAttributes fixedDay(Integer fixedDay) {
+  public PartnerCreateParamsPaymentTermAttributes fixedDay(Integer fixedDay) {
     
     this.fixedDay = fixedDay;
     return this;
   }
 
    /**
-   * 入金日（29, 30, 31日の末日を指定する場合は、32を指定してください。）
+   * 支払日（29, 30, 31日の末日を指定する場合は、32を指定してください。）
    * minimum: 1
    * maximum: 32
    * @return fixedDay
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "32", value = "入金日（29, 30, 31日の末日を指定する場合は、32を指定してください。）")
+  @ApiModelProperty(example = "32", value = "支払日（29, 30, 31日の末日を指定する場合は、32を指定してください。）")
 
   public Integer getFixedDay() {
     return fixedDay;
@@ -127,10 +127,10 @@ public class PartnerCreateParamsInvoicePaymentTermAttributes {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PartnerCreateParamsInvoicePaymentTermAttributes partnerCreateParamsInvoicePaymentTermAttributes = (PartnerCreateParamsInvoicePaymentTermAttributes) o;
-    return Objects.equals(this.additionalMonths, partnerCreateParamsInvoicePaymentTermAttributes.additionalMonths) &&
-        Objects.equals(this.cutoffDay, partnerCreateParamsInvoicePaymentTermAttributes.cutoffDay) &&
-        Objects.equals(this.fixedDay, partnerCreateParamsInvoicePaymentTermAttributes.fixedDay);
+    PartnerCreateParamsPaymentTermAttributes partnerCreateParamsPaymentTermAttributes = (PartnerCreateParamsPaymentTermAttributes) o;
+    return Objects.equals(this.additionalMonths, partnerCreateParamsPaymentTermAttributes.additionalMonths) &&
+        Objects.equals(this.cutoffDay, partnerCreateParamsPaymentTermAttributes.cutoffDay) &&
+        Objects.equals(this.fixedDay, partnerCreateParamsPaymentTermAttributes.fixedDay);
   }
 
   @Override
@@ -141,7 +141,7 @@ public class PartnerCreateParamsInvoicePaymentTermAttributes {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PartnerCreateParamsInvoicePaymentTermAttributes {\n");
+    sb.append("class PartnerCreateParamsPaymentTermAttributes {\n");
     sb.append("    additionalMonths: ").append(toIndentedString(additionalMonths)).append("\n");
     sb.append("    cutoffDay: ").append(toIndentedString(cutoffDay)).append("\n");
     sb.append("    fixedDay: ").append(toIndentedString(fixedDay)).append("\n");

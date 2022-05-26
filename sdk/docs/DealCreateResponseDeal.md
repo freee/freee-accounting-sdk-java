@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **partnerCode** | **String** | 取引先コード |  [optional]
 **partnerId** | **Integer** | 取引先ID | 
 **payments** | [**List&lt;DealPayments&gt;**](DealPayments.md) | 取引の支払行 |  [optional]
+**receipts** | [**List&lt;DealCreateResponseDealReceipts&gt;**](DealCreateResponseDealReceipts.md) | 証憑ファイル（ファイルボックスのファイル） |  [optional]
 **refNumber** | **String** | 管理番号 |  [optional]
 **status** | [**StatusEnum**](#StatusEnum) | 決済状況 (未決済: unsettled, 完了: settled) | 
 **type** | [**TypeEnum**](#TypeEnum) | 収支区分 (収入: income, 支出: expense) |  [optional]
