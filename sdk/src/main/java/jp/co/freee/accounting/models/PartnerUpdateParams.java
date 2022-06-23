@@ -48,7 +48,7 @@ public class PartnerUpdateParams {
   private String contactName;
 
   /**
-   * 地域（JP: 国内、ZZ:国外）
+   * 地域（JP: 国内、ZZ:国外）、指定しない場合JPになります。
    */
   @JsonAdapter(CountryCodeEnum.Adapter.class)
   public enum CountryCodeEnum {
@@ -202,7 +202,7 @@ public class PartnerUpdateParams {
   private String shortcut2;
 
   /**
-   * 振込手数料負担（一括振込ファイル用）: (振込元(当方): payer, 振込先(先方): payee)
+   * 振込手数料負担（一括振込ファイル用）: (振込元(当方): payer, 振込先(先方): payee)、指定しない場合payerになります。
    */
   @JsonAdapter(TransferFeeHandlingSideEnum.Adapter.class)
   public enum TransferFeeHandlingSideEnum {
@@ -333,11 +333,11 @@ public class PartnerUpdateParams {
   }
 
    /**
-   * 地域（JP: 国内、ZZ:国外）
+   * 地域（JP: 国内、ZZ:国外）、指定しない場合JPになります。
    * @return countryCode
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "JP", value = "地域（JP: 国内、ZZ:国外）")
+  @ApiModelProperty(example = "JP", value = "地域（JP: 国内、ZZ:国外）、指定しない場合JPになります。")
 
   public CountryCodeEnum getCountryCode() {
     return countryCode;
@@ -680,11 +680,11 @@ public class PartnerUpdateParams {
   }
 
    /**
-   * 振込手数料負担（一括振込ファイル用）: (振込元(当方): payer, 振込先(先方): payee)
+   * 振込手数料負担（一括振込ファイル用）: (振込元(当方): payer, 振込先(先方): payee)、指定しない場合payerになります。
    * @return transferFeeHandlingSide
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "payer", value = "振込手数料負担（一括振込ファイル用）: (振込元(当方): payer, 振込先(先方): payee)")
+  @ApiModelProperty(example = "payer", value = "振込手数料負担（一括振込ファイル用）: (振込元(当方): payer, 振込先(先方): payee)、指定しない場合payerになります。")
 
   public TransferFeeHandlingSideEnum getTransferFeeHandlingSide() {
     return transferFeeHandlingSide;
