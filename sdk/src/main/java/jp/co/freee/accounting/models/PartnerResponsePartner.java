@@ -23,10 +23,10 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import jp.co.freee.accounting.models.PartnerCreateParamsPartnerDocSettingAttributes;
 import jp.co.freee.accounting.models.PartnerResponsePartnerAddressAttributes;
 import jp.co.freee.accounting.models.PartnerResponsePartnerInvoicePaymentTermAttributes;
 import jp.co.freee.accounting.models.PartnerResponsePartnerPartnerBankAccountAttributes;
-import jp.co.freee.accounting.models.PartnerResponsePartnerPartnerDocSettingAttributes;
 import jp.co.freee.accounting.models.PartnerResponsePartnerPaymentTermAttributes;
 import org.openapitools.jackson.nullable.JsonNullable;
 
@@ -97,7 +97,7 @@ public class PartnerResponsePartner {
 
   public static final String SERIALIZED_NAME_PARTNER_DOC_SETTING_ATTRIBUTES = "partner_doc_setting_attributes";
   @SerializedName(SERIALIZED_NAME_PARTNER_DOC_SETTING_ATTRIBUTES)
-  private PartnerResponsePartnerPartnerDocSettingAttributes partnerDocSettingAttributes;
+  private PartnerCreateParamsPartnerDocSettingAttributes partnerDocSettingAttributes;
 
   public static final String SERIALIZED_NAME_PAYER_WALLETABLE_ID = "payer_walletable_id";
   @SerializedName(SERIALIZED_NAME_PAYER_WALLETABLE_ID)
@@ -528,7 +528,7 @@ public class PartnerResponsePartner {
   }
 
 
-  public PartnerResponsePartner partnerDocSettingAttributes(PartnerResponsePartnerPartnerDocSettingAttributes partnerDocSettingAttributes) {
+  public PartnerResponsePartner partnerDocSettingAttributes(PartnerCreateParamsPartnerDocSettingAttributes partnerDocSettingAttributes) {
     
     this.partnerDocSettingAttributes = partnerDocSettingAttributes;
     return this;
@@ -541,12 +541,12 @@ public class PartnerResponsePartner {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public PartnerResponsePartnerPartnerDocSettingAttributes getPartnerDocSettingAttributes() {
+  public PartnerCreateParamsPartnerDocSettingAttributes getPartnerDocSettingAttributes() {
     return partnerDocSettingAttributes;
   }
 
 
-  public void setPartnerDocSettingAttributes(PartnerResponsePartnerPartnerDocSettingAttributes partnerDocSettingAttributes) {
+  public void setPartnerDocSettingAttributes(PartnerCreateParamsPartnerDocSettingAttributes partnerDocSettingAttributes) {
     this.partnerDocSettingAttributes = partnerDocSettingAttributes;
   }
 

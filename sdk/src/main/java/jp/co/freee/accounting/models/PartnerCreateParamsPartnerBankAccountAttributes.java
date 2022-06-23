@@ -125,11 +125,11 @@ public class PartnerCreateParamsPartnerBankAccountAttributes {
   }
 
    /**
-   * 口座種別(ordinary:普通、checking：当座、earmarked：納税準備預金、savings：貯蓄、other:その他)
+   * 口座種別(ordinary:普通、checking：当座、earmarked：納税準備預金、savings：貯蓄、other:その他)、指定しない場合ordinaryになります。
    * @return accountType
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "ordinary", value = "口座種別(ordinary:普通、checking：当座、earmarked：納税準備預金、savings：貯蓄、other:その他)")
+  @ApiModelProperty(example = "ordinary", value = "口座種別(ordinary:普通、checking：当座、earmarked：納税準備預金、savings：貯蓄、other:その他)、指定しない場合ordinaryになります。")
 
   public String getAccountType() {
     return accountType;

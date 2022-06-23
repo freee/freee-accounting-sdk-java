@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **addressAttributes** | [**PartnerCreateParamsAddressAttributes**](PartnerCreateParamsAddressAttributes.md) |  |  [optional]
 **companyId** | **Integer** | 事業所ID | 
 **contactName** | **String** | 担当者 氏名 (255文字以内) |  [optional]
-**countryCode** | [**CountryCodeEnum**](#CountryCodeEnum) | 地域（JP: 国内、ZZ:国外） |  [optional]
+**countryCode** | [**CountryCodeEnum**](#CountryCodeEnum) | 地域（JP: 国内、ZZ:国外）、指定しない場合JPになります。 |  [optional]
 **defaultTitle** | **String** | 敬称（御中、様、(空白)の3つから選択） |  [optional]
 **email** | **String** | 担当者 メールアドレス (255文字以内) |  [optional]
 **invoicePaymentTermAttributes** | [**PartnerCreateParamsInvoicePaymentTermAttributes**](PartnerCreateParamsInvoicePaymentTermAttributes.md) |  |  [optional]
@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **phone** | **String** | 電話番号 |  [optional]
 **shortcut1** | **String** | ショートカット１ (255文字以内) |  [optional]
 **shortcut2** | **String** | ショートカット２ (255文字以内) |  [optional]
-**transferFeeHandlingSide** | [**TransferFeeHandlingSideEnum**](#TransferFeeHandlingSideEnum) | 振込手数料負担（一括振込ファイル用）: (振込元(当方): payer, 振込先(先方): payee) |  [optional]
+**transferFeeHandlingSide** | [**TransferFeeHandlingSideEnum**](#TransferFeeHandlingSideEnum) | 振込手数料負担（一括振込ファイル用）: (振込元(当方): payer, 振込先(先方): payee)、指定しない場合payerになります。 |  [optional]
 
 
 

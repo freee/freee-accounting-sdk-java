@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **nameKana** | **String** | カナ名称（255文字以内） |  [optional]
 **orgCode** | **Integer** | 事業所種別（null: 未設定、1: 法人、2: 個人） |  [optional]
 **partnerBankAccountAttributes** | [**PartnerResponsePartnerPartnerBankAccountAttributes**](PartnerResponsePartnerPartnerBankAccountAttributes.md) |  |  [optional]
-**partnerDocSettingAttributes** | [**PartnerResponsePartnerPartnerDocSettingAttributes**](PartnerResponsePartnerPartnerDocSettingAttributes.md) |  |  [optional]
+**partnerDocSettingAttributes** | [**PartnerCreateParamsPartnerDocSettingAttributes**](PartnerCreateParamsPartnerDocSettingAttributes.md) |  |  [optional]
 **payerWalletableId** | **Integer** | 振込元口座ID（一括振込ファイル用）:（未設定の場合は、nullです。） |  [optional]
 **paymentTermAttributes** | [**PartnerResponsePartnerPaymentTermAttributes**](PartnerResponsePartnerPaymentTermAttributes.md) |  |  [optional]
 **phone** | **String** | 電話番号 |  [optional]
