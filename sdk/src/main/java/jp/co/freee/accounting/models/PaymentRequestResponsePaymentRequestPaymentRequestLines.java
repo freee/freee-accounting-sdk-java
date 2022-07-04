@@ -38,7 +38,7 @@ public class PaymentRequestResponsePaymentRequestPaymentRequestLines {
 
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
-  private Integer amount;
+  private Long amount;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -155,7 +155,7 @@ public class PaymentRequestResponsePaymentRequestPaymentRequestLines {
   }
 
 
-  public PaymentRequestResponsePaymentRequestPaymentRequestLines amount(Integer amount) {
+  public PaymentRequestResponsePaymentRequestPaymentRequestLines amount(Long amount) {
     
     this.amount = amount;
     return this;
@@ -164,18 +164,18 @@ public class PaymentRequestResponsePaymentRequestPaymentRequestLines {
    /**
    * 金額
    * minimum: 0
-   * maximum: 2147483647
+   * maximum: 99999999999
    * @return amount
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(example = "30000", required = true, value = "金額")
 
-  public Integer getAmount() {
+  public Long getAmount() {
     return amount;
   }
 
 
-  public void setAmount(Integer amount) {
+  public void setAmount(Long amount) {
     this.amount = amount;
   }
 

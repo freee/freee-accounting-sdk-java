@@ -8,7 +8,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accountItemId** | **Integer** | 勘定科目ID |  [optional]
-**amount** | **Integer** | 金額 | 
+**amount** | **Long** | 金額 | 
 **description** | **String** | 内容 |  [optional]
 **itemId** | **Integer** | 品目ID |  [optional]
 **lineType** | [**LineTypeEnum**](#LineTypeEnum) | &#39;行の種類 (deal_line: 支払依頼, withholding_tax: 源泉徴収税)&#39;&lt;br&gt; &#39;デフォルトは deal_line: 支払依頼 です&#39;  |  [optional]

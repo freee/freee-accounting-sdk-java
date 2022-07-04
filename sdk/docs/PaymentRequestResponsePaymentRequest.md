@@ -41,7 +41,7 @@ Name | Type | Description | Notes
 **receiptIds** | **List&lt;Integer&gt;** | 証憑ファイルID（ファイルボックスのファイルID） | 
 **status** | [**StatusEnum**](#StatusEnum) | 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し) | 
 **title** | **String** | 申請タイトル | 
-**totalAmount** | **Integer** | 合計金額 | 
+**totalAmount** | **Long** | 合計金額 | 
 
 
 

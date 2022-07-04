@@ -264,7 +264,7 @@ public class PaymentRequestsIndexResponsePaymentRequests {
 
   public static final String SERIALIZED_NAME_TOTAL_AMOUNT = "total_amount";
   @SerializedName(SERIALIZED_NAME_TOTAL_AMOUNT)
-  private Integer totalAmount;
+  private Long totalAmount;
 
   public PaymentRequestsIndexResponsePaymentRequests() { 
   }
@@ -725,7 +725,7 @@ public class PaymentRequestsIndexResponsePaymentRequests {
   }
 
 
-  public PaymentRequestsIndexResponsePaymentRequests totalAmount(Integer totalAmount) {
+  public PaymentRequestsIndexResponsePaymentRequests totalAmount(Long totalAmount) {
     
     this.totalAmount = totalAmount;
     return this;
@@ -738,12 +738,12 @@ public class PaymentRequestsIndexResponsePaymentRequests {
   @javax.annotation.Nonnull
   @ApiModelProperty(example = "30000", required = true, value = "合計金額")
 
-  public Integer getTotalAmount() {
+  public Long getTotalAmount() {
     return totalAmount;
   }
 
 
-  public void setTotalAmount(Integer totalAmount) {
+  public void setTotalAmount(Long totalAmount) {
     this.totalAmount = totalAmount;
   }
 

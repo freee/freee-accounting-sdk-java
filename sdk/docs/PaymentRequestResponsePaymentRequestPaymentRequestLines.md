@@ -8,7 +8,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accountItemId** | **Integer** | 勘定科目ID | 
-**amount** | **Integer** | 金額 | 
+**amount** | **Long** | 金額 | 
 **description** | **String** | 内容 | 
 **id** | **Long** | 支払依頼の項目行ID | 
 **itemId** | **Integer** | 品目ID | 
