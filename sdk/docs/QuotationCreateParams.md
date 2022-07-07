@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 **quotationContents** | [**List&lt;InvoiceCreateParamsInvoiceContents&gt;**](InvoiceCreateParamsInvoiceContents.md) | 見積内容 |  [optional]
 **quotationLayout** | [**QuotationLayoutEnum**](#QuotationLayoutEnum) | 見積書レイアウト * &#x60;default_classic&#x60; - レイアウト１/クラシック (デフォルト)  * &#x60;standard_classic&#x60; - レイアウト２/クラシック  * &#x60;envelope_classic&#x60; - 封筒１/クラシック  * &#x60;default_modern&#x60; - レイアウト１/モダン  * &#x60;standard_modern&#x60; - レイアウト２/モダン  * &#x60;envelope_modern&#x60; - 封筒/モダン |  [optional]
 **quotationNumber** | **String** | 見積書番号 (デフォルト: 自動採番されます) |  [optional]
-**quotationStatus** | [**QuotationStatusEnum**](#QuotationStatusEnum) | 見積書ステータス  (unsubmitted: 送付待ち, submitted: 送付済み) |  [optional]
+**quotationStatus** | [**QuotationStatusEnum**](#QuotationStatusEnum) | 見積書ステータス  (unsubmitted: 送付待ち, submitted: 送付済み) (請求書承認ワークフローを利用している場合、unsubmitted を指定すると、下書きの見積書が作成されます) |  [optional]
 **taxEntryMethod** | [**TaxEntryMethodEnum**](#TaxEntryMethodEnum) | 見積書の消費税計算方法(inclusive: 内税表示, exclusive: 外税表示 (デフォルト)) |  [optional]
 **title** | **String** | タイトル (デフォルト: 見積書) |  [optional]
 

@@ -181,7 +181,7 @@ public class QuotationUpdateParams {
   private String quotationNumber;
 
   /**
-   * 見積書ステータス  (unsubmitted: 送付待ち, submitted: 送付済み)
+   * 見積書ステータス  (unsubmitted: 送付待ち, submitted: 送付済み) (請求書承認ワークフローを利用している場合、unsubmitted を指定すると、下書きの見積書が作成されます)
    */
   @JsonAdapter(QuotationStatusEnum.Adapter.class)
   public enum QuotationStatusEnum {
@@ -841,11 +841,11 @@ public class QuotationUpdateParams {
   }
 
    /**
-   * 見積書ステータス  (unsubmitted: 送付待ち, submitted: 送付済み)
+   * 見積書ステータス  (unsubmitted: 送付待ち, submitted: 送付済み) (請求書承認ワークフローを利用している場合、unsubmitted を指定すると、下書きの見積書が作成されます)
    * @return quotationStatus
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "見積書ステータス  (unsubmitted: 送付待ち, submitted: 送付済み)")
+  @ApiModelProperty(value = "見積書ステータス  (unsubmitted: 送付待ち, submitted: 送付済み) (請求書承認ワークフローを利用している場合、unsubmitted を指定すると、下書きの見積書が作成されます)")
 
   public QuotationStatusEnum getQuotationStatus() {
     return quotationStatus;
