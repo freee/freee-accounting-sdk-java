@@ -8,7 +8,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accountItemId** | **Integer** | 勘定科目ID |  [optional]
-**amount** | **Integer** | 金額 | 
+**amount** | **Long** | 金額 | 
 **description** | **String** | 内容 |  [optional]
 **id** | **Long** | 支払依頼の項目行ID: 既存項目行を更新する場合に指定します。IDを指定しない項目行は、新規行として扱われ追加されます。また、payment_request_linesに含まれない既存の項目行は削除されます。更新後も残したい行は、必ず支払依頼の項目行IDを指定してpayment_request_linesに含めてください。 |  [optional]
 **itemId** | **Integer** | 品目ID |  [optional]
