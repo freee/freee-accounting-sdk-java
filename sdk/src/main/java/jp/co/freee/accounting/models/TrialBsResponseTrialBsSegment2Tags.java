@@ -161,7 +161,7 @@ public class TrialBsResponseTrialBsSegment2Tags {
 
    /**
    * セグメント2タグID
-   * minimum: 1
+   * minimum: 0
    * maximum: 2147483647
    * @return id
   **/

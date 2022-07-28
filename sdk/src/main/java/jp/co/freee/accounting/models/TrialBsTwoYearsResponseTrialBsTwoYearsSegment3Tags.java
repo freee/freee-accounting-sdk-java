@@ -84,7 +84,7 @@ public class TrialBsTwoYearsResponseTrialBsTwoYearsSegment3Tags {
 
    /**
    * セグメント3タグID
-   * minimum: 1
+   * minimum: 0
    * maximum: 2147483647
    * @return id
   **/

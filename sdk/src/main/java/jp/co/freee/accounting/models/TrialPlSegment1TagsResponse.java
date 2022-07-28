@@ -26,7 +26,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import jp.co.freee.accounting.models.JournalsResponseJournalsUpToDateReasons;
-import jp.co.freee.accounting.models.TrialPlSegment1TagsResponseTrialPlSegment1Tags;
+import jp.co.freee.accounting.models.TrialCrSegment1TagsResponseTrialCrSegment1Tags;
 
 /**
  * TrialPlSegment1TagsResponse
@@ -35,7 +35,7 @@ import jp.co.freee.accounting.models.TrialPlSegment1TagsResponseTrialPlSegment1T
 public class TrialPlSegment1TagsResponse {
   public static final String SERIALIZED_NAME_TRIAL_PL_SEGMENT1_TAGS = "trial_pl_segment_1_tags";
   @SerializedName(SERIALIZED_NAME_TRIAL_PL_SEGMENT1_TAGS)
-  private TrialPlSegment1TagsResponseTrialPlSegment1Tags trialPlSegment1Tags;
+  private TrialCrSegment1TagsResponseTrialCrSegment1Tags trialPlSegment1Tags;
 
   public static final String SERIALIZED_NAME_UP_TO_DATE = "up_to_date";
   @SerializedName(SERIALIZED_NAME_UP_TO_DATE)
@@ -48,7 +48,7 @@ public class TrialPlSegment1TagsResponse {
   public TrialPlSegment1TagsResponse() { 
   }
 
-  public TrialPlSegment1TagsResponse trialPlSegment1Tags(TrialPlSegment1TagsResponseTrialPlSegment1Tags trialPlSegment1Tags) {
+  public TrialPlSegment1TagsResponse trialPlSegment1Tags(TrialCrSegment1TagsResponseTrialCrSegment1Tags trialPlSegment1Tags) {
     
     this.trialPlSegment1Tags = trialPlSegment1Tags;
     return this;
@@ -61,12 +61,12 @@ public class TrialPlSegment1TagsResponse {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public TrialPlSegment1TagsResponseTrialPlSegment1Tags getTrialPlSegment1Tags() {
+  public TrialCrSegment1TagsResponseTrialCrSegment1Tags getTrialPlSegment1Tags() {
     return trialPlSegment1Tags;
   }
 
 
-  public void setTrialPlSegment1Tags(TrialPlSegment1TagsResponseTrialPlSegment1Tags trialPlSegment1Tags) {
+  public void setTrialPlSegment1Tags(TrialCrSegment1TagsResponseTrialCrSegment1Tags trialPlSegment1Tags) {
     this.trialPlSegment1Tags = trialPlSegment1Tags;
   }
 

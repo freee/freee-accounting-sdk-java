@@ -85,7 +85,7 @@ public interface WalletablesApi {
    * 
    * @param id  (required)
    * @param type 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） (required)
-   * @param walletableUpdateParams 口座の作成 (optional)
+   * @param walletableUpdateParams 口座の更新 (optional)
    * @return Observable&lt;InlineResponse20016&gt;
    */
   @Headers({

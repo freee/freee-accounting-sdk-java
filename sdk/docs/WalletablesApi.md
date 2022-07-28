@@ -346,7 +346,7 @@ public class Example {
         WalletablesApi apiInstance = new WalletablesApi(defaultClient);
         Integer id = 56; // Integer | 
         String type = "bank_account"; // String | 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座）
-        WalletableUpdateParams walletableUpdateParams = new WalletableUpdateParams(); // WalletableUpdateParams | 口座の作成
+        WalletableUpdateParams walletableUpdateParams = new WalletableUpdateParams(); // WalletableUpdateParams | 口座の更新
         try {
             InlineResponse20016 result = apiInstance.updateWalletable(id, type, walletableUpdateParams);
             System.out.println(result);
@@ -368,7 +368,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**|  |
  **type** | **String**| 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） | [enum: bank_account, credit_card, wallet]
- **walletableUpdateParams** | [**WalletableUpdateParams**](WalletableUpdateParams.md)| 口座の作成 | [optional]
+ **walletableUpdateParams** | [**WalletableUpdateParams**](WalletableUpdateParams.md)| 口座の更新 | [optional]
 
 ### Return type
 

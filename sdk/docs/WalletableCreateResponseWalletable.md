@@ -7,7 +7,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bankId** | **Integer** | サービスID | 
+**bankId** | **Integer** | 連携サービスID（typeにbank_account、credit_cardを指定する場合は必須） | 
 **id** | **Integer** | 口座ID | 
 **name** | **String** | 口座名, 最大255文字 | 
 **type** | [**TypeEnum**](#TypeEnum) | 口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet) | 

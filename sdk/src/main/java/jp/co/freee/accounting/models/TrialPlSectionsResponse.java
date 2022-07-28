@@ -26,7 +26,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import jp.co.freee.accounting.models.JournalsResponseJournalsUpToDateReasons;
-import jp.co.freee.accounting.models.TrialPlSectionsResponseTrialPlSections;
+import jp.co.freee.accounting.models.TrialCrSectionsResponseTrialCrSections;
 
 /**
  * TrialPlSectionsResponse
@@ -35,7 +35,7 @@ import jp.co.freee.accounting.models.TrialPlSectionsResponseTrialPlSections;
 public class TrialPlSectionsResponse {
   public static final String SERIALIZED_NAME_TRIAL_PL_SECTIONS = "trial_pl_sections";
   @SerializedName(SERIALIZED_NAME_TRIAL_PL_SECTIONS)
-  private TrialPlSectionsResponseTrialPlSections trialPlSections;
+  private TrialCrSectionsResponseTrialCrSections trialPlSections;
 
   public static final String SERIALIZED_NAME_UP_TO_DATE = "up_to_date";
   @SerializedName(SERIALIZED_NAME_UP_TO_DATE)
@@ -48,7 +48,7 @@ public class TrialPlSectionsResponse {
   public TrialPlSectionsResponse() { 
   }
 
-  public TrialPlSectionsResponse trialPlSections(TrialPlSectionsResponseTrialPlSections trialPlSections) {
+  public TrialPlSectionsResponse trialPlSections(TrialCrSectionsResponseTrialCrSections trialPlSections) {
     
     this.trialPlSections = trialPlSections;
     return this;
@@ -61,12 +61,12 @@ public class TrialPlSectionsResponse {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public TrialPlSectionsResponseTrialPlSections getTrialPlSections() {
+  public TrialCrSectionsResponseTrialCrSections getTrialPlSections() {
     return trialPlSections;
   }
 
 
-  public void setTrialPlSections(TrialPlSectionsResponseTrialPlSections trialPlSections) {
+  public void setTrialPlSections(TrialCrSectionsResponseTrialCrSections trialPlSections) {
     this.trialPlSections = trialPlSections;
   }
 

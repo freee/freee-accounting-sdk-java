@@ -26,7 +26,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import jp.co.freee.accounting.models.JournalsResponseJournalsUpToDateReasons;
-import jp.co.freee.accounting.models.TrialPlThreeYearsResponseTrialPlThreeYears;
+import jp.co.freee.accounting.models.TrialCrThreeYearsResponseTrialCrThreeYears;
 
 /**
  * TrialPlThreeYearsResponse
@@ -35,7 +35,7 @@ import jp.co.freee.accounting.models.TrialPlThreeYearsResponseTrialPlThreeYears;
 public class TrialPlThreeYearsResponse {
   public static final String SERIALIZED_NAME_TRIAL_PL_THREE_YEARS = "trial_pl_three_years";
   @SerializedName(SERIALIZED_NAME_TRIAL_PL_THREE_YEARS)
-  private TrialPlThreeYearsResponseTrialPlThreeYears trialPlThreeYears;
+  private TrialCrThreeYearsResponseTrialCrThreeYears trialPlThreeYears;
 
   public static final String SERIALIZED_NAME_UP_TO_DATE = "up_to_date";
   @SerializedName(SERIALIZED_NAME_UP_TO_DATE)
@@ -48,7 +48,7 @@ public class TrialPlThreeYearsResponse {
   public TrialPlThreeYearsResponse() { 
   }
 
-  public TrialPlThreeYearsResponse trialPlThreeYears(TrialPlThreeYearsResponseTrialPlThreeYears trialPlThreeYears) {
+  public TrialPlThreeYearsResponse trialPlThreeYears(TrialCrThreeYearsResponseTrialCrThreeYears trialPlThreeYears) {
     
     this.trialPlThreeYears = trialPlThreeYears;
     return this;
@@ -61,12 +61,12 @@ public class TrialPlThreeYearsResponse {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public TrialPlThreeYearsResponseTrialPlThreeYears getTrialPlThreeYears() {
+  public TrialCrThreeYearsResponseTrialCrThreeYears getTrialPlThreeYears() {
     return trialPlThreeYears;
   }
 
 
-  public void setTrialPlThreeYears(TrialPlThreeYearsResponseTrialPlThreeYears trialPlThreeYears) {
+  public void setTrialPlThreeYears(TrialCrThreeYearsResponseTrialCrThreeYears trialPlThreeYears) {
     this.trialPlThreeYears = trialPlThreeYears;
   }
 

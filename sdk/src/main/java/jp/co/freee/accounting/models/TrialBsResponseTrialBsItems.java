@@ -161,7 +161,7 @@ public class TrialBsResponseTrialBsItems {
 
    /**
    * 品目ID
-   * minimum: 1
+   * minimum: 0
    * maximum: 2147483647
    * @return id
   **/

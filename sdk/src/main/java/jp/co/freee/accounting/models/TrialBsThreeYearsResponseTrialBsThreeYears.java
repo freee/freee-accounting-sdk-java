@@ -544,7 +544,7 @@ public class TrialBsThreeYearsResponseTrialBsThreeYears {
 
    /**
    * 品目ID(条件に指定した時のみ含まれる）
-   * minimum: 1
+   * minimum: 0
    * maximum: 2147483647
    * @return itemId
   **/
@@ -592,7 +592,7 @@ public class TrialBsThreeYearsResponseTrialBsThreeYears {
 
    /**
    * 取引先ID(条件に指定した時のみ含まれる）
-   * minimum: 1
+   * minimum: 0
    * maximum: 2147483647
    * @return partnerId
   **/
