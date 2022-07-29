@@ -37,9 +37,9 @@ public class WalletableCreateParams {
   @SerializedName(SERIALIZED_NAME_COMPANY_ID)
   private Integer companyId;
 
-  public static final String SERIALIZED_NAME_GROUP_NAME = "group_name";
-  @SerializedName(SERIALIZED_NAME_GROUP_NAME)
-  private String groupName;
+  public static final String SERIALIZED_NAME_IS_ASSET = "is_asset";
+  @SerializedName(SERIALIZED_NAME_IS_ASSET)
+  private Boolean isAsset;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -108,13 +108,13 @@ public class WalletableCreateParams {
   }
 
    /**
-   * サービスID
+   * 連携サービスID（typeにbank_account、credit_cardを指定する場合は必須）
    * minimum: 1
    * maximum: 2147483647
    * @return bankId
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "1", value = "サービスID")
+  @ApiModelProperty(example = "1", value = "連携サービスID（typeにbank_account、credit_cardを指定する場合は必須）")
 
   public Integer getBankId() {
     return bankId;
@@ -151,26 +151,26 @@ public class WalletableCreateParams {
   }
 
 
-  public WalletableCreateParams groupName(String groupName) {
+  public WalletableCreateParams isAsset(Boolean isAsset) {
     
-    this.groupName = groupName;
+    this.isAsset = isAsset;
     return this;
   }
 
    /**
-   * 決算書表示名（小カテゴリー）　例：売掛金, 受取手形, 未収入金（法人のみ）, 買掛金, 支払手形, 未払金, 預り金, 前受金
-   * @return groupName
+   * 口座を資産口座とするか負債口座とするか（true: 資産口座 (デフォルト), false: 負債口座）&lt;br&gt; bank_idを指定しない場合にのみ使われます。&lt;br&gt; bank_idを指定する場合には資産口座か負債口座かはbank_idに指定したサービスに応じて決定され、is_assetに指定した値は無視されます。 
+   * @return isAsset
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "売掛金", value = "決算書表示名（小カテゴリー）　例：売掛金, 受取手形, 未収入金（法人のみ）, 買掛金, 支払手形, 未払金, 預り金, 前受金")
+  @ApiModelProperty(example = "true", value = "口座を資産口座とするか負債口座とするか（true: 資産口座 (デフォルト), false: 負債口座）<br> bank_idを指定しない場合にのみ使われます。<br> bank_idを指定する場合には資産口座か負債口座かはbank_idに指定したサービスに応じて決定され、is_assetに指定した値は無視されます。 ")
 
-  public String getGroupName() {
-    return groupName;
+  public Boolean getIsAsset() {
+    return isAsset;
   }
 
 
-  public void setGroupName(String groupName) {
-    this.groupName = groupName;
+  public void setIsAsset(Boolean isAsset) {
+    this.isAsset = isAsset;
   }
 
 
@@ -231,14 +231,14 @@ public class WalletableCreateParams {
     WalletableCreateParams walletableCreateParams = (WalletableCreateParams) o;
     return Objects.equals(this.bankId, walletableCreateParams.bankId) &&
         Objects.equals(this.companyId, walletableCreateParams.companyId) &&
-        Objects.equals(this.groupName, walletableCreateParams.groupName) &&
+        Objects.equals(this.isAsset, walletableCreateParams.isAsset) &&
         Objects.equals(this.name, walletableCreateParams.name) &&
         Objects.equals(this.type, walletableCreateParams.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(bankId, companyId, groupName, name, type);
+    return Objects.hash(bankId, companyId, isAsset, name, type);
   }
 
   @Override
@@ -247,7 +247,7 @@ public class WalletableCreateParams {
     sb.append("class WalletableCreateParams {\n");
     sb.append("    bankId: ").append(toIndentedString(bankId)).append("\n");
     sb.append("    companyId: ").append(toIndentedString(companyId)).append("\n");
-    sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
+    sb.append("    isAsset: ").append(toIndentedString(isAsset)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");

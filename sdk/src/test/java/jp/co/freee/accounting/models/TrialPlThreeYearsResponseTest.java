@@ -24,7 +24,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import jp.co.freee.accounting.models.JournalsResponseJournalsUpToDateReasons;
-import jp.co.freee.accounting.models.TrialPlThreeYearsResponseTrialPlThreeYears;
+import jp.co.freee.accounting.models.TrialCrThreeYearsResponseTrialCrThreeYears;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;

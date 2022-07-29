@@ -57,11 +57,11 @@ public class WalletableCreateParamsTest {
     }
 
     /**
-     * Test the property 'groupName'
+     * Test the property 'isAsset'
      */
     @Test
-    public void groupNameTest() {
-        // TODO: test groupName
+    public void isAssetTest() {
+        // TODO: test isAsset
     }
 
     /**

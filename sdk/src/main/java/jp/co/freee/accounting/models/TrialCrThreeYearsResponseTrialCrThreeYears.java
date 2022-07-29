@@ -25,7 +25,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import jp.co.freee.accounting.models.TrialCrThreeYearsResponseTrialCrThreeYearsBalances;
+import jp.co.freee.accounting.models.TrialBsThreeYearsResponseTrialBsThreeYearsBalances;
 
 /**
  * TrialCrThreeYearsResponseTrialCrThreeYears
@@ -187,7 +187,7 @@ public class TrialCrThreeYearsResponseTrialCrThreeYears {
 
   public static final String SERIALIZED_NAME_BALANCES = "balances";
   @SerializedName(SERIALIZED_NAME_BALANCES)
-  private List<TrialCrThreeYearsResponseTrialCrThreeYearsBalances> balances = new ArrayList<>();
+  private List<TrialBsThreeYearsResponseTrialBsThreeYearsBalances> balances = new ArrayList<>();
 
   /**
    * 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag）(条件に指定した時のみ含まれる）
@@ -417,13 +417,13 @@ public class TrialCrThreeYearsResponseTrialCrThreeYears {
   }
 
 
-  public TrialCrThreeYearsResponseTrialCrThreeYears balances(List<TrialCrThreeYearsResponseTrialCrThreeYearsBalances> balances) {
+  public TrialCrThreeYearsResponseTrialCrThreeYears balances(List<TrialBsThreeYearsResponseTrialBsThreeYearsBalances> balances) {
     
     this.balances = balances;
     return this;
   }
 
-  public TrialCrThreeYearsResponseTrialCrThreeYears addBalancesItem(TrialCrThreeYearsResponseTrialCrThreeYearsBalances balancesItem) {
+  public TrialCrThreeYearsResponseTrialCrThreeYears addBalancesItem(TrialBsThreeYearsResponseTrialBsThreeYearsBalances balancesItem) {
     this.balances.add(balancesItem);
     return this;
   }
@@ -435,12 +435,12 @@ public class TrialCrThreeYearsResponseTrialCrThreeYears {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public List<TrialCrThreeYearsResponseTrialCrThreeYearsBalances> getBalances() {
+  public List<TrialBsThreeYearsResponseTrialBsThreeYearsBalances> getBalances() {
     return balances;
   }
 
 
-  public void setBalances(List<TrialCrThreeYearsResponseTrialCrThreeYearsBalances> balances) {
+  public void setBalances(List<TrialBsThreeYearsResponseTrialBsThreeYearsBalances> balances) {
     this.balances = balances;
   }
 

@@ -25,7 +25,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import jp.co.freee.accounting.models.TrialCrResponseTrialCrBalances;
+import jp.co.freee.accounting.models.TrialBsResponseTrialBsBalances;
 
 /**
  * TrialCrResponseTrialCr
@@ -187,7 +187,7 @@ public class TrialCrResponseTrialCr {
 
   public static final String SERIALIZED_NAME_BALANCES = "balances";
   @SerializedName(SERIALIZED_NAME_BALANCES)
-  private List<TrialCrResponseTrialCrBalances> balances = new ArrayList<>();
+  private List<TrialBsResponseTrialBsBalances> balances = new ArrayList<>();
 
   /**
    * 内訳の表示（取引先: partner, 品目: item, 部門: section, 勘定科目: account_item, セグメント1(法人向けプロフェッショナル, 法人向けエンタープライズプラン): segment_1_tag, セグメント2(法人向け エンタープライズプラン):segment_2_tag, セグメント3(法人向け エンタープライズプラン): segment_3_tag）(条件に指定した時のみ含まれる）
@@ -417,13 +417,13 @@ public class TrialCrResponseTrialCr {
   }
 
 
-  public TrialCrResponseTrialCr balances(List<TrialCrResponseTrialCrBalances> balances) {
+  public TrialCrResponseTrialCr balances(List<TrialBsResponseTrialBsBalances> balances) {
     
     this.balances = balances;
     return this;
   }
 
-  public TrialCrResponseTrialCr addBalancesItem(TrialCrResponseTrialCrBalances balancesItem) {
+  public TrialCrResponseTrialCr addBalancesItem(TrialBsResponseTrialBsBalances balancesItem) {
     this.balances.add(balancesItem);
     return this;
   }
@@ -435,12 +435,12 @@ public class TrialCrResponseTrialCr {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public List<TrialCrResponseTrialCrBalances> getBalances() {
+  public List<TrialBsResponseTrialBsBalances> getBalances() {
     return balances;
   }
 
 
-  public void setBalances(List<TrialCrResponseTrialCrBalances> balances) {
+  public void setBalances(List<TrialBsResponseTrialBsBalances> balances) {
     this.balances = balances;
   }
 

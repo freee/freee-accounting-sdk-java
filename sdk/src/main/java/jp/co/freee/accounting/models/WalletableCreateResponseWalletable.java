@@ -104,13 +104,13 @@ public class WalletableCreateResponseWalletable {
   }
 
    /**
-   * サービスID
+   * 連携サービスID（typeにbank_account、credit_cardを指定する場合は必須）
    * minimum: 1
    * maximum: 2147483647
    * @return bankId
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "1", required = true, value = "サービスID")
+  @ApiModelProperty(example = "1", required = true, value = "連携サービスID（typeにbank_account、credit_cardを指定する場合は必須）")
 
   public Integer getBankId() {
     return bankId;

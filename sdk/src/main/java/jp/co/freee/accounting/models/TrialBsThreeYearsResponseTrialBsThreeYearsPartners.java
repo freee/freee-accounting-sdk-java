@@ -88,7 +88,7 @@ public class TrialBsThreeYearsResponseTrialBsThreeYearsPartners {
 
    /**
    * 取引先ID
-   * minimum: 1
+   * minimum: 0
    * maximum: 2147483647
    * @return id
   **/
