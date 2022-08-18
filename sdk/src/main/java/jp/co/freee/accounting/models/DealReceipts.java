@@ -122,12 +122,10 @@ public class DealReceipts {
   private OriginEnum origin;
 
   /**
-   * ステータス(unconfirmed:確認待ち、confirmed:確認済み、deleted:削除済み、ignored:無視)
+   * ステータス(confirmed:確認済み、deleted:削除済み、ignored:無視)
    */
   @JsonAdapter(StatusEnum.Adapter.class)
   public enum StatusEnum {
-    UNCONFIRMED("unconfirmed"),
-    
     CONFIRMED("confirmed"),
     
     DELETED("deleted"),
@@ -355,11 +353,11 @@ public class DealReceipts {
   }
 
    /**
-   * ステータス(unconfirmed:確認待ち、confirmed:確認済み、deleted:削除済み、ignored:無視)
+   * ステータス(confirmed:確認済み、deleted:削除済み、ignored:無視)
    * @return status
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "unconfirmed", required = true, value = "ステータス(unconfirmed:確認待ち、confirmed:確認済み、deleted:削除済み、ignored:無視)")
+  @ApiModelProperty(example = "confirmed", required = true, value = "ステータス(confirmed:確認済み、deleted:削除済み、ignored:無視)")
 
   public StatusEnum getStatus() {
     return status;
