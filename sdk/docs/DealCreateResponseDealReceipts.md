@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **issueDate** | **String** | 発生日 |  [optional]
 **mimeType** | **String** | MIMEタイプ | 
 **origin** | [**OriginEnum**](#OriginEnum) | アップロード元種別 | 
-**status** | [**StatusEnum**](#StatusEnum) | ステータス(unconfirmed:確認待ち、confirmed:確認済み、deleted:削除済み、ignored:無視) | 
+**status** | [**StatusEnum**](#StatusEnum) | ステータス(confirmed:確認済み、deleted:削除済み、ignored:無視) | 
 **user** | [**DealUser**](DealUser.md) |  | 
 
 
@@ -39,7 +39,6 @@ PUBLIC_API | &quot;public_api&quot;
 
 Name | Value
 ---- | -----
-UNCONFIRMED | &quot;unconfirmed&quot;
 CONFIRMED | &quot;confirmed&quot;
 DELETED | &quot;deleted&quot;
 IGNORED | &quot;ignored&quot;
