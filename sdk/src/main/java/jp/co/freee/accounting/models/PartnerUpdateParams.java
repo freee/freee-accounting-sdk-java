@@ -24,10 +24,10 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import jp.co.freee.accounting.models.PartnerCreateParamsAddressAttributes;
-import jp.co.freee.accounting.models.PartnerCreateParamsInvoicePaymentTermAttributes;
 import jp.co.freee.accounting.models.PartnerCreateParamsPartnerBankAccountAttributes;
 import jp.co.freee.accounting.models.PartnerCreateParamsPartnerDocSettingAttributes;
-import jp.co.freee.accounting.models.PartnerCreateParamsPaymentTermAttributes;
+import jp.co.freee.accounting.models.PartnerUpdateParamsInvoicePaymentTermAttributes;
+import jp.co.freee.accounting.models.PartnerUpdateParamsPaymentTermAttributes;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 /**
@@ -108,7 +108,7 @@ public class PartnerUpdateParams {
 
   public static final String SERIALIZED_NAME_INVOICE_PAYMENT_TERM_ATTRIBUTES = "invoice_payment_term_attributes";
   @SerializedName(SERIALIZED_NAME_INVOICE_PAYMENT_TERM_ATTRIBUTES)
-  private PartnerCreateParamsInvoicePaymentTermAttributes invoicePaymentTermAttributes;
+  private PartnerUpdateParamsInvoicePaymentTermAttributes invoicePaymentTermAttributes;
 
   public static final String SERIALIZED_NAME_LONG_NAME = "long_name";
   @SerializedName(SERIALIZED_NAME_LONG_NAME)
@@ -187,7 +187,7 @@ public class PartnerUpdateParams {
 
   public static final String SERIALIZED_NAME_PAYMENT_TERM_ATTRIBUTES = "payment_term_attributes";
   @SerializedName(SERIALIZED_NAME_PAYMENT_TERM_ATTRIBUTES)
-  private PartnerCreateParamsPaymentTermAttributes paymentTermAttributes;
+  private PartnerUpdateParamsPaymentTermAttributes paymentTermAttributes;
 
   public static final String SERIALIZED_NAME_PHONE = "phone";
   @SerializedName(SERIALIZED_NAME_PHONE)
@@ -395,7 +395,7 @@ public class PartnerUpdateParams {
   }
 
 
-  public PartnerUpdateParams invoicePaymentTermAttributes(PartnerCreateParamsInvoicePaymentTermAttributes invoicePaymentTermAttributes) {
+  public PartnerUpdateParams invoicePaymentTermAttributes(PartnerUpdateParamsInvoicePaymentTermAttributes invoicePaymentTermAttributes) {
     
     this.invoicePaymentTermAttributes = invoicePaymentTermAttributes;
     return this;
@@ -408,12 +408,12 @@ public class PartnerUpdateParams {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public PartnerCreateParamsInvoicePaymentTermAttributes getInvoicePaymentTermAttributes() {
+  public PartnerUpdateParamsInvoicePaymentTermAttributes getInvoicePaymentTermAttributes() {
     return invoicePaymentTermAttributes;
   }
 
 
-  public void setInvoicePaymentTermAttributes(PartnerCreateParamsInvoicePaymentTermAttributes invoicePaymentTermAttributes) {
+  public void setInvoicePaymentTermAttributes(PartnerUpdateParamsInvoicePaymentTermAttributes invoicePaymentTermAttributes) {
     this.invoicePaymentTermAttributes = invoicePaymentTermAttributes;
   }
 
@@ -581,7 +581,7 @@ public class PartnerUpdateParams {
   }
 
 
-  public PartnerUpdateParams paymentTermAttributes(PartnerCreateParamsPaymentTermAttributes paymentTermAttributes) {
+  public PartnerUpdateParams paymentTermAttributes(PartnerUpdateParamsPaymentTermAttributes paymentTermAttributes) {
     
     this.paymentTermAttributes = paymentTermAttributes;
     return this;
@@ -594,12 +594,12 @@ public class PartnerUpdateParams {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public PartnerCreateParamsPaymentTermAttributes getPaymentTermAttributes() {
+  public PartnerUpdateParamsPaymentTermAttributes getPaymentTermAttributes() {
     return paymentTermAttributes;
   }
 
 
-  public void setPaymentTermAttributes(PartnerCreateParamsPaymentTermAttributes paymentTermAttributes) {
+  public void setPaymentTermAttributes(PartnerUpdateParamsPaymentTermAttributes paymentTermAttributes) {
     this.paymentTermAttributes = paymentTermAttributes;
   }
 
