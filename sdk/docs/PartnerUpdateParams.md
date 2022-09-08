@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **countryCode** | [**CountryCodeEnum**](#CountryCodeEnum) | 地域（JP: 国内、ZZ:国外）、指定しない場合JPになります。 |  [optional]
 **defaultTitle** | **String** | 敬称（御中、様、(空白)の3つから選択） |  [optional]
 **email** | **String** | 担当者 メールアドレス (255文字以内) |  [optional]
-**invoicePaymentTermAttributes** | [**PartnerCreateParamsInvoicePaymentTermAttributes**](PartnerCreateParamsInvoicePaymentTermAttributes.md) |  |  [optional]
+**invoicePaymentTermAttributes** | [**PartnerUpdateParamsInvoicePaymentTermAttributes**](PartnerUpdateParamsInvoicePaymentTermAttributes.md) |  |  [optional]
 **longName** | **String** | 正式名称（255文字以内） |  [optional]
 **name** | **String** | 取引先名 (255文字以内) | 
 **nameKana** | **String** | カナ名称（255文字以内） |  [optional]
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **partnerBankAccountAttributes** | [**PartnerCreateParamsPartnerBankAccountAttributes**](PartnerCreateParamsPartnerBankAccountAttributes.md) |  |  [optional]
 **partnerDocSettingAttributes** | [**PartnerCreateParamsPartnerDocSettingAttributes**](PartnerCreateParamsPartnerDocSettingAttributes.md) |  |  [optional]
 **payerWalletableId** | **Integer** | 振込元口座ID（一括振込ファイル用）:（walletableのtypeが&#39;bank_account&#39;のidのみ指定できます。また、未設定にする場合は、nullを指定してください。） |  [optional]
-**paymentTermAttributes** | [**PartnerCreateParamsPaymentTermAttributes**](PartnerCreateParamsPaymentTermAttributes.md) |  |  [optional]
+**paymentTermAttributes** | [**PartnerUpdateParamsPaymentTermAttributes**](PartnerUpdateParamsPaymentTermAttributes.md) |  |  [optional]
 **phone** | **String** | 電話番号 |  [optional]
 **shortcut1** | **String** | ショートカット１ (255文字以内) |  [optional]
 **shortcut2** | **String** | ショートカット２ (255文字以内) |  [optional]
