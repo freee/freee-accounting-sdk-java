@@ -41,7 +41,10 @@ public class ReceiptsApiTest {
         File receipt = null;
         String description = null;
         String issueDate = null;
-        // ReceiptResponse response = api.createReceipt(companyId, receipt, description, issueDate);
+        Long receiptMetadatumAmount = null;
+        String receiptMetadatumIssueDate = null;
+        String receiptMetadatumPartnerName = null;
+        // ReceiptResponse response = api.createReceipt(companyId, receipt, description, issueDate, receiptMetadatumAmount, receiptMetadatumIssueDate, receiptMetadatumPartnerName);
 
         // TODO: test validations
     }

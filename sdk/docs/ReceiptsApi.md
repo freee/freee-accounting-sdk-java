@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## createReceipt
 
-> ReceiptResponse createReceipt(companyId, receipt, description, issueDate)
+> ReceiptResponse createReceipt(companyId, receipt, description, issueDate, receiptMetadatumAmount, receiptMetadatumIssueDate, receiptMetadatumPartnerName)
 
 ファイルボックス 証憑ファイルアップロード
 
@@ -44,8 +44,11 @@ public class Example {
         File receipt = new File("/path/to/file"); // File | 証憑ファイル
         String description = "description_example"; // String | メモ (255文字以内)
         String issueDate = "issueDate_example"; // String | 取引日 (yyyy-mm-dd)
+        Long receiptMetadatumAmount = 56L; // Long | 金額
+        String receiptMetadatumIssueDate = "receiptMetadatumIssueDate_example"; // String | 発行日 (yyyy-mm-dd)
+        String receiptMetadatumPartnerName = "receiptMetadatumPartnerName_example"; // String | 発行元
         try {
-            ReceiptResponse result = apiInstance.createReceipt(companyId, receipt, description, issueDate);
+            ReceiptResponse result = apiInstance.createReceipt(companyId, receipt, description, issueDate, receiptMetadatumAmount, receiptMetadatumIssueDate, receiptMetadatumPartnerName);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ReceiptsApi#createReceipt");
@@ -67,6 +70,9 @@ Name | Type | Description  | Notes
  **receipt** | **File**| 証憑ファイル |
  **description** | **String**| メモ (255文字以内) | [optional]
  **issueDate** | **String**| 取引日 (yyyy-mm-dd) | [optional]
+ **receiptMetadatumAmount** | **Long**| 金額 | [optional]
+ **receiptMetadatumIssueDate** | **String**| 発行日 (yyyy-mm-dd) | [optional]
+ **receiptMetadatumPartnerName** | **String**| 発行元 | [optional]
 
 ### Return type
 
@@ -438,7 +444,7 @@ public class Example {
 
         ReceiptsApi apiInstance = new ReceiptsApi(defaultClient);
         Integer id = 56; // Integer | 証憑ファイルID
-        ReceiptUpdateParams receiptUpdateParams = new ReceiptUpdateParams(); // ReceiptUpdateParams | 経費申請の更新
+        ReceiptUpdateParams receiptUpdateParams = new ReceiptUpdateParams(); // ReceiptUpdateParams | 
         try {
             ReceiptResponse result = apiInstance.updateReceipt(id, receiptUpdateParams);
             System.out.println(result);
@@ -459,7 +465,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| 証憑ファイルID |
- **receiptUpdateParams** | [**ReceiptUpdateParams**](ReceiptUpdateParams.md)| 経費申請の更新 |
+ **receiptUpdateParams** | [**ReceiptUpdateParams**](ReceiptUpdateParams.md)|  |
 
 ### Return type
 
