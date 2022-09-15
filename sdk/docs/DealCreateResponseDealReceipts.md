@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **issueDate** | **String** | 発生日 |  [optional]
 **mimeType** | **String** | MIMEタイプ | 
 **origin** | [**OriginEnum**](#OriginEnum) | アップロード元種別 | 
+**receiptMetadatum** | [**DealReceiptMetadatum**](DealReceiptMetadatum.md) |  |  [optional]
 **status** | [**StatusEnum**](#StatusEnum) | ステータス(confirmed:確認済み、deleted:削除済み、ignored:無視) | 
 **user** | [**DealUser**](DealUser.md) |  | 
 

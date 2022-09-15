@@ -33,12 +33,15 @@ public interface ReceiptsApi {
    * @param receipt 証憑ファイル (required)
    * @param description メモ (255文字以内) (optional)
    * @param issueDate 取引日 (yyyy-mm-dd) (optional)
+   * @param receiptMetadatumAmount 金額 (optional)
+   * @param receiptMetadatumIssueDate 発行日 (yyyy-mm-dd) (optional)
+   * @param receiptMetadatumPartnerName 発行元 (optional)
    * @return Observable&lt;ReceiptResponse&gt;
    */
   @retrofit2.http.Multipart
   @POST("api/1/receipts")
   Observable<ReceiptResponse> createReceipt(
-    @retrofit2.http.Part("company_id") Integer companyId, @retrofit2.http.Part MultipartBody.Part receipt, @retrofit2.http.Part("description") String description, @retrofit2.http.Part("issue_date") String issueDate
+    @retrofit2.http.Part("company_id") Integer companyId, @retrofit2.http.Part MultipartBody.Part receipt, @retrofit2.http.Part("description") String description, @retrofit2.http.Part("issue_date") String issueDate, @retrofit2.http.Part("receipt_metadatum_amount") Long receiptMetadatumAmount, @retrofit2.http.Part("receipt_metadatum_issue_date") String receiptMetadatumIssueDate, @retrofit2.http.Part("receipt_metadatum_partner_name") String receiptMetadatumPartnerName
   );
 
   /**
@@ -101,7 +104,7 @@ public interface ReceiptsApi {
    * ファイルボックス 証憑ファイル情報更新
    * 
    * @param id 証憑ファイルID (required)
-   * @param receiptUpdateParams 経費申請の更新 (required)
+   * @param receiptUpdateParams  (required)
    * @return Observable&lt;ReceiptResponse&gt;
    */
   @Headers({

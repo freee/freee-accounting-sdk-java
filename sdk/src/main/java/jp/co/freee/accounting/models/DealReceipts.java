@@ -23,6 +23,7 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import jp.co.freee.accounting.models.DealReceiptMetadatum;
 import jp.co.freee.accounting.models.DealUser;
 
 /**
@@ -120,6 +121,10 @@ public class DealReceipts {
   public static final String SERIALIZED_NAME_ORIGIN = "origin";
   @SerializedName(SERIALIZED_NAME_ORIGIN)
   private OriginEnum origin;
+
+  public static final String SERIALIZED_NAME_RECEIPT_METADATUM = "receipt_metadatum";
+  @SerializedName(SERIALIZED_NAME_RECEIPT_METADATUM)
+  private DealReceiptMetadatum receiptMetadatum;
 
   /**
    * ステータス(confirmed:確認済み、deleted:削除済み、ignored:無視)
@@ -346,6 +351,29 @@ public class DealReceipts {
   }
 
 
+  public DealReceipts receiptMetadatum(DealReceiptMetadatum receiptMetadatum) {
+    
+    this.receiptMetadatum = receiptMetadatum;
+    return this;
+  }
+
+   /**
+   * Get receiptMetadatum
+   * @return receiptMetadatum
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public DealReceiptMetadatum getReceiptMetadatum() {
+    return receiptMetadatum;
+  }
+
+
+  public void setReceiptMetadatum(DealReceiptMetadatum receiptMetadatum) {
+    this.receiptMetadatum = receiptMetadatum;
+  }
+
+
   public DealReceipts status(StatusEnum status) {
     
     this.status = status;
@@ -408,13 +436,14 @@ public class DealReceipts {
         Objects.equals(this.issueDate, dealReceipts.issueDate) &&
         Objects.equals(this.mimeType, dealReceipts.mimeType) &&
         Objects.equals(this.origin, dealReceipts.origin) &&
+        Objects.equals(this.receiptMetadatum, dealReceipts.receiptMetadatum) &&
         Objects.equals(this.status, dealReceipts.status) &&
         Objects.equals(this.user, dealReceipts.user);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(createdAt, description, fileSrc, id, issueDate, mimeType, origin, status, user);
+    return Objects.hash(createdAt, description, fileSrc, id, issueDate, mimeType, origin, receiptMetadatum, status, user);
   }
 
   @Override
@@ -428,6 +457,7 @@ public class DealReceipts {
     sb.append("    issueDate: ").append(toIndentedString(issueDate)).append("\n");
     sb.append("    mimeType: ").append(toIndentedString(mimeType)).append("\n");
     sb.append("    origin: ").append(toIndentedString(origin)).append("\n");
+    sb.append("    receiptMetadatum: ").append(toIndentedString(receiptMetadatum)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("}");

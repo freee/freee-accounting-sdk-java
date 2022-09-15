@@ -23,6 +23,7 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import jp.co.freee.accounting.models.DealReceiptMetadatum;
 
 /**
  * ReceiptUpdateParams
@@ -40,6 +41,10 @@ public class ReceiptUpdateParams {
   public static final String SERIALIZED_NAME_ISSUE_DATE = "issue_date";
   @SerializedName(SERIALIZED_NAME_ISSUE_DATE)
   private String issueDate;
+
+  public static final String SERIALIZED_NAME_RECEIPT_METADATUM = "receipt_metadatum";
+  @SerializedName(SERIALIZED_NAME_RECEIPT_METADATUM)
+  private DealReceiptMetadatum receiptMetadatum;
 
   public ReceiptUpdateParams() { 
   }
@@ -115,6 +120,29 @@ public class ReceiptUpdateParams {
   }
 
 
+  public ReceiptUpdateParams receiptMetadatum(DealReceiptMetadatum receiptMetadatum) {
+    
+    this.receiptMetadatum = receiptMetadatum;
+    return this;
+  }
+
+   /**
+   * Get receiptMetadatum
+   * @return receiptMetadatum
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public DealReceiptMetadatum getReceiptMetadatum() {
+    return receiptMetadatum;
+  }
+
+
+  public void setReceiptMetadatum(DealReceiptMetadatum receiptMetadatum) {
+    this.receiptMetadatum = receiptMetadatum;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -126,12 +154,13 @@ public class ReceiptUpdateParams {
     ReceiptUpdateParams receiptUpdateParams = (ReceiptUpdateParams) o;
     return Objects.equals(this.companyId, receiptUpdateParams.companyId) &&
         Objects.equals(this.description, receiptUpdateParams.description) &&
-        Objects.equals(this.issueDate, receiptUpdateParams.issueDate);
+        Objects.equals(this.issueDate, receiptUpdateParams.issueDate) &&
+        Objects.equals(this.receiptMetadatum, receiptUpdateParams.receiptMetadatum);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(companyId, description, issueDate);
+    return Objects.hash(companyId, description, issueDate, receiptMetadatum);
   }
 
   @Override
@@ -141,6 +170,7 @@ public class ReceiptUpdateParams {
     sb.append("    companyId: ").append(toIndentedString(companyId)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    issueDate: ").append(toIndentedString(issueDate)).append("\n");
+    sb.append("    receiptMetadatum: ").append(toIndentedString(receiptMetadatum)).append("\n");
     sb.append("}");
     return sb.toString();
   }

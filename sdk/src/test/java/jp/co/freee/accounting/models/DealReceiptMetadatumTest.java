@@ -21,40 +21,32 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import jp.co.freee.accounting.models.DealReceiptMetadatum;
+import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
 
 /**
- * Model tests for ReceiptUpdateParams
+ * Model tests for DealReceiptMetadatum
  */
-public class ReceiptUpdateParamsTest {
-    private final ReceiptUpdateParams model = new ReceiptUpdateParams();
+public class DealReceiptMetadatumTest {
+    private final DealReceiptMetadatum model = new DealReceiptMetadatum();
 
     /**
-     * Model tests for ReceiptUpdateParams
+     * Model tests for DealReceiptMetadatum
      */
     @Test
-    public void testReceiptUpdateParams() {
-        // TODO: test ReceiptUpdateParams
+    public void testDealReceiptMetadatum() {
+        // TODO: test DealReceiptMetadatum
     }
 
     /**
-     * Test the property 'companyId'
+     * Test the property 'amount'
      */
     @Test
-    public void companyIdTest() {
-        // TODO: test companyId
-    }
-
-    /**
-     * Test the property 'description'
-     */
-    @Test
-    public void descriptionTest() {
-        // TODO: test description
+    public void amountTest() {
+        // TODO: test amount
     }
 
     /**
@@ -66,11 +58,11 @@ public class ReceiptUpdateParamsTest {
     }
 
     /**
-     * Test the property 'receiptMetadatum'
+     * Test the property 'partnerName'
      */
     @Test
-    public void receiptMetadatumTest() {
-        // TODO: test receiptMetadatum
+    public void partnerNameTest() {
+        // TODO: test partnerName
     }
 
 }
