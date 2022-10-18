@@ -1,13 +1,13 @@
 
 
-# AccountItemParams
+# AccountItemCreateParams
 
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**accountItem** | [**AccountItemParamsAccountItem**](AccountItemParamsAccountItem.md) |  | 
+**accountItem** | [**AccountItemCreateParamsAccountItem**](AccountItemCreateParamsAccountItem.md) |  | 
 **companyId** | **Integer** | 事業所ID | 
 
 

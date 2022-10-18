@@ -25,35 +25,31 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * CompanyResponseCompanyTaxes
+ * AccountItemCreateParamsAccountItemItems
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class CompanyResponseCompanyTaxes {
+public class AccountItemCreateParamsAccountItemItems {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   private Integer id;
 
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  private String name;
-
-  public CompanyResponseCompanyTaxes() { 
+  public AccountItemCreateParamsAccountItemItems() { 
   }
 
-  public CompanyResponseCompanyTaxes id(Integer id) {
+  public AccountItemCreateParamsAccountItemItems id(Integer id) {
     
     this.id = id;
     return this;
   }
 
    /**
-   * 税区分ID（廃止予定。tax_codeを使用してください。）
+   * Get id
    * minimum: 1
    * maximum: 2147483647
    * @return id
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "21", required = true, value = "税区分ID（廃止予定。tax_codeを使用してください。）")
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "1", value = "")
 
   public Integer getId() {
     return id;
@@ -65,29 +61,6 @@ public class CompanyResponseCompanyTaxes {
   }
 
 
-  public CompanyResponseCompanyTaxes name(String name) {
-    
-    this.name = name;
-    return this;
-  }
-
-   /**
-   * 税区分名
-   * @return name
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "sales_with_tax", required = true, value = "税区分名")
-
-  public String getName() {
-    return name;
-  }
-
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -96,22 +69,20 @@ public class CompanyResponseCompanyTaxes {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CompanyResponseCompanyTaxes companyResponseCompanyTaxes = (CompanyResponseCompanyTaxes) o;
-    return Objects.equals(this.id, companyResponseCompanyTaxes.id) &&
-        Objects.equals(this.name, companyResponseCompanyTaxes.name);
+    AccountItemCreateParamsAccountItemItems accountItemCreateParamsAccountItemItems = (AccountItemCreateParamsAccountItemItems) o;
+    return Objects.equals(this.id, accountItemCreateParamsAccountItemItems.id);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name);
+    return Objects.hash(id);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CompanyResponseCompanyTaxes {\n");
+    sb.append("class AccountItemCreateParamsAccountItemItems {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");
     return sb.toString();
   }

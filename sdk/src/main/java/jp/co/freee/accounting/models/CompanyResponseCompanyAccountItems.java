@@ -36,10 +36,6 @@ public class CompanyResponseCompanyAccountItems {
   @SerializedName(SERIALIZED_NAME_CATEGORIES)
   private List<String> categories = new ArrayList<>();
 
-  public static final String SERIALIZED_NAME_DEFAULT_TAX_ID = "default_tax_id";
-  @SerializedName(SERIALIZED_NAME_DEFAULT_TAX_ID)
-  private Integer defaultTaxId;
-
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   private Integer id;
@@ -80,31 +76,6 @@ public class CompanyResponseCompanyAccountItems {
 
   public void setCategories(List<String> categories) {
     this.categories = categories;
-  }
-
-
-  public CompanyResponseCompanyAccountItems defaultTaxId(Integer defaultTaxId) {
-    
-    this.defaultTaxId = defaultTaxId;
-    return this;
-  }
-
-   /**
-   * デフォルト設定がされている税区分ID
-   * minimum: 1
-   * maximum: 2147483647
-   * @return defaultTaxId
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "34", value = "デフォルト設定がされている税区分ID")
-
-  public Integer getDefaultTaxId() {
-    return defaultTaxId;
-  }
-
-
-  public void setDefaultTaxId(Integer defaultTaxId) {
-    this.defaultTaxId = defaultTaxId;
   }
 
 
@@ -189,7 +160,6 @@ public class CompanyResponseCompanyAccountItems {
     }
     CompanyResponseCompanyAccountItems companyResponseCompanyAccountItems = (CompanyResponseCompanyAccountItems) o;
     return Objects.equals(this.categories, companyResponseCompanyAccountItems.categories) &&
-        Objects.equals(this.defaultTaxId, companyResponseCompanyAccountItems.defaultTaxId) &&
         Objects.equals(this.id, companyResponseCompanyAccountItems.id) &&
         Objects.equals(this.name, companyResponseCompanyAccountItems.name) &&
         Objects.equals(this.shortcut, companyResponseCompanyAccountItems.shortcut);
@@ -201,7 +171,7 @@ public class CompanyResponseCompanyAccountItems {
 
   @Override
   public int hashCode() {
-    return Objects.hash(categories, defaultTaxId, id, name, shortcut);
+    return Objects.hash(categories, id, name, shortcut);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -216,7 +186,6 @@ public class CompanyResponseCompanyAccountItems {
     StringBuilder sb = new StringBuilder();
     sb.append("class CompanyResponseCompanyAccountItems {\n");
     sb.append("    categories: ").append(toIndentedString(categories)).append("\n");
-    sb.append("    defaultTaxId: ").append(toIndentedString(defaultTaxId)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    shortcut: ").append(toIndentedString(shortcut)).append("\n");

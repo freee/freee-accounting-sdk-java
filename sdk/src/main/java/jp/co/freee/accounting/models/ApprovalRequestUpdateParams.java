@@ -164,11 +164,11 @@ public class ApprovalRequestUpdateParams {
   }
 
    /**
-   * falseの時、in_progress:申請中で更新する。それ以外の時はdraft:下書きで更新する
+   * 各種申請のステータス&lt;br&gt; falseを指定した時は申請中（in_progress）で各種申請を更新します。&lt;br&gt; trueを指定した時は下書き（draft）で各種申請を更新します。 
    * @return draft
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "true", required = true, value = "falseの時、in_progress:申請中で更新する。それ以外の時はdraft:下書きで更新する")
+  @ApiModelProperty(example = "true", required = true, value = "各種申請のステータス<br> falseを指定した時は申請中（in_progress）で各種申請を更新します。<br> trueを指定した時は下書き（draft）で各種申請を更新します。 ")
 
   public Boolean getDraft() {
     return draft;

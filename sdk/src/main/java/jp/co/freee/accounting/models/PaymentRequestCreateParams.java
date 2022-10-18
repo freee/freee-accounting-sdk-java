@@ -600,11 +600,11 @@ public class PaymentRequestCreateParams {
   }
 
    /**
-   * 支払依頼のステータス&lt;br&gt; falseを指定した時は申請中（in_progress）で支払依頼を作成します。&lt;br&gt; trueを指定した時は下書き（draft）で支払依頼を作成します。&lt;br&gt; 未指定の時は下書きとみなして支払依頼を作成します。 
+   * 支払依頼のステータス&lt;br&gt; falseを指定した時は申請中（in_progress）で支払依頼を作成します。&lt;br&gt; trueを指定した時は下書き（draft）で支払依頼を作成します。 
    * @return draft
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "true", required = true, value = "支払依頼のステータス<br> falseを指定した時は申請中（in_progress）で支払依頼を作成します。<br> trueを指定した時は下書き（draft）で支払依頼を作成します。<br> 未指定の時は下書きとみなして支払依頼を作成します。 ")
+  @ApiModelProperty(example = "true", required = true, value = "支払依頼のステータス<br> falseを指定した時は申請中（in_progress）で支払依頼を作成します。<br> trueを指定した時は下書き（draft）で支払依頼を作成します。 ")
 
   public Boolean getDraft() {
     return draft;

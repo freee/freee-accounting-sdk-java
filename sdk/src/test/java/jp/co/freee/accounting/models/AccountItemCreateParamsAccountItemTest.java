@@ -23,24 +23,24 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import jp.co.freee.accounting.models.AccountItemParamsAccountItemItems;
+import jp.co.freee.accounting.models.AccountItemCreateParamsAccountItemItems;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
 
 /**
- * Model tests for AccountItemParamsAccountItem
+ * Model tests for AccountItemCreateParamsAccountItem
  */
-public class AccountItemParamsAccountItemTest {
-    private final AccountItemParamsAccountItem model = new AccountItemParamsAccountItem();
+public class AccountItemCreateParamsAccountItemTest {
+    private final AccountItemCreateParamsAccountItem model = new AccountItemCreateParamsAccountItem();
 
     /**
-     * Model tests for AccountItemParamsAccountItem
+     * Model tests for AccountItemCreateParamsAccountItem
      */
     @Test
-    public void testAccountItemParamsAccountItem() {
-        // TODO: test AccountItemParamsAccountItem
+    public void testAccountItemCreateParamsAccountItem() {
+        // TODO: test AccountItemCreateParamsAccountItem
     }
 
     /**

@@ -29,7 +29,6 @@ import jp.co.freee.accounting.models.CompanyResponseCompanyPartners;
 import jp.co.freee.accounting.models.CompanyResponseCompanySections;
 import jp.co.freee.accounting.models.CompanyResponseCompanyTags;
 import jp.co.freee.accounting.models.CompanyResponseCompanyTaxCodes;
-import jp.co.freee.accounting.models.CompanyResponseCompanyTaxes;
 import jp.co.freee.accounting.models.CompanyResponseCompanyWalletables;
 import jp.co.freee.accounting.models.FiscalYears;
 import org.junit.Assert;
@@ -281,14 +280,6 @@ public class CompanyResponseCompanyTest {
     @Test
     public void taxCodesTest() {
         // TODO: test taxCodes
-    }
-
-    /**
-     * Test the property 'taxes'
-     */
-    @Test
-    public void taxesTest() {
-        // TODO: test taxes
     }
 
     /**

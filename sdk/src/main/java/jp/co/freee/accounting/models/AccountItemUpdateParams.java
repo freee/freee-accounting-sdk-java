@@ -23,25 +23,25 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import jp.co.freee.accounting.models.AccountItemParamsAccountItem;
+import jp.co.freee.accounting.models.AccountItemUpdateParamsAccountItem;
 
 /**
- * AccountItemParams
+ * AccountItemUpdateParams
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class AccountItemParams {
+public class AccountItemUpdateParams {
   public static final String SERIALIZED_NAME_ACCOUNT_ITEM = "account_item";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_ITEM)
-  private AccountItemParamsAccountItem accountItem;
+  private AccountItemUpdateParamsAccountItem accountItem;
 
   public static final String SERIALIZED_NAME_COMPANY_ID = "company_id";
   @SerializedName(SERIALIZED_NAME_COMPANY_ID)
   private Integer companyId;
 
-  public AccountItemParams() { 
+  public AccountItemUpdateParams() { 
   }
 
-  public AccountItemParams accountItem(AccountItemParamsAccountItem accountItem) {
+  public AccountItemUpdateParams accountItem(AccountItemUpdateParamsAccountItem accountItem) {
     
     this.accountItem = accountItem;
     return this;
@@ -54,17 +54,17 @@ public class AccountItemParams {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public AccountItemParamsAccountItem getAccountItem() {
+  public AccountItemUpdateParamsAccountItem getAccountItem() {
     return accountItem;
   }
 
 
-  public void setAccountItem(AccountItemParamsAccountItem accountItem) {
+  public void setAccountItem(AccountItemUpdateParamsAccountItem accountItem) {
     this.accountItem = accountItem;
   }
 
 
-  public AccountItemParams companyId(Integer companyId) {
+  public AccountItemUpdateParams companyId(Integer companyId) {
     
     this.companyId = companyId;
     return this;
@@ -97,9 +97,9 @@ public class AccountItemParams {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AccountItemParams accountItemParams = (AccountItemParams) o;
-    return Objects.equals(this.accountItem, accountItemParams.accountItem) &&
-        Objects.equals(this.companyId, accountItemParams.companyId);
+    AccountItemUpdateParams accountItemUpdateParams = (AccountItemUpdateParams) o;
+    return Objects.equals(this.accountItem, accountItemUpdateParams.accountItem) &&
+        Objects.equals(this.companyId, accountItemUpdateParams.companyId);
   }
 
   @Override
@@ -110,7 +110,7 @@ public class AccountItemParams {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AccountItemParams {\n");
+    sb.append("class AccountItemUpdateParams {\n");
     sb.append("    accountItem: ").append(toIndentedString(accountItem)).append("\n");
     sb.append("    companyId: ").append(toIndentedString(companyId)).append("\n");
     sb.append("}");

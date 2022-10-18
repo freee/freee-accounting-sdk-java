@@ -21,31 +21,40 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import jp.co.freee.accounting.models.AccountItemUpdateParamsAccountItem;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
 
 /**
- * Model tests for AccountItemParamsAccountItemItems
+ * Model tests for AccountItemUpdateParams
  */
-public class AccountItemParamsAccountItemItemsTest {
-    private final AccountItemParamsAccountItemItems model = new AccountItemParamsAccountItemItems();
+public class AccountItemUpdateParamsTest {
+    private final AccountItemUpdateParams model = new AccountItemUpdateParams();
 
     /**
-     * Model tests for AccountItemParamsAccountItemItems
+     * Model tests for AccountItemUpdateParams
      */
     @Test
-    public void testAccountItemParamsAccountItemItems() {
-        // TODO: test AccountItemParamsAccountItemItems
+    public void testAccountItemUpdateParams() {
+        // TODO: test AccountItemUpdateParams
     }
 
     /**
-     * Test the property 'id'
+     * Test the property 'accountItem'
      */
     @Test
-    public void idTest() {
-        // TODO: test id
+    public void accountItemTest() {
+        // TODO: test accountItem
+    }
+
+    /**
+     * Test the property 'companyId'
+     */
+    @Test
+    public void companyIdTest() {
+        // TODO: test companyId
     }
 
 }

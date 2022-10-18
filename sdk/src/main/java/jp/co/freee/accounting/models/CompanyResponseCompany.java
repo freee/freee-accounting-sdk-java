@@ -31,7 +31,6 @@ import jp.co.freee.accounting.models.CompanyResponseCompanyPartners;
 import jp.co.freee.accounting.models.CompanyResponseCompanySections;
 import jp.co.freee.accounting.models.CompanyResponseCompanyTags;
 import jp.co.freee.accounting.models.CompanyResponseCompanyTaxCodes;
-import jp.co.freee.accounting.models.CompanyResponseCompanyTaxes;
 import jp.co.freee.accounting.models.CompanyResponseCompanyWalletables;
 import jp.co.freee.accounting.models.FiscalYears;
 
@@ -597,10 +596,6 @@ public class CompanyResponseCompany {
   public static final String SERIALIZED_NAME_TAX_CODES = "tax_codes";
   @SerializedName(SERIALIZED_NAME_TAX_CODES)
   private List<CompanyResponseCompanyTaxCodes> taxCodes = null;
-
-  public static final String SERIALIZED_NAME_TAXES = "taxes";
-  @SerializedName(SERIALIZED_NAME_TAXES)
-  private List<CompanyResponseCompanyTaxes> taxes = null;
 
   /**
    * 仕訳番号形式（not_used: 使用しない、digits: 数字（例：5091824）、alnum: 英数字（例：59J0P））
@@ -1455,37 +1450,6 @@ public class CompanyResponseCompany {
   }
 
 
-  public CompanyResponseCompany taxes(List<CompanyResponseCompanyTaxes> taxes) {
-    
-    this.taxes = taxes;
-    return this;
-  }
-
-  public CompanyResponseCompany addTaxesItem(CompanyResponseCompanyTaxes taxesItem) {
-    if (this.taxes == null) {
-      this.taxes = new ArrayList<>();
-    }
-    this.taxes.add(taxesItem);
-    return this;
-  }
-
-   /**
-   * Get taxes
-   * @return taxes
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public List<CompanyResponseCompanyTaxes> getTaxes() {
-    return taxes;
-  }
-
-
-  public void setTaxes(List<CompanyResponseCompanyTaxes> taxes) {
-    this.taxes = taxes;
-  }
-
-
   public CompanyResponseCompany txnNumberFormat(TxnNumberFormatEnum txnNumberFormat) {
     
     this.txnNumberFormat = txnNumberFormat;
@@ -1647,7 +1611,6 @@ public class CompanyResponseCompany {
         Objects.equals(this.streetName2, companyResponseCompany.streetName2) &&
         Objects.equals(this.taxAtSourceCalcType, companyResponseCompany.taxAtSourceCalcType) &&
         Objects.equals(this.taxCodes, companyResponseCompany.taxCodes) &&
-        Objects.equals(this.taxes, companyResponseCompany.taxes) &&
         Objects.equals(this.txnNumberFormat, companyResponseCompany.txnNumberFormat) &&
         Objects.equals(this.usePartnerCode, companyResponseCompany.usePartnerCode) &&
         Objects.equals(this.walletables, companyResponseCompany.walletables) &&
@@ -1657,7 +1620,7 @@ public class CompanyResponseCompany {
 
   @Override
   public int hashCode() {
-    return Objects.hash(tags, accountItems, amountFraction, contactName, corporateNumber, defaultWalletAccountId, displayName, fax, fiscalYears, headCount, id, industryClass, industryCode, invoiceLayout, items, minusFormat, name, nameKana, partners, phone1, phone2, prefectureCode, privateSettlement, role, sections, streetName1, streetName2, taxAtSourceCalcType, taxCodes, taxes, txnNumberFormat, usePartnerCode, walletables, workflowSetting, zipcode);
+    return Objects.hash(tags, accountItems, amountFraction, contactName, corporateNumber, defaultWalletAccountId, displayName, fax, fiscalYears, headCount, id, industryClass, industryCode, invoiceLayout, items, minusFormat, name, nameKana, partners, phone1, phone2, prefectureCode, privateSettlement, role, sections, streetName1, streetName2, taxAtSourceCalcType, taxCodes, txnNumberFormat, usePartnerCode, walletables, workflowSetting, zipcode);
   }
 
   @Override
@@ -1693,7 +1656,6 @@ public class CompanyResponseCompany {
     sb.append("    streetName2: ").append(toIndentedString(streetName2)).append("\n");
     sb.append("    taxAtSourceCalcType: ").append(toIndentedString(taxAtSourceCalcType)).append("\n");
     sb.append("    taxCodes: ").append(toIndentedString(taxCodes)).append("\n");
-    sb.append("    taxes: ").append(toIndentedString(taxes)).append("\n");
     sb.append("    txnNumberFormat: ").append(toIndentedString(txnNumberFormat)).append("\n");
     sb.append("    usePartnerCode: ").append(toIndentedString(usePartnerCode)).append("\n");
     sb.append("    walletables: ").append(toIndentedString(walletables)).append("\n");

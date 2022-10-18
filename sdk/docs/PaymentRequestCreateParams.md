@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **companyId** | **Integer** | 事業所ID | 
 **description** | **String** | 備考 |  [optional]
 **documentCode** | **String** | 請求書番号（255文字以内） |  [optional]
-**draft** | **Boolean** | 支払依頼のステータス&lt;br&gt; falseを指定した時は申請中（in_progress）で支払依頼を作成します。&lt;br&gt; trueを指定した時は下書き（draft）で支払依頼を作成します。&lt;br&gt; 未指定の時は下書きとみなして支払依頼を作成します。  | 
+**draft** | **Boolean** | 支払依頼のステータス&lt;br&gt; falseを指定した時は申請中（in_progress）で支払依頼を作成します。&lt;br&gt; trueを指定した時は下書き（draft）で支払依頼を作成します。  | 
 **issueDate** | **String** | 発生日 (yyyy-mm-dd) | 
 **parentId** | **Integer** | 親申請ID(法人向け エンタープライズプラン、プロフェッショナルプラン)&lt;br&gt; &lt;ul&gt;   &lt;li&gt;承認済みの既存各種申請IDのみ指定可能です。&lt;/li&gt;   &lt;li&gt;各種申請一覧APIを利用して取得してください。&lt;/li&gt; &lt;/ul&gt;  |  [optional]
 **partnerCode** | **String** | 支払先の取引先コード&lt;br&gt; 支払先の取引先ID指定時には無効  |  [optional]

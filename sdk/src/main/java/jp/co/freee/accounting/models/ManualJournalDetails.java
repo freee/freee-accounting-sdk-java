@@ -137,7 +137,7 @@ public class ManualJournalDetails {
 
   public static final String SERIALIZED_NAME_SEGMENT1_TAG_NAME = "segment_1_tag_name";
   @SerializedName(SERIALIZED_NAME_SEGMENT1_TAG_NAME)
-  private Integer segment1TagName;
+  private String segment1TagName;
 
   public static final String SERIALIZED_NAME_SEGMENT2_TAG_ID = "segment_2_tag_id";
   @SerializedName(SERIALIZED_NAME_SEGMENT2_TAG_ID)
@@ -145,7 +145,7 @@ public class ManualJournalDetails {
 
   public static final String SERIALIZED_NAME_SEGMENT2_TAG_NAME = "segment_2_tag_name";
   @SerializedName(SERIALIZED_NAME_SEGMENT2_TAG_NAME)
-  private Integer segment2TagName;
+  private String segment2TagName;
 
   public static final String SERIALIZED_NAME_SEGMENT3_TAG_ID = "segment_3_tag_id";
   @SerializedName(SERIALIZED_NAME_SEGMENT3_TAG_ID)
@@ -153,7 +153,7 @@ public class ManualJournalDetails {
 
   public static final String SERIALIZED_NAME_SEGMENT3_TAG_NAME = "segment_3_tag_name";
   @SerializedName(SERIALIZED_NAME_SEGMENT3_TAG_NAME)
-  private Integer segment3TagName;
+  private String segment3TagName;
 
   public static final String SERIALIZED_NAME_TAG_IDS = "tag_ids";
   @SerializedName(SERIALIZED_NAME_TAG_IDS)
@@ -510,25 +510,25 @@ public class ManualJournalDetails {
   }
 
 
-  public ManualJournalDetails segment1TagName(Integer segment1TagName) {
+  public ManualJournalDetails segment1TagName(String segment1TagName) {
     
     this.segment1TagName = segment1TagName;
     return this;
   }
 
    /**
-   * セグメント１ID
+   * セグメント１
    * @return segment1TagName
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "セグメント１ID")
+  @ApiModelProperty(example = "セグメント１", value = "セグメント１")
 
-  public Integer getSegment1TagName() {
+  public String getSegment1TagName() {
     return segment1TagName;
   }
 
 
-  public void setSegment1TagName(Integer segment1TagName) {
+  public void setSegment1TagName(String segment1TagName) {
     this.segment1TagName = segment1TagName;
   }
 
@@ -558,7 +558,7 @@ public class ManualJournalDetails {
   }
 
 
-  public ManualJournalDetails segment2TagName(Integer segment2TagName) {
+  public ManualJournalDetails segment2TagName(String segment2TagName) {
     
     this.segment2TagName = segment2TagName;
     return this;
@@ -569,14 +569,14 @@ public class ManualJournalDetails {
    * @return segment2TagName
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "セグメント２")
+  @ApiModelProperty(example = "セグメント２", value = "セグメント２")
 
-  public Integer getSegment2TagName() {
+  public String getSegment2TagName() {
     return segment2TagName;
   }
 
 
-  public void setSegment2TagName(Integer segment2TagName) {
+  public void setSegment2TagName(String segment2TagName) {
     this.segment2TagName = segment2TagName;
   }
 
@@ -606,7 +606,7 @@ public class ManualJournalDetails {
   }
 
 
-  public ManualJournalDetails segment3TagName(Integer segment3TagName) {
+  public ManualJournalDetails segment3TagName(String segment3TagName) {
     
     this.segment3TagName = segment3TagName;
     return this;
@@ -617,14 +617,14 @@ public class ManualJournalDetails {
    * @return segment3TagName
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "セグメント３")
+  @ApiModelProperty(example = "セグメント３", value = "セグメント３")
 
-  public Integer getSegment3TagName() {
+  public String getSegment3TagName() {
     return segment3TagName;
   }
 
 
-  public void setSegment3TagName(Integer segment3TagName) {
+  public void setSegment3TagName(String segment3TagName) {
     this.segment3TagName = segment3TagName;
   }
 

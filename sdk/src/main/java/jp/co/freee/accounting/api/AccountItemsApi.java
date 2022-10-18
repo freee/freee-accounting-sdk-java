@@ -10,8 +10,9 @@ import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import okhttp3.MultipartBody;
 
-import jp.co.freee.accounting.models.AccountItemParams;
+import jp.co.freee.accounting.models.AccountItemCreateParams;
 import jp.co.freee.accounting.models.AccountItemResponse;
+import jp.co.freee.accounting.models.AccountItemUpdateParams;
 import jp.co.freee.accounting.models.AccountItemsResponse;
 import jp.co.freee.accounting.models.BadRequestError;
 import jp.co.freee.accounting.models.BadRequestNotFoundError;
@@ -29,7 +30,7 @@ public interface AccountItemsApi {
   /**
    * 勘定科目の作成
    * 
-   * @param accountItemParams 勘定科目の作成 (required)
+   * @param accountItemCreateParams 勘定科目の作成 (required)
    * @return Observable&lt;AccountItemResponse&gt;
    */
   @Headers({
@@ -37,7 +38,7 @@ public interface AccountItemsApi {
   })
   @POST("api/1/account_items")
   Observable<AccountItemResponse> createAccountItem(
-    @retrofit2.http.Body AccountItemParams accountItemParams
+    @retrofit2.http.Body AccountItemCreateParams accountItemCreateParams
   );
 
   /**
@@ -80,7 +81,7 @@ public interface AccountItemsApi {
    * 勘定科目の更新
    * 
    * @param id  (required)
-   * @param accountItemParams 勘定科目の更新 (required)
+   * @param accountItemUpdateParams 勘定科目の更新 (required)
    * @return Observable&lt;AccountItemResponse&gt;
    */
   @Headers({
@@ -88,7 +89,7 @@ public interface AccountItemsApi {
   })
   @PUT("api/1/account_items/{id}")
   Observable<AccountItemResponse> updateAccountItem(
-    @retrofit2.http.Path("id") Integer id, @retrofit2.http.Body AccountItemParams accountItemParams
+    @retrofit2.http.Path("id") Integer id, @retrofit2.http.Body AccountItemUpdateParams accountItemUpdateParams
   );
 
 }

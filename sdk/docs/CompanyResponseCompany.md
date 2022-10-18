@@ -36,7 +36,6 @@ Name | Type | Description | Notes
 **streetName2** | **String** | 建物名・部屋番号など | 
 **taxAtSourceCalcType** | **Integer** | 源泉徴収税計算（0: 消費税を含める、1: 消費税を含めない） | 
 **taxCodes** | [**List&lt;CompanyResponseCompanyTaxCodes&gt;**](CompanyResponseCompanyTaxCodes.md) |  |  [optional]
-**taxes** | [**List&lt;CompanyResponseCompanyTaxes&gt;**](CompanyResponseCompanyTaxes.md) |  |  [optional]
 **txnNumberFormat** | [**TxnNumberFormatEnum**](#TxnNumberFormatEnum) | 仕訳番号形式（not_used: 使用しない、digits: 数字（例：5091824）、alnum: 英数字（例：59J0P）） | 
 **usePartnerCode** | **Boolean** | 取引先コードの利用設定（true: 有効、 false: 無効） | 
 **walletables** | [**List&lt;CompanyResponseCompanyWalletables&gt;**](CompanyResponseCompanyWalletables.md) |  |  [optional]

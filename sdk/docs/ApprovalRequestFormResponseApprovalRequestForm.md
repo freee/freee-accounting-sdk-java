@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **name** | **String** | 申請フォームの名前 | 
 **parts** | [**List&lt;ApprovalRequestFormResponseApprovalRequestFormParts&gt;**](ApprovalRequestFormResponseApprovalRequestFormParts.md) | 申請フォームの項目 |  [optional]
 **routeSettingCount** | **Integer** | 適用された経路数 | 
-**status** | [**StatusEnum**](#StatusEnum) | ステータス(draft: 申請で使用しない、active: 申請で使用する、deleted: 削除済み) | 
+**status** | [**StatusEnum**](#StatusEnum) | ステータス(draft: 申請で使用しない、active: 申請で使用する) | 
 
 
 
@@ -25,7 +25,6 @@ Name | Value
 ---- | -----
 DRAFT | &quot;draft&quot;
 ACTIVE | &quot;active&quot;
-DELETED | &quot;deleted&quot;
 
 
 
