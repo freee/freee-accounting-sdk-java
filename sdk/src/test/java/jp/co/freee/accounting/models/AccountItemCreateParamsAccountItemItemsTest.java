@@ -27,17 +27,17 @@ import org.junit.Test;
 
 
 /**
- * Model tests for CompanyResponseCompanyTaxes
+ * Model tests for AccountItemCreateParamsAccountItemItems
  */
-public class CompanyResponseCompanyTaxesTest {
-    private final CompanyResponseCompanyTaxes model = new CompanyResponseCompanyTaxes();
+public class AccountItemCreateParamsAccountItemItemsTest {
+    private final AccountItemCreateParamsAccountItemItems model = new AccountItemCreateParamsAccountItemItems();
 
     /**
-     * Model tests for CompanyResponseCompanyTaxes
+     * Model tests for AccountItemCreateParamsAccountItemItems
      */
     @Test
-    public void testCompanyResponseCompanyTaxes() {
-        // TODO: test CompanyResponseCompanyTaxes
+    public void testAccountItemCreateParamsAccountItemItems() {
+        // TODO: test AccountItemCreateParamsAccountItemItems
     }
 
     /**
@@ -46,14 +46,6 @@ public class CompanyResponseCompanyTaxesTest {
     @Test
     public void idTest() {
         // TODO: test id
-    }
-
-    /**
-     * Test the property 'name'
-     */
-    @Test
-    public void nameTest() {
-        // TODO: test name
     }
 
 }

@@ -68,10 +68,6 @@ public class AccountItemsResponseAccountItems {
   @SerializedName(SERIALIZED_NAME_DEFAULT_TAX_CODE)
   private Integer defaultTaxCode;
 
-  public static final String SERIALIZED_NAME_DEFAULT_TAX_ID = "default_tax_id";
-  @SerializedName(SERIALIZED_NAME_DEFAULT_TAX_ID)
-  private Integer defaultTaxId;
-
   public static final String SERIALIZED_NAME_GROUP_NAME = "group_name";
   @SerializedName(SERIALIZED_NAME_GROUP_NAME)
   private String groupName;
@@ -319,31 +315,6 @@ public class AccountItemsResponseAccountItems {
   }
 
 
-  public AccountItemsResponseAccountItems defaultTaxId(Integer defaultTaxId) {
-    
-    this.defaultTaxId = defaultTaxId;
-    return this;
-  }
-
-   /**
-   * デフォルト設定がされている税区分ID
-   * minimum: 1
-   * maximum: 2147483647
-   * @return defaultTaxId
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "34", value = "デフォルト設定がされている税区分ID")
-
-  public Integer getDefaultTaxId() {
-    return defaultTaxId;
-  }
-
-
-  public void setDefaultTaxId(Integer defaultTaxId) {
-    this.defaultTaxId = defaultTaxId;
-  }
-
-
   public AccountItemsResponseAccountItems groupName(String groupName) {
     
     this.groupName = groupName;
@@ -529,7 +500,6 @@ public class AccountItemsResponseAccountItems {
         Objects.equals(this.correspondingIncomeId, accountItemsResponseAccountItems.correspondingIncomeId) &&
         Objects.equals(this.correspondingIncomeName, accountItemsResponseAccountItems.correspondingIncomeName) &&
         Objects.equals(this.defaultTaxCode, accountItemsResponseAccountItems.defaultTaxCode) &&
-        Objects.equals(this.defaultTaxId, accountItemsResponseAccountItems.defaultTaxId) &&
         Objects.equals(this.groupName, accountItemsResponseAccountItems.groupName) &&
         Objects.equals(this.id, accountItemsResponseAccountItems.id) &&
         Objects.equals(this.name, accountItemsResponseAccountItems.name) &&
@@ -545,7 +515,7 @@ public class AccountItemsResponseAccountItems {
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountCategory, accountCategoryId, available, categories, correspondingExpenseId, correspondingExpenseName, correspondingIncomeId, correspondingIncomeName, defaultTaxCode, defaultTaxId, groupName, id, name, shortcut, shortcutNum, taxCode, walletableId);
+    return Objects.hash(accountCategory, accountCategoryId, available, categories, correspondingExpenseId, correspondingExpenseName, correspondingIncomeId, correspondingIncomeName, defaultTaxCode, groupName, id, name, shortcut, shortcutNum, taxCode, walletableId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -568,7 +538,6 @@ public class AccountItemsResponseAccountItems {
     sb.append("    correspondingIncomeId: ").append(toIndentedString(correspondingIncomeId)).append("\n");
     sb.append("    correspondingIncomeName: ").append(toIndentedString(correspondingIncomeName)).append("\n");
     sb.append("    defaultTaxCode: ").append(toIndentedString(defaultTaxCode)).append("\n");
-    sb.append("    defaultTaxId: ").append(toIndentedString(defaultTaxId)).append("\n");
     sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");

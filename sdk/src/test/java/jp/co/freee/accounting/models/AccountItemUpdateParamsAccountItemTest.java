@@ -23,32 +23,24 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
+import jp.co.freee.accounting.models.AccountItemCreateParamsAccountItemItems;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
 
 /**
- * Model tests for AccountItemsResponseAccountItems
+ * Model tests for AccountItemUpdateParamsAccountItem
  */
-public class AccountItemsResponseAccountItemsTest {
-    private final AccountItemsResponseAccountItems model = new AccountItemsResponseAccountItems();
+public class AccountItemUpdateParamsAccountItemTest {
+    private final AccountItemUpdateParamsAccountItem model = new AccountItemUpdateParamsAccountItem();
 
     /**
-     * Model tests for AccountItemsResponseAccountItems
+     * Model tests for AccountItemUpdateParamsAccountItem
      */
     @Test
-    public void testAccountItemsResponseAccountItems() {
-        // TODO: test AccountItemsResponseAccountItems
-    }
-
-    /**
-     * Test the property 'accountCategory'
-     */
-    @Test
-    public void accountCategoryTest() {
-        // TODO: test accountCategory
+    public void testAccountItemUpdateParamsAccountItem() {
+        // TODO: test AccountItemUpdateParamsAccountItem
     }
 
     /**
@@ -60,19 +52,11 @@ public class AccountItemsResponseAccountItemsTest {
     }
 
     /**
-     * Test the property 'available'
+     * Test the property 'accumulatedDepAccountItemId'
      */
     @Test
-    public void availableTest() {
-        // TODO: test available
-    }
-
-    /**
-     * Test the property 'categories'
-     */
-    @Test
-    public void categoriesTest() {
-        // TODO: test categories
+    public void accumulatedDepAccountItemIdTest() {
+        // TODO: test accumulatedDepAccountItemId
     }
 
     /**
@@ -84,35 +68,11 @@ public class AccountItemsResponseAccountItemsTest {
     }
 
     /**
-     * Test the property 'correspondingExpenseName'
-     */
-    @Test
-    public void correspondingExpenseNameTest() {
-        // TODO: test correspondingExpenseName
-    }
-
-    /**
      * Test the property 'correspondingIncomeId'
      */
     @Test
     public void correspondingIncomeIdTest() {
         // TODO: test correspondingIncomeId
-    }
-
-    /**
-     * Test the property 'correspondingIncomeName'
-     */
-    @Test
-    public void correspondingIncomeNameTest() {
-        // TODO: test correspondingIncomeName
-    }
-
-    /**
-     * Test the property 'defaultTaxCode'
-     */
-    @Test
-    public void defaultTaxCodeTest() {
-        // TODO: test defaultTaxCode
     }
 
     /**
@@ -124,11 +84,11 @@ public class AccountItemsResponseAccountItemsTest {
     }
 
     /**
-     * Test the property 'id'
+     * Test the property 'items'
      */
     @Test
-    public void idTest() {
-        // TODO: test id
+    public void itemsTest() {
+        // TODO: test items
     }
 
     /**
@@ -137,6 +97,22 @@ public class AccountItemsResponseAccountItemsTest {
     @Test
     public void nameTest() {
         // TODO: test name
+    }
+
+    /**
+     * Test the property 'partners'
+     */
+    @Test
+    public void partnersTest() {
+        // TODO: test partners
+    }
+
+    /**
+     * Test the property 'searchable'
+     */
+    @Test
+    public void searchableTest() {
+        // TODO: test searchable
     }
 
     /**
@@ -161,14 +137,6 @@ public class AccountItemsResponseAccountItemsTest {
     @Test
     public void taxCodeTest() {
         // TODO: test taxCode
-    }
-
-    /**
-     * Test the property 'walletableId'
-     */
-    @Test
-    public void walletableIdTest() {
-        // TODO: test walletableId
     }
 
 }

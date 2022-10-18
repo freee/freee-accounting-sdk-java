@@ -25,13 +25,13 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import jp.co.freee.accounting.models.AccountItemParamsAccountItemItems;
+import jp.co.freee.accounting.models.AccountItemCreateParamsAccountItemItems;
 
 /**
- * AccountItemParamsAccountItem
+ * AccountItemUpdateParamsAccountItem
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class AccountItemParamsAccountItem {
+public class AccountItemUpdateParamsAccountItem {
   public static final String SERIALIZED_NAME_ACCOUNT_CATEGORY_ID = "account_category_id";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_CATEGORY_ID)
   private Integer accountCategoryId;
@@ -54,7 +54,7 @@ public class AccountItemParamsAccountItem {
 
   public static final String SERIALIZED_NAME_ITEMS = "items";
   @SerializedName(SERIALIZED_NAME_ITEMS)
-  private List<AccountItemParamsAccountItemItems> items = null;
+  private List<AccountItemCreateParamsAccountItemItems> items = null;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -62,7 +62,7 @@ public class AccountItemParamsAccountItem {
 
   public static final String SERIALIZED_NAME_PARTNERS = "partners";
   @SerializedName(SERIALIZED_NAME_PARTNERS)
-  private List<AccountItemParamsAccountItemItems> partners = null;
+  private List<AccountItemCreateParamsAccountItemItems> partners = null;
 
   public static final String SERIALIZED_NAME_SEARCHABLE = "searchable";
   @SerializedName(SERIALIZED_NAME_SEARCHABLE)
@@ -80,10 +80,10 @@ public class AccountItemParamsAccountItem {
   @SerializedName(SERIALIZED_NAME_TAX_CODE)
   private Integer taxCode;
 
-  public AccountItemParamsAccountItem() { 
+  public AccountItemUpdateParamsAccountItem() { 
   }
 
-  public AccountItemParamsAccountItem accountCategoryId(Integer accountCategoryId) {
+  public AccountItemUpdateParamsAccountItem accountCategoryId(Integer accountCategoryId) {
     
     this.accountCategoryId = accountCategoryId;
     return this;
@@ -108,7 +108,7 @@ public class AccountItemParamsAccountItem {
   }
 
 
-  public AccountItemParamsAccountItem accumulatedDepAccountItemId(Integer accumulatedDepAccountItemId) {
+  public AccountItemUpdateParamsAccountItem accumulatedDepAccountItemId(Integer accumulatedDepAccountItemId) {
     
     this.accumulatedDepAccountItemId = accumulatedDepAccountItemId;
     return this;
@@ -131,7 +131,7 @@ public class AccountItemParamsAccountItem {
   }
 
 
-  public AccountItemParamsAccountItem correspondingExpenseId(Integer correspondingExpenseId) {
+  public AccountItemUpdateParamsAccountItem correspondingExpenseId(Integer correspondingExpenseId) {
     
     this.correspondingExpenseId = correspondingExpenseId;
     return this;
@@ -154,7 +154,7 @@ public class AccountItemParamsAccountItem {
   }
 
 
-  public AccountItemParamsAccountItem correspondingIncomeId(Integer correspondingIncomeId) {
+  public AccountItemUpdateParamsAccountItem correspondingIncomeId(Integer correspondingIncomeId) {
     
     this.correspondingIncomeId = correspondingIncomeId;
     return this;
@@ -177,7 +177,7 @@ public class AccountItemParamsAccountItem {
   }
 
 
-  public AccountItemParamsAccountItem groupName(String groupName) {
+  public AccountItemUpdateParamsAccountItem groupName(String groupName) {
     
     this.groupName = groupName;
     return this;
@@ -200,13 +200,13 @@ public class AccountItemParamsAccountItem {
   }
 
 
-  public AccountItemParamsAccountItem items(List<AccountItemParamsAccountItemItems> items) {
+  public AccountItemUpdateParamsAccountItem items(List<AccountItemCreateParamsAccountItemItems> items) {
     
     this.items = items;
     return this;
   }
 
-  public AccountItemParamsAccountItem addItemsItem(AccountItemParamsAccountItemItems itemsItem) {
+  public AccountItemUpdateParamsAccountItem addItemsItem(AccountItemCreateParamsAccountItemItems itemsItem) {
     if (this.items == null) {
       this.items = new ArrayList<>();
     }
@@ -221,28 +221,28 @@ public class AccountItemParamsAccountItem {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "品目")
 
-  public List<AccountItemParamsAccountItemItems> getItems() {
+  public List<AccountItemCreateParamsAccountItemItems> getItems() {
     return items;
   }
 
 
-  public void setItems(List<AccountItemParamsAccountItemItems> items) {
+  public void setItems(List<AccountItemCreateParamsAccountItemItems> items) {
     this.items = items;
   }
 
 
-  public AccountItemParamsAccountItem name(String name) {
+  public AccountItemUpdateParamsAccountItem name(String name) {
     
     this.name = name;
     return this;
   }
 
    /**
-   * 勘定科目名 (30文字以内)
+   * 勘定科目名 (30文字以内) 口座に紐付かない勘定科目の更新時は必須です。 口座に紐付く勘定科目の更新時は指定することができません。 
    * @return name
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "新しい勘定科目", required = true, value = "勘定科目名 (30文字以内)")
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "新しい勘定科目", value = "勘定科目名 (30文字以内) 口座に紐付かない勘定科目の更新時は必須です。 口座に紐付く勘定科目の更新時は指定することができません。 ")
 
   public String getName() {
     return name;
@@ -254,13 +254,13 @@ public class AccountItemParamsAccountItem {
   }
 
 
-  public AccountItemParamsAccountItem partners(List<AccountItemParamsAccountItemItems> partners) {
+  public AccountItemUpdateParamsAccountItem partners(List<AccountItemCreateParamsAccountItemItems> partners) {
     
     this.partners = partners;
     return this;
   }
 
-  public AccountItemParamsAccountItem addPartnersItem(AccountItemParamsAccountItemItems partnersItem) {
+  public AccountItemUpdateParamsAccountItem addPartnersItem(AccountItemCreateParamsAccountItemItems partnersItem) {
     if (this.partners == null) {
       this.partners = new ArrayList<>();
     }
@@ -275,17 +275,17 @@ public class AccountItemParamsAccountItem {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "取引先")
 
-  public List<AccountItemParamsAccountItemItems> getPartners() {
+  public List<AccountItemCreateParamsAccountItemItems> getPartners() {
     return partners;
   }
 
 
-  public void setPartners(List<AccountItemParamsAccountItemItems> partners) {
+  public void setPartners(List<AccountItemCreateParamsAccountItemItems> partners) {
     this.partners = partners;
   }
 
 
-  public AccountItemParamsAccountItem searchable(Integer searchable) {
+  public AccountItemUpdateParamsAccountItem searchable(Integer searchable) {
     
     this.searchable = searchable;
     return this;
@@ -310,7 +310,7 @@ public class AccountItemParamsAccountItem {
   }
 
 
-  public AccountItemParamsAccountItem shortcut(String shortcut) {
+  public AccountItemUpdateParamsAccountItem shortcut(String shortcut) {
     
     this.shortcut = shortcut;
     return this;
@@ -333,7 +333,7 @@ public class AccountItemParamsAccountItem {
   }
 
 
-  public AccountItemParamsAccountItem shortcutNum(String shortcutNum) {
+  public AccountItemUpdateParamsAccountItem shortcutNum(String shortcutNum) {
     
     this.shortcutNum = shortcutNum;
     return this;
@@ -356,7 +356,7 @@ public class AccountItemParamsAccountItem {
   }
 
 
-  public AccountItemParamsAccountItem taxCode(Integer taxCode) {
+  public AccountItemUpdateParamsAccountItem taxCode(Integer taxCode) {
     
     this.taxCode = taxCode;
     return this;
@@ -389,19 +389,19 @@ public class AccountItemParamsAccountItem {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AccountItemParamsAccountItem accountItemParamsAccountItem = (AccountItemParamsAccountItem) o;
-    return Objects.equals(this.accountCategoryId, accountItemParamsAccountItem.accountCategoryId) &&
-        Objects.equals(this.accumulatedDepAccountItemId, accountItemParamsAccountItem.accumulatedDepAccountItemId) &&
-        Objects.equals(this.correspondingExpenseId, accountItemParamsAccountItem.correspondingExpenseId) &&
-        Objects.equals(this.correspondingIncomeId, accountItemParamsAccountItem.correspondingIncomeId) &&
-        Objects.equals(this.groupName, accountItemParamsAccountItem.groupName) &&
-        Objects.equals(this.items, accountItemParamsAccountItem.items) &&
-        Objects.equals(this.name, accountItemParamsAccountItem.name) &&
-        Objects.equals(this.partners, accountItemParamsAccountItem.partners) &&
-        Objects.equals(this.searchable, accountItemParamsAccountItem.searchable) &&
-        Objects.equals(this.shortcut, accountItemParamsAccountItem.shortcut) &&
-        Objects.equals(this.shortcutNum, accountItemParamsAccountItem.shortcutNum) &&
-        Objects.equals(this.taxCode, accountItemParamsAccountItem.taxCode);
+    AccountItemUpdateParamsAccountItem accountItemUpdateParamsAccountItem = (AccountItemUpdateParamsAccountItem) o;
+    return Objects.equals(this.accountCategoryId, accountItemUpdateParamsAccountItem.accountCategoryId) &&
+        Objects.equals(this.accumulatedDepAccountItemId, accountItemUpdateParamsAccountItem.accumulatedDepAccountItemId) &&
+        Objects.equals(this.correspondingExpenseId, accountItemUpdateParamsAccountItem.correspondingExpenseId) &&
+        Objects.equals(this.correspondingIncomeId, accountItemUpdateParamsAccountItem.correspondingIncomeId) &&
+        Objects.equals(this.groupName, accountItemUpdateParamsAccountItem.groupName) &&
+        Objects.equals(this.items, accountItemUpdateParamsAccountItem.items) &&
+        Objects.equals(this.name, accountItemUpdateParamsAccountItem.name) &&
+        Objects.equals(this.partners, accountItemUpdateParamsAccountItem.partners) &&
+        Objects.equals(this.searchable, accountItemUpdateParamsAccountItem.searchable) &&
+        Objects.equals(this.shortcut, accountItemUpdateParamsAccountItem.shortcut) &&
+        Objects.equals(this.shortcutNum, accountItemUpdateParamsAccountItem.shortcutNum) &&
+        Objects.equals(this.taxCode, accountItemUpdateParamsAccountItem.taxCode);
   }
 
   @Override
@@ -412,7 +412,7 @@ public class AccountItemParamsAccountItem {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AccountItemParamsAccountItem {\n");
+    sb.append("class AccountItemUpdateParamsAccountItem {\n");
     sb.append("    accountCategoryId: ").append(toIndentedString(accountCategoryId)).append("\n");
     sb.append("    accumulatedDepAccountItemId: ").append(toIndentedString(accumulatedDepAccountItemId)).append("\n");
     sb.append("    correspondingExpenseId: ").append(toIndentedString(correspondingExpenseId)).append("\n");

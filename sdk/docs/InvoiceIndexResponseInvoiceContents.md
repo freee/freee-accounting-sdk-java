@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **sectionId** | **Integer** | 部門ID | 
 **sectionName** | **String** | 部門 | 
 **segment1TagId** | **Long** | セグメント１ID |  [optional]
-**segment1TagName** | **String** | セグメント１ID |  [optional]
+**segment1TagName** | **String** | セグメント１ |  [optional]
 **segment2TagId** | **Long** | セグメント２ID |  [optional]
 **segment2TagName** | **String** | セグメント２ |  [optional]
 **segment3TagId** | **Long** | セグメント３ID |  [optional]

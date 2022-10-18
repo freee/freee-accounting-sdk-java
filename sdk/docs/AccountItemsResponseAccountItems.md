@@ -16,7 +16,6 @@ Name | Type | Description | Notes
 **correspondingIncomeId** | **Integer** | 収入取引相手勘定科目ID |  [optional]
 **correspondingIncomeName** | **String** | 収入取引相手勘定科目名 |  [optional]
 **defaultTaxCode** | **Integer** | デフォルト設定がされている税区分コード | 
-**defaultTaxId** | **Integer** | デフォルト設定がされている税区分ID |  [optional]
 **groupName** | **String** | 決算書表示名（小カテゴリー） |  [optional]
 **id** | **Integer** | 勘定科目ID | 
 **name** | **String** | 勘定科目名 (30文字以内) | 

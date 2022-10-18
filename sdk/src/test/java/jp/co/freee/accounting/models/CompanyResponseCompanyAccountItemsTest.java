@@ -52,14 +52,6 @@ public class CompanyResponseCompanyAccountItemsTest {
     }
 
     /**
-     * Test the property 'defaultTaxId'
-     */
-    @Test
-    public void defaultTaxIdTest() {
-        // TODO: test defaultTaxId
-    }
-
-    /**
      * Test the property 'id'
      */
     @Test

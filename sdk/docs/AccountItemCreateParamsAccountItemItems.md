@@ -1,6 +1,6 @@
 
 
-# AccountItemParamsAccountItemItems
+# AccountItemCreateParamsAccountItemItems
 
 
 ## Properties

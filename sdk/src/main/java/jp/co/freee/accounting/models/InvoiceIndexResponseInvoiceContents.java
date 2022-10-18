@@ -505,11 +505,11 @@ public class InvoiceIndexResponseInvoiceContents {
   }
 
    /**
-   * セグメント１ID
+   * セグメント１
    * @return segment1TagName
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "セグメント１", value = "セグメント１ID")
+  @ApiModelProperty(example = "セグメント１", value = "セグメント１")
 
   public String getSegment1TagName() {
     return segment1TagName;

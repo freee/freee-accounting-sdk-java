@@ -1,8 +1,9 @@
 package jp.co.freee.accounting.api;
 
 import jp.co.freee.accounting.ApiClient;
-import jp.co.freee.accounting.models.AccountItemParams;
+import jp.co.freee.accounting.models.AccountItemCreateParams;
 import jp.co.freee.accounting.models.AccountItemResponse;
+import jp.co.freee.accounting.models.AccountItemUpdateParams;
 import jp.co.freee.accounting.models.AccountItemsResponse;
 import jp.co.freee.accounting.models.BadRequestError;
 import jp.co.freee.accounting.models.BadRequestNotFoundError;
@@ -37,8 +38,8 @@ public class AccountItemsApiTest {
      */
     @Test
     public void createAccountItemTest() {
-        AccountItemParams accountItemParams = null;
-        // AccountItemResponse response = api.createAccountItem(accountItemParams);
+        AccountItemCreateParams accountItemCreateParams = null;
+        // AccountItemResponse response = api.createAccountItem(accountItemCreateParams);
 
         // TODO: test validations
     }
@@ -89,8 +90,8 @@ public class AccountItemsApiTest {
     @Test
     public void updateAccountItemTest() {
         Integer id = null;
-        AccountItemParams accountItemParams = null;
-        // AccountItemResponse response = api.updateAccountItem(id, accountItemParams);
+        AccountItemUpdateParams accountItemUpdateParams = null;
+        // AccountItemResponse response = api.updateAccountItem(id, accountItemUpdateParams);
 
         // TODO: test validations
     }

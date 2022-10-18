@@ -110,11 +110,11 @@ public class InlineResponse20010Taxes {
   }
 
    /**
-   * true: 使用する、false: 使用しない
+   * 税区分の使用設定。true: 使用する、false: 使用しない
    * @return available
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "true", required = true, value = "true: 使用する、false: 使用しない")
+  @ApiModelProperty(example = "true", required = true, value = "税区分の使用設定。true: 使用する、false: 使用しない")
 
   public Boolean getAvailable() {
     return available;

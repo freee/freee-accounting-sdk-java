@@ -65,15 +65,13 @@ public class ApprovalRequestFormResponseApprovalRequestForm {
   private Integer routeSettingCount;
 
   /**
-   * ステータス(draft: 申請で使用しない、active: 申請で使用する、deleted: 削除済み)
+   * ステータス(draft: 申請で使用しない、active: 申請で使用する)
    */
   @JsonAdapter(StatusEnum.Adapter.class)
   public enum StatusEnum {
     DRAFT("draft"),
     
-    ACTIVE("active"),
-    
-    DELETED("deleted");
+    ACTIVE("active");
 
     private String value;
 
@@ -327,11 +325,11 @@ public class ApprovalRequestFormResponseApprovalRequestForm {
   }
 
    /**
-   * ステータス(draft: 申請で使用しない、active: 申請で使用する、deleted: 削除済み)
+   * ステータス(draft: 申請で使用しない、active: 申請で使用する)
    * @return status
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "active", required = true, value = "ステータス(draft: 申請で使用しない、active: 申請で使用する、deleted: 削除済み)")
+  @ApiModelProperty(example = "active", required = true, value = "ステータス(draft: 申請で使用しない、active: 申請で使用する)")
 
   public StatusEnum getStatus() {
     return status;

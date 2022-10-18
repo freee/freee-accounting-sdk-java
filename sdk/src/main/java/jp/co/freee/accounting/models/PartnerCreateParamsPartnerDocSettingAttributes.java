@@ -31,7 +31,7 @@ import org.openapitools.jackson.nullable.JsonNullable;
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class PartnerCreateParamsPartnerDocSettingAttributes {
   /**
-   * 請求書送付方法(email:メール、posting:郵送、email_and_posting:メールと郵送)
+   * 請求書送付方法(email:メール、posting:郵送、email_and_posting:メールと郵送、null:設定しない)
    */
   @JsonAdapter(SendingMethodEnum.Adapter.class)
   public enum SendingMethodEnum {
@@ -93,11 +93,11 @@ public class PartnerCreateParamsPartnerDocSettingAttributes {
   }
 
    /**
-   * 請求書送付方法(email:メール、posting:郵送、email_and_posting:メールと郵送)
+   * 請求書送付方法(email:メール、posting:郵送、email_and_posting:メールと郵送、null:設定しない)
    * @return sendingMethod
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "posting", value = "請求書送付方法(email:メール、posting:郵送、email_and_posting:メールと郵送)")
+  @ApiModelProperty(example = "posting", value = "請求書送付方法(email:メール、posting:郵送、email_and_posting:メールと郵送、null:設定しない)")
 
   public SendingMethodEnum getSendingMethod() {
     return sendingMethod;

@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## createAccountItem
 
-> AccountItemResponse createAccountItem(accountItemParams)
+> AccountItemResponse createAccountItem(accountItemCreateParams)
 
 勘定科目の作成
 
@@ -39,9 +39,9 @@ public class Example {
         oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
         AccountItemsApi apiInstance = new AccountItemsApi(defaultClient);
-        AccountItemParams accountItemParams = new AccountItemParams(); // AccountItemParams | 勘定科目の作成
+        AccountItemCreateParams accountItemCreateParams = new AccountItemCreateParams(); // AccountItemCreateParams | 勘定科目の作成
         try {
-            AccountItemResponse result = apiInstance.createAccountItem(accountItemParams);
+            AccountItemResponse result = apiInstance.createAccountItem(accountItemCreateParams);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AccountItemsApi#createAccountItem");
@@ -59,7 +59,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountItemParams** | [**AccountItemParams**](AccountItemParams.md)| 勘定科目の作成 |
+ **accountItemCreateParams** | [**AccountItemCreateParams**](AccountItemCreateParams.md)| 勘定科目の作成 |
 
 ### Return type
 
@@ -312,7 +312,7 @@ Name | Type | Description  | Notes
 
 ## updateAccountItem
 
-> AccountItemResponse updateAccountItem(id, accountItemParams)
+> AccountItemResponse updateAccountItem(id, accountItemUpdateParams)
 
 勘定科目の更新
 
@@ -338,9 +338,9 @@ public class Example {
 
         AccountItemsApi apiInstance = new AccountItemsApi(defaultClient);
         Integer id = 56; // Integer | 
-        AccountItemParams accountItemParams = new AccountItemParams(); // AccountItemParams | 勘定科目の更新
+        AccountItemUpdateParams accountItemUpdateParams = new AccountItemUpdateParams(); // AccountItemUpdateParams | 勘定科目の更新
         try {
-            AccountItemResponse result = apiInstance.updateAccountItem(id, accountItemParams);
+            AccountItemResponse result = apiInstance.updateAccountItem(id, accountItemUpdateParams);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AccountItemsApi#updateAccountItem");
@@ -359,7 +359,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**|  |
- **accountItemParams** | [**AccountItemParams**](AccountItemParams.md)| 勘定科目の更新 |
+ **accountItemUpdateParams** | [**AccountItemUpdateParams**](AccountItemUpdateParams.md)| 勘定科目の更新 |
 
 ### Return type
 
