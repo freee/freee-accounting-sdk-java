@@ -23,14 +23,20 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import jp.co.freee.accounting.models.SelectablesIndexResponseDefaultTaxTaxRate10;
 import jp.co.freee.accounting.models.SelectablesIndexResponseDefaultTaxTaxRate5;
 import jp.co.freee.accounting.models.SelectablesIndexResponseDefaultTaxTaxRate8;
+import jp.co.freee.accounting.models.SelectablesIndexResponseDefaultTaxTaxRateR8;
 
 /**
  * SelectablesIndexResponseDefaultTax
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class SelectablesIndexResponseDefaultTax {
+  public static final String SERIALIZED_NAME_TAX_RATE10 = "tax_rate_10";
+  @SerializedName(SERIALIZED_NAME_TAX_RATE10)
+  private SelectablesIndexResponseDefaultTaxTaxRate10 taxRate10;
+
   public static final String SERIALIZED_NAME_TAX_RATE5 = "tax_rate_5";
   @SerializedName(SERIALIZED_NAME_TAX_RATE5)
   private SelectablesIndexResponseDefaultTaxTaxRate5 taxRate5;
@@ -39,8 +45,35 @@ public class SelectablesIndexResponseDefaultTax {
   @SerializedName(SERIALIZED_NAME_TAX_RATE8)
   private SelectablesIndexResponseDefaultTaxTaxRate8 taxRate8;
 
+  public static final String SERIALIZED_NAME_TAX_RATE_R8 = "tax_rate_r8";
+  @SerializedName(SERIALIZED_NAME_TAX_RATE_R8)
+  private SelectablesIndexResponseDefaultTaxTaxRateR8 taxRateR8;
+
   public SelectablesIndexResponseDefaultTax() { 
   }
+
+  public SelectablesIndexResponseDefaultTax taxRate10(SelectablesIndexResponseDefaultTaxTaxRate10 taxRate10) {
+    
+    this.taxRate10 = taxRate10;
+    return this;
+  }
+
+   /**
+   * Get taxRate10
+   * @return taxRate10
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public SelectablesIndexResponseDefaultTaxTaxRate10 getTaxRate10() {
+    return taxRate10;
+  }
+
+
+  public void setTaxRate10(SelectablesIndexResponseDefaultTaxTaxRate10 taxRate10) {
+    this.taxRate10 = taxRate10;
+  }
+
 
   public SelectablesIndexResponseDefaultTax taxRate5(SelectablesIndexResponseDefaultTaxTaxRate5 taxRate5) {
     
@@ -88,6 +121,29 @@ public class SelectablesIndexResponseDefaultTax {
   }
 
 
+  public SelectablesIndexResponseDefaultTax taxRateR8(SelectablesIndexResponseDefaultTaxTaxRateR8 taxRateR8) {
+    
+    this.taxRateR8 = taxRateR8;
+    return this;
+  }
+
+   /**
+   * Get taxRateR8
+   * @return taxRateR8
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public SelectablesIndexResponseDefaultTaxTaxRateR8 getTaxRateR8() {
+    return taxRateR8;
+  }
+
+
+  public void setTaxRateR8(SelectablesIndexResponseDefaultTaxTaxRateR8 taxRateR8) {
+    this.taxRateR8 = taxRateR8;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -97,21 +153,25 @@ public class SelectablesIndexResponseDefaultTax {
       return false;
     }
     SelectablesIndexResponseDefaultTax selectablesIndexResponseDefaultTax = (SelectablesIndexResponseDefaultTax) o;
-    return Objects.equals(this.taxRate5, selectablesIndexResponseDefaultTax.taxRate5) &&
-        Objects.equals(this.taxRate8, selectablesIndexResponseDefaultTax.taxRate8);
+    return Objects.equals(this.taxRate10, selectablesIndexResponseDefaultTax.taxRate10) &&
+        Objects.equals(this.taxRate5, selectablesIndexResponseDefaultTax.taxRate5) &&
+        Objects.equals(this.taxRate8, selectablesIndexResponseDefaultTax.taxRate8) &&
+        Objects.equals(this.taxRateR8, selectablesIndexResponseDefaultTax.taxRateR8);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(taxRate5, taxRate8);
+    return Objects.hash(taxRate10, taxRate5, taxRate8, taxRateR8);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SelectablesIndexResponseDefaultTax {\n");
+    sb.append("    taxRate10: ").append(toIndentedString(taxRate10)).append("\n");
     sb.append("    taxRate5: ").append(toIndentedString(taxRate5)).append("\n");
     sb.append("    taxRate8: ").append(toIndentedString(taxRate8)).append("\n");
+    sb.append("    taxRateR8: ").append(toIndentedString(taxRateR8)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -41,6 +41,14 @@ public class SelectablesIndexResponseDefaultTaxTaxRate5Test {
     }
 
     /**
+     * Test the property 'code'
+     */
+    @Test
+    public void codeTest() {
+        // TODO: test code
+    }
+
+    /**
      * Test the property 'id'
      */
     @Test

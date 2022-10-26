@@ -21,8 +21,10 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import jp.co.freee.accounting.models.SelectablesIndexResponseDefaultTaxTaxRate10;
 import jp.co.freee.accounting.models.SelectablesIndexResponseDefaultTaxTaxRate5;
 import jp.co.freee.accounting.models.SelectablesIndexResponseDefaultTaxTaxRate8;
+import jp.co.freee.accounting.models.SelectablesIndexResponseDefaultTaxTaxRateR8;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -43,6 +45,14 @@ public class SelectablesIndexResponseDefaultTaxTest {
     }
 
     /**
+     * Test the property 'taxRate10'
+     */
+    @Test
+    public void taxRate10Test() {
+        // TODO: test taxRate10
+    }
+
+    /**
      * Test the property 'taxRate5'
      */
     @Test
@@ -56,6 +66,14 @@ public class SelectablesIndexResponseDefaultTaxTest {
     @Test
     public void taxRate8Test() {
         // TODO: test taxRate8
+    }
+
+    /**
+     * Test the property 'taxRateR8'
+     */
+    @Test
+    public void taxRateR8Test() {
+        // TODO: test taxRateR8
     }
 
 }
