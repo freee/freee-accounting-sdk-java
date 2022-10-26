@@ -27,17 +27,17 @@ import org.junit.Test;
 
 
 /**
- * Model tests for SelectablesIndexResponseDefaultTaxTaxRate8
+ * Model tests for SelectablesIndexResponseDefaultTaxTaxRate10
  */
-public class SelectablesIndexResponseDefaultTaxTaxRate8Test {
-    private final SelectablesIndexResponseDefaultTaxTaxRate8 model = new SelectablesIndexResponseDefaultTaxTaxRate8();
+public class SelectablesIndexResponseDefaultTaxTaxRate10Test {
+    private final SelectablesIndexResponseDefaultTaxTaxRate10 model = new SelectablesIndexResponseDefaultTaxTaxRate10();
 
     /**
-     * Model tests for SelectablesIndexResponseDefaultTaxTaxRate8
+     * Model tests for SelectablesIndexResponseDefaultTaxTaxRate10
      */
     @Test
-    public void testSelectablesIndexResponseDefaultTaxTaxRate8() {
-        // TODO: test SelectablesIndexResponseDefaultTaxTaxRate8
+    public void testSelectablesIndexResponseDefaultTaxTaxRate10() {
+        // TODO: test SelectablesIndexResponseDefaultTaxTaxRate10
     }
 
     /**

@@ -215,11 +215,11 @@ public class ExpenseApplicationLineTemplateParams {
   }
 
    /**
-   * 添付ファイルの必須/任意
+   * 添付ファイルの必須/任意&lt;br&gt; falseを指定した時は申請時の領収書の添付を任意とします。&lt;br&gt; trueを指定した時は申請時の領収書の添付を必須とします。&lt;br&gt; 未指定の時は申請時の領収書の添付を任意とします。
    * @return requiredReceipt
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "false", value = "添付ファイルの必須/任意")
+  @ApiModelProperty(example = "true", value = "添付ファイルの必須/任意<br> falseを指定した時は申請時の領収書の添付を任意とします。<br> trueを指定した時は申請時の領収書の添付を必須とします。<br> 未指定の時は申請時の領収書の添付を任意とします。")
 
   public Boolean getRequiredReceipt() {
     return requiredReceipt;

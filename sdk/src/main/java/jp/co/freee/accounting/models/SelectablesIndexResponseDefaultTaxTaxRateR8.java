@@ -25,10 +25,10 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * SelectablesIndexResponseDefaultTaxTaxRate8
+ * SelectablesIndexResponseDefaultTaxTaxRateR8
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class SelectablesIndexResponseDefaultTaxTaxRate8 {
+public class SelectablesIndexResponseDefaultTaxTaxRateR8 {
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
   private Integer code;
@@ -41,10 +41,10 @@ public class SelectablesIndexResponseDefaultTaxTaxRate8 {
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
-  public SelectablesIndexResponseDefaultTaxTaxRate8() { 
+  public SelectablesIndexResponseDefaultTaxTaxRateR8() { 
   }
 
-  public SelectablesIndexResponseDefaultTaxTaxRate8 code(Integer code) {
+  public SelectablesIndexResponseDefaultTaxTaxRateR8 code(Integer code) {
     
     this.code = code;
     return this;
@@ -69,7 +69,7 @@ public class SelectablesIndexResponseDefaultTaxTaxRate8 {
   }
 
 
-  public SelectablesIndexResponseDefaultTaxTaxRate8 id(Integer id) {
+  public SelectablesIndexResponseDefaultTaxTaxRateR8 id(Integer id) {
     
     this.id = id;
     return this;
@@ -96,7 +96,7 @@ public class SelectablesIndexResponseDefaultTaxTaxRate8 {
   }
 
 
-  public SelectablesIndexResponseDefaultTaxTaxRate8 name(String name) {
+  public SelectablesIndexResponseDefaultTaxTaxRateR8 name(String name) {
     
     this.name = name;
     return this;
@@ -107,7 +107,7 @@ public class SelectablesIndexResponseDefaultTaxTaxRate8 {
    * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "課対仕入8%", value = "税区分")
+  @ApiModelProperty(example = "課対仕入8%（軽）", value = "税区分")
 
   public String getName() {
     return name;
@@ -127,10 +127,10 @@ public class SelectablesIndexResponseDefaultTaxTaxRate8 {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SelectablesIndexResponseDefaultTaxTaxRate8 selectablesIndexResponseDefaultTaxTaxRate8 = (SelectablesIndexResponseDefaultTaxTaxRate8) o;
-    return Objects.equals(this.code, selectablesIndexResponseDefaultTaxTaxRate8.code) &&
-        Objects.equals(this.id, selectablesIndexResponseDefaultTaxTaxRate8.id) &&
-        Objects.equals(this.name, selectablesIndexResponseDefaultTaxTaxRate8.name);
+    SelectablesIndexResponseDefaultTaxTaxRateR8 selectablesIndexResponseDefaultTaxTaxRateR8 = (SelectablesIndexResponseDefaultTaxTaxRateR8) o;
+    return Objects.equals(this.code, selectablesIndexResponseDefaultTaxTaxRateR8.code) &&
+        Objects.equals(this.id, selectablesIndexResponseDefaultTaxTaxRateR8.id) &&
+        Objects.equals(this.name, selectablesIndexResponseDefaultTaxTaxRateR8.name);
   }
 
   @Override
@@ -141,7 +141,7 @@ public class SelectablesIndexResponseDefaultTaxTaxRate8 {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SelectablesIndexResponseDefaultTaxTaxRate8 {\n");
+    sb.append("class SelectablesIndexResponseDefaultTaxTaxRateR8 {\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");

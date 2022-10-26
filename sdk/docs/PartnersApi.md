@@ -269,7 +269,7 @@ public class Example {
         String endUpdateDate = "endUpdateDate_example"; // String | 更新日で絞り込み：終了日(yyyy-mm-dd)
         Long offset = 56L; // Long | 取得レコードのオフセット (デフォルト: 0)
         Integer limit = 56; // Integer | 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000)
-        String keyword = "keyword_example"; // String | 検索キーワード：取引先名・正式名称・カナ名称に対するあいまい検索で一致、またはショートカットキー1・2のいずれかに完全一致
+        String keyword = "keyword_example"; // String | 検索キーワード<br> 取引先コード・取引先名・正式名称・カナ名称・ショートカットキー1・2のいずれかに対する部分一致。<br> 以下のいずれかで区切って複数キーワードを指定した場合はAND検索となります。 <ul> <li>半角スペース</li> <li>全角スペース</li> <li>タブ</li> </ul> 
         try {
             PartnersResponse result = apiInstance.getPartners(companyId, startUpdateDate, endUpdateDate, offset, limit, keyword);
             System.out.println(result);
@@ -294,7 +294,7 @@ Name | Type | Description  | Notes
  **endUpdateDate** | **String**| 更新日で絞り込み：終了日(yyyy-mm-dd) | [optional]
  **offset** | **Long**| 取得レコードのオフセット (デフォルト: 0) | [optional]
  **limit** | **Integer**| 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) | [optional]
- **keyword** | **String**| 検索キーワード：取引先名・正式名称・カナ名称に対するあいまい検索で一致、またはショートカットキー1・2のいずれかに完全一致 | [optional]
+ **keyword** | **String**| 検索キーワード&lt;br&gt; 取引先コード・取引先名・正式名称・カナ名称・ショートカットキー1・2のいずれかに対する部分一致。&lt;br&gt; 以下のいずれかで区切って複数キーワードを指定した場合はAND検索となります。 &lt;ul&gt; &lt;li&gt;半角スペース&lt;/li&gt; &lt;li&gt;全角スペース&lt;/li&gt; &lt;li&gt;タブ&lt;/li&gt; &lt;/ul&gt;  | [optional]
 
 ### Return type
 

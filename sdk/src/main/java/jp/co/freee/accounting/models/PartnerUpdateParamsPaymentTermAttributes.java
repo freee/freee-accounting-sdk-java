@@ -51,13 +51,13 @@ public class PartnerUpdateParamsPaymentTermAttributes {
   }
 
    /**
-   * 支払月
-   * minimum: 1
+   * 支払月（当月を指定する場合は、0を指定してください。）
+   * minimum: 0
    * maximum: 6
    * @return additionalMonths
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "1", value = "支払月")
+  @ApiModelProperty(example = "1", value = "支払月（当月を指定する場合は、0を指定してください。）")
 
   public Integer getAdditionalMonths() {
     return additionalMonths;

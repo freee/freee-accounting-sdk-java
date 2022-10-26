@@ -52,13 +52,13 @@ public class PartnerResponsePartnerInvoicePaymentTermAttributes {
   }
 
    /**
-   * 入金月
-   * minimum: 1
+   * 入金月（当月を指定する場合は、0を指定してください。）
+   * minimum: 0
    * maximum: 6
    * @return additionalMonths
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "1", value = "入金月")
+  @ApiModelProperty(example = "1", value = "入金月（当月を指定する場合は、0を指定してください。）")
 
   public Integer getAdditionalMonths() {
     return additionalMonths;

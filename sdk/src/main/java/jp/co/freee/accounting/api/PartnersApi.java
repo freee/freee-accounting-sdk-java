@@ -72,7 +72,7 @@ public interface PartnersApi {
    * @param endUpdateDate 更新日で絞り込み：終了日(yyyy-mm-dd) (optional)
    * @param offset 取得レコードのオフセット (デフォルト: 0) (optional)
    * @param limit 取得レコードの件数 (デフォルト: 50, 最小: 1, 最大: 3000) (optional)
-   * @param keyword 検索キーワード：取引先名・正式名称・カナ名称に対するあいまい検索で一致、またはショートカットキー1・2のいずれかに完全一致 (optional)
+   * @param keyword 検索キーワード&lt;br&gt; 取引先コード・取引先名・正式名称・カナ名称・ショートカットキー1・2のいずれかに対する部分一致。&lt;br&gt; 以下のいずれかで区切って複数キーワードを指定した場合はAND検索となります。 &lt;ul&gt; &lt;li&gt;半角スペース&lt;/li&gt; &lt;li&gt;全角スペース&lt;/li&gt; &lt;li&gt;タブ&lt;/li&gt; &lt;/ul&gt;  (optional)
    * @return Observable&lt;PartnersResponse&gt;
    */
   @GET("api/1/partners")

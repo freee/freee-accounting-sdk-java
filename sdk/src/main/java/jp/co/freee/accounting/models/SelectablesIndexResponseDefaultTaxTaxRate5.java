@@ -29,6 +29,10 @@ import java.io.IOException;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class SelectablesIndexResponseDefaultTaxTaxRate5 {
+  public static final String SERIALIZED_NAME_CODE = "code";
+  @SerializedName(SERIALIZED_NAME_CODE)
+  private Integer code;
+
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   private Integer id;
@@ -39,6 +43,31 @@ public class SelectablesIndexResponseDefaultTaxTaxRate5 {
 
   public SelectablesIndexResponseDefaultTaxTaxRate5() { 
   }
+
+  public SelectablesIndexResponseDefaultTaxTaxRate5 code(Integer code) {
+    
+    this.code = code;
+    return this;
+  }
+
+   /**
+   * 税区分コード
+   * minimum: 0
+   * maximum: 2147483647
+   * @return code
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "1", value = "税区分コード")
+
+  public Integer getCode() {
+    return code;
+  }
+
+
+  public void setCode(Integer code) {
+    this.code = code;
+  }
+
 
   public SelectablesIndexResponseDefaultTaxTaxRate5 id(Integer id) {
     
@@ -51,7 +80,9 @@ public class SelectablesIndexResponseDefaultTaxTaxRate5 {
    * minimum: 0
    * maximum: 2147483647
    * @return id
+   * @deprecated
   **/
+  @Deprecated
   @javax.annotation.Nullable
   @ApiModelProperty(example = "1", value = "税区分ID")
 
@@ -97,19 +128,21 @@ public class SelectablesIndexResponseDefaultTaxTaxRate5 {
       return false;
     }
     SelectablesIndexResponseDefaultTaxTaxRate5 selectablesIndexResponseDefaultTaxTaxRate5 = (SelectablesIndexResponseDefaultTaxTaxRate5) o;
-    return Objects.equals(this.id, selectablesIndexResponseDefaultTaxTaxRate5.id) &&
+    return Objects.equals(this.code, selectablesIndexResponseDefaultTaxTaxRate5.code) &&
+        Objects.equals(this.id, selectablesIndexResponseDefaultTaxTaxRate5.id) &&
         Objects.equals(this.name, selectablesIndexResponseDefaultTaxTaxRate5.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name);
+    return Objects.hash(code, id, name);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SelectablesIndexResponseDefaultTaxTaxRate5 {\n");
+    sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");
