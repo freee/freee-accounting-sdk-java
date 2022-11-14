@@ -37,62 +37,9 @@ public class PartnerCreateParamsPartnerBankAccountAttributes {
   @SerializedName(SERIALIZED_NAME_ACCOUNT_NUMBER)
   private String accountNumber;
 
-  /**
-   * 口座種別(ordinary:普通、checking：当座、earmarked：納税準備預金、savings：貯蓄、other:その他)、指定しない場合ordinaryになります。
-   */
-  @JsonAdapter(AccountTypeEnum.Adapter.class)
-  public enum AccountTypeEnum {
-    ORDINARY("ordinary"),
-    
-    CHECKING("checking"),
-    
-    EARMARKED("earmarked"),
-    
-    SAVINGS("savings"),
-    
-    OTHER("other");
-
-    private String value;
-
-    AccountTypeEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static AccountTypeEnum fromValue(String value) {
-      for (AccountTypeEnum b : AccountTypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<AccountTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final AccountTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public AccountTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return AccountTypeEnum.fromValue(value);
-      }
-    }
-  }
-
   public static final String SERIALIZED_NAME_ACCOUNT_TYPE = "account_type";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_TYPE)
-  private AccountTypeEnum accountType;
+  private String accountType;
 
   public static final String SERIALIZED_NAME_BANK_CODE = "bank_code";
   @SerializedName(SERIALIZED_NAME_BANK_CODE)
@@ -171,7 +118,7 @@ public class PartnerCreateParamsPartnerBankAccountAttributes {
   }
 
 
-  public PartnerCreateParamsPartnerBankAccountAttributes accountType(AccountTypeEnum accountType) {
+  public PartnerCreateParamsPartnerBankAccountAttributes accountType(String accountType) {
     
     this.accountType = accountType;
     return this;
@@ -184,12 +131,12 @@ public class PartnerCreateParamsPartnerBankAccountAttributes {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "ordinary", value = "口座種別(ordinary:普通、checking：当座、earmarked：納税準備預金、savings：貯蓄、other:その他)、指定しない場合ordinaryになります。")
 
-  public AccountTypeEnum getAccountType() {
+  public String getAccountType() {
     return accountType;
   }
 
 
-  public void setAccountType(AccountTypeEnum accountType) {
+  public void setAccountType(String accountType) {
     this.accountType = accountType;
   }
 
