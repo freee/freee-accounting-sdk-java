@@ -24,7 +24,9 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import jp.co.freee.accounting.models.UserCapability;
+import jp.co.freee.accounting.models.UserCapabilityWithConfirm;
 import jp.co.freee.accounting.models.UserCapabilityWithSelfOnly;
+import jp.co.freee.accounting.models.UserCapabilityWithSync;
 
 /**
  * InlineResponse20013
@@ -257,11 +259,11 @@ public class InlineResponse20013 {
 
   public static final String SERIALIZED_NAME_WALLET_TXNS = "wallet_txns";
   @SerializedName(SERIALIZED_NAME_WALLET_TXNS)
-  private UserCapability walletTxns;
+  private UserCapabilityWithConfirm walletTxns;
 
   public static final String SERIALIZED_NAME_WALLETABLES = "walletables";
   @SerializedName(SERIALIZED_NAME_WALLETABLES)
-  private UserCapability walletables;
+  private UserCapabilityWithSync walletables;
 
   public static final String SERIALIZED_NAME_WORKFLOWS = "workflows";
   @SerializedName(SERIALIZED_NAME_WORKFLOWS)
@@ -1562,7 +1564,7 @@ public class InlineResponse20013 {
   }
 
 
-  public InlineResponse20013 walletTxns(UserCapability walletTxns) {
+  public InlineResponse20013 walletTxns(UserCapabilityWithConfirm walletTxns) {
     
     this.walletTxns = walletTxns;
     return this;
@@ -1575,17 +1577,17 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getWalletTxns() {
+  public UserCapabilityWithConfirm getWalletTxns() {
     return walletTxns;
   }
 
 
-  public void setWalletTxns(UserCapability walletTxns) {
+  public void setWalletTxns(UserCapabilityWithConfirm walletTxns) {
     this.walletTxns = walletTxns;
   }
 
 
-  public InlineResponse20013 walletables(UserCapability walletables) {
+  public InlineResponse20013 walletables(UserCapabilityWithSync walletables) {
     
     this.walletables = walletables;
     return this;
@@ -1598,12 +1600,12 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getWalletables() {
+  public UserCapabilityWithSync getWalletables() {
     return walletables;
   }
 
 
-  public void setWalletables(UserCapability walletables) {
+  public void setWalletables(UserCapabilityWithSync walletables) {
     this.walletables = walletables;
   }
 
