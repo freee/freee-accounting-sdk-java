@@ -63,8 +63,8 @@ Name | Type | Description | Notes
 **taxes** | [**UserCapability**](UserCapability.md) |  | 
 **transfers** | [**UserCapabilityWithSelfOnly**](UserCapabilityWithSelfOnly.md) |  | 
 **userMatchers** | [**UserCapability**](UserCapability.md) |  | 
-**walletTxns** | [**UserCapability**](UserCapability.md) |  | 
-**walletables** | [**UserCapability**](UserCapability.md) |  | 
+**walletTxns** | [**UserCapabilityWithConfirm**](UserCapabilityWithConfirm.md) |  | 
+**walletables** | [**UserCapabilityWithSync**](UserCapabilityWithSync.md) |  | 
 **workflows** | [**UserCapability**](UserCapability.md) |  | 
 **yearEnd** | [**UserCapability**](UserCapability.md) |  | 
 
