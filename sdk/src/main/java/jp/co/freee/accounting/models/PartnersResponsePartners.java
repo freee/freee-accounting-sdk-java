@@ -24,8 +24,8 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import jp.co.freee.accounting.models.PartnerCreateParamsPartnerDocSettingAttributes;
+import jp.co.freee.accounting.models.PartnerResponsePartnerAddressAttributes;
 import jp.co.freee.accounting.models.PartnerResponsePartnerPartnerBankAccountAttributes;
-import jp.co.freee.accounting.models.PartnersResponseAddressAttributes;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 /**
@@ -35,7 +35,7 @@ import org.openapitools.jackson.nullable.JsonNullable;
 public class PartnersResponsePartners {
   public static final String SERIALIZED_NAME_ADDRESS_ATTRIBUTES = "address_attributes";
   @SerializedName(SERIALIZED_NAME_ADDRESS_ATTRIBUTES)
-  private PartnersResponseAddressAttributes addressAttributes;
+  private PartnerResponsePartnerAddressAttributes addressAttributes;
 
   public static final String SERIALIZED_NAME_AVAILABLE = "available";
   @SerializedName(SERIALIZED_NAME_AVAILABLE)
@@ -167,7 +167,7 @@ public class PartnersResponsePartners {
   public PartnersResponsePartners() { 
   }
 
-  public PartnersResponsePartners addressAttributes(PartnersResponseAddressAttributes addressAttributes) {
+  public PartnersResponsePartners addressAttributes(PartnerResponsePartnerAddressAttributes addressAttributes) {
     
     this.addressAttributes = addressAttributes;
     return this;
@@ -180,12 +180,12 @@ public class PartnersResponsePartners {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public PartnersResponseAddressAttributes getAddressAttributes() {
+  public PartnerResponsePartnerAddressAttributes getAddressAttributes() {
     return addressAttributes;
   }
 
 
-  public void setAddressAttributes(PartnersResponseAddressAttributes addressAttributes) {
+  public void setAddressAttributes(PartnerResponsePartnerAddressAttributes addressAttributes) {
     this.addressAttributes = addressAttributes;
   }
 
