@@ -30,9 +30,9 @@ import org.openapitools.jackson.nullable.JsonNullable;
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class PartnerResponsePartnerAddressAttributes {
-  public static final String SERIALIZED_NAME_PREFECTURE_CODES = "prefecture_codes";
-  @SerializedName(SERIALIZED_NAME_PREFECTURE_CODES)
-  private Integer prefectureCodes;
+  public static final String SERIALIZED_NAME_PREFECTURE_CODE = "prefecture_code";
+  @SerializedName(SERIALIZED_NAME_PREFECTURE_CODE)
+  private Integer prefectureCode;
 
   public static final String SERIALIZED_NAME_STREET_NAME1 = "street_name1";
   @SerializedName(SERIALIZED_NAME_STREET_NAME1)
@@ -49,9 +49,9 @@ public class PartnerResponsePartnerAddressAttributes {
   public PartnerResponsePartnerAddressAttributes() { 
   }
 
-  public PartnerResponsePartnerAddressAttributes prefectureCodes(Integer prefectureCodes) {
+  public PartnerResponsePartnerAddressAttributes prefectureCode(Integer prefectureCode) {
     
-    this.prefectureCodes = prefectureCodes;
+    this.prefectureCode = prefectureCode;
     return this;
   }
 
@@ -59,18 +59,18 @@ public class PartnerResponsePartnerAddressAttributes {
    * 都道府県コード（-1: 設定しない、0:北海道、1:青森、2:岩手、3:宮城、4:秋田、5:山形、6:福島、7:茨城、8:栃木、9:群馬、10:埼玉、11:千葉、12:東京、13:神奈川、14:新潟、15:富山、16:石川、17:福井、18:山梨、19:長野、20:岐阜、21:静岡、22:愛知、23:三重、24:滋賀、25:京都、26:大阪、27:兵庫、28:奈良、29:和歌山、30:鳥取、31:島根、32:岡山、33:広島、34:山口、35:徳島、36:香川、37:愛媛、38:高知、39:福岡、40:佐賀、41:長崎、42:熊本、43:大分、44:宮崎、45:鹿児島、46:沖縄
    * minimum: -1
    * maximum: 46
-   * @return prefectureCodes
+   * @return prefectureCode
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(example = "4", value = "都道府県コード（-1: 設定しない、0:北海道、1:青森、2:岩手、3:宮城、4:秋田、5:山形、6:福島、7:茨城、8:栃木、9:群馬、10:埼玉、11:千葉、12:東京、13:神奈川、14:新潟、15:富山、16:石川、17:福井、18:山梨、19:長野、20:岐阜、21:静岡、22:愛知、23:三重、24:滋賀、25:京都、26:大阪、27:兵庫、28:奈良、29:和歌山、30:鳥取、31:島根、32:岡山、33:広島、34:山口、35:徳島、36:香川、37:愛媛、38:高知、39:福岡、40:佐賀、41:長崎、42:熊本、43:大分、44:宮崎、45:鹿児島、46:沖縄")
 
-  public Integer getPrefectureCodes() {
-    return prefectureCodes;
+  public Integer getPrefectureCode() {
+    return prefectureCode;
   }
 
 
-  public void setPrefectureCodes(Integer prefectureCodes) {
-    this.prefectureCodes = prefectureCodes;
+  public void setPrefectureCode(Integer prefectureCode) {
+    this.prefectureCode = prefectureCode;
   }
 
 
@@ -152,7 +152,7 @@ public class PartnerResponsePartnerAddressAttributes {
       return false;
     }
     PartnerResponsePartnerAddressAttributes partnerResponsePartnerAddressAttributes = (PartnerResponsePartnerAddressAttributes) o;
-    return Objects.equals(this.prefectureCodes, partnerResponsePartnerAddressAttributes.prefectureCodes) &&
+    return Objects.equals(this.prefectureCode, partnerResponsePartnerAddressAttributes.prefectureCode) &&
         Objects.equals(this.streetName1, partnerResponsePartnerAddressAttributes.streetName1) &&
         Objects.equals(this.streetName2, partnerResponsePartnerAddressAttributes.streetName2) &&
         Objects.equals(this.zipcode, partnerResponsePartnerAddressAttributes.zipcode);
@@ -164,7 +164,7 @@ public class PartnerResponsePartnerAddressAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(prefectureCodes, streetName1, streetName2, zipcode);
+    return Objects.hash(prefectureCode, streetName1, streetName2, zipcode);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -178,7 +178,7 @@ public class PartnerResponsePartnerAddressAttributes {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PartnerResponsePartnerAddressAttributes {\n");
-    sb.append("    prefectureCodes: ").append(toIndentedString(prefectureCodes)).append("\n");
+    sb.append("    prefectureCode: ").append(toIndentedString(prefectureCode)).append("\n");
     sb.append("    streetName1: ").append(toIndentedString(streetName1)).append("\n");
     sb.append("    streetName2: ").append(toIndentedString(streetName2)).append("\n");
     sb.append("    zipcode: ").append(toIndentedString(zipcode)).append("\n");

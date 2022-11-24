@@ -42,11 +42,11 @@ public class PartnerResponsePartnerAddressAttributesTest {
     }
 
     /**
-     * Test the property 'prefectureCodes'
+     * Test the property 'prefectureCode'
      */
     @Test
-    public void prefectureCodesTest() {
-        // TODO: test prefectureCodes
+    public void prefectureCodeTest() {
+        // TODO: test prefectureCode
     }
 
     /**
