@@ -33,10 +33,6 @@ public class SelectablesIndexResponseDefaultTaxTaxRate10 {
   @SerializedName(SERIALIZED_NAME_CODE)
   private Integer code;
 
-  public static final String SERIALIZED_NAME_ID = "id";
-  @SerializedName(SERIALIZED_NAME_ID)
-  private Integer id;
-
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
@@ -66,33 +62,6 @@ public class SelectablesIndexResponseDefaultTaxTaxRate10 {
 
   public void setCode(Integer code) {
     this.code = code;
-  }
-
-
-  public SelectablesIndexResponseDefaultTaxTaxRate10 id(Integer id) {
-    
-    this.id = id;
-    return this;
-  }
-
-   /**
-   * 税区分ID
-   * minimum: 0
-   * maximum: 2147483647
-   * @return id
-   * @deprecated
-  **/
-  @Deprecated
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "1", value = "税区分ID")
-
-  public Integer getId() {
-    return id;
-  }
-
-
-  public void setId(Integer id) {
-    this.id = id;
   }
 
 
@@ -129,13 +98,12 @@ public class SelectablesIndexResponseDefaultTaxTaxRate10 {
     }
     SelectablesIndexResponseDefaultTaxTaxRate10 selectablesIndexResponseDefaultTaxTaxRate10 = (SelectablesIndexResponseDefaultTaxTaxRate10) o;
     return Objects.equals(this.code, selectablesIndexResponseDefaultTaxTaxRate10.code) &&
-        Objects.equals(this.id, selectablesIndexResponseDefaultTaxTaxRate10.id) &&
         Objects.equals(this.name, selectablesIndexResponseDefaultTaxTaxRate10.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, id, name);
+    return Objects.hash(code, name);
   }
 
   @Override
@@ -143,7 +111,6 @@ public class SelectablesIndexResponseDefaultTaxTaxRate10 {
     StringBuilder sb = new StringBuilder();
     sb.append("class SelectablesIndexResponseDefaultTaxTaxRate10 {\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");
     return sb.toString();
