@@ -49,14 +49,6 @@ public class SelectablesIndexResponseDefaultTaxTaxRate10Test {
     }
 
     /**
-     * Test the property 'id'
-     */
-    @Test
-    public void idTest() {
-        // TODO: test id
-    }
-
-    /**
      * Test the property 'name'
      */
     @Test

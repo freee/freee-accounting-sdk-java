@@ -1,7 +1,7 @@
 ensureUniqueParams: false
 allowUnicodeIdentifiers: true
 snapshotVersion: true
-artifactVersion: 2.20.0
+artifactVersion: 2.21.0
 groupId: "jp.co.freee"
 artifactId: "freee-accounting-sdk"
 apiPackage: "jp.co.freee.accounting.api"
