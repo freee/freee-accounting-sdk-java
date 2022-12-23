@@ -114,13 +114,13 @@ public class DealUpdateParamsDetails {
   }
 
    /**
-   * 取引金額（税込で指定してください）
+   * 取引金額（税込で指定してください）&lt;br&gt; マイナスの値を指定した場合、控除・マイナス行として登録されます。&lt;br&gt; 上記以外の値を指定した場合、通常行として登録されます。 
    * minimum: -9223372036854775808
    * maximum: 9223372036854775807
    * @return amount
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "1", required = true, value = "取引金額（税込で指定してください）")
+  @ApiModelProperty(example = "1", required = true, value = "取引金額（税込で指定してください）<br> マイナスの値を指定した場合、控除・マイナス行として登録されます。<br> 上記以外の値を指定した場合、通常行として登録されます。 ")
 
   public Long getAmount() {
     return amount;

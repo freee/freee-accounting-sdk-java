@@ -1573,11 +1573,11 @@ public class InvoiceResponseInvoice {
   }
 
    /**
-   * 合計金額
+   * 消費税
    * @return totalVat
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "8000", value = "合計金額")
+  @ApiModelProperty(example = "8000", value = "消費税")
 
   public Integer getTotalVat() {
     return totalVat;

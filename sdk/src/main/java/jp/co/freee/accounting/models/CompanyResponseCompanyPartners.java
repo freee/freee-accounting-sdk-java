@@ -64,7 +64,7 @@ public class CompanyResponseCompanyPartners {
    * @return code
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "code001", required = true, value = "取引先コード")
+  @ApiModelProperty(example = "code001", value = "取引先コード")
 
   public String getCode() {
     return code;
