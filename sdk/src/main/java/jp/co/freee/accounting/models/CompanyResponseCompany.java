@@ -84,7 +84,7 @@ public class CompanyResponseCompany {
   private Integer id;
 
   /**
-   * 種別（agriculture_forestry_fisheries_ore: 農林水産業/鉱業、construction: 建設、manufacturing_processing: 製造/加工、it: IT、transportation_logistics: 運輸/物流、retail_wholesale: 小売/卸売、finance_insurance: 金融/保険、real_estate_rental: 不動産/レンタル、profession: 士業/学術/専門技術サービス、design_production: デザイン/制作、food: 飲食、leisure_entertainment: レジャー/娯楽、lifestyle: 生活関連サービス、education: 教育/学習支援、medical_welfare: 医療/福祉、other_services: その他サービス、other: その他, \&quot;\&quot;: 未選択）
+   * 種別（agriculture_forestry_fisheries_ore: 農林水産業/鉱業,construction: 建設,manufacturing_processing: 製造/加工,it: IT,transportation_logistics: 運輸/物流,retail_wholesale: 小売/卸売,finance_insurance: 金融/保険,real_estate_rental: 不動産/レンタル,profession: 士業/学術/専門技術サービス,design_production: デザイン/制作,food: 飲食,leisure_entertainment: レジャー/娯楽,lifestyle: 生活関連サービス,education: 教育/学習支援,medical_welfare: 医療/福祉,other_services: その他サービス,other_association: NPO、一般社団法人等,other: その他, \&quot;\&quot;: 未選択）
    */
   @JsonAdapter(IndustryClassEnum.Adapter.class)
   public enum IndustryClassEnum {
@@ -120,6 +120,8 @@ public class CompanyResponseCompany {
     
     OTHER_SERVICES("other_services"),
     
+    OTHER_ASSOCIATION("other_association"),
+    
     OTHER("other"),
     
     EMPTY("");
@@ -145,7 +147,7 @@ public class CompanyResponseCompany {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return null;
     }
 
     public static class Adapter extends TypeAdapter<IndustryClassEnum> {
@@ -906,13 +908,13 @@ public class CompanyResponseCompany {
   }
 
    /**
-   * 決済口座のデフォルト
+   * デフォルトの決済口座が紐づく勘定科目ID
    * minimum: 1
    * maximum: 2147483647
    * @return defaultWalletAccountId
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "1", value = "決済口座のデフォルト")
+  @ApiModelProperty(example = "1", value = "デフォルトの決済口座が紐づく勘定科目ID")
 
   public Integer getDefaultWalletAccountId() {
     return defaultWalletAccountId;
@@ -1055,11 +1057,11 @@ public class CompanyResponseCompany {
   }
 
    /**
-   * 種別（agriculture_forestry_fisheries_ore: 農林水産業/鉱業、construction: 建設、manufacturing_processing: 製造/加工、it: IT、transportation_logistics: 運輸/物流、retail_wholesale: 小売/卸売、finance_insurance: 金融/保険、real_estate_rental: 不動産/レンタル、profession: 士業/学術/専門技術サービス、design_production: デザイン/制作、food: 飲食、leisure_entertainment: レジャー/娯楽、lifestyle: 生活関連サービス、education: 教育/学習支援、medical_welfare: 医療/福祉、other_services: その他サービス、other: その他, \&quot;\&quot;: 未選択）
+   * 種別（agriculture_forestry_fisheries_ore: 農林水産業/鉱業,construction: 建設,manufacturing_processing: 製造/加工,it: IT,transportation_logistics: 運輸/物流,retail_wholesale: 小売/卸売,finance_insurance: 金融/保険,real_estate_rental: 不動産/レンタル,profession: 士業/学術/専門技術サービス,design_production: デザイン/制作,food: 飲食,leisure_entertainment: レジャー/娯楽,lifestyle: 生活関連サービス,education: 教育/学習支援,medical_welfare: 医療/福祉,other_services: その他サービス,other_association: NPO、一般社団法人等,other: その他, \&quot;\&quot;: 未選択）
    * @return industryClass
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "agriculture_forestry_fisheries_ore", required = true, value = "種別（agriculture_forestry_fisheries_ore: 農林水産業/鉱業、construction: 建設、manufacturing_processing: 製造/加工、it: IT、transportation_logistics: 運輸/物流、retail_wholesale: 小売/卸売、finance_insurance: 金融/保険、real_estate_rental: 不動産/レンタル、profession: 士業/学術/専門技術サービス、design_production: デザイン/制作、food: 飲食、leisure_entertainment: レジャー/娯楽、lifestyle: 生活関連サービス、education: 教育/学習支援、medical_welfare: 医療/福祉、other_services: その他サービス、other: その他, \"\": 未選択）")
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "agriculture_forestry_fisheries_ore", required = true, value = "種別（agriculture_forestry_fisheries_ore: 農林水産業/鉱業,construction: 建設,manufacturing_processing: 製造/加工,it: IT,transportation_logistics: 運輸/物流,retail_wholesale: 小売/卸売,finance_insurance: 金融/保険,real_estate_rental: 不動産/レンタル,profession: 士業/学術/専門技術サービス,design_production: デザイン/制作,food: 飲食,leisure_entertainment: レジャー/娯楽,lifestyle: 生活関連サービス,education: 教育/学習支援,medical_welfare: 医療/福祉,other_services: その他サービス,other_association: NPO、一般社団法人等,other: その他, \"\": 未選択）")
 
   public IndustryClassEnum getIndustryClass() {
     return industryClass;
@@ -1408,7 +1410,7 @@ public class CompanyResponseCompany {
    * 市区町村・番地
    * @return streetName1
   **/
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   @ApiModelProperty(example = "ＸＸ区ＹＹ１−１−１", required = true, value = "市区町村・番地")
 
   public String getStreetName1() {
@@ -1431,7 +1433,7 @@ public class CompanyResponseCompany {
    * 建物名・部屋番号など
    * @return streetName2
   **/
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   @ApiModelProperty(example = "ビル１Ｆ", required = true, value = "建物名・部屋番号など")
 
   public String getStreetName2() {
@@ -1610,7 +1612,7 @@ public class CompanyResponseCompany {
    * 郵便番号
    * @return zipcode
   **/
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   @ApiModelProperty(example = "000-0000", required = true, value = "郵便番号")
 
   public String getZipcode() {

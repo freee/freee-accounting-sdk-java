@@ -8,7 +8,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accountItemId** | **Integer** | 勘定科目ID | 
-**amount** | **Long** | 取引金額（税込で指定してください） | 
+**amount** | **Long** | 取引金額（税込で指定してください）&lt;br&gt; マイナスの値を指定した場合、控除・マイナス行として登録されます。&lt;br&gt; 上記以外の値を指定した場合、通常行として登録されます。  | 
 **description** | **String** | 備考 |  [optional]
 **itemId** | **Integer** | 品目ID |  [optional]
 **sectionId** | **Integer** | 部門ID |  [optional]

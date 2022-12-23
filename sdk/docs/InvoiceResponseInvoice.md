@@ -50,7 +50,7 @@ Name | Type | Description | Notes
 **title** | **String** | タイトル |  [optional]
 **totalAmount** | **Integer** | 合計金額 | 
 **totalAmountPerVatRate** | [**InvoiceIndexResponseTotalAmountPerVatRate**](InvoiceIndexResponseTotalAmountPerVatRate.md) |  | 
-**totalVat** | **Integer** | 合計金額 |  [optional]
+**totalVat** | **Integer** | 消費税 |  [optional]
 **webConfirmedAt** | **String** | Web共有取引先確認日時(最新) |  [optional]
 **webDownloadedAt** | **String** | Web共有ダウンロード日時(最新) |  [optional]
 **webPublishedAt** | **String** | Web共有日時(最新) |  [optional]
