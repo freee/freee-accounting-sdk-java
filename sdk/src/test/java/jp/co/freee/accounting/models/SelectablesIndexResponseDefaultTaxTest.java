@@ -22,9 +22,17 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import jp.co.freee.accounting.models.SelectablesIndexResponseDefaultTaxTaxRate10;
+import jp.co.freee.accounting.models.SelectablesIndexResponseDefaultTaxTaxRate10Exempt50;
+import jp.co.freee.accounting.models.SelectablesIndexResponseDefaultTaxTaxRate10Exempt80;
 import jp.co.freee.accounting.models.SelectablesIndexResponseDefaultTaxTaxRate5;
+import jp.co.freee.accounting.models.SelectablesIndexResponseDefaultTaxTaxRate5Exempt50;
+import jp.co.freee.accounting.models.SelectablesIndexResponseDefaultTaxTaxRate5Exempt80;
 import jp.co.freee.accounting.models.SelectablesIndexResponseDefaultTaxTaxRate8;
+import jp.co.freee.accounting.models.SelectablesIndexResponseDefaultTaxTaxRate8Exempt50;
+import jp.co.freee.accounting.models.SelectablesIndexResponseDefaultTaxTaxRate8Exempt80;
 import jp.co.freee.accounting.models.SelectablesIndexResponseDefaultTaxTaxRateR8;
+import jp.co.freee.accounting.models.SelectablesIndexResponseDefaultTaxTaxRateR8Exempt50;
+import jp.co.freee.accounting.models.SelectablesIndexResponseDefaultTaxTaxRateR8Exempt80;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -53,11 +61,43 @@ public class SelectablesIndexResponseDefaultTaxTest {
     }
 
     /**
+     * Test the property 'taxRate10Exempt50'
+     */
+    @Test
+    public void taxRate10Exempt50Test() {
+        // TODO: test taxRate10Exempt50
+    }
+
+    /**
+     * Test the property 'taxRate10Exempt80'
+     */
+    @Test
+    public void taxRate10Exempt80Test() {
+        // TODO: test taxRate10Exempt80
+    }
+
+    /**
      * Test the property 'taxRate5'
      */
     @Test
     public void taxRate5Test() {
         // TODO: test taxRate5
+    }
+
+    /**
+     * Test the property 'taxRate5Exempt50'
+     */
+    @Test
+    public void taxRate5Exempt50Test() {
+        // TODO: test taxRate5Exempt50
+    }
+
+    /**
+     * Test the property 'taxRate5Exempt80'
+     */
+    @Test
+    public void taxRate5Exempt80Test() {
+        // TODO: test taxRate5Exempt80
     }
 
     /**
@@ -69,11 +109,43 @@ public class SelectablesIndexResponseDefaultTaxTest {
     }
 
     /**
+     * Test the property 'taxRate8Exempt50'
+     */
+    @Test
+    public void taxRate8Exempt50Test() {
+        // TODO: test taxRate8Exempt50
+    }
+
+    /**
+     * Test the property 'taxRate8Exempt80'
+     */
+    @Test
+    public void taxRate8Exempt80Test() {
+        // TODO: test taxRate8Exempt80
+    }
+
+    /**
      * Test the property 'taxRateR8'
      */
     @Test
     public void taxRateR8Test() {
         // TODO: test taxRateR8
+    }
+
+    /**
+     * Test the property 'taxRateR8Exempt50'
+     */
+    @Test
+    public void taxRateR8Exempt50Test() {
+        // TODO: test taxRateR8Exempt50
+    }
+
+    /**
+     * Test the property 'taxRateR8Exempt80'
+     */
+    @Test
+    public void taxRateR8Exempt80Test() {
+        // TODO: test taxRateR8Exempt80
     }
 
 }

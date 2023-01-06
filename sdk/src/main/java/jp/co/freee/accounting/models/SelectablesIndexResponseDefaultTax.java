@@ -24,9 +24,17 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import jp.co.freee.accounting.models.SelectablesIndexResponseDefaultTaxTaxRate10;
+import jp.co.freee.accounting.models.SelectablesIndexResponseDefaultTaxTaxRate10Exempt50;
+import jp.co.freee.accounting.models.SelectablesIndexResponseDefaultTaxTaxRate10Exempt80;
 import jp.co.freee.accounting.models.SelectablesIndexResponseDefaultTaxTaxRate5;
+import jp.co.freee.accounting.models.SelectablesIndexResponseDefaultTaxTaxRate5Exempt50;
+import jp.co.freee.accounting.models.SelectablesIndexResponseDefaultTaxTaxRate5Exempt80;
 import jp.co.freee.accounting.models.SelectablesIndexResponseDefaultTaxTaxRate8;
+import jp.co.freee.accounting.models.SelectablesIndexResponseDefaultTaxTaxRate8Exempt50;
+import jp.co.freee.accounting.models.SelectablesIndexResponseDefaultTaxTaxRate8Exempt80;
 import jp.co.freee.accounting.models.SelectablesIndexResponseDefaultTaxTaxRateR8;
+import jp.co.freee.accounting.models.SelectablesIndexResponseDefaultTaxTaxRateR8Exempt50;
+import jp.co.freee.accounting.models.SelectablesIndexResponseDefaultTaxTaxRateR8Exempt80;
 
 /**
  * SelectablesIndexResponseDefaultTax
@@ -37,17 +45,49 @@ public class SelectablesIndexResponseDefaultTax {
   @SerializedName(SERIALIZED_NAME_TAX_RATE10)
   private SelectablesIndexResponseDefaultTaxTaxRate10 taxRate10;
 
+  public static final String SERIALIZED_NAME_TAX_RATE10_EXEMPT50 = "tax_rate_10_exempt_50";
+  @SerializedName(SERIALIZED_NAME_TAX_RATE10_EXEMPT50)
+  private SelectablesIndexResponseDefaultTaxTaxRate10Exempt50 taxRate10Exempt50;
+
+  public static final String SERIALIZED_NAME_TAX_RATE10_EXEMPT80 = "tax_rate_10_exempt_80";
+  @SerializedName(SERIALIZED_NAME_TAX_RATE10_EXEMPT80)
+  private SelectablesIndexResponseDefaultTaxTaxRate10Exempt80 taxRate10Exempt80;
+
   public static final String SERIALIZED_NAME_TAX_RATE5 = "tax_rate_5";
   @SerializedName(SERIALIZED_NAME_TAX_RATE5)
   private SelectablesIndexResponseDefaultTaxTaxRate5 taxRate5;
+
+  public static final String SERIALIZED_NAME_TAX_RATE5_EXEMPT50 = "tax_rate_5_exempt_50";
+  @SerializedName(SERIALIZED_NAME_TAX_RATE5_EXEMPT50)
+  private SelectablesIndexResponseDefaultTaxTaxRate5Exempt50 taxRate5Exempt50;
+
+  public static final String SERIALIZED_NAME_TAX_RATE5_EXEMPT80 = "tax_rate_5_exempt_80";
+  @SerializedName(SERIALIZED_NAME_TAX_RATE5_EXEMPT80)
+  private SelectablesIndexResponseDefaultTaxTaxRate5Exempt80 taxRate5Exempt80;
 
   public static final String SERIALIZED_NAME_TAX_RATE8 = "tax_rate_8";
   @SerializedName(SERIALIZED_NAME_TAX_RATE8)
   private SelectablesIndexResponseDefaultTaxTaxRate8 taxRate8;
 
+  public static final String SERIALIZED_NAME_TAX_RATE8_EXEMPT50 = "tax_rate_8_exempt_50";
+  @SerializedName(SERIALIZED_NAME_TAX_RATE8_EXEMPT50)
+  private SelectablesIndexResponseDefaultTaxTaxRate8Exempt50 taxRate8Exempt50;
+
+  public static final String SERIALIZED_NAME_TAX_RATE8_EXEMPT80 = "tax_rate_8_exempt_80";
+  @SerializedName(SERIALIZED_NAME_TAX_RATE8_EXEMPT80)
+  private SelectablesIndexResponseDefaultTaxTaxRate8Exempt80 taxRate8Exempt80;
+
   public static final String SERIALIZED_NAME_TAX_RATE_R8 = "tax_rate_r8";
   @SerializedName(SERIALIZED_NAME_TAX_RATE_R8)
   private SelectablesIndexResponseDefaultTaxTaxRateR8 taxRateR8;
+
+  public static final String SERIALIZED_NAME_TAX_RATE_R8_EXEMPT50 = "tax_rate_r8_exempt_50";
+  @SerializedName(SERIALIZED_NAME_TAX_RATE_R8_EXEMPT50)
+  private SelectablesIndexResponseDefaultTaxTaxRateR8Exempt50 taxRateR8Exempt50;
+
+  public static final String SERIALIZED_NAME_TAX_RATE_R8_EXEMPT80 = "tax_rate_r8_exempt_80";
+  @SerializedName(SERIALIZED_NAME_TAX_RATE_R8_EXEMPT80)
+  private SelectablesIndexResponseDefaultTaxTaxRateR8Exempt80 taxRateR8Exempt80;
 
   public SelectablesIndexResponseDefaultTax() { 
   }
@@ -75,6 +115,52 @@ public class SelectablesIndexResponseDefaultTax {
   }
 
 
+  public SelectablesIndexResponseDefaultTax taxRate10Exempt50(SelectablesIndexResponseDefaultTaxTaxRate10Exempt50 taxRate10Exempt50) {
+    
+    this.taxRate10Exempt50 = taxRate10Exempt50;
+    return this;
+  }
+
+   /**
+   * Get taxRate10Exempt50
+   * @return taxRate10Exempt50
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public SelectablesIndexResponseDefaultTaxTaxRate10Exempt50 getTaxRate10Exempt50() {
+    return taxRate10Exempt50;
+  }
+
+
+  public void setTaxRate10Exempt50(SelectablesIndexResponseDefaultTaxTaxRate10Exempt50 taxRate10Exempt50) {
+    this.taxRate10Exempt50 = taxRate10Exempt50;
+  }
+
+
+  public SelectablesIndexResponseDefaultTax taxRate10Exempt80(SelectablesIndexResponseDefaultTaxTaxRate10Exempt80 taxRate10Exempt80) {
+    
+    this.taxRate10Exempt80 = taxRate10Exempt80;
+    return this;
+  }
+
+   /**
+   * Get taxRate10Exempt80
+   * @return taxRate10Exempt80
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public SelectablesIndexResponseDefaultTaxTaxRate10Exempt80 getTaxRate10Exempt80() {
+    return taxRate10Exempt80;
+  }
+
+
+  public void setTaxRate10Exempt80(SelectablesIndexResponseDefaultTaxTaxRate10Exempt80 taxRate10Exempt80) {
+    this.taxRate10Exempt80 = taxRate10Exempt80;
+  }
+
+
   public SelectablesIndexResponseDefaultTax taxRate5(SelectablesIndexResponseDefaultTaxTaxRate5 taxRate5) {
     
     this.taxRate5 = taxRate5;
@@ -95,6 +181,52 @@ public class SelectablesIndexResponseDefaultTax {
 
   public void setTaxRate5(SelectablesIndexResponseDefaultTaxTaxRate5 taxRate5) {
     this.taxRate5 = taxRate5;
+  }
+
+
+  public SelectablesIndexResponseDefaultTax taxRate5Exempt50(SelectablesIndexResponseDefaultTaxTaxRate5Exempt50 taxRate5Exempt50) {
+    
+    this.taxRate5Exempt50 = taxRate5Exempt50;
+    return this;
+  }
+
+   /**
+   * Get taxRate5Exempt50
+   * @return taxRate5Exempt50
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public SelectablesIndexResponseDefaultTaxTaxRate5Exempt50 getTaxRate5Exempt50() {
+    return taxRate5Exempt50;
+  }
+
+
+  public void setTaxRate5Exempt50(SelectablesIndexResponseDefaultTaxTaxRate5Exempt50 taxRate5Exempt50) {
+    this.taxRate5Exempt50 = taxRate5Exempt50;
+  }
+
+
+  public SelectablesIndexResponseDefaultTax taxRate5Exempt80(SelectablesIndexResponseDefaultTaxTaxRate5Exempt80 taxRate5Exempt80) {
+    
+    this.taxRate5Exempt80 = taxRate5Exempt80;
+    return this;
+  }
+
+   /**
+   * Get taxRate5Exempt80
+   * @return taxRate5Exempt80
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public SelectablesIndexResponseDefaultTaxTaxRate5Exempt80 getTaxRate5Exempt80() {
+    return taxRate5Exempt80;
+  }
+
+
+  public void setTaxRate5Exempt80(SelectablesIndexResponseDefaultTaxTaxRate5Exempt80 taxRate5Exempt80) {
+    this.taxRate5Exempt80 = taxRate5Exempt80;
   }
 
 
@@ -121,6 +253,52 @@ public class SelectablesIndexResponseDefaultTax {
   }
 
 
+  public SelectablesIndexResponseDefaultTax taxRate8Exempt50(SelectablesIndexResponseDefaultTaxTaxRate8Exempt50 taxRate8Exempt50) {
+    
+    this.taxRate8Exempt50 = taxRate8Exempt50;
+    return this;
+  }
+
+   /**
+   * Get taxRate8Exempt50
+   * @return taxRate8Exempt50
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public SelectablesIndexResponseDefaultTaxTaxRate8Exempt50 getTaxRate8Exempt50() {
+    return taxRate8Exempt50;
+  }
+
+
+  public void setTaxRate8Exempt50(SelectablesIndexResponseDefaultTaxTaxRate8Exempt50 taxRate8Exempt50) {
+    this.taxRate8Exempt50 = taxRate8Exempt50;
+  }
+
+
+  public SelectablesIndexResponseDefaultTax taxRate8Exempt80(SelectablesIndexResponseDefaultTaxTaxRate8Exempt80 taxRate8Exempt80) {
+    
+    this.taxRate8Exempt80 = taxRate8Exempt80;
+    return this;
+  }
+
+   /**
+   * Get taxRate8Exempt80
+   * @return taxRate8Exempt80
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public SelectablesIndexResponseDefaultTaxTaxRate8Exempt80 getTaxRate8Exempt80() {
+    return taxRate8Exempt80;
+  }
+
+
+  public void setTaxRate8Exempt80(SelectablesIndexResponseDefaultTaxTaxRate8Exempt80 taxRate8Exempt80) {
+    this.taxRate8Exempt80 = taxRate8Exempt80;
+  }
+
+
   public SelectablesIndexResponseDefaultTax taxRateR8(SelectablesIndexResponseDefaultTaxTaxRateR8 taxRateR8) {
     
     this.taxRateR8 = taxRateR8;
@@ -144,6 +322,52 @@ public class SelectablesIndexResponseDefaultTax {
   }
 
 
+  public SelectablesIndexResponseDefaultTax taxRateR8Exempt50(SelectablesIndexResponseDefaultTaxTaxRateR8Exempt50 taxRateR8Exempt50) {
+    
+    this.taxRateR8Exempt50 = taxRateR8Exempt50;
+    return this;
+  }
+
+   /**
+   * Get taxRateR8Exempt50
+   * @return taxRateR8Exempt50
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public SelectablesIndexResponseDefaultTaxTaxRateR8Exempt50 getTaxRateR8Exempt50() {
+    return taxRateR8Exempt50;
+  }
+
+
+  public void setTaxRateR8Exempt50(SelectablesIndexResponseDefaultTaxTaxRateR8Exempt50 taxRateR8Exempt50) {
+    this.taxRateR8Exempt50 = taxRateR8Exempt50;
+  }
+
+
+  public SelectablesIndexResponseDefaultTax taxRateR8Exempt80(SelectablesIndexResponseDefaultTaxTaxRateR8Exempt80 taxRateR8Exempt80) {
+    
+    this.taxRateR8Exempt80 = taxRateR8Exempt80;
+    return this;
+  }
+
+   /**
+   * Get taxRateR8Exempt80
+   * @return taxRateR8Exempt80
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public SelectablesIndexResponseDefaultTaxTaxRateR8Exempt80 getTaxRateR8Exempt80() {
+    return taxRateR8Exempt80;
+  }
+
+
+  public void setTaxRateR8Exempt80(SelectablesIndexResponseDefaultTaxTaxRateR8Exempt80 taxRateR8Exempt80) {
+    this.taxRateR8Exempt80 = taxRateR8Exempt80;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -154,14 +378,22 @@ public class SelectablesIndexResponseDefaultTax {
     }
     SelectablesIndexResponseDefaultTax selectablesIndexResponseDefaultTax = (SelectablesIndexResponseDefaultTax) o;
     return Objects.equals(this.taxRate10, selectablesIndexResponseDefaultTax.taxRate10) &&
+        Objects.equals(this.taxRate10Exempt50, selectablesIndexResponseDefaultTax.taxRate10Exempt50) &&
+        Objects.equals(this.taxRate10Exempt80, selectablesIndexResponseDefaultTax.taxRate10Exempt80) &&
         Objects.equals(this.taxRate5, selectablesIndexResponseDefaultTax.taxRate5) &&
+        Objects.equals(this.taxRate5Exempt50, selectablesIndexResponseDefaultTax.taxRate5Exempt50) &&
+        Objects.equals(this.taxRate5Exempt80, selectablesIndexResponseDefaultTax.taxRate5Exempt80) &&
         Objects.equals(this.taxRate8, selectablesIndexResponseDefaultTax.taxRate8) &&
-        Objects.equals(this.taxRateR8, selectablesIndexResponseDefaultTax.taxRateR8);
+        Objects.equals(this.taxRate8Exempt50, selectablesIndexResponseDefaultTax.taxRate8Exempt50) &&
+        Objects.equals(this.taxRate8Exempt80, selectablesIndexResponseDefaultTax.taxRate8Exempt80) &&
+        Objects.equals(this.taxRateR8, selectablesIndexResponseDefaultTax.taxRateR8) &&
+        Objects.equals(this.taxRateR8Exempt50, selectablesIndexResponseDefaultTax.taxRateR8Exempt50) &&
+        Objects.equals(this.taxRateR8Exempt80, selectablesIndexResponseDefaultTax.taxRateR8Exempt80);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(taxRate10, taxRate5, taxRate8, taxRateR8);
+    return Objects.hash(taxRate10, taxRate10Exempt50, taxRate10Exempt80, taxRate5, taxRate5Exempt50, taxRate5Exempt80, taxRate8, taxRate8Exempt50, taxRate8Exempt80, taxRateR8, taxRateR8Exempt50, taxRateR8Exempt80);
   }
 
   @Override
@@ -169,9 +401,17 @@ public class SelectablesIndexResponseDefaultTax {
     StringBuilder sb = new StringBuilder();
     sb.append("class SelectablesIndexResponseDefaultTax {\n");
     sb.append("    taxRate10: ").append(toIndentedString(taxRate10)).append("\n");
+    sb.append("    taxRate10Exempt50: ").append(toIndentedString(taxRate10Exempt50)).append("\n");
+    sb.append("    taxRate10Exempt80: ").append(toIndentedString(taxRate10Exempt80)).append("\n");
     sb.append("    taxRate5: ").append(toIndentedString(taxRate5)).append("\n");
+    sb.append("    taxRate5Exempt50: ").append(toIndentedString(taxRate5Exempt50)).append("\n");
+    sb.append("    taxRate5Exempt80: ").append(toIndentedString(taxRate5Exempt80)).append("\n");
     sb.append("    taxRate8: ").append(toIndentedString(taxRate8)).append("\n");
+    sb.append("    taxRate8Exempt50: ").append(toIndentedString(taxRate8Exempt50)).append("\n");
+    sb.append("    taxRate8Exempt80: ").append(toIndentedString(taxRate8Exempt80)).append("\n");
     sb.append("    taxRateR8: ").append(toIndentedString(taxRateR8)).append("\n");
+    sb.append("    taxRateR8Exempt50: ").append(toIndentedString(taxRateR8Exempt50)).append("\n");
+    sb.append("    taxRateR8Exempt80: ").append(toIndentedString(taxRateR8Exempt80)).append("\n");
     sb.append("}");
     return sb.toString();
   }
