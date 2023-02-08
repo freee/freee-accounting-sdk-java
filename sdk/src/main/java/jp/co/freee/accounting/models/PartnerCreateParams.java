@@ -289,11 +289,11 @@ public class PartnerCreateParams {
   }
 
    /**
-   * 取引先コード（取引先コードの利用を有効にしている場合は、codeの指定は必須です。）
+   * 取引先コード（取引先コードの利用を有効にしている場合は、codeの指定は必須です。ただし重複は不可。）
    * @return code
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "code001", value = "取引先コード（取引先コードの利用を有効にしている場合は、codeの指定は必須です。）")
+  @ApiModelProperty(example = "code001", value = "取引先コード（取引先コードの利用を有効にしている場合は、codeの指定は必須です。ただし重複は不可。）")
 
   public String getCode() {
     return code;

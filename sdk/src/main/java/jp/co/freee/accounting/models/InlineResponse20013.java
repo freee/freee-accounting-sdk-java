@@ -24,9 +24,17 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import jp.co.freee.accounting.models.UserCapability;
+import jp.co.freee.accounting.models.UserCapabilityJustCreate;
+import jp.co.freee.accounting.models.UserCapabilityJustCreateRead;
+import jp.co.freee.accounting.models.UserCapabilityJustRead;
+import jp.co.freee.accounting.models.UserCapabilityJustReadUpdate;
+import jp.co.freee.accounting.models.UserCapabilityJustReadUpdateDestroy;
+import jp.co.freee.accounting.models.UserCapabilityJustReadWrite;
+import jp.co.freee.accounting.models.UserCapabilityJustUpdate;
 import jp.co.freee.accounting.models.UserCapabilityWithConfirm;
 import jp.co.freee.accounting.models.UserCapabilityWithSelfOnly;
 import jp.co.freee.accounting.models.UserCapabilityWithSync;
+import jp.co.freee.accounting.models.UserCapabilityWithWrite;
 
 /**
  * InlineResponse20013
@@ -37,9 +45,13 @@ public class InlineResponse20013 {
   @SerializedName(SERIALIZED_NAME_TAGS)
   private UserCapability tags;
 
+  public static final String SERIALIZED_NAME_ACCESS_CONTROLS = "access_controls";
+  @SerializedName(SERIALIZED_NAME_ACCESS_CONTROLS)
+  private UserCapabilityWithWrite accessControls;
+
   public static final String SERIALIZED_NAME_ACCOUNT_ITEM_STATEMENTS = "account_item_statements";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_ITEM_STATEMENTS)
-  private UserCapability accountItemStatements;
+  private UserCapabilityJustRead accountItemStatements;
 
   public static final String SERIALIZED_NAME_ACCOUNT_ITEMS = "account_items";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_ITEMS)
@@ -47,7 +59,11 @@ public class InlineResponse20013 {
 
   public static final String SERIALIZED_NAME_ANNUAL_REPORTS = "annual_reports";
   @SerializedName(SERIALIZED_NAME_ANNUAL_REPORTS)
-  private UserCapability annualReports;
+  private UserCapabilityJustRead annualReports;
+
+  public static final String SERIALIZED_NAME_APP_ROLE_LOGS = "app_role_logs";
+  @SerializedName(SERIALIZED_NAME_APP_ROLE_LOGS)
+  private UserCapabilityJustRead appRoleLogs;
 
   public static final String SERIALIZED_NAME_APPROVAL_FLOW_ROUTES = "approval_flow_routes";
   @SerializedName(SERIALIZED_NAME_APPROVAL_FLOW_ROUTES)
@@ -59,7 +75,7 @@ public class InlineResponse20013 {
 
   public static final String SERIALIZED_NAME_BACKUPS = "backups";
   @SerializedName(SERIALIZED_NAME_BACKUPS)
-  private UserCapability backups;
+  private UserCapabilityJustRead backups;
 
   public static final String SERIALIZED_NAME_BANK_ACCOUNTANT_STAFF_USERS = "bank_accountant_staff_users";
   @SerializedName(SERIALIZED_NAME_BANK_ACCOUNTANT_STAFF_USERS)
@@ -71,15 +87,19 @@ public class InlineResponse20013 {
 
   public static final String SERIALIZED_NAME_COMPANIES = "companies";
   @SerializedName(SERIALIZED_NAME_COMPANIES)
-  private UserCapability companies;
+  private UserCapabilityJustReadUpdate companies;
+
+  public static final String SERIALIZED_NAME_COMPANY_INTERNAL_ANNOUNCEMENTS = "company_internal_announcements";
+  @SerializedName(SERIALIZED_NAME_COMPANY_INTERNAL_ANNOUNCEMENTS)
+  private UserCapabilityJustUpdate companyInternalAnnouncements;
 
   public static final String SERIALIZED_NAME_CONSUMPTION_ENTRIES = "consumption_entries";
   @SerializedName(SERIALIZED_NAME_CONSUMPTION_ENTRIES)
-  private UserCapability consumptionEntries;
+  private UserCapabilityJustRead consumptionEntries;
 
   public static final String SERIALIZED_NAME_COST_ALLOCATIONS = "cost_allocations";
   @SerializedName(SERIALIZED_NAME_COST_ALLOCATIONS)
-  private UserCapability costAllocations;
+  private UserCapabilityJustReadUpdate costAllocations;
 
   public static final String SERIALIZED_NAME_DEAL_TEMPLATES = "deal_templates";
   @SerializedName(SERIALIZED_NAME_DEAL_TEMPLATES)
@@ -89,13 +109,21 @@ public class InlineResponse20013 {
   @SerializedName(SERIALIZED_NAME_DEALS)
   private UserCapabilityWithSelfOnly deals;
 
+  public static final String SERIALIZED_NAME_DOC_CHANGE_LOGS = "doc_change_logs";
+  @SerializedName(SERIALIZED_NAME_DOC_CHANGE_LOGS)
+  private UserCapabilityJustRead docChangeLogs;
+
   public static final String SERIALIZED_NAME_DOC_POSTINGS = "doc_postings";
   @SerializedName(SERIALIZED_NAME_DOC_POSTINGS)
-  private UserCapability docPostings;
+  private UserCapabilityJustCreate docPostings;
 
   public static final String SERIALIZED_NAME_DOCS = "docs";
   @SerializedName(SERIALIZED_NAME_DOCS)
   private UserCapabilityWithSelfOnly docs;
+
+  public static final String SERIALIZED_NAME_EXPENSE_APPLICATION_SYNC_PAYROLL = "expense_application_sync_payroll";
+  @SerializedName(SERIALIZED_NAME_EXPENSE_APPLICATION_SYNC_PAYROLL)
+  private UserCapabilityJustCreate expenseApplicationSyncPayroll;
 
   public static final String SERIALIZED_NAME_EXPENSE_APPLICATION_TEMPLATES = "expense_application_templates";
   @SerializedName(SERIALIZED_NAME_EXPENSE_APPLICATION_TEMPLATES)
@@ -131,7 +159,7 @@ public class InlineResponse20013 {
 
   public static final String SERIALIZED_NAME_MONTH_END = "month_end";
   @SerializedName(SERIALIZED_NAME_MONTH_END)
-  private UserCapability monthEnd;
+  private UserCapabilityJustRead monthEnd;
 
   public static final String SERIALIZED_NAME_OAUTH_APPLICATIONS = "oauth_applications";
   @SerializedName(SERIALIZED_NAME_OAUTH_APPLICATIONS)
@@ -143,7 +171,7 @@ public class InlineResponse20013 {
 
   public static final String SERIALIZED_NAME_OPENING_BALANCES = "opening_balances";
   @SerializedName(SERIALIZED_NAME_OPENING_BALANCES)
-  private UserCapability openingBalances;
+  private UserCapabilityJustReadUpdate openingBalances;
 
   public static final String SERIALIZED_NAME_PARTNERS = "partners";
   @SerializedName(SERIALIZED_NAME_PARTNERS)
@@ -157,9 +185,13 @@ public class InlineResponse20013 {
   @SerializedName(SERIALIZED_NAME_PAYMENT_REQUESTS)
   private UserCapabilityWithSelfOnly paymentRequests;
 
+  public static final String SERIALIZED_NAME_PAYROLL_ITEM_SETS = "payroll_item_sets";
+  @SerializedName(SERIALIZED_NAME_PAYROLL_ITEM_SETS)
+  private UserCapability payrollItemSets;
+
   public static final String SERIALIZED_NAME_RECEIPT_STREAM_EDITOR = "receipt_stream_editor";
   @SerializedName(SERIALIZED_NAME_RECEIPT_STREAM_EDITOR)
-  private UserCapability receiptStreamEditor;
+  private UserCapabilityJustRead receiptStreamEditor;
 
   public static final String SERIALIZED_NAME_RECEIPTS = "receipts";
   @SerializedName(SERIALIZED_NAME_RECEIPTS)
@@ -167,51 +199,55 @@ public class InlineResponse20013 {
 
   public static final String SERIALIZED_NAME_REPORTS = "reports";
   @SerializedName(SERIALIZED_NAME_REPORTS)
-  private UserCapability reports;
+  private UserCapabilityJustRead reports;
 
   public static final String SERIALIZED_NAME_REPORTS_BS = "reports_bs";
   @SerializedName(SERIALIZED_NAME_REPORTS_BS)
-  private UserCapability reportsBs;
+  private UserCapabilityJustRead reportsBs;
 
   public static final String SERIALIZED_NAME_REPORTS_CASH_BALANCE = "reports_cash_balance";
   @SerializedName(SERIALIZED_NAME_REPORTS_CASH_BALANCE)
-  private UserCapability reportsCashBalance;
+  private UserCapabilityJustRead reportsCashBalance;
 
   public static final String SERIALIZED_NAME_REPORTS_CROSSTABS = "reports_crosstabs";
   @SerializedName(SERIALIZED_NAME_REPORTS_CROSSTABS)
-  private UserCapability reportsCrosstabs;
+  private UserCapabilityJustRead reportsCrosstabs;
+
+  public static final String SERIALIZED_NAME_REPORTS_CUSTOM_REPORTS_AGGREGATE = "reports_custom_reports_aggregate";
+  @SerializedName(SERIALIZED_NAME_REPORTS_CUSTOM_REPORTS_AGGREGATE)
+  private UserCapabilityJustRead reportsCustomReportsAggregate;
 
   public static final String SERIALIZED_NAME_REPORTS_GENERAL_LEDGERS = "reports_general_ledgers";
   @SerializedName(SERIALIZED_NAME_REPORTS_GENERAL_LEDGERS)
-  private UserCapability reportsGeneralLedgers;
+  private UserCapabilityJustRead reportsGeneralLedgers;
 
   public static final String SERIALIZED_NAME_REPORTS_INCOME_EXPENSE = "reports_income_expense";
   @SerializedName(SERIALIZED_NAME_REPORTS_INCOME_EXPENSE)
-  private UserCapability reportsIncomeExpense;
+  private UserCapabilityJustRead reportsIncomeExpense;
 
   public static final String SERIALIZED_NAME_REPORTS_JOURNALS = "reports_journals";
   @SerializedName(SERIALIZED_NAME_REPORTS_JOURNALS)
-  private UserCapability reportsJournals;
+  private UserCapabilityJustRead reportsJournals;
 
   public static final String SERIALIZED_NAME_REPORTS_MANAGEMENTS_NAVIGATION = "reports_managements_navigation";
   @SerializedName(SERIALIZED_NAME_REPORTS_MANAGEMENTS_NAVIGATION)
-  private UserCapability reportsManagementsNavigation;
+  private UserCapabilityJustReadWrite reportsManagementsNavigation;
 
   public static final String SERIALIZED_NAME_REPORTS_MANAGEMENTS_PLANNING = "reports_managements_planning";
   @SerializedName(SERIALIZED_NAME_REPORTS_MANAGEMENTS_PLANNING)
-  private UserCapability reportsManagementsPlanning;
+  private UserCapabilityJustReadWrite reportsManagementsPlanning;
 
   public static final String SERIALIZED_NAME_REPORTS_PAYABLES = "reports_payables";
   @SerializedName(SERIALIZED_NAME_REPORTS_PAYABLES)
-  private UserCapability reportsPayables;
+  private UserCapabilityJustReadWrite reportsPayables;
 
   public static final String SERIALIZED_NAME_REPORTS_PL = "reports_pl";
   @SerializedName(SERIALIZED_NAME_REPORTS_PL)
-  private UserCapability reportsPl;
+  private UserCapabilityJustRead reportsPl;
 
   public static final String SERIALIZED_NAME_REPORTS_RECEIVABLES = "reports_receivables";
   @SerializedName(SERIALIZED_NAME_REPORTS_RECEIVABLES)
-  private UserCapability reportsReceivables;
+  private UserCapabilityJustRead reportsReceivables;
 
   public static final String SERIALIZED_NAME_REQUEST_FORMS = "request_forms";
   @SerializedName(SERIALIZED_NAME_REQUEST_FORMS)
@@ -219,7 +255,7 @@ public class InlineResponse20013 {
 
   public static final String SERIALIZED_NAME_RESETS = "resets";
   @SerializedName(SERIALIZED_NAME_RESETS)
-  private UserCapability resets;
+  private UserCapabilityJustRead resets;
 
   public static final String SERIALIZED_NAME_SECTIONS = "sections";
   @SerializedName(SERIALIZED_NAME_SECTIONS)
@@ -227,31 +263,43 @@ public class InlineResponse20013 {
 
   public static final String SERIALIZED_NAME_SIGN_IN_LOGS = "sign_in_logs";
   @SerializedName(SERIALIZED_NAME_SIGN_IN_LOGS)
-  private UserCapability signInLogs;
+  private UserCapabilityJustRead signInLogs;
 
   public static final String SERIALIZED_NAME_SPREADSHEETS = "spreadsheets";
   @SerializedName(SERIALIZED_NAME_SPREADSHEETS)
-  private UserCapability spreadsheets;
+  private UserCapabilityJustCreateRead spreadsheets;
 
   public static final String SERIALIZED_NAME_SYSTEM_CONVERSION = "system_conversion";
   @SerializedName(SERIALIZED_NAME_SYSTEM_CONVERSION)
-  private UserCapability systemConversion;
+  private UserCapabilityJustRead systemConversion;
+
+  public static final String SERIALIZED_NAME_SYSTEM_MESSAGES_FOR_ADMIN = "system_messages_for_admin";
+  @SerializedName(SERIALIZED_NAME_SYSTEM_MESSAGES_FOR_ADMIN)
+  private UserCapabilityJustRead systemMessagesForAdmin;
 
   public static final String SERIALIZED_NAME_TAX_REPORTS = "tax_reports";
   @SerializedName(SERIALIZED_NAME_TAX_REPORTS)
-  private UserCapability taxReports;
+  private UserCapabilityJustRead taxReports;
 
   public static final String SERIALIZED_NAME_TAX_RETURN = "tax_return";
   @SerializedName(SERIALIZED_NAME_TAX_RETURN)
-  private UserCapability taxReturn;
+  private UserCapabilityJustRead taxReturn;
 
   public static final String SERIALIZED_NAME_TAXES = "taxes";
   @SerializedName(SERIALIZED_NAME_TAXES)
-  private UserCapability taxes;
+  private UserCapabilityJustReadUpdate taxes;
 
   public static final String SERIALIZED_NAME_TRANSFERS = "transfers";
   @SerializedName(SERIALIZED_NAME_TRANSFERS)
   private UserCapabilityWithSelfOnly transfers;
+
+  public static final String SERIALIZED_NAME_TXN_RELATIONSHIP_LOGS = "txn_relationship_logs";
+  @SerializedName(SERIALIZED_NAME_TXN_RELATIONSHIP_LOGS)
+  private UserCapabilityJustRead txnRelationshipLogs;
+
+  public static final String SERIALIZED_NAME_USER_ATTRIBUTE_LOGS = "user_attribute_logs";
+  @SerializedName(SERIALIZED_NAME_USER_ATTRIBUTE_LOGS)
+  private UserCapabilityJustRead userAttributeLogs;
 
   public static final String SERIALIZED_NAME_USER_MATCHERS = "user_matchers";
   @SerializedName(SERIALIZED_NAME_USER_MATCHERS)
@@ -267,11 +315,11 @@ public class InlineResponse20013 {
 
   public static final String SERIALIZED_NAME_WORKFLOWS = "workflows";
   @SerializedName(SERIALIZED_NAME_WORKFLOWS)
-  private UserCapability workflows;
+  private UserCapabilityJustReadUpdateDestroy workflows;
 
   public static final String SERIALIZED_NAME_YEAR_END = "year_end";
   @SerializedName(SERIALIZED_NAME_YEAR_END)
-  private UserCapability yearEnd;
+  private UserCapabilityJustReadUpdate yearEnd;
 
   public InlineResponse20013() { 
   }
@@ -299,7 +347,30 @@ public class InlineResponse20013 {
   }
 
 
-  public InlineResponse20013 accountItemStatements(UserCapability accountItemStatements) {
+  public InlineResponse20013 accessControls(UserCapabilityWithWrite accessControls) {
+    
+    this.accessControls = accessControls;
+    return this;
+  }
+
+   /**
+   * Get accessControls
+   * @return accessControls
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
+
+  public UserCapabilityWithWrite getAccessControls() {
+    return accessControls;
+  }
+
+
+  public void setAccessControls(UserCapabilityWithWrite accessControls) {
+    this.accessControls = accessControls;
+  }
+
+
+  public InlineResponse20013 accountItemStatements(UserCapabilityJustRead accountItemStatements) {
     
     this.accountItemStatements = accountItemStatements;
     return this;
@@ -312,12 +383,12 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getAccountItemStatements() {
+  public UserCapabilityJustRead getAccountItemStatements() {
     return accountItemStatements;
   }
 
 
-  public void setAccountItemStatements(UserCapability accountItemStatements) {
+  public void setAccountItemStatements(UserCapabilityJustRead accountItemStatements) {
     this.accountItemStatements = accountItemStatements;
   }
 
@@ -345,7 +416,7 @@ public class InlineResponse20013 {
   }
 
 
-  public InlineResponse20013 annualReports(UserCapability annualReports) {
+  public InlineResponse20013 annualReports(UserCapabilityJustRead annualReports) {
     
     this.annualReports = annualReports;
     return this;
@@ -358,13 +429,36 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getAnnualReports() {
+  public UserCapabilityJustRead getAnnualReports() {
     return annualReports;
   }
 
 
-  public void setAnnualReports(UserCapability annualReports) {
+  public void setAnnualReports(UserCapabilityJustRead annualReports) {
     this.annualReports = annualReports;
+  }
+
+
+  public InlineResponse20013 appRoleLogs(UserCapabilityJustRead appRoleLogs) {
+    
+    this.appRoleLogs = appRoleLogs;
+    return this;
+  }
+
+   /**
+   * Get appRoleLogs
+   * @return appRoleLogs
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
+
+  public UserCapabilityJustRead getAppRoleLogs() {
+    return appRoleLogs;
+  }
+
+
+  public void setAppRoleLogs(UserCapabilityJustRead appRoleLogs) {
+    this.appRoleLogs = appRoleLogs;
   }
 
 
@@ -414,7 +508,7 @@ public class InlineResponse20013 {
   }
 
 
-  public InlineResponse20013 backups(UserCapability backups) {
+  public InlineResponse20013 backups(UserCapabilityJustRead backups) {
     
     this.backups = backups;
     return this;
@@ -427,12 +521,12 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getBackups() {
+  public UserCapabilityJustRead getBackups() {
     return backups;
   }
 
 
-  public void setBackups(UserCapability backups) {
+  public void setBackups(UserCapabilityJustRead backups) {
     this.backups = backups;
   }
 
@@ -483,7 +577,7 @@ public class InlineResponse20013 {
   }
 
 
-  public InlineResponse20013 companies(UserCapability companies) {
+  public InlineResponse20013 companies(UserCapabilityJustReadUpdate companies) {
     
     this.companies = companies;
     return this;
@@ -496,17 +590,40 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getCompanies() {
+  public UserCapabilityJustReadUpdate getCompanies() {
     return companies;
   }
 
 
-  public void setCompanies(UserCapability companies) {
+  public void setCompanies(UserCapabilityJustReadUpdate companies) {
     this.companies = companies;
   }
 
 
-  public InlineResponse20013 consumptionEntries(UserCapability consumptionEntries) {
+  public InlineResponse20013 companyInternalAnnouncements(UserCapabilityJustUpdate companyInternalAnnouncements) {
+    
+    this.companyInternalAnnouncements = companyInternalAnnouncements;
+    return this;
+  }
+
+   /**
+   * Get companyInternalAnnouncements
+   * @return companyInternalAnnouncements
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
+
+  public UserCapabilityJustUpdate getCompanyInternalAnnouncements() {
+    return companyInternalAnnouncements;
+  }
+
+
+  public void setCompanyInternalAnnouncements(UserCapabilityJustUpdate companyInternalAnnouncements) {
+    this.companyInternalAnnouncements = companyInternalAnnouncements;
+  }
+
+
+  public InlineResponse20013 consumptionEntries(UserCapabilityJustRead consumptionEntries) {
     
     this.consumptionEntries = consumptionEntries;
     return this;
@@ -519,17 +636,17 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getConsumptionEntries() {
+  public UserCapabilityJustRead getConsumptionEntries() {
     return consumptionEntries;
   }
 
 
-  public void setConsumptionEntries(UserCapability consumptionEntries) {
+  public void setConsumptionEntries(UserCapabilityJustRead consumptionEntries) {
     this.consumptionEntries = consumptionEntries;
   }
 
 
-  public InlineResponse20013 costAllocations(UserCapability costAllocations) {
+  public InlineResponse20013 costAllocations(UserCapabilityJustReadUpdate costAllocations) {
     
     this.costAllocations = costAllocations;
     return this;
@@ -542,12 +659,12 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getCostAllocations() {
+  public UserCapabilityJustReadUpdate getCostAllocations() {
     return costAllocations;
   }
 
 
-  public void setCostAllocations(UserCapability costAllocations) {
+  public void setCostAllocations(UserCapabilityJustReadUpdate costAllocations) {
     this.costAllocations = costAllocations;
   }
 
@@ -598,7 +715,30 @@ public class InlineResponse20013 {
   }
 
 
-  public InlineResponse20013 docPostings(UserCapability docPostings) {
+  public InlineResponse20013 docChangeLogs(UserCapabilityJustRead docChangeLogs) {
+    
+    this.docChangeLogs = docChangeLogs;
+    return this;
+  }
+
+   /**
+   * Get docChangeLogs
+   * @return docChangeLogs
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
+
+  public UserCapabilityJustRead getDocChangeLogs() {
+    return docChangeLogs;
+  }
+
+
+  public void setDocChangeLogs(UserCapabilityJustRead docChangeLogs) {
+    this.docChangeLogs = docChangeLogs;
+  }
+
+
+  public InlineResponse20013 docPostings(UserCapabilityJustCreate docPostings) {
     
     this.docPostings = docPostings;
     return this;
@@ -611,12 +751,12 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getDocPostings() {
+  public UserCapabilityJustCreate getDocPostings() {
     return docPostings;
   }
 
 
-  public void setDocPostings(UserCapability docPostings) {
+  public void setDocPostings(UserCapabilityJustCreate docPostings) {
     this.docPostings = docPostings;
   }
 
@@ -641,6 +781,29 @@ public class InlineResponse20013 {
 
   public void setDocs(UserCapabilityWithSelfOnly docs) {
     this.docs = docs;
+  }
+
+
+  public InlineResponse20013 expenseApplicationSyncPayroll(UserCapabilityJustCreate expenseApplicationSyncPayroll) {
+    
+    this.expenseApplicationSyncPayroll = expenseApplicationSyncPayroll;
+    return this;
+  }
+
+   /**
+   * Get expenseApplicationSyncPayroll
+   * @return expenseApplicationSyncPayroll
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
+
+  public UserCapabilityJustCreate getExpenseApplicationSyncPayroll() {
+    return expenseApplicationSyncPayroll;
+  }
+
+
+  public void setExpenseApplicationSyncPayroll(UserCapabilityJustCreate expenseApplicationSyncPayroll) {
+    this.expenseApplicationSyncPayroll = expenseApplicationSyncPayroll;
   }
 
 
@@ -828,7 +991,7 @@ public class InlineResponse20013 {
   }
 
 
-  public InlineResponse20013 monthEnd(UserCapability monthEnd) {
+  public InlineResponse20013 monthEnd(UserCapabilityJustRead monthEnd) {
     
     this.monthEnd = monthEnd;
     return this;
@@ -841,12 +1004,12 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getMonthEnd() {
+  public UserCapabilityJustRead getMonthEnd() {
     return monthEnd;
   }
 
 
-  public void setMonthEnd(UserCapability monthEnd) {
+  public void setMonthEnd(UserCapabilityJustRead monthEnd) {
     this.monthEnd = monthEnd;
   }
 
@@ -897,7 +1060,7 @@ public class InlineResponse20013 {
   }
 
 
-  public InlineResponse20013 openingBalances(UserCapability openingBalances) {
+  public InlineResponse20013 openingBalances(UserCapabilityJustReadUpdate openingBalances) {
     
     this.openingBalances = openingBalances;
     return this;
@@ -910,12 +1073,12 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getOpeningBalances() {
+  public UserCapabilityJustReadUpdate getOpeningBalances() {
     return openingBalances;
   }
 
 
-  public void setOpeningBalances(UserCapability openingBalances) {
+  public void setOpeningBalances(UserCapabilityJustReadUpdate openingBalances) {
     this.openingBalances = openingBalances;
   }
 
@@ -989,7 +1152,30 @@ public class InlineResponse20013 {
   }
 
 
-  public InlineResponse20013 receiptStreamEditor(UserCapability receiptStreamEditor) {
+  public InlineResponse20013 payrollItemSets(UserCapability payrollItemSets) {
+    
+    this.payrollItemSets = payrollItemSets;
+    return this;
+  }
+
+   /**
+   * Get payrollItemSets
+   * @return payrollItemSets
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
+
+  public UserCapability getPayrollItemSets() {
+    return payrollItemSets;
+  }
+
+
+  public void setPayrollItemSets(UserCapability payrollItemSets) {
+    this.payrollItemSets = payrollItemSets;
+  }
+
+
+  public InlineResponse20013 receiptStreamEditor(UserCapabilityJustRead receiptStreamEditor) {
     
     this.receiptStreamEditor = receiptStreamEditor;
     return this;
@@ -1002,12 +1188,12 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getReceiptStreamEditor() {
+  public UserCapabilityJustRead getReceiptStreamEditor() {
     return receiptStreamEditor;
   }
 
 
-  public void setReceiptStreamEditor(UserCapability receiptStreamEditor) {
+  public void setReceiptStreamEditor(UserCapabilityJustRead receiptStreamEditor) {
     this.receiptStreamEditor = receiptStreamEditor;
   }
 
@@ -1035,7 +1221,7 @@ public class InlineResponse20013 {
   }
 
 
-  public InlineResponse20013 reports(UserCapability reports) {
+  public InlineResponse20013 reports(UserCapabilityJustRead reports) {
     
     this.reports = reports;
     return this;
@@ -1048,17 +1234,17 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getReports() {
+  public UserCapabilityJustRead getReports() {
     return reports;
   }
 
 
-  public void setReports(UserCapability reports) {
+  public void setReports(UserCapabilityJustRead reports) {
     this.reports = reports;
   }
 
 
-  public InlineResponse20013 reportsBs(UserCapability reportsBs) {
+  public InlineResponse20013 reportsBs(UserCapabilityJustRead reportsBs) {
     
     this.reportsBs = reportsBs;
     return this;
@@ -1071,17 +1257,17 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getReportsBs() {
+  public UserCapabilityJustRead getReportsBs() {
     return reportsBs;
   }
 
 
-  public void setReportsBs(UserCapability reportsBs) {
+  public void setReportsBs(UserCapabilityJustRead reportsBs) {
     this.reportsBs = reportsBs;
   }
 
 
-  public InlineResponse20013 reportsCashBalance(UserCapability reportsCashBalance) {
+  public InlineResponse20013 reportsCashBalance(UserCapabilityJustRead reportsCashBalance) {
     
     this.reportsCashBalance = reportsCashBalance;
     return this;
@@ -1094,17 +1280,17 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getReportsCashBalance() {
+  public UserCapabilityJustRead getReportsCashBalance() {
     return reportsCashBalance;
   }
 
 
-  public void setReportsCashBalance(UserCapability reportsCashBalance) {
+  public void setReportsCashBalance(UserCapabilityJustRead reportsCashBalance) {
     this.reportsCashBalance = reportsCashBalance;
   }
 
 
-  public InlineResponse20013 reportsCrosstabs(UserCapability reportsCrosstabs) {
+  public InlineResponse20013 reportsCrosstabs(UserCapabilityJustRead reportsCrosstabs) {
     
     this.reportsCrosstabs = reportsCrosstabs;
     return this;
@@ -1117,17 +1303,40 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getReportsCrosstabs() {
+  public UserCapabilityJustRead getReportsCrosstabs() {
     return reportsCrosstabs;
   }
 
 
-  public void setReportsCrosstabs(UserCapability reportsCrosstabs) {
+  public void setReportsCrosstabs(UserCapabilityJustRead reportsCrosstabs) {
     this.reportsCrosstabs = reportsCrosstabs;
   }
 
 
-  public InlineResponse20013 reportsGeneralLedgers(UserCapability reportsGeneralLedgers) {
+  public InlineResponse20013 reportsCustomReportsAggregate(UserCapabilityJustRead reportsCustomReportsAggregate) {
+    
+    this.reportsCustomReportsAggregate = reportsCustomReportsAggregate;
+    return this;
+  }
+
+   /**
+   * Get reportsCustomReportsAggregate
+   * @return reportsCustomReportsAggregate
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
+
+  public UserCapabilityJustRead getReportsCustomReportsAggregate() {
+    return reportsCustomReportsAggregate;
+  }
+
+
+  public void setReportsCustomReportsAggregate(UserCapabilityJustRead reportsCustomReportsAggregate) {
+    this.reportsCustomReportsAggregate = reportsCustomReportsAggregate;
+  }
+
+
+  public InlineResponse20013 reportsGeneralLedgers(UserCapabilityJustRead reportsGeneralLedgers) {
     
     this.reportsGeneralLedgers = reportsGeneralLedgers;
     return this;
@@ -1140,17 +1349,17 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getReportsGeneralLedgers() {
+  public UserCapabilityJustRead getReportsGeneralLedgers() {
     return reportsGeneralLedgers;
   }
 
 
-  public void setReportsGeneralLedgers(UserCapability reportsGeneralLedgers) {
+  public void setReportsGeneralLedgers(UserCapabilityJustRead reportsGeneralLedgers) {
     this.reportsGeneralLedgers = reportsGeneralLedgers;
   }
 
 
-  public InlineResponse20013 reportsIncomeExpense(UserCapability reportsIncomeExpense) {
+  public InlineResponse20013 reportsIncomeExpense(UserCapabilityJustRead reportsIncomeExpense) {
     
     this.reportsIncomeExpense = reportsIncomeExpense;
     return this;
@@ -1163,17 +1372,17 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getReportsIncomeExpense() {
+  public UserCapabilityJustRead getReportsIncomeExpense() {
     return reportsIncomeExpense;
   }
 
 
-  public void setReportsIncomeExpense(UserCapability reportsIncomeExpense) {
+  public void setReportsIncomeExpense(UserCapabilityJustRead reportsIncomeExpense) {
     this.reportsIncomeExpense = reportsIncomeExpense;
   }
 
 
-  public InlineResponse20013 reportsJournals(UserCapability reportsJournals) {
+  public InlineResponse20013 reportsJournals(UserCapabilityJustRead reportsJournals) {
     
     this.reportsJournals = reportsJournals;
     return this;
@@ -1186,17 +1395,17 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getReportsJournals() {
+  public UserCapabilityJustRead getReportsJournals() {
     return reportsJournals;
   }
 
 
-  public void setReportsJournals(UserCapability reportsJournals) {
+  public void setReportsJournals(UserCapabilityJustRead reportsJournals) {
     this.reportsJournals = reportsJournals;
   }
 
 
-  public InlineResponse20013 reportsManagementsNavigation(UserCapability reportsManagementsNavigation) {
+  public InlineResponse20013 reportsManagementsNavigation(UserCapabilityJustReadWrite reportsManagementsNavigation) {
     
     this.reportsManagementsNavigation = reportsManagementsNavigation;
     return this;
@@ -1209,17 +1418,17 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getReportsManagementsNavigation() {
+  public UserCapabilityJustReadWrite getReportsManagementsNavigation() {
     return reportsManagementsNavigation;
   }
 
 
-  public void setReportsManagementsNavigation(UserCapability reportsManagementsNavigation) {
+  public void setReportsManagementsNavigation(UserCapabilityJustReadWrite reportsManagementsNavigation) {
     this.reportsManagementsNavigation = reportsManagementsNavigation;
   }
 
 
-  public InlineResponse20013 reportsManagementsPlanning(UserCapability reportsManagementsPlanning) {
+  public InlineResponse20013 reportsManagementsPlanning(UserCapabilityJustReadWrite reportsManagementsPlanning) {
     
     this.reportsManagementsPlanning = reportsManagementsPlanning;
     return this;
@@ -1232,17 +1441,17 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getReportsManagementsPlanning() {
+  public UserCapabilityJustReadWrite getReportsManagementsPlanning() {
     return reportsManagementsPlanning;
   }
 
 
-  public void setReportsManagementsPlanning(UserCapability reportsManagementsPlanning) {
+  public void setReportsManagementsPlanning(UserCapabilityJustReadWrite reportsManagementsPlanning) {
     this.reportsManagementsPlanning = reportsManagementsPlanning;
   }
 
 
-  public InlineResponse20013 reportsPayables(UserCapability reportsPayables) {
+  public InlineResponse20013 reportsPayables(UserCapabilityJustReadWrite reportsPayables) {
     
     this.reportsPayables = reportsPayables;
     return this;
@@ -1255,17 +1464,17 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getReportsPayables() {
+  public UserCapabilityJustReadWrite getReportsPayables() {
     return reportsPayables;
   }
 
 
-  public void setReportsPayables(UserCapability reportsPayables) {
+  public void setReportsPayables(UserCapabilityJustReadWrite reportsPayables) {
     this.reportsPayables = reportsPayables;
   }
 
 
-  public InlineResponse20013 reportsPl(UserCapability reportsPl) {
+  public InlineResponse20013 reportsPl(UserCapabilityJustRead reportsPl) {
     
     this.reportsPl = reportsPl;
     return this;
@@ -1278,17 +1487,17 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getReportsPl() {
+  public UserCapabilityJustRead getReportsPl() {
     return reportsPl;
   }
 
 
-  public void setReportsPl(UserCapability reportsPl) {
+  public void setReportsPl(UserCapabilityJustRead reportsPl) {
     this.reportsPl = reportsPl;
   }
 
 
-  public InlineResponse20013 reportsReceivables(UserCapability reportsReceivables) {
+  public InlineResponse20013 reportsReceivables(UserCapabilityJustRead reportsReceivables) {
     
     this.reportsReceivables = reportsReceivables;
     return this;
@@ -1301,12 +1510,12 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getReportsReceivables() {
+  public UserCapabilityJustRead getReportsReceivables() {
     return reportsReceivables;
   }
 
 
-  public void setReportsReceivables(UserCapability reportsReceivables) {
+  public void setReportsReceivables(UserCapabilityJustRead reportsReceivables) {
     this.reportsReceivables = reportsReceivables;
   }
 
@@ -1334,7 +1543,7 @@ public class InlineResponse20013 {
   }
 
 
-  public InlineResponse20013 resets(UserCapability resets) {
+  public InlineResponse20013 resets(UserCapabilityJustRead resets) {
     
     this.resets = resets;
     return this;
@@ -1347,12 +1556,12 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getResets() {
+  public UserCapabilityJustRead getResets() {
     return resets;
   }
 
 
-  public void setResets(UserCapability resets) {
+  public void setResets(UserCapabilityJustRead resets) {
     this.resets = resets;
   }
 
@@ -1380,7 +1589,7 @@ public class InlineResponse20013 {
   }
 
 
-  public InlineResponse20013 signInLogs(UserCapability signInLogs) {
+  public InlineResponse20013 signInLogs(UserCapabilityJustRead signInLogs) {
     
     this.signInLogs = signInLogs;
     return this;
@@ -1393,17 +1602,17 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getSignInLogs() {
+  public UserCapabilityJustRead getSignInLogs() {
     return signInLogs;
   }
 
 
-  public void setSignInLogs(UserCapability signInLogs) {
+  public void setSignInLogs(UserCapabilityJustRead signInLogs) {
     this.signInLogs = signInLogs;
   }
 
 
-  public InlineResponse20013 spreadsheets(UserCapability spreadsheets) {
+  public InlineResponse20013 spreadsheets(UserCapabilityJustCreateRead spreadsheets) {
     
     this.spreadsheets = spreadsheets;
     return this;
@@ -1416,17 +1625,17 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getSpreadsheets() {
+  public UserCapabilityJustCreateRead getSpreadsheets() {
     return spreadsheets;
   }
 
 
-  public void setSpreadsheets(UserCapability spreadsheets) {
+  public void setSpreadsheets(UserCapabilityJustCreateRead spreadsheets) {
     this.spreadsheets = spreadsheets;
   }
 
 
-  public InlineResponse20013 systemConversion(UserCapability systemConversion) {
+  public InlineResponse20013 systemConversion(UserCapabilityJustRead systemConversion) {
     
     this.systemConversion = systemConversion;
     return this;
@@ -1439,17 +1648,40 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getSystemConversion() {
+  public UserCapabilityJustRead getSystemConversion() {
     return systemConversion;
   }
 
 
-  public void setSystemConversion(UserCapability systemConversion) {
+  public void setSystemConversion(UserCapabilityJustRead systemConversion) {
     this.systemConversion = systemConversion;
   }
 
 
-  public InlineResponse20013 taxReports(UserCapability taxReports) {
+  public InlineResponse20013 systemMessagesForAdmin(UserCapabilityJustRead systemMessagesForAdmin) {
+    
+    this.systemMessagesForAdmin = systemMessagesForAdmin;
+    return this;
+  }
+
+   /**
+   * Get systemMessagesForAdmin
+   * @return systemMessagesForAdmin
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
+
+  public UserCapabilityJustRead getSystemMessagesForAdmin() {
+    return systemMessagesForAdmin;
+  }
+
+
+  public void setSystemMessagesForAdmin(UserCapabilityJustRead systemMessagesForAdmin) {
+    this.systemMessagesForAdmin = systemMessagesForAdmin;
+  }
+
+
+  public InlineResponse20013 taxReports(UserCapabilityJustRead taxReports) {
     
     this.taxReports = taxReports;
     return this;
@@ -1462,17 +1694,17 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getTaxReports() {
+  public UserCapabilityJustRead getTaxReports() {
     return taxReports;
   }
 
 
-  public void setTaxReports(UserCapability taxReports) {
+  public void setTaxReports(UserCapabilityJustRead taxReports) {
     this.taxReports = taxReports;
   }
 
 
-  public InlineResponse20013 taxReturn(UserCapability taxReturn) {
+  public InlineResponse20013 taxReturn(UserCapabilityJustRead taxReturn) {
     
     this.taxReturn = taxReturn;
     return this;
@@ -1485,17 +1717,17 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getTaxReturn() {
+  public UserCapabilityJustRead getTaxReturn() {
     return taxReturn;
   }
 
 
-  public void setTaxReturn(UserCapability taxReturn) {
+  public void setTaxReturn(UserCapabilityJustRead taxReturn) {
     this.taxReturn = taxReturn;
   }
 
 
-  public InlineResponse20013 taxes(UserCapability taxes) {
+  public InlineResponse20013 taxes(UserCapabilityJustReadUpdate taxes) {
     
     this.taxes = taxes;
     return this;
@@ -1508,12 +1740,12 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getTaxes() {
+  public UserCapabilityJustReadUpdate getTaxes() {
     return taxes;
   }
 
 
-  public void setTaxes(UserCapability taxes) {
+  public void setTaxes(UserCapabilityJustReadUpdate taxes) {
     this.taxes = taxes;
   }
 
@@ -1538,6 +1770,52 @@ public class InlineResponse20013 {
 
   public void setTransfers(UserCapabilityWithSelfOnly transfers) {
     this.transfers = transfers;
+  }
+
+
+  public InlineResponse20013 txnRelationshipLogs(UserCapabilityJustRead txnRelationshipLogs) {
+    
+    this.txnRelationshipLogs = txnRelationshipLogs;
+    return this;
+  }
+
+   /**
+   * Get txnRelationshipLogs
+   * @return txnRelationshipLogs
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
+
+  public UserCapabilityJustRead getTxnRelationshipLogs() {
+    return txnRelationshipLogs;
+  }
+
+
+  public void setTxnRelationshipLogs(UserCapabilityJustRead txnRelationshipLogs) {
+    this.txnRelationshipLogs = txnRelationshipLogs;
+  }
+
+
+  public InlineResponse20013 userAttributeLogs(UserCapabilityJustRead userAttributeLogs) {
+    
+    this.userAttributeLogs = userAttributeLogs;
+    return this;
+  }
+
+   /**
+   * Get userAttributeLogs
+   * @return userAttributeLogs
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
+
+  public UserCapabilityJustRead getUserAttributeLogs() {
+    return userAttributeLogs;
+  }
+
+
+  public void setUserAttributeLogs(UserCapabilityJustRead userAttributeLogs) {
+    this.userAttributeLogs = userAttributeLogs;
   }
 
 
@@ -1610,7 +1888,7 @@ public class InlineResponse20013 {
   }
 
 
-  public InlineResponse20013 workflows(UserCapability workflows) {
+  public InlineResponse20013 workflows(UserCapabilityJustReadUpdateDestroy workflows) {
     
     this.workflows = workflows;
     return this;
@@ -1623,17 +1901,17 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getWorkflows() {
+  public UserCapabilityJustReadUpdateDestroy getWorkflows() {
     return workflows;
   }
 
 
-  public void setWorkflows(UserCapability workflows) {
+  public void setWorkflows(UserCapabilityJustReadUpdateDestroy workflows) {
     this.workflows = workflows;
   }
 
 
-  public InlineResponse20013 yearEnd(UserCapability yearEnd) {
+  public InlineResponse20013 yearEnd(UserCapabilityJustReadUpdate yearEnd) {
     
     this.yearEnd = yearEnd;
     return this;
@@ -1646,12 +1924,12 @@ public class InlineResponse20013 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public UserCapability getYearEnd() {
+  public UserCapabilityJustReadUpdate getYearEnd() {
     return yearEnd;
   }
 
 
-  public void setYearEnd(UserCapability yearEnd) {
+  public void setYearEnd(UserCapabilityJustReadUpdate yearEnd) {
     this.yearEnd = yearEnd;
   }
 
@@ -1666,21 +1944,26 @@ public class InlineResponse20013 {
     }
     InlineResponse20013 inlineResponse20013 = (InlineResponse20013) o;
     return Objects.equals(this.tags, inlineResponse20013.tags) &&
+        Objects.equals(this.accessControls, inlineResponse20013.accessControls) &&
         Objects.equals(this.accountItemStatements, inlineResponse20013.accountItemStatements) &&
         Objects.equals(this.accountItems, inlineResponse20013.accountItems) &&
         Objects.equals(this.annualReports, inlineResponse20013.annualReports) &&
+        Objects.equals(this.appRoleLogs, inlineResponse20013.appRoleLogs) &&
         Objects.equals(this.approvalFlowRoutes, inlineResponse20013.approvalFlowRoutes) &&
         Objects.equals(this.approvalRequests, inlineResponse20013.approvalRequests) &&
         Objects.equals(this.backups, inlineResponse20013.backups) &&
         Objects.equals(this.bankAccountantStaffUsers, inlineResponse20013.bankAccountantStaffUsers) &&
         Objects.equals(this.bizAllocations, inlineResponse20013.bizAllocations) &&
         Objects.equals(this.companies, inlineResponse20013.companies) &&
+        Objects.equals(this.companyInternalAnnouncements, inlineResponse20013.companyInternalAnnouncements) &&
         Objects.equals(this.consumptionEntries, inlineResponse20013.consumptionEntries) &&
         Objects.equals(this.costAllocations, inlineResponse20013.costAllocations) &&
         Objects.equals(this.dealTemplates, inlineResponse20013.dealTemplates) &&
         Objects.equals(this.deals, inlineResponse20013.deals) &&
+        Objects.equals(this.docChangeLogs, inlineResponse20013.docChangeLogs) &&
         Objects.equals(this.docPostings, inlineResponse20013.docPostings) &&
         Objects.equals(this.docs, inlineResponse20013.docs) &&
+        Objects.equals(this.expenseApplicationSyncPayroll, inlineResponse20013.expenseApplicationSyncPayroll) &&
         Objects.equals(this.expenseApplicationTemplates, inlineResponse20013.expenseApplicationTemplates) &&
         Objects.equals(this.expenseApplications, inlineResponse20013.expenseApplications) &&
         Objects.equals(this.fixedAssets, inlineResponse20013.fixedAssets) &&
@@ -1696,12 +1979,14 @@ public class InlineResponse20013 {
         Objects.equals(this.partners, inlineResponse20013.partners) &&
         Objects.equals(this.paymentRecords, inlineResponse20013.paymentRecords) &&
         Objects.equals(this.paymentRequests, inlineResponse20013.paymentRequests) &&
+        Objects.equals(this.payrollItemSets, inlineResponse20013.payrollItemSets) &&
         Objects.equals(this.receiptStreamEditor, inlineResponse20013.receiptStreamEditor) &&
         Objects.equals(this.receipts, inlineResponse20013.receipts) &&
         Objects.equals(this.reports, inlineResponse20013.reports) &&
         Objects.equals(this.reportsBs, inlineResponse20013.reportsBs) &&
         Objects.equals(this.reportsCashBalance, inlineResponse20013.reportsCashBalance) &&
         Objects.equals(this.reportsCrosstabs, inlineResponse20013.reportsCrosstabs) &&
+        Objects.equals(this.reportsCustomReportsAggregate, inlineResponse20013.reportsCustomReportsAggregate) &&
         Objects.equals(this.reportsGeneralLedgers, inlineResponse20013.reportsGeneralLedgers) &&
         Objects.equals(this.reportsIncomeExpense, inlineResponse20013.reportsIncomeExpense) &&
         Objects.equals(this.reportsJournals, inlineResponse20013.reportsJournals) &&
@@ -1716,10 +2001,13 @@ public class InlineResponse20013 {
         Objects.equals(this.signInLogs, inlineResponse20013.signInLogs) &&
         Objects.equals(this.spreadsheets, inlineResponse20013.spreadsheets) &&
         Objects.equals(this.systemConversion, inlineResponse20013.systemConversion) &&
+        Objects.equals(this.systemMessagesForAdmin, inlineResponse20013.systemMessagesForAdmin) &&
         Objects.equals(this.taxReports, inlineResponse20013.taxReports) &&
         Objects.equals(this.taxReturn, inlineResponse20013.taxReturn) &&
         Objects.equals(this.taxes, inlineResponse20013.taxes) &&
         Objects.equals(this.transfers, inlineResponse20013.transfers) &&
+        Objects.equals(this.txnRelationshipLogs, inlineResponse20013.txnRelationshipLogs) &&
+        Objects.equals(this.userAttributeLogs, inlineResponse20013.userAttributeLogs) &&
         Objects.equals(this.userMatchers, inlineResponse20013.userMatchers) &&
         Objects.equals(this.walletTxns, inlineResponse20013.walletTxns) &&
         Objects.equals(this.walletables, inlineResponse20013.walletables) &&
@@ -1729,7 +2017,7 @@ public class InlineResponse20013 {
 
   @Override
   public int hashCode() {
-    return Objects.hash(tags, accountItemStatements, accountItems, annualReports, approvalFlowRoutes, approvalRequests, backups, bankAccountantStaffUsers, bizAllocations, companies, consumptionEntries, costAllocations, dealTemplates, deals, docPostings, docs, expenseApplicationTemplates, expenseApplications, fixedAssets, inventoryRefreshes, invitations, items, manualJournalTemplates, manualJournals, monthEnd, oauthApplications, oauthAuthorizations, openingBalances, partners, paymentRecords, paymentRequests, receiptStreamEditor, receipts, reports, reportsBs, reportsCashBalance, reportsCrosstabs, reportsGeneralLedgers, reportsIncomeExpense, reportsJournals, reportsManagementsNavigation, reportsManagementsPlanning, reportsPayables, reportsPl, reportsReceivables, requestForms, resets, sections, signInLogs, spreadsheets, systemConversion, taxReports, taxReturn, taxes, transfers, userMatchers, walletTxns, walletables, workflows, yearEnd);
+    return Objects.hash(tags, accessControls, accountItemStatements, accountItems, annualReports, appRoleLogs, approvalFlowRoutes, approvalRequests, backups, bankAccountantStaffUsers, bizAllocations, companies, companyInternalAnnouncements, consumptionEntries, costAllocations, dealTemplates, deals, docChangeLogs, docPostings, docs, expenseApplicationSyncPayroll, expenseApplicationTemplates, expenseApplications, fixedAssets, inventoryRefreshes, invitations, items, manualJournalTemplates, manualJournals, monthEnd, oauthApplications, oauthAuthorizations, openingBalances, partners, paymentRecords, paymentRequests, payrollItemSets, receiptStreamEditor, receipts, reports, reportsBs, reportsCashBalance, reportsCrosstabs, reportsCustomReportsAggregate, reportsGeneralLedgers, reportsIncomeExpense, reportsJournals, reportsManagementsNavigation, reportsManagementsPlanning, reportsPayables, reportsPl, reportsReceivables, requestForms, resets, sections, signInLogs, spreadsheets, systemConversion, systemMessagesForAdmin, taxReports, taxReturn, taxes, transfers, txnRelationshipLogs, userAttributeLogs, userMatchers, walletTxns, walletables, workflows, yearEnd);
   }
 
   @Override
@@ -1737,21 +2025,26 @@ public class InlineResponse20013 {
     StringBuilder sb = new StringBuilder();
     sb.append("class InlineResponse20013 {\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+    sb.append("    accessControls: ").append(toIndentedString(accessControls)).append("\n");
     sb.append("    accountItemStatements: ").append(toIndentedString(accountItemStatements)).append("\n");
     sb.append("    accountItems: ").append(toIndentedString(accountItems)).append("\n");
     sb.append("    annualReports: ").append(toIndentedString(annualReports)).append("\n");
+    sb.append("    appRoleLogs: ").append(toIndentedString(appRoleLogs)).append("\n");
     sb.append("    approvalFlowRoutes: ").append(toIndentedString(approvalFlowRoutes)).append("\n");
     sb.append("    approvalRequests: ").append(toIndentedString(approvalRequests)).append("\n");
     sb.append("    backups: ").append(toIndentedString(backups)).append("\n");
     sb.append("    bankAccountantStaffUsers: ").append(toIndentedString(bankAccountantStaffUsers)).append("\n");
     sb.append("    bizAllocations: ").append(toIndentedString(bizAllocations)).append("\n");
     sb.append("    companies: ").append(toIndentedString(companies)).append("\n");
+    sb.append("    companyInternalAnnouncements: ").append(toIndentedString(companyInternalAnnouncements)).append("\n");
     sb.append("    consumptionEntries: ").append(toIndentedString(consumptionEntries)).append("\n");
     sb.append("    costAllocations: ").append(toIndentedString(costAllocations)).append("\n");
     sb.append("    dealTemplates: ").append(toIndentedString(dealTemplates)).append("\n");
     sb.append("    deals: ").append(toIndentedString(deals)).append("\n");
+    sb.append("    docChangeLogs: ").append(toIndentedString(docChangeLogs)).append("\n");
     sb.append("    docPostings: ").append(toIndentedString(docPostings)).append("\n");
     sb.append("    docs: ").append(toIndentedString(docs)).append("\n");
+    sb.append("    expenseApplicationSyncPayroll: ").append(toIndentedString(expenseApplicationSyncPayroll)).append("\n");
     sb.append("    expenseApplicationTemplates: ").append(toIndentedString(expenseApplicationTemplates)).append("\n");
     sb.append("    expenseApplications: ").append(toIndentedString(expenseApplications)).append("\n");
     sb.append("    fixedAssets: ").append(toIndentedString(fixedAssets)).append("\n");
@@ -1767,12 +2060,14 @@ public class InlineResponse20013 {
     sb.append("    partners: ").append(toIndentedString(partners)).append("\n");
     sb.append("    paymentRecords: ").append(toIndentedString(paymentRecords)).append("\n");
     sb.append("    paymentRequests: ").append(toIndentedString(paymentRequests)).append("\n");
+    sb.append("    payrollItemSets: ").append(toIndentedString(payrollItemSets)).append("\n");
     sb.append("    receiptStreamEditor: ").append(toIndentedString(receiptStreamEditor)).append("\n");
     sb.append("    receipts: ").append(toIndentedString(receipts)).append("\n");
     sb.append("    reports: ").append(toIndentedString(reports)).append("\n");
     sb.append("    reportsBs: ").append(toIndentedString(reportsBs)).append("\n");
     sb.append("    reportsCashBalance: ").append(toIndentedString(reportsCashBalance)).append("\n");
     sb.append("    reportsCrosstabs: ").append(toIndentedString(reportsCrosstabs)).append("\n");
+    sb.append("    reportsCustomReportsAggregate: ").append(toIndentedString(reportsCustomReportsAggregate)).append("\n");
     sb.append("    reportsGeneralLedgers: ").append(toIndentedString(reportsGeneralLedgers)).append("\n");
     sb.append("    reportsIncomeExpense: ").append(toIndentedString(reportsIncomeExpense)).append("\n");
     sb.append("    reportsJournals: ").append(toIndentedString(reportsJournals)).append("\n");
@@ -1787,10 +2082,13 @@ public class InlineResponse20013 {
     sb.append("    signInLogs: ").append(toIndentedString(signInLogs)).append("\n");
     sb.append("    spreadsheets: ").append(toIndentedString(spreadsheets)).append("\n");
     sb.append("    systemConversion: ").append(toIndentedString(systemConversion)).append("\n");
+    sb.append("    systemMessagesForAdmin: ").append(toIndentedString(systemMessagesForAdmin)).append("\n");
     sb.append("    taxReports: ").append(toIndentedString(taxReports)).append("\n");
     sb.append("    taxReturn: ").append(toIndentedString(taxReturn)).append("\n");
     sb.append("    taxes: ").append(toIndentedString(taxes)).append("\n");
     sb.append("    transfers: ").append(toIndentedString(transfers)).append("\n");
+    sb.append("    txnRelationshipLogs: ").append(toIndentedString(txnRelationshipLogs)).append("\n");
+    sb.append("    userAttributeLogs: ").append(toIndentedString(userAttributeLogs)).append("\n");
     sb.append("    userMatchers: ").append(toIndentedString(userMatchers)).append("\n");
     sb.append("    walletTxns: ").append(toIndentedString(walletTxns)).append("\n");
     sb.append("    walletables: ").append(toIndentedString(walletables)).append("\n");

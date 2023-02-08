@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **description** | **String** | 内容 | 
 **id** | **Long** | 支払依頼の項目行ID | 
 **itemId** | **Integer** | 品目ID | 
-**lineType** | [**LineTypeEnum**](#LineTypeEnum) | 行の種類 (deal_line: 支払依頼, withholding_tax: 源泉徴収税) | 
+**lineType** | [**LineTypeEnum**](#LineTypeEnum) | 行の種類 (deal_line: 支払依頼の通常取引行, withholding_tax: 源泉所得税行) | 
 **sectionId** | **Integer** | 部門ID | 
 **segment1TagId** | **Long** | セグメント１ID。セグメント１が使用可能なプランの時のみレスポンスに含まれます。 |  [optional]
 **segment2TagId** | **Long** | セグメント２ID。セグメント２が使用可能なプランの時のみレスポンスに含まれます。 |  [optional]

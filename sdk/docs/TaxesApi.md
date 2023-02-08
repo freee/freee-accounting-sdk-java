@@ -155,7 +155,7 @@ This endpoint does not need any parameter.
 
 ## getTaxesCompanies
 
-> InlineResponse20010 getTaxesCompanies(companyId)
+> InlineResponse20010 getTaxesCompanies(companyId, displayCategory, available)
 
 税区分コード詳細一覧の取得
 
@@ -181,8 +181,10 @@ public class Example {
 
         TaxesApi apiInstance = new TaxesApi(defaultClient);
         Integer companyId = 56; // Integer | 事業所ID
+        String displayCategory = "tax_5"; // String | この項目はインボイス制度で利用する項目です。2023年7月頃から利用できる予定です。税区分の表示カテゴリ（ tax_5: 5%表示の税区分、 tax_8: 8%表示の税区分、 tax_r8: 軽減税率8%表示の税区分、 tax_10: 10%表示の税区分、 tax_5_e80: インボイス経過措置5%表示80%控除の税区分、 tax_5_e50: インボイス経過措置5%表示50%控除の税区分、 tax_8_e80: インボイス経過措置8%表示80%控除の税区分、 tax_8_e50: インボイス経過措置8%表示50%控除の税区分、 tax_r8_e80: インボイス経過措置軽減税率8%表示80%控除の税区分、 tax_r8_e50: インボイス経過措置軽減税率8%表示50%控除の税区分、 tax_10_e80: インボイス経過措置10%表示80%控除の税区分、 tax_10_e50: インボイス経過措置10%表示50%控除の税区分）
+        Boolean available = true; // Boolean | この項目はインボイス制度で利用する項目です。2023年7月頃から利用できる予定です。税区分の使用設定。true: 使用する、false: 使用しない
         try {
-            InlineResponse20010 result = apiInstance.getTaxesCompanies(companyId);
+            InlineResponse20010 result = apiInstance.getTaxesCompanies(companyId, displayCategory, available);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling TaxesApi#getTaxesCompanies");
@@ -201,6 +203,8 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **companyId** | **Integer**| 事業所ID |
+ **displayCategory** | **String**| この項目はインボイス制度で利用する項目です。2023年7月頃から利用できる予定です。税区分の表示カテゴリ（ tax_5: 5%表示の税区分、 tax_8: 8%表示の税区分、 tax_r8: 軽減税率8%表示の税区分、 tax_10: 10%表示の税区分、 tax_5_e80: インボイス経過措置5%表示80%控除の税区分、 tax_5_e50: インボイス経過措置5%表示50%控除の税区分、 tax_8_e80: インボイス経過措置8%表示80%控除の税区分、 tax_8_e50: インボイス経過措置8%表示50%控除の税区分、 tax_r8_e80: インボイス経過措置軽減税率8%表示80%控除の税区分、 tax_r8_e50: インボイス経過措置軽減税率8%表示50%控除の税区分、 tax_10_e80: インボイス経過措置10%表示80%控除の税区分、 tax_10_e50: インボイス経過措置10%表示50%控除の税区分） | [optional] [enum: tax_5, tax_8, tax_r8, tax_10, tax_5_e80, tax_5_e50, tax_8_e80, tax_8_e50, tax_r8_e80, tax_r8_e50, tax_10_e80, tax_10_e50]
+ **available** | **Boolean**| この項目はインボイス制度で利用する項目です。2023年7月頃から利用できる予定です。税区分の使用設定。true: 使用する、false: 使用しない | [optional]
 
 ### Return type
 

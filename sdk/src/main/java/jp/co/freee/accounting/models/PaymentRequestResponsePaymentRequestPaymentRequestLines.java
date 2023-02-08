@@ -53,7 +53,7 @@ public class PaymentRequestResponsePaymentRequestPaymentRequestLines {
   private Integer itemId;
 
   /**
-   * 行の種類 (deal_line: 支払依頼, withholding_tax: 源泉徴収税)
+   * 行の種類 (deal_line: 支払依頼の通常取引行, withholding_tax: 源泉所得税行)
    */
   @JsonAdapter(LineTypeEnum.Adapter.class)
   public enum LineTypeEnum {
@@ -260,11 +260,11 @@ public class PaymentRequestResponsePaymentRequestPaymentRequestLines {
   }
 
    /**
-   * 行の種類 (deal_line: 支払依頼, withholding_tax: 源泉徴収税)
+   * 行の種類 (deal_line: 支払依頼の通常取引行, withholding_tax: 源泉所得税行)
    * @return lineType
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "deal_line", required = true, value = "行の種類 (deal_line: 支払依頼, withholding_tax: 源泉徴収税)")
+  @ApiModelProperty(example = "deal_line", required = true, value = "行の種類 (deal_line: 支払依頼の通常取引行, withholding_tax: 源泉所得税行)")
 
   public LineTypeEnum getLineType() {
     return lineType;
