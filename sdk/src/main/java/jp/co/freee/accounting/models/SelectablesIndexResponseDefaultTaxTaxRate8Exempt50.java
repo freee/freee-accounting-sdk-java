@@ -76,7 +76,7 @@ public class SelectablesIndexResponseDefaultTaxTaxRate8Exempt50 {
    * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "課対仕入免50 8%", value = "税区分")
+  @ApiModelProperty(example = "課対仕入（控50）8%", value = "税区分")
 
   public String getName() {
     return name;

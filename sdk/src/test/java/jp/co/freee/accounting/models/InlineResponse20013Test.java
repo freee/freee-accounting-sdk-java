@@ -22,9 +22,17 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import jp.co.freee.accounting.models.UserCapability;
+import jp.co.freee.accounting.models.UserCapabilityJustCreate;
+import jp.co.freee.accounting.models.UserCapabilityJustCreateRead;
+import jp.co.freee.accounting.models.UserCapabilityJustRead;
+import jp.co.freee.accounting.models.UserCapabilityJustReadUpdate;
+import jp.co.freee.accounting.models.UserCapabilityJustReadUpdateDestroy;
+import jp.co.freee.accounting.models.UserCapabilityJustReadWrite;
+import jp.co.freee.accounting.models.UserCapabilityJustUpdate;
 import jp.co.freee.accounting.models.UserCapabilityWithConfirm;
 import jp.co.freee.accounting.models.UserCapabilityWithSelfOnly;
 import jp.co.freee.accounting.models.UserCapabilityWithSync;
+import jp.co.freee.accounting.models.UserCapabilityWithWrite;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -53,6 +61,14 @@ public class InlineResponse20013Test {
     }
 
     /**
+     * Test the property 'accessControls'
+     */
+    @Test
+    public void accessControlsTest() {
+        // TODO: test accessControls
+    }
+
+    /**
      * Test the property 'accountItemStatements'
      */
     @Test
@@ -74,6 +90,14 @@ public class InlineResponse20013Test {
     @Test
     public void annualReportsTest() {
         // TODO: test annualReports
+    }
+
+    /**
+     * Test the property 'appRoleLogs'
+     */
+    @Test
+    public void appRoleLogsTest() {
+        // TODO: test appRoleLogs
     }
 
     /**
@@ -125,6 +149,14 @@ public class InlineResponse20013Test {
     }
 
     /**
+     * Test the property 'companyInternalAnnouncements'
+     */
+    @Test
+    public void companyInternalAnnouncementsTest() {
+        // TODO: test companyInternalAnnouncements
+    }
+
+    /**
      * Test the property 'consumptionEntries'
      */
     @Test
@@ -157,6 +189,14 @@ public class InlineResponse20013Test {
     }
 
     /**
+     * Test the property 'docChangeLogs'
+     */
+    @Test
+    public void docChangeLogsTest() {
+        // TODO: test docChangeLogs
+    }
+
+    /**
      * Test the property 'docPostings'
      */
     @Test
@@ -170,6 +210,14 @@ public class InlineResponse20013Test {
     @Test
     public void docsTest() {
         // TODO: test docs
+    }
+
+    /**
+     * Test the property 'expenseApplicationSyncPayroll'
+     */
+    @Test
+    public void expenseApplicationSyncPayrollTest() {
+        // TODO: test expenseApplicationSyncPayroll
     }
 
     /**
@@ -293,6 +341,14 @@ public class InlineResponse20013Test {
     }
 
     /**
+     * Test the property 'payrollItemSets'
+     */
+    @Test
+    public void payrollItemSetsTest() {
+        // TODO: test payrollItemSets
+    }
+
+    /**
      * Test the property 'receiptStreamEditor'
      */
     @Test
@@ -338,6 +394,14 @@ public class InlineResponse20013Test {
     @Test
     public void reportsCrosstabsTest() {
         // TODO: test reportsCrosstabs
+    }
+
+    /**
+     * Test the property 'reportsCustomReportsAggregate'
+     */
+    @Test
+    public void reportsCustomReportsAggregateTest() {
+        // TODO: test reportsCustomReportsAggregate
     }
 
     /**
@@ -453,6 +517,14 @@ public class InlineResponse20013Test {
     }
 
     /**
+     * Test the property 'systemMessagesForAdmin'
+     */
+    @Test
+    public void systemMessagesForAdminTest() {
+        // TODO: test systemMessagesForAdmin
+    }
+
+    /**
      * Test the property 'taxReports'
      */
     @Test
@@ -482,6 +554,22 @@ public class InlineResponse20013Test {
     @Test
     public void transfersTest() {
         // TODO: test transfers
+    }
+
+    /**
+     * Test the property 'txnRelationshipLogs'
+     */
+    @Test
+    public void txnRelationshipLogsTest() {
+        // TODO: test txnRelationshipLogs
+    }
+
+    /**
+     * Test the property 'userAttributeLogs'
+     */
+    @Test
+    public void userAttributeLogsTest() {
+        // TODO: test userAttributeLogs
     }
 
     /**

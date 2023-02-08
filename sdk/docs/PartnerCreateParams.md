@@ -8,7 +8,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **addressAttributes** | [**PartnerCreateParamsAddressAttributes**](PartnerCreateParamsAddressAttributes.md) |  |  [optional]
-**code** | **String** | 取引先コード（取引先コードの利用を有効にしている場合は、codeの指定は必須です。） |  [optional]
+**code** | **String** | 取引先コード（取引先コードの利用を有効にしている場合は、codeの指定は必須です。ただし重複は不可。） |  [optional]
 **companyId** | **Integer** | 事業所ID | 
 **contactName** | **String** | 担当者 氏名 (255文字以内) |  [optional]
 **countryCode** | [**CountryCodeEnum**](#CountryCodeEnum) | 地域（JP: 国内、ZZ:国外）、指定しない場合JPになります。 |  [optional]

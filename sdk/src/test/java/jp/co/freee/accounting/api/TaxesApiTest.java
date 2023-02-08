@@ -60,7 +60,9 @@ public class TaxesApiTest {
     @Test
     public void getTaxesCompaniesTest() {
         Integer companyId = null;
-        // InlineResponse20010 response = api.getTaxesCompanies(companyId);
+        String displayCategory = null;
+        Boolean available = null;
+        // InlineResponse20010 response = api.getTaxesCompanies(companyId, displayCategory, available);
 
         // TODO: test validations
     }

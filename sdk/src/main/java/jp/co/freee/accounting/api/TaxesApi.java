@@ -49,11 +49,13 @@ public interface TaxesApi {
    * 税区分コード詳細一覧の取得
    * 
    * @param companyId 事業所ID (required)
+   * @param displayCategory この項目はインボイス制度で利用する項目です。2023年7月頃から利用できる予定です。税区分の表示カテゴリ（ tax_5: 5%表示の税区分、 tax_8: 8%表示の税区分、 tax_r8: 軽減税率8%表示の税区分、 tax_10: 10%表示の税区分、 tax_5_e80: インボイス経過措置5%表示80%控除の税区分、 tax_5_e50: インボイス経過措置5%表示50%控除の税区分、 tax_8_e80: インボイス経過措置8%表示80%控除の税区分、 tax_8_e50: インボイス経過措置8%表示50%控除の税区分、 tax_r8_e80: インボイス経過措置軽減税率8%表示80%控除の税区分、 tax_r8_e50: インボイス経過措置軽減税率8%表示50%控除の税区分、 tax_10_e80: インボイス経過措置10%表示80%控除の税区分、 tax_10_e50: インボイス経過措置10%表示50%控除の税区分） (optional)
+   * @param available この項目はインボイス制度で利用する項目です。2023年7月頃から利用できる予定です。税区分の使用設定。true: 使用する、false: 使用しない (optional)
    * @return Observable&lt;InlineResponse20010&gt;
    */
   @GET("api/1/taxes/companies/{company_id}")
   Observable<InlineResponse20010> getTaxesCompanies(
-    @retrofit2.http.Path("company_id") Integer companyId
+    @retrofit2.http.Path("company_id") Integer companyId, @retrofit2.http.Query("display_category") String displayCategory, @retrofit2.http.Query("available") Boolean available
   );
 
 }

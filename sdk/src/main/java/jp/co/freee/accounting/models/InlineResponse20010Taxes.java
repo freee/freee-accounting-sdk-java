@@ -38,7 +38,7 @@ public class InlineResponse20010Taxes {
   private Integer code;
 
   /**
-   * 税区分の表示カテゴリ（tax_5: 5%表示の税区分、tax_8: 8%表示の税区分、tax_r8: 軽減税率8%表示の税区分、tax_10: 10%表示の税区分、null: 税率未設定税区分）
+   * 税区分の表示カテゴリ（ tax_5: 5%表示の税区分、 tax_8: 8%表示の税区分、 tax_r8: 軽減税率8%表示の税区分、 tax_10: 10%表示の税区分、 tax_5_e80: インボイス経過措置5%表示80%控除の税区分、 tax_5_e50: インボイス経過措置5%表示50%控除の税区分、 tax_8_e80: インボイス経過措置8%表示80%控除の税区分、 tax_8_e50: インボイス経過措置8%表示50%控除の税区分、 tax_r8_e80: インボイス経過措置軽減税率8%表示80%控除の税区分、 tax_r8_e50: インボイス経過措置軽減税率8%表示50%控除の税区分、 tax_10_e80: インボイス経過措置10%表示80%控除の税区分、 tax_10_e50: インボイス経過措置10%表示50%控除の税区分、 null: 税率未設定税区分）
    */
   @JsonAdapter(DisplayCategoryEnum.Adapter.class)
   public enum DisplayCategoryEnum {
@@ -48,7 +48,23 @@ public class InlineResponse20010Taxes {
     
     R8("tax_r8"),
     
-    _10("tax_10");
+    _10("tax_10"),
+    
+    _5_E80("tax_5_e80"),
+    
+    _5_E50("tax_5_e50"),
+    
+    _8_E80("tax_8_e80"),
+    
+    _8_E50("tax_8_e50"),
+    
+    R8_E80("tax_r8_e80"),
+    
+    R8_E50("tax_r8_e50"),
+    
+    _10_E80("tax_10_e80"),
+    
+    _10_E50("tax_10_e50");
 
     private String value;
 
@@ -158,11 +174,11 @@ public class InlineResponse20010Taxes {
   }
 
    /**
-   * 税区分の表示カテゴリ（tax_5: 5%表示の税区分、tax_8: 8%表示の税区分、tax_r8: 軽減税率8%表示の税区分、tax_10: 10%表示の税区分、null: 税率未設定税区分）
+   * 税区分の表示カテゴリ（ tax_5: 5%表示の税区分、 tax_8: 8%表示の税区分、 tax_r8: 軽減税率8%表示の税区分、 tax_10: 10%表示の税区分、 tax_5_e80: インボイス経過措置5%表示80%控除の税区分、 tax_5_e50: インボイス経過措置5%表示50%控除の税区分、 tax_8_e80: インボイス経過措置8%表示80%控除の税区分、 tax_8_e50: インボイス経過措置8%表示50%控除の税区分、 tax_r8_e80: インボイス経過措置軽減税率8%表示80%控除の税区分、 tax_r8_e50: インボイス経過措置軽減税率8%表示50%控除の税区分、 tax_10_e80: インボイス経過措置10%表示80%控除の税区分、 tax_10_e50: インボイス経過措置10%表示50%控除の税区分、 null: 税率未設定税区分）
    * @return displayCategory
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "tax_8", required = true, value = "税区分の表示カテゴリ（tax_5: 5%表示の税区分、tax_8: 8%表示の税区分、tax_r8: 軽減税率8%表示の税区分、tax_10: 10%表示の税区分、null: 税率未設定税区分）")
+  @ApiModelProperty(example = "tax_8", required = true, value = "税区分の表示カテゴリ（ tax_5: 5%表示の税区分、 tax_8: 8%表示の税区分、 tax_r8: 軽減税率8%表示の税区分、 tax_10: 10%表示の税区分、 tax_5_e80: インボイス経過措置5%表示80%控除の税区分、 tax_5_e50: インボイス経過措置5%表示50%控除の税区分、 tax_8_e80: インボイス経過措置8%表示80%控除の税区分、 tax_8_e50: インボイス経過措置8%表示50%控除の税区分、 tax_r8_e80: インボイス経過措置軽減税率8%表示80%控除の税区分、 tax_r8_e50: インボイス経過措置軽減税率8%表示50%控除の税区分、 tax_10_e80: インボイス経過措置10%表示80%控除の税区分、 tax_10_e50: インボイス経過措置10%表示50%控除の税区分、 null: 税率未設定税区分）")
 
   public DisplayCategoryEnum getDisplayCategory() {
     return displayCategory;
