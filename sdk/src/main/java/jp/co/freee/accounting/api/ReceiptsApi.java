@@ -27,12 +27,14 @@ import java.util.Map;
 
 public interface ReceiptsApi {
   /**
-   * ファイルボックス 証憑ファイルアップロード
+   * ファイルボックス（証憑ファイル）のアップロード
    * 
    * @param companyId 事業所ID (required)
    * @param receipt 証憑ファイル (required)
    * @param description メモ (255文字以内) (optional)
+   * @param documentType この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他）  (optional)
    * @param issueDate 取引日 (yyyy-mm-dd) (optional)
+   * @param qualifiedInvoice この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない）  (optional)
    * @param receiptMetadatumAmount 金額 (optional)
    * @param receiptMetadatumIssueDate 発行日 (yyyy-mm-dd) (optional)
    * @param receiptMetadatumPartnerName 発行元 (optional)
@@ -41,13 +43,13 @@ public interface ReceiptsApi {
   @retrofit2.http.Multipart
   @POST("api/1/receipts")
   Observable<ReceiptResponse> createReceipt(
-    @retrofit2.http.Part("company_id") Integer companyId, @retrofit2.http.Part MultipartBody.Part receipt, @retrofit2.http.Part("description") String description, @retrofit2.http.Part("issue_date") String issueDate, @retrofit2.http.Part("receipt_metadatum_amount") Long receiptMetadatumAmount, @retrofit2.http.Part("receipt_metadatum_issue_date") String receiptMetadatumIssueDate, @retrofit2.http.Part("receipt_metadatum_partner_name") String receiptMetadatumPartnerName
+    @retrofit2.http.Part("company_id") Integer companyId, @retrofit2.http.Part MultipartBody.Part receipt, @retrofit2.http.Part("description") String description, @retrofit2.http.Part("document_type") String documentType, @retrofit2.http.Part("issue_date") String issueDate, @retrofit2.http.Part("qualified_invoice") String qualifiedInvoice, @retrofit2.http.Part("receipt_metadatum_amount") Long receiptMetadatumAmount, @retrofit2.http.Part("receipt_metadatum_issue_date") String receiptMetadatumIssueDate, @retrofit2.http.Part("receipt_metadatum_partner_name") String receiptMetadatumPartnerName
   );
 
   /**
-   * ファイルボックス 証憑ファイルを削除する
+   * ファイルボックス（証憑ファイル）の削除
    * 
-   * @param id 証憑ファイルID (required)
+   * @param id ファイルボックス（証憑ファイル）ID (required)
    * @param companyId 事業所ID (required)
    * @return Completable
    */
@@ -57,9 +59,9 @@ public interface ReceiptsApi {
   );
 
   /**
-   * ファイルボックス 証憑ファイルのダウンロード
+   * ファイルボックス（証憑ファイル）のダウンロード
    * 
-   * @param id 証憑ファイルID (required)
+   * @param id ファイルボックス（証憑ファイル）ID (required)
    * @param companyId 事業所ID (required)
    * @return Observable&lt;ResponseBody&gt;
    */
@@ -69,9 +71,9 @@ public interface ReceiptsApi {
   );
 
   /**
-   * ファイルボックス 証憑ファイルの取得
+   * ファイルボックス（証憑ファイル）の取得
    * 
-   * @param id 証憑ファイルID (required)
+   * @param id ファイルボックス（証憑ファイル）ID (required)
    * @param companyId 事業所ID (required)
    * @return Observable&lt;ReceiptResponse&gt;
    */
@@ -81,7 +83,7 @@ public interface ReceiptsApi {
   );
 
   /**
-   * ファイルボックス 証憑ファイル一覧の取得
+   * ファイルボックス（証憑ファイル）一覧の取得
    * 
    * @param companyId 事業所ID (required)
    * @param startDate アップロード日 (yyyy-mm-dd) (required)
@@ -101,9 +103,9 @@ public interface ReceiptsApi {
   );
 
   /**
-   * ファイルボックス 証憑ファイル情報更新
+   * ファイルボックス（証憑ファイル）の更新
    * 
-   * @param id 証憑ファイルID (required)
+   * @param id ファイルボックス（証憑ファイル）ID (required)
    * @param receiptUpdateParams  (required)
    * @return Observable&lt;ReceiptResponse&gt;
    */

@@ -32,7 +32,7 @@ public class DealsApiTest {
     }
 
     /**
-     * 取引（収入／支出）の作成
+     * 取引（収入・支出）の作成
      *
      * 
      */
@@ -44,7 +44,7 @@ public class DealsApiTest {
         // TODO: test validations
     }
     /**
-     * 取引（収入／支出）の削除
+     * 取引（収入・支出）の削除
      *
      * 
      */
@@ -57,7 +57,7 @@ public class DealsApiTest {
         // TODO: test validations
     }
     /**
-     * 取引（収入／支出）の取得
+     * 取引（収入・支出）の取得
      *
      * 
      */
@@ -71,7 +71,7 @@ public class DealsApiTest {
         // TODO: test validations
     }
     /**
-     * 取引（収入／支出）一覧の取得
+     * 取引（収入・支出）一覧の取得
      *
      * 
      */
@@ -98,7 +98,7 @@ public class DealsApiTest {
         // TODO: test validations
     }
     /**
-     * 取引（収入／支出）の更新
+     * 取引（収入・支出）の更新
      *
      * 
      */

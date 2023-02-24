@@ -55,7 +55,7 @@ public class SectionsApiTest {
         // TODO: test validations
     }
     /**
-     * 
+     * 部門の取得
      *
      * 
      */

@@ -448,11 +448,11 @@ public class PartnerUpdateParams {
   }
 
    /**
-   * 取引先名 (255文字以内)
+   * 取引先名 (255文字以内、重複不可)
    * @return name
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "新しい取引先", required = true, value = "取引先名 (255文字以内)")
+  @ApiModelProperty(example = "新しい取引先", required = true, value = "取引先名 (255文字以内、重複不可)")
 
   public String getName() {
     return name;

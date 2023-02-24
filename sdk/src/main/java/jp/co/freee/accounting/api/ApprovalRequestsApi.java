@@ -91,7 +91,7 @@ public interface ApprovalRequestsApi {
   );
 
   /**
-   * 各種申請の一覧
+   * 各種申請一覧の取得
    * 
    * @param companyId 事業所ID (required)
    * @param status 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し) 承認者指定時には無効です。 (optional)

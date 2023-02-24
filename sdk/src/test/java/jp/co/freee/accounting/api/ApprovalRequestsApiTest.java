@@ -97,7 +97,7 @@ public class ApprovalRequestsApiTest {
         // TODO: test validations
     }
     /**
-     * 各種申請の一覧
+     * 各種申請一覧の取得
      *
      * 
      */

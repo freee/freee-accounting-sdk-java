@@ -26,9 +26,9 @@ import java.util.Map;
 
 public interface WalletTxnsApi {
   /**
-   * 明細の作成
+   * 口座明細の作成
    * 
-   * @param walletTxnParams 明細の作成 (optional)
+   * @param walletTxnParams 口座明細の作成 (optional)
    * @return Observable&lt;WalletTxnResponse&gt;
    */
   @Headers({
@@ -40,7 +40,7 @@ public interface WalletTxnsApi {
   );
 
   /**
-   * 明細の削除
+   * 口座明細の削除
    * 
    * @param id 明細ID (required)
    * @param companyId 事業所ID (required)
@@ -52,7 +52,7 @@ public interface WalletTxnsApi {
   );
 
   /**
-   * 明細の取得
+   * 口座明細の取得
    * 
    * @param id 明細ID (required)
    * @param companyId 事業所ID (required)
@@ -64,7 +64,7 @@ public interface WalletTxnsApi {
   );
 
   /**
-   * 明細一覧の取得
+   * 口座明細一覧の取得
    * 
    * @param companyId 事業所ID (required)
    * @param walletableType 口座区分 (銀行口座: bank_account, クレジットカード: credit_card, 現金: wallet) walletable_type、walletable_idは同時に指定が必要です。 (optional)

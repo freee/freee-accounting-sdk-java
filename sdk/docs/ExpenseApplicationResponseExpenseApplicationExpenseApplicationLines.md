@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **description** | **String** | 内容 |  [optional]
 **expenseApplicationLineTemplateId** | **Integer** | 経費科目ID |  [optional]
 **id** | **Long** | 経費申請の項目行ID | 
-**receiptId** | **Integer** | 証憑ファイルID（ファイルボックスのファイルID） |  [optional]
+**receiptId** | **Integer** | ファイルボックス（証憑ファイル）ID |  [optional]
 **transactionDate** | **String** | 日付 (yyyy-mm-dd) |  [optional]
 
 

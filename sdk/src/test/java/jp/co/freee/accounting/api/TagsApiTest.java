@@ -55,7 +55,7 @@ public class TagsApiTest {
         // TODO: test validations
     }
     /**
-     * メモタグの詳細情報の取得
+     * メモタグの取得
      *
      * 
      */

@@ -202,11 +202,11 @@ public class ManualJournal {
   }
 
    /**
-   * 証憑ファイルID（ファイルボックスのファイルID）
+   * ファイルボックス（証憑ファイル）ID
    * @return receiptIds
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "[1,2,3]", value = "証憑ファイルID（ファイルボックスのファイルID）")
+  @ApiModelProperty(example = "[1,2,3]", value = "ファイルボックス（証憑ファイル）ID")
 
   public List<Integer> getReceiptIds() {
     return receiptIds;

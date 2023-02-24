@@ -29,7 +29,7 @@ public class PaymentsApiTest {
     }
 
     /**
-     * 取引（収入／支出）の支払行作成
+     * 取引（収入・支出）の支払行の作成
      *
      * 
      */
@@ -42,7 +42,7 @@ public class PaymentsApiTest {
         // TODO: test validations
     }
     /**
-     * 取引（収入／支出）の支払行削除
+     * 取引（収入・支出）の支払行の削除
      *
      * 
      */
@@ -56,7 +56,7 @@ public class PaymentsApiTest {
         // TODO: test validations
     }
     /**
-     * 取引（収入／支出）の支払行更新
+     * 取引（収入・支出）の支払行の更新
      *
      * 
      */

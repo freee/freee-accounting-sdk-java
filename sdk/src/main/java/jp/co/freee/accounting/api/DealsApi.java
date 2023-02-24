@@ -28,9 +28,9 @@ import java.util.Map;
 
 public interface DealsApi {
   /**
-   * 取引（収入／支出）の作成
+   * 取引（収入・支出）の作成
    * 
-   * @param dealCreateParams 取引（収入／支出）の作成 (optional)
+   * @param dealCreateParams 取引（収入・支出）の作成 (optional)
    * @return Observable&lt;DealCreateResponse&gt;
    */
   @Headers({
@@ -42,7 +42,7 @@ public interface DealsApi {
   );
 
   /**
-   * 取引（収入／支出）の削除
+   * 取引（収入・支出）の削除
    * 
    * @param id 取引ID (required)
    * @param companyId 事業所ID (required)
@@ -54,7 +54,7 @@ public interface DealsApi {
   );
 
   /**
-   * 取引（収入／支出）の取得
+   * 取引（収入・支出）の取得
    * 
    * @param id  (required)
    * @param companyId 事業所ID (required)
@@ -67,7 +67,7 @@ public interface DealsApi {
   );
 
   /**
-   * 取引（収入／支出）一覧の取得
+   * 取引（収入・支出）一覧の取得
    * 
    * @param companyId 事業所ID (required)
    * @param partnerId 取引先IDで絞込 (optional)
@@ -93,10 +93,10 @@ public interface DealsApi {
   );
 
   /**
-   * 取引（収入／支出）の更新
+   * 取引（収入・支出）の更新
    * 
    * @param id 取引ID (required)
-   * @param dealUpdateParams 取引（収入／支出）の更新 (optional)
+   * @param dealUpdateParams 取引（収入・支出）の更新 (optional)
    * @return Observable&lt;DealResponse&gt;
    */
   @Headers({

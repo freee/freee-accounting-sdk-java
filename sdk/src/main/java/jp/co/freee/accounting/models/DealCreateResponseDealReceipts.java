@@ -235,13 +235,13 @@ public class DealCreateResponseDealReceipts {
   }
 
    /**
-   * 証憑ファイルID（ファイルボックスのファイルID）
+   * ファイルボックス（証憑ファイル）ID
    * minimum: 1
    * maximum: 2147483647
    * @return id
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "1", required = true, value = "証憑ファイルID（ファイルボックスのファイルID）")
+  @ApiModelProperty(example = "1", required = true, value = "ファイルボックス（証憑ファイル）ID")
 
   public Integer getId() {
     return id;

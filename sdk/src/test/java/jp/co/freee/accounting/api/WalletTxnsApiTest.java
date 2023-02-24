@@ -30,7 +30,7 @@ public class WalletTxnsApiTest {
     }
 
     /**
-     * 明細の作成
+     * 口座明細の作成
      *
      * 
      */
@@ -42,7 +42,7 @@ public class WalletTxnsApiTest {
         // TODO: test validations
     }
     /**
-     * 明細の削除
+     * 口座明細の削除
      *
      * 
      */
@@ -55,7 +55,7 @@ public class WalletTxnsApiTest {
         // TODO: test validations
     }
     /**
-     * 明細の取得
+     * 口座明細の取得
      *
      * 
      */
@@ -68,7 +68,7 @@ public class WalletTxnsApiTest {
         // TODO: test validations
     }
     /**
-     * 明細一覧の取得
+     * 口座明細一覧の取得
      *
      * 
      */

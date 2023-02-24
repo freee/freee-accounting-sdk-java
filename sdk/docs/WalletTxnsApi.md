@@ -4,10 +4,10 @@ All URIs are relative to *https://api.freee.co.jp*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createWalletTxn**](WalletTxnsApi.md#createWalletTxn) | **POST** api/1/wallet_txns | 明細の作成
-[**destroyWalletTxn**](WalletTxnsApi.md#destroyWalletTxn) | **DELETE** api/1/wallet_txns/{id} | 明細の削除
-[**getWalletTxn**](WalletTxnsApi.md#getWalletTxn) | **GET** api/1/wallet_txns/{id} | 明細の取得
-[**getWalletTxns**](WalletTxnsApi.md#getWalletTxns) | **GET** api/1/wallet_txns | 明細一覧の取得
+[**createWalletTxn**](WalletTxnsApi.md#createWalletTxn) | **POST** api/1/wallet_txns | 口座明細の作成
+[**destroyWalletTxn**](WalletTxnsApi.md#destroyWalletTxn) | **DELETE** api/1/wallet_txns/{id} | 口座明細の削除
+[**getWalletTxn**](WalletTxnsApi.md#getWalletTxn) | **GET** api/1/wallet_txns/{id} | 口座明細の取得
+[**getWalletTxns**](WalletTxnsApi.md#getWalletTxns) | **GET** api/1/wallet_txns | 口座明細一覧の取得
 
 
 
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 > WalletTxnResponse createWalletTxn(walletTxnParams)
 
-明細の作成
+口座明細の作成
 
 ### Example
 
@@ -38,7 +38,7 @@ public class Example {
         oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
         WalletTxnsApi apiInstance = new WalletTxnsApi(defaultClient);
-        WalletTxnParams walletTxnParams = new WalletTxnParams(); // WalletTxnParams | 明細の作成
+        WalletTxnParams walletTxnParams = new WalletTxnParams(); // WalletTxnParams | 口座明細の作成
         try {
             WalletTxnResponse result = apiInstance.createWalletTxn(walletTxnParams);
             System.out.println(result);
@@ -58,7 +58,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **walletTxnParams** | [**WalletTxnParams**](WalletTxnParams.md)| 明細の作成 | [optional]
+ **walletTxnParams** | [**WalletTxnParams**](WalletTxnParams.md)| 口座明細の作成 | [optional]
 
 ### Return type
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 > destroyWalletTxn(id, companyId)
 
-明細の削除
+口座明細の削除
 
 ### Example
 
@@ -163,7 +163,7 @@ null (empty response body)
 
 > WalletTxnResponse getWalletTxn(id, companyId)
 
-明細の取得
+口座明細の取得
 
 ### Example
 
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 
 > InlineResponse20014 getWalletTxns(companyId, walletableType, walletableId, startDate, endDate, entrySide, offset, limit)
 
-明細一覧の取得
+口座明細一覧の取得
 
 ### Example
 

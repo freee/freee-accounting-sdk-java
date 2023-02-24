@@ -30,7 +30,7 @@ public class JournalsApiTest {
     }
 
     /**
-     * ダウンロード実行
+     * 仕訳帳のダウンロード
      *
      * 
      */
@@ -43,7 +43,7 @@ public class JournalsApiTest {
         // TODO: test validations
     }
     /**
-     * ステータス確認
+     * 仕訳帳のステータスの取得
      *
      * 
      */
@@ -56,7 +56,7 @@ public class JournalsApiTest {
         // TODO: test validations
     }
     /**
-     * ダウンロード要求
+     * 仕訳帳のダウンロード要求
      *
      * 
      */

@@ -4,9 +4,9 @@ All URIs are relative to *https://api.freee.co.jp*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createDealPayment**](PaymentsApi.md#createDealPayment) | **POST** api/1/deals/{id}/payments | 取引（収入／支出）の支払行作成
-[**destroyDealPayment**](PaymentsApi.md#destroyDealPayment) | **DELETE** api/1/deals/{id}/payments/{payment_id} | 取引（収入／支出）の支払行削除
-[**updateDealPayment**](PaymentsApi.md#updateDealPayment) | **PUT** api/1/deals/{id}/payments/{payment_id} | 取引（収入／支出）の支払行更新
+[**createDealPayment**](PaymentsApi.md#createDealPayment) | **POST** api/1/deals/{id}/payments | 取引（収入・支出）の支払行の作成
+[**destroyDealPayment**](PaymentsApi.md#destroyDealPayment) | **DELETE** api/1/deals/{id}/payments/{payment_id} | 取引（収入・支出）の支払行の削除
+[**updateDealPayment**](PaymentsApi.md#updateDealPayment) | **PUT** api/1/deals/{id}/payments/{payment_id} | 取引（収入・支出）の支払行の更新
 
 
 
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 > DealResponse createDealPayment(id, paymentParams)
 
-取引（収入／支出）の支払行作成
+取引（収入・支出）の支払行の作成
 
 ### Example
 
@@ -38,7 +38,7 @@ public class Example {
 
         PaymentsApi apiInstance = new PaymentsApi(defaultClient);
         Integer id = 56; // Integer | 取引ID
-        PaymentParams paymentParams = new PaymentParams(); // PaymentParams | 取引（収入／支出）の支払行作成
+        PaymentParams paymentParams = new PaymentParams(); // PaymentParams | 取引（収入・支出）の支払行の作成
         try {
             DealResponse result = apiInstance.createDealPayment(id, paymentParams);
             System.out.println(result);
@@ -59,7 +59,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| 取引ID |
- **paymentParams** | [**PaymentParams**](PaymentParams.md)| 取引（収入／支出）の支払行作成 |
+ **paymentParams** | [**PaymentParams**](PaymentParams.md)| 取引（収入・支出）の支払行の作成 |
 
 ### Return type
 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 > destroyDealPayment(id, paymentId, companyId)
 
-取引（収入／支出）の支払行削除
+取引（収入・支出）の支払行の削除
 
 ### Example
 
@@ -167,7 +167,7 @@ null (empty response body)
 
 > DealResponse updateDealPayment(id, paymentId, paymentParams)
 
-取引（収入／支出）の支払行更新
+取引（収入・支出）の支払行の更新
 
 ### Example
 
@@ -192,7 +192,7 @@ public class Example {
         PaymentsApi apiInstance = new PaymentsApi(defaultClient);
         Integer id = 56; // Integer | 取引ID
         Long paymentId = 56L; // Long | 決済ID
-        PaymentParams paymentParams = new PaymentParams(); // PaymentParams | 取引（収入／支出）の支払行更新
+        PaymentParams paymentParams = new PaymentParams(); // PaymentParams | 取引（収入・支出）の支払行の更新
         try {
             DealResponse result = apiInstance.updateDealPayment(id, paymentId, paymentParams);
             System.out.println(result);
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| 取引ID |
  **paymentId** | **Long**| 決済ID |
- **paymentParams** | [**PaymentParams**](PaymentParams.md)| 取引（収入／支出）の支払行更新 |
+ **paymentParams** | [**PaymentParams**](PaymentParams.md)| 取引（収入・支出）の支払行の更新 |
 
 ### Return type
 

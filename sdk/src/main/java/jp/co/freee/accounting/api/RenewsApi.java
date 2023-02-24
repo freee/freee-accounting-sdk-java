@@ -25,10 +25,10 @@ import java.util.Map;
 
 public interface RenewsApi {
   /**
-   * 取引（収入／支出）に対する+更新の作成
+   * 取引（収入・支出）の+更新の作成
    * 
    * @param id 取引ID (required)
-   * @param renewCreateParams 取引（収入／支出）に対する+更新の情報 (required)
+   * @param renewCreateParams 取引（収入・支出）の+更新の作成 (required)
    * @return Observable&lt;DealResponse&gt;
    */
   @Headers({
@@ -40,7 +40,7 @@ public interface RenewsApi {
   );
 
   /**
-   * 取引（収入／支出）の+更新の削除
+   * 取引（収入・支出）の+更新の削除
    * 
    * @param id 取引ID (required)
    * @param renewId +更新ID (required)
@@ -53,11 +53,11 @@ public interface RenewsApi {
   );
 
   /**
-   * 取引（収入／支出）の+更新の更新
+   * 取引（収入・支出）の+更新の更新
    * 
    * @param id 取引ID (required)
    * @param renewId +更新ID (required)
-   * @param renewUpdateParams +更新の更新情報 (required)
+   * @param renewUpdateParams 取引（収入・支出）の+更新の更新 (required)
    * @return Observable&lt;DealResponse&gt;
    */
   @Headers({

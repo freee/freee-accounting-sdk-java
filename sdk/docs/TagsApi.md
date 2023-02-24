@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createTag**](TagsApi.md#createTag) | **POST** api/1/tags | メモタグの作成
 [**destroyTag**](TagsApi.md#destroyTag) | **DELETE** api/1/tags/{id} | メモタグの削除
-[**getTag**](TagsApi.md#getTag) | **GET** api/1/tags/{id} | メモタグの詳細情報の取得
+[**getTag**](TagsApi.md#getTag) | **GET** api/1/tags/{id} | メモタグの取得
 [**getTags**](TagsApi.md#getTags) | **GET** api/1/tags | メモタグ一覧の取得
 [**updateTag**](TagsApi.md#updateTag) | **PUT** api/1/tags/{id} | メモタグの更新
 
@@ -164,7 +164,7 @@ null (empty response body)
 
 > TagResponse getTag(id, companyId)
 
-メモタグの詳細情報の取得
+メモタグの取得
 
 ### Example
 

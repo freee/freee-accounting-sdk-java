@@ -4,11 +4,11 @@ All URIs are relative to *https://api.freee.co.jp*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createDeal**](DealsApi.md#createDeal) | **POST** api/1/deals | 取引（収入／支出）の作成
-[**destroyDeal**](DealsApi.md#destroyDeal) | **DELETE** api/1/deals/{id} | 取引（収入／支出）の削除
-[**getDeal**](DealsApi.md#getDeal) | **GET** api/1/deals/{id} | 取引（収入／支出）の取得
-[**getDeals**](DealsApi.md#getDeals) | **GET** api/1/deals | 取引（収入／支出）一覧の取得
-[**updateDeal**](DealsApi.md#updateDeal) | **PUT** api/1/deals/{id} | 取引（収入／支出）の更新
+[**createDeal**](DealsApi.md#createDeal) | **POST** api/1/deals | 取引（収入・支出）の作成
+[**destroyDeal**](DealsApi.md#destroyDeal) | **DELETE** api/1/deals/{id} | 取引（収入・支出）の削除
+[**getDeal**](DealsApi.md#getDeal) | **GET** api/1/deals/{id} | 取引（収入・支出）の取得
+[**getDeals**](DealsApi.md#getDeals) | **GET** api/1/deals | 取引（収入・支出）一覧の取得
+[**updateDeal**](DealsApi.md#updateDeal) | **PUT** api/1/deals/{id} | 取引（収入・支出）の更新
 
 
 
@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 > DealCreateResponse createDeal(dealCreateParams)
 
-取引（収入／支出）の作成
+取引（収入・支出）の作成
 
 ### Example
 
@@ -39,7 +39,7 @@ public class Example {
         oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
         DealsApi apiInstance = new DealsApi(defaultClient);
-        DealCreateParams dealCreateParams = new DealCreateParams(); // DealCreateParams | 取引（収入／支出）の作成
+        DealCreateParams dealCreateParams = new DealCreateParams(); // DealCreateParams | 取引（収入・支出）の作成
         try {
             DealCreateResponse result = apiInstance.createDeal(dealCreateParams);
             System.out.println(result);
@@ -59,7 +59,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **dealCreateParams** | [**DealCreateParams**](DealCreateParams.md)| 取引（収入／支出）の作成 | [optional]
+ **dealCreateParams** | [**DealCreateParams**](DealCreateParams.md)| 取引（収入・支出）の作成 | [optional]
 
 ### Return type
 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 > destroyDeal(id, companyId)
 
-取引（収入／支出）の削除
+取引（収入・支出）の削除
 
 ### Example
 
@@ -165,7 +165,7 @@ null (empty response body)
 
 > DealResponse getDeal(id, companyId, accruals)
 
-取引（収入／支出）の取得
+取引（収入・支出）の取得
 
 ### Example
 
@@ -243,7 +243,7 @@ Name | Type | Description  | Notes
 
 > InlineResponse2001 getDeals(companyId, partnerId, accountItemId, partnerCode, status, type, startIssueDate, endIssueDate, startDueDate, endDueDate, startRenewDate, endRenewDate, offset, limit, registeredFrom, accruals)
 
-取引（収入／支出）一覧の取得
+取引（収入・支出）一覧の取得
 
 ### Example
 
@@ -347,7 +347,7 @@ Name | Type | Description  | Notes
 
 > DealResponse updateDeal(id, dealUpdateParams)
 
-取引（収入／支出）の更新
+取引（収入・支出）の更新
 
 ### Example
 
@@ -371,7 +371,7 @@ public class Example {
 
         DealsApi apiInstance = new DealsApi(defaultClient);
         Integer id = 56; // Integer | 取引ID
-        DealUpdateParams dealUpdateParams = new DealUpdateParams(); // DealUpdateParams | 取引（収入／支出）の更新
+        DealUpdateParams dealUpdateParams = new DealUpdateParams(); // DealUpdateParams | 取引（収入・支出）の更新
         try {
             DealResponse result = apiInstance.updateDeal(id, dealUpdateParams);
             System.out.println(result);
@@ -392,7 +392,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer**| 取引ID |
- **dealUpdateParams** | [**DealUpdateParams**](DealUpdateParams.md)| 取引（収入／支出）の更新 | [optional]
+ **dealUpdateParams** | [**DealUpdateParams**](DealUpdateParams.md)| 取引（収入・支出）の更新 | [optional]
 
 ### Return type
 

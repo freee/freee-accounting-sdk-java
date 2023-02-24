@@ -25,7 +25,7 @@ import java.util.Map;
 
 public interface SegmentTagsApi {
   /**
-   * セグメントの作成
+   * セグメントタグの作成
    * 
    * @param segmentId セグメントID（1,2,3のいずれか） 該当プラン以外で参照した場合にはエラーとなります。   1: 法人向けプロフェッショナル, 法人向けエンタープライズプラン   2,3: 法人向け エンタープライズプラン  (required)
    * @param segmentTagParams セグメントタグの作成 (required)

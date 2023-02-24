@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **createdAt** | **String** | 作成日時（ISO8601形式） | 
 **description** | **String** | メモ |  [optional]
-**id** | **Integer** | 証憑ファイルID（ファイルボックスのファイルID） | 
+**id** | **Integer** | ファイルボックス（証憑ファイル）ID | 
 **issueDate** | **String** | 発生日 |  [optional]
 **mimeType** | **String** | MIMEタイプ | 
 **origin** | [**OriginEnum**](#OriginEnum) | アップロード元種別 | 

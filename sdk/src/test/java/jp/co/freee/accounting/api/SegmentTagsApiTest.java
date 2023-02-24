@@ -29,7 +29,7 @@ public class SegmentTagsApiTest {
     }
 
     /**
-     * セグメントの作成
+     * セグメントタグの作成
      *
      * 
      */

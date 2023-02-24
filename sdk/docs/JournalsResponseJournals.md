@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **id** | **Integer** | 受け付けID | 
 **messages** | **List&lt;String&gt;** |  |  [optional]
 **startDate** | **String** | 取得開始日 (yyyy-mm-dd) |  [optional]
-**statusUrl** | **String** | ステータス確認用URL |  [optional]
+**statusUrl** | **String** | 仕訳帳のステータスの取得用URL |  [optional]
 **upToDate** | **Boolean** | 集計結果が最新かどうか |  [optional]
 **upToDateReasons** | [**List&lt;JournalsResponseJournalsUpToDateReasons&gt;**](JournalsResponseJournalsUpToDateReasons.md) | 集計が最新でない場合の要因情報 |  [optional]
 **visibleIds** | [**List&lt;VisibleIdsEnum&gt;**](#List&lt;VisibleIdsEnum&gt;) |  |  [optional]

@@ -25,6 +25,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import jp.co.freee.accounting.models.DealReceiptMetadatum;
 import jp.co.freee.accounting.models.DealUser;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 /**
  * Receipt
@@ -39,6 +40,59 @@ public class Receipt {
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   private String description;
 
+  /**
+   * この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他） 
+   */
+  @JsonAdapter(DocumentTypeEnum.Adapter.class)
+  public enum DocumentTypeEnum {
+    RECEIPT("receipt"),
+    
+    INVOICE("invoice"),
+    
+    OTHER("other");
+
+    private String value;
+
+    DocumentTypeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static DocumentTypeEnum fromValue(String value) {
+      for (DocumentTypeEnum b : DocumentTypeEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<DocumentTypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final DocumentTypeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public DocumentTypeEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return DocumentTypeEnum.fromValue(value);
+      }
+    }
+  }
+
+  public static final String SERIALIZED_NAME_DOCUMENT_TYPE = "document_type";
+  @SerializedName(SERIALIZED_NAME_DOCUMENT_TYPE)
+  private DocumentTypeEnum documentType;
+
   public static final String SERIALIZED_NAME_FILE_SRC = "file_src";
   @SerializedName(SERIALIZED_NAME_FILE_SRC)
   private String fileSrc;
@@ -46,6 +100,10 @@ public class Receipt {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   private Integer id;
+
+  public static final String SERIALIZED_NAME_INVOICE_REGISTRATION_NUMBER = "invoice_registration_number";
+  @SerializedName(SERIALIZED_NAME_INVOICE_REGISTRATION_NUMBER)
+  private String invoiceRegistrationNumber;
 
   public static final String SERIALIZED_NAME_ISSUE_DATE = "issue_date";
   @SerializedName(SERIALIZED_NAME_ISSUE_DATE)
@@ -121,6 +179,57 @@ public class Receipt {
   public static final String SERIALIZED_NAME_ORIGIN = "origin";
   @SerializedName(SERIALIZED_NAME_ORIGIN)
   private OriginEnum origin;
+
+  /**
+   * この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない） 
+   */
+  @JsonAdapter(QualifiedInvoiceEnum.Adapter.class)
+  public enum QualifiedInvoiceEnum {
+    QUALIFIED("qualified"),
+    
+    NOT_QUALIFIED("not_qualified");
+
+    private String value;
+
+    QualifiedInvoiceEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static QualifiedInvoiceEnum fromValue(String value) {
+      for (QualifiedInvoiceEnum b : QualifiedInvoiceEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<QualifiedInvoiceEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final QualifiedInvoiceEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public QualifiedInvoiceEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return QualifiedInvoiceEnum.fromValue(value);
+      }
+    }
+  }
+
+  public static final String SERIALIZED_NAME_QUALIFIED_INVOICE = "qualified_invoice";
+  @SerializedName(SERIALIZED_NAME_QUALIFIED_INVOICE)
+  private QualifiedInvoiceEnum qualifiedInvoice;
 
   public static final String SERIALIZED_NAME_RECEIPT_METADATUM = "receipt_metadatum";
   @SerializedName(SERIALIZED_NAME_RECEIPT_METADATUM)
@@ -232,6 +341,29 @@ public class Receipt {
   }
 
 
+  public Receipt documentType(DocumentTypeEnum documentType) {
+    
+    this.documentType = documentType;
+    return this;
+  }
+
+   /**
+   * この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他） 
+   * @return documentType
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "receipt", value = "この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他） ")
+
+  public DocumentTypeEnum getDocumentType() {
+    return documentType;
+  }
+
+
+  public void setDocumentType(DocumentTypeEnum documentType) {
+    this.documentType = documentType;
+  }
+
+
   public Receipt fileSrc(String fileSrc) {
     
     this.fileSrc = fileSrc;
@@ -264,13 +396,13 @@ public class Receipt {
   }
 
    /**
-   * 証憑ファイルID
+   * ファイルボックス（証憑ファイル）ID
    * minimum: 1
    * maximum: 2147483647
    * @return id
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "1", required = true, value = "証憑ファイルID")
+  @ApiModelProperty(example = "1", required = true, value = "ファイルボックス（証憑ファイル）ID")
 
   public Integer getId() {
     return id;
@@ -279,6 +411,29 @@ public class Receipt {
 
   public void setId(Integer id) {
     this.id = id;
+  }
+
+
+  public Receipt invoiceRegistrationNumber(String invoiceRegistrationNumber) {
+    
+    this.invoiceRegistrationNumber = invoiceRegistrationNumber;
+    return this;
+  }
+
+   /**
+   * この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 インボイス制度適格請求書発行事業者登録番号 - 先頭T数字13桁の固定14桁の文字列 &lt;a target&#x3D;\&quot;_blank\&quot; href&#x3D;\&quot;https://www.invoice-kohyo.nta.go.jp/index.html\&quot;&gt;国税庁インボイス制度適格請求書発行事業者公表サイト&lt;/a&gt; 
+   * @return invoiceRegistrationNumber
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "T1000000000001", value = "この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 インボイス制度適格請求書発行事業者登録番号 - 先頭T数字13桁の固定14桁の文字列 <a target=\"_blank\" href=\"https://www.invoice-kohyo.nta.go.jp/index.html\">国税庁インボイス制度適格請求書発行事業者公表サイト</a> ")
+
+  public String getInvoiceRegistrationNumber() {
+    return invoiceRegistrationNumber;
+  }
+
+
+  public void setInvoiceRegistrationNumber(String invoiceRegistrationNumber) {
+    this.invoiceRegistrationNumber = invoiceRegistrationNumber;
   }
 
 
@@ -348,6 +503,29 @@ public class Receipt {
 
   public void setOrigin(OriginEnum origin) {
     this.origin = origin;
+  }
+
+
+  public Receipt qualifiedInvoice(QualifiedInvoiceEnum qualifiedInvoice) {
+    
+    this.qualifiedInvoice = qualifiedInvoice;
+    return this;
+  }
+
+   /**
+   * この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない） 
+   * @return qualifiedInvoice
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "qualified", value = "この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない） ")
+
+  public QualifiedInvoiceEnum getQualifiedInvoice() {
+    return qualifiedInvoice;
+  }
+
+
+  public void setQualifiedInvoice(QualifiedInvoiceEnum qualifiedInvoice) {
+    this.qualifiedInvoice = qualifiedInvoice;
   }
 
 
@@ -431,19 +609,33 @@ public class Receipt {
     Receipt receipt = (Receipt) o;
     return Objects.equals(this.createdAt, receipt.createdAt) &&
         Objects.equals(this.description, receipt.description) &&
+        Objects.equals(this.documentType, receipt.documentType) &&
         Objects.equals(this.fileSrc, receipt.fileSrc) &&
         Objects.equals(this.id, receipt.id) &&
+        Objects.equals(this.invoiceRegistrationNumber, receipt.invoiceRegistrationNumber) &&
         Objects.equals(this.issueDate, receipt.issueDate) &&
         Objects.equals(this.mimeType, receipt.mimeType) &&
         Objects.equals(this.origin, receipt.origin) &&
+        Objects.equals(this.qualifiedInvoice, receipt.qualifiedInvoice) &&
         Objects.equals(this.receiptMetadatum, receipt.receiptMetadatum) &&
         Objects.equals(this.status, receipt.status) &&
         Objects.equals(this.user, receipt.user);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
-    return Objects.hash(createdAt, description, fileSrc, id, issueDate, mimeType, origin, receiptMetadatum, status, user);
+    return Objects.hash(createdAt, description, documentType, fileSrc, id, invoiceRegistrationNumber, issueDate, mimeType, origin, qualifiedInvoice, receiptMetadatum, status, user);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -452,11 +644,14 @@ public class Receipt {
     sb.append("class Receipt {\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    documentType: ").append(toIndentedString(documentType)).append("\n");
     sb.append("    fileSrc: ").append(toIndentedString(fileSrc)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    invoiceRegistrationNumber: ").append(toIndentedString(invoiceRegistrationNumber)).append("\n");
     sb.append("    issueDate: ").append(toIndentedString(issueDate)).append("\n");
     sb.append("    mimeType: ").append(toIndentedString(mimeType)).append("\n");
     sb.append("    origin: ").append(toIndentedString(origin)).append("\n");
+    sb.append("    qualifiedInvoice: ").append(toIndentedString(qualifiedInvoice)).append("\n");
     sb.append("    receiptMetadatum: ").append(toIndentedString(receiptMetadatum)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");

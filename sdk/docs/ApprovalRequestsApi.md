@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**getApprovalRequest**](ApprovalRequestsApi.md#getApprovalRequest) | **GET** api/1/approval_requests/{id} | 各種申請の取得
 [**getApprovalRequestForm**](ApprovalRequestsApi.md#getApprovalRequestForm) | **GET** api/1/approval_requests/forms/{id} | 各種申請の申請フォームの取得
 [**getApprovalRequestForms**](ApprovalRequestsApi.md#getApprovalRequestForms) | **GET** api/1/approval_requests/forms | 各種申請の申請フォーム一覧の取得
-[**getApprovalRequests**](ApprovalRequestsApi.md#getApprovalRequests) | **GET** api/1/approval_requests | 各種申請の一覧
+[**getApprovalRequests**](ApprovalRequestsApi.md#getApprovalRequests) | **GET** api/1/approval_requests | 各種申請一覧の取得
 [**updateApprovalRequest**](ApprovalRequestsApi.md#updateApprovalRequest) | **PUT** api/1/approval_requests/{id} | 各種申請の更新
 [**updateApprovalRequestAction**](ApprovalRequestsApi.md#updateApprovalRequestAction) | **POST** api/1/approval_requests/{id}/actions | 各種申請の承認操作
 
@@ -394,7 +394,7 @@ Name | Type | Description  | Notes
 
 > ApprovalRequestsIndexResponse getApprovalRequests(companyId, status, applicationNumber, title, formId, startApplicationDate, endApplicationDate, applicantId, minAmount, maxAmount, approverId, offset, limit)
 
-各種申請の一覧
+各種申請一覧の取得
 
 ### Example
 

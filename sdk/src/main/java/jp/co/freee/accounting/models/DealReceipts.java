@@ -239,13 +239,13 @@ public class DealReceipts {
   }
 
    /**
-   * ファイルのダウンロードURL（freeeにログインした状態でのみ閲覧可能です。） &lt;br&gt; &lt;br&gt; file_srcは廃止予定の属性になります。&lt;br&gt; file_srcに替わり、証憑ファイル（ファイルボックスのファイル）のダウンロード APIをご利用ください。&lt;br&gt; 証憑ファイル（ファイルボックスのファイル）のダウンロードAPIを利用することで、以下のようになります。 &lt;ul&gt;   &lt;li&gt;アプリケーション利用者はfreee APIアプリケーションにログインしていれば、証憑ダウンロード毎にfreeeに改めてログインすることなくファイルが参照できるようになります。&lt;/li&gt; &lt;/ul&gt;
+   * ファイルのダウンロードURL（freeeにログインした状態でのみ閲覧可能です。） &lt;br&gt; &lt;br&gt; file_srcは廃止予定の属性になります。&lt;br&gt; file_srcに替わり、ファイルボックス（証憑ファイル）のダウンロード APIをご利用ください。&lt;br&gt; ファイルボックス（証憑ファイル）のダウンロードAPIを利用することで、以下のようになります。 &lt;ul&gt;   &lt;li&gt;アプリケーション利用者はfreee APIアプリケーションにログインしていれば、証憑ダウンロード毎にfreeeに改めてログインすることなくファイルが参照できるようになります。&lt;/li&gt; &lt;/ul&gt;
    * @return fileSrc
    * @deprecated
   **/
   @Deprecated
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "https://www.freee.co.jp/api/p/receipts/revisions/1234xxxxx/download", required = true, value = "ファイルのダウンロードURL（freeeにログインした状態でのみ閲覧可能です。） <br> <br> file_srcは廃止予定の属性になります。<br> file_srcに替わり、証憑ファイル（ファイルボックスのファイル）のダウンロード APIをご利用ください。<br> 証憑ファイル（ファイルボックスのファイル）のダウンロードAPIを利用することで、以下のようになります。 <ul>   <li>アプリケーション利用者はfreee APIアプリケーションにログインしていれば、証憑ダウンロード毎にfreeeに改めてログインすることなくファイルが参照できるようになります。</li> </ul>")
+  @ApiModelProperty(example = "https://www.freee.co.jp/api/p/receipts/revisions/1234xxxxx/download", required = true, value = "ファイルのダウンロードURL（freeeにログインした状態でのみ閲覧可能です。） <br> <br> file_srcは廃止予定の属性になります。<br> file_srcに替わり、ファイルボックス（証憑ファイル）のダウンロード APIをご利用ください。<br> ファイルボックス（証憑ファイル）のダウンロードAPIを利用することで、以下のようになります。 <ul>   <li>アプリケーション利用者はfreee APIアプリケーションにログインしていれば、証憑ダウンロード毎にfreeeに改めてログインすることなくファイルが参照できるようになります。</li> </ul>")
 
   public String getFileSrc() {
     return fileSrc;
@@ -264,13 +264,13 @@ public class DealReceipts {
   }
 
    /**
-   * 証憑ファイルID（ファイルボックスのファイルID）
+   * ファイルボックス（証憑ファイル）ID
    * minimum: 1
    * maximum: 2147483647
    * @return id
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "1", required = true, value = "証憑ファイルID（ファイルボックスのファイルID）")
+  @ApiModelProperty(example = "1", required = true, value = "ファイルボックス（証憑ファイル）ID")
 
   public Integer getId() {
     return id;

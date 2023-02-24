@@ -26,7 +26,7 @@ import java.util.Map;
 
 public interface TaxesApi {
   /**
-   * 税区分コードの取得
+   * 税区分の取得
    * 
    * @param code 税区分コード (required)
    * @return Observable&lt;TaxResponse&gt;
@@ -37,7 +37,7 @@ public interface TaxesApi {
   );
 
   /**
-   * 税区分コード一覧の取得
+   * 税区分一覧の取得
    * 
    * @return Observable&lt;InlineResponse2009&gt;
    */
@@ -46,7 +46,7 @@ public interface TaxesApi {
     
 
   /**
-   * 税区分コード詳細一覧の取得
+   * 指定した事業所の税区分一覧の取得
    * 
    * @param companyId 事業所ID (required)
    * @param displayCategory この項目はインボイス制度で利用する項目です。2023年7月頃から利用できる予定です。税区分の表示カテゴリ（ tax_5: 5%表示の税区分、 tax_8: 8%表示の税区分、 tax_r8: 軽減税率8%表示の税区分、 tax_10: 10%表示の税区分、 tax_5_e80: インボイス経過措置5%表示80%控除の税区分、 tax_5_e50: インボイス経過措置5%表示50%控除の税区分、 tax_8_e80: インボイス経過措置8%表示80%控除の税区分、 tax_8_e50: インボイス経過措置8%表示50%控除の税区分、 tax_r8_e80: インボイス経過措置軽減税率8%表示80%控除の税区分、 tax_r8_e50: インボイス経過措置軽減税率8%表示50%控除の税区分、 tax_10_e80: インボイス経過措置10%表示80%控除の税区分、 tax_10_e50: インボイス経過措置10%表示50%控除の税区分） (optional)

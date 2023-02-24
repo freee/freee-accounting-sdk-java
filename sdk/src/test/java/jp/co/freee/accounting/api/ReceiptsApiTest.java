@@ -31,7 +31,7 @@ public class ReceiptsApiTest {
     }
 
     /**
-     * ファイルボックス 証憑ファイルアップロード
+     * ファイルボックス（証憑ファイル）のアップロード
      *
      * 
      */
@@ -40,16 +40,18 @@ public class ReceiptsApiTest {
         Integer companyId = null;
         File receipt = null;
         String description = null;
+        String documentType = null;
         String issueDate = null;
+        String qualifiedInvoice = null;
         Long receiptMetadatumAmount = null;
         String receiptMetadatumIssueDate = null;
         String receiptMetadatumPartnerName = null;
-        // ReceiptResponse response = api.createReceipt(companyId, receipt, description, issueDate, receiptMetadatumAmount, receiptMetadatumIssueDate, receiptMetadatumPartnerName);
+        // ReceiptResponse response = api.createReceipt(companyId, receipt, description, documentType, issueDate, qualifiedInvoice, receiptMetadatumAmount, receiptMetadatumIssueDate, receiptMetadatumPartnerName);
 
         // TODO: test validations
     }
     /**
-     * ファイルボックス 証憑ファイルを削除する
+     * ファイルボックス（証憑ファイル）の削除
      *
      * 
      */
@@ -62,7 +64,7 @@ public class ReceiptsApiTest {
         // TODO: test validations
     }
     /**
-     * ファイルボックス 証憑ファイルのダウンロード
+     * ファイルボックス（証憑ファイル）のダウンロード
      *
      * 
      */
@@ -75,7 +77,7 @@ public class ReceiptsApiTest {
         // TODO: test validations
     }
     /**
-     * ファイルボックス 証憑ファイルの取得
+     * ファイルボックス（証憑ファイル）の取得
      *
      * 
      */
@@ -88,7 +90,7 @@ public class ReceiptsApiTest {
         // TODO: test validations
     }
     /**
-     * ファイルボックス 証憑ファイル一覧の取得
+     * ファイルボックス（証憑ファイル）一覧の取得
      *
      * 
      */
@@ -109,7 +111,7 @@ public class ReceiptsApiTest {
         // TODO: test validations
     }
     /**
-     * ファイルボックス 証憑ファイル情報更新
+     * ファイルボックス（証憑ファイル）の更新
      *
      * 
      */

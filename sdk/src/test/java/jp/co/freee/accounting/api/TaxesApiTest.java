@@ -30,7 +30,7 @@ public class TaxesApiTest {
     }
 
     /**
-     * 税区分コードの取得
+     * 税区分の取得
      *
      * 
      */
@@ -42,7 +42,7 @@ public class TaxesApiTest {
         // TODO: test validations
     }
     /**
-     * 税区分コード一覧の取得
+     * 税区分一覧の取得
      *
      * 
      */
@@ -53,7 +53,7 @@ public class TaxesApiTest {
         // TODO: test validations
     }
     /**
-     * 税区分コード詳細一覧の取得
+     * 指定した事業所の税区分一覧の取得
      *
      * 
      */

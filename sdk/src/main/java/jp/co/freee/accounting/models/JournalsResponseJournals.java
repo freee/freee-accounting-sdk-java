@@ -397,11 +397,11 @@ public class JournalsResponseJournals {
   }
 
    /**
-   * ステータス確認用URL
+   * 仕訳帳のステータスの取得用URL
    * @return statusUrl
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "https://api.freee.co.jp/api/1/journals/reports/4/status", value = "ステータス確認用URL")
+  @ApiModelProperty(example = "https://api.freee.co.jp/api/1/journals/reports/4/status", value = "仕訳帳のステータスの取得用URL")
 
   public String getStatusUrl() {
     return statusUrl;

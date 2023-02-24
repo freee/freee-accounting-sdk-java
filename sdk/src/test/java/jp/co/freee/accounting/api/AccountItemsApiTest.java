@@ -57,7 +57,7 @@ public class AccountItemsApiTest {
         // TODO: test validations
     }
     /**
-     * 勘定科目の詳細情報の取得
+     * 勘定科目の取得
      *
      * 
      */

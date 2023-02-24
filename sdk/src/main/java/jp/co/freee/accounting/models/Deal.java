@@ -462,11 +462,11 @@ public class Deal {
   }
 
    /**
-   * 証憑ファイル（ファイルボックスのファイル）
+   * ファイルボックス（証憑ファイル）
    * @return receipts
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "証憑ファイル（ファイルボックスのファイル）")
+  @ApiModelProperty(value = "ファイルボックス（証憑ファイル）")
 
   public List<DealReceipts> getReceipts() {
     return receipts;

@@ -38,7 +38,7 @@ Name | Type | Description | Notes
 **paymentDate** | **String** | 支払期限 (yyyy-mm-dd) | 
 **paymentMethod** | [**PaymentMethodEnum**](#PaymentMethodEnum) | 支払方法(none: 指定なし, domestic_bank_transfer: 国内振込, abroad_bank_transfer: 国外振込, account_transfer: 口座振替, credit_card: クレジットカード) | 
 **paymentRequestLines** | [**List&lt;PaymentRequestResponsePaymentRequestPaymentRequestLines&gt;**](PaymentRequestResponsePaymentRequestPaymentRequestLines.md) | 支払依頼の項目行一覧（配列） | 
-**receiptIds** | **List&lt;Integer&gt;** | 証憑ファイルID（ファイルボックスのファイルID） | 
+**receiptIds** | **List&lt;Integer&gt;** | ファイルボックス（証憑ファイル）ID | 
 **status** | [**StatusEnum**](#StatusEnum) | 申請ステータス(draft:下書き, in_progress:申請中, approved:承認済, rejected:却下, feedback:差戻し) | 
 **title** | **String** | 申請タイトル | 
 **totalAmount** | **Long** | 合計金額 | 

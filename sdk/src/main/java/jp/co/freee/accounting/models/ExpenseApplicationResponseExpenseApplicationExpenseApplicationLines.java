@@ -162,13 +162,13 @@ public class ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines
   }
 
    /**
-   * 証憑ファイルID（ファイルボックスのファイルID）
+   * ファイルボックス（証憑ファイル）ID
    * minimum: 1
    * maximum: 2147483647
    * @return receiptId
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "606", value = "証憑ファイルID（ファイルボックスのファイルID）")
+  @ApiModelProperty(example = "606", value = "ファイルボックス（証憑ファイル）ID")
 
   public Integer getReceiptId() {
     return receiptId;

@@ -4,20 +4,20 @@ All URIs are relative to *https://api.freee.co.jp*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createReceipt**](ReceiptsApi.md#createReceipt) | **POST** api/1/receipts | ファイルボックス 証憑ファイルアップロード
-[**destroyReceipt**](ReceiptsApi.md#destroyReceipt) | **DELETE** api/1/receipts/{id} | ファイルボックス 証憑ファイルを削除する
-[**downloadReceipt**](ReceiptsApi.md#downloadReceipt) | **GET** api/1/receipts/{id}/download | ファイルボックス 証憑ファイルのダウンロード
-[**getReceipt**](ReceiptsApi.md#getReceipt) | **GET** api/1/receipts/{id} | ファイルボックス 証憑ファイルの取得
-[**getReceipts**](ReceiptsApi.md#getReceipts) | **GET** api/1/receipts | ファイルボックス 証憑ファイル一覧の取得
-[**updateReceipt**](ReceiptsApi.md#updateReceipt) | **PUT** api/1/receipts/{id} | ファイルボックス 証憑ファイル情報更新
+[**createReceipt**](ReceiptsApi.md#createReceipt) | **POST** api/1/receipts | ファイルボックス（証憑ファイル）のアップロード
+[**destroyReceipt**](ReceiptsApi.md#destroyReceipt) | **DELETE** api/1/receipts/{id} | ファイルボックス（証憑ファイル）の削除
+[**downloadReceipt**](ReceiptsApi.md#downloadReceipt) | **GET** api/1/receipts/{id}/download | ファイルボックス（証憑ファイル）のダウンロード
+[**getReceipt**](ReceiptsApi.md#getReceipt) | **GET** api/1/receipts/{id} | ファイルボックス（証憑ファイル）の取得
+[**getReceipts**](ReceiptsApi.md#getReceipts) | **GET** api/1/receipts | ファイルボックス（証憑ファイル）一覧の取得
+[**updateReceipt**](ReceiptsApi.md#updateReceipt) | **PUT** api/1/receipts/{id} | ファイルボックス（証憑ファイル）の更新
 
 
 
 ## createReceipt
 
-> ReceiptResponse createReceipt(companyId, receipt, description, issueDate, receiptMetadatumAmount, receiptMetadatumIssueDate, receiptMetadatumPartnerName)
+> ReceiptResponse createReceipt(companyId, receipt, description, documentType, issueDate, qualifiedInvoice, receiptMetadatumAmount, receiptMetadatumIssueDate, receiptMetadatumPartnerName)
 
-ファイルボックス 証憑ファイルアップロード
+ファイルボックス（証憑ファイル）のアップロード
 
 ### Example
 
@@ -43,12 +43,14 @@ public class Example {
         Integer companyId = 56; // Integer | 事業所ID
         File receipt = new File("/path/to/file"); // File | 証憑ファイル
         String description = "description_example"; // String | メモ (255文字以内)
+        String documentType = "receipt"; // String | この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他） 
         String issueDate = "issueDate_example"; // String | 取引日 (yyyy-mm-dd)
+        String qualifiedInvoice = "qualified"; // String | この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない） 
         Long receiptMetadatumAmount = 56L; // Long | 金額
         String receiptMetadatumIssueDate = "receiptMetadatumIssueDate_example"; // String | 発行日 (yyyy-mm-dd)
         String receiptMetadatumPartnerName = "receiptMetadatumPartnerName_example"; // String | 発行元
         try {
-            ReceiptResponse result = apiInstance.createReceipt(companyId, receipt, description, issueDate, receiptMetadatumAmount, receiptMetadatumIssueDate, receiptMetadatumPartnerName);
+            ReceiptResponse result = apiInstance.createReceipt(companyId, receipt, description, documentType, issueDate, qualifiedInvoice, receiptMetadatumAmount, receiptMetadatumIssueDate, receiptMetadatumPartnerName);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ReceiptsApi#createReceipt");
@@ -69,7 +71,9 @@ Name | Type | Description  | Notes
  **companyId** | **Integer**| 事業所ID |
  **receipt** | **File**| 証憑ファイル |
  **description** | **String**| メモ (255文字以内) | [optional]
+ **documentType** | **String**| この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他）  | [optional] [enum: receipt, invoice, other]
  **issueDate** | **String**| 取引日 (yyyy-mm-dd) | [optional]
+ **qualifiedInvoice** | **String**| この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない）  | [optional] [enum: qualified, not_qualified]
  **receiptMetadatumAmount** | **Long**| 金額 | [optional]
  **receiptMetadatumIssueDate** | **String**| 発行日 (yyyy-mm-dd) | [optional]
  **receiptMetadatumPartnerName** | **String**| 発行元 | [optional]
@@ -102,7 +106,7 @@ Name | Type | Description  | Notes
 
 > destroyReceipt(id, companyId)
 
-ファイルボックス 証憑ファイルを削除する
+ファイルボックス（証憑ファイル）の削除
 
 ### Example
 
@@ -125,7 +129,7 @@ public class Example {
         oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
         ReceiptsApi apiInstance = new ReceiptsApi(defaultClient);
-        Integer id = 56; // Integer | 証憑ファイルID
+        Integer id = 56; // Integer | ファイルボックス（証憑ファイル）ID
         Integer companyId = 56; // Integer | 事業所ID
         try {
             apiInstance.destroyReceipt(id, companyId);
@@ -145,7 +149,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 証憑ファイルID |
+ **id** | **Integer**| ファイルボックス（証憑ファイル）ID |
  **companyId** | **Integer**| 事業所ID |
 
 ### Return type
@@ -177,7 +181,7 @@ null (empty response body)
 
 > File downloadReceipt(id, companyId)
 
-ファイルボックス 証憑ファイルのダウンロード
+ファイルボックス（証憑ファイル）のダウンロード
 
 ### Example
 
@@ -200,7 +204,7 @@ public class Example {
         oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
         ReceiptsApi apiInstance = new ReceiptsApi(defaultClient);
-        Integer id = 56; // Integer | 証憑ファイルID
+        Integer id = 56; // Integer | ファイルボックス（証憑ファイル）ID
         Integer companyId = 56; // Integer | 事業所ID
         try {
             File result = apiInstance.downloadReceipt(id, companyId);
@@ -221,7 +225,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 証憑ファイルID |
+ **id** | **Integer**| ファイルボックス（証憑ファイル）ID |
  **companyId** | **Integer**| 事業所ID |
 
 ### Return type
@@ -253,7 +257,7 @@ Name | Type | Description  | Notes
 
 > ReceiptResponse getReceipt(id, companyId)
 
-ファイルボックス 証憑ファイルの取得
+ファイルボックス（証憑ファイル）の取得
 
 ### Example
 
@@ -276,7 +280,7 @@ public class Example {
         oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
         ReceiptsApi apiInstance = new ReceiptsApi(defaultClient);
-        Integer id = 56; // Integer | 証憑ファイルID
+        Integer id = 56; // Integer | ファイルボックス（証憑ファイル）ID
         Integer companyId = 56; // Integer | 事業所ID
         try {
             ReceiptResponse result = apiInstance.getReceipt(id, companyId);
@@ -297,7 +301,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 証憑ファイルID |
+ **id** | **Integer**| ファイルボックス（証憑ファイル）ID |
  **companyId** | **Integer**| 事業所ID |
 
 ### Return type
@@ -329,7 +333,7 @@ Name | Type | Description  | Notes
 
 > InlineResponse2005 getReceipts(companyId, startDate, endDate, userName, number, commentType, commentImportant, category, offset, limit)
 
-ファイルボックス 証憑ファイル一覧の取得
+ファイルボックス（証憑ファイル）一覧の取得
 
 ### Example
 
@@ -420,7 +424,7 @@ Name | Type | Description  | Notes
 
 > ReceiptResponse updateReceipt(id, receiptUpdateParams)
 
-ファイルボックス 証憑ファイル情報更新
+ファイルボックス（証憑ファイル）の更新
 
 ### Example
 
@@ -443,7 +447,7 @@ public class Example {
         oauth2.setAccessToken("YOUR ACCESS TOKEN");
 
         ReceiptsApi apiInstance = new ReceiptsApi(defaultClient);
-        Integer id = 56; // Integer | 証憑ファイルID
+        Integer id = 56; // Integer | ファイルボックス（証憑ファイル）ID
         ReceiptUpdateParams receiptUpdateParams = new ReceiptUpdateParams(); // ReceiptUpdateParams | 
         try {
             ReceiptResponse result = apiInstance.updateReceipt(id, receiptUpdateParams);
@@ -464,7 +468,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Integer**| 証憑ファイルID |
+ **id** | **Integer**| ファイルボックス（証憑ファイル）ID |
  **receiptUpdateParams** | [**ReceiptUpdateParams**](ReceiptUpdateParams.md)|  |
 
 ### Return type

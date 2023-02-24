@@ -279,13 +279,13 @@ public class PaymentRequestCreateParamsPaymentRequestLines {
   }
 
    /**
-   * セグメント１ID&lt;br&gt; セグメントタグ一覧APIを利用して取得してください。&lt;br&gt; &lt;a href&#x3D;\&quot;https://support.freee.co.jp/hc/ja/articles/360020679611\&quot; target&#x3D;\&quot;_blank\&quot;&gt;セグメント（分析用タグ）の設定&lt;/a&gt;&lt;br&gt; 
+   * セグメント１ID&lt;br&gt; セグメントタグ一覧の取得APIを利用して取得してください。&lt;br&gt; &lt;a href&#x3D;\&quot;https://support.freee.co.jp/hc/ja/articles/360020679611\&quot; target&#x3D;\&quot;_blank\&quot;&gt;セグメント（分析用タグ）の設定&lt;/a&gt;&lt;br&gt; 
    * minimum: 1
    * maximum: 9223372036854775807
    * @return segment1TagId
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "1", value = "セグメント１ID<br> セグメントタグ一覧APIを利用して取得してください。<br> <a href=\"https://support.freee.co.jp/hc/ja/articles/360020679611\" target=\"_blank\">セグメント（分析用タグ）の設定</a><br> ")
+  @ApiModelProperty(example = "1", value = "セグメント１ID<br> セグメントタグ一覧の取得APIを利用して取得してください。<br> <a href=\"https://support.freee.co.jp/hc/ja/articles/360020679611\" target=\"_blank\">セグメント（分析用タグ）の設定</a><br> ")
 
   public Long getSegment1TagId() {
     return segment1TagId;
@@ -304,13 +304,13 @@ public class PaymentRequestCreateParamsPaymentRequestLines {
   }
 
    /**
-   * セグメント２ID(法人向けエンタープライズプラン)&lt;br&gt; セグメントタグ一覧APIを利用して取得してください。&lt;br&gt; &lt;a href&#x3D;\&quot;https://support.freee.co.jp/hc/ja/articles/360020679611\&quot; target&#x3D;\&quot;_blank\&quot;&gt;セグメント（分析用タグ）の設定&lt;/a&gt;&lt;br&gt; 
+   * セグメント２ID(法人向けエンタープライズプラン)&lt;br&gt; セグメントタグ一覧の取得APIを利用して取得してください。&lt;br&gt; &lt;a href&#x3D;\&quot;https://support.freee.co.jp/hc/ja/articles/360020679611\&quot; target&#x3D;\&quot;_blank\&quot;&gt;セグメント（分析用タグ）の設定&lt;/a&gt;&lt;br&gt; 
    * minimum: 1
    * maximum: 9223372036854775807
    * @return segment2TagId
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "1", value = "セグメント２ID(法人向けエンタープライズプラン)<br> セグメントタグ一覧APIを利用して取得してください。<br> <a href=\"https://support.freee.co.jp/hc/ja/articles/360020679611\" target=\"_blank\">セグメント（分析用タグ）の設定</a><br> ")
+  @ApiModelProperty(example = "1", value = "セグメント２ID(法人向けエンタープライズプラン)<br> セグメントタグ一覧の取得APIを利用して取得してください。<br> <a href=\"https://support.freee.co.jp/hc/ja/articles/360020679611\" target=\"_blank\">セグメント（分析用タグ）の設定</a><br> ")
 
   public Long getSegment2TagId() {
     return segment2TagId;
@@ -329,13 +329,13 @@ public class PaymentRequestCreateParamsPaymentRequestLines {
   }
 
    /**
-   * セグメント３ID(法人向けエンタープライズプラン)&lt;br&gt; セグメントタグ一覧APIを利用して取得してください。&lt;br&gt; &lt;a href&#x3D;\&quot;https://support.freee.co.jp/hc/ja/articles/360020679611\&quot; target&#x3D;\&quot;_blank\&quot;&gt;セグメント（分析用タグ）の設定&lt;/a&gt;&lt;br&gt; 
+   * セグメント３ID(法人向けエンタープライズプラン)&lt;br&gt; セグメントタグ一覧の取得APIを利用して取得してください。&lt;br&gt; &lt;a href&#x3D;\&quot;https://support.freee.co.jp/hc/ja/articles/360020679611\&quot; target&#x3D;\&quot;_blank\&quot;&gt;セグメント（分析用タグ）の設定&lt;/a&gt;&lt;br&gt; 
    * minimum: 1
    * maximum: 9223372036854775807
    * @return segment3TagId
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "1", value = "セグメント３ID(法人向けエンタープライズプラン)<br> セグメントタグ一覧APIを利用して取得してください。<br> <a href=\"https://support.freee.co.jp/hc/ja/articles/360020679611\" target=\"_blank\">セグメント（分析用タグ）の設定</a><br> ")
+  @ApiModelProperty(example = "1", value = "セグメント３ID(法人向けエンタープライズプラン)<br> セグメントタグ一覧の取得APIを利用して取得してください。<br> <a href=\"https://support.freee.co.jp/hc/ja/articles/360020679611\" target=\"_blank\">セグメント（分析用タグ）の設定</a><br> ")
 
   public Long getSegment3TagId() {
     return segment3TagId;
