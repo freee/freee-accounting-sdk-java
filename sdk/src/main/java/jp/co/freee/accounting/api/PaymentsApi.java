@@ -25,10 +25,10 @@ import java.util.Map;
 
 public interface PaymentsApi {
   /**
-   * 取引（収入／支出）の支払行作成
+   * 取引（収入・支出）の支払行の作成
    * 
    * @param id 取引ID (required)
-   * @param paymentParams 取引（収入／支出）の支払行作成 (required)
+   * @param paymentParams 取引（収入・支出）の支払行の作成 (required)
    * @return Observable&lt;DealResponse&gt;
    */
   @Headers({
@@ -40,7 +40,7 @@ public interface PaymentsApi {
   );
 
   /**
-   * 取引（収入／支出）の支払行削除
+   * 取引（収入・支出）の支払行の削除
    * 
    * @param id 取引ID (required)
    * @param paymentId 決済ID (required)
@@ -53,11 +53,11 @@ public interface PaymentsApi {
   );
 
   /**
-   * 取引（収入／支出）の支払行更新
+   * 取引（収入・支出）の支払行の更新
    * 
    * @param id 取引ID (required)
    * @param paymentId 決済ID (required)
-   * @param paymentParams 取引（収入／支出）の支払行更新 (required)
+   * @param paymentParams 取引（収入・支出）の支払行の更新 (required)
    * @return Observable&lt;DealResponse&gt;
    */
   @Headers({

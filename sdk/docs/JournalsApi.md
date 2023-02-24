@@ -4,9 +4,9 @@ All URIs are relative to *https://api.freee.co.jp*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**downloadJournal**](JournalsApi.md#downloadJournal) | **GET** api/1/journals/reports/{id}/download | ダウンロード実行
-[**getJournalStatus**](JournalsApi.md#getJournalStatus) | **GET** api/1/journals/reports/{id}/status | ステータス確認
-[**getJournals**](JournalsApi.md#getJournals) | **GET** api/1/journals | ダウンロード要求
+[**downloadJournal**](JournalsApi.md#downloadJournal) | **GET** api/1/journals/reports/{id}/download | 仕訳帳のダウンロード
+[**getJournalStatus**](JournalsApi.md#getJournalStatus) | **GET** api/1/journals/reports/{id}/status | 仕訳帳のステータスの取得
+[**getJournals**](JournalsApi.md#getJournals) | **GET** api/1/journals | 仕訳帳のダウンロード要求
 
 
 
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 > File downloadJournal(id, companyId)
 
-ダウンロード実行
+仕訳帳のダウンロード
 
 ### Example
 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 > JournalStatusResponse getJournalStatus(id, companyId)
 
-ステータス確認
+仕訳帳のステータスの取得
 
 ### Example
 
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 
 > JournalsResponse getJournals(downloadType, companyId, visibleTags, visibleIds, startDate, endDate)
 
-ダウンロード要求
+仕訳帳のダウンロード要求
 
 ### Example
 

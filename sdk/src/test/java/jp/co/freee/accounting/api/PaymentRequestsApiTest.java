@@ -57,7 +57,7 @@ public class PaymentRequestsApiTest {
         // TODO: test validations
     }
     /**
-     * 支払依頼詳細の取得
+     * 支払依頼の取得
      *
      * 
      */

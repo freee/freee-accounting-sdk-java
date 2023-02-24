@@ -33,7 +33,7 @@ public interface CompaniesApi {
     
 
   /**
-   * 事業所の詳細情報の取得
+   * 事業所の取得
    * 
    * @param id 事業所ID (required)
    * @param details 取得情報に勘定科目・税区分コード・品目・取引先・部門・メモタグ・口座の一覧を含める (optional)

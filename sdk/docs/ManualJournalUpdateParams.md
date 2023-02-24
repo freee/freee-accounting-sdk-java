@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **companyId** | **Integer** | 事業所ID | 
 **details** | [**List&lt;ManualJournalUpdateParamsDetails&gt;**](ManualJournalUpdateParamsDetails.md) |  | 
 **issueDate** | **String** | 発生日 (yyyy-mm-dd) | 
-**receiptIds** | **List&lt;Integer&gt;** | 証憑ファイルID（ファイルボックスのファイルID）（配列） |  [optional]
+**receiptIds** | **List&lt;Integer&gt;** | ファイルボックス（証憑ファイル）ID（配列） |  [optional]
 
 
 

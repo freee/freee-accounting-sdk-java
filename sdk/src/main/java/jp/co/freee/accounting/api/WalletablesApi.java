@@ -55,7 +55,7 @@ public interface WalletablesApi {
   );
 
   /**
-   * 口座情報の取得
+   * 口座の取得
    * 
    * @param id 口座ID (required)
    * @param type 口座種別（bank_account : 銀行口座, credit_card : クレジットカード, wallet : その他の決済口座） (required)

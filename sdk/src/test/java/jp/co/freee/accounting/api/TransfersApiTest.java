@@ -42,7 +42,7 @@ public class TransfersApiTest {
         // TODO: test validations
     }
     /**
-     * 取引（振替）の削除する
+     * 取引（振替）の削除
      *
      * 
      */

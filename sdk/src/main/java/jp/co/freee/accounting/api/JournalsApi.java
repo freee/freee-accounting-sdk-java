@@ -26,7 +26,7 @@ import java.util.Map;
 
 public interface JournalsApi {
   /**
-   * ダウンロード実行
+   * 仕訳帳のダウンロード
    * 
    * @param id 受け付けID (required)
    * @param companyId 事業所ID (required)
@@ -38,7 +38,7 @@ public interface JournalsApi {
   );
 
   /**
-   * ステータス確認
+   * 仕訳帳のステータスの取得
    * 
    * @param id 受け付けID (required)
    * @param companyId 事業所ID (required)
@@ -50,7 +50,7 @@ public interface JournalsApi {
   );
 
   /**
-   * ダウンロード要求
+   * 仕訳帳のダウンロード要求
    * 
    * @param downloadType ダウンロード形式 (required)
    * @param companyId 事業所ID (required)

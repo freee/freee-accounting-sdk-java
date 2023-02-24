@@ -23,6 +23,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import jp.co.freee.accounting.models.DealReceiptMetadatum;
 import jp.co.freee.accounting.models.DealUser;
+import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -59,6 +60,14 @@ public class ReceiptTest {
     }
 
     /**
+     * Test the property 'documentType'
+     */
+    @Test
+    public void documentTypeTest() {
+        // TODO: test documentType
+    }
+
+    /**
      * Test the property 'fileSrc'
      */
     @Test
@@ -72,6 +81,14 @@ public class ReceiptTest {
     @Test
     public void idTest() {
         // TODO: test id
+    }
+
+    /**
+     * Test the property 'invoiceRegistrationNumber'
+     */
+    @Test
+    public void invoiceRegistrationNumberTest() {
+        // TODO: test invoiceRegistrationNumber
     }
 
     /**
@@ -96,6 +113,14 @@ public class ReceiptTest {
     @Test
     public void originTest() {
         // TODO: test origin
+    }
+
+    /**
+     * Test the property 'qualifiedInvoice'
+     */
+    @Test
+    public void qualifiedInvoiceTest() {
+        // TODO: test qualifiedInvoice
     }
 
     /**

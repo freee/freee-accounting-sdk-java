@@ -58,7 +58,7 @@ public class WalletablesApiTest {
         // TODO: test validations
     }
     /**
-     * 口座情報の取得
+     * 口座の取得
      *
      * 
      */

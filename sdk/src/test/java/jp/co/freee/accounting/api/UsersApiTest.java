@@ -57,7 +57,7 @@ public class UsersApiTest {
         // TODO: test validations
     }
     /**
-     * ログインユーザー情報の取得
+     * ログインユーザーの取得
      *
      * 
      */
@@ -70,7 +70,7 @@ public class UsersApiTest {
         // TODO: test validations
     }
     /**
-     * ユーザー情報の更新
+     * ログインユーザーの更新
      *
      * 
      */

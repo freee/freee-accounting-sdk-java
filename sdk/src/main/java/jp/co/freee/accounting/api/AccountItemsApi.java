@@ -54,7 +54,7 @@ public interface AccountItemsApi {
   );
 
   /**
-   * 勘定科目の詳細情報の取得
+   * 勘定科目の取得
    * 
    * @param id 勘定科目ID (required)
    * @param companyId 事業所ID (required)

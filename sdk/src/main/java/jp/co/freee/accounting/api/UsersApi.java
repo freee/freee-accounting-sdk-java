@@ -51,7 +51,7 @@ public interface UsersApi {
   );
 
   /**
-   * ログインユーザー情報の取得
+   * ログインユーザーの取得
    * 
    * @param companies 取得情報にユーザーが所属する事業所一覧を含める (optional)
    * @param advisor 取得情報に事業がアドバイザー事象所の場合は事業所毎の一意なプロフィールIDを含める (optional)
@@ -63,9 +63,9 @@ public interface UsersApi {
   );
 
   /**
-   * ユーザー情報の更新
+   * ログインユーザーの更新
    * 
-   * @param userParams ユーザー情報の更新 (optional)
+   * @param userParams ログインユーザーの更新 (optional)
    * @return Observable&lt;UserResponse&gt;
    */
   @Headers({

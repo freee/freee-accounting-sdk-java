@@ -52,7 +52,7 @@ public interface TagsApi {
   );
 
   /**
-   * メモタグの詳細情報の取得
+   * メモタグの取得
    * 
    * @param id タグID (required)
    * @param companyId 事業所ID (required)

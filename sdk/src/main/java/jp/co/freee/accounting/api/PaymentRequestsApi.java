@@ -54,7 +54,7 @@ public interface PaymentRequestsApi {
   );
 
   /**
-   * 支払依頼詳細の取得
+   * 支払依頼の取得
    * 
    * @param id 支払依頼ID (required)
    * @param companyId 事業所ID (required)

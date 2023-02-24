@@ -5,7 +5,7 @@ All URIs are relative to *https://api.freee.co.jp*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getCompanies**](CompaniesApi.md#getCompanies) | **GET** api/1/companies | 事業所一覧の取得
-[**getCompany**](CompaniesApi.md#getCompany) | **GET** api/1/companies/{id} | 事業所の詳細情報の取得
+[**getCompany**](CompaniesApi.md#getCompany) | **GET** api/1/companies/{id} | 事業所の取得
 
 
 
@@ -82,7 +82,7 @@ This endpoint does not need any parameter.
 
 > CompanyResponse getCompany(id, details, accountItems, taxes, items, partners, sections, tags, walletables)
 
-事業所の詳細情報の取得
+事業所の取得
 
 ### Example
 

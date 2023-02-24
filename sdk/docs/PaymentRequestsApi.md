@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createPaymentRequest**](PaymentRequestsApi.md#createPaymentRequest) | **POST** api/1/payment_requests | 支払依頼の作成
 [**destroyPaymentRequest**](PaymentRequestsApi.md#destroyPaymentRequest) | **DELETE** api/1/payment_requests/{id} | 支払依頼の削除
-[**getPaymentRequest**](PaymentRequestsApi.md#getPaymentRequest) | **GET** api/1/payment_requests/{id} | 支払依頼詳細の取得
+[**getPaymentRequest**](PaymentRequestsApi.md#getPaymentRequest) | **GET** api/1/payment_requests/{id} | 支払依頼の取得
 [**getPaymentRequests**](PaymentRequestsApi.md#getPaymentRequests) | **GET** api/1/payment_requests | 支払依頼一覧の取得
 [**updatePaymentRequest**](PaymentRequestsApi.md#updatePaymentRequest) | **PUT** api/1/payment_requests/{id} | 支払依頼の更新
 [**updatePaymentRequestAction**](PaymentRequestsApi.md#updatePaymentRequestAction) | **POST** api/1/payment_requests/{id}/actions | 支払依頼の承認操作
@@ -165,7 +165,7 @@ null (empty response body)
 
 > PaymentRequestResponse getPaymentRequest(id, companyId)
 
-支払依頼詳細の取得
+支払依頼の取得
 
 ### Example
 

@@ -40,7 +40,7 @@ public interface TransfersApi {
   );
 
   /**
-   * 取引（振替）の削除する
+   * 取引（振替）の削除
    * 
    * @param id 取引(振替)ID (required)
    * @param companyId 事業所ID (required)

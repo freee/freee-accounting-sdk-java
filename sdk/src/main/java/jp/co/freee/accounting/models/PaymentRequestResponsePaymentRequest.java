@@ -1146,11 +1146,11 @@ public class PaymentRequestResponsePaymentRequest {
   }
 
    /**
-   * 証憑ファイルID（ファイルボックスのファイルID）
+   * ファイルボックス（証憑ファイル）ID
    * @return receiptIds
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "[1,2,3]", required = true, value = "証憑ファイルID（ファイルボックスのファイルID）")
+  @ApiModelProperty(example = "[1,2,3]", required = true, value = "ファイルボックス（証憑ファイル）ID")
 
   public List<Integer> getReceiptIds() {
     return receiptIds;

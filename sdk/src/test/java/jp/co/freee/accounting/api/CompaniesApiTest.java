@@ -39,7 +39,7 @@ public class CompaniesApiTest {
         // TODO: test validations
     }
     /**
-     * 事業所の詳細情報の取得
+     * 事業所の取得
      *
      * 
      */

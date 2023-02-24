@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **email** | **String** | 担当者 メールアドレス (255文字以内) |  [optional]
 **invoicePaymentTermAttributes** | [**PartnerUpdateParamsInvoicePaymentTermAttributes**](PartnerUpdateParamsInvoicePaymentTermAttributes.md) |  |  [optional]
 **longName** | **String** | 正式名称（255文字以内） |  [optional]
-**name** | **String** | 取引先名 (255文字以内) | 
+**name** | **String** | 取引先名 (255文字以内、重複不可) | 
 **nameKana** | **String** | カナ名称（255文字以内） |  [optional]
 **orgCode** | [**OrgCodeEnum**](#OrgCodeEnum) | 事業所種別（null: 未設定、1: 法人、2: 個人） |  [optional]
 **partnerBankAccountAttributes** | [**PartnerCreateParamsPartnerBankAccountAttributes**](PartnerCreateParamsPartnerBankAccountAttributes.md) |  |  [optional]

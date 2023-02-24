@@ -52,7 +52,7 @@ public interface SectionsApi {
   );
 
   /**
-   * 
+   * 部門の取得
    * 
    * @param id 部門ID (required)
    * @param companyId 事業所ID (required)

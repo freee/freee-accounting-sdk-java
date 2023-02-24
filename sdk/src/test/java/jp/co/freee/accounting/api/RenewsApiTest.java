@@ -29,7 +29,7 @@ public class RenewsApiTest {
     }
 
     /**
-     * 取引（収入／支出）に対する+更新の作成
+     * 取引（収入・支出）の+更新の作成
      *
      * 
      */
@@ -42,7 +42,7 @@ public class RenewsApiTest {
         // TODO: test validations
     }
     /**
-     * 取引（収入／支出）の+更新の削除
+     * 取引（収入・支出）の+更新の削除
      *
      * 
      */
@@ -56,7 +56,7 @@ public class RenewsApiTest {
         // TODO: test validations
     }
     /**
-     * 取引（収入／支出）の+更新の更新
+     * 取引（収入・支出）の+更新の更新
      *
      * 
      */
