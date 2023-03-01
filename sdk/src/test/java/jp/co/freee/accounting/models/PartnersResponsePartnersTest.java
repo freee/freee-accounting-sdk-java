@@ -117,6 +117,14 @@ public class PartnersResponsePartnersTest {
     }
 
     /**
+     * Test the property 'invoiceRegistrationNumber'
+     */
+    @Test
+    public void invoiceRegistrationNumberTest() {
+        // TODO: test invoiceRegistrationNumber
+    }
+
+    /**
      * Test the property 'longName'
      */
     @Test
@@ -178,6 +186,14 @@ public class PartnersResponsePartnersTest {
     @Test
     public void phoneTest() {
         // TODO: test phone
+    }
+
+    /**
+     * Test the property 'qualifiedInvoiceIssuer'
+     */
+    @Test
+    public void qualifiedInvoiceIssuerTest() {
+        // TODO: test qualifiedInvoiceIssuer
     }
 
     /**

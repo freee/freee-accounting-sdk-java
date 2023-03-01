@@ -69,6 +69,10 @@ public class PartnersResponsePartners {
   @SerializedName(SERIALIZED_NAME_ID)
   private Integer id;
 
+  public static final String SERIALIZED_NAME_INVOICE_REGISTRATION_NUMBER = "invoice_registration_number";
+  @SerializedName(SERIALIZED_NAME_INVOICE_REGISTRATION_NUMBER)
+  private String invoiceRegistrationNumber;
+
   public static final String SERIALIZED_NAME_LONG_NAME = "long_name";
   @SerializedName(SERIALIZED_NAME_LONG_NAME)
   private String longName;
@@ -100,6 +104,10 @@ public class PartnersResponsePartners {
   public static final String SERIALIZED_NAME_PHONE = "phone";
   @SerializedName(SERIALIZED_NAME_PHONE)
   private String phone;
+
+  public static final String SERIALIZED_NAME_QUALIFIED_INVOICE_ISSUER = "qualified_invoice_issuer";
+  @SerializedName(SERIALIZED_NAME_QUALIFIED_INVOICE_ISSUER)
+  private Boolean qualifiedInvoiceIssuer;
 
   public static final String SERIALIZED_NAME_SHORTCUT1 = "shortcut1";
   @SerializedName(SERIALIZED_NAME_SHORTCUT1)
@@ -378,6 +386,29 @@ public class PartnersResponsePartners {
   }
 
 
+  public PartnersResponsePartners invoiceRegistrationNumber(String invoiceRegistrationNumber) {
+    
+    this.invoiceRegistrationNumber = invoiceRegistrationNumber;
+    return this;
+  }
+
+   /**
+   * この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 インボイス制度適格請求書発行事業者登録番号 - 先頭T数字13桁の固定14桁の文字列 &lt;a target&#x3D;\&quot;_blank\&quot; href&#x3D;\&quot;https://www.invoice-kohyo.nta.go.jp/index.html\&quot;&gt;国税庁インボイス制度適格請求書発行事業者公表サイト&lt;/a&gt; 
+   * @return invoiceRegistrationNumber
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "T1000000000001", value = "この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 インボイス制度適格請求書発行事業者登録番号 - 先頭T数字13桁の固定14桁の文字列 <a target=\"_blank\" href=\"https://www.invoice-kohyo.nta.go.jp/index.html\">国税庁インボイス制度適格請求書発行事業者公表サイト</a> ")
+
+  public String getInvoiceRegistrationNumber() {
+    return invoiceRegistrationNumber;
+  }
+
+
+  public void setInvoiceRegistrationNumber(String invoiceRegistrationNumber) {
+    this.invoiceRegistrationNumber = invoiceRegistrationNumber;
+  }
+
+
   public PartnersResponsePartners longName(String longName) {
     
     this.longName = longName;
@@ -566,6 +597,29 @@ public class PartnersResponsePartners {
   }
 
 
+  public PartnersResponsePartners qualifiedInvoiceIssuer(Boolean qualifiedInvoiceIssuer) {
+    
+    this.qualifiedInvoiceIssuer = qualifiedInvoiceIssuer;
+    return this;
+  }
+
+   /**
+   * この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 インボイス制度適格請求書発行事業者（true: 対象事業者、false: 非対象事業者） &lt;a target&#x3D;\&quot;_blank\&quot; href&#x3D;\&quot;https://www.invoice-kohyo.nta.go.jp/index.html\&quot;&gt;国税庁インボイス制度適格請求書発行事業者公表サイト&lt;/a&gt; 
+   * @return qualifiedInvoiceIssuer
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "false", value = "この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 インボイス制度適格請求書発行事業者（true: 対象事業者、false: 非対象事業者） <a target=\"_blank\" href=\"https://www.invoice-kohyo.nta.go.jp/index.html\">国税庁インボイス制度適格請求書発行事業者公表サイト</a> ")
+
+  public Boolean getQualifiedInvoiceIssuer() {
+    return qualifiedInvoiceIssuer;
+  }
+
+
+  public void setQualifiedInvoiceIssuer(Boolean qualifiedInvoiceIssuer) {
+    this.qualifiedInvoiceIssuer = qualifiedInvoiceIssuer;
+  }
+
+
   public PartnersResponsePartners shortcut1(String shortcut1) {
     
     this.shortcut1 = shortcut1;
@@ -676,6 +730,7 @@ public class PartnersResponsePartners {
         Objects.equals(this.defaultTitle, partnersResponsePartners.defaultTitle) &&
         Objects.equals(this.email, partnersResponsePartners.email) &&
         Objects.equals(this.id, partnersResponsePartners.id) &&
+        Objects.equals(this.invoiceRegistrationNumber, partnersResponsePartners.invoiceRegistrationNumber) &&
         Objects.equals(this.longName, partnersResponsePartners.longName) &&
         Objects.equals(this.name, partnersResponsePartners.name) &&
         Objects.equals(this.nameKana, partnersResponsePartners.nameKana) &&
@@ -684,6 +739,7 @@ public class PartnersResponsePartners {
         Objects.equals(this.partnerDocSettingAttributes, partnersResponsePartners.partnerDocSettingAttributes) &&
         Objects.equals(this.payerWalletableId, partnersResponsePartners.payerWalletableId) &&
         Objects.equals(this.phone, partnersResponsePartners.phone) &&
+        Objects.equals(this.qualifiedInvoiceIssuer, partnersResponsePartners.qualifiedInvoiceIssuer) &&
         Objects.equals(this.shortcut1, partnersResponsePartners.shortcut1) &&
         Objects.equals(this.shortcut2, partnersResponsePartners.shortcut2) &&
         Objects.equals(this.transferFeeHandlingSide, partnersResponsePartners.transferFeeHandlingSide) &&
@@ -696,7 +752,7 @@ public class PartnersResponsePartners {
 
   @Override
   public int hashCode() {
-    return Objects.hash(addressAttributes, available, code, companyId, contactName, countryCode, defaultTitle, email, id, longName, name, nameKana, orgCode, partnerBankAccountAttributes, partnerDocSettingAttributes, payerWalletableId, phone, shortcut1, shortcut2, transferFeeHandlingSide, updateDate);
+    return Objects.hash(addressAttributes, available, code, companyId, contactName, countryCode, defaultTitle, email, id, invoiceRegistrationNumber, longName, name, nameKana, orgCode, partnerBankAccountAttributes, partnerDocSettingAttributes, payerWalletableId, phone, qualifiedInvoiceIssuer, shortcut1, shortcut2, transferFeeHandlingSide, updateDate);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -719,6 +775,7 @@ public class PartnersResponsePartners {
     sb.append("    defaultTitle: ").append(toIndentedString(defaultTitle)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    invoiceRegistrationNumber: ").append(toIndentedString(invoiceRegistrationNumber)).append("\n");
     sb.append("    longName: ").append(toIndentedString(longName)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    nameKana: ").append(toIndentedString(nameKana)).append("\n");
@@ -727,6 +784,7 @@ public class PartnersResponsePartners {
     sb.append("    partnerDocSettingAttributes: ").append(toIndentedString(partnerDocSettingAttributes)).append("\n");
     sb.append("    payerWalletableId: ").append(toIndentedString(payerWalletableId)).append("\n");
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
+    sb.append("    qualifiedInvoiceIssuer: ").append(toIndentedString(qualifiedInvoiceIssuer)).append("\n");
     sb.append("    shortcut1: ").append(toIndentedString(shortcut1)).append("\n");
     sb.append("    shortcut2: ").append(toIndentedString(shortcut2)).append("\n");
     sb.append("    transferFeeHandlingSide: ").append(toIndentedString(transferFeeHandlingSide)).append("\n");
