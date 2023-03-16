@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **description** | **String** | 内容 | 
 **id** | **Long** | 支払依頼の項目行ID | 
 **itemId** | **Integer** | 品目ID | 
-**lineType** | [**LineTypeEnum**](#LineTypeEnum) | 行の種類 (deal_line: 支払依頼の通常取引行, withholding_tax: 源泉所得税行) | 
+**lineType** | [**LineTypeEnum**](#LineTypeEnum) | &#39;行の種類 (deal_line: 支払依頼の通常取引行, negative_line: 支払依頼の控除・マイナス行, withholding_tax: 源泉所得税行)&#39;&lt;br&gt; &#39;※ negative_line は2023年3月下旬から利用できる予定です&#39;  | 
 **sectionId** | **Integer** | 部門ID | 
 **segment1TagId** | **Long** | セグメント１ID。セグメント１が使用可能なプランの時のみレスポンスに含まれます。 |  [optional]
 **segment2TagId** | **Long** | セグメント２ID。セグメント２が使用可能なプランの時のみレスポンスに含まれます。 |  [optional]
@@ -27,6 +27,7 @@ Name | Type | Description | Notes
 Name | Value
 ---- | -----
 DEAL_LINE | &quot;deal_line&quot;
+NEGATIVE_LINE | &quot;negative_line&quot;
 WITHHOLDING_TAX | &quot;withholding_tax&quot;
 
 
