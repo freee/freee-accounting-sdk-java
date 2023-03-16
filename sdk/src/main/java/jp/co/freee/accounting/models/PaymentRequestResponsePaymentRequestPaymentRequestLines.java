@@ -53,11 +53,13 @@ public class PaymentRequestResponsePaymentRequestPaymentRequestLines {
   private Integer itemId;
 
   /**
-   * 行の種類 (deal_line: 支払依頼の通常取引行, withholding_tax: 源泉所得税行)
+   * &#39;行の種類 (deal_line: 支払依頼の通常取引行, negative_line: 支払依頼の控除・マイナス行, withholding_tax: 源泉所得税行)&#39;&lt;br&gt; &#39;※ negative_line は2023年3月下旬から利用できる予定です&#39; 
    */
   @JsonAdapter(LineTypeEnum.Adapter.class)
   public enum LineTypeEnum {
     DEAL_LINE("deal_line"),
+    
+    NEGATIVE_LINE("negative_line"),
     
     WITHHOLDING_TAX("withholding_tax");
 
@@ -260,11 +262,11 @@ public class PaymentRequestResponsePaymentRequestPaymentRequestLines {
   }
 
    /**
-   * 行の種類 (deal_line: 支払依頼の通常取引行, withholding_tax: 源泉所得税行)
+   * &#39;行の種類 (deal_line: 支払依頼の通常取引行, negative_line: 支払依頼の控除・マイナス行, withholding_tax: 源泉所得税行)&#39;&lt;br&gt; &#39;※ negative_line は2023年3月下旬から利用できる予定です&#39; 
    * @return lineType
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "deal_line", required = true, value = "行の種類 (deal_line: 支払依頼の通常取引行, withholding_tax: 源泉所得税行)")
+  @ApiModelProperty(example = "deal_line", required = true, value = "'行の種類 (deal_line: 支払依頼の通常取引行, negative_line: 支払依頼の控除・マイナス行, withholding_tax: 源泉所得税行)'<br> '※ negative_line は2023年3月下旬から利用できる予定です' ")
 
   public LineTypeEnum getLineType() {
     return lineType;
