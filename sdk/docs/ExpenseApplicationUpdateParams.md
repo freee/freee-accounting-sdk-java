@@ -12,8 +12,9 @@ Name | Type | Description | Notes
 **companyId** | **Integer** | 事業所ID | 
 **description** | **String** | 備考 (10000文字以内) |  [optional]
 **draft** | **Boolean** | 経費申請のステータス&lt;br&gt; falseを指定した時は申請中（in_progress）で経費申請を更新します。&lt;br&gt; trueを指定した時は下書き（draft）で経費申請を更新します。&lt;br&gt; 未指定の時は下書きとみなして経費申請を更新します。  |  [optional]
-**expenseApplicationLines** | [**List&lt;ExpenseApplicationUpdateParamsExpenseApplicationLines&gt;**](ExpenseApplicationUpdateParamsExpenseApplicationLines.md) |  | 
+**expenseApplicationLines** | [**List&lt;ExpenseApplicationUpdateParamsExpenseApplicationLines&gt;**](ExpenseApplicationUpdateParamsExpenseApplicationLines.md) |  |  [optional]
 **issueDate** | **String** | 申請日 (yyyy-mm-dd)&lt;br&gt; 指定しない場合は当日の日付が登録されます。  |  [optional]
+**purchaseLines** | [**List&lt;ExpenseApplicationUpdateParamsPurchaseLines&gt;**](ExpenseApplicationUpdateParamsPurchaseLines.md) | この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。利用可能となる前に予告なく変更がある場合があります。&lt;br&gt; 経費申請の申請行一覧（配列）  |  [optional]
 **sectionId** | **Integer** | 部門ID |  [optional]
 **segment1TagId** | **Long** | セグメント１ID(法人向けプロフェッショナル, 法人向けエンタープライズプラン)&lt;br&gt; セグメントタグ一覧の取得APIを利用して取得してください。&lt;br&gt; &lt;a href&#x3D;\&quot;https://support.freee.co.jp/hc/ja/articles/360020679611\&quot; target&#x3D;\&quot;_blank\&quot;&gt;セグメント（分析用タグ）の設定&lt;/a&gt;&lt;br&gt;  |  [optional]
 **segment2TagId** | **Long** | セグメント２ID(法人向け エンタープライズプラン)&lt;br&gt; セグメントタグ一覧の取得APIを利用して取得してください。&lt;br&gt; &lt;a href&#x3D;\&quot;https://support.freee.co.jp/hc/ja/articles/360020679611\&quot; target&#x3D;\&quot;_blank\&quot;&gt;セグメント（分析用タグ）の設定&lt;/a&gt;&lt;br&gt;  |  [optional]

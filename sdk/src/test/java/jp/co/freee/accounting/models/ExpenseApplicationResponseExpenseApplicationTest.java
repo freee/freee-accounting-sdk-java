@@ -27,6 +27,7 @@ import jp.co.freee.accounting.models.ApprovalRequestResponseApprovalRequestAppro
 import jp.co.freee.accounting.models.ApprovalRequestResponseApprovalRequestApprovers;
 import jp.co.freee.accounting.models.ApprovalRequestResponseApprovalRequestComments;
 import jp.co.freee.accounting.models.ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines;
+import jp.co.freee.accounting.models.ExpenseApplicationResponseExpenseApplicationPurchaseLines;
 import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.Assert;
 import org.junit.Ignore;
@@ -165,6 +166,14 @@ public class ExpenseApplicationResponseExpenseApplicationTest {
     @Test
     public void issueDateTest() {
         // TODO: test issueDate
+    }
+
+    /**
+     * Test the property 'purchaseLines'
+     */
+    @Test
+    public void purchaseLinesTest() {
+        // TODO: test purchaseLines
     }
 
     /**

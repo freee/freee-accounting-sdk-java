@@ -26,6 +26,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import jp.co.freee.accounting.models.ExpenseApplicationUpdateParamsExpenseApplicationLines;
+import jp.co.freee.accounting.models.ExpenseApplicationUpdateParamsPurchaseLines;
 
 /**
  * ExpenseApplicationUpdateParams
@@ -54,11 +55,15 @@ public class ExpenseApplicationUpdateParams {
 
   public static final String SERIALIZED_NAME_EXPENSE_APPLICATION_LINES = "expense_application_lines";
   @SerializedName(SERIALIZED_NAME_EXPENSE_APPLICATION_LINES)
-  private List<ExpenseApplicationUpdateParamsExpenseApplicationLines> expenseApplicationLines = new ArrayList<>();
+  private List<ExpenseApplicationUpdateParamsExpenseApplicationLines> expenseApplicationLines = null;
 
   public static final String SERIALIZED_NAME_ISSUE_DATE = "issue_date";
   @SerializedName(SERIALIZED_NAME_ISSUE_DATE)
   private String issueDate;
+
+  public static final String SERIALIZED_NAME_PURCHASE_LINES = "purchase_lines";
+  @SerializedName(SERIALIZED_NAME_PURCHASE_LINES)
+  private List<ExpenseApplicationUpdateParamsPurchaseLines> purchaseLines = null;
 
   public static final String SERIALIZED_NAME_SECTION_ID = "section_id";
   @SerializedName(SERIALIZED_NAME_SECTION_ID)
@@ -215,6 +220,9 @@ public class ExpenseApplicationUpdateParams {
   }
 
   public ExpenseApplicationUpdateParams addExpenseApplicationLinesItem(ExpenseApplicationUpdateParamsExpenseApplicationLines expenseApplicationLinesItem) {
+    if (this.expenseApplicationLines == null) {
+      this.expenseApplicationLines = new ArrayList<>();
+    }
     this.expenseApplicationLines.add(expenseApplicationLinesItem);
     return this;
   }
@@ -223,8 +231,8 @@ public class ExpenseApplicationUpdateParams {
    * Get expenseApplicationLines
    * @return expenseApplicationLines
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
 
   public List<ExpenseApplicationUpdateParamsExpenseApplicationLines> getExpenseApplicationLines() {
     return expenseApplicationLines;
@@ -256,6 +264,37 @@ public class ExpenseApplicationUpdateParams {
 
   public void setIssueDate(String issueDate) {
     this.issueDate = issueDate;
+  }
+
+
+  public ExpenseApplicationUpdateParams purchaseLines(List<ExpenseApplicationUpdateParamsPurchaseLines> purchaseLines) {
+    
+    this.purchaseLines = purchaseLines;
+    return this;
+  }
+
+  public ExpenseApplicationUpdateParams addPurchaseLinesItem(ExpenseApplicationUpdateParamsPurchaseLines purchaseLinesItem) {
+    if (this.purchaseLines == null) {
+      this.purchaseLines = new ArrayList<>();
+    }
+    this.purchaseLines.add(purchaseLinesItem);
+    return this;
+  }
+
+   /**
+   * この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。利用可能となる前に予告なく変更がある場合があります。&lt;br&gt; 経費申請の申請行一覧（配列） 
+   * @return purchaseLines
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。利用可能となる前に予告なく変更がある場合があります。<br> 経費申請の申請行一覧（配列） ")
+
+  public List<ExpenseApplicationUpdateParamsPurchaseLines> getPurchaseLines() {
+    return purchaseLines;
+  }
+
+
+  public void setPurchaseLines(List<ExpenseApplicationUpdateParamsPurchaseLines> purchaseLines) {
+    this.purchaseLines = purchaseLines;
   }
 
 
@@ -429,6 +468,7 @@ public class ExpenseApplicationUpdateParams {
         Objects.equals(this.draft, expenseApplicationUpdateParams.draft) &&
         Objects.equals(this.expenseApplicationLines, expenseApplicationUpdateParams.expenseApplicationLines) &&
         Objects.equals(this.issueDate, expenseApplicationUpdateParams.issueDate) &&
+        Objects.equals(this.purchaseLines, expenseApplicationUpdateParams.purchaseLines) &&
         Objects.equals(this.sectionId, expenseApplicationUpdateParams.sectionId) &&
         Objects.equals(this.segment1TagId, expenseApplicationUpdateParams.segment1TagId) &&
         Objects.equals(this.segment2TagId, expenseApplicationUpdateParams.segment2TagId) &&
@@ -439,7 +479,7 @@ public class ExpenseApplicationUpdateParams {
 
   @Override
   public int hashCode() {
-    return Objects.hash(approvalFlowRouteId, approverId, companyId, description, draft, expenseApplicationLines, issueDate, sectionId, segment1TagId, segment2TagId, segment3TagId, tagIds, title);
+    return Objects.hash(approvalFlowRouteId, approverId, companyId, description, draft, expenseApplicationLines, issueDate, purchaseLines, sectionId, segment1TagId, segment2TagId, segment3TagId, tagIds, title);
   }
 
   @Override
@@ -453,6 +493,7 @@ public class ExpenseApplicationUpdateParams {
     sb.append("    draft: ").append(toIndentedString(draft)).append("\n");
     sb.append("    expenseApplicationLines: ").append(toIndentedString(expenseApplicationLines)).append("\n");
     sb.append("    issueDate: ").append(toIndentedString(issueDate)).append("\n");
+    sb.append("    purchaseLines: ").append(toIndentedString(purchaseLines)).append("\n");
     sb.append("    sectionId: ").append(toIndentedString(sectionId)).append("\n");
     sb.append("    segment1TagId: ").append(toIndentedString(segment1TagId)).append("\n");
     sb.append("    segment2TagId: ").append(toIndentedString(segment2TagId)).append("\n");

@@ -26,6 +26,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import jp.co.freee.accounting.models.ExpenseApplicationCreateParamsExpenseApplicationLines;
+import jp.co.freee.accounting.models.ExpenseApplicationCreateParamsPurchaseLines;
 
 /**
  * ExpenseApplicationCreateParams
@@ -54,7 +55,7 @@ public class ExpenseApplicationCreateParams {
 
   public static final String SERIALIZED_NAME_EXPENSE_APPLICATION_LINES = "expense_application_lines";
   @SerializedName(SERIALIZED_NAME_EXPENSE_APPLICATION_LINES)
-  private List<ExpenseApplicationCreateParamsExpenseApplicationLines> expenseApplicationLines = new ArrayList<>();
+  private List<ExpenseApplicationCreateParamsExpenseApplicationLines> expenseApplicationLines = null;
 
   public static final String SERIALIZED_NAME_ISSUE_DATE = "issue_date";
   @SerializedName(SERIALIZED_NAME_ISSUE_DATE)
@@ -63,6 +64,10 @@ public class ExpenseApplicationCreateParams {
   public static final String SERIALIZED_NAME_PARENT_ID = "parent_id";
   @SerializedName(SERIALIZED_NAME_PARENT_ID)
   private Integer parentId;
+
+  public static final String SERIALIZED_NAME_PURCHASE_LINES = "purchase_lines";
+  @SerializedName(SERIALIZED_NAME_PURCHASE_LINES)
+  private List<ExpenseApplicationCreateParamsPurchaseLines> purchaseLines = null;
 
   public static final String SERIALIZED_NAME_SECTION_ID = "section_id";
   @SerializedName(SERIALIZED_NAME_SECTION_ID)
@@ -219,16 +224,19 @@ public class ExpenseApplicationCreateParams {
   }
 
   public ExpenseApplicationCreateParams addExpenseApplicationLinesItem(ExpenseApplicationCreateParamsExpenseApplicationLines expenseApplicationLinesItem) {
+    if (this.expenseApplicationLines == null) {
+      this.expenseApplicationLines = new ArrayList<>();
+    }
     this.expenseApplicationLines.add(expenseApplicationLinesItem);
     return this;
   }
 
    /**
-   * Get expenseApplicationLines
+   * 経費申請の項目行一覧（配列）
    * @return expenseApplicationLines
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "経費申請の項目行一覧（配列）")
 
   public List<ExpenseApplicationCreateParamsExpenseApplicationLines> getExpenseApplicationLines() {
     return expenseApplicationLines;
@@ -285,6 +293,37 @@ public class ExpenseApplicationCreateParams {
 
   public void setParentId(Integer parentId) {
     this.parentId = parentId;
+  }
+
+
+  public ExpenseApplicationCreateParams purchaseLines(List<ExpenseApplicationCreateParamsPurchaseLines> purchaseLines) {
+    
+    this.purchaseLines = purchaseLines;
+    return this;
+  }
+
+  public ExpenseApplicationCreateParams addPurchaseLinesItem(ExpenseApplicationCreateParamsPurchaseLines purchaseLinesItem) {
+    if (this.purchaseLines == null) {
+      this.purchaseLines = new ArrayList<>();
+    }
+    this.purchaseLines.add(purchaseLinesItem);
+    return this;
+  }
+
+   /**
+   * この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。利用可能となる前に予告なく変更がある場合があります。&lt;br&gt; 経費申請の申請行一覧（配列） 
+   * @return purchaseLines
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。利用可能となる前に予告なく変更がある場合があります。<br> 経費申請の申請行一覧（配列） ")
+
+  public List<ExpenseApplicationCreateParamsPurchaseLines> getPurchaseLines() {
+    return purchaseLines;
+  }
+
+
+  public void setPurchaseLines(List<ExpenseApplicationCreateParamsPurchaseLines> purchaseLines) {
+    this.purchaseLines = purchaseLines;
   }
 
 
@@ -459,6 +498,7 @@ public class ExpenseApplicationCreateParams {
         Objects.equals(this.expenseApplicationLines, expenseApplicationCreateParams.expenseApplicationLines) &&
         Objects.equals(this.issueDate, expenseApplicationCreateParams.issueDate) &&
         Objects.equals(this.parentId, expenseApplicationCreateParams.parentId) &&
+        Objects.equals(this.purchaseLines, expenseApplicationCreateParams.purchaseLines) &&
         Objects.equals(this.sectionId, expenseApplicationCreateParams.sectionId) &&
         Objects.equals(this.segment1TagId, expenseApplicationCreateParams.segment1TagId) &&
         Objects.equals(this.segment2TagId, expenseApplicationCreateParams.segment2TagId) &&
@@ -469,7 +509,7 @@ public class ExpenseApplicationCreateParams {
 
   @Override
   public int hashCode() {
-    return Objects.hash(approvalFlowRouteId, approverId, companyId, description, draft, expenseApplicationLines, issueDate, parentId, sectionId, segment1TagId, segment2TagId, segment3TagId, tagIds, title);
+    return Objects.hash(approvalFlowRouteId, approverId, companyId, description, draft, expenseApplicationLines, issueDate, parentId, purchaseLines, sectionId, segment1TagId, segment2TagId, segment3TagId, tagIds, title);
   }
 
   @Override
@@ -484,6 +524,7 @@ public class ExpenseApplicationCreateParams {
     sb.append("    expenseApplicationLines: ").append(toIndentedString(expenseApplicationLines)).append("\n");
     sb.append("    issueDate: ").append(toIndentedString(issueDate)).append("\n");
     sb.append("    parentId: ").append(toIndentedString(parentId)).append("\n");
+    sb.append("    purchaseLines: ").append(toIndentedString(purchaseLines)).append("\n");
     sb.append("    sectionId: ").append(toIndentedString(sectionId)).append("\n");
     sb.append("    segment1TagId: ").append(toIndentedString(segment1TagId)).append("\n");
     sb.append("    segment2TagId: ").append(toIndentedString(segment2TagId)).append("\n");

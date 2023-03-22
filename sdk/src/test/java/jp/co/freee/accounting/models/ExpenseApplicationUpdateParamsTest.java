@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import jp.co.freee.accounting.models.ExpenseApplicationUpdateParamsExpenseApplicationLines;
+import jp.co.freee.accounting.models.ExpenseApplicationUpdateParamsPurchaseLines;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -97,6 +98,14 @@ public class ExpenseApplicationUpdateParamsTest {
     @Test
     public void issueDateTest() {
         // TODO: test issueDate
+    }
+
+    /**
+     * Test the property 'purchaseLines'
+     */
+    @Test
+    public void purchaseLinesTest() {
+        // TODO: test purchaseLines
     }
 
     /**

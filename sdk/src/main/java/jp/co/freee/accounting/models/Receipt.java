@@ -41,7 +41,7 @@ public class Receipt {
   private String description;
 
   /**
-   * この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他） 
+   * この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他、null: OCR解析結果が保存されている時等） 
    */
   @JsonAdapter(DocumentTypeEnum.Adapter.class)
   public enum DocumentTypeEnum {
@@ -181,13 +181,15 @@ public class Receipt {
   private OriginEnum origin;
 
   /**
-   * この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない） 
+   * この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない、unselected: 未選択、null: OCR解析結果が保存されている時等） 
    */
   @JsonAdapter(QualifiedInvoiceEnum.Adapter.class)
   public enum QualifiedInvoiceEnum {
     QUALIFIED("qualified"),
     
-    NOT_QUALIFIED("not_qualified");
+    NOT_QUALIFIED("not_qualified"),
+    
+    UNSELECTED("unselected");
 
     private String value;
 
@@ -348,11 +350,11 @@ public class Receipt {
   }
 
    /**
-   * この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他） 
+   * この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他、null: OCR解析結果が保存されている時等） 
    * @return documentType
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "receipt", value = "この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他） ")
+  @ApiModelProperty(example = "receipt", value = "この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他、null: OCR解析結果が保存されている時等） ")
 
   public DocumentTypeEnum getDocumentType() {
     return documentType;
@@ -421,11 +423,11 @@ public class Receipt {
   }
 
    /**
-   * この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 インボイス制度適格請求書発行事業者登録番号 - 先頭T数字13桁の固定14桁の文字列 &lt;a target&#x3D;\&quot;_blank\&quot; href&#x3D;\&quot;https://www.invoice-kohyo.nta.go.jp/index.html\&quot;&gt;国税庁インボイス制度適格請求書発行事業者公表サイト&lt;/a&gt; 
+   * この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 インボイス制度適格請求書発行事業者登録番号（null: OCR解析結果が保存されている時等） - 先頭T数字13桁の固定14桁の文字列 &lt;a target&#x3D;\&quot;_blank\&quot; href&#x3D;\&quot;https://www.invoice-kohyo.nta.go.jp/index.html\&quot;&gt;国税庁インボイス制度適格請求書発行事業者公表サイト&lt;/a&gt; 
    * @return invoiceRegistrationNumber
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "T1000000000001", value = "この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 インボイス制度適格請求書発行事業者登録番号 - 先頭T数字13桁の固定14桁の文字列 <a target=\"_blank\" href=\"https://www.invoice-kohyo.nta.go.jp/index.html\">国税庁インボイス制度適格請求書発行事業者公表サイト</a> ")
+  @ApiModelProperty(example = "T1000000000001", value = "この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 インボイス制度適格請求書発行事業者登録番号（null: OCR解析結果が保存されている時等） - 先頭T数字13桁の固定14桁の文字列 <a target=\"_blank\" href=\"https://www.invoice-kohyo.nta.go.jp/index.html\">国税庁インボイス制度適格請求書発行事業者公表サイト</a> ")
 
   public String getInvoiceRegistrationNumber() {
     return invoiceRegistrationNumber;
@@ -513,11 +515,11 @@ public class Receipt {
   }
 
    /**
-   * この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない） 
+   * この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない、unselected: 未選択、null: OCR解析結果が保存されている時等） 
    * @return qualifiedInvoice
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "qualified", value = "この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない） ")
+  @ApiModelProperty(example = "qualified", value = "この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない、unselected: 未選択、null: OCR解析結果が保存されている時等） ")
 
   public QualifiedInvoiceEnum getQualifiedInvoice() {
     return qualifiedInvoice;
