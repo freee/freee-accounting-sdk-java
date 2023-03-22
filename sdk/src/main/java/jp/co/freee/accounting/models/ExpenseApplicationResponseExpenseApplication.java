@@ -29,6 +29,7 @@ import jp.co.freee.accounting.models.ApprovalRequestResponseApprovalRequestAppro
 import jp.co.freee.accounting.models.ApprovalRequestResponseApprovalRequestApprovers;
 import jp.co.freee.accounting.models.ApprovalRequestResponseApprovalRequestComments;
 import jp.co.freee.accounting.models.ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines;
+import jp.co.freee.accounting.models.ExpenseApplicationResponseExpenseApplicationPurchaseLines;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 /**
@@ -133,7 +134,7 @@ public class ExpenseApplicationResponseExpenseApplication {
 
   public static final String SERIALIZED_NAME_EXPENSE_APPLICATION_LINES = "expense_application_lines";
   @SerializedName(SERIALIZED_NAME_EXPENSE_APPLICATION_LINES)
-  private List<ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines> expenseApplicationLines = new ArrayList<>();
+  private List<ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines> expenseApplicationLines = null;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -142,6 +143,10 @@ public class ExpenseApplicationResponseExpenseApplication {
   public static final String SERIALIZED_NAME_ISSUE_DATE = "issue_date";
   @SerializedName(SERIALIZED_NAME_ISSUE_DATE)
   private String issueDate;
+
+  public static final String SERIALIZED_NAME_PURCHASE_LINES = "purchase_lines";
+  @SerializedName(SERIALIZED_NAME_PURCHASE_LINES)
+  private List<ExpenseApplicationResponseExpenseApplicationPurchaseLines> purchaseLines = null;
 
   public static final String SERIALIZED_NAME_SECTION_ID = "section_id";
   @SerializedName(SERIALIZED_NAME_SECTION_ID)
@@ -541,6 +546,9 @@ public class ExpenseApplicationResponseExpenseApplication {
   }
 
   public ExpenseApplicationResponseExpenseApplication addExpenseApplicationLinesItem(ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines expenseApplicationLinesItem) {
+    if (this.expenseApplicationLines == null) {
+      this.expenseApplicationLines = new ArrayList<>();
+    }
     this.expenseApplicationLines.add(expenseApplicationLinesItem);
     return this;
   }
@@ -549,8 +557,8 @@ public class ExpenseApplicationResponseExpenseApplication {
    * 経費申請の項目行一覧（配列）
    * @return expenseApplicationLines
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "経費申請の項目行一覧（配列）")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "経費申請の項目行一覧（配列）")
 
   public List<ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines> getExpenseApplicationLines() {
     return expenseApplicationLines;
@@ -607,6 +615,37 @@ public class ExpenseApplicationResponseExpenseApplication {
 
   public void setIssueDate(String issueDate) {
     this.issueDate = issueDate;
+  }
+
+
+  public ExpenseApplicationResponseExpenseApplication purchaseLines(List<ExpenseApplicationResponseExpenseApplicationPurchaseLines> purchaseLines) {
+    
+    this.purchaseLines = purchaseLines;
+    return this;
+  }
+
+  public ExpenseApplicationResponseExpenseApplication addPurchaseLinesItem(ExpenseApplicationResponseExpenseApplicationPurchaseLines purchaseLinesItem) {
+    if (this.purchaseLines == null) {
+      this.purchaseLines = new ArrayList<>();
+    }
+    this.purchaseLines.add(purchaseLinesItem);
+    return this;
+  }
+
+   /**
+   * この項目はインボイス制度で利用する項目です。2023年4月上旬から利用できる予定です。利用可能となる前に予告なく変更がある場合があります。&lt;br&gt; 経費申請の申請行一覧（配列） 
+   * @return purchaseLines
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "この項目はインボイス制度で利用する項目です。2023年4月上旬から利用できる予定です。利用可能となる前に予告なく変更がある場合があります。<br> 経費申請の申請行一覧（配列） ")
+
+  public List<ExpenseApplicationResponseExpenseApplicationPurchaseLines> getPurchaseLines() {
+    return purchaseLines;
+  }
+
+
+  public void setPurchaseLines(List<ExpenseApplicationResponseExpenseApplicationPurchaseLines> purchaseLines) {
+    this.purchaseLines = purchaseLines;
   }
 
 
@@ -834,6 +873,7 @@ public class ExpenseApplicationResponseExpenseApplication {
         Objects.equals(this.expenseApplicationLines, expenseApplicationResponseExpenseApplication.expenseApplicationLines) &&
         Objects.equals(this.id, expenseApplicationResponseExpenseApplication.id) &&
         Objects.equals(this.issueDate, expenseApplicationResponseExpenseApplication.issueDate) &&
+        Objects.equals(this.purchaseLines, expenseApplicationResponseExpenseApplication.purchaseLines) &&
         Objects.equals(this.sectionId, expenseApplicationResponseExpenseApplication.sectionId) &&
         Objects.equals(this.segment1TagId, expenseApplicationResponseExpenseApplication.segment1TagId) &&
         Objects.equals(this.segment2TagId, expenseApplicationResponseExpenseApplication.segment2TagId) &&
@@ -850,7 +890,7 @@ public class ExpenseApplicationResponseExpenseApplication {
 
   @Override
   public int hashCode() {
-    return Objects.hash(applicantId, applicationNumber, approvalFlowLogs, approvalFlowRouteId, approvers, comments, companyId, currentRound, currentStepId, dealId, dealStatus, description, expenseApplicationLines, id, issueDate, sectionId, segment1TagId, segment2TagId, segment3TagId, status, tagIds, title, totalAmount);
+    return Objects.hash(applicantId, applicationNumber, approvalFlowLogs, approvalFlowRouteId, approvers, comments, companyId, currentRound, currentStepId, dealId, dealStatus, description, expenseApplicationLines, id, issueDate, purchaseLines, sectionId, segment1TagId, segment2TagId, segment3TagId, status, tagIds, title, totalAmount);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -879,6 +919,7 @@ public class ExpenseApplicationResponseExpenseApplication {
     sb.append("    expenseApplicationLines: ").append(toIndentedString(expenseApplicationLines)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    issueDate: ").append(toIndentedString(issueDate)).append("\n");
+    sb.append("    purchaseLines: ").append(toIndentedString(purchaseLines)).append("\n");
     sb.append("    sectionId: ").append(toIndentedString(sectionId)).append("\n");
     sb.append("    segment1TagId: ").append(toIndentedString(segment1TagId)).append("\n");
     sb.append("    segment2TagId: ").append(toIndentedString(segment2TagId)).append("\n");

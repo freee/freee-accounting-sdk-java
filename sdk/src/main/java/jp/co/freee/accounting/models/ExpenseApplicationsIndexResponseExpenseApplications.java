@@ -25,6 +25,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import jp.co.freee.accounting.models.ExpenseApplicationResponseExpenseApplicationPurchaseLines;
 import jp.co.freee.accounting.models.ExpenseApplicationsIndexResponseExpenseApplicationLines;
 import org.openapitools.jackson.nullable.JsonNullable;
 
@@ -114,7 +115,7 @@ public class ExpenseApplicationsIndexResponseExpenseApplications {
 
   public static final String SERIALIZED_NAME_EXPENSE_APPLICATION_LINES = "expense_application_lines";
   @SerializedName(SERIALIZED_NAME_EXPENSE_APPLICATION_LINES)
-  private List<ExpenseApplicationsIndexResponseExpenseApplicationLines> expenseApplicationLines = new ArrayList<>();
+  private List<ExpenseApplicationsIndexResponseExpenseApplicationLines> expenseApplicationLines = null;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -123,6 +124,10 @@ public class ExpenseApplicationsIndexResponseExpenseApplications {
   public static final String SERIALIZED_NAME_ISSUE_DATE = "issue_date";
   @SerializedName(SERIALIZED_NAME_ISSUE_DATE)
   private String issueDate;
+
+  public static final String SERIALIZED_NAME_PURCHASE_LINES = "purchase_lines";
+  @SerializedName(SERIALIZED_NAME_PURCHASE_LINES)
+  private List<ExpenseApplicationResponseExpenseApplicationPurchaseLines> purchaseLines = null;
 
   public static final String SERIALIZED_NAME_SECTION_ID = "section_id";
   @SerializedName(SERIALIZED_NAME_SECTION_ID)
@@ -413,6 +418,9 @@ public class ExpenseApplicationsIndexResponseExpenseApplications {
   }
 
   public ExpenseApplicationsIndexResponseExpenseApplications addExpenseApplicationLinesItem(ExpenseApplicationsIndexResponseExpenseApplicationLines expenseApplicationLinesItem) {
+    if (this.expenseApplicationLines == null) {
+      this.expenseApplicationLines = new ArrayList<>();
+    }
     this.expenseApplicationLines.add(expenseApplicationLinesItem);
     return this;
   }
@@ -421,8 +429,8 @@ public class ExpenseApplicationsIndexResponseExpenseApplications {
    * 経費申請の項目行一覧（配列）
    * @return expenseApplicationLines
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "経費申請の項目行一覧（配列）")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "経費申請の項目行一覧（配列）")
 
   public List<ExpenseApplicationsIndexResponseExpenseApplicationLines> getExpenseApplicationLines() {
     return expenseApplicationLines;
@@ -479,6 +487,37 @@ public class ExpenseApplicationsIndexResponseExpenseApplications {
 
   public void setIssueDate(String issueDate) {
     this.issueDate = issueDate;
+  }
+
+
+  public ExpenseApplicationsIndexResponseExpenseApplications purchaseLines(List<ExpenseApplicationResponseExpenseApplicationPurchaseLines> purchaseLines) {
+    
+    this.purchaseLines = purchaseLines;
+    return this;
+  }
+
+  public ExpenseApplicationsIndexResponseExpenseApplications addPurchaseLinesItem(ExpenseApplicationResponseExpenseApplicationPurchaseLines purchaseLinesItem) {
+    if (this.purchaseLines == null) {
+      this.purchaseLines = new ArrayList<>();
+    }
+    this.purchaseLines.add(purchaseLinesItem);
+    return this;
+  }
+
+   /**
+   * この項目はインボイス制度で利用する項目です。2023年4月上旬から利用できる予定です。利用可能となる前に予告なく変更がある場合があります。&lt;br&gt; 経費申請の申請行一覧（配列） 
+   * @return purchaseLines
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "この項目はインボイス制度で利用する項目です。2023年4月上旬から利用できる予定です。利用可能となる前に予告なく変更がある場合があります。<br> 経費申請の申請行一覧（配列） ")
+
+  public List<ExpenseApplicationResponseExpenseApplicationPurchaseLines> getPurchaseLines() {
+    return purchaseLines;
+  }
+
+
+  public void setPurchaseLines(List<ExpenseApplicationResponseExpenseApplicationPurchaseLines> purchaseLines) {
+    this.purchaseLines = purchaseLines;
   }
 
 
@@ -702,6 +741,7 @@ public class ExpenseApplicationsIndexResponseExpenseApplications {
         Objects.equals(this.expenseApplicationLines, expenseApplicationsIndexResponseExpenseApplications.expenseApplicationLines) &&
         Objects.equals(this.id, expenseApplicationsIndexResponseExpenseApplications.id) &&
         Objects.equals(this.issueDate, expenseApplicationsIndexResponseExpenseApplications.issueDate) &&
+        Objects.equals(this.purchaseLines, expenseApplicationsIndexResponseExpenseApplications.purchaseLines) &&
         Objects.equals(this.sectionId, expenseApplicationsIndexResponseExpenseApplications.sectionId) &&
         Objects.equals(this.segment1TagId, expenseApplicationsIndexResponseExpenseApplications.segment1TagId) &&
         Objects.equals(this.segment2TagId, expenseApplicationsIndexResponseExpenseApplications.segment2TagId) &&
@@ -718,7 +758,7 @@ public class ExpenseApplicationsIndexResponseExpenseApplications {
 
   @Override
   public int hashCode() {
-    return Objects.hash(applicantId, applicationNumber, companyId, currentRound, currentStepId, dealId, dealStatus, description, expenseApplicationLines, id, issueDate, sectionId, segment1TagId, segment2TagId, segment3TagId, status, tagIds, title, totalAmount);
+    return Objects.hash(applicantId, applicationNumber, companyId, currentRound, currentStepId, dealId, dealStatus, description, expenseApplicationLines, id, issueDate, purchaseLines, sectionId, segment1TagId, segment2TagId, segment3TagId, status, tagIds, title, totalAmount);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -743,6 +783,7 @@ public class ExpenseApplicationsIndexResponseExpenseApplications {
     sb.append("    expenseApplicationLines: ").append(toIndentedString(expenseApplicationLines)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    issueDate: ").append(toIndentedString(issueDate)).append("\n");
+    sb.append("    purchaseLines: ").append(toIndentedString(purchaseLines)).append("\n");
     sb.append("    sectionId: ").append(toIndentedString(sectionId)).append("\n");
     sb.append("    segment1TagId: ").append(toIndentedString(segment1TagId)).append("\n");
     sb.append("    segment2TagId: ").append(toIndentedString(segment2TagId)).append("\n");

@@ -45,7 +45,7 @@ public class Example {
         String description = "description_example"; // String | メモ (255文字以内)
         String documentType = "receipt"; // String | この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他） 
         String issueDate = "issueDate_example"; // String | 取引日 (yyyy-mm-dd)
-        String qualifiedInvoice = "qualified"; // String | この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない） 
+        String qualifiedInvoice = "qualified"; // String | この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない、unselected: 未選択） 
         Long receiptMetadatumAmount = 56L; // Long | 金額
         String receiptMetadatumIssueDate = "receiptMetadatumIssueDate_example"; // String | 発行日 (yyyy-mm-dd)
         String receiptMetadatumPartnerName = "receiptMetadatumPartnerName_example"; // String | 発行元
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
  **description** | **String**| メモ (255文字以内) | [optional]
  **documentType** | **String**| この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 書類の種類（receipt: 領収書、invoice: 請求書、other: その他）  | [optional] [enum: receipt, invoice, other]
  **issueDate** | **String**| 取引日 (yyyy-mm-dd) | [optional]
- **qualifiedInvoice** | **String**| この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない）  | [optional] [enum: qualified, not_qualified]
+ **qualifiedInvoice** | **String**| この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない、unselected: 未選択）  | [optional] [enum: qualified, not_qualified, unselected]
  **receiptMetadatumAmount** | **Long**| 金額 | [optional]
  **receiptMetadatumIssueDate** | **String**| 発行日 (yyyy-mm-dd) | [optional]
  **receiptMetadatumPartnerName** | **String**| 発行元 | [optional]

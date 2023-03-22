@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import jp.co.freee.accounting.models.ExpenseApplicationCreateParamsExpenseApplicationLines;
+import jp.co.freee.accounting.models.ExpenseApplicationCreateParamsPurchaseLines;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -105,6 +106,14 @@ public class ExpenseApplicationCreateParamsTest {
     @Test
     public void parentIdTest() {
         // TODO: test parentId
+    }
+
+    /**
+     * Test the property 'purchaseLines'
+     */
+    @Test
+    public void purchaseLinesTest() {
+        // TODO: test purchaseLines
     }
 
     /**

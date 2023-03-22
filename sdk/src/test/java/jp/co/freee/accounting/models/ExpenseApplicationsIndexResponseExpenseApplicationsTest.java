@@ -23,6 +23,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import jp.co.freee.accounting.models.ExpenseApplicationResponseExpenseApplicationPurchaseLines;
 import jp.co.freee.accounting.models.ExpenseApplicationsIndexResponseExpenseApplicationLines;
 import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.Assert;
@@ -130,6 +131,14 @@ public class ExpenseApplicationsIndexResponseExpenseApplicationsTest {
     @Test
     public void issueDateTest() {
         // TODO: test issueDate
+    }
+
+    /**
+     * Test the property 'purchaseLines'
+     */
+    @Test
+    public void purchaseLinesTest() {
+        // TODO: test purchaseLines
     }
 
     /**
