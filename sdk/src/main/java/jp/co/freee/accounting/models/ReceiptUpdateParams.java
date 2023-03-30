@@ -24,7 +24,6 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import jp.co.freee.accounting.models.DealReceiptMetadatum;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 /**
  * ReceiptUpdateParams
@@ -71,7 +70,7 @@ public class ReceiptUpdateParams {
           return b;
         }
       }
-      return null;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<DocumentTypeEnum> {
@@ -101,13 +100,15 @@ public class ReceiptUpdateParams {
   private String issueDate;
 
   /**
-   * この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない） 
+   * この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない、unselected: 未選択） 
    */
   @JsonAdapter(QualifiedInvoiceEnum.Adapter.class)
   public enum QualifiedInvoiceEnum {
     QUALIFIED("qualified"),
     
-    NOT_QUALIFIED("not_qualified");
+    NOT_QUALIFIED("not_qualified"),
+    
+    UNSELECTED("unselected");
 
     private String value;
 
@@ -130,7 +131,7 @@ public class ReceiptUpdateParams {
           return b;
         }
       }
-      return null;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<QualifiedInvoiceEnum> {
@@ -282,11 +283,11 @@ public class ReceiptUpdateParams {
   }
 
    /**
-   * この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない） 
+   * この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない、unselected: 未選択） 
    * @return qualifiedInvoice
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "qualified", value = "この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない） ")
+  @ApiModelProperty(example = "qualified", value = "この項目はインボイス制度で利用する項目です。2023年4月頃から利用できる予定です。 適格請求書等（qualified: 該当する、not_qualified: 該当しない、unselected: 未選択） ")
 
   public QualifiedInvoiceEnum getQualifiedInvoice() {
     return qualifiedInvoice;
@@ -339,20 +340,9 @@ public class ReceiptUpdateParams {
         Objects.equals(this.receiptMetadatum, receiptUpdateParams.receiptMetadatum);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
     return Objects.hash(companyId, description, documentType, invoiceRegistrationNumber, issueDate, qualifiedInvoice, receiptMetadatum);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
