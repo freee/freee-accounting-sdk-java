@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **expenseApplicationLines** | [**List&lt;ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines&gt;**](ExpenseApplicationResponseExpenseApplicationExpenseApplicationLines.md) | 経費申請の項目行一覧（配列） |  [optional]
 **id** | **Integer** | 経費申請ID | 
 **issueDate** | **String** | 申請日 (yyyy-mm-dd) | 
-**purchaseLines** | [**List&lt;ExpenseApplicationResponseExpenseApplicationPurchaseLines&gt;**](ExpenseApplicationResponseExpenseApplicationPurchaseLines.md) | この項目はインボイス制度で利用する項目です。2023年4月上旬から利用できる予定です。利用可能となる前に予告なく変更がある場合があります。&lt;br&gt; 経費申請の申請行一覧（配列）  |  [optional]
+**purchaseLines** | [**List&lt;ExpenseApplicationResponseExpenseApplicationPurchaseLines&gt;**](ExpenseApplicationResponseExpenseApplicationPurchaseLines.md) | この項目はインボイス制度で利用する項目です。2023年4月下旬から利用できる予定です。利用可能となる前に予告なく変更がある場合があります。&lt;br&gt; 経費申請の申請行一覧（配列）  |  [optional]
 **sectionId** | **Integer** | 部門ID |  [optional]
 **segment1TagId** | **Long** | セグメント１ID。セグメント１が使用可能なプランの時のみレスポンスに含まれます。 |  [optional]
 **segment2TagId** | **Long** | セグメント２ID。セグメント２が使用可能なプランの時のみレスポンスに含まれます。 |  [optional]
