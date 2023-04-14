@@ -1,4 +1,4 @@
-# このSDKはこれまで定期的にメンテナンスをしていましたが、2023年4月をもって定期的なメンテナンスを終了する予定です。 詳細は「[freee会計 Public APIに関するSDKのメンテナンス終了、およびスキーマのymlファイルでの公開終了について](https://developer.freee.co.jp/news/6263)」をご覧ください。
+# このSDKはこれまで定期的にメンテナンスをしていましたが、2023年4月に定期的なメンテナンスを終了しました。 詳細は「[freee会計 Public APIに関するSDKのメンテナンス終了、およびスキーマのymlファイルでの公開終了について](https://developer.freee.co.jp/news/6263)」をご覧ください。
 
 # 会計freee Java SDK
 
@@ -158,7 +158,7 @@ Spring Initializr で構成する場合は、下記の Dependencies を選択し
 
 つぎに、コンフィグレーションを設定します。 `src/main/resources` 配下に `application.properties` または `application.yml` を作成し、下記に該当する設定を記述します。下記は `application.yml` における例です。
 
-`<<set your client id>>` および `<<set your client secret>>` は、それぞれ前述の freee アプリケーション登録で取得した `client-id` と `client-secret` を設定してください。 
+`<<set your client id>>` および `<<set your client secret>>` は、それぞれ前述の freee アプリケーション登録で取得した `client-id` と `client-secret` を設定してください。
 
 ```yaml
 server:
